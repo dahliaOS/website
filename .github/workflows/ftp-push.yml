@@ -18,11 +18,11 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
         # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
-        ftp-server: "ftp://{{ secrets.FTP_HOST }}:21/public_html/"
+        ftp-server: "ftp://${{ secrets.FTP_HOST }}:21/public_html/"
         # FTP account username
-        ftp-username: "{{ secrets.FTP_USERNAME }}"
+        ftp-username: "${{ secrets.FTP_USERNAME }}"
         # FTP account password
-        ftp-password: "{{ secrets.FTP_PASSWORD }}"
+        ftp-password: "${{ secrets.FTP_PASSWORD }}"
         # The local folder to copy, defaults to root project folder
         #local-dir: # optional, default is ./
         # Passes through options into git-ftp
