@@ -1,4 +1,4 @@
-ErrorDocument 404 404.html
+ErrorDocument 404 /404.html
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php73” package as the default “PHP” programming language.
