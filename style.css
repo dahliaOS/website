@@ -272,3 +272,29 @@ margin-bottom:50vh;
 .vcenter>* {
   margin: auto;
 }
+@media screen and (max-width: 1175px) {
+  #screenshots-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+.gallery-screenshot {
+  width: auto;
+  height: auto;
+  padding: 48px;
+  background-color: #000000;
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+@media screen and (min-width: 960px) {
+  .gallery-screenshot {
+    padding: 64px;
+  }
+}
+@media screen and (max-width: 619px) {
+  .gallery-screenshot {
+    padding: 32px;
+  }
+}
