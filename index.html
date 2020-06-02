@@ -4,174 +4,190 @@ Developed by the dahliaOS authors. Licensed under the GNU General Public License
 -->
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>Dahlia OS - A modern, lightweight operating system</title>
-        <link rel="icon" 
-      type="image/png" 
-      href="images/favicon.png">
-      <meta name="google-site-verification" content="1Y5EcX78cHC63J5a8jikmS-gAnRZk7WZi9fAjyhtiZ4" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sulphur+Point&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="dahlia.css">
-        <script defer src="material.min.js"></script>
-        <link rel="stylesheet" href="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-    </head>
-    <body>
+
+<head>
+  <title>Dahlia OS - A modern, lightweight operating system</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta name="google-site-verification" content="1Y5EcX78cHC63J5a8jikmS-gAnRZk7WZi9fAjyhtiZ4" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sulphur+Point&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="dahlia.css">
+  <script defer src="material.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+</head>
+
+<body>
 
 
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-            <header class="mdl-layout__header">
-              <div class="mdl-layout__header-row">
-                
-                <span class="mdl-layout-title"><img src="images/logo-white.png" height="28px"></span>
-                
-                <div class="mdl-layout-spacer"></div>
-                
-                
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+
+        <span class="mdl-layout-title"><img src="images/logo-white.png" height="28px"></span>
+
+        <div class="mdl-layout-spacer"></div>
+
+
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title"><img src="images/logo-color.png" height="28px"></span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="https://discord.gg/7qVbJHR">Discord</a>
+        <a class="mdl-navigation__link" href="https://github.com/dahlia-os">Github</a>
+        <a class="mdl-navigation__link" href="https://reddit.com/r/dahliaos">Reddit</a>
+        <a class="mdl-navigation__link" href="https://b252.page.link/dahliadl">Download</a>
+        <!--TODO: change this link to a Dahlia-branded one-->
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+
+        <div align="center">
+          <h1 id="dahlia-header" style="margin-top:10vw;">a <span id="change"></span> operating system</h1>
+          <h5 id="dahlia-main" style="max-width:75%;margin-top:1vw;">Powered by the same technology behind Fuchsia,
+            Dahlia OS is bringing containerization and microkernels into the realm of desktop computing.</h5>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect header-button">
+            Learn More
+          </button>
+          <div class="dahlia-content-card">
+
+
+
+
+
+
+            <div class="row">
+              <div class="column">
+                <div class="card">
+                  <div align=left>
+                    <span class="material-icons secure">
+                      enhanced_encryption
+                    </span>
+                    <h3 id="sulphur">Secure</h3>
+                    <p id="roboto">In an age where collecting user metrics and personal information has become a common
+                      practice, your security and privacy are our number one concern. With dahliaOS, your data stays
+                      with you, away from prying eyes. Our sandboxed application container system makes sure that your
+                      data remains protected from malicious software and targeted attacks. <a href="licence.html">Learn
+                        more about our security and privacy features.</a></p>
+                  </div>
+                </div>
               </div>
-            </header>
-            <div class="mdl-layout__drawer">
-              <span class="mdl-layout-title"><img src="images/logo-color.png" height="28px"></span>
-              <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="https://discord.gg/7qVbJHR">Discord</a>
-                <a class="mdl-navigation__link" href="https://github.com/dahlia-os">Github</a>
-                <a class="mdl-navigation__link" href="https://reddit.com/r/dahliaos">Reddit</a>
-                <a class="mdl-navigation__link" href="https://b252.page.link/dahliadl">Download</a>
-                  <!--TODO: change this link to a Dahlia-branded one-->
-              </nav>
+
+              <div class="column">
+                <div class="card">
+                  <div align=left>
+                    <span class="material-icons open">
+                      developer_mode
+                    </span>
+                    <h3 id="sulphur">Open Source</h3>
+                    <p id="roboto">The source code to all of our code is free and available to the public, and licensed
+                      under the GNU General Public Licence v3, meaning you are allowed to make changes to it and
+                      redistribute it as much you want. If you run into a problem, you can report it to the developers
+                      on Github, Discord, or send us an email. We are always happy to provide help and documentation to
+                      our code. <a href="licence.html">Learn more about DahliaOS and open source.</a></p>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="card">
+                  <div align=left>
+                    <span class="material-icons fast">
+                      speed
+                    </span>
+                    <h3 id="sulphur">Fast</h3>
+                    <p id="roboto">By optimizing individual kernel builds for every device, dahliaOS provides a fast and
+                      power-efficient experience for every device, from smartphones to laptops, to high-end
+                      workstations. Through the use of two separate kernels, we can ensure support for every device. For
+                      other devices, we offer a monolithic build that supports every device. <a
+                        href="optimization.html">Learn more about system optimization</a></p>
+
+                  </div>
+                </div>
+              </div>
+
+
             </div>
-            <main class="mdl-layout__content">
-              <div class="page-content">
-
-<div align="center">
-<h1 id="dahlia-header" style="margin-top:10vw;">a <span id="change"></span> operating system</h1>
-<h5 id="dahlia-main" style="max-width:75%;margin-top:1vw;">Powered by the same technology behind Fuchsia, Dahlia OS is bringing containerization and microkernels into the realm of desktop computing.</h5>
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect header-button">
-    Learn More
-  </button>
-<div class="dahlia-content-card">
 
 
 
 
+          </div>
+        </div>
 
 
-<div class="row">
-  <div class="column">
-    <div class="card">
-<div align=left>
-      <span class="material-icons secure">
-        enhanced_encryption
-        </span>
-      <h3 id="sulphur">Secure</h3>
-      <p id="roboto">In an age where collecting user metrics and personal information has become a common practice, your security and privacy are our number one concern. With dahliaOS, your data stays with you, away from prying eyes. Our sandboxed application container system makes sure that your data remains protected from malicious software and targeted attacks. <a href="licence.html">Learn more about our security and privacy features.</a></p>
-    </div>
-  </div>
-  </div>
+        <footer style="margin-top:100px;" class="mdl-mega-footer">
+          <div class="mdl-mega-footer__middle-section">
 
-  <div class="column">
-    <div class="card">
-      <div align=left>
-      <span class="material-icons open">
-        developer_mode
-        </span>
-      <h3 id="sulphur">Open Source</h3>
-      <p id="roboto">The source code to all of our code is free and available to the public, and licensed under the GNU General Public Licence v3, meaning you are allowed to make changes to it and redistribute it as much you want. If you run into a problem, you can report it to the developers on Github, Discord, or send us an email. We are always happy to provide help and documentation to our code. <a href="licence.html">Learn more about DahliaOS and open source.</a></p>
-      
-    </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <div align=left>
-      <span class="material-icons fast">
-        speed
-        </span>
-      <h3 id="sulphur">Fast</h3>
-      <p id="roboto">By optimizing individual kernel builds for every device, dahliaOS provides a fast and power-efficient experience for every device, from smartphones to laptops, to high-end workstations. Through the use of two separate kernels, we can ensure support for every device. For other devices, we offer a monolithic build that supports every device. <a href="optimization.html">Learn more about system optimization</a></p>
-      
-    </div>
-  </div>
-  </div>
-  
-  
-</div>
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">Resources</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="https://discord.gg/7qVbJHR">Discord</a></li>
+                <li><a href="https://github.com/dahlia-os">Github</a></li>
+                <li><a href="https://reddit.com/r/dahliaos">Reddit</a></li>
+                <li><a href="https://www.youtube.com/channel/UCE8odY_TlkwNMWVCu1-EUtw">Youtube</a></li>
+                <li><a href="https://facebook.com/officialdahliaos">Facebook</a></li>
+                <li><a href="https://instagram.com/officialdahliaos">Instagram</a></li>
+                <li><a href="https://twitter.com/dahlia_os">Twitter</a></li>
+              </ul>
+            </div>
 
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">Technology</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">The goal</a></li>
+                <li><a href="#">Design</a></li>
+                <li><a href="#">UI Modularity</a></li>
+              </ul>
+            </div>
 
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">Documentation</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">Compiling</a></li>
+                <li><a href="#">Installing</a></li>
+                <li><a href="#">Running</a></li>
+                <li><a href="#">Supported devices</a></li>
+                <li><a href="#">Linux vs. Zircon</a></li>
+              </ul>
+            </div>
 
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">FAQ</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">Q&A</a></li>
+                <li><a href="#">Contact us</a></li>
+              </ul>
+            </div>
 
-</div>
-</div>
-
-
-<footer style="margin-top:100px;" class="mdl-mega-footer">
-    <div class="mdl-mega-footer__middle-section">
-  
-      <div class="mdl-mega-footer__drop-down-section">
-        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-        <h1 class="mdl-mega-footer__heading">Resources</h1>
-        <ul class="mdl-mega-footer__link-list">
-          <li><a href="https://discord.gg/7qVbJHR">Discord</a></li>
-          <li><a href="https://github.com/dahlia-os">Github</a></li>
-          <li><a href="https://reddit.com/r/dahliaos">Reddit</a></li>
-          <li><a href="https://www.youtube.com/channel/UCE8odY_TlkwNMWVCu1-EUtw">Youtube</a></li>
-          <li><a href="https://facebook.com/officialdahliaos">Facebook</a></li>
-          <li><a href="https://instagram.com/officialdahliaos">Instagram</a></li>
-          <li><a href="https://twitter.com/dahlia_os">Twitter</a></li>
-        </ul>
-      </div>
-  
-      <div class="mdl-mega-footer__drop-down-section">
-        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-        <h1 class="mdl-mega-footer__heading">Technology</h1>
-        <ul class="mdl-mega-footer__link-list">
-          <li><a href="#">How it works</a></li>
-          <li><a href="#">The goal</a></li>
-          <li><a href="#">Design</a></li>
-          <li><a href="#">UI Modularity</a></li>
-        </ul>
-      </div>
-  
-      <div class="mdl-mega-footer__drop-down-section">
-        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-        <h1 class="mdl-mega-footer__heading">Documentation</h1>
-        <ul class="mdl-mega-footer__link-list">
-          <li><a href="#">Compiling</a></li>
-          <li><a href="#">Installing</a></li>
-          <li><a href="#">Running</a></li>
-          <li><a href="#">Supported devices</a></li>
-          <li><a href="#">Linux vs. Zircon</a></li>
-        </ul>
-      </div>
-  
-      <div class="mdl-mega-footer__drop-down-section">
-        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-        <h1 class="mdl-mega-footer__heading">FAQ</h1>
-        <ul class="mdl-mega-footer__link-list">
-          <li><a href="#">Q&A</a></li>
-          <li><a href="#">Contact us</a></li>
-        </ul>
-      </div>
-  
-    </div>
-  
-    <div class="mdl-mega-footer__bottom-section">
-      <div class="mdl-logo"><img src="images/logo-white.png" style="margin-top:-3px;" height="18.6666666667px"></div>
-      <ul class="mdl-mega-footer__link-list">
-        <li><a href="#">Support</a></li>
-        <li><a href="#">Source Code</a></li>
-      </ul>
-    </div>
-  
-  </footer>
-
-
-              </div>
-            </main>
           </div>
 
+          <div class="mdl-mega-footer__bottom-section">
+            <div class="mdl-logo"><img src="images/logo-white.png" style="margin-top:-3px;" height="18.6666666667px">
+            </div>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Source Code</a></li>
+            </ul>
+          </div>
 
-    </body>
+        </footer>
+
+
+      </div>
+    </main>
+  </div>
+
+
+</body>
+
 </html>
