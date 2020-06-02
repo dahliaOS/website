@@ -312,11 +312,23 @@ margin-bottom:50vh;
 }
 .mdl-logo {
   background-image:url('images/logo-white.png');
-  margin-top:-3px;
-  height: 56px;
-  width: 289px;
+  height:28px;
+  width: 144px;
+  background-size: 144px;
+  margin-top: -3em;
   vertical-align: baseline;
   display: inline-block;
   float: unset;
-  margin-top: -289px;
+}
+.middlesect-icon {
+  display: inline-block;
+  position: relative;
+  top: 8px;
+}
+.middlesect-icon+h3 {
+  display: inline-block;
+  padding: 0 16px;
+}
+.middlesect-heading {
+  text-align: center;
 }
