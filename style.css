@@ -265,3 +265,10 @@ margin-bottom:50vh;
     }
 
   }
+
+.scrlabel {
+  font-size: 2em;
+}
+.vcenter>* {
+  margin: auto;
+}
