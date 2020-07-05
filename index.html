@@ -1,220 +1,552 @@
+<!doctype html>
 <!--
-index.html
-Developed by the dahliaOS authors. Licensed under the GNU General Public License V3.
+  dahliaOS.io
+  Copyright 2020 The dahliaOS Authors. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
 -->
-<!DOCTYPE HTML>
-<html>
+<link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400&display=swap" rel="stylesheet">
 
-<head>
-  <title>Dahlia OS - A modern, lightweight operating system</title>
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <meta name="google-site-verification" content="1Y5EcX78cHC63J5a8jikmS-gAnRZk7WZi9fAjyhtiZ4" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sulphur+Point&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="dahlia.css">
-  <script defer src="material.min.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-</head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>dahliaOS | Home</title>
 
-<body>
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="dahlia.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-
-        <span class="mdl-layout-title" style="background-image:url('images/logo-white.png'); height:28px;width: 144px;background-size: 144px;"></span>
-
-        <div class="mdl-layout-spacer"></div>
-
-
-      </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title" style="background-image:url('images/logo-color.png'); height:28px;width: 144px;background-size: 144px;margin: 32px auto 0;"></span>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="https://discord.gg/7qVbJHR">Discord</a>
-        <a class="mdl-navigation__link" href="https://github.com/dahlia-os">Github</a>
-        <a class="mdl-navigation__link" href="https://reddit.com/r/dahliaos">Reddit</a>
-        <a class="mdl-navigation__link" href="https://b252.page.link/dahliadl">Download</a>
-        <!--TODO: change this link to a Dahlia-branded one-->
-      </nav>
-    </div>
-    <main class="mdl-layout__content">
-      <div class="page-content">
-
-        <div align="center">
-          <h1 id="dahlia-header" style="margin-top:10vw;">a <span id="change"></span> operating system</h1>
-          <h5 id="dahlia-main" style="max-width:75%;margin-top:1vw;">Powered by the same technology behind Fuchsia,
-            Dahlia OS is bringing containerization and microkernels into the realm of desktop computing.</h5>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect header-button">
-            Learn More
+      <div class="dahliaOS-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="dahliaOS-title mdl-layout-title">
+            <img class="android-logo-image" src="images/logo-color.png">
+          </span>
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="dahliaOS-header-spacer mdl-layout-spacer"></div>
+          <div class="dahliaOS-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search-field">
+            </div>
+          </div>
+          <!-- Navigation -->
+          <div class="dahliaOS-navigation-container">
+            <nav class="dahliaOS-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#features">Features</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#screens">News</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#downloads">Download</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://discord.gg/jwgS3t6">Contact</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://github.com/orgs/dahlia-os/people">Developers</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://github.com/dahlia-os/documentation">Documentation</a>
+            </nav>
+          </div>
+          <span class="dahliaOS-mobile-title mdl-layout-title">
+            <img class="android-logo-image" src="images/logo-color.png">
+          </span>
+          <button class="dahliaOS-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <i class="material-icons">more_vert</i>
           </button>
-          <div class="dahlia-content-card">
+          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            <li href="https://github.com/dahlia-os" class="mdl-menu__item">Source Code</li>
+            
+            <li disabled class="mdl-menu__item">For Enterprise</li>
+            <li class="mdl-menu__item">Screenshots</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dahliaOS-drawer mdl-layout__drawer">
+        <span class="mdl-layout-title">
+          <img class="android-logo-image" src="images/logo-white.png">
+        </span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="#features">Features</a>
+          <a class="mdl-navigation__link" href="#screens">News</a>
+          <a class="mdl-navigation__link" href="#downloads">Download</a>
+          <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6">Contact</a>
+          <a class="mdl-navigation__link" href="https://github.com/orgs/dahlia-os/people">Developers</a>
+          <a class="mdl-navigation__link" href="https://github.com/dahlia-os/documentation">Documentation</a>
+       
+          
+          <div class="dahliaOS-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">Resources</span>
+          <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6">Discord</a>
+          <a class="mdl-navigation__link" href="https://github.com/dahlia-os">Github</a>
+          <a class="mdl-navigation__link" href="https://reddit.com/r/dahliaos">Reddit</a>
+          <a class="mdl-navigation__link" href="https://www.facebook.com/pg/officialdahliaos/">Facebook</a>
+          <a class="mdl-navigation__link" href="https://instagram.com/officialdahliaos">Instagram</a>
+          <a class="mdl-navigation__link" href="https://www.twitter.com/realdahliaos">Twitter</a>
+          <div class="dahliaOS-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">For developers</span>
+          <a class="mdl-navigation__link" href="https://github.com/dahlia-os">Source Code</a>
+          <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6">Join Our Team</a>
+          
+        </nav>
+      </div>
+
+      <div class="dahliaOS-content mdl-layout__content">
+        <a name="top"></a>
+        <div class="dahliaOS-be-together-section mdl-typography--text-center">
+          <div class="logo-font dahliaOS-slogan">something new</div>
+          <div class="logo-font dahliaOS-sub-slogan">dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.</div>
+          <div align=center>
+            <button class="dahlia-dlnow mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              Download Now
+            </button></div>
+
+          <a href="#screens">
+            <button class="dahliaOS-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+              <i class="material-icons">expand_more</i>
+            </button>
+          </a>
+        </div>
+        <div class="dahliaOS-screen-section mdl-typography--text-center">
+          <a name="screens"></a>
+          <div class="mdl-typography--display-1-color-contrast">News</div>
+          <div class="dahliaOS-screens">
 
 
+           
+              <style>
+                .demo-card-square.mdl-card {
+                  width: 320px;
+                  height: 320px;
+                  overflow: wrap;
+                  white-space: normal;
+                  
+                }
+                .demo-card-square > .mdl-card__title {
+                  color: #fff;
+
+                }
+                </style>
 
 
-
-
-            <div class="row">
-              <div class="column">
-                <div class="card">
-                  <div align=left>
-                    <center class="middlesect-heading">
-                        <span class="material-icons secure middlesect-icon">
-                        enhanced_encryption
-                      </span>
-                      <h3 id="sulphur">Secure</h3>
-                    </center>
-                    <p id="roboto">In an age where collecting user metrics and personal information has become a common
-                      practice, your security and privacy are our number one concern. With dahliaOS, your data stays
-                      with you, away from prying eyes. Our sandboxed application container system makes sure that your
-                      data remains protected from malicious software and targeted attacks. <a href="licence.html">Learn
-                        more about our security and privacy features.</a></p>
+                 <div class="dahliaOS-tablet dahliaOS-screen">
+          <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                  <div class="mdl-card__title mdl-card--expand" style="background:
+                  url('images/update1.png') center left 15% no-repeat #ff3d00;">
+                    <h2 class="mdl-card__title-text">Release ● dahliaOS Linux-Based build 200630.1 ● 30th of June, 2020</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    We've released a new version of our Linux-Based builds!
+This build adds many new features and updates the Pangolin Desktop Environment!
+Remember, this is an alpha Pre-Release and should not be used in production!
+Download it below!
+                  </div>
+                  <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://github.com/dahlia-os/releases/releases/tag/200630.1-x86_64">
+                      View on Github
+                    </a>
                   </div>
                 </div>
-              </div>
-
-              <div class="column">
-                <div class="card">
-                  <div align=left>
-                    <center class="middlesect-heading">
-                      <span class="material-icons open middlesect-icon">
-                        developer_mode
-                      </span>
-                      <h3 id="sulphur">Open Source</h3>
-                    </center>
-                    <p id="roboto">The source code to all of our code is free and available to the public, and licensed
-                      under the GNU General Public Licence v3, meaning you are allowed to make changes to it and
-                      redistribute it as much you want. If you run into a problem, you can report it to the developers
-                      on Github, Discord, or send us an email. We are always happy to provide help and documentation to
-                      our code. <a href="licence.html">Learn more about DahliaOS and open source.</a></p>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="column">
-                <div class="card">
-                  <div align=left>
-                    <center class="middlesect-heading">
-                      <span class="material-icons fast middlesect-icon">
-                        speed
-                      </span>
-                      <h3 id="sulphur">Fast</h3>
-                    </center>
-                    <p id="roboto">By optimizing individual kernel builds for every device, dahliaOS provides a fast and
-                      power-efficient experience for every device, from smartphones to laptops, to high-end
-                      workstations. Through the use of two separate kernels, we can ensure support for every device. For
-                      other devices, we offer a monolithic build that supports every device. <a
-                        href="optimization.html">Learn more about system optimization</a></p>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="mdl-grid vcenter" style="display:none">
-              <h1 class="mdl-cell mdl-cell--12-col">screenshots</h1><!--lowercase for stylistic purposes-->
-              <!-- -->
-              <div class="mdl-cell mdl-cell--6-col">
-                <a href="images/pictures/code.png">
-                  <img src="images/pictures/code.png" style="max-width: 100%;" />
-                </a>
-              </div>
-              <div class="mdl-cell mdl-cell--6-col">
-                <span class="scrlabel">Visual Studio Code on Dahlia Linux</span class="scrlabel">
-              </div>
-              <!-- -->
-              <div class="mdl-cell mdl-cell--6-col">
-                <a href="images/pictures/files.png">
-                  <img src="images/pictures/files.png" style="max-width: 100%;" />
-                </a>
-              </div>
-              <div class="mdl-cell mdl-cell--6-col">
-                <span class="scrlabel">File Manager on Dahlia Linux</span class="scrlabel">
-              </div>
-              <!-- -->
-              <div class="mdl-cell mdl-cell--6-col">
-                <a href="images/pictures/browse.png">
-                  <img src="images/pictures/browse.png" style="max-width: 100%;" />
-                </a>
-              </div>
-              <div class="mdl-cell mdl-cell--6-col">
-                <span class="scrlabel">Google Chrome on Dahlia Linux</span class="scrlabel">
-              </div>
-              <!-- -->
-            </div>
-            <div id="screenshots-section" class="mdl-grid">
-              <h1 class="mdl-cell mdl-cell--12-col">screenshots</h1><!--lowercase for stylistic purposes-->
-              <div class="mdl-cell mdl-cell--3-col">
-                <a href="images/pictures/browse.png" class="gallery-screenshot" style="background-image:url('images/pictures/browse.png')"
-                title="Chromium"></a>
-              </div>
-              <div class="mdl-cell mdl-cell--3-col">
-                <a href="images/pictures/chat.png" class="gallery-screenshot" style="background-image:url('images/pictures/chat.png')"
-                title="Discord"></a>
-              </div>
-              <div class="mdl-cell mdl-cell--3-col">
-                <a href="images/pictures/code.png" class="gallery-screenshot" style="background-image:url('images/pictures/code.png')"
-                title="VS Code"></a>
-              </div>
-              <div class="mdl-cell mdl-cell--3-col">
-                <a href="images/pictures/design.png" class="gallery-screenshot" style="background-image:url('images/pictures/design.png')"
-                title="Origami Editor"></a>
-              </div>
-              <div class="mdl-cell mdl-cell--3-col">
-                <a href="images/pictures/develop.png" class="gallery-screenshot" style="background-image:url('images/pictures/develop.png')"
-                title="VS Code and Flutter"></a>
-              </div>
-              <div class="mdl-cell mdl-cell--3-col">
-                <a href="images/pictures/files.png" class="gallery-screenshot" style="background-image:url('images/pictures/files.png')"
-                title="Nautilus"></a>
-              </div>
-              <div class="mdl-cell mdl-cell--3-col">
-                <a href="images/pictures/math.png" class="gallery-screenshot" style="background-image:url('images/pictures/math.png')"
-                title="Our calculator and text editor"></a>
-              </div>
-              <div class="mdl-cell mdl-cell--3-col">
-                <a href="images/pictures/multitask.png" class="gallery-screenshot" style="background-image:url('images/pictures/multitask.png')"
-                title="Multitasking with LXTerminal"></a>
-              </div>
-              <div class="mdl-cell mdl-cell--3-col">
-                <a href="images/pictures/settings.png" class="gallery-screenshot" style="background-image:url('images/pictures/settings.png')"
-                title="Our Quick Settings"></a>
-              </div>
-              <div class="mdl-cell mdl-cell--3-col">
-                <a href="images/pictures/work.png" class="gallery-screenshot" style="background-image:url('images/pictures/work.png')"
-                title="Origami Editor and Sensors"></a>
-              </div>
             </div>
 
 
+            <div class="dahliaOS-tablet dahliaOS-screen">
+              <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand" style="background:
+                      url('images/gradient.png') bottom right 15% no-repeat #ff3d00;">
+                        <h2 class="mdl-card__title-text">We've been featured in an article! ● 29th of June, 2020</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        
+                        4 weeks ago, an article was published called Top Linux Distributions To Look Forward To In 2020 and we're listed as the number 8 in it!
+                        It's exciting for us to see that we're getting some reviews and features in articles, we hope you're as excited as we are!
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://www.tecmint.com/new-linux-distributions/">
+                          Read on tecmint
+                        </a>
+                      </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="dahliaOS-tablet dahliaOS-screen">
+                  <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                          <div class="mdl-card__title mdl-card--expand" style="background:
+                          url('images/screenshots/02.png') top right 15% no-repeat #ff3d00;">
+                            <h2 class="mdl-card__title-text">Release ● Pangolin web build & domain ● 29th of June, 2020</h2>
+                          </div>
+                          <div class="mdl-card__supporting-text">
+                            
+                            We've released a new update for the online version of Pangolin and ported it over to our custom domain!
+                            The web build from now on will automatically update itself so make sure to stay updated!
+                            P.S You can also download it as PWA from the website for offline usage.
+                          </div>
+                          <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://web.dahliaos.io/">
+                              Try the web demo
+                            </a>
+                          </div>
+                        </div>
+                    </div>
+
+
+                    <div class="dahliaOS-tablet dahliaOS-screen">
+                      <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                              <div class="mdl-card__title mdl-card--expand" style="background:
+                              url('images/screenshots/old.png') top left 15% no-repeat #ff3d00;color:#ffffff;">
+                                <h2 class="mdl-card__title-text">Release ● Linux build 200614.1 ● 15th of June, 2020</h2>
+                              </div>
+                              <div class="mdl-card__supporting-text">
+                                
+                                This release now features the Pangolin UI! Simply log in and follow the prompt on boot to start the GUI to use Pangolin, or interact with the system through a command line. This build does not run in QEMU and has very limited support in Virtualbox.
+                              </div>
+                              <div class="mdl-card__actions mdl-card--border">
+                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://github.com/dahlia-os/releases/releases/tag/200614.1-x86_64">
+                                  view on github
+                                </a>
+                              </div>
+                            </div>
+                        </div>
+    
+
+                        <div class="dahliaOS-tablet dahliaOS-screen">
+                          <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                                  <div class="mdl-card__title mdl-card--expand" style="background:#7289DA;color:#ffffff;">
+                                    <h2 class="mdl-card__title-text">Community ● 200 Discord members! ● 15th of June, 2020</h2>
+                                  </div>
+                                  <div class="mdl-card__supporting-text">
+                                    
+                                  
+                                    Hello, community members and supporters! We have finally gained 200 members on our Discord server! We appreciate every single one of you showing up and we hope that you'll stick around long enough untill we release the first fully working build of our OS!
+                                   
+                                    
+                             
+                                  </div>
+                                  <div class="mdl-card__actions mdl-card--border">
+                                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://discord.gg/jwgS3t6">
+                                      Join our discord
+                                    </a>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="dahliaOS-tablet dahliaOS-screen">
+                              <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                                      <div class="mdl-card__title mdl-card--expand" style="background:
+                                      url('images/screenshots/old.png') top left 15% no-repeat #ff3d00;color:#ffffff;">
+                                        <h2 class="mdl-card__title-text">Release ● Pangolin Flutter Web Build ● 12th of June, 2020.</h2>
+                                      </div>
+                                      <div class="mdl-card__supporting-text">
+                                        
+                                        We've released a new update for the online version of Pangolin, meant for those who don't want to mess around with Flutter commands, and compiled directly from the latest source!
+
+P.S You can also download it as PWA from the website for offline usage
+                                      </div>
+                                      <div class="mdl-card__actions mdl-card--border">
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://nmcain.github.io/dahlia/pangolin">
+                                          Try online
+                                        </a>
+                                      </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="dahliaOS-tablet dahliaOS-screen">
+                                  <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                                          <div class="mdl-card__title mdl-card--expand" style="background:
+                                           #1DA1F2;color:#ffffff;">
+                                            <h2 class="mdl-card__title-text">Community ● We're on Twitter! ● 11th of June, 2020.</h2>
+                                          </div>
+                                          <div class="mdl-card__supporting-text">
+                                            
+                                            We opened a Twitter account just today!
+It would mean a lot to us if you went over to check it and leave a follow!
+
+We'll be posting a lot of cool stuff over there as we already do on our other social media platforms, listed below! We will be posting new releases there soon!
+                                          </div>
+                                          <div class="mdl-card__actions mdl-card--border">
+                                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://twitter.com/realdahliaos">
+                                              Visit us on Twitter
+                                            </a>
+                                          </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="dahliaOS-tablet dahliaOS-screen">
+                                      <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                                              <div class="mdl-card__title mdl-card--expand" style="background:
+                                              url('images/gradient.png') bottom right 15% no-repeat #ff3d00;">
+                                                <h2 class="mdl-card__title-text">Development ● New user interfaces! ● 11th of June, 2020.</h2>
+                                              </div>
+                                              <div class="mdl-card__supporting-text">
+                   We are starting work on two new user shells called Starlight and Haven!
+                                                Starlight and Haven UIs will be more of a modern, simple, minimalistic design, different than Pangolin's material style design.
+                                                The new interfaces will follow a new design metaphor!
+                                               
+                                                
+                                              </div>
+                                              <div class="mdl-card__actions mdl-card--border">
+                                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://github.com/dahlia-os/starlight">
+                                                  View on Github
+                                                </a>
+                                              </div>
+                                            </div>
+                                        </div>
+
+
+            
           </div>
         </div>
+        <div id="features" class="dahliaOS-wear-section">
+          <div class="dahliaOS-wear-band">
+            <div class="dahliaOS-wear-band-text">
+              <div class="sulphurpoint mdl-typography--display-2 mdl-typography--font-thin">Just the basics</div>
+              <p class="mdl-typography--headline mdl-typography--font-thin">
+                dahliaOS keeps things light by only including apps you need, and you can add all of your favorites from other operating systems using the Containers app. dahliaOS also provides a curated marketplace for third-party native Flutter applications, so you can use nearly every application within one system!.
+              </p>
+              <p>
+                <a class="mdl-typography--font-regular mdl-typography--text-uppercase dahliaOS-alt-link" href="https://github.com/dahlia-os/pangolin-desktop/tree/master/lib/applications">
+                  Browse apps&nbsp;<i class="material-icons">chevron_right</i>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="dahliaOS-customized-section">
+          <div class="dahliaOS-customized-section-text">
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">A wide range of supported devices</div>
+            <p class="mdl-typography--font-light">
+              dahliaOS provides a fast and stable experience on nearly every computer, from a 2004 desktop tower to the latest generation of mobile notebooks. Our dual kernel approach allows users with new(er) hardware to take advantage of the Zircon Kernel, while maintaining support for older devices using the Linux Kernel.
+              <br>
+              <a href="https://github.com/dahlia-os/documentation/blob/master/supported-hardware.md" class="dahliaOS-link mdl-typography--font-light">View supported devices</a>
+            </p>
+          </div>
+          <div class="dahliaOS-customized-section-image"></div>
+        </div>
+        <div class="dahliaOS-more-section">
+          <div class="dahliaOS-section-title mdl-typography--display-1-color-contrast">Features</div>
+          <div class="dahliaOS-card-container mdl-grid">
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/screenshots/recovery.png">
+              </div>
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text">Internet Recovery</h4>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mdl-typography--font-light mdl-typography--subhead">If something goes wrong with your system, dahliaOS will automatically download and boot from the latest image to help you get back up and running.</span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="dahliaOS-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/dahlia-os/system-recovery">
+                   Recovery
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/screenshots/boot.png">
+              </div>
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text">Powered by the best of Fuchsia and Linux</h4>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mdl-typography--font-light mdl-typography--subhead">To ensure the widest range of support, dahliaOS provides builds based on both the Zircon and Linux kernels. Both images provide the same great desktop experience.</span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="dahliaOS-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/dahlia-os/">
+                   View code
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/screenshots/01.png">
+              </div>
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text">Effortless multitasking</h4>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mdl-typography--font-light mdl-typography--subhead">dahliaOS features a brand new window manager, built from the ground up and designed to adapt between mobile and desktop platforms.</span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="dahliaOS-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/dahlia-os/pangolin-desktop">
+                   Pangolin Desktop
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/screenshots/specs.png" href="images/screenshots/specs.png">
+              </div>
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text">Optimized for every platform</h4>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mdl-typography--font-light mdl-typography--subhead">Powered by the Buildroot build system, dahliaOS packs itself into a tiny 160 MB image file*, using only 199 MB of RAM when idle!</span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="dahliaOS-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/dahlia-os/buildroot">
+                   Buildroot
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+            </div>
 
 
-        <footer style="margin-top:100px;" class="mdl-mega-footer">
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/screenshots/source.png">
+              </div>
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text">Free and open source</h4>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mdl-typography--font-light mdl-typography--subhead">dahliaOS is licensed under the Apache 2.0 license, and all of our source code can be found on Github.</span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="dahliaOS-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/dahlia-os">
+                   github
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/gradient.png">
+              </div>
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text">Rolling Release</h4>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mdl-typography--font-light mdl-typography--subhead">dahliaOS provides frequent minor updates and patches, and updates in the background without interrupting your work, no reboots required.</span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="dahliaOS-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="http://github.com/dahlia-os/releases/releases/">
+                   Releases
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/screenshots/02.png">
+              </div>
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text">Built-in containers</h4>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mdl-typography--font-light mdl-typography--subhead">Do you want to use dahliaOS but keep using your old apps? You can! The Containers application allows you to run nearly any app within dahliaOS.</span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="dahliaOS-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="#">
+                   Containers
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/screenshots/10.png">
+              </div>
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text">Developer Friendly</h4>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mdl-typography--font-light mdl-typography--subhead">With dahliaOS, you can run all of your favorite development software, manage the system through the terminal, and save system resources for intensive work.</span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="dahliaOS-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
+                   Learn more
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+            </div>
+
+
+           
+
+          </div>
+          
+        </div>
+
+        <div id="downloads" class="dahliaOS-customized-section">
+          <div class="dahliaOS-customized-section-text">
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Download</div>
+            <p class="mdl-typography--font-light">
+              dahliaOS Linux-based 200630.2 features numerous improvements and fixes the graphical issues found in 200630.1. It is recommended to test this on hardware with Intel Integrated graphics, as graphics switching is not yet present.
+              <pre>
+dahliaOS Linux-based 200630.2 PRE-RELEASE
+Kernel 5.6.15
+x86_64 EFI
+163 MB
+pangolin-desktop: commit 24b1d4c4bdcbf8affa8764f1d9d7db69f657f680
+              </pre>
+              <br>
+              <a href="https://github.com/dahlia-os/releases/releases/tag/200630.1-x86_64" class="dahliaOS-link mdl-typography--font-light"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                Download now
+              </button></a>
+            </p>
+          </div>
+          <div class="dahliaOS-download-section-image"></div>
+        </div>
+      
+
+        <footer style="margin-top:0px;" class="mdl-mega-footer">
           <div class="mdl-mega-footer__middle-section">
-
+        
             <div class="mdl-mega-footer__drop-down-section">
               <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
               <h1 class="mdl-mega-footer__heading">Resources</h1>
               <ul class="mdl-mega-footer__link-list">
-                <li><a href="https://discord.gg/7qVbJHR">Discord</a></li>
+                <li><a href="https://discord.gg/jwgS3t6">Discord</a></li>
                 <li><a href="https://github.com/dahlia-os">Github</a></li>
                 <li><a href="https://reddit.com/r/dahliaos">Reddit</a></li>
-                <li><a href="https://www.youtube.com/channel/UCE8odY_TlkwNMWVCu1-EUtw">Youtube</a></li>
-                <li><a href="https://facebook.com/officialdahliaos">Facebook</a></li>
+              
+                <li><a href="https://www.facebook.com/pg/officialdahliaos/">Facebook</a></li>
                 <li><a href="https://instagram.com/officialdahliaos">Instagram</a></li>
-                <li><a href="https://twitter.com/dahlia_os">Twitter</a></li>
+                <li><a href="https://www.twitter.com/realdahliaos">Twitter</a></li>
               </ul>
             </div>
-
+        
             <div class="mdl-mega-footer__drop-down-section">
               <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
               <h1 class="mdl-mega-footer__heading">Technology</h1>
@@ -225,7 +557,7 @@ Developed by the dahliaOS authors. Licensed under the GNU General Public License
                 <li><a href="#">UI Modularity</a></li>
               </ul>
             </div>
-
+        
             <div class="mdl-mega-footer__drop-down-section">
               <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
               <h1 class="mdl-mega-footer__heading">Documentation</h1>
@@ -236,37 +568,32 @@ Developed by the dahliaOS authors. Licensed under the GNU General Public License
                 <li><a href="#">Supported devices</a></li>
                 <li><a href="#">Linux vs. Zircon</a></li>
               </ul>
+            </div>
+        
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
               <h1 class="mdl-mega-footer__heading">FAQ</h1>
               <ul class="mdl-mega-footer__link-list">
                 <li><a href="#">Q&A</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li><a href="https://discord.gg/jwgS3t6">Contact us</a></li>
               </ul>
             </div>
-
-            <div class="mdl-mega-footer__drop-down-section">
-              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-              <iframe src="https://discord.com/widget?id=576141822145986590&theme=dark" style="height:320px;" allowtransparency="true" frameborder="0"></iframe>
-            </div>
-
+        
           </div>
-
-          <div class="mdl-mega-footer__bottom-section" style="margin-top: -4em;">
-            <div class="mdl-logo">
-            </div>
+        
+          <div class="mdl-mega-footer__bottom-section">
+            <div class="mdl-logo"><img src="images/logo-white.png" style="margin-top:-3px;" height="18.6666666667px"></div>
             <ul class="mdl-mega-footer__link-list">
               <li><a href="#">Support</a></li>
               <li><a href="#">Source Code</a></li>
             </ul>
           </div>
-
+        
         </footer>
 
-
       </div>
-    </main>
-  </div>
-
-
-</body>
-
+    </div>
+  
+    <script src="material.min.js"></script>
+  </body>
 </html>
