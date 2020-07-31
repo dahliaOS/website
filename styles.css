@@ -256,6 +256,7 @@ margin-bottom:50vh;
   width: 100%;
   white-space: nowrap;
   overflow-x: auto;
+  display: flex;
 }
 
 .dahliaOS-screen {
