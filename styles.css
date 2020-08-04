@@ -207,6 +207,16 @@ width:150px;
 border-radius:25px;
 margin-bottom:50vh;
 }
+
+.dahlia-dlbutton{
+  margin-top: 50px;
+  color:#ffffff;
+  background: rgb(211,47,47);
+  background: linear-gradient(153deg, #ff3d00 0%, #D73A20 100%);
+  height:50px;
+  width:150px;
+  border-radius:25px;
+  }
 .dahlia-pic1{
   background: url('images/screenshots/01.png') no-repeat;
   background-size: cover;
