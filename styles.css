@@ -17,7 +17,13 @@
 body {
   margin: 0;
 }
+.flex-container{
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content:center;
 
+}
 .sulphurpoint{
   font-family: 'Sulphur Point', sans-serif;
   font-size: 34px;
@@ -206,6 +212,8 @@ height:50px;
 width:150px;
 border-radius:25px;
 margin-bottom:50vh;
+margin-left: 8px;
+margin-right:8px;
 }
 .dahlia-pic1{
   background: url('images/screenshots/01.png') no-repeat;
@@ -345,7 +353,7 @@ margin-bottom:50vh;
 
 .dahliaOS-wear-section {
   position: relative;
-  background: url('images/apps-4k.png') center 1000% no-repeat;
+  background: url('images/apps-4k.png') center no-repeat;
   background-size: cover;
   height: 800px;
 }
@@ -790,6 +798,8 @@ margin-bottom:50vh;
   width:150px;
   border-radius:25px;
   margin-bottom:50vh;
+  margin-left: 8px;
+margin-right:8px;
   }
   .dahlia-pic1{
     background: url('images/screenshots/01.png') no-repeat;
