@@ -424,7 +424,7 @@ margin-right:8px;
   }
 
 .dahliaOS-customized-section-image {
-  background: url('images/screenshots/collage.png') center 0% no-repeat;
+  background: url('images/screenshots/collageTransparent.png') center 0% no-repeat;
   background-size: cover;
   height: 400px;
 }
@@ -609,6 +609,24 @@ margin-right:8px;
     background:#1a1a1a;
   }
   
+
+  .mdl-card{
+    color: #fff;
+    background:#222;
+  }
+  .mdl-cell{
+    color: #fff;
+    background:#222;
+  }
+  .mdl-card{
+    color: #fff;
+    background:#222;
+  }
+  .mdl-card.mdl-card__title.mdl-card__title-text{
+    color: #fff;
+    
+  }
+
   .sulphurpoint{
     font-family: 'Sulphur Point', sans-serif;
     font-size: 34px;
@@ -1015,7 +1033,7 @@ color: #ffffff;
     }
   
   .dahliaOS-customized-section-image {
-    background: url('images/screenshots/collage2.jpg') center 0% no-repeat;
+    background: url('images/screenshots/collageTransparent.png') center 0% no-repeat;
     background-size: cover;
     height: 400px;
   }
@@ -1056,13 +1074,13 @@ color: #ffffff;
     }
   
     .dahliaOS-card-container .mdl-card__title-text {
-      color: black;
+      color: white;
       height: auto;
     }
   
     .dahliaOS-card-container .mdl-card__supporting-text {
       height: auto;
-      color: black;
+      color: white;
       padding-bottom: 56px;
     }
   
@@ -1190,20 +1208,5 @@ color: #ffffff;
     }
     
   }
-  .mdl-card{
-    color: #fff;
-    background:#222;
-  }
-  .mdl-cell{
-    color: #fff;
-    background:#222;
-  }
-  .mdl-card{
-    color: #fff;
-    background:#222;
-  }
-  .mdl-card.mdl-card__title.mdl-card__title-text{
-    color: #fff;
-    
-  }
+ 
 }
