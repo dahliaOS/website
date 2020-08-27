@@ -13,27 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
 
-/* Track */
-::-webkit-scrollbar-track {
-  background:transparent; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: transparent; 
-  
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-  border-radius:100px;
-}
 body {
   margin: 0;
 }
