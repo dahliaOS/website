@@ -1,0 +1,288 @@
+<!--wow why are you looking here? we are looking for web developers, wanna help? Send a us a message at contact(at)dahliaos.io!-->
+<!doctype html>
+<!--
+  dahliaOS.io
+  Copyright 2020 The dahliaOS Authors. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400&display=swap" rel="stylesheet">
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <title>Code of Conduct - Documentation | dahliaOS</title>
+    <script src="../material.min.js"></script>
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../dahlia.css">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <div class="dahliaOS-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="dahliaOS-title mdl-layout-title">
+            <a href="https://dahliaos.io"><img class="android-logo-image" src="../images/logo-color.png"></a>
+          </span>
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="dahliaOS-header-spacer mdl-layout-spacer"></div>
+          <div class="dahliaOS-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search-field">
+            </div>
+          </div>
+          <!-- Navigation -->
+          <div class="dahliaOS-navigation-container">
+            <nav class="dahliaOS-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="../index.html#features">Features</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="../index.html#screens">News</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="../index.html#downloads">Download</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://web.dahliaos.io" target="_blank">Demo</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#" target="_blank">Donate</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://github.com/dahlia-os/documentation" target="_blank">Documentation</a>
+            </nav>
+          </div>
+          <span class="dahliaOS-mobile-title mdl-layout-title">
+            <a href="https://dahliaos.io"><img class="android-logo-image" src="../images/logo-color.png"></a>
+          </span>
+          <button class="dahliaOS-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            <li href="https://github.com/dahlia-os" target="_blank" class="mdl-menu__item">Source Code</li>
+            
+            <li disabled class="mdl-menu__item">For Enterprise</li>
+            <li class="mdl-menu__item">Screenshots</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dahliaOS-drawer mdl-layout__drawer">
+        <span class="mdl-layout-title">
+          <a href="https://dahliaos.io"><img class="android-logo-image" src="../images/logo-white.png"></a>
+        </span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="../index.html#features">Features</a>
+          <a class="mdl-navigation__link" href="../index.html#screens">News</a>
+          <a class="mdl-navigation__link" href="../index.html#downloads">Download</a>
+          <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6" target="_blank">Contact</a>
+          <a class="mdl-navigation__link" href="#" target="_blank">Donate</a>
+          <a class="mdl-navigation__link" href="https://github.com/dahlia-os/documentation" target="_blank">Documentation</a>
+       
+          
+          <div class="dahliaOS-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">Resources</span>
+          <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6" target="_blank">Discord</a>
+          <a class="mdl-navigation__link" href="https://github.com/dahlia-os" target="_blank">Github</a>
+          <a class="mdl-navigation__link" href="https://reddit.com/r/dahliaos" target="_blank">Reddit</a>
+          <a class="mdl-navigation__link" href="https://t.me/dahliaos" target="_blank">Telegram</a>
+          <a class="mdl-navigation__link" href="https://www.facebook.com/pg/officialdahliaos/" target="_blank">Facebook</a>
+          <a class="mdl-navigation__link" href="https://instagram.com/officialdahliaos" target="_blank">Instagram</a>
+          <a class="mdl-navigation__link" href="https://www.twitter.com/realdahliaos" target="_blank">Twitter</a>
+          <div class="dahliaOS-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">For developers</span>
+          <a class="mdl-navigation__link" href="https://github.com/dahlia-os" target="_blank">Source Code</a>
+          <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6" target="_blank">Join Our Team</a>
+          
+        </nav>
+      </div>
+
+      <div class="dahliaOS-content mdl-layout__content">
+        <a name="top"></a>
+        
+
+        <div id="downloads" class="dahliaOS-donate-section">
+          <div class="dahliaOS-customized-section-text">
+            <div align="center" class="mdl-typography--font-light mdl-typography--display-1-color-contrast">dahliaOS Code of Conduct</div>
+            <p class="mdl-typography--font-light">
+             <p> The dahliaOS team is committed to preserving and fostering a
+              diverse, welcoming community. Below is our community code of conduct, which
+              applies to our repos and organizations, issue trackers, Discord servers,
+              blog content, and any other dahliaOS-supported communication group, as
+              well as any private communication initiated in the context of these
+              spaces. This code of conduct must be followed by everyone contributing to
+              the dahliaOS project, regardless of affiliation or position.
+            </p>
+            <p>Simply put, community discussions should be:</p>
+            <ul>
+              <li>respectful and kind;</li>
+              <li>about software;</li>
+              <li>about features and code, not the individuals involved.</li>
+             
+            </ul>
+              
+              <h4>Be respectful and constructive.</h4>
+              <p>Treat everyone with respect. Build on each other's ideas. Each of us has the
+                right to enjoy our experience and participate without fear of harassment,
+                discrimination, or condescension, whether blatant or subtle. Remember that
+                dahliaOS is a geographically distributed team and that you may not be
+                communicating with someone in their primary language. We all get frustrated
+                when working on hard problems, but we cannot allow that frustration to turn
+                into personal attacks.
+                </p>
+             
+
+                <h4>Speak up if you see or hear something.</h4>
+                <p>You are empowered to politely engage when you feel that you or others are
+                  disrespected. The person making you feel uncomfortable may not be aware of what
+                  they are doing - politely bringing their behavior to their attention is
+                  encouraged.
+                  </p>
+                  <p>If you are uncomfortable speaking up, or feel that your concerns are not being
+                    duly considered, you can email the Project Integrity team at contact+integrity(at)dahliaos.io to request involvement from a moderator. All
+                    concerns shared with community managers will be kept confidential, but you may
+                    also submit an anonymous report <a href="dahliaos.io/contact">here</a>.
+                    Please note that without a way to contact you, an anonymous report may be
+                    difficult to act on. You may also create a throwaway account to report. In
+                    cases where a public response is deemed necessary, the identities of victims
+                    and reporters will remain confidential unless those individuals instruct us
+                    otherwise.
+                    </p>
+                    <p>While all reports will be taken seriously, the Project Integrity Team may
+                      not act on complaints that they feel are not violations of this code of
+                      conduct.
+                      </p>
+
+                      <h4>We will not tolerate harassment of any kind, including but not limited to:</h4>
+                      <ul>
+                        <li>Harassing comments</li>
+                        <li>Intimidation</li>
+                        <li>Encouraging a person to engage in self-harm.</li>
+                        <li>Sustained disruption or derailing of threads, channels, lists, etc.</li>
+                        <li>Offensive or violent comments, jokes or otherwise</li>
+                        <li>Inappropriate sexual content</li>
+                        <li>Unwelcome sexual or otherwise aggressive attention</li>
+                        <li>Continued one-on-one communication after requests to cease</li>
+                        <li>Distribution or threat of distribution of people's personally identifying
+                          information, AKA “doxing”</li>
+                      </ul>
+
+                      <h4>Consequences for failing to comply with this policy</h4>
+                      <p>Consequences for failing to comply with this policy may include, at the sole
+                        discretion of the dahliaOS Project Integrity Team:</p>
+                      <ul>
+                        <li>a request for an apology;</li>
+                        <li>a private or public warning or reprimand;</li>
+                        <li>a temporary ban from the Discord server, blog, dahlia-os repository or
+                          organization, or other dahliaOS-supported communication group, including
+                          loss of committer status;</li>
+                        <li>a permanent ban from any of the above, or from all current and future
+                          dahliaOS-supported communities, including loss of
+                          committer status.</li>
+                      </ul>
+                      <p>
+                        Participants warned to stop any harassing behavior are expected to comply
+                        immediately; failure to do so will result in an escalation of consequences.
+                        </p>
+
+                        <h4>Acknowledgements</h4>
+                        <p>This Code of Conduct is based on the Chromium Project Code of Conduct.</p>              
+              
+                        <h4>License</h4>
+                        <p>This Code of Conduct is available for reuse under the Creative Commons Zero
+                          (CC0) license.</p>              
+              
+            </p>
+          </div>
+          <div class="dahliaOS-download-section-image"></div>
+        </div>
+      
+
+        <footer style="margin-top:0px;" class="mdl-mega-footer">
+          <div class="mdl-mega-footer__middle-section">
+        
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">Resources</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="https://discord.gg/jwgS3t6" target="_blank">Discord</a></li>
+                <li><a href="https://github.com/dahlia-os" target="_blank">Github</a></li>
+                <li><a href="https://reddit.com/r/dahliaos" target="_blank">Reddit</a></li>
+                <li><a href="https://t.me/dahliaos" target="_blank">Telegram</a></li>
+                <li><a href="https://www.facebook.com/pg/officialdahliaos/" target="_blank">Facebook</a></li>
+                <li><a href="https://instagram.com/officialdahliaos" target="_blank">Instagram</a></li>
+                <li><a href="https://www.twitter.com/realdahliaos" target="_blank">Twitter</a></li>
+              </ul>
+            </div>
+        
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">Technology</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">The goal</a></li>
+                <li><a href="#">Design</a></li>
+                <li><a href="#">UI Modularity</a></li>
+              </ul>
+            </div>
+        
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">Documentation</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">Compiling</a></li>
+                <li><a href="#">Installing</a></li>
+                <li><a href="#">Running</a></li>
+                <li><a href="#">Supported devices</a></li>
+                <li><a href="#">Linux vs. Zircon</a></li>
+              </ul>
+            </div>
+        
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">FAQ</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">Q&A</a></li>
+                <li><a href="https://discord.gg/jwgS3t6" target="_blank">Contact us</a></li>
+              </ul>
+            </div>
+        
+          </div>
+        
+          <div class="mdl-mega-footer__bottom-section">
+            <div class="mdl-logo"><a href="https://dahliaos.io"><img src="../images/logo-white.png" style="margin-top:-3px;" height="18.6666666667px"></a></div>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Source Code</a></li>
+            </ul>
+          </div>
+        
+        </footer>
+
+      </div>
+    </div>
+  
+   
+  </body>
+</html>
