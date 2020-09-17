@@ -15,7 +15,7 @@ If you're interested in contributing to the project, please refer to [CONTRIBUTE
 ## License
 
 <p align="left">
-  <img width="45%" src="https://imgur.com/d7F8P3h.png"
+  <img width="35%" src="https://imgur.com/d7F8P3h.png"
 </p>
 
 Copyright @ 2019-2020 The dahliaOS Authors contact@dahliaos.io
