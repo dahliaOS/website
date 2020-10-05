@@ -46,17 +46,40 @@
     line-height: 45px;
 }
 .dahliaOS-customized-section-text-blog {
-    max-width: 80vw;
+    max-width: 60vw;
     margin-left: auto;
     margin-right: auto;
     padding: 80px 16px 0 16px;
   }
-
+.dahliaos-blog-screenshot{
+  width: 60vw;
+  
+}
+.dahlia-dlnow2{
+  margin-top: 50px;
+  color:#ffffff;
+  background: rgb(211,47,47);
+  background: linear-gradient(153deg, #ff3d00 0%, #D73A20 100%);
+  height:50px;
+  width:150px;
+  border-radius:25px;
+  margin-bottom:50px;
+  margin-left: 8px;
+  margin-right:8px;
+  }
   @media (prefers-color-scheme: dark) {
 
 }
 /**** Mobile layout ****/
 @media (max-width: 900px) {
-
+  .dahliaOS-customized-section-text-blog {
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 80px 16px 0 16px;
+  }
+.dahliaos-blog-screenshot{
+  width: 80vw;
+}
 
 }
