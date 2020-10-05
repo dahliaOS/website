@@ -1,0 +1,62 @@
+/*dahliaOS.io
+  Copyright 2020 The dahliaOS Authors. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License*/
+.dahlia-blog-header{
+    background: #ff3d00;
+    background-image: url("res/def-header.png");
+    background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  position:relative;
+    height: 200px;
+    width: 100vw;
+}
+.blog-date{
+    font-family: "Roboto";
+    font-size: 15px;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    left: 25px;
+}
+.author{
+    font-family: "Roboto";
+    font-size: 15px;
+    color: white;
+    position: absolute;
+}
+.dahlia-blog-header-text{
+    font-size: 45px;
+    color: white;
+    font-family: "Sulphur Point";
+    font-weight: bold;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    line-height: 45px;
+}
+.dahliaOS-customized-section-text-blog {
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 80px 16px 0 16px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+
+}
+/**** Mobile layout ****/
+@media (max-width: 900px) {
+
+
+}

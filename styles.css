@@ -13,7 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ .blog-name{
+  color: black;
+  font-family: "Sulphur Point";
+  font-size: 25;
+}
 body {
   margin: 0;
 }
@@ -603,6 +607,11 @@ margin-right:8px;
 
 
 @media (prefers-color-scheme: dark) {
+  .blog-name{
+    color: white;
+    font-family: "Sulphur Point";
+    font-size: 25;
+}
   body {
     margin: 0;
     color:#ffffff;

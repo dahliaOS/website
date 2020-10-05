@@ -1,0 +1,258 @@
+<!--wow why are you looking here? we are looking for web developers, wanna help? Send a us a message at contact(at)dahliaos.io!-->
+<!doctype html>
+<!--
+  dahliaOS.io
+  Copyright 2020 The dahliaOS Authors. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400&display=swap" rel="stylesheet">
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <title>Announcing dahliaOS 201004! | dahliaOS</title>
+    <script src="../material.min.js"></script>
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../dahlia.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="blog.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <div class="dahliaOS-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="dahliaOS-title mdl-layout-title">
+            <a href="https://dahliaos.io"><img class="android-logo-image" src="../images/logo-color.png"></a>
+          </span>
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="dahliaOS-header-spacer mdl-layout-spacer"></div>
+          <div class="dahliaOS-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search-field">
+            </div>
+          </div>
+          <!-- Navigation -->
+          <div class="dahliaOS-navigation-container">
+            <nav class="dahliaOS-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="../index.html#features">Features</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="../index.html#screens">News</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="../index.html#downloads">Download</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://web.dahliaos.io" target="_blank">Demo</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#" target="_blank">Donate</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://github.com/dahlia-os/documentation" target="_blank">Documentation</a>
+            </nav>
+          </div>
+          <span class="dahliaOS-mobile-title mdl-layout-title">
+            <a href="https://dahliaos.io"><img class="android-logo-image" src="../images/logo-color.png"></a>
+            
+          </span>
+          <button class="dahliaOS-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            <li href="https://github.com/dahlia-os" target="_blank" class="mdl-menu__item">Source Code</li>
+            
+            <li disabled class="mdl-menu__item">For Enterprise</li>
+            <li class="mdl-menu__item">Screenshots</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dahliaOS-drawer mdl-layout__drawer">
+        <span class="mdl-layout-title">
+          <a href="https://dahliaos.io"><img class="android-logo-image" src="../images/logo-white.png"></a>
+        </span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="../index.html#features">Features</a>
+          <a class="mdl-navigation__link" href="../index.html#screens">News</a>
+          <a class="mdl-navigation__link" href="../index.html#downloads">Download</a>
+          <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6" target="_blank">Contact</a>
+          <a class="mdl-navigation__link" href="#" target="_blank">Donate</a>
+          <a class="mdl-navigation__link" href="https://github.com/dahlia-os/documentation" target="_blank">Documentation</a>
+       
+          
+          <div class="dahliaOS-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">Resources</span>
+          <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6" target="_blank">Discord</a>
+          <a class="mdl-navigation__link" href="https://github.com/dahlia-os" target="_blank">Github</a>
+          <a class="mdl-navigation__link" href="https://reddit.com/r/dahliaos" target="_blank">Reddit</a>
+          <a class="mdl-navigation__link" href="https://t.me/dahliaos" target="_blank">Telegram</a>
+          <a class="mdl-navigation__link" href="https://www.facebook.com/pg/officialdahliaos/" target="_blank">Facebook</a>
+          <a class="mdl-navigation__link" href="https://instagram.com/officialdahliaos" target="_blank">Instagram</a>
+          <a class="mdl-navigation__link" href="https://www.twitter.com/realdahliaos" target="_blank">Twitter</a>
+          <div class="dahliaOS-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">For developers</span>
+          <a class="mdl-navigation__link" href="https://github.com/dahlia-os" target="_blank">Source Code</a>
+          <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6" target="_blank">Join Our Team</a>
+          
+        </nav>
+      </div>
+
+      <div class="dahliaOS-content mdl-layout__content">
+        <a name="top"></a>
+        
+
+        <div id="downloads" class="dahliaOS-donate-section">
+          <div class="dahlia-blog-header"><p class="dahlia-blog-header-text">Announcing dahliaOS 201004!</p>
+            
+            <p class="blog-date">Noah Cain - October 4, 2020</p>
+          
+          </div>
+          <div class="dahliaOS-customized-section-text-blog">
+           
+            <p class="mdl-typography--font-light">
+              <img src="res/1/image2.png" class="dahliaos-blog-screenshot" alt="dahliaOS desktop" style="width: 80vw;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); margin-top: 25px; margin-bottom: 25px; ">
+             </p>
+             &nbsp;&nbsp;&nbsp;&nbsp;That&#39;s right, after months of work, 201004 is finally here! The team has worked hard adding in a ton of new features and functionality! This time around, we&#39;ve added in a whole new way to multitask, improved settings, added a new version of the system for users with EFI-based computers, and laid some of the groundwork for future networking! &nbsp;However, keep in mind that this is still in development, and is not yet complete. Here&rsquo;s what&rsquo;s new:
+            </p>
+           <h4>Take control of the system (in style!) with Settings</h4>
+                      <p>From the beginning, giving users freedom over every aspect of the system has been a major goal for us. With the new and improved Settings app, every component of the system can be modified and tweaked to your liking. With the new Settings app, everything from developer tools to customization is at your fingertips.</p>
+              <h5>Customization</h5>
+              <img src="res/1/image3.png" class="dahliaos-blog-screenshot" alt="dahliaOS customization settings" style="width: 80vw;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); margin-top: 25px; margin-bottom: 25px; ">
+              <p>With the new Customization page in Settings, you can choose through various options to tweak the system to your liking. Make dahliaOS your own with a custom layout, theme color, and more! 
+              </p>
+    <h5>Dark Mode</h5>
+    <img src="res/1/image1.png" class="dahliaos-blog-screenshot" alt="dahliaOS dark mode" style="width: 80vw;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); margin-top: 25px; margin-bottom: 25px; ">
+    <p>Are you tired of harsh light themes? We certainly are, that’s why we have gone ahead and added in a new Dark Mode! Perfect for night, indoors, or wherever you need it! 
+    </p>
+    <h5>Internationalization</h5>
+    <img src="res/1/image5.png" class="dahliaos-blog-screenshot" alt="dahliaOS dark mode" style="width: 80vw;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); margin-top: 25px; margin-bottom: 25px; ">
+    <p>With the new Languages setting, dahliaOS now adapts to you. In the coming months, we hope to support as many languages as possible! Know a language that we are missing? Anyone can help us translate the system at <a href="https://translate.dahliaos.io">translate.dahliaos.io</a>!
+
+    </p>
+    <h4>A new way to multitask</h4>
+    <img src="res/1/image7.png" class="dahliaos-blog-screenshot" alt="dahliaOS dark mode" style="width: 80vw;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); margin-top: 25px; margin-bottom: 25px; ">
+    <p>We have now added simple window snapping, so you can get things done more efficiently! Simply drag the window using the directional arrows, and they will snap into place, side by side, up and down, anywhere!
+    </p>
+
+    <h4>A new and improved base</h4>
+    <p>Under the hood, we have worked tirelessly to get the system running as efficiently as possible. In dahliaOS 201004, we have significantly decreased memory usage (almost 100MB less than the previous build!), cleaned up unnecessary kernel drivers, and added in filesystem persistence! (EFI builds only)</p>
+    <h5>Improved Performance</h5>
+    <img src="res/1/image6.png" class="dahliaos-blog-screenshot" alt="dahliaOS dark mode" style="width: 80vw;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); margin-top: 25px; margin-bottom: 25px; ">
+    <p>dahliaOS 201004 is a perfect system for low spec devices, like low-spec tablets and ultralight laptops! By decreasing the memory usage, now you have plenty of memory for all your apps, without crashes. 
+    </p>
+
+    <h5>Deep into the system...</h5>
+    <img src="res/1/image4.png" class="dahliaos-blog-screenshot" alt="dahliaOS dark mode" style="width: 80vw;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); margin-top: 25px; margin-bottom: 25px; ">
+    <p>In 201004, we have added in some new kernel drivers and dropped some others. In the “hardware only” EFI image, we have removed unnecessary drivers that allow it to integrate with the host within a virtual environment, and added in new drivers for common networking devices.
+
+    </p>
+
+<h4>In Conclusion</h4>
+<p>We hope you enjoy this release as much we did making it! Keep in mind that not everything is finished yet, but thanks to our team and community contributors, we are getting closer and closer! You can download and try it today from the links below! 
+</p>
+
+
+
+            </p>
+            <div align=center>
+              <a href="https://web.dahliaos.io"><button class="dahlia-dlnow mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                Try it online
+              </button></a>
+              <a href="https://dahliaos.io/#downloads"><button class="dahlia-dlnow mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                Download now
+              </button></a></div>
+          </div>
+          <div class="dahliaOS-download-section-image"></div>
+        </div>
+      
+
+        <footer style="margin-top:0px;" class="mdl-mega-footer">
+          <div class="mdl-mega-footer__middle-section">
+        
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">Resources</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="https://discord.gg/jwgS3t6" target="_blank">Discord</a></li>
+                <li><a href="https://github.com/dahlia-os" target="_blank">Github</a></li>
+                <li><a href="https://reddit.com/r/dahliaos" target="_blank">Reddit</a></li>
+                <li><a href="https://t.me/dahliaos" target="_blank">Telegram</a></li>
+                <li><a href="https://www.facebook.com/pg/officialdahliaos/" target="_blank">Facebook</a></li>
+                <li><a href="https://instagram.com/officialdahliaos" target="_blank">Instagram</a></li>
+                <li><a href="https://www.twitter.com/realdahliaos" target="_blank">Twitter</a></li>
+              </ul>
+            </div>
+        
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">Technology</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">The goal</a></li>
+                <li><a href="#">Design</a></li>
+                <li><a href="#">UI Modularity</a></li>
+              </ul>
+            </div>
+        
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">Documentation</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">Compiling</a></li>
+                <li><a href="#">Installing</a></li>
+                <li><a href="#">Running</a></li>
+                <li><a href="#">Supported devices</a></li>
+                <li><a href="#">Linux vs. Zircon</a></li>
+              </ul>
+            </div>
+        
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">FAQ</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">Q&A</a></li>
+                <li><a href="https://discord.gg/jwgS3t6" target="_blank">Contact us</a></li>
+              </ul>
+            </div>
+        
+          </div>
+        
+          <div class="mdl-mega-footer__bottom-section">
+            <div class="mdl-logo"><a href="https://dahliaos.io"><img src="../images/logo-white.png" style="margin-top:-3px;" height="18.6666666667px"></a></div>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Source Code</a></li>
+            </ul>
+          </div>
+        
+        </footer>
+
+      </div>
+    </div>
+  
+   
+  </body>
+</html>
