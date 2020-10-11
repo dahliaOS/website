@@ -1073,9 +1073,10 @@ color: #ffffff;
       background: transparent;
     }
   
-      .dahliaOS-card-container .mdl-card__media img {
-        width: 100%;
-      }
+    .dahliaOS-card-container .mdl-card__media img {
+      width: 100%;
+      max-height: 115px;
+    }
   
     .dahliaOS-card-container .mdl-card__title {
       background: transparent;
