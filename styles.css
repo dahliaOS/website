@@ -459,9 +459,18 @@ margin-right:8px;
     background: transparent;
   }
 
+  .dahliaOS-card-container .mdl-card__media img {
+    width: 100%;
+    min-height: 150px;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 839px) and (min-width:480px) {
     .dahliaOS-card-container .mdl-card__media img {
-      width: 100%;
+      min-height: 173px;
+      max-height: 173px;
     }
+  }
 
   .dahliaOS-card-container .mdl-card__title {
     background: transparent;
