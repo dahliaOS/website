@@ -1104,19 +1104,42 @@ margin-right:8px;
       font-size: 16px;
     }
 
-    .dahliaOS-support-search {
+    #support {
+      width: 100%;
+      padding: 0 20px;
+      height: auto;
+    }
+
+    .dahliaOS-support-container {
+      padding-top: 80px;
+      padding-left: 40px;
+      padding-right: 70px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .dahliaOS-support-container .mdl-typography--display-1-color-contrast {
+      margin-bottom: 4rem;
+    }
+
+    .dahliaOS-support {
       position: relative;
+      top: 50%;
+      transform: translateY(-50%);
       max-width: 600px;
       margin: 0 auto;
     }
 
+    .dahliaOS-support-search {
+      position: relative;
+    }
+
     .dahliaOS-support-box {
       background-color: rgba(158, 158, 158, 0.2);
-      padding: 20px 20px 20px 50px;
+      padding: 20px 20px 20px 40px;
       border-radius: 10px;
-      margin: 0 auto;
-      width: 80%;
-      display: inline-block;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     .dahliaOS-support-icon {
@@ -1127,17 +1150,22 @@ margin-right:8px;
       width: 24px;
       height: 24px;
       float: left;
-      left: 30px;
+      left: 13px;
     }
 
     .dahliaOS-support-buttons {
       display: inline-block;
     }
 
+    .dahliaOS-support-buttons .dahlia-dlnow {
+      margin-top: 0;
+      margin-bottom: 4rem;
+    }
+
     .dahliaOS-article-section {
       margin-left: auto;
       margin-right: auto;
-      padding: 20px 16px 0 16px;
+      padding: 20px 36px 0 16px;
     }
 
     .dahliaOS-article-list {
@@ -1145,7 +1173,7 @@ margin-right:8px;
     }
 
     .dahliaOS-article-item {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.54);
+      /* border-bottom: 1px solid rgba(255, 255, 255, 0.54); */
       overflow: auto;
       padding: 20px 0;
       text-align: left;
@@ -1286,6 +1314,14 @@ margin-right:8px;
       margin: 5px 0;
       display: inline-block;
       width: 100%;
+    }
+
+    .dahliaOS-article-list {
+      padding: 20px 24px 0 24px;
+    }
+
+    .dahliasOS-support-icon {
+      left: 15px;
     }
   }
  
