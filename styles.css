@@ -817,16 +817,16 @@ margin-right:8px;
   }
   
   .dahlia-dlnow{
-  margin-top: 50px;
-  color:#ffffff;
-  background: rgb(211,47,47);
-  background: linear-gradient(153deg, #ff3d00 0%, #D73A20 100%);
-  height:50px;
-  width:150px;
-  border-radius:25px;
-  margin-bottom:50vh;
-  margin-left: 8px;
-margin-right:8px;
+    margin-top: 50px;
+    color:#ffffff;
+    background: rgb(211,47,47);
+    background: linear-gradient(153deg, #ff3d00 0%, #D73A20 100%);
+    height:50px;
+    width:150px;
+    border-radius:25px;
+    margin-bottom:50vh;
+    margin-left: 8px;
+    margin-right:8px;
   }
   .dahlia-pic1{
     background: url('images/screenshots/01.png') no-repeat;
@@ -930,7 +930,7 @@ margin-right:8px;
     background: #222222;
   }
   .mdl-card__supporting-text{
-color: #ffffff;
+    color: #ffffff;
   }
   
     .dahliaOS-tablet .dahliaOS-screen-image {
@@ -1073,9 +1073,10 @@ color: #ffffff;
       background: transparent;
     }
   
-      .dahliaOS-card-container .mdl-card__media img {
-        width: 100%;
-      }
+    .dahliaOS-card-container .mdl-card__media img {
+      width: 100%;
+      max-height: 115px;
+    }
   
     .dahliaOS-card-container .mdl-card__title {
       background: transparent;
@@ -1102,11 +1103,104 @@ color: #ffffff;
       border-top: none;
       font-size: 16px;
     }
+
+    #support {
+      width: 100%;
+      padding: 0 20px;
+      height: auto;
+    }
+
+    .dahliaOS-support-container {
+      padding-top: 80px;
+      padding-left: 40px;
+      padding-right: 70px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .dahliaOS-support-container .mdl-typography--display-1-color-contrast {
+      margin-bottom: 4rem;
+    }
+
+    .dahliaOS-support {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .dahliaOS-support-search {
+      position: relative;
+    }
+
+    .dahliaOS-support-box {
+      background-color: rgba(158, 158, 158, 0.2);
+      padding: 20px 20px 20px 40px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .dahliaOS-support-icon {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      float: left;
+      left: 13px;
+    }
+
+    .dahliaOS-support-buttons {
+      display: inline-block;
+    }
+
+    .dahliaOS-support-buttons .dahlia-dlnow {
+      margin-top: 0;
+      margin-bottom: 4rem;
+    }
+
+    .dahliaOS-article-section {
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px 36px 0 16px;
+    }
+
+    .dahliaOS-article-list {
+      padding: 40px 48px 0 48px;
+    }
+
+    .dahliaOS-article-item {
+      /* border-bottom: 1px solid rgba(255, 255, 255, 0.54); */
+      overflow: auto;
+      padding: 20px 0;
+      text-align: left;
+      width: 100%;
+    }
+
+    .dahliaOS-article-title, .dahliaOS-article-desc {
+      width: 70%;
+      margin: 0;
+    }
+
+    .dahliaOS-article-title {
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .dahliaOS-article-desc {
+      font-size: 14px;
+      font-weight: 300;
+      text-decoration: none;
+    }
   
-  .dahliaOS-footer {
-    background-color: #fafafa;
-    position: relative;
-  }
+    .dahliaOS-footer {
+      background-color: #fafafa;
+      position: relative;
+    }
   
     .dahliaOS-footer a:hover {
       color: #ff3d00;
@@ -1214,8 +1308,21 @@ color: #ffffff;
   
     .dahliaOS-footer .mdl-mega-footer--bottom-section {
       display: none;
+    }    
+
+    .dahliaOS-article-title, .dahliaOS-article-desc {
+      margin: 5px 0;
+      display: inline-block;
+      width: 100%;
     }
-    
+
+    .dahliaOS-article-list {
+      padding: 20px 24px 0 24px;
+    }
+
+    .dahliasOS-support-icon {
+      left: 15px;
+    }
   }
  
 }
