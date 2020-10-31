@@ -357,7 +357,7 @@ margin-right:8px;
 
 .dahliaOS-wear-section {
   position: relative;
-  background: url('images/apps-4k.png') center no-repeat;
+  background: url('images/apps-4k.webp') center no-repeat;
   background-size: cover;
   height: 800px;
 }
@@ -428,7 +428,7 @@ margin-right:8px;
   }
 
 .dahliaOS-customized-section-image {
-  background: url('images/screenshots/collageTransparent.png') center 0% no-repeat;
+  background: url('images/screenshots/collageTransparent.webp') center 0% no-repeat;
   background-size: cover;
   height: 400px;
 }
@@ -971,7 +971,7 @@ margin-right:8px;
   
   .dahliaOS-wear-section {
     position: relative;
-    background: url('images/apps-4k.png') center 1000% no-repeat;
+    background: url('images/apps-4k.webp') center 1000% no-repeat;
     background-size: cover;
     height: 800px;
   }
@@ -1042,7 +1042,7 @@ margin-right:8px;
     }
   
   .dahliaOS-customized-section-image {
-    background: url('images/screenshots/collageTransparent.png') center 0% no-repeat;
+    background: url('images/screenshots/collageTransparent.webp') center 0% no-repeat;
     background-size: cover;
     height: 400px;
   }
