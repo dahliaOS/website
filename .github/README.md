@@ -16,7 +16,7 @@
 
 ## Contribute
 
-If you're interested in contributing to the project, please refer to [CONTRIBUTE.md](../CONTRIBUTE.md)
+If you're interested in contributing to the project, please refer to [CONTRIBUTING.md](../CONTRIBUTING.md)
 
 ## License
 
