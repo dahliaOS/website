@@ -5,17 +5,18 @@
 <a href="https://paypal.me/officialdahliaos">Donate</a> ●
 <a href="https://github.com/dahlia-os/documentation">Documentation</a>
 
-# https://dahliaos.io
+# dahliaOS Website
 
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fdahliaos.io)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dahlia-os/website/FTP%20Push?color=brightgreen)
 ![GitHub](https://img.shields.io/github/license/dahlia-os/pangolin-desktop?color=brightgreen)
 
 - **Official, one and only website for the dahliaOS project**
+- Find it by clicking [here!](https://dahliaos.io)
 
 ## Contribute
 
-If you're interested in contributing to the project, please refer to [CONTRIBUTE.md](./CONTRIBUTE.md)
+If you're interested in contributing to the project, please refer to [CONTRIBUTE.md](../CONTRIBUTE.md)
 
 ## License
 
