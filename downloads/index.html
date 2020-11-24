@@ -256,13 +256,14 @@ limitations under the License.
         fetch('https://api.github.com/repos/dahlia-os/releases/releases')
             .then(res => res.json())
             .then(data => {
-                // The latest update
+                // Put data for the latest update in
                 document.getElementById('latestDownload').href = data[0].zipball_url
                 document.getElementById('tooltipLatestVersion').innerHTML = `Version: ${data[0].tag_name}`;
-                // Do a for loop here because the for each wouldnt work for a cap of 11, and start at 1, because 0 is the latest and already was displayed
+                // Doing a for loop here because the for each wouldnt work for a cap of 11, and start at 1, because 0 is the latest and already was displayed
                 for (var i = 1; i <= 11; i++) {
                     const ul = document.getElementById('legacyUpdates')
                     const li = document.createElement('li');
+                    // Template/model for legacy update info
                     const updateInfo = `<details>
                             <summary class="sulphurpoint mdl-typography--font-thin">${data[i].tag_name}</summary>
                             <div class="mdl-card__supporting-text mdl-card--expand">Download version ${data[i].tag_name} of <br>
