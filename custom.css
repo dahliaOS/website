@@ -43,11 +43,12 @@ details {
 }
 
 details[open] {
-    height: 165px;
+    height: 153px;
 }
 
 summary {
-    font-size:21px!important;
+    padding-top:8px;
+    font-size:18px!important;
     user-select: none;
     cursor: pointer;
 }
