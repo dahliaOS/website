@@ -37,6 +37,7 @@ limitations under the License.
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../dahlia.css">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../custom.css">
     <style>
         #view-source {
             position: fixed;
@@ -139,7 +140,48 @@ limitations under the License.
             <a name="top"></a>
 
 
-            <div id="downloads" class="dahliaOS-donate-section">
+            <div align="center" id="downloads" class="dahliaOS-donate-section">
+                <br><br><br>
+                <div
+                    class="mdl-card__title-text sulphurpoint mdl-typography--display-2 mdl-typography--font-thin updateTitles">
+                    Downloads</div>
+                <br><br>
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text sulphurpoint mdl-typography--font-light">
+                            Latest</h2>
+                    </div>
+                    <div align="left" class="mdl-card__supporting-text mdl-card--expand">Download the latest build of
+                        <br> dahliaOS
+                    </div>
+                    <div align="left" class="mdl-card__actions mdl-card--border">
+                        <a id="latestDownload" href="https://github.com/dahlia-os/releases/archive/201004-x86_64.zip"
+                            class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            Download
+                        </a>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <div class="mdl-tooltip" data-mdl-for="tt1" id="tooltipLatestVersion">
+                            Version: THE_LATEST_VERSION
+                        </div>
+                        <button id="tt1" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <div class="icon material-icons">info</div>
+                        </button>
+                    </div>
+                </div>
+                <br><br><br>
+                <h2
+                    class="mdl-card__title-text sulphurpoint mdl-typography--display-2 mdl-typography--font-thin updateTitles">
+                    Legacy updates</h2>
+                <br><br>
+                <div id="loader" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+                <div class="errors"></div>
+                <ul class="legacyUpdates" id="legacyUpdates"></ul>
+                <a class="mdl-typography--font-regular mdl-typography--text-uppercase dahliaOS-alt-link"
+                    href="https://github.com/dahlia-os/releases/tags" target="_blank">
+                    Looking for an older update?&nbsp;<i class="material-icons">chevron_right</i>
+                </a>
+                <br><br><br><br>
                 <div class="dahliaOS-download-section-image"></div>
             </div>
 
@@ -210,7 +252,35 @@ limitations under the License.
         </div>
     </div>
 
-
+    <script>
+        fetch('https://api.github.com/repos/dahlia-os/releases/releases')
+            .then(res => res.json())
+            .then(data => {
+                // The latest update
+                document.getElementById('latestDownload').href = data[0].zipball_url
+                document.getElementById('tooltipLatestVersion').innerHTML = `Version: ${data[0].tag_name}`;
+                // Do a for loop here because the for each wouldnt work for a cap of 11, and start at 1, because 0 is the latest and already was displayed
+                for (var i = 1; i <= 11; i++) {
+                    const ul = document.getElementById('legacyUpdates')
+                    const li = document.createElement('li');
+                    const updateInfo = `<details>
+                            <summary class="sulphurpoint mdl-typography--font-thin">${data[i].tag_name}</summary>
+                            <div class="mdl-card__supporting-text mdl-card--expand">Download version ${data[i].tag_name} of <br>
+                                dahliaOS</div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <a href="${data[i].zipball_url}"
+                                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                    Download
+                                </a>
+                            </div>
+                        </details>`
+                    li.innerHTML = updateInfo
+                    ul.appendChild(li);
+                }
+            })
+            .then(document.getElementById('loader').style.display = 'none')
+            .catch(err => document.querySelector('.errors').innerHTML = '<h4 class="error">An error occured while fetching the downloads!</h4>')
+    </script>
 </body>
 
 </html>
