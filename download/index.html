@@ -28,8 +28,15 @@ limitations under the License.
     <meta name="description"
         content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <meta name="keywords"
+        content="dahlia, software, flutter, fuchsia, linux, dahliaOS, computer, operating system, os, system, kernel, dart, open source, material, design, zircon, go, rust">
     <title>Downloads | dahliaOS</title>
+    <meta property="og:title" content="dahliaOS Downloads">
+    <meta property="og:site_name" content="dahliaOS">
+    <meta property="og:description" content="Download dahliaOS!">
+    <meta property="og:image" content="https://imgur.com/PNGGkDP.png">
+    <meta property="og:url" content="https://dahliaos.io/download">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
     <script src="../material.min.js"></script>
     <!-- Page styles -->
     <link rel="stylesheet"
@@ -151,14 +158,20 @@ limitations under the License.
                         <h2 class="mdl-card__title-text sulphurpoint mdl-typography--font-light">
                             Latest</h2>
                     </div>
-                    <div align="left" class="Roboto mdl-card__supporting-text mdl-card--expand">Download the latest
+                    <h6 align="left" class="Roboto mdl-card__supporting-text mdl-card--expand details">Whats new:</h6>
+                    <div align="left" class="Roboto mdl-card__supporting-text mdl-card--expand latestVersionDetails">
+                        Download the latest
                         build of
                         <br> dahliaOS
                     </div>
-                    <div align="left" class="mdl-card__actions mdl-card--border">
-                        <a id="latestDownload" href="https://github.com/dahlia-os/releases/archive/201004-x86_64.zip"
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a align="left" id="latestDownload" href="https://github.com/dahlia-os/releases/"
                             class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                             Download
+                        </a>
+                        <a align="right" id="latestLearnMore" href="https://github.com/dahlia-os/releases/releases/"
+                            target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            Read more
                         </a>
                     </div>
                     <div class="mdl-card__menu">
@@ -173,12 +186,12 @@ limitations under the License.
                 <br><br><br>
                 <h2
                     class="mdl-card__title-text sulphurpoint mdl-typography--display-2 mdl-typography--font-thin updateTitles">
-                    Legacy updates</h2>
+                    Older updates</h2>
                 <br><br>
                 <div id="loader" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
                 <div class="errors"></div>
                 <ul class="legacyUpdates" id="legacyUpdates"></ul>
-                <a class="mdl-typography--font-regular mdl-typography--text-uppercase dahliaOS-alt-link"
+                <a class="mdl-typography--font-regular dahliaOS-alt-link"
                     href="https://github.com/dahlia-os/releases/tags" target="_blank">
                     Looking for an older update?&nbsp;<i class="material-icons">chevron_right</i>
                 </a>
@@ -260,6 +273,8 @@ limitations under the License.
                 // Put data for the latest update in
                 document.getElementById('latestDownload').href = data[0].zipball_url
                 document.getElementById('tooltipLatestVersion').innerHTML = `Version: ${data[0].tag_name}`;
+                document.querySelector('.latestVersionDetails').innerHTML = data[0].body;
+                document.getElementById('latestLearnMore').href = data[0].html_url;
                 // Doing a for loop here because the for each wouldnt work for a cap of 11, and start at 1, because 0 is the latest and already was displayed
                 for (var i = 1; i <= 11; i++) {
                     const ul = document.getElementById('legacyUpdates')
@@ -267,12 +282,16 @@ limitations under the License.
                     // Template/model for legacy update info
                     const updateInfo = `<details>
                             <summary class="Roboto mdl-typography--font-thin">${data[i].tag_name}</summary>
-                            <div class="Roboto mdl-card__supporting-text mdl-card--expand">Download version ${data[i].tag_name} of <br>
-                                dahliaOS</div>
-                            <div class="mdl-card__actions mdl-card--border">
+                            <h6 align="left" class="Roboto mdl-card__supporting-text mdl-card--expand detailsOld">Whats new:</h6>
+                            <div class="Roboto mdl-card__supporting-text mdl-card--expand versionDetails">${data[i].body}</div>
+                            <div align="center" class="mdl-card__actions mdl-card--border">
                                 <a href="${data[i].zipball_url}"
                                     class="Roboto mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     Download
+                                </a>
+                                <a href="${data[i].html_url}" target="_blank"
+                                    class="Roboto mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                    Read more
                                 </a>
                             </div>
                         </details>`
@@ -281,7 +300,10 @@ limitations under the License.
                 }
             })
             .then(document.getElementById('loader').style.display = 'none')
-            .catch(err => document.querySelector('.errors').innerHTML = '<h4 class="error">An error occured while fetching the downloads!</h4>')
+            .catch(err => {
+                console.log(err);
+                document.querySelector('.errors').innerHTML = '<h4 class="error">An error occured while fetching the downloads!</h4>'
+            })
     </script>
 </body>
 
