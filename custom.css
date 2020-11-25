@@ -94,3 +94,9 @@ summary:focus {
 .latestVersionDetails {
     -webkit-line-clamp: 6; /* number of lines to show */
 }
+
+/* Media query for light modeee */
+
+@media (prefers-color-scheme: light) {
+    details { background:#ffffff }
+}
