@@ -12,7 +12,7 @@ RewriteCond %{REQUEST_URI} !\/[^\/]*\.[^\/]+$
 RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI}/ [L,R=301]
 
 # Custom error pages.
-ErrorDocument 400 /404.html
+ErrorDocument 404 /404.html
 
 # Prevent viewing of htaccess file.
 <Files .htaccess>
