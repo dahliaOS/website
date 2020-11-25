@@ -604,7 +604,12 @@ margin-right:8px;
 }
 
 
-
+@media (prefers-color-scheme: light) {
+  .android-logo-image {
+    height: 38px;
+    content: url('./images/logo-color-lightTheme.svg');
+  }
+}
 
 @media (prefers-color-scheme: dark) {
   .blog-name{
@@ -700,7 +705,6 @@ margin-right:8px;
   
   .android-logo-image {
     height: 28px;
-    filter: brightness(0) invert(1);
   }
   
   
