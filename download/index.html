@@ -293,24 +293,22 @@ limitations under the License.
                     })
                 }
                 // Doing a for loop here because the for each wouldnt work for a cap of 11, and start at 1, because 0 is the latest and already was displayed
-                for (var i = 1; i <= 11; i++) {
+                for (var i = 0; i <= 11; i++) {
                     const ul = document.getElementById('legacyUpdates')
                     const li = document.createElement('li');
                     // Model template
-                    var updateInfo = `<details>
+                    var updateInfo = `<details class="smallDetails">
                             <summary class="Roboto mdl-typography--font-thin">${data[i].tag_name}</summary>
                             <h6 align="left" class="Roboto mdl-card__supporting-text mdl-card--expand detailsOld">Whats new:</h6>
                             <div class="Roboto mdl-card__supporting-text mdl-card--expand versionDetails">${data[i].body}</div>
-                            <div align="right">
-                                <a id="latestLearnMore" href="https://github.com/dahlia-os/releases/releases/" target="_blank"
-                                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                    Read more
-                                </a>
-                            </div>
                             <div align="left" class="mdl-card__actions mdl-card--border">
                                 <a href="${data[i].zipball_url}"
                                     class="Roboto mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     Download
+                                </a>
+                                <a id="latestLearnMore" href="https://github.com/dahlia-os/releases/releases/" target="_blank"
+                                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                    Read more
                                 </a>
                             </div>
                         </details>`
