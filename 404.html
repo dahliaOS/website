@@ -19,20 +19,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400&display=swap" rel="stylesheet">
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="icon" type="image/png" href="../images/favicon.png">
-    <title>Page not found | dahliaOS</title>
-    <script src="../material.min.js"></script>
-    <!-- Page styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../dahlia.css">
-    <link rel="stylesheet" href="../styles.css">
-    <style>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description"
+    content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <title>Page not found | dahliaOS</title>
+  <script src="../material.min.js"></script>
+  <!-- Page styles -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="../dahlia.css">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
     #view-source {
       position: fixed;
       display: block;
@@ -42,168 +45,181 @@
       margin-bottom: 40px;
       z-index: 900;
     }
-    </style>
-  </head>
-  <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  </style>
+</head>
 
-      <div class="dahliaOS-header mdl-layout__header mdl-layout__header--waterfall">
-        <div class="mdl-layout__header-row">
-          <span class="dahliaOS-title mdl-layout-title">
-            <img class="android-logo-image" src="../images/logo-color.png">
-          </span>
-          <!-- Add spacer, to align navigation to the right in desktop -->
-          <div class="dahliaOS-header-spacer mdl-layout-spacer"></div>
-          <div class="dahliaOS-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
-              <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" id="search-field">
-            </div>
-          </div>
-          <!-- Navigation -->
-          <div class="dahliaOS-navigation-container">
-            <nav class="dahliaOS-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.html#features">Features</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.html#screens">News</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/download">Download</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://web.dahliaos.io" target="_blank">Demo</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://github.com/orgs/dahlia-os/people" target="_blank">Developers</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://github.com/dahlia-os/documentation" target="_blank">Documentation</a>
-            </nav>
-          </div>
-          <span class="dahliaOS-mobile-title mdl-layout-title">
-            <img class="android-logo-image" src="../images/logo-color.svg">
-          </span>
-          <button class="dahliaOS-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
-            <i class="material-icons">more_vert</i>
-          </button>
-          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-            <li href="https://github.com/dahlia-os" class="mdl-menu__item">Source Code</li>
-            
-            <li disabled class="mdl-menu__item">For Enterprise</li>
-            <li class="mdl-menu__item">Screenshots</li>
-          </ul>
-        </div>
-      </div>
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-      <div class="dahliaOS-drawer mdl-layout__drawer">
-        <span class="mdl-layout-title">
-          <img class="android-logo-image" src="../images/logo-white.png">
+    <div class="dahliaOS-header mdl-layout__header mdl-layout__header--waterfall">
+      <div class="mdl-layout__header-row">
+        <span class="dahliaOS-title mdl-layout-title">
+          <img class="android-logo-image" src="../images/logo-color.svg">
         </span>
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="index.html#features">Features</a>
-          <a class="mdl-navigation__link" href="index.html#screens">News</a>
-          <a class="mdl-navigation__link" href="/download">Download</a>
-          <a class="mdl-navigation__link" href="mailto:contact@dahliaos.io" target="_blank">Contact</a>
-          <a class="mdl-navigation__link" href="https://github.com/orgs/dahlia-os/people" target="_blank">Developers</a>
-          <a class="mdl-navigation__link" href="https://github.com/dahlia-os/documentation" target="_blank">Documentation</a>
-       
-          
-          <div class="dahliaOS-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Find us on</span>
-          <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6" target="_blank">Discord</a>
-          <a class="mdl-navigation__link" href="https://github.com/dahlia-os" target="_blank">Github</a>
-          <a class="mdl-navigation__link" href="https://reddit.com/r/dahliaos" target="_blank">Reddit</a>
-          <a class="mdl-navigation__link" href="https://t.me/dahliaos" target="_blank">Telegram</a>
-          <a class="mdl-navigation__link" href="https://www.facebook.com/pg/officialdahliaos/" target="_blank">Facebook</a>
-          <a class="mdl-navigation__link" href="https://instagram.com/officialdahliaos" target="_blank">Instagram</a>
-          <a class="mdl-navigation__link" href="https://www.twitter.com/realdahliaos" target="_blank">Twitter</a>
-          <div class="dahliaOS-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">For developers</span>
-          <a class="mdl-navigation__link" href="https://github.com/dahlia-os" target="_blank">Source Code</a>
-          <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6" target="_blank">Join Our Team</a>
-          
-        </nav>
-      </div>
-
-      <div class="dahliaOS-content mdl-layout__content">
-        <a name="top"></a>
-        
-
-        <div id="downloads" class="dahliaOS-customized-section">
-          <div class="dahliaOS-customized-section-text">
-            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">There doesn't seem to be anything here.</div>
-            <p class="mdl-typography--font-light">
-             Somehow, you have stumbled upon a missing page or a broken link. Check the URL and try reloading the page, or use the button below to return home.
-              <pre>
-404 - Page not found
-              </pre>
-              <br>
-              <a href="https://dahliaos.io" class="dahliaOS-link mdl-typography--font-light"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-                Return Home
-              </button></a>
-            </p>
+        <!-- Add spacer, to align navigation to the right in desktop -->
+        <div class="dahliaOS-header-spacer mdl-layout-spacer"></div>
+        <div
+          class="dahliaOS-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+            <i class="material-icons">search</i>
+          </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" id="search-field">
           </div>
-          <div class="dahliaOS-download-section-image"></div>
         </div>
-      
+        <!-- Navigation -->
+        <div class="dahliaOS-navigation-container">
+          <nav class="dahliaOS-navigation mdl-navigation">
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.html#features">Features</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.html#screens">News</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/download">Download</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://web.dahliaos.io"
+              target="_blank">Demo</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase"
+              href="https://github.com/orgs/dahlia-os/people" target="_blank">Developers</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase"
+              href="https://github.com/dahlia-os/documentation" target="_blank">Documentation</a>
+          </nav>
+        </div>
+        <span class="dahliaOS-mobile-title mdl-layout-title">
+          <img class="android-logo-image" src="../images/logo-color.svg">
+        </span>
+        <button class="dahliaOS-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect"
+          id="more-button">
+          <i class="material-icons">more_vert</i>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+          <li href="https://github.com/dahlia-os" class="mdl-menu__item">Source Code</li>
 
-        <footer style="margin-top:0px;" class="mdl-mega-footer">
-          <div class="mdl-mega-footer__middle-section">
-        
-            <div class="mdl-mega-footer__drop-down-section">
-              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer__heading">Find us on</h1>
-              <ul class="mdl-mega-footer__link-list">
-                <li><a href="https://discord.gg/jwgS3t6" target="_blank">Discord</a></li>
-                <li><a href="https://github.com/dahlia-os" target="_blank">Github</a></li>
-                <li><a href="https://reddit.com/r/dahliaos" target="_blank">Reddit</a></li>
-                <li><a href="https://t.me/dahliaos" target="_blank">Telegram</a></li>
-                <li><a href="https://www.facebook.com/pg/officialdahliaos/" target="_blank">Facebook</a></li>
-                <li><a href="https://instagram.com/officialdahliaos" target="_blank">Instagram</a></li>
-                <li><a href="https://www.twitter.com/realdahliaos" target="_blank">Twitter</a></li>
-              </ul>
-            </div>
-        
-            <div class="mdl-mega-footer__drop-down-section">
-              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer__heading">Technology</h1>
-              <ul class="mdl-mega-footer__link-list">
-                <li><a href="#">How it works</a></li>
-                <li><a href="#">The goal</a></li>
-                <li><a href="#">Design</a></li>
-                <li><a href="#">UI Modularity</a></li>
-              </ul>
-            </div>
-        
-            <div class="mdl-mega-footer__drop-down-section">
-              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer__heading">Documentation</h1>
-              <ul class="mdl-mega-footer__link-list">
-                <li><a href="#">Compiling</a></li>
-                <li><a href="#">Installing</a></li>
-                <li><a href="#">Running</a></li>
-                <li><a href="#">Supported devices</a></li>
-                <li><a href="#">Linux vs. Zircon</a></li>
-              </ul>
-            </div>
-        
-            <div class="mdl-mega-footer__drop-down-section">
-              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer__heading">FAQ</h1>
-              <ul class="mdl-mega-footer__link-list">
-                <li><a href="#">Q&A</a></li>
-                <li><a href="mailto:contact@dahliaos.io" target="_blank">Contact us</a></li>
-              </ul>
-            </div>
-        
-          </div>
-        
-          <div class="mdl-mega-footer__bottom-section">
-            <div class="mdl-logo"><img src="../images/logo-white.png" style="margin-top:-3px;" height="18.6666666667px"></div>
-            <ul class="mdl-mega-footer__link-list">
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Source Code</a></li>
-            </ul>
-          </div>
-        
-        </footer>
-
+          <li disabled class="mdl-menu__item">For Enterprise</li>
+          <li class="mdl-menu__item">Screenshots</li>
+        </ul>
       </div>
     </div>
-  
-   
-  </body>
+
+    <div class="dahliaOS-drawer mdl-layout__drawer">
+      <span class="mdl-layout-title">
+        <img class="android-logo-image" src="../images/logo-white.png">
+      </span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="index.html#features">Features</a>
+        <a class="mdl-navigation__link" href="index.html#screens">News</a>
+        <a class="mdl-navigation__link" href="/download">Download</a>
+        <a class="mdl-navigation__link" href="mailto:contact@dahliaos.io" target="_blank">Contact</a>
+        <a class="mdl-navigation__link" href="https://github.com/orgs/dahlia-os/people" target="_blank">Developers</a>
+        <a class="mdl-navigation__link" href="https://github.com/dahlia-os/documentation"
+          target="_blank">Documentation</a>
+
+
+        <div class="dahliaOS-drawer-separator"></div>
+        <span class="mdl-navigation__link" href="">Find us on</span>
+        <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6" target="_blank">Discord</a>
+        <a class="mdl-navigation__link" href="https://github.com/dahlia-os" target="_blank">Github</a>
+        <a class="mdl-navigation__link" href="https://reddit.com/r/dahliaos" target="_blank">Reddit</a>
+        <a class="mdl-navigation__link" href="https://t.me/dahliaos" target="_blank">Telegram</a>
+        <a class="mdl-navigation__link" href="https://www.facebook.com/pg/officialdahliaos/"
+          target="_blank">Facebook</a>
+        <a class="mdl-navigation__link" href="https://instagram.com/officialdahliaos" target="_blank">Instagram</a>
+        <a class="mdl-navigation__link" href="https://www.twitter.com/realdahliaos" target="_blank">Twitter</a>
+        <div class="dahliaOS-drawer-separator"></div>
+        <span class="mdl-navigation__link" href="">For developers</span>
+        <a class="mdl-navigation__link" href="https://github.com/dahlia-os" target="_blank">Source Code</a>
+        <a class="mdl-navigation__link" href="https://discord.gg/jwgS3t6" target="_blank">Join Our Team</a>
+
+      </nav>
+    </div>
+
+    <div class="dahliaOS-content mdl-layout__content">
+      <a name="top"></a>
+
+
+      <div id="downloads" class="dahliaOS-customized-section">
+        <div class="dahliaOS-customized-section-text">
+          <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">There doesn't seem to be
+            anything here.</div>
+          <p class="mdl-typography--font-light">
+            Somehow, you have stumbled upon a missing page or a broken link. Check the URL and try reloading the page,
+            or use the button below to return home.
+          <pre>
+404 - Page not found
+              </pre>
+          <br>
+          <a href="https://dahliaos.io" class="dahliaOS-link mdl-typography--font-light"><button
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+              Return Home
+            </button></a>
+          </p>
+        </div>
+        <div class="dahliaOS-download-section-image"></div>
+      </div>
+
+
+      <footer style="margin-top:0px;" class="mdl-mega-footer">
+        <div class="mdl-mega-footer__middle-section">
+
+          <div class="mdl-mega-footer__drop-down-section">
+            <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+            <h1 class="mdl-mega-footer__heading">Find us on</h1>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="https://discord.gg/jwgS3t6" target="_blank">Discord</a></li>
+              <li><a href="https://github.com/dahlia-os" target="_blank">Github</a></li>
+              <li><a href="https://reddit.com/r/dahliaos" target="_blank">Reddit</a></li>
+              <li><a href="https://t.me/dahliaos" target="_blank">Telegram</a></li>
+              <li><a href="https://www.facebook.com/pg/officialdahliaos/" target="_blank">Facebook</a></li>
+              <li><a href="https://instagram.com/officialdahliaos" target="_blank">Instagram</a></li>
+              <li><a href="https://www.twitter.com/realdahliaos" target="_blank">Twitter</a></li>
+            </ul>
+          </div>
+
+          <div class="mdl-mega-footer__drop-down-section">
+            <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+            <h1 class="mdl-mega-footer__heading">Technology</h1>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="#">How it works</a></li>
+              <li><a href="#">The goal</a></li>
+              <li><a href="#">Design</a></li>
+              <li><a href="#">UI Modularity</a></li>
+            </ul>
+          </div>
+
+          <div class="mdl-mega-footer__drop-down-section">
+            <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+            <h1 class="mdl-mega-footer__heading">Documentation</h1>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="#">Compiling</a></li>
+              <li><a href="#">Installing</a></li>
+              <li><a href="#">Running</a></li>
+              <li><a href="#">Supported devices</a></li>
+              <li><a href="#">Linux vs. Zircon</a></li>
+            </ul>
+          </div>
+
+          <div class="mdl-mega-footer__drop-down-section">
+            <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+            <h1 class="mdl-mega-footer__heading">FAQ</h1>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="#">Q&A</a></li>
+              <li><a href="mailto:contact@dahliaos.io" target="_blank">Contact us</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="mdl-mega-footer__bottom-section">
+          <div class="mdl-logo"><img src="../images/logo-white.png" style="margin-top:-3px;" height="18.6666666667px">
+          </div>
+          <ul class="mdl-mega-footer__link-list">
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Source Code</a></li>
+          </ul>
+        </div>
+
+      </footer>
+
+    </div>
+  </div>
+
+
+</body>
+
 </html>
