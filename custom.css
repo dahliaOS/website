@@ -8,8 +8,8 @@ USED ON ./DOWNLOADS
 */
 
 
-.mdl-card {
-    width: 340px; 
+.downloadCard {
+    width: 340px;
 }
 .notActive {
     display: none;
