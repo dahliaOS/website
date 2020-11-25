@@ -279,7 +279,7 @@ limitations under the License.
                 // Put data for the latest update in
                 document.getElementById('tooltipLatestVersion').innerHTML = `Version: ${data[0].tag_name}`;
                 document.getElementById('latestLearnMore').href = data[0].html_url;
-                document.querySelector('.latestVersionDetails').innerHTML = data[0].body;
+                document.querySelector('.latestVersionDetails').innerHTML = data[0].body.substring(data[0].body.indexOf('+ ')).replace(/(?:\r\n|\r|\n)/g, '<br>'); // That long REGEX basically splits the line breaks and adds a br
                 document.getElementById('latestDownload').href = data[0].zipball_url
                 if (data[0].assets.length >= 2) {
                     data[0].assets.forEach(build => {
@@ -296,11 +296,15 @@ limitations under the License.
                 for (var i = 1; i <= 11; i++) {
                     const ul = document.getElementById('legacyUpdates')
                     const li = document.createElement('li');
+
+                    const patchNotes = data[i].body
+                    console.log(patchNotes.indexOf('+ '))
+                    console.log(patchNotes.substring(patchNotes.indexOf('+ ')))
                     // Model template
                     var updateInfo = `<details class="smallDetails">
                             <summary class="Roboto mdl-typography--font-thin">${data[i].tag_name}</summary>
                             <h6 align="left" class="Roboto mdl-card__supporting-text mdl-card--expand detailsOld">Whats new:</h6>
-                            <div class="Roboto mdl-card__supporting-text mdl-card--expand versionDetails">${data[i].body}</div>
+                            <div class="Roboto mdl-card__supporting-text mdl-card--expand versionDetails">${patchNotes.substring(patchNotes.indexOf('+ ')).replace(/(?:\r\n|\r|\n)/g, '<br>')}</div>
                             <div align="left" class="mdl-card__actions mdl-card--border">
                                 <a href="${data[i].zipball_url}"
                                     class="Roboto mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
