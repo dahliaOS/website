@@ -7,7 +7,17 @@ USED ON ./DOWNLOADS
 
 */
 
-/* Titles on the page */
+
+.mdl-card {
+    width: 340px; 
+}
+.notActive {
+    display: none;
+}
+#latestLearnMore {
+    margin-right:13px; /* align the button with the legacy button */
+    text-align: right;
+}
 .updateTitles {
     display: block;
     text-align: center;
@@ -28,6 +38,13 @@ h4.error {
     padding-left: 8px;
 }
 
+.smallDownload {
+    font-size: 13px;
+}
+.smallReadmore {
+    margin-right: 20px!important;
+}
+
 details {
     text-align: left;
     padding-left: 10px;
@@ -43,7 +60,7 @@ details {
 }
 
 details[open] {
-    height: 190px;
+    height: 225px;
 }
 
 summary {

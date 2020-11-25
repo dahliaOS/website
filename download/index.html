@@ -164,14 +164,20 @@ limitations under the License.
                         build of
                         <br> dahliaOS
                     </div>
+                    <div align="right">
+                        <a id="latestLearnMore" href="https://github.com/dahlia-os/releases/releases/" target="_blank"
+                            class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            Read more
+                        </a><br>
+                    </div>
                     <div align="left" class="mdl-card__actions mdl-card--border">
                         <a id="latestDownload" href="https://github.com/dahlia-os/releases/"
                             class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                             Download
                         </a>
-                        <a id="latestLearnMore" href="https://github.com/dahlia-os/releases/releases/" target="_blank"
-                            class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                            Read more
+                        <a id="latestDownloadLegacy" href="https://github.com/dahlia-os/releases/"
+                            class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect notActive">
+                            Download (legacy)
                         </a>
                     </div>
                     <div class="mdl-card__menu">
@@ -271,32 +277,79 @@ limitations under the License.
             .then(res => res.json())
             .then(data => {
                 // Put data for the latest update in
-                document.getElementById('latestDownload').href = data[0].zipball_url
                 document.getElementById('tooltipLatestVersion').innerHTML = `Version: ${data[0].tag_name}`;
-                document.querySelector('.latestVersionDetails').innerHTML = data[0].body;
                 document.getElementById('latestLearnMore').href = data[0].html_url;
+                document.querySelector('.latestVersionDetails').innerHTML = data[0].body;
+                document.getElementById('latestDownload').href = data[0].zipball_url
+                if (data[0].assets.length >= 2) {
+                    data[0].assets.forEach(build => {
+                        if (build.name.includes('-efi')) {
+                            document.getElementById('latestDownload').innerHTML = 'Download (efi)'
+                            document.getElementById('latestDownload').href = build.browser_download_url;
+                        } else if (build.name.includes('-legacy')) {
+                            document.getElementById('latestDownloadLegacy').style.display = 'inline-block';
+                            document.getElementById('latestDownloadLegacy').href = build.browser_download_url;
+                        }
+                    })
+                }
                 // Doing a for loop here because the for each wouldnt work for a cap of 11, and start at 1, because 0 is the latest and already was displayed
                 for (var i = 1; i <= 11; i++) {
                     const ul = document.getElementById('legacyUpdates')
                     const li = document.createElement('li');
-                    // Template/model for legacy update info
-                    const updateInfo = `<details>
+                    // Model template
+                    var updateInfo = `<details>
                             <summary class="Roboto mdl-typography--font-thin">${data[i].tag_name}</summary>
                             <h6 align="left" class="Roboto mdl-card__supporting-text mdl-card--expand detailsOld">Whats new:</h6>
                             <div class="Roboto mdl-card__supporting-text mdl-card--expand versionDetails">${data[i].body}</div>
+                            <div align="right">
+                                <a id="latestLearnMore" href="https://github.com/dahlia-os/releases/releases/" target="_blank"
+                                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                    Read more
+                                </a>
+                            </div>
                             <div align="left" class="mdl-card__actions mdl-card--border">
                                 <a href="${data[i].zipball_url}"
                                     class="Roboto mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     Download
                                 </a>
-                                <a href="${data[i].html_url}" target="_blank"
-                                    class="Roboto mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                    Read more
-                                </a>
                             </div>
                         </details>`
-                    li.innerHTML = updateInfo
-                    ul.appendChild(li);
+                    // Check if update has efi and or legacy
+                    if (data[i].assets.length >= 2) {
+                        // checks if efi and or legacy is there
+                        if (data[i].assets[0].name.includes('-efi') && data[i].assets[1].name.includes('-legacy') || data[i].assets[1].name.includes('-efi') && data[i].assets[0].name.includes('-legacy')) {
+                            // Has EFI and Legacy
+                            var updateInfo = `<details>
+                                    <summary class="Roboto mdl-typography--font-thin">${data[i].tag_name}</summary>
+                                    <h6 align="left" class="Roboto mdl-card__supporting-text mdl-card--expand detailsOld">Whats new:</h6>
+                                    <div class="Roboto mdl-card__supporting-text mdl-card--expand versionDetails">${data[i].body}</div>
+                                    <div align="right">
+                                        <a id="latestLearnMore" href="https://github.com/dahlia-os/releases/releases/" target="_blank"
+                                            class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect smallReadmore">
+                                            Read more
+                                        </a>
+                                    </div>
+                                    <div align="left" class="mdl-card__actions mdl-card--border">
+                                        <a href="${data[i].assets[0].browser_download_url}"
+                                            class="Roboto mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect smallDownload">
+                                            Download (EFI)
+                                        </a>
+                                        <a href="${data[i].assets[1].browser_download_url}"
+                                            class="Roboto mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect smallDownload">
+                                            Download (Legacy)
+                                        </a>
+                                    </div>
+                                </details>`
+                            li.innerHTML = updateInfo
+                            ul.appendChild(li);
+                        } else {
+                            li.innerHTML = updateInfo
+                            ul.appendChild(li);
+                        }
+                    } else {
+                        li.innerHTML = updateInfo
+                        ul.appendChild(li);
+                    }
                 }
             })
             .then(document.getElementById('loader').style.display = 'none')
