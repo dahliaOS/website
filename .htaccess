@@ -6,9 +6,3 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Custom error pages.
 ErrorDocument 404 /404.html
-
-# Prevent viewing of htaccess file.
-<Files .htaccess>
-    order allow,deny
-    deny from all
-</Files>
