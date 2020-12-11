@@ -15,7 +15,7 @@ USED ON ./DOWNLOADS
     display: none;
 }
 #latestLearnMore {
-    margin-right:13px; /* align the button with the legacy button */
+    margin: 8px 13px 8px; /* align the button with the legacy button */
     text-align: right;
 }
 .updateTitles {
