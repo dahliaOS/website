@@ -144,7 +144,7 @@ a img{
     display: block;
   }
   .landing .dahliaOS-slogan {
-    padding-top: 50px;
+    padding-top: 150px;
   }
   .slogan-left {
     display: block;
@@ -155,7 +155,13 @@ a img{
     display: none;
   }
   .scrollDown {
+    display: block;
     text-align: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  .landing .dahliaOS-slogan {
+    padding-top: 50px;
   }
 }
 
@@ -668,12 +674,6 @@ margin-right:8px;
 }
 
 
-@media (prefers-color-scheme: light) {
-  .android-logo-image {
-    height: 38px;
-    content: url('./images/logo-color-lightTheme.svg');
-  }
-}
 
 @media (prefers-color-scheme: dark) {
   .blog-name{
@@ -769,6 +769,7 @@ margin-right:8px;
   
   .android-logo-image {
     height: 28px;
+    filter: brightness(0) invert(1);
   }
   
   
