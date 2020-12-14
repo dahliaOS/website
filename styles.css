@@ -1040,7 +1040,7 @@ margin-right:8px;
   
   .dahliaOS-wear-section {
     position: relative;
-    background: url('images/apps-4k.webp') center 1000% no-repeat;
+    background: url('images/apps-4k.webp') center no-repeat;
     background-size: cover;
     height: 800px;
   }
