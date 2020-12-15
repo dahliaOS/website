@@ -1,6 +1,7 @@
 on:
   push:
-    branches: [ master ]   
+    branches: [ disable-temporary ]
+      #master
 name: Publish Website
 jobs:
   FTP-Deploy-Action:
