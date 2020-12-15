@@ -1,29 +1,18 @@
-name: FTP Push
-
 on:
-  # schedule:
-  #   - cron: "0 4 * * *"
   push:
-    branches: [ master ]
-    # only for pushes to master. don't want randos able to edit our site by pr
-
+    branches: [ master ]   
+name: Publish Website
 jobs:
-  build:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: FTP Deploy
+    - uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
+    - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
         ftp-server: ${{secrets.FTP_HOST}}
-        # FTP account username
         ftp-username: ${{secrets.FTP_USERNAME}}
-        # FTP account password
         ftp-password: ${{secrets.FTP_PASSWORD}}
-        # The local folder to copy, defaults to root project folder
-        #local-dir: # optional, default is ./
-        # Passes through options into git-ftp
-        #git-ftp-args: # optional
