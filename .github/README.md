@@ -8,7 +8,6 @@
 # dahliaOS Website
 
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fdahliaos.io)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dahlia-os/website/FTP%20Push?color=brightgreen)
 ![GitHub](https://img.shields.io/github/license/dahlia-os/pangolin-desktop?color=brightgreen)
 
 - **Official, one and only website for the dahliaOS project**
