@@ -14,7 +14,7 @@ USED ON ./DOWNLOADS
 .notActive {
     display: none;
 }
-#latestLearnMore {
+#latestLearnMore:first-child {
     margin: 8px 13px 8px; /* align the button with the legacy button */
     text-align: right;
 }
@@ -63,7 +63,7 @@ details[open].smallDetails {
     height: 225px;
 }
 details[open] {
-    height: 265px;
+    height: 278px;
 }
 
 summary {
