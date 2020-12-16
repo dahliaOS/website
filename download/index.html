@@ -319,7 +319,7 @@ limitations under the License.
                             var updateInfo = `<details>
                                     <summary class="Roboto mdl-typography--font-thin">${data[i].tag_name}</summary>
                                     <h6 align="left" class="Roboto mdl-card__supporting-text mdl-card--expand detailsOld">Whats new:</h6>
-                                    <div class="Roboto mdl-card__supporting-text mdl-card--expand versionDetails">${data[i].body}</div>
+                                    <div class="Roboto mdl-card__supporting-text mdl-card--expand versionDetails">${patchNotes.substring(patchNotes.indexOf('+ ')).replace(/(?:\r\n|\r|\n)/g, '<br>')}</div>
                                     <div align="right">
                                         <a id="latestLearnMore" href="${data[i].html_url}" target="_blank"
                                             class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect smallReadmore">
