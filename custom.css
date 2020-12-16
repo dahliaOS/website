@@ -6,7 +6,9 @@ USED ON ./DOWNLOADS
 //
 
 */
-
+.mdl-snackbar__action {
+    color: rgb(255, 87, 34)
+}
 
 .downloadCard {
     width: 340px;
