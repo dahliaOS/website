@@ -202,7 +202,10 @@ limitations under the License.
                 <br><br><br><br>
                 <div class="dahliaOS-download-section-image"></div>
             </div>
-
+            <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+                <div class="mdl-snackbar__text"></div>
+                <button type="button" class="mdl-snackbar__action"></button>
+            </div>
             <footer style="margin-top:0px;" class="mdl-mega-footer">
                 <div class="mdl-mega-footer__middle-section">
 
@@ -283,9 +286,11 @@ limitations under the License.
                         if (build.name.includes('-efi')) {
                             document.getElementById('latestDownload').innerHTML = 'Download (efi)'
                             document.getElementById('latestDownload').href = build.browser_download_url;
+                            document.getElementById('latestDownload').setAttribute('onclick', 'downloadClicked()');
                         } else if (build.name.includes('-legacy')) {
                             document.getElementById('latestDownloadLegacy').style.display = 'inline-block';
                             document.getElementById('latestDownloadLegacy').href = build.browser_download_url;
+                            document.getElementById('latestDownloadLegacy').setAttribute('onclick', 'downloadClicked()');
                         }
                     })
                 }
@@ -301,11 +306,11 @@ limitations under the License.
                             <h6 align="left" class="Roboto mdl-card__supporting-text mdl-card--expand detailsOld">Whats new:</h6>
                             <div class="Roboto mdl-card__supporting-text mdl-card--expand versionDetails">${patchNotes.substring(patchNotes.indexOf('+ ')).replace(/(?:\r\n|\r|\n)/g, '<br>')}</div>
                             <div align="left" class="mdl-card__actions mdl-card--border">
-                                <a href="${data[i].zipball_url}"
+                                <a href="${data[i].zipball_url}" onclick="downloadClicked()"
                                     class="Roboto mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     Download
                                 </a>
-                                <a id="latestLearnMore" href="${data[i].html_url}" target="_blank"
+                                <a id="latestLearnMore" href="${data[i].html_url}" target="_blank" onclick="downloadClicked()"
                                     class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     Read more
                                 </a>
@@ -319,7 +324,7 @@ limitations under the License.
                             var updateInfo = `<details>
                                     <summary class="Roboto mdl-typography--font-thin">${data[i].tag_name}</summary>
                                     <h6 align="left" class="Roboto mdl-card__supporting-text mdl-card--expand detailsOld">Whats new:</h6>
-                                    <div class="Roboto mdl-card__supporting-text mdl-card--expand versionDetails">${data[i].body}</div>
+                                    <div class="Roboto mdl-card__supporting-text mdl-card--expand versionDetails">${patchNotes.substring(patchNotes.indexOf('+ ')).replace(/(?:\r\n|\r|\n)/g, '<br>')}</div>
                                     <div align="right">
                                         <a id="latestLearnMore" href="${data[i].html_url}" target="_blank"
                                             class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect smallReadmore">
@@ -327,11 +332,11 @@ limitations under the License.
                                         </a>
                                     </div>
                                     <div align="left" class="mdl-card__actions mdl-card--border">
-                                        <a href="${data[i].assets[0].browser_download_url}"
+                                        <a href="${data[i].assets[0].browser_download_url}" onclick="downloadClicked()"
                                             class="Roboto mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect smallDownload">
                                             Download (EFI)
                                         </a>
-                                        <a href="${data[i].assets[1].browser_download_url}"
+                                        <a href="${data[i].assets[1].browser_download_url}" onclick="downloadClicked()"
                                             class="Roboto mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect smallDownload">
                                             Download (Legacy)
                                         </a>
@@ -354,6 +359,19 @@ limitations under the License.
                 console.log(err);
                 document.querySelector('.errors').innerHTML = '<h4 class="error">An error occured while fetching the downloads!</h4>'
             })
+
+        const downloadClicked = () => {
+            const notification = document.querySelector('.mdl-js-snackbar');
+            const data = {
+                message: 'Thanks for downloading! Consider donating to support the project!',
+                actionHandler: event => {
+                    location.href = '/donate';
+                },
+                actionText: 'Donate',
+                timeout: 10000
+            };
+            notification.MaterialSnackbar.showSnackbar(data);
+        }
     </script>
 </body>
 
