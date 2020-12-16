@@ -1,3 +1,6 @@
 
 .idea/
 .htaccess
+
+# Directly uploaded to the host
+update/
