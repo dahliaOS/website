@@ -12,6 +12,7 @@ USED ON ./DOWNLOADS
 
 .downloadCard {
     width: 340px;
+    margin-bottom:15px;
 }
 .notActive {
     display: none;
