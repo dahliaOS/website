@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=<%= JSON.stringify(URL) %>">
+    <script type="text/javascript">
+        const url = '<%= JSON.stringify(URL) %>'
+        console.log(url);
+        window.location.replace = url
+    </script>
+    <meta name="keywords"
+        content="dahlia, software, flutter, fuchsia, linux, dahliaOS, computer, operating system, os, system, kernel, dart, open source, material, design, zircon, go, rust">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <title>dahliaOS' <%= socialName %>
+    </title>
+    <meta property="og:title" content="dahliaOS Discord">
+    <meta property="og:site_name" content="dahliaOS">
+    <meta property="og:description" content="Join dahliaOS' Discord!">
+    <meta property="og:image" content="https://imgur.com/PNGGkDP.png">
+    <meta property="og:url" content="<%= JSON.stringify(URL) %>">
+    <meta name="theme-color" content="#ff3d00">
+</head>
+
+<body>
+    If you are not redirected automatically, follow this <a href='<%= URL %>'>link</a>.
+</body>
+
+</html>
