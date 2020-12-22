@@ -76,7 +76,7 @@ routes.get('/discord', (req, res) => {
 routes.get('/facebook', (req, res) => {
     res.render('../views/templates/socialmedia.ejs', {
         socialName: 'Facebook',
-        URL: 'https://facebook.com/officialdahliaos'
+        URL: 'https://www.facebook.com/dahliaos.io/'
     })
 })
 
