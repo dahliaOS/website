@@ -1,0 +1,107 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://dahliaos.io">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name=”description”
+    content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS." />
+  <meta name="keywords"
+    content="dahlia, software, flutter, fuchsia, linux, dahliaOS, computer, operating system, os, system, kernel, dart, open source, material, design, zircon, go, rust" />
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#ff3d00">
+  <meta name="apple-mobile-web-app-title" content="dahliaOS">
+  <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+  <meta name="msapplication-TileImage" content="assets/img/favicon.png">
+  <meta name="msapplication-TileColor" content="#ff3d00">
+  <meta name="theme-color" content="#ff3d00">
+  <meta name="description"
+    content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <title>dahliaOS</title>
+  <script src="/assets/js/material.min.js"></script>
+  <!-- highlight.js -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+  <!-- Page styles -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/assets/css/dahlia.css?v=1.2">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=1.2">
+  <link rel="stylesheet" href="/assets/css/custom.css?v=1.2">
+  <link rel="stylesheet" href="/assets/css/docs.css?v=1.2">
+  <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+  </style>
+  <meta name="google-site-verification" content="1Y5EcX78cHC63J5a8jikmS-gAnRZk7WZi9fAjyhtiZ4" />
+  <meta property="og:image" content="https://imgur.com/PNGGkDP.png" />
+  <meta property="og:site_name" content="dahliaOS">
+</head>
+
+<body class="mdl-docs mdl-color-text--grey-700 mdl-base">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="dahliaOS-header mdl-layout__header mdl-layout__header--scroll dahliaOS-color--docs">
+      <%- include('./templates/nav_part.ejs'); %>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row dahliaOS-color--docs">
+        </div>
+        <div
+          class="mdl-layout--large-screen-only mdl-layout__header-row dahliaOS-color--docs dahliaOS-color--docs-text">
+          <a href="/docs" style="text-decoration: none; color: unset;">
+            <h3>Documentation</h3>
+          </a>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row dahliaOS-color--docs">
+        </div>
+        <div class="dahliaOS-color--docs-dark mdl-layout__tab-bar mdl-js-ripple-effect">
+          <!-- <a href="/docs/" class="mdl-layout__tab dahliaOS-color--docs-text">
+            <img class="android-logo-image" src="/assets/img/logo-color.png">
+          </a> -->
+          <a href="/docs/os/build/buildroot" class="mdl-layout__tab dahliaOS-color--docs-text">Build</a>
+          <a href="/docs/pangolin/Pangolin-Desktop" class="mdl-layout__tab dahliaOS-color--docs-text">Desktop</a>
+          <a href="/docs/run%20dahliaOS/qemu" class="mdl-layout__tab dahliaOS-color--docs-text">Emulation</a>
+          <a href="#there-is-no-faq-yet" class="mdl-layout__tab dahliaOS-color--docs-text">FAQ</a>
+        </div>
+    </header>
+    <%- include('./templates/drawer_part.ejs'); %>
+      <main class="mdl-layout__content">
+        <div id="docs-page">
+          <section class="section--center mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--12-col" style="background-color: unset;">
+              <%- content %>
+            </div>
+          </section>
+        </div>
+        <%- include('./templates/footer.ejs'); %>
+      </main>
+</body>
+
+</html>
