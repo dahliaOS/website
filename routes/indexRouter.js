@@ -83,7 +83,7 @@ routes.get('/facebook', (req, res) => {
 routes.get('/instagram', (req, res) => {
     res.render('../views/templates/socialmedia.ejs', {
         socialName: 'Instagram',
-        URL: 'https://instagram.com/officialdahliaos'
+        URL: 'https://instagram.com/dahliaos.io'
     })
 })
 
