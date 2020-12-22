@@ -104,7 +104,7 @@ routes.get('/telegram', (req, res) => {
 routes.get('/twitter', (req, res) => {
     res.render('../views/templates/socialmedia.ejs', {
         socialName: 'Twitter',
-        URL: 'https://twitter.com/realdahliaos'
+        URL: 'https://www.twitter.com/dahliaos_io'
     })
 })
 module.exports = routes;
