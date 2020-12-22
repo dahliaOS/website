@@ -55,7 +55,7 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1.3;
+  line-height: 1.26;
 }
 .mdl-card__title {
   display: block;
