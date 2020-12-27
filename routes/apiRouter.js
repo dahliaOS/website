@@ -66,9 +66,6 @@ routes.delete('/deleteBlog', auth, (req, res) => {
             message: `successfully deleted blog ${blog}`
         })
     })
-    res.status(200).json({
-        message: `deleting blog ${blog}`
-    })
 })
 
 routes.get('/getBlog/:blogName', (req, res) => {
