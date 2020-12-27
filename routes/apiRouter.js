@@ -34,17 +34,17 @@ routes.post('/postBlog', auth, (req, res) => {
     }
     db.posts.insert({ author, icon, title, body, url, postedAt: new Date().getTime() }, err => {
         if (err) return res.status(200).json({ message: 'an error occured!' })
-/*         hook.send(new webhook.MessageBuilder()
-            .setText('@everyone')
-            .setName('stupid rss bot')
-            .setTitle(title)
-            .setURL(`https://www.dahliaos/blog/${url}`)
-            .setColor('#ff3d00')
-            .setDescription(body.replace(/<[^>]*>?/gm, ''))
-            .setAuthor(author, embedIcon)
-            .setFooter('dahliaOS', 'https://i.imgur.com/FPSUo7K.png')
-            .setTime(Math.floor(Date.now() / 1000))
-        ).catch(err => console.log(err)); */
+        /*         hook.send(new webhook.MessageBuilder()
+                    .setText('@everyone')
+                    .setName('stupid rss bot')
+                    .setTitle(title)
+                    .setURL(`https://www.dahliaos/blog/${url}`)
+                    .setColor('#ff3d00')
+                    .setDescription(body.replace(/<[^>]*>?/gm, ''))
+                    .setAuthor(author, embedIcon)
+                    .setFooter('dahliaOS', 'https://i.imgur.com/FPSUo7K.png')
+                    .setTime(Math.floor(Date.now() / 1000))
+                ).catch(err => console.log(err)); */
         res.redirect(`/blog/${url}`)
     })
 })
@@ -61,7 +61,9 @@ routes.patch('/editBlog', auth, (req, res) => {
 routes.delete('/deleteBlog', auth, (req, res) => {
     const blog = req.body.blog;
     db.posts.delete({ title: blog }, (err, blog) => {
-        if (err) return res.json({ message: `there was an error deleting the article ${blog}` })
+        if (err) return res.json({
+            message: `there was an error deleting the article ${blog}`
+        })
         res.json({
             message: `successfully deleted blog ${blog}`
         })
