@@ -27,7 +27,7 @@
         content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="icon" type="image/png" href="/assets/img/favicon.png">
-    <title>Page not found | dahliaOS</title>
+    <title>All blogs | dahliaOS</title>
     <script src="/assets/js/material.min.js"></script>
     <!-- Page styles -->
     <link rel="stylesheet"
@@ -51,11 +51,20 @@
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <%- include('./templates/nav.ejs'); %>
-        <div class="dahliaOS-content mdl-layout__content">
-            <div class="blogGrid">
-                
+            <div class="dahliaOS-content mdl-layout__content">
+                <div class="blogGrid">
+                    <% for(var i=0; i < blogs.length; i++) { %>
+                        <a href="/<%= blogs[i].URL %>">
+                            <div class="blog">
+                                <div class="header"><%= blogs[i].title %></div>
+                                <div class="content">
+                                    <%= blogs[i].body.replace(/<[^>]*>?/gm, '') %>
+                                </div>
+                            </div>
+                        </a>
+                        <%}%>
+                </div>
             </div>
-        </div>
     </div>
 </body>
 
