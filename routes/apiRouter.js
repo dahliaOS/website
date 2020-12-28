@@ -24,6 +24,7 @@ routes.get('/', (req, res) => {
 
 routes.post('/postBlog', auth, (req, res) => {
     const author = req.user.username,
+        creatorId = req.user.id,
         icon = req.user.icon,
         title = req.body.title,
         url = Math.random().toString(36).slice(2),
@@ -32,7 +33,7 @@ routes.post('/postBlog', auth, (req, res) => {
     if (embedIcon == '/assets/img/favicon.png') {
         var embedIcon = 'https://i.imgur.com/FPSUo7K.png'
     }
-    db.posts.insert({ author, icon, title, body, url, postedAt: new Date().getTime() }, err => {
+    db.posts.insert({ author, icon, title, body, url, postedAt: new Date().getTime(), creatorId }, err => {
         if (err) return res.status(200).json({ message: 'an error occured!' })
         /*         hook.send(new webhook.MessageBuilder()
                     .setText('@everyone')
