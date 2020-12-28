@@ -35,6 +35,8 @@ routes.post('/postBlog', auth, (req, res) => {
     }
     db.posts.insert({ author, icon, title, body, url, postedAt: new Date().getTime(), creatorId }, err => {
         if (err) return res.status(200).json({ message: 'an error occured!' })
+        // The comment below is the auto message sender for posting a new article, should have went into #updates but project leader said noOoOOoOO 
+        // So now here we are, starring at this commented piece of code... beautiful, aint she?
         /*         hook.send(new webhook.MessageBuilder()
                     .setText('@everyone')
                     .setName('stupid rss bot')
