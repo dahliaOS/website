@@ -191,8 +191,12 @@ a img{
 
 /* media query for new homepage */
 @media screen and (max-width: 1300px) {
+  .dahliaOS-be-together-section {
+    height: unset;
+  }
   .home-flex, .landing {
     display: block;
+    min-height: 49vh;
   }
   .landing .dahliaOS-slogan {
     padding-top: 150px;
@@ -336,7 +340,6 @@ background: linear-gradient(153deg, #ff3d00 0%, #D73A20 100%);
 height:50px;
 width:150px;
 border-radius:25px;
-margin-bottom:50vh;
 margin-left: 8px;
 margin-right:8px;
 }
@@ -970,7 +973,6 @@ margin-right:8px;
     height:50px;
     width:150px;
     border-radius:25px;
-    margin-bottom:50vh;
     margin-left: 8px;
     margin-right:8px;
   }
