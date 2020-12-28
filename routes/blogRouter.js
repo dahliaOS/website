@@ -10,8 +10,9 @@ const db = new Datastore({ filename: './databases/posts' })
 const auth = require('../middleware/auth');
 
 routes.get('/', (req, res) => {
-    res.status(200).json({
-        message: 'hello there! you are onn the blog router!'
+    db.find({}, (err, blogs) => {
+        if (err) console.log(err)
+        res.render('allBlogs.ejs', { blogs })
     })
 })
 
