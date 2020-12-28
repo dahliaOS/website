@@ -210,7 +210,7 @@ a img{
     text-align: center;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 980px) {
   .landing .dahliaOS-slogan {
     padding-top: 50px;
   }
@@ -647,7 +647,7 @@ margin-right:8px;
 
 
 /**** Mobile layout ****/
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .dahliaOS-navigation-container {
     display: none;
   }
@@ -1380,7 +1380,7 @@ margin-right:8px;
   
   
   /**** Mobile layout ****/
-  @media (max-width: 900px) {
+  @media (max-width: 980px) {
     .dahliaOS-navigation-container {
       display: none;
     }
