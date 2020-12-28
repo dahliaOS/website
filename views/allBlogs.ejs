@@ -54,14 +54,17 @@
             <div class="dahliaOS-content mdl-layout__content">
                 <div class="blogGrid">
                     <% for(var i=0; i < blogs.length; i++) { %>
-                        <a href="/<%= blogs[i].URL %>">
-                            <div class="blog">
-                                <div class="header"><%= blogs[i].title %></div>
-                                <div class="content">
-                                    <%= blogs[i].body.replace(/<[^>]*>?/gm, '') %>
-                                </div>
+                        <div class="blog">
+                            <div class="header">
+                                <%= blogs[i].title %>
                             </div>
-                        </a>
+                            <div class="content">
+                                <%= blogs[i].body.replace(/<[^>]*>?/gm, '') %>
+                            </div>
+                            <a href="/blog/<%= blogs[i].url %>">
+                                <button>Read more</button>
+                            </a>
+                        </div>
                         <%}%>
                 </div>
             </div>
