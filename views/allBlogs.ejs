@@ -45,6 +45,23 @@
             margin-bottom: 40px;
             z-index: 900;
         }
+
+        .blogGrid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .blog {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 200px;
+            margin: 20px auto;
+            background: tomato;
+        }
+
+        button {
+            bottom: 0;
+        }
     </style>
 </head>
 
@@ -61,9 +78,7 @@
                             <div class="content">
                                 <%= blogs[i].body.replace(/<[^>]*>?/gm, '') %>
                             </div>
-                            <a href="/blog/<%= blogs[i].url %>">
-                                <button>Read more</button>
-                            </a>
+                            <button onclick="location.href = '/blog/<%= blogs[i].url %>'">Read more</button>
                         </div>
                         <%}%>
                 </div>
