@@ -65,7 +65,6 @@ body {
 .mdl-card__supporting-text {
   display: -webkit-box;
   -webkit-line-clamp: 7;
-  height: 200px;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
