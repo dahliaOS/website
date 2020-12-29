@@ -18,6 +18,20 @@
   font-family: "Sulphur Point";
   font-size: 25;
 }
+::-webkit-scrollbar {
+  width: .75em;
+  background:#fff;
+}
+ 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgb(255, 87, 34);
+}
+
 html {
   scroll-behavior: smooth;
 }
