@@ -14,7 +14,7 @@ routes.get('/', (req, res) => {
 routes.get('*', (req, res) => {
     const doc = req.params[0].replace('.md', '');
     try {
-        const include = fs.readFileSync(`docs${doc}.md`, 'utf-8');
+        const include = fs.readFileSync(`docs/${doc.substring(1)}.md`, 'utf-8');
         const content = marked(include); // Naming this content so we just have to type content once when we serve the page to them
         marked.setOptions({ gfm: true })
         res.render('docs.ejs', { content }); // Only need content once since the name is const is content too.

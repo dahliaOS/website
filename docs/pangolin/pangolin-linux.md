@@ -1,13 +1,13 @@
-# Pangolin-Linux
+# Pangolin-linux
 Pangolin Desktop running on Linux systems.
 
 ## Requirements
 
 ### Debian/Ubuntu
 
-- If you don't have git installed do it by running
+- install git and matchbox-window-manager
 ```
-sudo apt install git
+sudo apt install git matchbox-window-manager
 ```
 - Install flutter
 
@@ -23,10 +23,6 @@ Open a new terminal and Verify that the flutter command is available by running
 ```
 which flutter
 ```
-- Install matchbox-window-manager
-```
-sudo apt install matchbox-window-manager
-```
 ### arch
 
 - Install flutter 
@@ -35,7 +31,7 @@ yay -S flutter
 ```
 - Install matchbox-window-manager
 ```
-sudo pacman -Sy matchbox-window-manager
+sudo pacman -S matchbox-window-manager
 ```
 
 ## Installation
@@ -50,9 +46,9 @@ cd pangolin-linux && sudo chmod +x install.sh && sudo ./install.sh
 ## License
 
 <p align="left">
-  <img width="45%" src="https://github.com/dahlia-os/brand/blob/master/Logo%20SVGs/dahliaOS%20logo%20with%20text%20(drop%20shadow).svg"
+  <img width="45%" src="https://github.com/dahliaos/brand/blob/master/Logo%20SVGs/dahliaOS%20logo%20with%20text%20(drop%20shadow).svg"
 </p>
 
-Copyright © 2019-2020, The dahliaOS authors, contact@dahliaos.io
+Copyright © The dahliaOS authors, contact@dahliaos.io
 
 This project is licensed under the [Apache 2.0 license](../LICENSE)

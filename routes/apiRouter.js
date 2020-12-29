@@ -8,8 +8,8 @@ const hook = new webhook.Webhook(process.env.WEBHOOKURL)
 
 // Databases
 var db = {};
-db.posts = new Datastore({ filename: './databases/posts', autoload: true })
-db.news = new Datastore({ filename: './databases/news', autoload: true })
+db.posts = new Datastore({ filename: './databases/posts' })
+db.news = new Datastore({ filename: './databases/news' })
 db.posts.loadDatabase()
 db.news.loadDatabase()
 

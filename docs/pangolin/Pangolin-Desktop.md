@@ -31,7 +31,7 @@ If you find something left out, please feel free to add it.
 
 ## Desktop, panel and quick settings
 
-![Desktop](../assets/screenshot/201004/desktoppanels.png)
+![Desktop](../assets/screenshot/201215/desktoppanels.png)
 
 The desktop is the location of windows, widgets (planned), and the wallpaper.
 
@@ -41,7 +41,7 @@ Quick settings assists in changing relevant system settings quickly (hence the n
 
 ## Launcher
 
-![launcher](../assets/screenshot/201004/launcher.png)
+![launcher](../assets/screenshot/201215/launcher.png)
 
 The launcher is for opening and viewing a grid of every application in the system, as well as a list of quick, helpful cards that display notifications and information. 
 
@@ -55,7 +55,7 @@ A search bar is also available to sort through apps, find settings, and search t
 flutter channel master # Set flutter to master channel
 flutter upgrade # Upgrade to master channel
 flutter config --enable-linux-desktop # Add Linux as a target
-git clone https://github.com/dahlia-os/pangolin-desktop pangolin_desktop # Clone the repo
+git clone https://github.com/dahliaos/pangolin-desktop pangolin_desktop # Clone the repo
 cd pangolin_desktop
 flutter create . # Optional, but updates the embedder code
 flutter run -d linux
@@ -67,7 +67,7 @@ While pre-compiled builds can be found in the dahliaOS-overlays folder, you can 
 
 ## Prerequisites
 
-To develop for dahliaOS Linux-Based, you will need the `flutter` tool, and a compiled base config from dahlia-os/buildroot. 
+To develop for dahliaOS Linux-Based, you will need the `flutter` tool, and a compiled base config from dahliaos/buildroot. 
 
 Compiling the base config will take about 6 hours. 
 
@@ -80,9 +80,9 @@ Copy the output bundle files (located under build/release/) to `buildroot/output
 ## License
 
 <p align="left">
-  <img width="45%" src="https://github.com/dahlia-os/brand/blob/master/Logo%20SVGs/dahliaOS%20logo%20with%20text%20(drop%20shadow).svg"
+  <img width="45%" src="https://github.com/dahliaos/brand/blob/master/Logo%20SVGs/dahliaOS%20logo%20with%20text%20(drop%20shadow).svg"
 </p>
 
-Copyright © 2019-2020, The dahliaOS authors, contact@dahliaos.io
+Copyright © The dahliaOS authors, contact@dahliaos.io
 
 This project is licensed under the [Apache 2.0 license](../LICENSE)
