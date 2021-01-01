@@ -49,18 +49,65 @@
         .blogGrid {
             display: flex;
             flex-wrap: wrap;
+            margin: 0 auto;
+            width: 98%;
         }
 
         .blog {
+            position: relative;
+            border-radius: 4px;
             flex-grow: 0;
             flex-shrink: 0;
             flex-basis: 300px;
             margin: 20px auto;
-            background: tomato;
+            background: #222222;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        .header {
+            padding: 20px 7px 20px 7px;
+            font-size: 24px;
+            text-align: center;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            background: #ff3d00;
+        }
+
+        .content {
+            padding: 15px 4px;
+            height: 100px;
+            text-align: center;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.2;
+        }
+
+        .readMoreBtn {
+            border-top: solid rgb(32, 32, 32) 0.5px;
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
         }
 
         button {
-            bottom: 0;
+            border-radius: 3px;
+            display: block;
+            margin: 10px auto;
+            padding: 10px 15px;
+            color: rgb(255, 87, 34);
+            background: transparent;
+            border: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.25s ease;
+        }
+
+        button:hover {
+            background: rgba(158, 158, 158, 0.4);
         }
     </style>
 </head>
@@ -77,8 +124,10 @@
                             </div>
                             <div class="content">
                                 <%= blogs[i].body.replace(/<[^>]*>?/gm, '') %>
+                            </div> <br><br><br>
+                            <div class="readMoreBtn">
+                                <button onclick="location.href = '/blog/<%= blogs[i].url %>'">Read more</button>
                             </div>
-                            <button onclick="location.href = '/blog/<%= blogs[i].url %>'">Read more</button>
                         </div>
                         <%}%>
                 </div>
