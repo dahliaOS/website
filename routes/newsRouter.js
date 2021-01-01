@@ -8,6 +8,10 @@ db.loadDatabase();
 // Middleware
 const auth = require('../middleware/auth');
 
+routes.get('/', (req, res) => {
+    res.redirect('/');
+})
+
 routes.get('/new', auth, (req, res) => {
     res.render('newNews.ejs');
 })
