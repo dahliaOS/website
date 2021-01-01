@@ -11,7 +11,7 @@ db.loadDatabase()
 const auth = require('../middleware/auth');
 
 routes.get('/', (req, res) => {
-    db.find({}, (err, blogs) => {
+    db.find({}).sort({ postedAt: -1 }).exec((err, blogs) => {
         if (err) console.log(err)
         res.render('allBlogs.ejs', { blogs })
     })
