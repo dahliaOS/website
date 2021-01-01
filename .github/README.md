@@ -1,4 +1,8 @@
 <p align="center">
+  <img width="100%" src="https://github.com/dahliaOS/wallpapers/blob/main/Official/Desktop/SVG/Mountains%20wallpaper.svg"
+</p>
+
+<p align="center">
 <a href="https://dahliaos.io">Website</a> ●
 <a href="https://discord.gg/7qVbJHR">Discord</a> ●
 <a href="https://github.com/dahliaos/releases/releases">Releases</a> ●
