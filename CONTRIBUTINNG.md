@@ -202,8 +202,4 @@ We kindly ask everyone who has submitted a pull request to be patient and that's
 
 ## License
 
-<<<<<<< HEAD:CONTRIBUTINNG.md
-We also love seeing UI concepts and such designs, you can share any kind of designs in our Discord, feel free to! :D
-=======
 By contributing, you agree that your contributions will be licensed under the [Apache 2.0](LICENSE) license
->>>>>>> master:CONTRIBUTING.md
