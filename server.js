@@ -25,11 +25,11 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 
-// Mait mode
-const mait = false;
-if (mait) {
+// Maint mode
+const maint = false;
+if (maint) {
     app.get('*', (req, res) => {
-        res.render('mait.ejs', { eta: '10 minutes' }); // Set ETA to false (no quotation marks) to disable the eta time, also make sure the first letter is lowercase
+        res.render('maint.ejs', { eta: '10 minutes' }); // Set ETA to false (no quotation marks) to disable the eta time, also make sure the first letter is lowercase
     })
 }
 
