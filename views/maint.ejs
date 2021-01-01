@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://dahliaos.io">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”description”
+        content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS." />
+    <meta name="keywords"
+        content="dahlia, software, flutter, fuchsia, linux, dahliaOS, computer, operating system, os, system, kernel, dart, open source, material, design, zircon, go, rust" />
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ff3d00">
+    <meta name="apple-mobile-web-app-title" content="dahliaOS">
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/img/favicon.png">
+    <meta name="msapplication-TileColor" content="#ff3d00">
+    <meta name="theme-color" content="#ff3d00">
+    <meta name="description"
+        content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <title>dahliaOS | Under maintenance</title>
+    <script src="assets/js/material.min.js"></script>
+    <script src="https://unpkg.com/scrollbooster@2/dist/scrollbooster.min.js"></script>
+    <!-- Page styles -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/css/dahlia.css?v=1.2">
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.2">
+    <link rel="stylesheet" href="assets/css/custom.css?v=1.2">
+    <style>
+        #view-source {
+            position: fixed;
+            display: block;
+            right: 0;
+            bottom: 0;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            z-index: 900;
+        }
+
+        main {
+            position: relative;
+            text-align: center;
+            min-height: 86vh;
+            padding-top: 100px;
+        }
+
+        h2 {
+            font-weight: 300;
+            padding: 25px;
+        }
+
+        h5 {
+            font-weight: 300;
+        }
+
+        footer {
+            min-height: 24vh;
+        }
+
+        .sm {
+            list-style: none;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            bottom: 25px;
+            text-align: center;
+        }
+
+        a {
+            opacity: .4;
+            transition: opacity .4s;
+        }
+
+        a:hover {
+            opacity: 1;
+        }
+
+        .sm-item {
+            font-weight: 300;
+            padding-right: 25px;
+            display: inline-block;
+        }
+    </style>
+    <meta name="google-site-verification" content="1Y5EcX78cHC63J5a8jikmS-gAnRZk7WZi9fAjyhtiZ4" />
+    <meta property="og:image" content="https://imgur.com/PNGGkDP.png" />
+    <meta property="og:site_name" content="dahliaOS">
+</head>
+
+<body>
+    <main>
+        <div class="ejsContainer">
+            <% if(eta){ %>
+                <h2>We are currently under maintenance, check back <br> in <%= eta %>
+                </h2>
+                <% } else{ %>
+                    <h2>We are currently under maintenance, check back later!</h2>
+                    <% } %>
+        </div>
+        <br><br>
+        <footer>
+            <ul class="sm">
+                <h5>Check us out on our social media!</h5>
+                <li class="sm-item">
+                    <a href="https://www.twitter.com/dahliaos_io" target="_blank">
+                        <img src="/assets/img/twitterLogo.svg" alt="Twitter logo">
+                    </a>
+                </li>
+                <li class="sm-item">
+                    <a href="https://www.facebook.com/dahliaos.io" target="_blank">
+                        <img src="/assets/img/facebookLogo.svg" alt="Facebook logo">
+                    </a>
+                </li>
+                <li class="sm-item">
+                    <a href="https://www.github.com/dahliaOS" target="_blank">
+                        <img src="/assets/img/githubLogo.svg" alt="Github logo">
+                    </a>
+                </li>
+                <li class="sm-item">
+                    <a href="https://discord.gg/7qVbJHR" target="_blank">
+                        <img src="/assets/img/discordLogo.svg" alt="Discord logo">
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </main>
+</body>
+
+</html>
