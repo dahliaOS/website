@@ -27,7 +27,7 @@ app.use(methodOverride('_method'));
 
 // Initialize the routers
 app.use('/', indexRouter);
-app.use('/blog', blogRouter);
+app.use(['/blog', '/blogs'], blogRouter);
 app.use('/news', newsRouter);
 app.use('/api', apiRouter);
 
