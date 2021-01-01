@@ -25,6 +25,14 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 
+// Mait mode
+const mait = false;
+if (mait) {
+    app.get('*', (req, res) => {
+        res.render('mait.ejs', { eta: '10 minutes' }); // Set ETA to false (no quotation marks) to disable the eta time, also make sure the first letter is lowercase
+    })
+}
+
 // Initialize the routers
 app.use('/', indexRouter);
 app.use(['/blog', '/blogs'], blogRouter);
