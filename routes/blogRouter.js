@@ -26,7 +26,7 @@ routes.get('/:url', (req, res) => {
     db.loadDatabase()
     db.findOne({ url }, (err, blog) => {
         if (err) return console.log(err);
-        if (blog != null || blog != undefined) {
+        if (blog) {
             res.render('blogTemplate.ejs', { blog })
         } else {
             res.render('404.ejs')
