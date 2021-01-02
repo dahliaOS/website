@@ -62,7 +62,7 @@ routes.get('/logout', (req, res) => {
 routes.get('/github', (req, res) => {
     res.render('../views/templates/socialmedia.ejs', {
         socialName: 'GitHub',
-        URL: 'https://github.com/dahlia-os'
+        URL: 'https://github.com/dahliaOS'
     })
 })
 

@@ -34,7 +34,7 @@ encouraged.
 If you are uncomfortable speaking up, or feel that your concerns are not being
 duly considered, you can email the Project Integrity team at integrity@dahliaos.io to request involvement from a moderator. All
 concerns shared with community managers will be kept confidential, but you may
-also submit an anonymous report [here](dahlia-os.github.io/anon).
+also submit an anonymous report [here](dahliaOS.github.io/anon).
 Please note that without a way to contact you, an anonymous report may be
 difficult to act on. You may also create a throwaway account to report. In
 cases where a public response is deemed necessary, the identities of victims
@@ -66,7 +66,7 @@ discretion of the dahliaOS Project Integrity Team:
 
  * a request for an apology;
  * a private or public warning or reprimand;
- * a temporary ban from the Discord server, blog, dahlia-os repository or
+ * a temporary ban from the Discord server, blog, dahliaOS repository or
    organization, or other dahliaOS-supported communication group, including
    loss of committer status;
  * a permanent ban from any of the above, or from all current and future
