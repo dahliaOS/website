@@ -14,7 +14,7 @@ routes.get('/', (req, res) => {
     res.render('index.ejs');
 })
 
-routes.get('/downloads', (req, res) => {
+routes.get(['/downloads', '/download'], (req, res) => {
     res.render('downloads.ejs');
 })
 
