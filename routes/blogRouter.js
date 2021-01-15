@@ -12,7 +12,7 @@ const auth = require('../middleware/auth');
 
 routes.get('/', (req, res) => {
     db.find({}).sort({ postedAt: -1 }).exec((err, blogs) => {
-        if (err) console.log(err)
+        if (err) return res.json({ status: 'FAILED', message: 'An error occured whilst getting the blogs!' })
         res.render('allBlogs.ejs', { blogs })
     })
 })
