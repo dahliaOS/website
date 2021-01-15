@@ -56,7 +56,6 @@ routes.get('/logout', (req, res) => {
 })
 
 // Social media stuff
-
 routes.get('/github', (req, res) => {
     res.render('../views/templates/socialmedia.ejs', {
         socialName: 'GitHub',
