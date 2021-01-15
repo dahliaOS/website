@@ -4,14 +4,17 @@ const Users = require('../models/Users');
 const jwt = require('jsonwebtoken');
 require('dotenv').config()
 
+// Middleware
+const throwError = require('../utilities/showUserError');
+
 routes.get('/', (req, res) => {
     res.render('login.ejs', { error: false });
 })
 
 routes.post('/', (req, res) => {
     Users.findOne({ username: req.body.username }, async (err, user) => {
-        if (err) return res.render('login.ejs', { error: 'A server error happened whilst logging you in!' });;
-        if (user === null) return res.render('login.ejs', { error: 'That user does not exist!' });
+        if (err) return throwError(res, 'login.ejs', 'A server error has occured whilst logging you in!')
+        if (!user) return throwError(res, 'login.ejs', 'That user does not exist!')
         const userToToken = {
             id: user._id,
             username: user.username,
@@ -23,10 +26,10 @@ routes.post('/', (req, res) => {
                 res.cookie('authentication', token, { maxAge: 24 * 60 * 60 * 1000, httpOnly: true });
                 res.redirect('./');
             } else {
-                res.render('login.ejs', { error: 'Incorrect password!' });
+                throwError(res, 'login.ejs', 'Incorrect password!')
             }
         } catch (err) {
-            res.render('login.ejs', { error: 'A server error happened whilst logging you in!' });
+            throwError(req, 'login.ejs', 'A server error happened whilst logging you in!')
         }
     })
 })
