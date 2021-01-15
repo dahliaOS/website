@@ -43,7 +43,6 @@ routes.get('/support', (req, res) => {
 })
 
 // Docs
-
 routes.use('/docs', docsRouter);
 
 // Login/register stuff with account stuff
