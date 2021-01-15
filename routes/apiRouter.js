@@ -62,13 +62,13 @@ routes.patch('/editBlog', auth, (req, res) => {
 })
 
 routes.delete('/deleteBlog', auth, (req, res) => {
-    const blog = req.body.blog;
-    db.posts.delete({ title: blog }, (err, blog) => {
+    const title = req.body.blog;
+    db.posts.delete({ title }, (err, blog) => {
         if (err) return res.json({
-            message: `there was an error deleting the article ${blog}`
+            message: `there was an error deleting the article ${title}`
         })
         res.json({
-            message: `successfully deleted blog ${blog}`
+            message: `successfully deleted blog ${title}`
         })
     })
 })
