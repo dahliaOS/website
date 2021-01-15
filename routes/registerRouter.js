@@ -2,6 +2,9 @@ const routes = require('express').Router();
 const bcrypt = require('bcrypt');
 const Users = require('../models/Users');
 
+// Middleware
+const throwError = require('../utilities/showUserError');
+
 routes.get('/', (req, res) => {
     res.render('register.ejs', { error: false });
 })
@@ -28,16 +31,16 @@ routes.post('/', (req, res) => {
                             })
                             .catch(err => console.log(err));
                     } else {
-                        res.render('register.ejs', { error: 'Passwords do not match!' });
+                        throwError(res, 'register.ejs', 'Passwords do not match!', res);
                     }
                 } else {
-                    res.render('register.ejs', { error: 'Passwords are not long enough!' });
+                    throwError(res, 'register.ejs', 'Passwords are not long enough!!');
                 }
             } else {
-                res.render('register.ejs', { error: 'Please enter a username!' });
+                throwError(res, 'register.ejs', 'Please enter a username!!');
             }
         } else {
-            res.render('register.ejs', { error: 'User already exists!' });
+            throwError(res, 'register.ejs', 'User already exists!');
         }
     })
 })
