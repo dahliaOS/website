@@ -21,7 +21,8 @@ routes.post('/', (req, res) => {
                             icon: '/assets/img/favicon.png',
                             password: hashedPass,
                         })
-                        newUser.save()
+                        newUser
+                            .save()
                             .then(() => {
                                 res.redirect('/login')
                             })
