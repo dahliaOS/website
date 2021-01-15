@@ -10,8 +10,8 @@ routes.post('/', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     const confirmPassword = req.body.confirmPassword;
-    Users.find({ username: username }, async (err, user) => {
-        if (user[0] == undefined || user[0] == null) {
+    Users.findOne({ username: username }, async (err, user) => {
+        if (!user) {
             if (username.length != 0) {
                 if (password.length >= 14) {
                     if (password === confirmPassword) {
