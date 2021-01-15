@@ -12,7 +12,6 @@ routes.get('/', (req, res) => {
 })
 
 // Account api
-
 routes.post('/changePfP', (req, res) => {
     const username = req.user.username;
     const githubUser = req.body.pfp;
