@@ -11,9 +11,7 @@ routes.get('/', (req, res) => {
 routes.post('/', (req, res) => {
     Users.findOne({ username: req.body.username }, async (err, user) => {
         if (err) return res.render('login.ejs', { error: 'A server error happened whilst logging you in!' });;
-        if (user === null) {
-            res.render('login.ejs', { error: 'That user does not exist!' });
-        }
+        if (user === null) return res.render('login.ejs', { error: 'That user does not exist!' });
         const userToToken = {
             id: user._id,
             username: user.username,
