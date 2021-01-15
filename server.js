@@ -40,7 +40,6 @@ app.use('/news', newsRouter);
 app.use('/api', apiRouter);
 
 // Login and session stuff
-
 app.use(session({
     cookie: { maxAge: 60000 },
     secret: process.env.SESSION_TOKEN,
