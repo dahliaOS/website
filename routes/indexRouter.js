@@ -46,7 +46,6 @@ routes.get('/support', (req, res) => {
 routes.use('/docs', docsRouter);
 
 // Login/register stuff with account stuff
-
 routes.use('/login', notAuth, loginRouter);
 routes.use('/register', auth, registerRouter);
 routes.use('/dashboard', auth, dashboardRouter)
