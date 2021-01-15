@@ -34,6 +34,4 @@ routes.get('/:url', (req, res) => {
     })
 })
 
-
-
 module.exports = routes;
