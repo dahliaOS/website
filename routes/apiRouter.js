@@ -106,7 +106,7 @@ routes.get('/getNews', (req, res) => {
 
 routes.get('/getBlogs', (req, res) => {
     db.posts.find({}, (err, blogs) => {
-        if (err) res.json({ message: 'an error has occured!' })
+        if (err) return res.json({ message: 'an error has occured!' })
         res.json({ blogs })
     })
 })
