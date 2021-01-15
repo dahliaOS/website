@@ -49,7 +49,6 @@ routes.use('/docs', docsRouter);
 routes.use('/login', notAuth, loginRouter);
 routes.use('/register', auth, registerRouter);
 routes.use('/dashboard', auth, dashboardRouter)
-
 routes.get('/logout', (req, res) => {
     res.clearCookie('authentication');
     res.redirect('/login');
