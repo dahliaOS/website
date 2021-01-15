@@ -77,7 +77,7 @@ routes.get('/getBlog/:blogName', (req, res) => {
     const blogName = req.params.blogName
     db.posts.findOne({ title: blogName }, (err, blog) => {
         if (err) return err;
-        if (blog !== null) {
+        if (blog) {
             res.status(200).json({
                 message: `You are getting the blog ${blog}`
             })
