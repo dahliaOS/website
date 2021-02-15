@@ -3,285 +3,289 @@ style.css
 Developed by the dahliaOS authors. Licensed under the GNU General Public License V3.
 */
 @media (prefers-color-scheme: dark) {
-    .mdl-layout__content {
-        background: #222 url("../img/bg-dark.svg") no-repeat center;
-        color: #fff;
-        background-size: cover;
-    }
-    .mdl-layout__header {
-        background: #000;
-    }
-    #dahlia-header {
-        text-shadow: #fff 1px 0 5px;
-    }
-    #change {
-        color: #ff5722;
-        text-shadow: #ff5722 1px 0 5px;
-    }
-    .dahlia-content-card {
-        background: #262626;
-        box-shadow: 0px -27px 46px -15px rgba(255, 87, 34, 1);
-    }
-    .card {
-        background: #353535;
-    }
-    .secure {
-        font-size: 48px;
-        color: #52c41a;
-        text-shadow: 0px 0px 6px rgba(82, 196, 26, 1);
-    }
-    .open {
-        font-size: 48px;
-        color: #fa541c;
-        text-shadow: 0px 0px 6px #fa541c;
-    }
-    .fast {
-        font-size: 48px;
-        color: #1890ff;
-        text-shadow: 0px 0px 6px #1890ff;
-    }
-    .gallery-screenshot {
-        box-shadow: 5px 5px 8px -5px #fff;
-    }
+  .mdl-layout__content {
+    background: #222 url("../img/bg-dark.svg") no-repeat center;
+    color: #fff;
+    background-size: cover;
+  }
+  .mdl-layout__header {
+    background: #000;
+  }
+  #dahlia-header {
+    text-shadow: #fff 1px 0 5px;
+  }
+  #change {
+    color: #ff5722;
+    text-shadow: #ff5722 1px 0 5px;
+  }
+  .dahlia-content-card {
+    background: #262626;
+    box-shadow: 0px -27px 46px -15px rgba(255, 87, 34, 1);
+  }
+  .card {
+    background: #353535;
+  }
+  .secure {
+    font-size: 48px;
+    color: #52c41a;
+    text-shadow: 0px 0px 6px rgba(82, 196, 26, 1);
+  }
+  .open {
+    font-size: 48px;
+    color: #fa541c;
+    text-shadow: 0px 0px 6px #fa541c;
+  }
+  .fast {
+    font-size: 48px;
+    color: #1890ff;
+    text-shadow: 0px 0px 6px #1890ff;
+  }
+  .gallery-screenshot {
+    box-shadow: 5px 5px 8px -5px #fff;
+  }
 }
 @media (prefers-color-scheme: light) {
-    .mdl-layout__content {
-        background: url("../img/bg-light.svg") no-repeat center;
-        background-size: cover;
-    }
-    .dahlia-content-card {
-        background: #eee;
-        box-shadow: 0px -15px 25px -18px rgba(0, 0, 0, 0.75);
-    }
-    .card {
-        background: #fff;
-    }
-    .secure {
-        font-size: 48px;
-        color: #52c41a;
-    }
-    .open {
-        font-size: 48px;
-        color: #fa541c;
-    }
-    .fast {
-        font-size: 48px;
-        color: #1890ff;
-    }
-    .gallery-screenshot {
-        box-shadow: 5px 5px 8px -5px #000;
-    }
+  .mdl-layout__content {
+    background: url("../img/bg-light.svg") no-repeat center;
+    background-size: cover;
+  }
+  .dahlia-content-card {
+    background: #eee;
+    box-shadow: 0px -15px 25px -18px rgba(0, 0, 0, 0.75);
+  }
+  .card {
+    background: #fff;
+  }
+  .secure {
+    font-size: 48px;
+    color: #52c41a;
+  }
+  .open {
+    font-size: 48px;
+    color: #fa541c;
+  }
+  .fast {
+    font-size: 48px;
+    color: #1890ff;
+  }
+  .gallery-screenshot {
+    box-shadow: 5px 5px 8px -5px #000;
+  }
 }
 @media (prefers-color-scheme: no-preference) {
-    .mdl-layout__content {
-        background: url("../img/bg-light.svg") no-repeat center;
-        background-size: cover;
-    }
-    .dahliaOS-color--background {
-        background-color: #fff;
-    }
-    .dahliaOS-color--docs {
-        background-color: #ff5722;
-    }
-    .dahliaOS-color--docs-dark {
-        background-color: #e64a19;
-    }
-    .dahlia-content-card {
-        background: #fff;
-        box-shadow: 0px -15px 25px -18px rgba(0, 0, 0, 0.75);
-    }
-    .card {
-        background: #fff;
-    }
-    .secure {
-        font-size: 48px;
-        color: #52c41a;
-    }
-    .open {
-        font-size: 48px;
-        color: #fa541c;
-    }
-    .fast {
-        font-size: 48px;
-        color: #1890ff;
-    }
-    .gallery-screenshot {
-        box-shadow: 5px 5px 8px -5px #000;
-    }
+  .mdl-layout__content {
+    background: url("../img/bg-light.svg") no-repeat center;
+    background-size: cover;
+  }
+  .dahliaOS-color--background {
+    background-color: #fff;
+  }
+  .dahliaOS-color--docs {
+    background-color: #ff5722;
+  }
+  .dahliaOS-color--docs-dark {
+    background-color: #e64a19;
+  }
+  .dahlia-content-card {
+    background: #fff;
+    box-shadow: 0px -15px 25px -18px rgba(0, 0, 0, 0.75);
+  }
+  .card {
+    background: #fff;
+  }
+  .secure {
+    font-size: 48px;
+    color: #52c41a;
+  }
+  .open {
+    font-size: 48px;
+    color: #fa541c;
+  }
+  .fast {
+    font-size: 48px;
+    color: #1890ff;
+  }
+  .gallery-screenshot {
+    box-shadow: 5px 5px 8px -5px #000;
+  }
 }
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 #dahlia-header {
-    font-family: "'Sulphur Point'", sans-serif;
-    max-width: 80vw;
+  font-family: "'Sulphur Point'", sans-serif;
+  max-width: 80vw;
 }
 #dahlia-main {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 #change {
-    color: #ff5722;
+  color: #ff5722;
 }
 #change:after {
-    content: "";
-    animation: change 8s linear infinite;
+  content: "";
+  animation: change 8s linear infinite;
 }
 @keyframes change {
-    0% {
-        content: "modern";
-    }
-    14% {
-        content: "secure";
-    }
-    28% {
-        content: "free";
-    }
-    42% {
-        content: "friendly";
-    }
-    56% {
-        content: "fun";
-    }
-    70% {
-        content: "fast";
-    }
-    84% {
-        content: "smooth";
-    }
-    100% {
-        content: "modern";
-    }
+  0% {
+    content: "modern";
+  }
+  14% {
+    content: "secure";
+  }
+  28% {
+    content: "free";
+  }
+  42% {
+    content: "friendly";
+  }
+  56% {
+    content: "fun";
+  }
+  70% {
+    content: "fast";
+  }
+  84% {
+    content: "smooth";
+  }
+  100% {
+    content: "modern";
+  }
 }
 .header-button {
-    color: #fff;
-    background: #d32f2f;
-    background: linear-gradient(153deg, rgba(211, 47, 47, 1) 0%, rgba(255, 87, 34, 1) 100%);
-    margin-top: 1vw;
-    height: 50px;
-    width: 150px;
-    border-radius: 25px;
-    margin-bottom: 50vh;
+  color: #fff;
+  background: #d32f2f;
+  background: linear-gradient(
+    153deg,
+    rgba(211, 47, 47, 1) 0%,
+    rgba(255, 87, 34, 1) 100%
+  );
+  margin-top: 1vw;
+  height: 50px;
+  width: 150px;
+  border-radius: 25px;
+  margin-bottom: 50vh;
 }
 .dahlia-item {
-    background: rgba(0, 0, 0, 0.301);
-    width: 90%;
-    height: 37.5vw;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+  background: rgba(0, 0, 0, 0.301);
+  width: 90%;
+  height: 37.5vw;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .dahlia-content-header {
-    font: 45px "Sulphur Point", sans-serif;
-    margin-bottom: 25px;
+  font: 45px "Sulphur Point", sans-serif;
+  margin-bottom: 25px;
 }
 .dahlia-item-image {
-    background: url("../img/pictures/settings.png");
-    background-size: cover;
-    width: 50vw;
-    height: 37.5vw;
-    max-width: 1024px;
-    max-height: 768px;
-    border-radius: 5px;
+  background: url("../img/pictures/settings.png");
+  background-size: cover;
+  width: 50vw;
+  height: 37.5vw;
+  max-width: 1024px;
+  max-height: 768px;
+  border-radius: 5px;
 }
 .explanation {
-    font: 17px "Roboto", sans-serif;
-    margin-top: 5px;
-    max-width: 80vw;
+  font: 17px "Roboto", sans-serif;
+  margin-top: 5px;
+  max-width: 80vw;
 }
 .dahlia-content-card {
-    padding: 50px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+  padding: 50px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 #sulphur {
-    font-family: "'Sulphur Point'", sans-serif;
+  font-family: "'Sulphur Point'", sans-serif;
 }
 #roboto {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 .column {
-    float: left;
-    width: 33%;
-    padding: 0 10px;
+  float: left;
+  width: 33%;
+  padding: 0 10px;
 }
 .row {
-    margin: 0 -5px;
+  margin: 0 -5px;
 }
 .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 @media screen and (max-width: 1175px) {
-    .column {
-        width: 100%;
-        display: block;
-        margin-bottom: 20px;
-    }
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
 }
 .card {
-    padding: 16px;
-    text-align: center;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 20px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 20px;
 }
 @media screen and (min-width: 1192px) {
-    .card {
-        height: 400px;
-    }
+  .card {
+    height: 400px;
+  }
 }
 .scrlabel {
-    font-size: 2em;
+  font-size: 2em;
 }
 .vcenter > * {
-    margin: auto;
+  margin: auto;
 }
 @media screen and (min-width: 1174px) {
-    #screenshots-section {
-        padding-left: 24px;
-        padding-right: 24px;
-    }
+  #screenshots-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 .gallery-screenshot {
-    width: auto;
-    height: auto;
-    padding: 64px;
-    background: #000 no-repeat 50%;
-    background-size: cover;
-    display: inline-block;
-    border-radius: 8px;
+  width: auto;
+  height: auto;
+  padding: 64px;
+  background: #000 no-repeat 50%;
+  background-size: cover;
+  display: inline-block;
+  border-radius: 8px;
 }
 @media screen and (min-width: 960px) {
-    .gallery-screenshot {
-        padding: 96px;
-    }
+  .gallery-screenshot {
+    padding: 96px;
+  }
 }
 @media screen and (max-width: 619px) {
-    .gallery-screenshot {
-        padding: 48px;
-    }
+  .gallery-screenshot {
+    padding: 48px;
+  }
 }
 .mdl-logo {
-    background-image: url("../img/logo-white.png");
-    height: 28px;
-    width: 144px;
-    background-size: 144px;
-    margin-top: -3em;
-    vertical-align: baseline;
-    display: inline-block;
-    float: unset;
+  background-image: url("../img/logo-white.png");
+  height: 28px;
+  width: 144px;
+  background-size: 144px;
+  margin-top: -3em;
+  vertical-align: baseline;
+  display: inline-block;
+  float: unset;
 }
 .middlesect-icon {
-    display: inline-block;
-    position: relative;
-    top: 8px;
+  display: inline-block;
+  position: relative;
+  top: 8px;
 }
 .middlesect-icon + h3 {
-    display: inline-block;
-    padding: 0 16px;
+  display: inline-block;
+  padding: 0 16px;
 }
 .middlesect-heading {
-    text-align: center;
+  text-align: center;
 }

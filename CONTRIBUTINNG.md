@@ -32,7 +32,7 @@ To make sure your contributions go as smooth as possible, here are all the thing
 
 - This project and everyone participating in it is governed by dahliaOS' Code of Conduct and no one is exempt.
 
-- By participating, you are expected to respect and value this code. 
+- By participating, you are expected to respect and value this code.
 
 - If you notice any unacceptable behaviour, you can report it to integrity@dahliaos.io
 
@@ -42,12 +42,12 @@ Here we've explained how you can contribute to our project on GitHub but there a
 
 You can contribute to the project by:
 
-* Reporting a bug.
-* Proposing new features.
-* Translating to your native language.
-* Submitting a fix.
-* Discussing the current state of code.
-* Becoming a maintainer.
+- Reporting a bug.
+- Proposing new features.
+- Translating to your native language.
+- Submitting a fix.
+- Discussing the current state of code.
+- Becoming a maintainer.
 
 **Some repositories also have Projects which contain either a to-do list or a roadmap!**
 
@@ -61,31 +61,31 @@ There are 2 ways you can report a bug, either in our Discord server by opening a
 
 Before submitting a bug report, there are a few things you need to take in consideration:
 
-* Do a bit of research and check if a similar bug has already been reported.
-  * If it has been reported already, add a comment to the existing one instead of submitting a new one.
+- Do a bit of research and check if a similar bug has already been reported.
+  - If it has been reported already, add a comment to the existing one instead of submitting a new one.
 
 ### How do I write a good bug report?
 
 We have a few short tips for you on how to properly write a bug report so the developers can understand it better:
 
-* **Use a clear and descriptive title for the issue.**
-* **Describe the steps to reproduce the bug.**
-* **Describe what behaviour you observed after the bug occured.**
-* **Explain what behaviour you expected to see instead and why.**
-* **If the problem wasn't triggered by a specific action, describe what you were doing before it happened.**
-* **Include screnshots of the bug.**
-* **Write what version of dahliaOS you were using.**
+- **Use a clear and descriptive title for the issue.**
+- **Describe the steps to reproduce the bug.**
+- **Describe what behaviour you observed after the bug occured.**
+- **Explain what behaviour you expected to see instead and why.**
+- **If the problem wasn't triggered by a specific action, describe what you were doing before it happened.**
+- **Include screnshots of the bug.**
+- **Write what version of dahliaOS you were using.**
 
 And the most important of all, make sure to fulfill all fields in our bug report template.
 
 ### How do I submit a bug report?
 
-* **GitHub**:
+- **GitHub**:
   1. Go to the Issues section
   2. Click **New issue**
   3. Select the **Bug report** template
   4. Fill in the fields
-* **Discord**:
+- **Discord**:
   1. Go to the #bug-report channel
   2. Open a ticket and copy the form
   3. Paste and fill in the form
@@ -100,19 +100,19 @@ There are 2 ways you can submit a feature request, either by make a suggestion i
 
 Before submitting a feature request, here are a few things you need to know:
 
-* **Make sure the feature isn't already added.**
-* **Don't hesitate to express your knowledge.**
-* **Write a clear and descriptive title for the request.**
-* **Explain how the project could benefit of your request.**
+- **Make sure the feature isn't already added.**
+- **Don't hesitate to express your knowledge.**
+- **Write a clear and descriptive title for the request.**
+- **Explain how the project could benefit of your request.**
 
 ### How do I submit a feature request?
 
-* **GitHub**:
+- **GitHub**:
   1. Go to the Issues section
   2. Click **New issue**
   3. Select the **Feature request** template
   4. Fill in the fields
-* **Discord**:
+- **Discord**:
   1. Go to the #bot-commands channel
   2. Type !suggestion [suggestion]
 
@@ -130,10 +130,10 @@ Before submitting a feature request, here are a few things you need to know:
 
 Before making a translation, please make sure that:
 
-* **You're fluent in the language you're translating to.**
-* **You pay close attention to its grammar.**
-* **You read the context (comments) some strings have.**
-* **You used the same punctuation as the source strings.**
+- **You're fluent in the language you're translating to.**
+- **You pay close attention to its grammar.**
+- **You read the context (comments) some strings have.**
+- **You used the same punctuation as the source strings.**
 
 ### How to translate
 
@@ -148,17 +148,17 @@ To make sure that the code you want to contribute is up to our standards, here w
 
 **Do's:**
 
-* Choose expressive variable, function and class names, make it as obvious as possible of what the code is doing.
-* The first line of the commit message should have the format "Category: Brief description of what's being changed". The "category" can be a subdirectory, but also something like "POSIX compliance" or "ClassName".
-* Split your changes into separate commits.
-* Write your commit messages in proper English, with care and punctuation.
+- Choose expressive variable, function and class names, make it as obvious as possible of what the code is doing.
+- The first line of the commit message should have the format "Category: Brief description of what's being changed". The "category" can be a subdirectory, but also something like "POSIX compliance" or "ClassName".
+- Split your changes into separate commits.
+- Write your commit messages in proper English, with care and punctuation.
 
 **Don'ts:**
 
-* Submit code that's incompatible with the project licence (Apache 2.0).
-* Touch anything outside the stated scope of the PR.
-* Use weasel-words like "refactor" or "fix" to avoid explaining what's being changed.
-* Include commented-out code.
+- Submit code that's incompatible with the project licence (Apache 2.0).
+- Touch anything outside the stated scope of the PR.
+- Use weasel-words like "refactor" or "fix" to avoid explaining what's being changed.
+- Include commented-out code.
 
 ### First code contribution
 
@@ -170,12 +170,12 @@ Apart from code contributions, we also accept any kind of design contributions.
 
 **Here are a few repos where you can contribute designs**:
 
-* [Wallpapers](https://github.com/dahliaos/wallpapers)
-  * Here you can contribute your own wallpapers, make sure to read the instructions.
-* [Icons](https://github.com/dahliaos/icons)
-  * Here you can contribute either modified version of existing icons or new ones.
-* [Brand](https://github.com/dahliaos/brand)
-  * Here you can contribute new logos or modified current one for our project.
+- [Wallpapers](https://github.com/dahliaos/wallpapers)
+  - Here you can contribute your own wallpapers, make sure to read the instructions.
+- [Icons](https://github.com/dahliaos/icons)
+  - Here you can contribute either modified version of existing icons or new ones.
+- [Brand](https://github.com/dahliaos/brand)
+  - Here you can contribute new logos or modified current one for our project.
 
 We also love seeing UI concepts and such designs, you can share any kind of designs in our Discord server.
 
@@ -183,8 +183,8 @@ We also love seeing UI concepts and such designs, you can share any kind of desi
 
 PRs to our repositories are always welcome and can be a quick way to get your fix or improvement slated for the next release. In general, PRs should:
 
-* Fix an existing issue **OR** add a new feature.
-* Be accompanied by a complete pull request template (loaded automatically when a PR is created).
+- Fix an existing issue **OR** add a new feature.
+- Be accompanied by a complete pull request template (loaded automatically when a PR is created).
 
 For changes that address core functionality or would require breaking changes (e.g. a major release), it's best to open an issue to discuss your proposal first. This is not required but can save time creating and reviewing changes.
 
