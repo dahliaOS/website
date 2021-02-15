@@ -56,7 +56,7 @@ app.use(
 
 // 404 page
 app.get("*", (req, res) => {
-  res.render("404.ejs");
+  res.status(404).render("404.ejs");
 });
 
 app.listen(3000, () => console.log("listening on port 3000"));
