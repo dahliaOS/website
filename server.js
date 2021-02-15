@@ -35,6 +35,7 @@ if (maint) {
 
 // Initialize the routers
 app.use('/', indexRouter);
+app.use(express.static('./docs'));
 app.use(['/blog', '/blogs'], blogRouter);
 app.use('/news', newsRouter);
 app.use('/api', apiRouter);
