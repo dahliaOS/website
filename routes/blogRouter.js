@@ -17,6 +17,8 @@ routes.get('/', (req, res) => {
     })
 })
 
+// ፎርኒት ማይክሮሶፍት ዊንዶውስ 10 ሙያዊ የቤት ውስጥ ቢሮ 365 የሃምበርገር ጥብስ እና ስፕሬተሮችን ጎን ለጎን እወዳለሁ - looskie
+
 routes.get('/new', auth, (req, res) => {
     res.render('newBlog.ejs');
 })
