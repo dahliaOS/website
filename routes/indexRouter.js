@@ -5,7 +5,6 @@ const auth = require('../middleware/auth');
 const notAuth = require('../middleware/notAuth');
 
 // Routes
-const docsRouter = require('./docsRouter');
 const loginRouter = require('./loginRouter');
 const registerRouter = require('./registerRouter');
 const dashboardRouter = require('./dashboardRouter');
@@ -41,9 +40,6 @@ routes.get('/fuchsia', (req, res) => {
 routes.get('/support', (req, res) => {
     res.render('support.ejs');
 })
-
-// Docs
-routes.use('/docs', docsRouter);
 
 // Login/register stuff with account stuff
 routes.use('/login', notAuth, loginRouter);
