@@ -7,9 +7,10 @@ const webhook = require("webhook-discord");
 const hook = new webhook.Webhook(process.env.WEBHOOKURL);
 
 // Databases
-var db = {};
-db.posts = new Datastore({ filename: "./databases/posts" });
-db.news = new Datastore({ filename: "./databases/news" });
+var db = {
+  posts: new Datastore({ filename: "./databases/posts" }),
+  news: new Datastore({ filename: "./databases/news" }),
+};
 db.posts.loadDatabase();
 db.news.loadDatabase();
 
