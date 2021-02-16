@@ -1,0 +1,4 @@
+[submodule "docs"]
+	path = docs
+	url = https://github.com/HexaOneOfficial/documentation
+	# TODO: switch this to the dahliaOS version whenever it gets merged
