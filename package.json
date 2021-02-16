@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "devstart": "nodemon server.js"
+    "devstart": "nodemon server.js",
+    "updatedocs": "git submodule init && git submodule update"
   },
   "repository": {
     "type": "git",
