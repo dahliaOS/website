@@ -21,108 +21,103 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-        content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
-    <title>dahliaOS Support</title>
-    <script src="assets/js/material.min.js"></script>
-    <!-- Page styles -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="assets/css/dahlia.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-        #view-source {
-            position: fixed;
-            display: block;
-            right: 0;
-            bottom: 0;
-            margin-right: 40px;
-            margin-bottom: 40px;
-            z-index: 900;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description"
+    content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <title>dahliaOS Support</title>
+  <script src="assets/js/material.min.js"></script>
+  <!-- Page styles -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="assets/css/dahlia.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <%- include('./templates/nav.ejs'); %>
-            <div class="dahliaOS-content mdl-layout__content">
-                <div id="support" class="dahliaOS-customized-section">
-                    <div class="dahliaOS-support-container">
-                        <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">How can we help
-                            you?
-                        </div>
-                        <br><br>
-                        <div class="mdl-typography--font-light dahliaOS-support">
-                            <form class="dahliaOS-support-search" action="">
-                                <i class="dahliaOS-support-icon material-icons">search</i>
-                                <input class="dahliaOS-support-box mdl-textfield__input" type="text"
-                                    placeholder="Describe your issue">
-                            </form>
-                            <br>
-                        </div>
-                        <div class="dahliaOS-support-buttons">
-                            <div align="center">
-                                <a href="#""><button class=" dahlia-dlnow mdl-button mdl-js-button mdl-button--raised
-                                    mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
-                                    About
-                                    <span class="mdl-button__ripple-container"><span
-                                            class="mdl-ripple"></span></span></button></a>
-                                <a href="#"><button
-                                        class="dahlia-dlnow mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-                                        data-upgraded=",MaterialButton,MaterialRipple">
-                                        Notice
-                                        <span class="mdl-button__ripple-container"><span
-                                                class="mdl-ripple"></span></span></button></a>
-                            </div>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div class="dahliaOS-article-section">
-                        <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Articles</div>
-                        <div class="dahliaOS-article-list">
-                            <section class="dahliaOS-article-item">
-                                <a class="dahliaOS-article-title" href="#">
-                                    Article A
-                                </a><br>
-                                <a class="dahliaOS-article-desc" href="#">
-                                    [Announcement on adjustment of the OS redesign]
-                                </a>
-                            </section>
-                            <section class="dahliaOS-article-item">
-                                <a class="dahliaOS-article-title" href="#">
-                                    Article B
-                                </a><br>
-                                <a class="dahliaOS-article-desc" href="#">
-                                    [Announcement on celebration of the hacktoberfest]
-                                </a>
-                            </section>
-                            <section class="dahliaOS-article-item">
-                                <a class="dahliaOS-article-title" href="#">
-                                    Article C
-                                </a><br>
-                                <a class="dahliaOS-article-desc" href="#">
-                                    [How developers could manage the code]
-                                </a>
-                            </section>
-                            <p style="padding-top: 20px; text-align: left;">
-                                <a class="mdl-typography--font-regular mdl-typography--text-uppercase dahliaOS-alt-link"
-                                    href="#">
-                                    See more&nbsp;<i class="material-icons">chevron_right</i>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="dahliaOS-download-section-image"></div>
-                </div>
-                <%- include('./templates/footer.ejs'); %>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <%- include('./templates/nav.ejs'); %>
+    <div class="dahliaOS-content mdl-layout__content">
+      <div id="support" class="dahliaOS-customized-section">
+        <div class="dahliaOS-support-container">
+          <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">How can we help
+            you?
+          </div>
+          <br><br>
+          <div class="mdl-typography--font-light dahliaOS-support">
+            <form class="dahliaOS-support-search" action="">
+              <i class="dahliaOS-support-icon material-icons">search</i>
+              <input class="dahliaOS-support-box mdl-textfield__input" type="text" placeholder="Describe your issue">
+            </form>
+            <br>
+          </div>
+          <div class="dahliaOS-support-buttons">
+            <div align="center">
+              <a href="#""><button class=" dahlia-dlnow mdl-button mdl-js-button mdl-button--raised
+                mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                About
+                <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button></a>
+              <a href="#"><button class="dahlia-dlnow mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                  data-upgraded=",MaterialButton,MaterialRipple">
+                  Notice
+                  <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button></a>
             </div>
+          </div>
+        </div>
+        <br><br>
+        <div class="dahliaOS-article-section">
+          <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Articles</div>
+          <div class="dahliaOS-article-list">
+            <section class="dahliaOS-article-item">
+              <a class="dahliaOS-article-title" href="#">
+                Article A
+              </a><br>
+              <a class="dahliaOS-article-desc" href="#">
+                [Announcement on adjustment of the OS redesign]
+              </a>
+            </section>
+            <section class="dahliaOS-article-item">
+              <a class="dahliaOS-article-title" href="#">
+                Article B
+              </a><br>
+              <a class="dahliaOS-article-desc" href="#">
+                [Announcement on celebration of the hacktoberfest]
+              </a>
+            </section>
+            <section class="dahliaOS-article-item">
+              <a class="dahliaOS-article-title" href="#">
+                Article C
+              </a><br>
+              <a class="dahliaOS-article-desc" href="#">
+                [How developers could manage the code]
+              </a>
+            </section>
+            <p style="padding-top: 20px; text-align: left;">
+              <a class="mdl-typography--font-regular mdl-typography--text-uppercase dahliaOS-alt-link" href="#">
+                See more&nbsp;<i class="material-icons">chevron_right</i>
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="dahliaOS-download-section-image"></div>
+      </div>
+      <%- include('./templates/footer.ejs'); %>
     </div>
+  </div>
 </body>
 
 </html>
