@@ -7,8 +7,8 @@
     "start": "node server.js",
     "devstart": "nodemon server.js",
     "updatedocs": "git submodule init && git submodule update",
-    "hostinit": "git clone https://github.com/HexaOneOfficial/documentation.git docs --recursive --no-checkout --depth 2",
-    "updatedocshost": "cd documentation && git pull"
+    "hostinit": "git clone https://github.com/HexaOneOfficial/documentation.git docs --recursive --depth 2",
+    "updatedocshost": "cd docs && git pull"
   },
   "repository": {
     "type": "git",
