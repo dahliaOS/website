@@ -1,8 +1,5 @@
 const routes = require("express").Router();
 
-// Databases
-const Users = require("../models/Users");
-
 const Datastore = require("nedb");
 const db = new Datastore({ filename: "./databases/posts" });
 db.loadDatabase();
