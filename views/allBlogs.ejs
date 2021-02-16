@@ -21,41 +21,41 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-        content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
-    <title>All blogs | dahliaOS</title>
-    <script src="/assets/js/material.min.js"></script>
-    <!-- Page styles -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="/assets/css/dahlia.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="stylesheet" href="/assets/css/viewAllBlogs.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description"
+    content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <title>All blogs | dahliaOS</title>
+  <script src="/assets/js/material.min.js"></script>
+  <!-- Page styles -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/assets/css/dahlia.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/viewAllBlogs.css">
 </head>
 
 <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <%- include('./templates/nav.ejs'); %>
-            <div class="dahliaOS-content mdl-layout__content">
-                <div class="blogGrid">
-                    <% for(var i=0; i < blogs.length; i++) { %>
-                        <div class="blog">
-                            <div class="header">
-                                <%= blogs[i].title %>
-                            </div>
-                            <div class="content">
-                                <%= blogs[i].body.replace(/<[^>]*>?/gm, '') %>
-                            </div> <br><br><br>
-                            <div class="readMoreBtn">
-                                <button onclick="location.href = '/blog/<%= blogs[i].url %>'">Read more</button>
-                            </div>
-                        </div>
-                        <%}%>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <%- include('./templates/nav.ejs'); %>
+    <div class="dahliaOS-content mdl-layout__content">
+      <div class="blogGrid">
+        <% for(var i=0; i < blogs.length; i++) { %>
+        <div class="blog">
+          <div class="header">
+            <%= blogs[i].title %>
+          </div>
+          <div class="content">
+            <%= blogs[i].body.replace(/<[^>]*>?/gm, '') %>
+          </div> <br><br><br>
+          <div class="readMoreBtn">
+            <button onclick="location.href = '/blog/<%= blogs[i].url %>'">Read more</button>
+          </div>
+        </div>
+        <%}%>
                 </div>
             </div>
     </div>
