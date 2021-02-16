@@ -31,10 +31,10 @@ routes.post("/", (req, res) => {
               })
               .catch((err) => console.log(err));
           } else {
-            throwError(res, "register.ejs", "Passwords do not match!", res);
+            throwError(res, "register.ejs", "Passwords do not match!");
           }
         } else {
-          throwError(res, "register.ejs", "Passwords are not long enough!!");
+          throwError(res, "register.ejs", "Passwords are not long enough!");
         }
       } else {
         throwError(res, "register.ejs", "Please enter a username!!");
