@@ -119,9 +119,21 @@ limitations under the License.
         <br><br><br><br>
         <div class="dahliaOS-download-section-image"></div>
       </div>
-      <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
-        <div class="mdl-snackbar__text"></div>
-        <button type="button" class="mdl-snackbar__action"></button>
+      <div class="container-that-takes-up-the-entire-page-so-i-can-add-the-back-drop">
+        <dialog class="mdl-dialog">
+          <h4 class="mdl-dialog__title">Support dahliaOS</h4>
+          <div class="mdl-dialog__content">
+            <p>
+              Donating to dahliaOS will help us purchase devices for testing and cover web hosting fees, so we can
+              continue work on
+              our amazing software!
+            </p>
+          </div>
+          <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button continue">Donate</button>
+            <button type="button" class="mdl-button close">No thanks</button>
+          </div>
+        </dialog>
       </div>
       <%- include('./templates/footer.ejs'); %>
     </div>
@@ -216,16 +228,27 @@ limitations under the License.
       })
 
     const downloadClicked = () => {
-      const notification = document.querySelector('.mdl-js-snackbar');
-      const data = {
-        message: 'Thanks for downloading! Consider donating to support the project!',
-        actionHandler: event => {
-          location.href = '/donate';
-        },
-        actionText: 'Donate',
-        timeout: 10000
-      };
-      notification.MaterialSnackbar.showSnackbar(data);
+      const dialog = document.querySelector('dialog');
+      const backgroundElement = document.querySelector('.container-that-takes-up-the-entire-page-so-i-can-add-the-back-drop')
+      dialog.showModal();
+      backgroundElement.style.display = 'unset';
+      dialog.querySelector('.close').addEventListener('click', () => {
+        dialog.close();
+        backgroundElement.style.display = 'none';
+      });
+      dialog.querySelector('.continue').addEventListener('click', () => location.href = '/donate');
+
+      // Snack bar stuff that I was told to comment out because he wanted the modal instead of the snackbar :(
+      /*       const notification = document.querySelector('.mdl-js-snackbar');
+            const data = {
+              message: 'Thanks for downloading! Consider donating to support the project!',
+              actionHandler: event => {
+                location.href = '/donate';
+              },
+              actionText: 'Donate',
+              timeout: 10000
+            };
+            notification.MaterialSnackbar.showSnackbar(data); */
     }
   </script>
 </body>

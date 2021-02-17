@@ -742,6 +742,41 @@ a img {
     border-radius: 4px;
     background-color: rgb(255, 87, 34);
   }
+
+  /* this is for the modal */
+  .container-that-takes-up-the-entire-page-so-i-can-add-the-back-drop {
+    backdrop-filter: blur(2px);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+  }
+  .mdl-dialog {
+    width: 80%;
+    max-width: 400px;
+    background: rgb(41, 41, 41);
+    animation: popIn 0.2s;
+    -webkit-animation: popIn 0.2s;
+  }
+  .mdl-dialog__title {
+    color: #fff;
+  }
+  .mdl-dialog__content {
+    color: #acacac;
+  }
+  .mdl-dialog__actions .mdl-button {
+    color: #acacac;
+  }
+  .mdl-dialog__actions .mdl-button.close:hover {
+    color: #c54848;
+  }
+  .mdl-dialog__actions .mdl-button:hover {
+    color: #ff5722;
+  }
+
   .blog-name {
     color: white;
     font-family: "Sulphur Point";
@@ -1459,5 +1494,24 @@ a img {
     .dahliasOS-support-icon {
       left: 15px;
     }
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
   }
 }
