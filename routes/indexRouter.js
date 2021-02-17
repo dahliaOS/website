@@ -1,4 +1,5 @@
 const routes = require("express").Router();
+const { exec } = require("child_process");
 
 // Middleware
 const auth = require("../middleware/auth");
@@ -97,6 +98,14 @@ routes.get("/twitter", (req, res) => {
   res.render("../views/templates/socialmedia.ejs", {
     socialName: "Twitter",
     URL: "https://www.twitter.com/dahliaos_io",
+  });
+});
+
+routes.use("/whpd/"+(process.env.WHPD_SECRET||"dev"), (req, res) => {
+  // "WebHook (to) Pull Docs"
+  const cp = exec("cd docs && git pull && git checkout main");
+  cp.on("close", (code, signal) => {
+    res.send({"code": code});
   });
 });
 
