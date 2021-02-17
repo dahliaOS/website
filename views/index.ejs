@@ -426,23 +426,34 @@ limitations under the License.
           <br><br><br>
         </div>
         <div class="dahliaOS-download-section-image"></div>
+        <div class="container-that-takes-up-the-entire-page-so-i-can-add-the-back-drop">
+          <dialog class="mdl-dialog">
+            <h4 class="mdl-dialog__title">Support dahliaOS</h4>
+            <div class="mdl-dialog__content">
+              <p>
+                Donating to dahliaOS will help us purchase devices for testing and cover web hosting fees, so we can
+                continue work on
+                our amazing software!
+              </p>
+            </div>
+            <div class="mdl-dialog__actions">
+              <button type="button" class="mdl-button continue">Donate</button>
+              <button type="button" class="mdl-button close">No thanks</button>
+            </div>
+          </dialog>
+        </div>
+        <%- include('./templates/footer.ejs'); %>
       </div>
-      <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
-        <div class="mdl-snackbar__text"></div>
-        <button type="button" class="mdl-snackbar__action"></button>
-      </div>
-      <%- include('./templates/footer.ejs'); %>
     </div>
-  </div>
-  <script>
-    fetch('/api/getNews')
-      .then(res => res.json())
-      .then(news => {
-        console.log(news);
-        for (var i = 0; i < 10; i++) {
-          const post = document.createElement('div');
-          post.className = 'dahliaOS-tablet dahliaOS-screen'
-          post.innerHTML = `
+    <script>
+      fetch('/api/getNews')
+        .then(res => res.json())
+        .then(news => {
+          console.log(news);
+          for (var i = 0; i < 10; i++) {
+            const post = document.createElement('div');
+            post.className = 'dahliaOS-tablet dahliaOS-screen'
+            post.innerHTML = `
                                     <div class="demo-card-square mdl-card mdl-shadow--2dp">
                                         <div class="mdl-card__title" style="background:
                      #ff3d00;">
@@ -459,64 +470,75 @@ limitations under the License.
                                             <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
                                         </div>
                                     </div>`
-          document.querySelector('.scroll').appendChild(post);
-        }
-      }).then(() => {
-        new ScrollBooster({
-          viewport: document.querySelector('.dahliaOS-screens'),
-          content: document.querySelector('.scroll'),
-          scrollMode: 'native',
-          direction: 'horizontal'
-        });
-      }).catch(err => {
-        new ScrollBooster({
-          viewport: document.querySelector('.dahliaOS-screens'),
-          content: document.querySelector('.scroll'),
-          scrollMode: 'native',
-          direction: 'horizontal'
-        });
-      })
+            document.querySelector('.scroll').appendChild(post);
+          }
+        }).then(() => {
+          new ScrollBooster({
+            viewport: document.querySelector('.dahliaOS-screens'),
+            content: document.querySelector('.scroll'),
+            scrollMode: 'native',
+            direction: 'horizontal'
+          });
+        }).catch(err => {
+          new ScrollBooster({
+            viewport: document.querySelector('.dahliaOS-screens'),
+            content: document.querySelector('.scroll'),
+            scrollMode: 'native',
+            direction: 'horizontal'
+          });
+        })
 
-    fetch('https://api.github.com/repos/dahliaOS/releases/releases')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('tooltipLatestVersion').innerHTML = `Version: ${data[0].tag_name}`;
-        document.getElementById('latestLearnMore').href = data[0].html_url;
-        document.querySelector('.latestVersionDetails').innerHTML = data[0].body.substring(data[0].body.indexOf('+ ')).replace(/(?:\r\n|\r|\n)/g, '<br>'); // That long REGEX basically splits the line breaks and adds a br
-        document.getElementById('latestDownload').href = data[0].zipball_url
-        if (data[0].assets.length >= 2) {
-          data[0].assets.forEach(build => {
-            if (build.name.includes('-efi')) {
-              document.getElementById('latestDownload').innerHTML = 'Download (efi)'
-              document.getElementById('latestDownload').href = build.browser_download_url;
-              document.getElementById('latestDownload').setAttribute('onclick', 'downloadClicked()');
-            } else if (build.name.includes('-legacy')) {
-              document.getElementById('latestDownloadLegacy').style.display = 'inline-block';
-              document.getElementById('latestDownloadLegacy').href = build.browser_download_url;
-              document.getElementById('latestDownloadLegacy').setAttribute('onclick', 'downloadClicked()');
-            }
-          })
-        }
-      })
-      .then(document.getElementById('loader').style.display = 'none')
-      .catch(err => {
-        console.log(err);
-        document.querySelector('.errors').innerHTML = '<h4 class="error">An error occured while fetching the downloads!</h4>'
-      })
+      fetch('https://api.github.com/repos/dahliaOS/releases/releases')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('tooltipLatestVersion').innerHTML = `Version: ${data[0].tag_name}`;
+          document.getElementById('latestLearnMore').href = data[0].html_url;
+          document.querySelector('.latestVersionDetails').innerHTML = data[0].body.substring(data[0].body.indexOf('+ ')).replace(/(?:\r\n|\r|\n)/g, '<br>'); // That long REGEX basically splits the line breaks and adds a br
+          document.getElementById('latestDownload').href = data[0].zipball_url
+          if (data[0].assets.length >= 2) {
+            data[0].assets.forEach(build => {
+              if (build.name.includes('-efi')) {
+                document.getElementById('latestDownload').innerHTML = 'Download (efi)'
+                document.getElementById('latestDownload').href = build.browser_download_url;
+                document.getElementById('latestDownload').setAttribute('onclick', 'downloadClicked()');
+              } else if (build.name.includes('-legacy')) {
+                document.getElementById('latestDownloadLegacy').style.display = 'inline-block';
+                document.getElementById('latestDownloadLegacy').href = build.browser_download_url;
+                document.getElementById('latestDownloadLegacy').setAttribute('onclick', 'downloadClicked()');
+              }
+            })
+          }
+        })
+        .then(document.getElementById('loader').style.display = 'none')
+        .catch(err => {
+          console.log(err);
+          document.querySelector('.errors').innerHTML = '<h4 class="error">An error occured while fetching the downloads!</h4>'
+        })
 
-    const downloadClicked = () => {
-      const notification = document.querySelector('.mdl-js-snackbar');
-      const data = {
-        message: 'Thanks for downloading! Consider donating to support the project!',
-        actionHandler: event => {
-          location.href = '/donate';
-        },
-        actionText: 'Donate',
-        timeout: 10000
-      };
-      notification.MaterialSnackbar.showSnackbar(data);
-    }
-  </script>
+      const downloadClicked = () => {
+        const dialog = document.querySelector('dialog');
+        const backgroundElement = document.querySelector('.container-that-takes-up-the-entire-page-so-i-can-add-the-back-drop')
+        dialog.showModal();
+        backgroundElement.style.display = 'unset';
+        dialog.querySelector('.close').addEventListener('click', () => {
+          dialog.close();
+          backgroundElement.style.display = 'none';
+        });
+        dialog.querySelector('.continue').addEventListener('click', () => location.href = '/donate');
+
+        // Snack bar stuff that I was told to comment out because he wanted the modal instead of the snackbar :(
+        /*       const notification = document.querySelector('.mdl-js-snackbar');
+              const data = {
+                message: 'Thanks for downloading! Consider donating to support the project!',
+                actionHandler: event => {
+                  location.href = '/donate';
+                },
+                actionText: 'Donate',
+                timeout: 10000
+              };
+              notification.MaterialSnackbar.showSnackbar(data); */
+      }
+    </script>
 </body>
 
 </html>
