@@ -755,11 +755,7 @@ a img {
     display: none;
   }
   .mdl-dialog {
-    width: 80%;
-    max-width: 400px;
     background: rgb(41, 41, 41);
-    animation: popIn 0.2s;
-    -webkit-animation: popIn 0.2s;
   }
   .mdl-dialog__title {
     color: #fff;
