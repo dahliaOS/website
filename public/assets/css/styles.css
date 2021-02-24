@@ -44,6 +44,17 @@ body {
   background: #fff;
 }
 
+.container-that-takes-up-the-entire-page-so-i-can-add-the-back-drop {
+  backdrop-filter: blur(2px);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+}
+
 .dahliaOS-color--background {
   background-color: #ffffff;
 }
@@ -744,16 +755,6 @@ a img {
   }
 
   /* this is for the modal */
-  .container-that-takes-up-the-entire-page-so-i-can-add-the-back-drop {
-    backdrop-filter: blur(2px);
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    display: none;
-  }
   .mdl-dialog {
     background: rgb(41, 41, 41);
   }
