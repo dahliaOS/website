@@ -3846,7 +3846,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   border-right: 1px solid #e0e0e0;
-  background: #1a1a1a;
+  background: #fafafa;
   -webkit-transform: translateX(-250px);
   transform: translateX(-250px);
   -webkit-transform-style: preserve-3d;
