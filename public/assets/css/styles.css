@@ -753,6 +753,15 @@ a img {
     background: #1a1a1a;
   }
 
+  .mdl-layout__drawer {
+    background: #1a1a1a;
+  }
+
+  .mdl-navigation__link:hover {
+    background: #202020 !important;
+    color: #e0e0e0 !important;
+  }
+
   .mdl-card {
     color: #fff;
     background: #222;
