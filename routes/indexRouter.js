@@ -30,7 +30,7 @@ routes.get("/knowledgebase", (req, res) => {
   res.render("knowledgebase.ejs");
 });
 
-routes.get("/coc", (req, res) => {
+routes.get(["/coc", "/conduct"], (req, res) => {
   res.render("coc.ejs");
 });
 
@@ -101,11 +101,11 @@ routes.get("/twitter", (req, res) => {
   });
 });
 
-routes.use("/whpd/"+(process.env.WHPD_SECRET||"dev"), (req, res) => {
+routes.use("/whpd/" + (process.env.WHPD_SECRET || "dev"), (req, res) => {
   // "WebHook (to) Pull Docs"
   const cp = exec("cd docs && git pull && git checkout main");
   cp.on("close", (code, signal) => {
-    res.send({"code": code});
+    res.send({ code: code });
   });
 });
 
