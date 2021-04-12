@@ -36,6 +36,23 @@ routes.get(
   }
 );
 
+routes.get(
+  ["/download/latest/legacy", "/downloads/latest/legacy"],
+  async (req, res) => {
+    const fetchLatestDownload = await fetch(
+      "https://api.github.com/repos/dahliaOS/releases/releases"
+    );
+    const getLatestDownload = await fetchLatestDownload.json();
+    // Find the EFI build within the request
+    for (const build of getLatestDownload[0].assets) {
+      if (build.name.includes("-legacy")) {
+        res.redirect(build.browser_download_url);
+        break; // Breaks here so if it is the first one, it doesnt query the next item
+      }
+    }
+  }
+);
+
 routes.get("/donate", (req, res) => {
   res.render("donate.ejs");
 });
