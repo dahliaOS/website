@@ -4,7 +4,7 @@ require("dotenv").config();
 
 // Webhook
 const webhook = require("webhook-discord");
-const hook = new webhook.Webhook(process.env.WEBHOOKURL);
+/* const hook = new webhook.Webhook(process.env.WEBHOOKURL); */
 
 // Databases
 var db = {
