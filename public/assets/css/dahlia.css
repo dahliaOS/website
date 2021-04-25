@@ -3172,7 +3172,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
   justify-content: space-between;
   padding: 32px 16px;
   color: #9e9e9e;
-  background-color: #424242;
+  background-color: #1a1a1a;
 }
 .mdl-mini-footer:after {
   content: "";
