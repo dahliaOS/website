@@ -21,6 +21,30 @@
 
 If you're interested in contributing to the project, please refer to [CONTRIBUTING.md](../CONTRIBUTING.md)
 
+## Install dev tools
+
+- [Install node js and npm](https://nodejs.org/en/download/package-manager/)
+- [Install yarn v2](https://yarnpkg.com/getting-started/install)
+- Install your favorite editors
+
+## Website layout
+
+TODO!
+
+## Local testing
+
+To localy test the website:
+
+Start the webserver:
+```
+$ DB_URL=mongodb://localhost yarn start
+express-session deprecated req.secret; provide secret option server.js:49:3
+listening on port 3000
+```
+
+In a browser load page [localhost:3000](http://localhost:3000). You should
+now be able to test the website.
+
 ## License
 
 <p align="left">
