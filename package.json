@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "devstart": "docker-compose up -d && nodemon server.js",
+    "start": "node _boot.js",
+    "devstart": "docker-compose up -d && nodemon _boot.js",
+    "first-start": "docker-compose up -d && nodemon _boot.js",
     "docker-compose-up": "docker-compose up -d",
     "updatedocs": "git submodule init && git submodule update",
     "hostinit": "git clone https://github.com/dahliaOS/documentation.git docs --recursive --depth 2",
