@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  mongodb:
+    image: mongo
+    container_name: dahliaos_mongodb
+    environment:
+      - PUID=1000
+      - PGID=1000
+    ports: 
+      - 27017:27017
