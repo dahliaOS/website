@@ -25,6 +25,7 @@ If you're interested in contributing to the project, please refer to [CONTRIBUTI
 
 - [Install node js and npm](https://nodejs.org/en/download/package-manager/)
 - [Install yarn v2](https://yarnpkg.com/getting-started/install)
+- [Install Docker](https://www.docker.com)
 - Install your favorite editors
 
 ## Website layout
@@ -35,9 +36,12 @@ TODO!
 
 To localy test the website:
 
-Start the webserver:
+Step 1, Seed the database:
+`Set environment variable "APP_MODE" to "SEED" and run "yarn devstart". After a successful seed, close the server, and remove "APP_MODE" from .env.`
+
+Step 2, Start the webserver:
 ```
-$ DB_URL=mongodb://localhost yarn start
+$ yarn start
 express-session deprecated req.secret; provide secret option server.js:49:3
 listening on port 3000
 ```
