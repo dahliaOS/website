@@ -34,7 +34,7 @@ TODO!
 
 ## Local testing
 
-To localy test the website:
+To locally test the website:
 
 Step 1, Seed the database:
 `Set environment variable "APP_MODE" to "SEED" and run "yarn devstart". After a successful seed, close the server, and remove "APP_MODE" from .env.`
