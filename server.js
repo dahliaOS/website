@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const methodOverride = require("method-override");
-require("dotenv").config();
 
 // Routes
 const indexRouter = require("./routes/indexRouter");
