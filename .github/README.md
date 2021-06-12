@@ -25,7 +25,7 @@ If you're interested in contributing to the project, please refer to [CONTRIBUTI
 
 - [Install node js and npm](https://nodejs.org/en/download/package-manager/)
 - [Install yarn v2](https://yarnpkg.com/getting-started/install)
-- [Install Docker](https://www.docker.com)
+- [Install Docker](https://www.docker.com) and be sure you have [docker-compose](https://docs.docker.com/compose/)
 - Install your favorite editors
 
 ## Website layout
@@ -36,10 +36,42 @@ TODO!
 
 To locally test the website:
 
-Step 1, Seed the database:
-`Set environment variable "APP_MODE" to "SEED" and run "yarn devstart". After a successful seed, close the server, and remove "APP_MODE" from .env.`
+### Step 1. Seed the database:
+```
+$ APP_MODE=SEED yarn devstart
+Creating network "website_default" with the default driver
+Pulling mongodb (mongo:)...
+latest: Pulling from library/mongo
+4bbfd2c87b75: Pull complete
+d2e110be24e1: Pull complete
+889a7173dcfe: Pull complete
+6f6a1a25f35a: Pull complete
+e87b34c16538: Pull complete
+7099eef4dfe4: Pull complete
+29b1d79d3b5b: Pull complete
+b5c178e98a5a: Pull complete
+ded800e62b93: Pull complete
+b09aa2e255f0: Pull complete
+c7e0f50ad27a: Pull complete
+dcdad63a2ffa: Pull complete
+Digest: sha256:482a562bf25f42f02ce589458f72866bbe9eded5b6f8fa5b1213313f0e00bba2
+Status: Downloaded newer image for mongo:latest
+Creating dahliaos_mongodb ... done
+[nodemon] 2.0.7
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node _boot.js`
+listening on port 3000
+CONNECTED DATABASE
+User has been seeded:
+User 'ADMIN'
+Password: "password"
+```
 
-Step 2, Start the webserver:
+Close the server using `Ctrl+c`.
+
+### Step 2. Start the webserver:
 ```
 $ yarn start
 express-session deprecated req.secret; provide secret option server.js:49:3
