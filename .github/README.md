@@ -36,7 +36,14 @@ TODO!
 
 To locally test the website:
 
-### Step 1. Seed the database:
+### Step 1. Create an .env file:
+
+Setup `.env` file you can create your own or use `.env-example` as shown here:
+```
+$ cp .env-example .env
+```
+
+### Step 2. Seed the database:
 ```
 $ APP_MODE=SEED yarn devstart
 Creating network "website_default" with the default driver
@@ -71,7 +78,7 @@ Password: "password"
 
 Close the server using `Ctrl+c`.
 
-### Step 2. Start the webserver:
+### Step 3. Start the webserver:
 ```
 $ yarn start
 express-session deprecated req.secret; provide secret option server.js:49:3
