@@ -1,4 +1,6 @@
 import MenuIcon from "@material-ui/icons/Menu";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+
 import {
   useScrollTrigger,
   Toolbar,
@@ -9,9 +11,11 @@ import {
   Link,
   Theme,
   Typography,
+  Menu,
+  MenuItem
 } from "@material-ui/core";
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -102,6 +106,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 export const Navbar = (): JSX.Element => {
   const [openDrawer, setOpenDrawer] = useState({ left: false });
+  const [navVertIcon, setNavVertIcon] = useState(null);
   const classes = useStyles();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -110,6 +115,9 @@ export const Navbar = (): JSX.Element => {
 
   const toggleDrawer = (open: boolean) => () =>
     setOpenDrawer({ ...openDrawer, ["left"]: open });
+
+  const toggleVertIcon = (event: any) => setNavVertIcon(event.currentTarget);
+  const closeVertIcon = () => setNavVertIcon(null);
 
   return (
     <div className={classes.root}>
@@ -219,6 +227,26 @@ export const Navbar = (): JSX.Element => {
                 Documentation
               </Link>
             </Typography>
+            <IconButton
+              aria-label='more'
+              aria-controls='nav-menu'
+              aria-haspopup='true'
+              onClick={toggleVertIcon}
+            >
+              <MoreVertIcon />
+            </IconButton>
+            <Menu
+              id='nav-menu'
+              anchorEl={navVertIcon}
+              keepMounted
+              getContentAnchorEl={null}
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+              open={Boolean(navVertIcon)}
+              onClose={closeVertIcon}
+            >
+              <MenuItem onClick={closeVertIcon}>Source Code</MenuItem>
+              <MenuItem onClick={closeVertIcon}>Screenshots</MenuItem>
+            </Menu>
           </div>
         </Toolbar>
       </AppBar>
