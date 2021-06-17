@@ -7,8 +7,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 
-import { Drawer } from "./Drawer";
-import { useState } from "react";
+import { Drawer } from "./drawer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
