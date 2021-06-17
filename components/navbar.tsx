@@ -21,9 +21,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  title: {
-    flexGrow: 1,
-  },
   navLogo: {
     height: 28,
     filter: "brightness(0) invert(1)",
@@ -75,6 +72,28 @@ const useStyles = makeStyles((theme: Theme) => ({
       cursor: "unset",
       color: theme.palette.primary.light,
       background: "unset",
+    },
+  },
+  desktopNav: {
+    display: "none",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+      justifyContent: "flex-end",
+      flexGrow: 1,
+    },
+  },
+  navLink: {
+    fontSize: "1.1em",
+    padding: "0 16px",
+    display: "inline-block",
+    lineHeight: "50px",
+    color: theme.palette.grey[50],
+    borderBottom: "4px solid transparent",
+    transition: `${theme.transitions.easing.easeInOut} 0.229s`,
+    "&:hover": {
+      color: theme.palette.grey[400],
+      textDecoration: "none",
+      borderBottom: `4px solid ${theme.palette.primary.main}`,
     },
   },
 }));
@@ -177,6 +196,28 @@ export const Navbar = (): JSX.Element => {
             <MenuIcon />
           </IconButton>
           <img className={classes.navLogo} src='/img/logo-color.png' />
+          <div className={classes.desktopNav}>
+            <Typography>
+              <Link className={classes.navLink} href='#'>
+                Features
+              </Link>
+              <Link className={classes.navLink} href='#'>
+                News
+              </Link>
+              <Link className={classes.navLink} href='#'>
+                Download
+              </Link>
+              <Link className={classes.navLink} href='#'>
+                Demo
+              </Link>
+              <Link className={classes.navLink} href='#'>
+                Developers
+              </Link>
+              <Link className={classes.navLink} href='#'>
+                Documentation
+              </Link>
+            </Typography>
+          </div>
         </Toolbar>
       </AppBar>
       <Toolbar />
