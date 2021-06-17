@@ -41,16 +41,16 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   drawerTitle: {
     position: "relative",
-    paddingTop: "160px",
-    height: "160px",
-    width: "230px",
+    paddingTop: 160,
+    height: 160,
+    width: 230,
     background: theme.palette.primary.main,
   },
   drawerLogo: {
     position: "absolute",
-    height: "28px",
-    bottom: "16px",
-    paddingLeft: "40px",
+    height: 28,
+    bottom: 16,
+    paddingLeft: 40,
   },
   drawerLink: {
     display: "block",
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   categorySeperator: {
-    height: "1px",
+    height: 1,
     background: theme.palette.secondary.light,
     margin: "8px 0",
   },
