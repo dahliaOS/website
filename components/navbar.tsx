@@ -83,10 +83,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   navLink: {
-    fontSize: "1.1em",
+    fontSize: ".9em",
+    fontWeight: theme.typography.fontWeightBold,
     padding: "0 16px",
     display: "inline-block",
     lineHeight: "50px",
+    textTransform: "uppercase",
     color: theme.palette.grey[50],
     borderBottom: "4px solid transparent",
     transition: `${theme.transitions.easing.easeInOut} 0.229s`,
