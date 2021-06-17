@@ -49,7 +49,12 @@ export const theme = createMuiTheme({
       sharp: "cubic-bezier(0.4, 0, 0.6, 1)",
     },
   },
-  overrides: {
+
+  /* I was told to get rid of the custom scrollbar by Noah, very upsetting, but
+  hey, the codes still there to uncomment out when I found out aa way to
+  manipulate him and get him to allow the scroll bar again! */
+
+  /*   overrides: {
     MuiCssBaseline: {
       "@global": {
         "*::-webkit-scrollbar": {
@@ -65,5 +70,5 @@ export const theme = createMuiTheme({
         },
       },
     },
-  },
+  }, */
 });
