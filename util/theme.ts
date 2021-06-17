@@ -3,10 +3,10 @@ import createPalette from "@material-ui/core/styles/createPalette";
 
 export const theme = createMuiTheme({
   palette: createPalette({
+    type: "dark",
     background: {
       default: "#1a1a1a",
     },
-    type: "dark",
     primary: {
       light: "#ff6331",
       main: "#ff3d00",
@@ -41,4 +41,29 @@ export const theme = createMuiTheme({
       dark: "#388e3c",
     }, */
   }),
+  transitions: {
+    easing: {
+      easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
+      easeOut: "cubic-bezier(0.0, 0, 0.2, 1)",
+      easeIn: "cubic-bezier(0.4, 0, 1, 1)",
+      sharp: "cubic-bezier(0.4, 0, 0.6, 1)",
+    },
+  },
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        "*::-webkit-scrollbar": {
+          width: "0.75em",
+          background: "#1a1a1a",
+        },
+        "*::-webkit-scrollbar-thumb": {
+          borderRadius: "4px",
+          backgroundColor: "rgb(255, 87, 34);",
+        },
+        "*::-webkit-scrollbar-track": {
+          boxShadow: "inset 0 0 6px rgb(0 0 0 / 30%)",
+        },
+      },
+    },
+  },
 });
