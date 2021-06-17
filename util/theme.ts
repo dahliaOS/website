@@ -53,7 +53,7 @@ export const theme = createMuiTheme({
     MuiCssBaseline: {
       "@global": {
         "*::-webkit-scrollbar": {
-          width: "0.75em",
+          width: "0.45em",
           background: "#1a1a1a",
         },
         "*::-webkit-scrollbar-thumb": {
