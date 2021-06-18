@@ -1,6 +1,7 @@
 import { Navbar } from "../components/navbar";
 import { Footer } from "../components/footer";
-import { Box, Button, makeStyles, Theme, Typography } from "@material-ui/core";
+import { NewsPill } from "../components/newsPill";
+import { Box, Button, makeStyles, Theme, Link } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) => ({
   home: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: theme.typography.fontWeightMedium,
     fontFamily: "Sulphur Point, sans-serif",
     display: "block",
+    marginTop: 10,
     marginBottom: 5,
   },
   homeParagraph: {
@@ -60,6 +62,7 @@ export default function Home() {
       {/* Hero */}
       <Box className={classes.home}>
         <div className={classes.typography}>
+          <NewsPill />
           <h1 className={classes.homeHeader}>something new</h1>
           <p className={classes.homeParagraph}>
             dahliaOS is a modern, secure, lightweight and responsive operating
