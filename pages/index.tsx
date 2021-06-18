@@ -45,13 +45,19 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginRight: 15,
     },
   },
+  sectionTitle: {
+    textAlign: "center",
+  },
 }));
 
 export default function Home() {
   const classes = useStyles();
   return (
     <div>
+      {/* Navbar */}
       <Navbar />
+
+      {/* Hero */}
       <Box className={classes.home}>
         <div className={classes.typography}>
           <h1 className={classes.homeHeader}>something new</h1>
@@ -68,6 +74,13 @@ export default function Home() {
           <img className={classes.heroImg} src='/img/mockups/hero.png' />
         </div>
       </Box>
+
+      {/* News */}
+      <Box>
+        <h1 className={classes.sectionTitle}>News</h1>
+      </Box>
+
+      {/* Footer */}
       <Footer />
     </div>
   );
