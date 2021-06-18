@@ -13,6 +13,7 @@ import {
   Typography,
   Menu,
   MenuItem,
+  Divider,
 } from "@material-ui/core";
 
 import React, { useState } from "react";
@@ -63,11 +64,6 @@ const useStyles = makeStyles((theme: Theme) => ({
       color: theme.palette.grey[300],
       background: theme.palette.secondary.light,
     },
-  },
-  categorySeperator: {
-    height: 1,
-    background: theme.palette.secondary.light,
-    margin: "8px 0",
   },
   category: {
     color: theme.palette.primary.light,
@@ -150,7 +146,7 @@ export const Navbar = (): JSX.Element => {
           <Link href='#' className={classes.drawerLink}>
             Documentation
           </Link>
-          <div className={classes.categorySeperator} />
+          <Divider />
           <span className={`${classes.category} ${classes.drawerLink}`}>
             Find us on
           </span>
@@ -179,7 +175,7 @@ export const Navbar = (): JSX.Element => {
           <Link href='/twitter' target='_blank' className={classes.drawerLink}>
             Twitter
           </Link>
-          <div className={classes.categorySeperator} />
+          <Divider />
           <span className={`${classes.category} ${classes.drawerLink}`}>
             For developers
           </span>
