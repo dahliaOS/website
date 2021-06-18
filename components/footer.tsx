@@ -49,25 +49,45 @@ export const Footer = (): JSX.Element => {
         <div className={classes.footerCategory}>
           <h1 className={classes.footerHeader}>Find us on</h1>
           <ul className={classes.footerList}>
-            <Link href='#' className={classes.footerItem}>
+            <Link
+              href='/discord'
+              target='_blank'
+              className={classes.footerItem}
+            >
               Discord
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link href='/github' target='_blank' className={classes.footerItem}>
               GitHub
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link href='/reddit' target='_blank' className={classes.footerItem}>
               Reddit
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link
+              href='/telegram'
+              target='_blank'
+              className={classes.footerItem}
+            >
               Telegram
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link
+              href='/facebook'
+              target='_blank'
+              className={classes.footerItem}
+            >
               Facebook
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link
+              href='/instagram'
+              target='_blank'
+              className={classes.footerItem}
+            >
               Instagram
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link
+              href='/twitter'
+              target='_blank'
+              className={classes.footerItem}
+            >
               Twitter
             </Link>
           </ul>

@@ -12,7 +12,7 @@ import {
   Theme,
   Typography,
   Menu,
-  MenuItem
+  MenuItem,
 } from "@material-ui/core";
 
 import React, { useState } from "react";
@@ -154,25 +154,29 @@ export const Navbar = (): JSX.Element => {
           <span className={`${classes.category} ${classes.drawerLink}`}>
             Find us on
           </span>
-          <Link href='#' className={classes.drawerLink}>
+          <Link href='/discord' target='_blank' className={classes.drawerLink}>
             Discord
           </Link>
-          <Link href='#' className={classes.drawerLink}>
+          <Link href='/github' target='_blank' className={classes.drawerLink}>
             GitHub
           </Link>
-          <Link href='#' className={classes.drawerLink}>
+          <Link href='/reddit' target='_blank' className={classes.drawerLink}>
             Reddit
           </Link>
-          <Link href='#' className={classes.drawerLink}>
+          <Link href='/telegram' target='_blank' className={classes.drawerLink}>
             Telegram
           </Link>
-          <Link href='#' className={classes.drawerLink}>
+          <Link href='/facebook' target='_blank' className={classes.drawerLink}>
             Facebook
           </Link>
-          <Link href='#' className={classes.drawerLink}>
+          <Link
+            href='/instagram'
+            target='_blank'
+            className={classes.drawerLink}
+          >
             Instagram
           </Link>
-          <Link href='#' className={classes.drawerLink}>
+          <Link href='/twitter' target='_blank' className={classes.drawerLink}>
             Twitter
           </Link>
           <div className={classes.categorySeperator} />
