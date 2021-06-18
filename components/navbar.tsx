@@ -209,7 +209,9 @@ export const Navbar = (): JSX.Element => {
           >
             <MenuIcon />
           </IconButton>
-          <img className={classes.navLogo} src='/img/logo-color.png' />
+          <Link className={classes.navLogo} href='/'>
+            <img className={classes.navLogo} src='/img/logo-color.png' />
+          </Link>
           <div className={classes.desktopNav}>
             <Typography>
               <Link className={classes.navLink} href='#'>
