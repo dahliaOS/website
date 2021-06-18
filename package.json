@@ -7,7 +7,7 @@
     "url": "git+https://github.com/dahliaOS/website.git"
   },
   "author": "DEVLOOSKIE, Blake",
-  "license": "DN",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/Looskie/dahliaOS-Nodejs/issues"
   },
