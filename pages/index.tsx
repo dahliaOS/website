@@ -5,6 +5,7 @@ import { Box, Button, makeStyles, Theme, Link } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) => ({
   home: {
+    position: "relative",
     display: "flex",
     minHeight: "100vh",
     maxWidth: "100vw",
@@ -53,6 +54,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   sectionTitle: {
     textAlign: "center",
   },
+  wave: {
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    zIndex: -1,
+  },
 }));
 
 export default function Home() {
@@ -79,6 +86,7 @@ export default function Home() {
         <div className={classes.homeHero}>
           <img className={classes.heroImg} src='/img/mockups/hero.png' />
         </div>
+        <img src='/img/darkWave.svg' className={classes.wave} />
       </Box>
 
       {/* News */}
