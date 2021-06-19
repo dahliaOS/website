@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: "0 auto",
     background: theme.palette.secondary.light,
     boxShadow: theme.shadows[10],
-    marginBottom: 30,
+    marginBottom: 40,
     borderRadius: 8,
   },
   title: {
