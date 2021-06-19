@@ -11,6 +11,8 @@ import {
   Tooltip,
 } from "@material-ui/core";
 import InfoIcon from "@material-ui/icons/Info";
+import { Skeleton, Alert } from "@material-ui/lab";
+import { useEffect, useState } from "react";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -40,6 +42,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   cardInfo: {
     fontSize: "1em",
+    whiteSpace: "pre-line",
+    textOverflow: "ellipsis",
+    display: "-webkit-box",
+    "-webkit-line-clamp": 7,
+    "-webkit-box-orient": "vertical",
+    paddingBottom: 2,
+    overflow: "hidden",
   },
   cardLink: {
     display: "block",
@@ -66,36 +75,161 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: theme.palette.primary.light,
     border: `${theme.palette.secondary.light} solid 2px`,
   },
+  space: {
+    display: "block",
+    paddingTop: 5,
+  },
 }));
+interface Releases {
+  [index: number]: {
+    name: string;
+    tag_name: string;
+    body: string;
+    assets: [Object];
+    assets_url: string;
+    html_url: string;
+    created_at: string;
+  };
+}
 
 export const Download = () => {
   const classes = useStyles();
+  const [release, setRelease] = useState<Releases | null>(null);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    void fetch("https://api.github.com/repos/dahliaOS/releases/releases")
+      .then(async (res) => {
+        const releases = await res.json();
+
+        if (res.status >= 400) throw new Error(releases);
+
+        console.log(releases as Releases);
+        return releases as Releases;
+      })
+      .then((release) => {
+        setTimeout(() => {
+          setRelease(release);
+        }, 1000);
+      })
+      .catch(setError);
+  }, []);
 
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <div className={classes.title}>
-          <Typography className={classes.cardTitle}>Latest</Typography>
-          <Tooltip title='Version deez'>
-            <InfoIcon className={classes.infoIcon} />
-          </Tooltip>
+      {error ? (
+        <Alert severity='error'>
+          An error occurred whilst fetching GitHub's API!
+        </Alert>
+      ) : (
+        <div>
+          <CardContent>
+            <div className={classes.title}>
+              <Typography className={classes.cardTitle}>Latest</Typography>
+              <Tooltip title={release ? release[0].name : "Loading..."}>
+                <InfoIcon className={classes.infoIcon} />
+              </Tooltip>
+            </div>
+            <p className={classes.cardInfo}>
+              {release ? (
+                /* This long regex basically takes '+ ' and slices it and puts a new line on it */
+                release[0].body
+                  .substring(release[0].body.indexOf("+ "))
+                  .replace(/(?:\r\n|\r|\n)/g, "\n")
+              ) : (
+                <div>
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"100%"}
+                    height={15}
+                  />
+                  <div className={classes.space} />
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"100%"}
+                    height={15}
+                  />
+                  <div className={classes.space} />
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"98%"}
+                    height={15}
+                  />
+                  <div className={classes.space} />
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"95%"}
+                    height={15}
+                  />
+                  <div className={classes.space} />
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"85%"}
+                    height={15}
+                  />
+                  <div className={classes.space} />
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"20%"}
+                    height={15}
+                  />
+                  <div className={classes.space} />
+                </div>
+              )}
+            </p>
+            {release ? (
+              <Link href={release[0].html_url} className={classes.cardLink}>
+                <Button className={classes.cardMore}>Read more</Button>
+              </Link>
+            ) : (
+              <Link href='' className={classes.cardLink}>
+                <Button className={classes.cardMore}>
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"60px"}
+                    height={"25px"}
+                  />
+                </Button>
+              </Link>
+            )}
+          </CardContent>
+          <Divider className={classes.divider} />
+          <CardActions className={classes.btns}>
+            <Button className={classes.downloadBtn}>
+              {release ? (
+                "Download (EFI)"
+              ) : (
+                <Skeleton
+                  variant='rect'
+                  animation='wave'
+                  width={"90px"}
+                  height={"25px"}
+                />
+              )}
+            </Button>
+            <Button className={classes.downloadBtn}>
+              {" "}
+              {release ? (
+                "Download (Legacy)"
+              ) : (
+                <Skeleton
+                  variant='rect'
+                  animation='wave'
+                  width={"90px"}
+                  height={"25px"}
+                />
+              )}
+            </Button>
+          </CardActions>
         </div>
-        <p className={classes.cardInfo}>
-          + Added a new Files app! You can now browse files and create folders
-          with ease!
-          <br />+ Added a new WIP Clock App, for managing timers and seeing the
-          time <br />+ Modified the behavior for tiling windows, now just
-          long-press on Maximize and drag the...
-        </p>
-        <Link href='' className={classes.cardLink}>
-          <Button className={classes.cardMore}>Read more</Button>
-        </Link>
-      </CardContent>
-      <Divider className={classes.divider} />
-      <CardActions className={classes.btns}>
-        <Button className={classes.downloadBtn}>Download (EFI)</Button>
-        <Button className={classes.downloadBtn}>Download (Legacy)</Button>
-      </CardActions>
+      )}
     </Card>
   );
 };
