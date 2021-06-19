@@ -1,14 +1,23 @@
 import { Navbar } from "../components/navbar";
 import { Footer } from "../components/footer";
 import { NewsPill } from "../components/newsPill";
-import { Box, Button, makeStyles, Theme, Link } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  makeStyles,
+  Theme,
+  Link,
+  Typography,
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  home: {
+  half: {
     position: "relative",
     display: "flex",
     minHeight: "100vh",
     maxWidth: "100vw",
+  },
+  home: {
     alignItems: "center",
     marginTop: "-60px",
   },
@@ -30,6 +39,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   typography: {
     flex: "50%",
     paddingLeft: 50,
+  },
+  left: {
+    flex: "50%",
+  },
+  right: {
+    flex: "50%",
   },
   homeHero: {
     flex: "50%",
@@ -53,12 +68,25 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   sectionTitle: {
     textAlign: "center",
+    fontFamily: "Sulphur Point, sans-serif",
+    fontSize: "2.8em",
+    fontWeight: theme.typography.fontWeightMedium,
   },
   wave: {
     position: "absolute",
     bottom: 0,
     right: 0,
     zIndex: -1,
+  },
+  alignLeft: {
+    textAlign: "left",
+    paddingLeft: 50,
+  },
+  sectionParagraph: {
+    paddingLeft: 50,
+    fontWeight: theme.typography.fontWeightLight,
+    fontSize: "1.3em",
+    maxWidth: "75ch",
   },
 }));
 
@@ -70,7 +98,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <Box className={classes.home}>
+      <Box className={`${classes.home} ${classes.half}`}>
         <div className={classes.typography}>
           <NewsPill />
           <h1 className={classes.homeHeader}>something new</h1>
@@ -89,9 +117,51 @@ export default function Home() {
         <img src='/img/darkWave.svg' className={classes.wave} />
       </Box>
 
-      {/* News */}
+      {/* The basics */}
+      <Box className={classes.half}>
+        <div className={classes.left}>
+          <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>
+            Just the basics
+          </h1>
+          <Typography className={classes.sectionParagraph}>
+            dahliaOS keeps things light by only including apps you need, and you
+            can add all of your favorites from other operating systems using the
+            Containers app. dahliaOS also provides a curated marketplace for
+            third-party native Flutter applications, so you can use nearly every
+            application within one system!
+          </Typography>
+        </div>
+        <div className={classes.right}>
+          <Box>
+            <Typography>hello</Typography>
+          </Box>
+        </div>
+      </Box>
+
+      {/* Supported devices */}
+      <Box className={classes.half}>
+        <div className={classes.left}>
+          <Box>
+            <Typography className={classes.alignLeft}>hello</Typography>
+          </Box>
+        </div>
+        <div className={classes.right}>
+          <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>
+            A wide range of supported devices
+          </h1>
+          <Typography className={classes.sectionParagraph}>
+            dahliaOS provides a fast and stable experience on nearly every
+            computer, from a 2004 desktop tower to the latest generation of
+            mobile notebooks. Our dual kernel approach allows users with new(er)
+            hardware to take advantage of the Zircon Kernel, while maintaining
+            support for older devices using the Linux Kernel.
+          </Typography>
+        </div>
+      </Box>
+
+      {/* Download */}
       <Box>
-        <h1 className={classes.sectionTitle}>News</h1>
+        <h1 className={classes.sectionTitle}>Download</h1>
       </Box>
 
       {/* Footer */}
