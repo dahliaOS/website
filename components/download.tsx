@@ -138,10 +138,10 @@ export const Download = () => {
             </div>
             {release ? (
               <Typography className={classes.cardInfo}>
-                {/* This long regex basically takes '+ ' and slices it and puts a
-                new line on it */}
                 Whats new:
                 <div className={classes.space} />
+                {/* This long regex basically takes '+ ' and slices it and puts a
+                new line on it */}
                 {release[0].body
                   .substring(release[0].body.indexOf("+ "))
                   .replace(/(?:\r\n|\r|\n)/g, "\n")}
