@@ -9,9 +9,28 @@ export default class Page extends Document {
       <Html lang='en'>
         <Head>
           <meta charSet='UTF-8' />
+          <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+          <link rel='canonical' href='https://dahliaos.io' />
           <meta name='theme-color' content={theme.palette.primary.main} />
           <meta property='og:image' content='https://imgur.com/PNGGkDP.png' />
           <meta property='og:site_name' content='dahliaOS' />
+          <meta name='apple-mobile-web-app-capable' content='yes' />
+          <link rel="icon" type="image/png" href="/img/favicon.png" />
+          <meta
+            name='apple-mobile-web-app-status-bar-style'
+            content='#ff3d00'
+          />
+          <meta name='apple-mobile-web-app-title' content='dahliaOS' />
+          <link rel='apple-touch-icon' href='assets/img/favicon.png' />
+          <meta
+            name='msapplication-TileImage'
+            content='assets/img/favicon.png'
+          />
+          <meta name='msapplication-TileColor' content='#ff3d00' />
+          <meta
+            name='keywords'
+            content='dahlia, software, flutter, fuchsia, linux, dahliaOS, computer, operating system, os, system, kernel, dart, open source, material, design, zircon, go, rust'
+          />
           <meta
             name='description'
             content='dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.'
