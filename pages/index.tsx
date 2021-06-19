@@ -54,6 +54,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   heroImg: {
     width: "100%",
   },
+  topicBtns: {
+    display: "inline-block",
+    margin: "15px 0 0 50px",
+  },
   btnContainer: {
     display: "inline-block",
   },
@@ -190,6 +194,39 @@ export default function Home() {
             Looking for an older update?
             <ArrowForwardIos />
           </Link>
+        </div>
+      </Box>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      {/* Still not convinced? */}
+      <Box className={classes.half}>
+        <div className={classes.left}>
+          <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>
+            Still not convinced?
+          </h1>
+          <Typography className={classes.sectionParagraph}>
+            We offer an online preview of dahliaOS right at your finger tips!
+            Explore, create, and more with dahliaOS' web preview to get a taste
+            of what it is like!
+          </Typography>
+          <div className={classes.topicBtns}>
+            <Button
+              href='https://web.dahliaos.io'
+              target='_blank'
+              className={classes.gradientBtn}
+            >
+              Try it out!
+            </Button>
+          </div>
+        </div>
+        <div className={classes.right}>
+          <Box>
+            <Typography>hello</Typography>
+          </Box>
         </div>
       </Box>
 
