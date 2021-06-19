@@ -85,7 +85,11 @@ interface Releases {
     name: string;
     tag_name: string;
     body: string;
-    assets: [Object];
+    assets: [
+      {
+        browser_download_url: string;
+      }
+    ];
     assets_url: string;
     html_url: string;
     created_at: string;
@@ -105,6 +109,9 @@ export const Download = () => {
         if (res.status >= 400) throw new Error(releases);
 
         console.log(releases as Releases);
+        console.log(
+          releases[0].assets.find((el: any) => el.name.includes("-legacy")).url
+        );
         return releases as Releases;
       })
       .then((release) => {
@@ -202,31 +209,57 @@ export const Download = () => {
           </CardContent>
           <Divider className={classes.divider} />
           <CardActions className={classes.btns}>
-            <Button className={classes.downloadBtn}>
-              {release ? (
-                "Download (EFI)"
-              ) : (
-                <Skeleton
-                  variant='rect'
-                  animation='wave'
-                  width={"90px"}
-                  height={"25px"}
-                />
-              )}
-            </Button>
-            <Button className={classes.downloadBtn}>
-              {" "}
-              {release ? (
-                "Download (Legacy)"
-              ) : (
-                <Skeleton
-                  variant='rect'
-                  animation='wave'
-                  width={"90px"}
-                  height={"25px"}
-                />
-              )}
-            </Button>
+            {release ? (
+              <div>
+                {release[0].assets.length >= 2 ? (
+                  <div>
+                    <Button
+                      href={
+                        release[0].assets.find((el: any) =>
+                          el.name.includes("-efi")
+                        )?.browser_download_url ?? "Oopsies!"
+                      }
+                      className={classes.downloadBtn}
+                    >
+                      Download (EFI)
+                    </Button>
+                    <Button
+                      href={
+                        release[0].assets.find((el: any) =>
+                          el.name.includes("-legacy")
+                        )?.browser_download_url ?? "Oopsies!"
+                      }
+                      className={classes.downloadBtn}
+                    >
+                      Download (Legacy)
+                    </Button>
+                  </div>
+                ) : (
+                  <Button className={classes.downloadBtn}>
+                    Download (EFI)
+                  </Button>
+                )}
+              </div>
+            ) : (
+              <div>
+                <Button className={classes.downloadBtn}>
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"90px"}
+                    height={"25px"}
+                  />
+                </Button>
+                <Button className={classes.downloadBtn}>
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"90px"}
+                    height={"25px"}
+                  />
+                </Button>
+              </div>
+            )}
           </CardActions>
         </div>
       )}
