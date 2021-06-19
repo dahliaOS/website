@@ -93,6 +93,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   moreUpdates: {
     display: "block",
     textAlign: "center",
+    marginBottom: 50,
     "& *": {
       verticalAlign: "middle",
       textAlign: "center",
