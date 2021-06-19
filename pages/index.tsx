@@ -10,6 +10,7 @@ import {
   Link,
   Typography,
 } from "@material-ui/core";
+import { ArrowForwardIos } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme: Theme) => ({
   half: {
@@ -89,6 +90,25 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: "1.3em",
     maxWidth: "75ch",
   },
+  moreUpdates: {
+    display: "block",
+    textAlign: "center",
+    "& *": {
+      verticalAlign: "middle",
+      textAlign: "center",
+      fontSize: "1.25em",
+      display: "inline-block",
+      marginLeft: 10,
+    },
+  },
+  centerMore: {
+    color: theme.palette.grey[600],
+    transition: `${theme.transitions.easing.easeInOut} 0.229s`,
+    "&:hover": {
+      color: theme.palette.grey[300],
+      textDecoration: "unset",
+    },
+  },
 }));
 
 export default function Home() {
@@ -164,6 +184,12 @@ export default function Home() {
       <Box>
         <h1 className={classes.sectionTitle}>Download</h1>
         <Download />
+        <div className={classes.moreUpdates}>
+          <Link href='/download' className={classes.centerMore}>
+            Looking for an older update?
+            <ArrowForwardIos />
+          </Link>
+        </div>
       </Box>
 
       {/* Footer */}
