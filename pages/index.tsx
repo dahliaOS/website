@@ -1,5 +1,6 @@
 import { Navbar } from "../components/navbar";
 import { Footer } from "../components/footer";
+import { Download } from "../components/download";
 import { NewsPill } from "../components/newsPill";
 import {
   Box,
@@ -162,6 +163,7 @@ export default function Home() {
       {/* Download */}
       <Box>
         <h1 className={classes.sectionTitle}>Download</h1>
+        <Download />
       </Box>
 
       {/* Footer */}
