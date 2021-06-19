@@ -192,6 +192,7 @@ export const Download = () => {
                 <div className={classes.space} />
               </div>
             )}
+            <div className={classes.space} />
             {release ? (
               <Link href={release[0].html_url} className={classes.cardLink}>
                 <Button className={classes.cardMore}>Read more</Button>
