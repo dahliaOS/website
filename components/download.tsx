@@ -9,6 +9,11 @@ import {
   Theme,
   makeStyles,
   Tooltip,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
 } from "@material-ui/core";
 import InfoIcon from "@material-ui/icons/Info";
 import { Skeleton, Alert } from "@material-ui/lab";
@@ -79,6 +84,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "block",
     paddingTop: 5,
   },
+  dialog: {
+    maxWidth: 450,
+    background: theme.palette.secondary.light,
+  },
+  gradientBtn: {
+    padding: "5px 12px",
+    borderRadius: 5,
+    background: `linear-gradient(153deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.light} 100%)`,
+  },
 }));
 interface Releases {
   [index: number]: {
@@ -102,6 +116,10 @@ export const Download = () => {
   const classes = useStyles();
   const [release, setRelease] = useState<Releases | null>(null);
   const [error, setError] = useState<Error | null>(null);
+  const [modal, setModal] = useState(false);
+
+  const openModal = () => setModal(true);
+  const closeModal = () => setModal(false);
 
   useEffect(() => {
     void fetch("https://api.github.com/repos/dahliaOS/releases/releases")
@@ -129,6 +147,26 @@ export const Download = () => {
         </Alert>
       ) : (
         <div>
+          <Dialog
+            classes={{ paper: classes.dialog }}
+            open={modal}
+            onClose={closeModal}
+          >
+            <DialogTitle>Support dahliaOS</DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                Donating to dahliaOS will help us purchase devices for testing
+                and cover web hosting fees, so we can continue work on our
+                amazing software!
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={closeModal}>No thanks</Button>
+              <Button className={classes.gradientBtn} onClick={closeModal}>
+                Donate
+              </Button>
+            </DialogActions>
+          </Dialog>
           <CardContent>
             <div className={classes.title}>
               <Typography className={classes.cardTitle}>Latest</Typography>
@@ -219,6 +257,7 @@ export const Download = () => {
                     key={asset.name}
                     href={asset.browser_download_url}
                     className={classes.downloadBtn}
+                    onClick={openModal}
                   >
                     {asset.name.includes("efi")
                       ? "Download (EFI)"
