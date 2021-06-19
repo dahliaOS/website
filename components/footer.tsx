@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 export const Footer = (): JSX.Element => {
   const classes = useStyles();
+
   return (
     <BottomNavigation className={classes.root}>
       <div className={classes.footerContainer}>
