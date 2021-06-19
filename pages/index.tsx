@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { ArrowForwardIos } from "@material-ui/icons";
+import Head from "next/head";
 
 const useStyles = makeStyles((theme: Theme) => ({
   half: {
@@ -120,6 +121,10 @@ export default function Home() {
   const classes = useStyles();
   return (
     <div>
+      <Head>
+        <title>dahliaOS</title>
+        <meta property='og:title' content='dahliaOS' key='title' />
+      </Head>
       {/* Navbar */}
       <Navbar />
 

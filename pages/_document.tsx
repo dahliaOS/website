@@ -10,6 +10,16 @@ export default class Page extends Document {
         <Head>
           <meta charSet='UTF-8' />
           <meta name='theme-color' content={theme.palette.primary.main} />
+          <meta property='og:image' content='https://imgur.com/PNGGkDP.png' />
+          <meta property='og:site_name' content='dahliaOS' />
+          <meta
+            name='description'
+            content='dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.'
+          />
+          <meta
+            name='og:description'
+            content='dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.'
+          />
           <link
             href='https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400&amp;display=swap'
             rel='stylesheet'
