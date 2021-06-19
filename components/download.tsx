@@ -87,6 +87,8 @@ interface Releases {
     body: string;
     assets: [
       {
+        download_count: number;
+        name: string;
         browser_download_url: string;
       }
     ];
@@ -109,9 +111,6 @@ export const Download = () => {
         if (res.status >= 400) throw new Error(releases);
 
         console.log(releases as Releases);
-        console.log(
-          releases[0].assets.find((el: any) => el.name.includes("-legacy")).url
-        );
         return releases as Releases;
       })
       .then((release) => {
@@ -137,59 +136,61 @@ export const Download = () => {
                 <InfoIcon className={classes.infoIcon} />
               </Tooltip>
             </div>
-            <p className={classes.cardInfo}>
-              {release ? (
-                /* This long regex basically takes '+ ' and slices it and puts a new line on it */
-                release[0].body
+            {release ? (
+              <Typography className={classes.cardInfo}>
+                {/* This long regex basically takes '+ ' and slices it and puts a
+                new line on it */}
+
+                {release[0].body
                   .substring(release[0].body.indexOf("+ "))
-                  .replace(/(?:\r\n|\r|\n)/g, "\n")
-              ) : (
-                <div>
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"100%"}
-                    height={15}
-                  />
-                  <div className={classes.space} />
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"100%"}
-                    height={15}
-                  />
-                  <div className={classes.space} />
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"98%"}
-                    height={15}
-                  />
-                  <div className={classes.space} />
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"95%"}
-                    height={15}
-                  />
-                  <div className={classes.space} />
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"85%"}
-                    height={15}
-                  />
-                  <div className={classes.space} />
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"20%"}
-                    height={15}
-                  />
-                  <div className={classes.space} />
-                </div>
-              )}
-            </p>
+                  .replace(/(?:\r\n|\r|\n)/g, "\n")}
+              </Typography>
+            ) : (
+              <div>
+                <Skeleton
+                  variant='rect'
+                  animation='wave'
+                  width={"100%"}
+                  height={15}
+                />
+                <div className={classes.space} />
+                <Skeleton
+                  variant='rect'
+                  animation='wave'
+                  width={"100%"}
+                  height={15}
+                />
+                <div className={classes.space} />
+                <Skeleton
+                  variant='rect'
+                  animation='wave'
+                  width={"98%"}
+                  height={15}
+                />
+                <div className={classes.space} />
+                <Skeleton
+                  variant='rect'
+                  animation='wave'
+                  width={"95%"}
+                  height={15}
+                />
+                <div className={classes.space} />
+                <Skeleton
+                  variant='rect'
+                  animation='wave'
+                  width={"85%"}
+                  height={15}
+                />
+                <div className={classes.space} />
+                <Skeleton
+                  variant='rect'
+                  animation='wave'
+                  width={"20%"}
+                  height={15}
+                />
+                <div className={classes.space} />
+              </div>
+            )}
             {release ? (
               <Link href={release[0].html_url} className={classes.cardLink}>
                 <Button className={classes.cardMore}>Read more</Button>
@@ -211,34 +212,17 @@ export const Download = () => {
           <CardActions className={classes.btns}>
             {release ? (
               <div>
-                {release[0].assets.length >= 2 ? (
-                  <div>
-                    <Button
-                      href={
-                        release[0].assets.find((el: any) =>
-                          el.name.includes("-efi")
-                        )?.browser_download_url ?? "Oopsies!"
-                      }
-                      className={classes.downloadBtn}
-                    >
-                      Download (EFI)
-                    </Button>
-                    <Button
-                      href={
-                        release[0].assets.find((el: any) =>
-                          el.name.includes("-legacy")
-                        )?.browser_download_url ?? "Oopsies!"
-                      }
-                      className={classes.downloadBtn}
-                    >
-                      Download (Legacy)
-                    </Button>
-                  </div>
-                ) : (
-                  <Button className={classes.downloadBtn}>
-                    Download (EFI)
+                {release[0].assets.map((asset) => (
+                  <Button
+                    key={asset.name}
+                    href={asset.browser_download_url}
+                    className={classes.downloadBtn}
+                  >
+                    {asset.name.includes("efi")
+                      ? "Download (EFI)"
+                      : "Download (Legacy)"}
                   </Button>
-                )}
+                ))}
               </div>
             ) : (
               <div>
