@@ -112,7 +112,7 @@ interface Releases {
   };
 }
 
-export const Download = () => {
+export const Download = (props: any) => {
   const classes = useStyles();
   const [release, setRelease] = useState<Releases | null>(null);
   const [error, setError] = useState<Error | null>(null);
@@ -139,154 +139,157 @@ export const Download = () => {
   }, []);
 
   return (
-    <Card className={classes.root}>
-      {error ? (
-        <Alert severity='error'>
-          An error occurred whilst fetching GitHub's API!
-        </Alert>
-      ) : (
-        <div>
-          <Dialog
-            classes={{ paper: classes.dialog }}
-            open={modal}
-            onClose={closeModal}
-          >
-            <DialogTitle>Support dahliaOS</DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                Donating to dahliaOS will help us purchase devices for testing
-                and cover web hosting fees, so we can continue work on our
-                amazing software!
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={closeModal}>No thanks</Button>
-              <Button className={classes.gradientBtn} onClick={closeModal}>
-                Donate
-              </Button>
-            </DialogActions>
-          </Dialog>
-          <CardContent>
-            <div className={classes.title}>
-              <Typography className={classes.cardTitle}>Latest</Typography>
-              <Tooltip title={release ? release[0].name : "Loading..."}>
-                <InfoIcon className={classes.infoIcon} />
-              </Tooltip>
-            </div>
-            {release ? (
-              <Typography className={classes.cardInfo}>
-                Whats new:
-                <div className={classes.space} />
-                {/* This long regex basically takes '+ ' and slices it and puts a
+    <div>
+      <Card className={classes.root}>
+        {error ? (
+          <Alert severity='error'>
+            An error occurred whilst fetching GitHub's API!
+          </Alert>
+        ) : (
+          <div>
+            <Dialog
+              classes={{ paper: classes.dialog }}
+              open={modal}
+              onClose={closeModal}
+            >
+              <DialogTitle>Support dahliaOS</DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  Donating to dahliaOS will help us purchase devices for testing
+                  and cover web hosting fees, so we can continue work on our
+                  amazing software!
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={closeModal}>No thanks</Button>
+                <Button className={classes.gradientBtn} onClick={closeModal}>
+                  Donate
+                </Button>
+              </DialogActions>
+            </Dialog>
+            <CardContent>
+              <div className={classes.title}>
+                <Typography className={classes.cardTitle}>Latest</Typography>
+                <Tooltip title={release ? release[0].name : "Loading..."}>
+                  <InfoIcon className={classes.infoIcon} />
+                </Tooltip>
+              </div>
+              {release ? (
+                <Typography className={classes.cardInfo}>
+                  Whats new:
+                  <div className={classes.space} />
+                  {/* This long regex basically takes '+ ' and slices it and puts a
                 new line on it */}
-                {release[0].body
-                  .substring(release[0].body.indexOf("+ "))
-                  .replace(/(?:\r\n|\r|\n)/g, "\n")}
-              </Typography>
-            ) : (
-              <div>
-                <Skeleton
-                  variant='rect'
-                  animation='wave'
-                  width={"100%"}
-                  height={15}
-                />
-                <div className={classes.space} />
-                <Skeleton
-                  variant='rect'
-                  animation='wave'
-                  width={"100%"}
-                  height={15}
-                />
-                <div className={classes.space} />
-                <Skeleton
-                  variant='rect'
-                  animation='wave'
-                  width={"98%"}
-                  height={15}
-                />
-                <div className={classes.space} />
-                <Skeleton
-                  variant='rect'
-                  animation='wave'
-                  width={"95%"}
-                  height={15}
-                />
-                <div className={classes.space} />
-                <Skeleton
-                  variant='rect'
-                  animation='wave'
-                  width={"85%"}
-                  height={15}
-                />
-                <div className={classes.space} />
-                <Skeleton
-                  variant='rect'
-                  animation='wave'
-                  width={"20%"}
-                  height={15}
-                />
-                <div className={classes.space} />
-              </div>
-            )}
-            <div className={classes.space} />
-            {release ? (
-              <Link href={release[0].html_url} className={classes.cardLink}>
-                <Button className={classes.cardMore}>Read more</Button>
-              </Link>
-            ) : (
-              <Link href='' className={classes.cardLink}>
-                <Button className={classes.cardMore}>
+                  {release[0].body
+                    .substring(release[0].body.indexOf("+ "))
+                    .replace(/(?:\r\n|\r|\n)/g, "\n")}
+                </Typography>
+              ) : (
+                <div>
                   <Skeleton
                     variant='rect'
                     animation='wave'
-                    width={"60px"}
-                    height={"25px"}
+                    width={"100%"}
+                    height={15}
                   />
-                </Button>
-              </Link>
-            )}
-          </CardContent>
-          <Divider className={classes.divider} />
-          <CardActions className={classes.btns}>
-            {release ? (
-              <div>
-                {release[0].assets.map((asset) => (
-                  <Button
-                    key={asset.name}
-                    href={asset.browser_download_url}
-                    className={classes.downloadBtn}
-                    onClick={openModal}
-                  >
-                    {asset.name.includes("efi")
-                      ? "Download (EFI)"
-                      : "Download (Legacy)"}
+                  <div className={classes.space} />
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"100%"}
+                    height={15}
+                  />
+                  <div className={classes.space} />
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"98%"}
+                    height={15}
+                  />
+                  <div className={classes.space} />
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"95%"}
+                    height={15}
+                  />
+                  <div className={classes.space} />
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"85%"}
+                    height={15}
+                  />
+                  <div className={classes.space} />
+                  <Skeleton
+                    variant='rect'
+                    animation='wave'
+                    width={"20%"}
+                    height={15}
+                  />
+                  <div className={classes.space} />
+                </div>
+              )}
+              <div className={classes.space} />
+              {release ? (
+                <Link href={release[0].html_url} className={classes.cardLink}>
+                  <Button className={classes.cardMore}>Read more</Button>
+                </Link>
+              ) : (
+                <Link href='' className={classes.cardLink}>
+                  <Button className={classes.cardMore}>
+                    <Skeleton
+                      variant='rect'
+                      animation='wave'
+                      width={"60px"}
+                      height={"25px"}
+                    />
                   </Button>
-                ))}
-              </div>
-            ) : (
-              <div>
-                <Button className={classes.downloadBtn}>
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"90px"}
-                    height={"25px"}
-                  />
-                </Button>
-                <Button className={classes.downloadBtn}>
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"90px"}
-                    height={"25px"}
-                  />
-                </Button>
-              </div>
-            )}
-          </CardActions>
-        </div>
-      )}
-    </Card>
+                </Link>
+              )}
+            </CardContent>
+            <Divider className={classes.divider} />
+            <CardActions className={classes.btns}>
+              {release ? (
+                <div>
+                  {release[0].assets.map((asset) => (
+                    <Button
+                      key={asset.name}
+                      href={asset.browser_download_url}
+                      className={classes.downloadBtn}
+                      onClick={openModal}
+                    >
+                      {asset.name.includes("efi")
+                        ? "Download (EFI)"
+                        : "Download (Legacy)"}
+                    </Button>
+                  ))}
+                </div>
+              ) : (
+                <div>
+                  <Button className={classes.downloadBtn}>
+                    <Skeleton
+                      variant='rect'
+                      animation='wave'
+                      width={"90px"}
+                      height={"25px"}
+                    />
+                  </Button>
+                  <Button className={classes.downloadBtn}>
+                    <Skeleton
+                      variant='rect'
+                      animation='wave'
+                      width={"90px"}
+                      height={"25px"}
+                    />
+                  </Button>
+                </div>
+              )}
+            </CardActions>
+          </div>
+        )}
+      </Card>
+      {props.more ? <h1>test</h1> : null}
+    </div>
   );
 };
