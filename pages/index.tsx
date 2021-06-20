@@ -161,7 +161,7 @@ export default function Home() {
       </Box>
 
       {/* The basics */}
-      <Box className={classes.half}>
+      <Box className={classes.half} id="features">
         <div className={classes.left}>
           <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>
             Just the basics
