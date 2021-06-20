@@ -1,5 +1,4 @@
-import { Footer } from "../components/footer";
-import { Navbar } from "../components/navbar";
+import { Footer, Navbar } from "../components/index";
 import { Box } from "@material-ui/core";
 
 export default function download() {
