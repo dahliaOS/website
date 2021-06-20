@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   half: {
     position: "relative",
     display: "flex",
-    minHeight: "100vh",
+    minHeight: "65vh",
     maxWidth: "100vw",
     alignItems: "center",
   },
@@ -259,8 +259,8 @@ export default function Home() {
           </div>
         </div>
         <div className={classes.right}>
-          <Box>
-            <Typography>hello</Typography>
+          <Box className={classes.roundedBox}>
+            <img src='/img/mockups/pangolin.png' />
           </Box>
         </div>
       </Box>
