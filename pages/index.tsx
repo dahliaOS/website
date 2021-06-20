@@ -116,6 +116,17 @@ const useStyles = makeStyles((theme: Theme) => ({
       textDecoration: "unset",
     },
   },
+  roundedBox: {
+    borderRadius: 16,
+    marginLeft: 50,
+    maxWidth: "100%",
+    background: theme.palette.secondary.light,
+    overflow: "hidden",
+    "& *": {
+      maxWidth: "100%",
+      marginBottom: "-6px",
+    },
+  },
 }));
 
 export default function Home() {
@@ -182,8 +193,8 @@ export default function Home() {
       {/* Supported devices */}
       <Box className={classes.half}>
         <div className={classes.left}>
-          <Box>
-            <Typography className={classes.alignLeft}>hello</Typography>
+          <Box className={classes.roundedBox}>
+            <img src='/img/mockups/collageTransparent.webp' />
           </Box>
         </div>
         <div className={classes.right}>
