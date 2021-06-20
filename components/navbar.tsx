@@ -128,7 +128,7 @@ export const Navbar = (): JSX.Element => {
         </div>
         <br />
         <Typography>
-          <Link href='#' className={classes.drawerLink}>
+          <Link href='#features' className={classes.drawerLink}>
             Features
           </Link>
           <Link href='#' className={classes.drawerLink}>
