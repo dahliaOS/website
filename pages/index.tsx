@@ -220,7 +220,7 @@ export default function Home() {
       {/* Download */}
       <Box id='download'>
         <h1 className={classes.sectionTitle}>Download</h1>
-        <Download />
+        <Download more={false} />
         <div className={classes.moreUpdates}>
           <Link href='/download' className={classes.centerMore}>
             Looking for an older update?
