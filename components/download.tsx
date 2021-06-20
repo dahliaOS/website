@@ -128,7 +128,6 @@ export const Download = () => {
 
         if (res.status >= 400) throw new Error(releases);
 
-        console.log(releases as Releases);
         return releases as Releases;
       })
       .then((release) => {
