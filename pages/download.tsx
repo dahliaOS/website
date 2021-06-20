@@ -1,24 +1,25 @@
 import { Footer, Navbar, Download } from "../components/index";
+import { Theme, makeStyles, Box } from "@material-ui/core";
+
+const useStyles = makeStyles((theme: Theme) => ({
+  title: {
+    margin: "1em 0 1.5em 0",
+    textAlign: "center",
+    fontSize: "2.25em",
+    fontWeight: theme.typography.fontWeightLight,
+  },
+}));
 
 export default function download() {
+  const classes = useStyles();
+
   return (
     <div>
       <Navbar />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Download />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <Box minHeight={"100vh"}>
+        <h1 className={classes.title}>Downloads</h1>
+        <Download />
+      </Box>
       <Footer />
     </div>
   );
