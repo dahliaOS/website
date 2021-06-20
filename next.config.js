@@ -2,6 +2,11 @@ module.exports = {
   async redirects() {
     return [
       {
+        source: "/downloads",
+        destination: "/download",
+        permanent: true,
+      },
+      {
         source: "/discord",
         destination: "https://discord.com/invite/7qVbJHR",
         permanent: true,
