@@ -14,8 +14,13 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Accordion,
+  AccordionActions,
+  AccordionSummary,
+  AccordionDetails,
 } from "@material-ui/core";
 import InfoIcon from "@material-ui/icons/Info";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Skeleton, Alert } from "@material-ui/lab";
 import { useEffect, useState } from "react";
 
@@ -92,6 +97,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     padding: "5px 12px",
     borderRadius: 5,
     background: `linear-gradient(153deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.light} 100%)`,
+  },
+  accordionContainer: {
+    maxWidth: 400,
+    margin: "0 auto",
+  },
+  accordion: {
+    background: theme.palette.secondary.light,
+  },
+  accordionHeader: {
+    fontSize: "1.5em",
   },
 }));
 interface Releases {
@@ -175,15 +190,18 @@ export const Download = (props: any) => {
                 </Tooltip>
               </div>
               {release ? (
-                <Typography className={classes.cardInfo}>
-                  Whats new:
+                <div>
+                  <span>Whats new:</span>
                   <div className={classes.space} />
-                  {/* This long regex basically takes '+ ' and slices it and puts a
+                  <div className={classes.space} />
+                  <Typography className={classes.cardInfo}>
+                    {/* This long regex basically takes '+ ' and slices it and puts a
                 new line on it */}
-                  {release[0].body
-                    .substring(release[0].body.indexOf("+ "))
-                    .replace(/(?:\r\n|\r|\n)/g, "\n")}
-                </Typography>
+                    {release[0].body
+                      .substring(release[0].body.indexOf("+ "))
+                      .replace(/(?:\r\n|\r|\n)/g, "\n")}
+                  </Typography>
+                </div>
               ) : (
                 <div>
                   <Skeleton
@@ -289,7 +307,22 @@ export const Download = (props: any) => {
           </div>
         )}
       </Card>
-      {props.more ? <h1>test</h1> : null}
+      {props.more ? (
+        <div className={classes.accordionContainer}>
+          <Accordion className={classes.accordion}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography className={classes.accordionHeader}>test</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                fuga officiis, ab omnis laudantium dignissimos voluptatibus a
+                eligendi impedit ea.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </div>
+      ) : null}
     </div>
   );
 };
