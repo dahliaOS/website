@@ -134,7 +134,7 @@ export const Navbar = (): JSX.Element => {
           <Link href='#' className={classes.drawerLink}>
             News
           </Link>
-          <Link href='#download' className={classes.drawerLink}>
+          <Link href='/download' className={classes.drawerLink}>
             Download
           </Link>
           <Link href='#' className={classes.drawerLink}>
@@ -216,7 +216,7 @@ export const Navbar = (): JSX.Element => {
               <Link className={classes.navLink} href='#'>
                 News
               </Link>
-              <Link className={classes.navLink} href='#download'>
+              <Link className={classes.navLink} href='/download'>
                 Download
               </Link>
               <Link className={classes.navLink} href='#'>
