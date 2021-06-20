@@ -15,7 +15,7 @@ export const theme = createMuiTheme({
     secondary: {
       light: "#252525",
       main: "#1a1a1a",
-      dark: "#131313",
+      dark: "#0a0a0a",
     },
 
     /* BELOW ARE THINGS THAT WERE UNCHANGED BUT STILL STATED SO YOU DON'T HAVE TO DIG FOR DEFAULT VALUES! */
