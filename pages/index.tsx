@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   roundedBox: {
     borderRadius: 16,
-    marginLeft: 50,
+    margin: "0 50px",
     maxWidth: "100%",
     background: theme.palette.secondary.light,
     overflow: "hidden",
@@ -184,8 +184,8 @@ export default function Home() {
           </div>
         </div>
         <div className={classes.right}>
-          <Box>
-            <Typography>hello</Typography>
+          <Box className={classes.roundedBox}>
+            <img src='/img/mockups/apps-4k.webp' />
           </Box>
         </div>
       </Box>
