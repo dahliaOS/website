@@ -50,14 +50,18 @@ export const theme = createMuiTheme({
     },
   },
 
-  /* I was told to get rid of the custom scrollbar by Noah, very upsetting, but
-  hey, the codes still there to uncomment out when I found out aa way to
-  manipulate him and get him to allow the scroll bar again! */
-
-  /*   overrides: {
+  overrides: {
     MuiCssBaseline: {
       "@global": {
-        "*::-webkit-scrollbar": {
+        html: {
+          scrollPaddingTop: "100px",
+        },
+
+        /* I was told to get rid of the custom scrollbar by Noah, very upsetting, but
+        hey, the codes still there to uncomment out when I found out aa way to
+        manipulate him and get him to allow the scroll bar again! */
+
+        /*         "*::-webkit-scrollbar": {
           width: "0.45em",
           background: "#1a1a1a",
         },
@@ -67,8 +71,8 @@ export const theme = createMuiTheme({
         },
         "*::-webkit-scrollbar-track": {
           boxShadow: "inset 0 0 6px rgb(0 0 0 / 30%)",
-        },
+        }, */
       },
     },
-  }, */
+  },
 });
