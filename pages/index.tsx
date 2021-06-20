@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     minHeight: "100vh",
     maxWidth: "100vw",
-    alignItems: "center"
+    alignItems: "center",
   },
   home: {
     alignItems: "center",
