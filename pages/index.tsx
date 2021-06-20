@@ -1,7 +1,4 @@
-import { Navbar } from "../components/navbar";
-import { Footer } from "../components/footer";
-import { Download } from "../components/download";
-import { NewsPill } from "../components/newsPill";
+import { Navbar, Download, NewsPill, Footer } from "../components/index";
 import {
   Box,
   Button,
@@ -161,7 +158,7 @@ export default function Home() {
       </Box>
 
       {/* The basics */}
-      <Box className={classes.half} id="features">
+      <Box className={classes.half} id='features'>
         <div className={classes.left}>
           <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>
             Just the basics
