@@ -18,7 +18,7 @@ export default function download() {
       <Navbar />
       <Box minHeight={"100vh"}>
         <h1 className={classes.title}>Downloads</h1>
-        <Download />
+        <Download more={true} />
       </Box>
       <Footer />
     </div>
