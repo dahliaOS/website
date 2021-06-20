@@ -3,6 +3,7 @@ import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import { theme } from "../util/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  /* niceeeee */
   console.log(`
        __            __        __  __             ______    ______  
       /  |          /  |      /  |/  |           /      \  /      \ 
