@@ -191,7 +191,7 @@ export default function Home() {
       </Box>
 
       {/* Download */}
-      <Box>
+      <Box id='download'>
         <h1 className={classes.sectionTitle}>Download</h1>
         <Download />
         <div className={classes.moreUpdates}>
