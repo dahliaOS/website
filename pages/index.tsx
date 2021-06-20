@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     minHeight: "100vh",
     maxWidth: "100vw",
+    alignItems: "center"
   },
   home: {
     alignItems: "center",
@@ -161,6 +162,15 @@ export default function Home() {
             third-party native Flutter applications, so you can use nearly every
             application within one system!
           </Typography>
+          <div className={classes.topicBtns}>
+            <Button
+              href='https://web.dahliaos.io'
+              target='_blank'
+              className={classes.gradientBtn}
+            >
+              Browse applications
+            </Button>
+          </div>
         </div>
         <div className={classes.right}>
           <Box>
@@ -187,6 +197,15 @@ export default function Home() {
             hardware to take advantage of the Zircon Kernel, while maintaining
             support for older devices using the Linux Kernel.
           </Typography>
+          <div className={classes.topicBtns}>
+            <Button
+              href='https://web.dahliaos.io'
+              target='_blank'
+              className={classes.gradientBtn}
+            >
+              View supported devices
+            </Button>
+          </div>
         </div>
       </Box>
 
