@@ -210,7 +210,7 @@ export const Navbar = (): JSX.Element => {
           </Link>
           <div className={classes.desktopNav}>
             <Typography>
-              <Link className={classes.navLink} href='#'>
+              <Link className={classes.navLink} href='#features'>
                 Features
               </Link>
               <Link className={classes.navLink} href='#'>
