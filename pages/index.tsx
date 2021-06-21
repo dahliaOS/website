@@ -119,6 +119,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     maxWidth: "100%",
     background: theme.palette.secondary.light,
     overflow: "hidden",
+    boxShadow: theme.shadows[10],
     "& *": {
       maxWidth: "100%",
       marginBottom: "-6px",
@@ -147,7 +148,9 @@ export default function Home() {
             system, combining the best of GNU/Linux and Fuchsia OS.
           </p>
           <div className={classes.btnContainer}>
-            <Button href="#download" className={classes.gradientBtn}>Download</Button>
+            <Button href='#download' className={classes.gradientBtn}>
+              Download
+            </Button>
             <Button href='#features' className={classes.gradientBtn}>
               Learn more
             </Button>
