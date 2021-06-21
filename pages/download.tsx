@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: "1em 0 1.5em 0",
     textAlign: "center",
     fontSize: "2.25em",
-    fontWeight: theme.typography.fontWeightLight,
+    fontWeight: theme.typography.fontWeightRegular,
   },
 }));
 
@@ -19,6 +19,9 @@ export default function download() {
       <Box minHeight={"100vh"}>
         <h1 className={classes.title}>Downloads</h1>
         <Download more={true} />
+        <br />
+        <br />
+        <br />
       </Box>
       <Footer />
     </div>
