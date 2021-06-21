@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: "1.2em",
   },
   btn: {
-    display: "block",
     margin: "0 auto",
     background: `linear-gradient(153deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.light} 100%)`,
   },
@@ -46,7 +45,13 @@ export default function download() {
             Currently, donations can be sent through Paypal, other services will
             be coming soon.
           </p>
-          <Button className={classes.btn}>OPENCOLLECTIVE</Button>
+          <Button
+            className={classes.btn}
+            href='https://opencollective.com/dahliaos'
+            target='_blank'
+          >
+            OPENCOLLECTIVE
+          </Button>
         </div>
       </Box>
       <Footer />
