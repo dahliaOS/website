@@ -147,8 +147,10 @@ export default function Home() {
             system, combining the best of GNU/Linux and Fuchsia OS.
           </p>
           <div className={classes.btnContainer}>
-            <Button className={classes.gradientBtn}>Download</Button>
-            <Button className={classes.gradientBtn}>Learn more</Button>
+            <Button href="#download" className={classes.gradientBtn}>Download</Button>
+            <Button href='#features' className={classes.gradientBtn}>
+              Learn more
+            </Button>
           </div>
         </div>
         <div className={classes.homeHero}>
