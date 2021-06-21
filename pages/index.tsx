@@ -1,12 +1,5 @@
 import { Navbar, Download, NewsPill, Footer } from "../components/index";
-import {
-  Box,
-  Button,
-  makeStyles,
-  Theme,
-  Link,
-  Typography,
-} from "@material-ui/core";
+import { Box, Button, makeStyles, Theme, Link, Typography } from "@material-ui/core";
 import { ArrowForwardIos } from "@material-ui/icons";
 import Head from "next/head";
 
@@ -61,8 +54,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "inline-block",
   },
   gradientBtn: {
-    padding: "8px 12px",
-    borderRadius: 5,
+    "padding": "8px 12px",
+    "borderRadius": 5,
     "&:first-child": {
       background: `linear-gradient(153deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.light} 100%)`,
       marginRight: 15,
@@ -94,9 +87,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     maxWidth: "75ch",
   },
   moreUpdates: {
-    display: "block",
-    textAlign: "center",
-    marginBottom: 50,
+    "display": "block",
+    "textAlign": "center",
+    "marginBottom": 50,
     "& *": {
       verticalAlign: "middle",
       textAlign: "center",
@@ -106,20 +99,20 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   centerMore: {
-    color: theme.palette.grey[600],
-    transition: `${theme.transitions.easing.easeInOut} 0.229s`,
+    "color": theme.palette.grey[600],
+    "transition": `${theme.transitions.easing.easeInOut} 0.229s`,
     "&:hover": {
       color: theme.palette.grey[300],
       textDecoration: "unset",
     },
   },
   roundedBox: {
-    borderRadius: 16,
-    margin: "0 50px",
-    maxWidth: "100%",
-    background: theme.palette.secondary.light,
-    overflow: "hidden",
-    boxShadow: theme.shadows[10],
+    "borderRadius": 16,
+    "margin": "0 50px",
+    "maxWidth": "100%",
+    "background": theme.palette.secondary.light,
+    "overflow": "hidden",
+    "boxShadow": theme.shadows[10],
     "& *": {
       maxWidth: "100%",
       marginBottom: "-6px",
@@ -133,7 +126,7 @@ export default function Home() {
     <div>
       <Head>
         <title>dahliaOS</title>
-        <meta property='og:title' content='dahliaOS' key='title' />
+        <meta property="og:title" content="dahliaOS" key="title" />
       </Head>
       {/* Navbar */}
       <Navbar />
@@ -142,78 +135,132 @@ export default function Home() {
       <Box className={`${classes.home} ${classes.half}`}>
         <div className={classes.typography}>
           <NewsPill />
-          <h1 className={classes.homeHeader}>something new</h1>
-          <p className={classes.homeParagraph}>
-            dahliaOS is a modern, secure, lightweight and responsive operating
-            system, combining the best of GNU/Linux and Fuchsia OS.
+          <h1
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-anchor-placement="center-bottom"
+            className={classes.homeHeader}
+          >
+            something new
+          </h1>
+          <p
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            data-aos-duration="600"
+            data-aos-delay="250"
+            className={classes.homeParagraph}
+          >
+            dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux
+            and Fuchsia OS.
           </p>
           <div className={classes.btnContainer}>
-            <Button href='#download' className={classes.gradientBtn}>
+            <Button
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              data-aos-duration="600"
+              data-aos-delay="350"
+              href="#download"
+              className={classes.gradientBtn}
+            >
               Download
             </Button>
-            <Button href='#features' className={classes.gradientBtn}>
+            <Button
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              data-aos-delay="450"
+              data-aos-duration="600"
+              href="#features"
+              className={classes.gradientBtn}
+            >
               Learn more
             </Button>
           </div>
         </div>
         <div className={classes.homeHero}>
-          <img className={classes.heroImg} src='/img/mockups/hero.png' />
+          <img className={classes.heroImg} src="/img/mockups/hero.png" />
         </div>
-        <img src='/img/darkWave.svg' className={classes.wave} />
+        <img src="/img/darkWave.svg" className={classes.wave} />
       </Box>
 
       {/* The basics */}
-      <Box className={classes.half} id='features'>
+      <Box className={classes.half} id="features">
         <div className={classes.left}>
-          <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>
+          <h1
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className={`${classes.sectionTitle} ${classes.alignLeft}`}
+          >
             Just the basics
           </h1>
-          <Typography className={classes.sectionParagraph}>
-            dahliaOS keeps things light by only including apps you need, and you
-            can add all of your favorites from other operating systems using the
-            Containers app. dahliaOS also provides a curated marketplace for
-            third-party native Flutter applications, so you can use nearly every
-            application within one system!
+          <Typography
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            data-aos-delay="150"
+            className={classes.sectionParagraph}
+          >
+            dahliaOS keeps things light by only including apps you need, and you can add all of your favorites from
+            other operating systems using the Containers app. dahliaOS also provides a curated marketplace for
+            third-party native Flutter applications, so you can use nearly every application within one system!
           </Typography>
-          <div className={classes.topicBtns}>
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            data-aos-delay="250"
+            className={classes.topicBtns}
+          >
             <Button
-              href='https://github.com/dahliaOS/pangolin_desktop/tree/master/lib/applications'
-              target='_blank'
+              href="https://github.com/dahliaOS/pangolin_desktop/tree/master/lib/applications"
+              target="_blank"
               className={classes.gradientBtn}
             >
               Browse applications
             </Button>
           </div>
         </div>
-        <div className={classes.right}>
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-delay="350"
+          className={classes.right}
+        >
           <Box className={classes.roundedBox}>
-            <img src='/img/mockups/apps-4k.webp' />
+            <img src="/img/mockups/apps-4k.webp" />
           </Box>
         </div>
       </Box>
 
       {/* Supported devices */}
       <Box className={classes.half}>
-        <div className={classes.left}>
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="350" className={classes.left}>
           <Box className={classes.roundedBox}>
-            <img src='/img/mockups/collageTransparent.webp' />
+            <img src="/img/mockups/collageTransparent.webp" />
           </Box>
         </div>
         <div className={classes.right}>
-          <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>
+          <h1
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className={`${classes.sectionTitle} ${classes.alignLeft}`}
+          >
             A wide range of supported devices
           </h1>
-          <Typography className={classes.sectionParagraph}>
-            dahliaOS provides a fast and stable experience on nearly every
-            computer, from a 2004 desktop tower to the latest generation of
-            mobile notebooks. Our dual kernel approach allows users with new(er)
-            hardware to take advantage of the Zircon Kernel, while maintaining
-            support for older devices using the Linux Kernel.
+          <Typography
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            data-aos-delay="150"
+            className={classes.sectionParagraph}
+          >
+            dahliaOS provides a fast and stable experience on nearly every computer, from a 2004 desktop tower to the
+            latest generation of mobile notebooks. Our dual kernel approach allows users with new(er) hardware to take
+            advantage of the Zircon Kernel, while maintaining support for older devices using the Linux Kernel.
           </Typography>
           <div className={classes.topicBtns}>
             <Button
-              href='https://docs.dahliaos.io/#/articles/hardware/supported-devices'
-              target='_blank'
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              data-aos-delay="250"
+              href="https://docs.dahliaos.io/#/articles/hardware/supported-devices"
+              target="_blank"
               className={classes.gradientBtn}
             >
               View supported devices
@@ -225,27 +272,43 @@ export default function Home() {
       {/* Still not convinced? */}
       <Box className={classes.half}>
         <div className={classes.left}>
-          <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>
+          <h1
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className={`${classes.sectionTitle} ${classes.alignLeft}`}
+          >
             Still not convinced?
           </h1>
-          <Typography className={classes.sectionParagraph}>
-            We offer an online preview of dahliaOS right at your finger tips!
-            Explore, create, and more with dahliaOS' web preview to get a taste
-            of what it is like!
+          <Typography
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            data-aos-delay="150"
+            className={classes.sectionParagraph}
+          >
+            We offer an online preview of dahliaOS right at your finger tips! Explore, create, and more with dahliaOS'
+            web preview to get a taste of what it is like!
           </Typography>
           <div className={classes.topicBtns}>
             <Button
-              href='https://web.dahliaos.io'
-              target='_blank'
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              data-aos-delay="250"
+              href="https://web.dahliaos.io"
+              target="_blank"
               className={classes.gradientBtn}
             >
               Try it out!
             </Button>
           </div>
         </div>
-        <div className={classes.right}>
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-delay="350"
+          className={classes.right}
+        >
           <Box className={classes.roundedBox}>
-            <img src='/img/mockups/pangolin.png' />
+            <img src="/img/mockups/pangolin.png" />
           </Box>
         </div>
       </Box>
@@ -256,11 +319,11 @@ export default function Home() {
       <br />
 
       {/* Download */}
-      <Box id='download'>
+      <Box id="download">
         <h1 className={classes.sectionTitle}>Download</h1>
         <Download more={false} />
         <div className={classes.moreUpdates}>
-          <Link href='/download' className={classes.centerMore}>
+          <Link href="/download" className={classes.centerMore}>
             Looking for an older update?
             <ArrowForwardIos />
           </Link>

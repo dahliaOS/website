@@ -29,9 +29,8 @@ export default function download() {
         <h1 className={classes.header}>Donate to dahliaOS</h1>
         <div className={classes.container}>
           <Typography>
-            Thank you for your support! We use donations to keep improving our
-            project and hardware support, and donations will go towards the
-            following:
+            Thank you for your support! We use donations to keep improving our project and hardware support, and
+            donations will go towards the following:
           </Typography>
           <ul>
             <li>Website hosting</li>
@@ -40,15 +39,8 @@ export default function download() {
             <li>Devices for testing and expanding hardware support</li>
           </ul>
           <h2>Where can I donate?</h2>
-          <p>
-            Currently, donations can be sent through Paypal, other services will
-            be coming soon.
-          </p>
-          <Button
-            className={classes.btn}
-            href='https://opencollective.com/dahliaos'
-            target='_blank'
-          >
+          <p>Currently, donations can be sent through Paypal, other services will be coming soon.</p>
+          <Button className={classes.btn} href="https://opencollective.com/dahliaos" target="_blank">
             OPENCOLLECTIVE
           </Button>
         </div>
