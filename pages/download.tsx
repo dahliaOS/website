@@ -19,10 +19,10 @@ export default function download() {
       <Box minHeight={"100vh"}>
         <h1 className={classes.title}>Downloads</h1>
         <Download more={true} />
-        <br />
-        <br />
-        <br />
       </Box>
+      <br />
+      <br />
+      <br />
       <Footer />
     </div>
   );
