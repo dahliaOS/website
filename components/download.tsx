@@ -272,7 +272,11 @@ export const Download = (props: any) => {
               )}
               <div className={classes.space} />
               {release ? (
-                <Link href={release[0].html_url} className={classes.cardLink}>
+                <Link
+                  href={release[0].html_url}
+                  target='_blank'
+                  className={classes.cardLink}
+                >
                   <Button className={classes.cardMore}>Read more</Button>
                 </Link>
               ) : (
@@ -361,6 +365,7 @@ export const Download = (props: any) => {
                       <Link
                         href={oldRelease.html_url}
                         className={classes.cardLink}
+                        target='_blank'
                       >
                         <Button className={classes.cardMore}>Read more</Button>
                       </Link>
