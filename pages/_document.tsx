@@ -4,7 +4,7 @@ import { theme } from "../util/theme";
 import React from "react";
 
 export default class Page extends Document {
-  render() {
+  render(): JSX.Element {
     return (
       <Html lang="en">
         <Head>

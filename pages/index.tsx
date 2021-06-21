@@ -1,3 +1,4 @@
+import React from "react";
 import { Navbar, Download, NewsPill, Footer } from "../components/index";
 import { Box, Button, makeStyles, Theme, Link, Typography } from "@material-ui/core";
 import { ArrowForwardIos } from "@material-ui/icons";
@@ -120,7 +121,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-export default function Home() {
+export default function Home(): JSX.Element {
   const classes = useStyles();
   return (
     <div>
@@ -285,7 +286,7 @@ export default function Home() {
             data-aos-delay="150"
             className={classes.sectionParagraph}
           >
-            We offer an online preview of dahliaOS right at your finger tips! Explore, create, and more with dahliaOS'
+            We offer an online preview of dahliaOS right at your finger tips! Explore, create, and more with dahliaOS&apos;
             web preview to get a taste of what it is like!
           </Typography>
           <div className={classes.topicBtns}>

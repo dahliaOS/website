@@ -1,3 +1,4 @@
+import React from "react";
 import { Footer, Navbar } from "../components/index";
 import coc from "../CODE_OF_CONDUCT.md";
 import { Box, Theme, makeStyles } from "@material-ui/core";
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-export default function download() {
+export default function download(): JSX.Element {
   const classes = useStyles();
 
   return (

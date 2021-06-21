@@ -1,3 +1,4 @@
+import React from "react";
 import { Footer, Navbar, Download } from "../components/index";
 import { Theme, makeStyles, Box } from "@material-ui/core";
 
@@ -10,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-export default function download() {
+export default function download(): JSX.Element {
   const classes = useStyles();
 
   return (
