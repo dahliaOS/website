@@ -55,6 +55,7 @@ export const theme = createMuiTheme({
       "@global": {
         html: {
           scrollPaddingTop: "100px",
+          scrollBehavior: "smooth",
         },
 
         /* I was told to get rid of the custom scrollbar by Noah, very upsetting, but
