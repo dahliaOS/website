@@ -104,27 +104,53 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   accordion: {
     background: theme.palette.secondary.light,
+    boxShadow: theme.shadows[9],
   },
   accordionHeader: {
     fontSize: "1.5em",
   },
+  accordionDetails: {
+    display: "block",
+  },
+  divideAccordion: {
+    marginTop: 30,
+  },
+  accordionInfo: {
+    fontSize: "1em",
+    whiteSpace: "pre-line",
+    textOverflow: "ellipsis",
+    display: "-webkit-box",
+    "-webkit-line-clamp": 4,
+    "-webkit-box-orient": "vertical",
+    paddingBottom: 2,
+    overflow: "hidden",
+  },
+  accordionActions: {
+    display: "block",
+    textAlign: "center",
+  },
+  olderUpdatesTitle: {
+    textAlign: "center",
+    fontWeight: theme.typography.fontWeightLight,
+  },
 }));
 interface Releases {
-  [index: number]: {
-    name: string;
-    tag_name: string;
-    body: string;
-    assets: [
-      {
-        download_count: number;
-        name: string;
-        browser_download_url: string;
-      }
-    ];
-    assets_url: string;
-    html_url: string;
-    created_at: string;
-  };
+  [index: number]: Release;
+}
+interface Release {
+  name: string;
+  tag_name: string;
+  body: string;
+  assets: [
+    {
+      download_count: number;
+      name: string;
+      browser_download_url: string;
+    }
+  ];
+  assets_url: string;
+  html_url: string;
+  created_at: string;
 }
 
 export const Download = (props: any) => {
@@ -309,18 +335,152 @@ export const Download = (props: any) => {
       </Card>
       {props.more ? (
         <div className={classes.accordionContainer}>
-          <Accordion className={classes.accordion}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography className={classes.accordionHeader}>test</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                fuga officiis, ab omnis laudantium dignissimos voluptatibus a
-                eligendi impedit ea.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+          <h1 className={classes.olderUpdatesTitle}>Older updates</h1>
+          {release ? (
+            <div>
+              {/* @ts-expect-error thinks map doesn't exist on release */}
+              {release.map((oldRelease: Release, i: number) => {
+                return (
+                  <Accordion key={i} className={classes.accordion}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                      <Typography className={classes.accordionHeader}>
+                        {oldRelease.tag_name}
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails className={classes.accordionDetails}>
+                      <div>
+                        <span>Whats new:</span>
+                        <div className={classes.space} />
+                        <div className={classes.space} />
+                        <Typography className={classes.accordionInfo}>
+                          {/* This long regex basically takes '+ ' and slices it and puts a
+                new line on it */}
+                          {oldRelease.body
+                            .substring(oldRelease.body.indexOf("+ "))
+                            .replace(/(?:\r\n|\r|\n)/g, "\n")}
+                        </Typography>
+                      </div>
+                      <Link
+                        href={oldRelease.html_url}
+                        className={classes.cardLink}
+                      >
+                        <Button className={classes.cardMore}>Read more</Button>
+                      </Link>
+                    </AccordionDetails>
+                    <Divider className={classes.divideAccordion} />
+                    <AccordionActions className={classes.accordionActions}>
+                      {oldRelease.assets.map((asset) => (
+                        <Button
+                          key={asset.name}
+                          href={asset.browser_download_url}
+                          className={classes.downloadBtn}
+                          onClick={openModal}
+                        >
+                          {asset.name.includes("efi")
+                            ? "Download (EFI)"
+                            : "Download (Legacy)"}
+                        </Button>
+                      ))}
+                    </AccordionActions>
+                  </Accordion>
+                );
+              })}
+            </div>
+          ) : (
+            <div>
+              {[...Array(10)].map((e, i) => (
+                <Accordion key={i} className={classes.accordion}>
+                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography className={classes.accordionHeader}>
+                      <Skeleton
+                        variant='rect'
+                        animation='wave'
+                        width={130}
+                        height={15}
+                      />
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails className={classes.accordionDetails}>
+                    <div>
+                      <Skeleton
+                        variant='rect'
+                        animation='wave'
+                        width={"100%"}
+                        height={15}
+                      />
+                      <div className={classes.space} />
+                      <Skeleton
+                        variant='rect'
+                        animation='wave'
+                        width={"100%"}
+                        height={15}
+                      />
+                      <div className={classes.space} />
+                      <Skeleton
+                        variant='rect'
+                        animation='wave'
+                        width={"98%"}
+                        height={15}
+                      />
+                      <div className={classes.space} />
+                      <Skeleton
+                        variant='rect'
+                        animation='wave'
+                        width={"95%"}
+                        height={15}
+                      />
+                      <div className={classes.space} />
+                      <Skeleton
+                        variant='rect'
+                        animation='wave'
+                        width={"85%"}
+                        height={15}
+                      />
+                      <div className={classes.space} />
+                      <Skeleton
+                        variant='rect'
+                        animation='wave'
+                        width={"20%"}
+                        height={15}
+                      />
+                      <div className={classes.space} />
+                    </div>
+                    <Link href='' className={classes.cardLink}>
+                      <Button className={classes.cardMore}>
+                        <Skeleton
+                          variant='rect'
+                          animation='wave'
+                          width={"60px"}
+                          height={"25px"}
+                        />
+                      </Button>
+                    </Link>
+                  </AccordionDetails>
+                  <Divider className={classes.divideAccordion} />
+                  <AccordionActions className={classes.accordionActions}>
+                    <div>
+                      <Button className={classes.downloadBtn}>
+                        <Skeleton
+                          variant='rect'
+                          animation='wave'
+                          width={"90px"}
+                          height={"25px"}
+                        />
+                      </Button>
+                      <Button className={classes.downloadBtn}>
+                        <Skeleton
+                          variant='rect'
+                          animation='wave'
+                          width={"90px"}
+                          height={"25px"}
+                        />
+                      </Button>
+                    </div>
+                  </AccordionActions>
+                </Accordion>
+              ))}
+            </div>
+          )}
         </div>
       ) : null}
     </div>
