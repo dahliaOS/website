@@ -21,6 +21,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-      "object-curly-spacing": "always",
+      "no-useless-escape": "off",
+      "object-curly-spacing": 0 // Bro if you don't add a space you're a menace to society
     }
 }
