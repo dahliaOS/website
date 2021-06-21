@@ -171,11 +171,7 @@ export const Download = (props: any) => {
 
         return releases as Releases;
       })
-      .then((release) => {
-        setTimeout(() => {
-          setRelease(release);
-        }, 1000);
-      })
+      .then(setRelease)
       .catch(setError);
   }, []);
 
@@ -233,7 +229,7 @@ export const Download = (props: any) => {
                   <Skeleton
                     variant='rect'
                     animation='wave'
-                    width={"100%"}
+                    width={"15%"}
                     height={15}
                   />
                   <div className={classes.space} />
@@ -340,6 +336,8 @@ export const Download = (props: any) => {
             <div>
               {/* @ts-expect-error thinks map doesn't exist on release */}
               {release.map((oldRelease: Release, i: number) => {
+                if (i === 0 || i > 10) return;
+
                 return (
                   <Accordion key={i} className={classes.accordion}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -396,7 +394,7 @@ export const Download = (props: any) => {
                         variant='rect'
                         animation='wave'
                         width={130}
-                        height={15}
+                        height={30}
                       />
                     </Typography>
                   </AccordionSummary>
