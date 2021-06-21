@@ -98,6 +98,12 @@ const useStyles = makeStyles((theme: Theme) => ({
       borderBottom: `4px solid ${theme.palette.primary.main}`,
     },
   },
+  removeLinkStyling: {
+    color: "unset",
+    "&:hover": {
+      textDecoration: "unset",
+    },
+  },
 }));
 
 export const Navbar = (): JSX.Element => {
@@ -128,7 +134,7 @@ export const Navbar = (): JSX.Element => {
         </div>
         <br />
         <Typography>
-          <Link href='#features' className={classes.drawerLink}>
+          <Link href='/#features' className={classes.drawerLink}>
             Features
           </Link>
           <Link href='#' className={classes.drawerLink}>
@@ -137,13 +143,20 @@ export const Navbar = (): JSX.Element => {
           <Link href='/download' className={classes.drawerLink}>
             Download
           </Link>
-          <Link href='#' className={classes.drawerLink}>
+          <Link
+            href='mailto:contact@dahliaOS.io'
+            className={classes.drawerLink}
+          >
             Contact
           </Link>
-          <Link href='#' className={classes.drawerLink}>
+          <Link
+            href='https://github.com/orgs/dahliaos/people'
+            target='_blank'
+            className={classes.drawerLink}
+          >
             Developers
           </Link>
-          <Link href='#' className={classes.drawerLink}>
+          <Link href='https://docs.dahliaOS.io' className={classes.drawerLink}>
             Documentation
           </Link>
           <Divider />
@@ -179,10 +192,10 @@ export const Navbar = (): JSX.Element => {
           <span className={`${classes.category} ${classes.drawerLink}`}>
             For developers
           </span>
-          <Link href='#' className={classes.drawerLink}>
+          <Link href='/github' className={classes.drawerLink}>
             Source Code
           </Link>
-          <Link href='#' className={classes.drawerLink}>
+          <Link href='/discord' className={classes.drawerLink}>
             Join Our Team
           </Link>
         </Typography>
@@ -210,7 +223,7 @@ export const Navbar = (): JSX.Element => {
           </Link>
           <div className={classes.desktopNav}>
             <Typography>
-              <Link className={classes.navLink} href='#features'>
+              <Link className={classes.navLink} href='/#features'>
                 Features
               </Link>
               <Link className={classes.navLink} href='#'>
@@ -219,13 +232,21 @@ export const Navbar = (): JSX.Element => {
               <Link className={classes.navLink} href='/download'>
                 Download
               </Link>
-              <Link className={classes.navLink} href='#'>
+              <Link
+                className={classes.navLink}
+                href='https://web.dahliaOS.io'
+                target='_blank'
+              >
                 Demo
               </Link>
-              <Link className={classes.navLink} href='#'>
+              <Link
+                className={classes.navLink}
+                href='https://github.com/orgs/dahliaos/people'
+                target='_blank'
+              >
                 Developers
               </Link>
-              <Link className={classes.navLink} href='#'>
+              <Link className={classes.navLink} href='https://docs.dahliaOS.io'>
                 Documentation
               </Link>
             </Typography>
@@ -246,8 +267,18 @@ export const Navbar = (): JSX.Element => {
               open={Boolean(navVertIcon)}
               onClose={closeVertIcon}
             >
-              <MenuItem onClick={closeVertIcon}>Source Code</MenuItem>
-              <MenuItem onClick={closeVertIcon}>Screenshots</MenuItem>
+              <MenuItem onClick={closeVertIcon}>
+                <Link
+                  className={classes.removeLinkStyling}
+                  href='/github'
+                  target='_blank'
+                >
+                  Source Code
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={closeVertIcon} disabled>
+                Screenshots
+              </MenuItem>
             </Menu>
           </div>
         </Toolbar>
