@@ -172,7 +172,7 @@ export default function Home() {
           </Typography>
           <div className={classes.topicBtns}>
             <Button
-              href='https://web.dahliaos.io'
+              href='https://github.com/dahliaOS/pangolin_desktop/tree/master/lib/applications'
               target='_blank'
               className={classes.gradientBtn}
             >
@@ -207,7 +207,7 @@ export default function Home() {
           </Typography>
           <div className={classes.topicBtns}>
             <Button
-              href='https://web.dahliaos.io'
+              href='https://docs.dahliaos.io/#/articles/hardware/supported-devices'
               target='_blank'
               className={classes.gradientBtn}
             >
