@@ -217,23 +217,6 @@ export default function Home() {
         </div>
       </Box>
 
-      {/* Download */}
-      <Box id='download'>
-        <h1 className={classes.sectionTitle}>Download</h1>
-        <Download more={false} />
-        <div className={classes.moreUpdates}>
-          <Link href='/download' className={classes.centerMore}>
-            Looking for an older update?
-            <ArrowForwardIos />
-          </Link>
-        </div>
-      </Box>
-
-      <br />
-      <br />
-      <br />
-      <br />
-
       {/* Still not convinced? */}
       <Box className={classes.half}>
         <div className={classes.left}>
@@ -261,6 +244,28 @@ export default function Home() {
           </Box>
         </div>
       </Box>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      {/* Download */}
+      <Box id='download'>
+        <h1 className={classes.sectionTitle}>Download</h1>
+        <Download more={false} />
+        <div className={classes.moreUpdates}>
+          <Link href='/download' className={classes.centerMore}>
+            Looking for an older update?
+            <ArrowForwardIos />
+          </Link>
+        </div>
+      </Box>
+
+      <br />
+      <br />
+      <br />
+      <br />
 
       {/* Footer */}
       <Footer />
