@@ -136,40 +136,16 @@ export default function Home(): JSX.Element {
       <Box className={`${classes.home} ${classes.half}`}>
         <div className={classes.typography}>
           <NewsPill />
-          <h1
-            data-aos="fade-up"
-            data-aos-duration="600"
-            data-aos-anchor-placement="center-bottom"
-            className={classes.homeHeader}
-          >
-            something new
-          </h1>
-          <p
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            data-aos-duration="600"
-            data-aos-delay="250"
-            className={classes.homeParagraph}
-          >
+          <h1 className={classes.homeHeader}>something new</h1>
+          <p className={classes.homeParagraph}>
             dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux
             and Fuchsia OS.
           </p>
           <div className={classes.btnContainer}>
-            <Button
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
-              data-aos-duration="600"
-              data-aos-delay="350"
-              href="#download"
-              className={classes.gradientBtn}
-            >
+            <Button href="#download" className={classes.gradientBtn}>
               Download
             </Button>
             <Button
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
-              data-aos-delay="450"
-              data-aos-duration="600"
               href="#features"
               className={classes.gradientBtn}
             >
@@ -177,7 +153,7 @@ export default function Home(): JSX.Element {
             </Button>
           </div>
         </div>
-        <div className={classes.homeHero}>
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={classes.homeHero}>
           <img className={classes.heroImg} src="/img/mockups/hero.png" />
         </div>
         <img src="/img/darkWave.svg" className={classes.wave} />
@@ -286,8 +262,8 @@ export default function Home(): JSX.Element {
             data-aos-delay="150"
             className={classes.sectionParagraph}
           >
-            We offer an online preview of dahliaOS right at your finger tips! Explore, create, and more with dahliaOS&apos;
-            web preview to get a taste of what it is like!
+            We offer an online preview of dahliaOS right at your finger tips! Explore, create, and more with
+            dahliaOS&apos; web preview to get a taste of what it is like!
           </Typography>
           <div className={classes.topicBtns}>
             <Button
