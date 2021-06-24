@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-export const NewsPill = () => {
+export const NewsPill = (): JSX.Element => {
   const classes = useStyles();
 
   return (
