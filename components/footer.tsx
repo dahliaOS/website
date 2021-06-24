@@ -1,3 +1,4 @@
+import React from "react";
 import { BottomNavigation, makeStyles, Theme, Link } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -25,10 +26,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     padding: 0,
   },
   footerItem: {
-    fontSize: "1.15em",
-    color: theme.palette.grey[500],
-    display: "block",
-    transition: `${theme.transitions.easing.easeInOut} 0.209s`,
+    "fontSize": "1.15em",
+    "color": theme.palette.grey[500],
+    "display": "block",
+    "transition": `${theme.transitions.easing.easeInOut} 0.209s`,
     "&:hover": {
       textDecoration: "none",
       color: theme.palette.grey[300],
@@ -50,45 +51,25 @@ export const Footer = (): JSX.Element => {
         <div className={classes.footerCategory}>
           <h1 className={classes.footerHeader}>Find us on</h1>
           <ul className={classes.footerList}>
-            <Link
-              href='/discord'
-              target='_blank'
-              className={classes.footerItem}
-            >
+            <Link href="/discord" target="_blank" className={classes.footerItem}>
               Discord
             </Link>
-            <Link href='/github' target='_blank' className={classes.footerItem}>
+            <Link href="/github" target="_blank" className={classes.footerItem}>
               GitHub
             </Link>
-            <Link href='/reddit' target='_blank' className={classes.footerItem}>
+            <Link href="/reddit" target="_blank" className={classes.footerItem}>
               Reddit
             </Link>
-            <Link
-              href='/telegram'
-              target='_blank'
-              className={classes.footerItem}
-            >
+            <Link href="/telegram" target="_blank" className={classes.footerItem}>
               Telegram
             </Link>
-            <Link
-              href='/facebook'
-              target='_blank'
-              className={classes.footerItem}
-            >
+            <Link href="/facebook" target="_blank" className={classes.footerItem}>
               Facebook
             </Link>
-            <Link
-              href='/instagram'
-              target='_blank'
-              className={classes.footerItem}
-            >
+            <Link href="/instagram" target="_blank" className={classes.footerItem}>
               Instagram
             </Link>
-            <Link
-              href='/twitter'
-              target='_blank'
-              className={classes.footerItem}
-            >
+            <Link href="/twitter" target="_blank" className={classes.footerItem}>
               Twitter
             </Link>
           </ul>
@@ -96,16 +77,16 @@ export const Footer = (): JSX.Element => {
         <div className={classes.footerCategory}>
           <h1 className={classes.footerHeader}>Technology</h1>
           <ul className={classes.footerList}>
-            <Link href='#' className={classes.footerItem}>
+            <Link href="#" className={classes.footerItem}>
               How it works
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link href="#" className={classes.footerItem}>
               The goal
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link href="#" className={classes.footerItem}>
               Design
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link href="#" className={classes.footerItem}>
               UI Modularity
             </Link>
           </ul>
@@ -113,19 +94,19 @@ export const Footer = (): JSX.Element => {
         <div className={classes.footerCategory}>
           <h1 className={classes.footerHeader}>Documentation</h1>
           <ul className={classes.footerList}>
-            <Link href='#' className={classes.footerItem}>
+            <Link href="#" className={classes.footerItem}>
               Compiling
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link href="#" className={classes.footerItem}>
               Installing
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link href="#" className={classes.footerItem}>
               Running
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link href="#" className={classes.footerItem}>
               Supported devices
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link href="#" className={classes.footerItem}>
               Linux vs. Zircon
             </Link>
           </ul>
@@ -133,10 +114,10 @@ export const Footer = (): JSX.Element => {
         <div className={classes.footerCategory}>
           <h1 className={classes.footerHeader}>FAQ</h1>
           <ul className={classes.footerList}>
-            <Link href='#' className={classes.footerItem}>
+            <Link href="#" className={classes.footerItem}>
               Q&A
             </Link>
-            <Link href='#' className={classes.footerItem}>
+            <Link href="#" className={classes.footerItem}>
               Contact us
             </Link>
           </ul>
@@ -144,7 +125,7 @@ export const Footer = (): JSX.Element => {
       </div>
       <br />
       <br />
-      <img className={classes.footerLogo} src='/img/logo-white.png' />
+      <img className={classes.footerLogo} src="/img/logo-white.png" />
       <br />
     </BottomNavigation>
   );
