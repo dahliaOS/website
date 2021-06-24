@@ -154,7 +154,11 @@ interface Release {
   created_at: string;
 }
 
-export const Download = (props: any) => {
+interface Props {
+  more: boolean;
+}
+
+export const Download = (props: Props): JSX.Element => {
   const classes = useStyles();
   const [release, setRelease] = useState<Releases | null>(null);
   const [error, setError] = useState<Error | null>(null);
