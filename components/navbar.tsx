@@ -34,8 +34,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     boxShadow: "unset",
   },
   appBarScrolled: {
-    boxShadow:
-      "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)",
+    boxShadow: "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)",
   },
   paper: {
     background: theme.palette.secondary.main,
@@ -54,11 +53,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingLeft: 40,
   },
   drawerLink: {
-    display: "block",
-    fontSize: ".93rem",
-    padding: "16px 40px",
-    color: theme.palette.grey[600],
-    transition: `${theme.transitions.easing.easeInOut} 0.229s`,
+    "display": "block",
+    "fontSize": ".93rem",
+    "padding": "16px 40px",
+    "color": theme.palette.grey[600],
+    "transition": `${theme.transitions.easing.easeInOut} 0.229s`,
     "&:hover": {
       textDecoration: "none",
       color: theme.palette.grey[300],
@@ -66,7 +65,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   category: {
-    color: theme.palette.primary.light,
+    "color": theme.palette.primary.light,
     "&:hover": {
       textDecoration: "none",
       cursor: "unset",
@@ -83,15 +82,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   navLink: {
-    fontSize: ".9em",
-    fontWeight: theme.typography.fontWeightBold,
-    padding: "0 16px",
-    display: "inline-block",
-    lineHeight: "50px",
-    textTransform: "uppercase",
-    color: theme.palette.grey[50],
-    borderBottom: "4px solid transparent",
-    transition: `${theme.transitions.easing.easeInOut} 0.229s`,
+    "fontSize": ".9em",
+    "fontWeight": theme.typography.fontWeightBold,
+    "padding": "0 16px",
+    "display": "inline-block",
+    "lineHeight": "50px",
+    "textTransform": "uppercase",
+    "color": theme.palette.grey[50],
+    "borderBottom": "4px solid transparent",
+    "transition": `${theme.transitions.easing.easeInOut} 0.229s`,
     "&:hover": {
       color: theme.palette.grey[400],
       textDecoration: "none",
@@ -99,7 +98,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   removeLinkStyling: {
-    color: "unset",
+    "color": "unset",
     "&:hover": {
       textDecoration: "unset",
     },
@@ -108,17 +107,16 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 export const Navbar = (): JSX.Element => {
   const [openDrawer, setOpenDrawer] = useState({ left: false });
-  const [navVertIcon, setNavVertIcon] = useState(null);
+  const [navVertIcon, setNavVertIcon] = useState<null | HTMLElement>(null);
   const classes = useStyles();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 100,
   });
 
-  const toggleDrawer = (open: boolean) => () =>
-    setOpenDrawer({ ...openDrawer, ["left"]: open });
+  const toggleDrawer = (open: boolean) => () => setOpenDrawer({ ...openDrawer, ["left"]: open });
 
-  const toggleVertIcon = (event: any) => setNavVertIcon(event.currentTarget);
+  const toggleVertIcon = (event: React.MouseEvent<HTMLButtonElement>) => setNavVertIcon(event.currentTarget);
   const closeVertIcon = () => setNavVertIcon(null);
 
   return (
@@ -130,136 +128,106 @@ export const Navbar = (): JSX.Element => {
         onClose={toggleDrawer(false)}
       >
         <div className={classes.drawerTitle}>
-          <img className={classes.drawerLogo} src='/img/logo-white.png' />
+          <img className={classes.drawerLogo} src="/img/logo-white.png" />
         </div>
         <br />
         <Typography>
-          <Link href='/#features' className={classes.drawerLink}>
+          <Link href="/#features" className={classes.drawerLink}>
             Features
           </Link>
-          <Link href='#' className={classes.drawerLink}>
+          <Link href="#" className={classes.drawerLink}>
             News
           </Link>
-          <Link href='/download' className={classes.drawerLink}>
+          <Link href="/download" className={classes.drawerLink}>
             Download
           </Link>
-          <Link
-            href='mailto:contact@dahliaOS.io'
-            className={classes.drawerLink}
-          >
+          <Link href="mailto:contact@dahliaOS.io" className={classes.drawerLink}>
             Contact
           </Link>
-          <Link
-            href='https://github.com/orgs/dahliaos/people'
-            target='_blank'
-            className={classes.drawerLink}
-          >
+          <Link href="https://github.com/orgs/dahliaos/people" target="_blank" className={classes.drawerLink}>
             Developers
           </Link>
-          <Link href='https://docs.dahliaOS.io' className={classes.drawerLink}>
+          <Link href="https://docs.dahliaOS.io" className={classes.drawerLink}>
             Documentation
           </Link>
           <Divider />
-          <span className={`${classes.category} ${classes.drawerLink}`}>
-            Find us on
-          </span>
-          <Link href='/discord' target='_blank' className={classes.drawerLink}>
+          <span className={`${classes.category} ${classes.drawerLink}`}>Find us on</span>
+          <Link href="/discord" target="_blank" className={classes.drawerLink}>
             Discord
           </Link>
-          <Link href='/github' target='_blank' className={classes.drawerLink}>
+          <Link href="/github" target="_blank" className={classes.drawerLink}>
             GitHub
           </Link>
-          <Link href='/reddit' target='_blank' className={classes.drawerLink}>
+          <Link href="/reddit" target="_blank" className={classes.drawerLink}>
             Reddit
           </Link>
-          <Link href='/telegram' target='_blank' className={classes.drawerLink}>
+          <Link href="/telegram" target="_blank" className={classes.drawerLink}>
             Telegram
           </Link>
-          <Link href='/facebook' target='_blank' className={classes.drawerLink}>
+          <Link href="/facebook" target="_blank" className={classes.drawerLink}>
             Facebook
           </Link>
-          <Link
-            href='/instagram'
-            target='_blank'
-            className={classes.drawerLink}
-          >
+          <Link href="/instagram" target="_blank" className={classes.drawerLink}>
             Instagram
           </Link>
-          <Link href='/twitter' target='_blank' className={classes.drawerLink}>
+          <Link href="/twitter" target="_blank" className={classes.drawerLink}>
             Twitter
           </Link>
           <Divider />
-          <span className={`${classes.category} ${classes.drawerLink}`}>
-            For developers
-          </span>
-          <Link href='/github' className={classes.drawerLink}>
+          <span className={`${classes.category} ${classes.drawerLink}`}>For developers</span>
+          <Link href="/github" className={classes.drawerLink}>
             Source Code
           </Link>
-          <Link href='/discord' className={classes.drawerLink}>
+          <Link href="/discord" className={classes.drawerLink}>
             Join Our Team
           </Link>
         </Typography>
       </Drawer>
       <AppBar
-        color='secondary'
-        position='fixed'
+        color="secondary"
+        position="fixed"
         /* This code helps put that shadow under the navbar when scrolled */
-        className={`${classes.appBar} ${
-          !trigger ? "" : classes.appBarScrolled
-        }`}
+        className={`${classes.appBar} ${!trigger ? "" : classes.appBarScrolled}`}
       >
         <Toolbar>
           <IconButton
-            edge='start'
+            edge="start"
             className={classes.menuButton}
-            color='inherit'
-            aria-label='menu'
+            color="inherit"
+            aria-label="menu"
             onClick={toggleDrawer(true)}
           >
             <MenuIcon />
           </IconButton>
-          <Link className={classes.navLogo} href='/'>
-            <img className={classes.navLogo} src='/img/logo-color.png' />
+          <Link className={classes.navLogo} href="/">
+            <img className={classes.navLogo} src="/img/logo-color.png" />
           </Link>
           <div className={classes.desktopNav}>
             <Typography>
-              <Link className={classes.navLink} href='/#features'>
+              <Link className={classes.navLink} href="/#features">
                 Features
               </Link>
-              <Link className={classes.navLink} href='#'>
+              <Link className={classes.navLink} href="#">
                 News
               </Link>
-              <Link className={classes.navLink} href='/download'>
+              <Link className={classes.navLink} href="/download">
                 Download
               </Link>
-              <Link
-                className={classes.navLink}
-                href='https://web.dahliaOS.io'
-                target='_blank'
-              >
+              <Link className={classes.navLink} href="https://web.dahliaOS.io" target="_blank">
                 Demo
               </Link>
-              <Link
-                className={classes.navLink}
-                href='https://github.com/orgs/dahliaos/people'
-                target='_blank'
-              >
+              <Link className={classes.navLink} href="https://github.com/orgs/dahliaos/people" target="_blank">
                 Developers
               </Link>
-              <Link className={classes.navLink} href='https://docs.dahliaOS.io'>
+              <Link className={classes.navLink} href="https://docs.dahliaOS.io">
                 Documentation
               </Link>
             </Typography>
-            <IconButton
-              aria-label='more'
-              aria-controls='nav-menu'
-              aria-haspopup='true'
-              onClick={toggleVertIcon}
-            >
+            <IconButton aria-label="more" aria-controls="nav-menu" aria-haspopup="true" onClick={toggleVertIcon}>
               <MoreVertIcon />
             </IconButton>
             <Menu
-              id='nav-menu'
+              id="nav-menu"
               anchorEl={navVertIcon}
               keepMounted
               getContentAnchorEl={null}
@@ -268,11 +236,7 @@ export const Navbar = (): JSX.Element => {
               onClose={closeVertIcon}
             >
               <MenuItem onClick={closeVertIcon}>
-                <Link
-                  className={classes.removeLinkStyling}
-                  href='/github'
-                  target='_blank'
-                >
+                <Link className={classes.removeLinkStyling} href="/github" target="_blank">
                   Source Code
                 </Link>
               </MenuItem>
