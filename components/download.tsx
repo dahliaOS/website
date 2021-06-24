@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Card,
   CardContent,
@@ -51,24 +52,24 @@ const useStyles = makeStyles((theme: Theme) => ({
     top: 7,
   },
   cardInfo: {
-    fontSize: "1em",
-    whiteSpace: "pre-line",
-    textOverflow: "ellipsis",
-    display: "-webkit-box",
+    "fontSize": "1em",
+    "whiteSpace": "pre-line",
+    "textOverflow": "ellipsis",
+    "display": "-webkit-box",
     "-webkit-line-clamp": 7,
     "-webkit-box-orient": "vertical",
-    paddingBottom: 2,
-    overflow: "hidden",
+    "paddingBottom": 2,
+    "overflow": "hidden",
   },
   cardLink: {
     display: "block",
     position: "relative",
   },
   cardMore: {
-    right: 0,
-    color: theme.palette.grey[600],
-    position: "absolute",
-    transition: `${theme.transitions.easing.easeInOut} 0.229s`,
+    "right": 0,
+    "color": theme.palette.grey[600],
+    "position": "absolute",
+    "transition": `${theme.transitions.easing.easeInOut} 0.229s`,
 
     "&:hover": {
       color: theme.palette.grey[400],
@@ -116,14 +117,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: 30,
   },
   accordionInfo: {
-    fontSize: "1em",
-    whiteSpace: "pre-line",
-    textOverflow: "ellipsis",
-    display: "-webkit-box",
+    "fontSize": "1em",
+    "whiteSpace": "pre-line",
+    "textOverflow": "ellipsis",
+    "display": "-webkit-box",
     "-webkit-line-clamp": 4,
     "-webkit-box-orient": "vertical",
-    paddingBottom: 2,
-    overflow: "hidden",
+    "paddingBottom": 2,
+    "overflow": "hidden",
   },
   accordionActions: {
     display: "block",
@@ -164,7 +165,7 @@ export const Download = (props: any) => {
 
   useEffect(() => {
     void fetch("https://api.github.com/repos/dahliaOS/releases/releases")
-      .then(async (res) => {
+      .then(async res => {
         const releases = await res.json();
 
         if (res.status >= 400) throw new Error(releases);
@@ -179,22 +180,15 @@ export const Download = (props: any) => {
     <div>
       <Card className={classes.root}>
         {error ? (
-          <Alert severity='error'>
-            An error occurred whilst fetching GitHub's API!
-          </Alert>
+          <Alert severity="error">An error occurred whilst fetching GitHub&apos;s API!</Alert>
         ) : (
           <div>
-            <Dialog
-              classes={{ paper: classes.dialog }}
-              open={modal}
-              onClose={closeModal}
-            >
+            <Dialog classes={{ paper: classes.dialog }} open={modal} onClose={closeModal}>
               <DialogTitle>Support dahliaOS</DialogTitle>
               <DialogContent>
                 <DialogContentText>
-                  Donating to dahliaOS will help us purchase devices for testing
-                  and cover web hosting fees, so we can continue work on our
-                  amazing software!
+                  Donating to dahliaOS will help us purchase devices for testing and cover web hosting fees, so we can
+                  continue work on our amazing software!
                 </DialogContentText>
               </DialogContent>
               <DialogActions>
@@ -219,75 +213,34 @@ export const Download = (props: any) => {
                   <Typography className={classes.cardInfo}>
                     {/* This long regex basically takes '+ ' and slices it and puts a
                 new line on it */}
-                    {release[0].body
-                      .substring(release[0].body.indexOf("+ "))
-                      .replace(/(?:\r\n|\r|\n)/g, "\n")}
+                    {release[0].body.substring(release[0].body.indexOf("+ ")).replace(/(?:\r\n|\r|\n)/g, "\n")}
                   </Typography>
                 </div>
               ) : (
                 <div>
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"15%"}
-                    height={15}
-                  />
+                  <Skeleton variant="rect" animation="wave" width={"15%"} height={15} />
                   <div className={classes.space} />
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"100%"}
-                    height={15}
-                  />
+                  <Skeleton variant="rect" animation="wave" width={"100%"} height={15} />
                   <div className={classes.space} />
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"98%"}
-                    height={15}
-                  />
+                  <Skeleton variant="rect" animation="wave" width={"98%"} height={15} />
                   <div className={classes.space} />
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"95%"}
-                    height={15}
-                  />
+                  <Skeleton variant="rect" animation="wave" width={"95%"} height={15} />
                   <div className={classes.space} />
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"85%"}
-                    height={15}
-                  />
+                  <Skeleton variant="rect" animation="wave" width={"85%"} height={15} />
                   <div className={classes.space} />
-                  <Skeleton
-                    variant='rect'
-                    animation='wave'
-                    width={"20%"}
-                    height={15}
-                  />
+                  <Skeleton variant="rect" animation="wave" width={"20%"} height={15} />
                   <div className={classes.space} />
                 </div>
               )}
               <div className={classes.space} />
               {release ? (
-                <Link
-                  href={release[0].html_url}
-                  target='_blank'
-                  className={classes.cardLink}
-                >
+                <Link href={release[0].html_url} target="_blank" className={classes.cardLink}>
                   <Button className={classes.cardMore}>Read more</Button>
                 </Link>
               ) : (
-                <Link href='' className={classes.cardLink}>
+                <Link href="" className={classes.cardLink}>
                   <Button className={classes.cardMore}>
-                    <Skeleton
-                      variant='rect'
-                      animation='wave'
-                      width={"60px"}
-                      height={"25px"}
-                    />
+                    <Skeleton variant="rect" animation="wave" width={"60px"} height={"25px"} />
                   </Button>
                 </Link>
               )}
@@ -296,36 +249,24 @@ export const Download = (props: any) => {
             <CardActions className={classes.btns}>
               {release ? (
                 <div>
-                  {release[0].assets.map((asset) => (
+                  {release[0].assets.map(asset => (
                     <Button
                       key={asset.name}
                       href={asset.browser_download_url}
                       className={classes.downloadBtn}
                       onClick={openModal}
                     >
-                      {asset.name.includes("efi")
-                        ? "Download (EFI)"
-                        : "Download (Legacy)"}
+                      {asset.name.includes("efi") ? "Download (EFI)" : "Download (Legacy)"}
                     </Button>
                   ))}
                 </div>
               ) : (
                 <div>
                   <Button className={classes.downloadBtn}>
-                    <Skeleton
-                      variant='rect'
-                      animation='wave'
-                      width={"90px"}
-                      height={"25px"}
-                    />
+                    <Skeleton variant="rect" animation="wave" width={"90px"} height={"25px"} />
                   </Button>
                   <Button className={classes.downloadBtn}>
-                    <Skeleton
-                      variant='rect'
-                      animation='wave'
-                      width={"90px"}
-                      height={"25px"}
-                    />
+                    <Skeleton variant="rect" animation="wave" width={"90px"} height={"25px"} />
                   </Button>
                 </div>
               )}
@@ -345,9 +286,7 @@ export const Download = (props: any) => {
                 return (
                   <Accordion key={i} className={classes.accordion}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                      <Typography className={classes.accordionHeader}>
-                        {oldRelease.tag_name}
-                      </Typography>
+                      <Typography className={classes.accordionHeader}>{oldRelease.tag_name}</Typography>
                     </AccordionSummary>
                     <AccordionDetails className={classes.accordionDetails}>
                       <div>
@@ -357,31 +296,23 @@ export const Download = (props: any) => {
                         <Typography className={classes.accordionInfo}>
                           {/* This long regex basically takes '+ ' and slices it and puts a
                 new line on it */}
-                          {oldRelease.body
-                            .substring(oldRelease.body.indexOf("+ "))
-                            .replace(/(?:\r\n|\r|\n)/g, "\n")}
+                          {oldRelease.body.substring(oldRelease.body.indexOf("+ ")).replace(/(?:\r\n|\r|\n)/g, "\n")}
                         </Typography>
                       </div>
-                      <Link
-                        href={oldRelease.html_url}
-                        className={classes.cardLink}
-                        target='_blank'
-                      >
+                      <Link href={oldRelease.html_url} className={classes.cardLink} target="_blank">
                         <Button className={classes.cardMore}>Read more</Button>
                       </Link>
                     </AccordionDetails>
                     <Divider className={classes.divideAccordion} />
                     <AccordionActions className={classes.accordionActions}>
-                      {oldRelease.assets.map((asset) => (
+                      {oldRelease.assets.map(asset => (
                         <Button
                           key={asset.name}
                           href={asset.browser_download_url}
                           className={classes.downloadBtn}
                           onClick={openModal}
                         >
-                          {asset.name.includes("efi")
-                            ? "Download (EFI)"
-                            : "Download (Legacy)"}
+                          {asset.name.includes("efi") ? "Download (EFI)" : "Download (Legacy)"}
                         </Button>
                       ))}
                     </AccordionActions>
@@ -395,67 +326,27 @@ export const Download = (props: any) => {
                 <Accordion key={i} className={classes.accordion}>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography className={classes.accordionHeader}>
-                      <Skeleton
-                        variant='rect'
-                        animation='wave'
-                        width={130}
-                        height={30}
-                      />
+                      <Skeleton variant="rect" animation="wave" width={130} height={30} />
                     </Typography>
                   </AccordionSummary>
                   <AccordionDetails className={classes.accordionDetails}>
                     <div>
-                      <Skeleton
-                        variant='rect'
-                        animation='wave'
-                        width={"100%"}
-                        height={15}
-                      />
+                      <Skeleton variant="rect" animation="wave" width={"100%"} height={15} />
                       <div className={classes.space} />
-                      <Skeleton
-                        variant='rect'
-                        animation='wave'
-                        width={"100%"}
-                        height={15}
-                      />
+                      <Skeleton variant="rect" animation="wave" width={"100%"} height={15} />
                       <div className={classes.space} />
-                      <Skeleton
-                        variant='rect'
-                        animation='wave'
-                        width={"98%"}
-                        height={15}
-                      />
+                      <Skeleton variant="rect" animation="wave" width={"98%"} height={15} />
                       <div className={classes.space} />
-                      <Skeleton
-                        variant='rect'
-                        animation='wave'
-                        width={"95%"}
-                        height={15}
-                      />
+                      <Skeleton variant="rect" animation="wave" width={"95%"} height={15} />
                       <div className={classes.space} />
-                      <Skeleton
-                        variant='rect'
-                        animation='wave'
-                        width={"85%"}
-                        height={15}
-                      />
+                      <Skeleton variant="rect" animation="wave" width={"85%"} height={15} />
                       <div className={classes.space} />
-                      <Skeleton
-                        variant='rect'
-                        animation='wave'
-                        width={"20%"}
-                        height={15}
-                      />
+                      <Skeleton variant="rect" animation="wave" width={"20%"} height={15} />
                       <div className={classes.space} />
                     </div>
-                    <Link href='' className={classes.cardLink}>
+                    <Link href="" className={classes.cardLink}>
                       <Button className={classes.cardMore}>
-                        <Skeleton
-                          variant='rect'
-                          animation='wave'
-                          width={"60px"}
-                          height={"25px"}
-                        />
+                        <Skeleton variant="rect" animation="wave" width={"60px"} height={"25px"} />
                       </Button>
                     </Link>
                   </AccordionDetails>
@@ -463,20 +354,10 @@ export const Download = (props: any) => {
                   <AccordionActions className={classes.accordionActions}>
                     <div>
                       <Button className={classes.downloadBtn}>
-                        <Skeleton
-                          variant='rect'
-                          animation='wave'
-                          width={"90px"}
-                          height={"25px"}
-                        />
+                        <Skeleton variant="rect" animation="wave" width={"90px"} height={"25px"} />
                       </Button>
                       <Button className={classes.downloadBtn}>
-                        <Skeleton
-                          variant='rect'
-                          animation='wave'
-                          width={"90px"}
-                          height={"25px"}
-                        />
+                        <Skeleton variant="rect" animation="wave" width={"90px"} height={"25px"} />
                       </Button>
                     </div>
                   </AccordionActions>
