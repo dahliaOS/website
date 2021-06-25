@@ -14,7 +14,7 @@
   "homepage": "https://github.com/dahliaOS/website#readme",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "yarn lint && next build",
     "start": "next start",
     "lint": "eslint ."
   },
