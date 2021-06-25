@@ -1,28 +1,11 @@
 import React from "react";
 import { Footer, Navbar } from "../components/index";
 import coc from "../CODE_OF_CONDUCT.md";
-import { Box, Theme, makeStyles } from "@material-ui/core";
-
-const useStyles = makeStyles((theme: Theme) => ({
-  header: {
-    fontSize: "2.2em",
-    fontWeight: theme.typography.fontWeightMedium,
-    textAlign: "center",
-  },
-  container: {
-    width: "90%",
-    maxWidth: 500,
-    margin: "0 auto",
-    textAlign: "left",
-    fontSize: "1em",
-  },
-  pre: {
-    whiteSpace: "pre-wrap",
-  },
-}));
+import { Box } from "@material-ui/core";
+import { cocPage } from "../styles/index";
 
 export default function download(): JSX.Element {
-  const classes = useStyles();
+  const classes = cocPage();
 
   return (
     <div>
