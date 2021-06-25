@@ -32,6 +32,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: 40,
     borderRadius: 8,
   },
+  alert: {
+    maxWidth: 400,
+    margin: "0 auto 10px auto",
+    boxShadow: theme.shadows[5],
+  },
   title: {
     position: "relative",
     textAlign: "center",
@@ -180,8 +185,12 @@ export const Download = (props: Props): JSX.Element => {
 
   return (
     <div>
+      {error ? (
+        <Alert className={classes.alert} severity="error">
+          An error occurred whilst fetching GitHub&apos;s API!
+        </Alert>
+      ) : null}
       <Card className={classes.root}>
-        {error ? <Alert severity="error">An error occurred whilst fetching GitHub&apos;s API!</Alert> : null}
         <div>
           <Dialog classes={{ paper: classes.dialog }} open={modal} onClose={closeModal}>
             <DialogTitle>Support dahliaOS</DialogTitle>
