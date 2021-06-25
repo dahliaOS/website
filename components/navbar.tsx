@@ -1,6 +1,4 @@
-import MenuIcon from "@material-ui/icons/Menu";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-
+import { Menu as MenuIcon, MoreVert as MoreVertIcon } from "@material-ui/icons";
 import {
   useScrollTrigger,
   Toolbar,
