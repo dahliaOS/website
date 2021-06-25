@@ -145,10 +145,7 @@ export default function Home(): JSX.Element {
             <Button href="#download" className={classes.gradientBtn}>
               Download
             </Button>
-            <Button
-              href="#features"
-              className={classes.gradientBtn}
-            >
+            <Button href="#features" className={classes.gradientBtn}>
               Learn more
             </Button>
           </div>
@@ -161,30 +158,14 @@ export default function Home(): JSX.Element {
 
       {/* The basics */}
       <Box className={classes.half} id="features">
-        <div className={classes.left}>
-          <h1
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            className={`${classes.sectionTitle} ${classes.alignLeft}`}
-          >
-            Just the basics
-          </h1>
-          <Typography
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            data-aos-delay="150"
-            className={classes.sectionParagraph}
-          >
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={classes.left}>
+          <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>Just the basics</h1>
+          <Typography className={classes.sectionParagraph}>
             dahliaOS keeps things light by only including apps you need, and you can add all of your favorites from
             other operating systems using the Containers app. dahliaOS also provides a curated marketplace for
             third-party native Flutter applications, so you can use nearly every application within one system!
           </Typography>
-          <div
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            data-aos-delay="250"
-            className={classes.topicBtns}
-          >
+          <div className={classes.topicBtns}>
             <Button
               href="https://github.com/dahliaOS/pangolin_desktop/tree/master/lib/applications"
               target="_blank"
@@ -194,12 +175,7 @@ export default function Home(): JSX.Element {
             </Button>
           </div>
         </div>
-        <div
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-          data-aos-delay="350"
-          className={classes.right}
-        >
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="50" className={classes.right}>
           <Box className={classes.roundedBox}>
             <img src="/img/mockups/apps-4k.webp" />
           </Box>
@@ -208,34 +184,20 @@ export default function Home(): JSX.Element {
 
       {/* Supported devices */}
       <Box className={classes.half}>
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="350" className={classes.left}>
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="50" className={classes.left}>
           <Box className={classes.roundedBox}>
             <img src="/img/mockups/collageTransparent.webp" />
           </Box>
         </div>
-        <div className={classes.right}>
-          <h1
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            className={`${classes.sectionTitle} ${classes.alignLeft}`}
-          >
-            A wide range of supported devices
-          </h1>
-          <Typography
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            data-aos-delay="150"
-            className={classes.sectionParagraph}
-          >
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={classes.right}>
+          <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>A wide range of supported devices</h1>
+          <Typography className={classes.sectionParagraph}>
             dahliaOS provides a fast and stable experience on nearly every computer, from a 2004 desktop tower to the
             latest generation of mobile notebooks. Our dual kernel approach allows users with new(er) hardware to take
             advantage of the Zircon Kernel, while maintaining support for older devices using the Linux Kernel.
           </Typography>
           <div className={classes.topicBtns}>
             <Button
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
-              data-aos-delay="250"
               href="https://docs.dahliaos.io/#/articles/hardware/supported-devices"
               target="_blank"
               className={classes.gradientBtn}
@@ -248,42 +210,19 @@ export default function Home(): JSX.Element {
 
       {/* Still not convinced? */}
       <Box className={classes.half}>
-        <div className={classes.left}>
-          <h1
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            className={`${classes.sectionTitle} ${classes.alignLeft}`}
-          >
-            Still not convinced?
-          </h1>
-          <Typography
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            data-aos-delay="150"
-            className={classes.sectionParagraph}
-          >
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={classes.left}>
+          <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>Still not convinced?</h1>
+          <Typography className={classes.sectionParagraph}>
             We offer an online preview of dahliaOS right at your finger tips! Explore, create, and more with
             dahliaOS&apos; web preview to get a taste of what it is like!
           </Typography>
           <div className={classes.topicBtns}>
-            <Button
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
-              data-aos-delay="250"
-              href="https://web.dahliaos.io"
-              target="_blank"
-              className={classes.gradientBtn}
-            >
+            <Button href="https://web.dahliaos.io" target="_blank" className={classes.gradientBtn}>
               Try it out!
             </Button>
           </div>
         </div>
-        <div
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-          data-aos-delay="350"
-          className={classes.right}
-        >
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="50" className={classes.right}>
           <Box className={classes.roundedBox}>
             <img src="/img/mockups/pangolin.png" />
           </Box>
