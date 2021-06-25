@@ -1,6 +1,6 @@
 import { makeStyles, Theme } from "@material-ui/core";
 
-export const useStyles = makeStyles((theme: Theme) => ({
+export const indexPage = makeStyles((theme: Theme) => ({
   half: {
     position: "relative",
     display: "flex",
