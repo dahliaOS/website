@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -20,10 +20,8 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from "@material-ui/core";
-import InfoIcon from "@material-ui/icons/Info";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { Info as InfoIcon, ExpandMore as ExpandMoreIcon } from "@material-ui/icons";
 import { Skeleton, Alert } from "@material-ui/lab";
-import { useEffect, useState } from "react";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
