@@ -1,18 +1,10 @@
 import React from "react";
 import { Footer, Navbar, Download } from "../components/index";
-import { Theme, makeStyles, Box } from "@material-ui/core";
-
-const useStyles = makeStyles((theme: Theme) => ({
-  title: {
-    margin: "1em 0 1.5em 0",
-    textAlign: "center",
-    fontSize: "2.25em",
-    fontWeight: theme.typography.fontWeightRegular,
-  },
-}));
+import { Box } from "@material-ui/core";
+import { downloadPage } from "../styles/index";
 
 export default function download(): JSX.Element {
-  const classes = useStyles();
+  const classes = downloadPage();
 
   return (
     <div>
