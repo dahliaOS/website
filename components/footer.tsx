@@ -127,6 +127,10 @@ export const Footer = (): JSX.Element => {
       <br />
       <img className={classes.footerLogo} src="/img/logo-white.png" />
       <br />
+      <a href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
+        <img className={classes.footerLogo} src="/img/powered-by-vercel.svg" />
+      </a>
+      <br />
     </BottomNavigation>
   );
 };
