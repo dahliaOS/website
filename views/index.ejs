@@ -1,6 +1,6 @@
+<!doctype html>
 <!--Hey there, I see you're interested in our website files, are you a web developer maybe? If you are, visit us over at our Discord, we're looking for web developers!-->
 <!--Discord link: https://dahliaos.io/discord-->
-<!doctype html>
 <!---
 Copyright 2019 The dahliaOS Authors
 
@@ -16,7 +16,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400&display=swap" rel="stylesheet">
 
 <html lang="en">
 
@@ -33,18 +32,20 @@ limitations under the License.
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="#ff3d00">
   <meta name="apple-mobile-web-app-title" content="dahliaOS">
-  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <meta name="msapplication-TileImage" content="assets/img/favicon.png">
   <meta name="msapplication-TileColor" content="#ff3d00">
   <meta name="theme-color" content="#ff3d00">
   <meta name="description"
     content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <title>dahliaOS</title>
-  <script src="assets/js/material.min.js"></script>
-  <script src="https://unpkg.com/scrollbooster@2/dist/scrollbooster.min.js"></script>
-  <script src="https://unpkg.com/typewriter-effect@2.18.0/dist/core.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/typewriter-effect@2.18.0/dist/core.js"></script>
 
   <!-- Page styles -->
   <link rel="stylesheet"
@@ -62,7 +63,7 @@ limitations under the License.
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <%- include('./templates/nav.ejs'); %>
-    <div class="dahliaOS-content mdl-layout__content">
+    <div class="dahliaOS-content mdl-layout__content" style="overflow-y: hidden;">
       <a name="top"></a>
       <!-- home  -->
       <div class="home-flex">
@@ -85,7 +86,7 @@ limitations under the License.
               </div>
             </div>
             <div class="computer-right">
-              <img src="/assets/img/mockup.png" alt="DahliaOS Mockup" class="mockup-landing" draggable="false">
+              <img src="/assets/img/mockup.svg" alt="DahliaOS Mockup" class="mockup-landing" draggable="false">
             </div>
             <div class="scrollDown">
               <a href="#screens">
@@ -107,7 +108,85 @@ limitations under the License.
         </div>
       </div>
       <div id="features" class="dahliaOS-wear-section">
+  
+        <style>
+
+      .container {
+      display: grid;
+      grid-row: auto;
+      border-radius: none;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 12px;
+      grid-row-gap: 150px;
+      }
+
+      .div1 { grid-area: 1 / 1 / 2 / 2; }
+      .div2 { grid-area: 1 / 2 / 2 / 3; }
+      .div3 { grid-area: 1 / 3 / 2 / 4; }
+      .div4 { grid-area: 1 / 4 / 2 / 5; }
+      .div5 { grid-area: 1 / 5 / 2 / 6; }
+      .div6 { grid-area: 2 / 1 / 3 / 2; }
+      .div7 { grid-area: 2 / 2 / 3 / 3; }
+      .div8 { grid-area: 2 / 3 / 3 / 4; }
+      .div9 { grid-area: 2 / 4 / 3 / 5; }
+      .div10 { grid-area: 2 / 5 / 3 / 6; }
+      .div11 { grid-area: 3 / 5 / 4 / 6; }
+      .div12 { grid-area: 3 / 4 / 4 / 5; }
+      .div13 { grid-area: 3 / 3 / 4 / 4; }
+      .div14 { grid-area: 3 / 2 / 4 / 3; }
+      .div15 { grid-area: 3 / 1 / 4 / 2; }
+      .div16 { grid-area: 1 / 6 / 2 / 7; }
+      .div17 { grid-area: 2 / 6 / 3 / 7; }
+      .div18 { grid-area: 3 / 6 / 4 / 7; }
+      
+      @media only screen and ( max-width: 40em ) /* 640px */
+          {
+            .container
+            {
+              -webkit-column-count: 2;
+              -webkit-column-gap: 0.938em; /* 15px */
+              -moz-column-count: 2;
+              -moz-column-gap: 0.938em; /* 15px */
+              column-count: 2;
+              column-gap: 0.938em; /* 15px */
+            }
+            .container{
+                margin-bottom: 0.938em; /* 15px */
+              }
+          }
+      
+          @media only screen and ( max-width: 20em ) /* 320px */
+          {
+            .container{
+              -webkit-column-count: auto;
+              -moz-column-count: auto;
+              column-count: auto;
+            }
+          }
+
+      </style>
         <div class="dahliaOS-wear-band">
+          <div class="container">
+            <div class="div1"> <img src="assets/img/icons/graft.svg" data-aos="fade-left" /></div>
+            <div class="div2"> <img src="assets/img/icons/task.svg" data-aos="fade-left" /></div>
+            <div class="div3"> <img src="assets/img/icons/multimedia-audio-player.svg" data-aos="fade-left" /></div>
+            <div class="div4"> <img src="assets/img/icons/credits.svg" data-aos="fade-left" /></div>
+            <div class="div5"> <img src="assets/img/icons/web.svg" data-aos="fade-left" /></div>
+            <div class="div6"> <img src="assets/img/icons/root.svg" data-aos="fade-left" /></div>
+            <div class="div7"> <img src="assets/img/icons/settings.svg" data-aos="fade-left" /></div>
+            <div class="div8"> <img src="assets/img/icons/help.svg" data-aos="fade-left" /></div>
+            <div class="div9"> <img src="assets/img/icons/files.svg" data-aos="fade-right" /></div>
+            <div class="div10"> <img src="assets/img/icons/authenticator.svg" data-aos="fade-right" /></div>
+            <div class="div11"> <img src="assets/img/icons/theme.svg" data-aos="fade-right" /></div>
+            <div class="div12"> <img src="assets/img/icons/weather.svg" data-aos="fade-right" /></div>
+            <div class="div13"> <img src="assets/img/icons/welcome-info.svg" data-aos="fade-right" /></div>
+            <div class="div14"> <img src="assets/img/icons/disks.svg" data-aos="fade-right" /></div>
+            <div class="div15"> <img src="assets/img/icons/social.svg" data-aos="fade-right" /></div>
+            <div class="div16"> <img src="assets/img/icons/note_mobile.svg" data-aos="fade-right" /></div>
+            <div class="div17"> <img src="assets/img/icons/software-shared.svg" data-aos="fade-right" /></div>
+            <div class="div18"> <img src="assets/img/icons/preferences-system-time.svg" data-aos="fade-right" /></div>
+          </div>
           <div class="dahliaOS-wear-band-text">
             <div class="sulphurpoint mdl-typography--display-2 mdl-typography--font-thin">Just the
               basics
@@ -161,7 +240,7 @@ limitations under the License.
         <div class="dahliaOS-card-container mdl-grid">
           <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
             <div class="mdl-card__media">
-              <img src="assets/img/screenshots/recovery.png">
+              <img src="assets/img/screenshots/recovery.svg">
             </div>
             <div class="mdl-card__title">
               <h4 class="mdl-card__title-text" align="left">Internet Recovery</h4>
@@ -185,7 +264,7 @@ limitations under the License.
 
           <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
             <div class="mdl-card__media">
-              <img src="assets/img/screenshots/boot.png">
+              <img src="assets/img/screenshots/boot.svg">
             </div>
             <div class="mdl-card__title">
               <h4 class="mdl-card__title-text" align="left">Powered by the best of Fuchsia and Linux</h4>
@@ -257,7 +336,7 @@ limitations under the License.
 
           <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
             <div class="mdl-card__media">
-              <img src="assets/img/screenshots/source.png">
+              <img src="assets/img/screenshots/source.svg">
             </div>
             <div class="mdl-card__title">
               <h4 class="mdl-card__title-text" align="left">Free and open source</h4>
@@ -353,8 +432,8 @@ limitations under the License.
         </div>
       </div>
 
-      <div id="downloads" class="dahliaOS-customized-section">
-        <div align="center" class="dahliaOS-customized-section-text">
+      <div id="downloads" class="dahliaOS-customized-section" >
+        <div align="center" class="dahliaOS-customized-section-text" data-aos="fade-down">
           <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Download</div>
           <br><br>
           <div id="loader" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
@@ -533,5 +612,13 @@ limitations under the License.
     .pauseFor(1000)
     .start();
     </script>
+          <script>
+            AOS.init({
+              offset: 200,
+              duration: 600,
+              easing: 'ease-in-sine',
+              delay: 100,
+            });
+          </script>
 </body>
 </html>

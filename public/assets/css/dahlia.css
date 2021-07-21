@@ -161,7 +161,7 @@ main {
 }
 html,
 body {
-  font: 400 14px/20px "Helvetica", "Arial", sans-serif;
+  font: 400 14px/20px "roboto", "Arial", sans-serif;
 }
 h1,
 h2,
@@ -178,7 +178,7 @@ h3 small,
 h4 small,
 h5 small,
 h6 small {
-  font: 400 0.6em/1.35 "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 400 0.6em/1.35 "Roboto", "Arial", sans-serif;
   letter-spacing: -0.02em;
   opacity: 0.54;
 }
@@ -190,7 +190,7 @@ h1 {
 }
 h1,
 h2 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   font-weight: 400;
 }
 h2 {
@@ -207,7 +207,7 @@ h3 {
 }
 h3,
 h4 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   font-weight: 400;
 }
 h4 {
@@ -224,7 +224,7 @@ h5 {
 }
 h5,
 h6 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto",  "Arial", sans-serif;
   margin: 24px 0 16px;
 }
 h6 {
@@ -246,7 +246,7 @@ a {
   font-weight: 500;
 }
 blockquote {
-  font: italic 300 24px/1.35 "Roboto", "Helvetica", "Arial", sans-serif;
+  font: italic 300 24px/1.35 "Roboto", "Arial", sans-serif;
   position: relative;
   letter-spacing: 0.08em;
 }
@@ -283,7 +283,7 @@ ol {
 }
 .mdl-typography--display-4,
 .mdl-typography--display-4-color-contrast {
-  font: 300 112px/1 "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 300 112px/1 "Roboto", "Arial", sans-serif;
   letter-spacing: -0.04em;
 }
 .mdl-typography--display-4-color-contrast {
@@ -291,7 +291,7 @@ ol {
 }
 .mdl-typography--display-3,
 .mdl-typography--display-3-color-contrast {
-  font: 400 56px/1.35 "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 400 56px/1.35 "Roboto", "Arial", sans-serif;
   letter-spacing: -0.02em;
 }
 .mdl-typography--display-3-color-contrast {
@@ -299,21 +299,21 @@ ol {
 }
 .mdl-typography--display-2,
 .mdl-typography--display-2-color-contrast {
-  font: 400 45px/48px "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 400 45px/48px "Roboto", "Arial", sans-serif;
 }
 .mdl-typography--display-2-color-contrast {
   opacity: 0.54;
 }
 .mdl-typography--display-1,
 .mdl-typography--display-1-color-contrast {
-  font: 400 34px/40px "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 400 34px/40px "Roboto", "Arial", sans-serif;
 }
 .mdl-typography--display-1-color-contrast {
   opacity: 0.54;
 }
 .mdl-typography--headline,
 .mdl-typography--headline-color-contrast {
-  font: 400 24px/32px "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 400 24px/32px "Roboto", "Arial", sans-serif;
   -moz-osx-font-smoothing: grayscale;
 }
 .mdl-typography--headline-color-contrast {
@@ -321,7 +321,7 @@ ol {
 }
 .mdl-typography--title,
 .mdl-typography--title-color-contrast {
-  font: 500 20px/1 "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 500 20px/1 "Roboto", "Arial", sans-serif;
   letter-spacing: 0.02em;
 }
 .mdl-typography--title-color-contrast {
@@ -329,7 +329,7 @@ ol {
 }
 .mdl-typography--subhead,
 .mdl-typography--subhead-color-contrast {
-  font: 400 16px/24px "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 400 16px/24px "Roboto", "Arial", sans-serif;
   letter-spacing: 0.04em;
 }
 .mdl-typography--subhead-color-contrast {
@@ -357,7 +357,7 @@ ol {
 }
 .mdl-typography--body-2-force-preferred-font,
 .mdl-typography--body-2-force-preferred-font-color-contrast {
-  font: 500 14px/24px "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 500 14px/24px "Roboto", "Arial", sans-serif;
   letter-spacing: 0;
 }
 .mdl-typography--body-2-force-preferred-font-color-contrast {
@@ -365,7 +365,7 @@ ol {
 }
 .mdl-typography--body-1-force-preferred-font,
 .mdl-typography--body-1-force-preferred-font-color-contrast {
-  font: 400 14px/24px "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 400 14px/24px "Roboto", "Arial", sans-serif;
   letter-spacing: 0;
 }
 .mdl-typography--body-1-force-preferred-font-color-contrast {
@@ -379,7 +379,7 @@ ol {
   letter-spacing: 0;
 }
 .mdl-typography--caption-force-preferred-font {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
 }
 .mdl-typography--caption-color-contrast,
 .mdl-typography--caption-force-preferred-font-color-contrast {
@@ -391,7 +391,7 @@ ol {
 }
 .mdl-typography--caption-force-preferred-font-color-contrast,
 .mdl-typography--menu {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
 }
 .mdl-typography--menu {
   font-size: 14px;
@@ -405,7 +405,7 @@ ol {
 .mdl-typography--menu-color-contrast,
 .mdl-typography--button,
 .mdl-typography--button-color-contrast {
-  font: 500 14px/1 "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 500 14px/1 "Roboto", "Arial", sans-serif;
   letter-spacing: 0;
 }
 .mdl-typography--button,
@@ -2217,7 +2217,7 @@ ol {
   position: absolute;
   top: -11px;
   right: -24px;
-  font: 600 12px "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 600 12px "Roboto", "Arial", sans-serif;
   width: 22px;
   height: 22px;
   border-radius: 50%;
@@ -2250,7 +2250,7 @@ ol {
   min-width: 64px;
   padding: 0 16px;
   display: inline-block;
-  font: 500 14px/36px "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 500 14px/36px "Roboto", "Arial", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0;
   overflow: hidden;
@@ -2699,7 +2699,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 .mdl-chip {
   height: 32px;
-  font: 0/32px "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 0/32px "Roboto", "Arial", sans-serif;
   padding: 0 12px;
   border: 0;
   border-radius: 16px;
@@ -3323,7 +3323,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
   list-style: none;
 }
 .mdl-list__item {
-  font: 400 16px/1 "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 400 16px/1 "Roboto", "Arial", sans-serif;
   letter-spacing: 0.04em;
   min-height: 48px;
   -webkit-flex-direction: row;
@@ -3820,7 +3820,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 .mdl-layout-title {
   display: block;
   position: relative;
-  font: 400 20px/1 "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 400 20px/1 "Roboto", "Arial", sans-serif;
   letter-spacing: 0.02em;
   box-sizing: border-box;
 }
@@ -4158,6 +4158,78 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     line-height: 56px;
     padding: 0 16px;
   }
+}
+.mdl-layout__obfuscator {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  visibility: hidden;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mdl-layout__obfuscator.is-visible {
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: visible;
+}
+@supports (pointer-events: auto) {
+  .mdl-layout__obfuscator {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition-property: opacity;
+    visibility: visible;
+    pointer-events: none;
+  }
+  .mdl-layout__obfuscator.is-visible {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+.mdl-layout__content {
+  -ms-flex: 0 1 auto;
+  position: relative;
+  display: inline-block;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  z-index: 1;
+  -webkit-overflow-scrolling: touch;
+}
+.mdl-layout--fixed-drawer > .mdl-layout__content {
+  margin-left: 240px;
+}
+.mdl-layout__container.has-scrolling-header .mdl-layout__content {
+  overflow: visible;
+}
+@media screen and (max-width: 1100px) {
+  .mdl-layout--fixed-drawer > .mdl-layout__content {
+    margin-left: 0;
+  }
+  .mdl-layout__container.has-scrolling-header .mdl-layout__content {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+.mdl-layout__tab-bar {
+  height: 96px;
+  margin: 0;
+  width: calc(100% - 112px);
+  padding: 0 0 0 56px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #ff5722;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.mdl-layout__tab-bar::-webkit-scrollbar {
+  display: flex;
 }
 .mdl-layout--no-drawer-button .mdl-layout__tab-bar {
   padding-left: 16px;
@@ -4785,7 +4857,7 @@ _:-ms-input-placeholder,
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   will-change: transform;
   -webkit-transform: translate(0, 80px);
   transform: translate(0, 80px);
@@ -4837,7 +4909,7 @@ _:-ms-input-placeholder,
   color: #ff5252;
   float: right;
   padding: 14px 24px 14px 12px;
-  font: 500 14px/1 "Roboto", "Helvetica", "Arial", sans-serif;
+  font: 500 14px/1 "Roboto", "Arial", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0;
   overflow: hidden;
@@ -5533,7 +5605,7 @@ fieldset[disabled] .mdl-switch .mdl-switch__ripple-container .mdl-ripple,
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   display: block;
-  font: 16px "Helvetica", "Arial", sans-serif;
+  font: 16px "Arial", sans-serif;
   margin: 0;
   padding: 4px 0;
   width: 100%;

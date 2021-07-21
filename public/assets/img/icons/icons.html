@@ -1,0 +1,71 @@
+e<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://unpkg.com/scrollreveal@4"></script>
+</head>
+<body>
+<style>
+    /* utility */
+html.sr .load-hidden {
+  visibility: hidden;
+}
+
+.widget-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.widget {
+  width: 15%;
+  height: 50px;
+  flex: auto;
+  margin: 0.5rem;
+  background: white;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* extension */
+html.sr .widget {
+  visibility: hidden;
+}
+
+</style>
+  <!-- style extension (implicit) --> 
+  <ul class="widget-list">
+     <li class="widget"><img src="./graft.svg"></li>
+     <li class="widget"><img src="./task.svg"></li>
+     <li class="widget"><img src="./multimedia-audio-player.svg"></li>
+     <li class="widget"><img src="./calculator.svg"></li>
+     <li class="widget"><img src="./credits.svg"></li>
+     <li class="widget"><img src="./web.svg"></li>
+   </ul>
+
+   <ul class="widget-list" style=" margin-top:150px;">
+    <li class="widget"><img src="./root.svg"></li>
+    <li class="widget"><img src="./settings.svg"></li>
+    <li class="widget"><img src="./help.svg"></li>
+    <li class="widget"><img src="./files.svg"></li>
+    <li class="widget"><img src="./authenticator.svg"></li>
+    <li class="widget"><img src="./theme.svg"></li>
+  </ul>
+
+  <ul class="widget-list" style=" margin-top:150px;">
+    <li class="widget"><img src="./weather.svg"></li>
+    <li class="widget"><img src="./welcome-info.svg"></li>
+    <li class="widget"><img src="./disks.svg"></li>
+    <li class="widget"><img src="./social.svg"></li>
+    <li class="widget"><img src="./note_mobile.svg"></li>
+    <li class="widget"><img src="./grey-drag.svg"></li>
+  </ul>
+  <script>
+    ScrollReveal().reveal('.headline', { duration: 2000 });
+    ScrollReveal().reveal('.widget', { interval: 350 });
+  </script>
+
+</body>
+</html>

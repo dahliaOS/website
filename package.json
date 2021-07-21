@@ -22,11 +22,13 @@
   },
   "homepage": "https://github.com/Looskie/dahliaOS-Nodejs#readme",
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
-    "ejs": "^3.1.5",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "jsonwebtoken": "^8.5.1",
@@ -35,6 +37,7 @@
     "nedb": "^1.8.0",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.6",
-    "webhook-discord": "^3.7.7"
+    "webhook-discord": "^3.7.7",
+    "wowjs": "^1.1.3"
   }
 }
