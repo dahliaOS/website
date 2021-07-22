@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { Navbar, Download, NewsPill, Footer } from "../components/index";
+import { Navbar, Download, NewsPill, Footer, Intro } from "../components/index";
 import { Box, Button, Link, Typography } from "@material-ui/core";
 import { ArrowForwardIos } from "@material-ui/icons";
 import { indexPage } from "../styles";
@@ -17,7 +17,8 @@ export default function Home(): JSX.Element {
       <Navbar />
 
       {/* Hero */}
-      <Box className={`${classes.home} ${classes.half}`}>
+      <Intro />
+      {/*       <Box className={`${classes.home} ${classes.half}`}>
         <div className={classes.typography}>
           <NewsPill />
           <h1 className={classes.homeHeader}>something new</h1>
@@ -38,7 +39,7 @@ export default function Home(): JSX.Element {
           <img className={classes.heroImg} src="/img/mockups/hero.png" />
         </div>
         <img src="/img/darkWave.svg" className={classes.wave} />
-      </Box>
+      </Box> */}
 
       {/* The basics */}
       <Box className={classes.half} id="features">
