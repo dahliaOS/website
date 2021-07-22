@@ -43,7 +43,7 @@ export default function Home(): JSX.Element {
 
       {/* The basics */}
       <Box className={classes.half} id="features">
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={classes.left}>
+        <div data-aos="fade-up" data-aos-delay="100" className={classes.left}>
           <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>Just the basics</h1>
           <Typography className={classes.sectionParagraph}>
             dahliaOS keeps things light by only including apps you need, and you can add all of your favorites from
@@ -60,7 +60,12 @@ export default function Home(): JSX.Element {
             </Button>
           </div>
         </div>
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="50" className={classes.right}>
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-delay="180"
+          className={classes.right}
+        >
           <Box className={classes.roundedBox}>
             <img src="/img/mockups/apps-4k.webp" />
           </Box>
@@ -69,12 +74,12 @@ export default function Home(): JSX.Element {
 
       {/* Supported devices */}
       <Box className={classes.half}>
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="50" className={classes.left}>
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="180" className={classes.left}>
           <Box className={classes.roundedBox}>
             <img src="/img/mockups/collageTransparent.webp" />
           </Box>
         </div>
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={classes.right}>
+        <div data-aos="fade-up" data-aos-delay="100" className={classes.right}>
           <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>A wide range of supported devices</h1>
           <Typography className={classes.sectionParagraph}>
             dahliaOS provides a fast and stable experience on nearly every computer, from a 2004 desktop tower to the
@@ -95,7 +100,7 @@ export default function Home(): JSX.Element {
 
       {/* Still not convinced? */}
       <Box className={classes.half}>
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={classes.left}>
+        <div data-aos="fade-up" data-aos-delay="100" className={classes.left}>
           <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>Still not convinced?</h1>
           <Typography className={classes.sectionParagraph}>
             We offer an online preview of dahliaOS right at your finger tips! Explore, create, and more with
@@ -107,7 +112,7 @@ export default function Home(): JSX.Element {
             </Button>
           </div>
         </div>
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="50" className={classes.right}>
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="180" className={classes.right}>
           <Box className={classes.roundedBox}>
             <img src="/img/mockups/pangolin.png" />
           </Box>
