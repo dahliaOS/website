@@ -7,6 +7,7 @@ interface IntroProps {
   terminalTransform: string;
   calculatorTransform: string;
   notepadTransform: string;
+  isDarkMode: boolean;
 }
 
 export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
@@ -47,14 +48,14 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
     width: 1280,
     animation: "$scaleHardware 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s forwards",
   }),
-  "background": ({ backgroundScale }) => ({
+  "background": ({ backgroundScale, isDarkMode }) => ({
     position: "absolute",
     width: 1314,
     zIndex: 0,
     transform: `scale(${backgroundScale})`,
     height: "calc(100% + 1px)",
     bottom: 19,
-    background: "url(https://ucarecdn.com/4f1bd4aa-0ce5-4653-8990-e4f3d8a6d302/background.svg)",
+    background: `url(${isDarkMode ? "/img/darkModeBackground.svg" : "/img/lightModeBackground.svg"})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: 1314,
     backgroundPosition: "center",
@@ -66,7 +67,7 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
     width: 571,
     zIndex: 1,
     transform: terminalTransform,
-    background: "url(https://ucarecdn.com/fdda2e29-c53d-489f-bc39-52332d500465/TerminalApp.svg)",
+    background: "url(/img/terminal.svg)",
     backgroundRepeat: "no-repeat",
     backgroundSize: "contain",
     animation: "$animateTerminal 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s forwards",
@@ -78,7 +79,7 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
     width: 557,
     zIndex: 2,
     transform: notepadTransform,
-    background: "url(https://ucarecdn.com/c67b50ff-7296-4dc8-b54f-c253c78950f2/TextEditor.svg)",
+    background: "url(/img/textEditor.svg)",
     backgroundRepeat: "no-repeat",
     backgroundSize: "contain",
     animation: "$animateNotepad 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s forwards",
@@ -90,18 +91,18 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
     width: 305,
     zIndex: 3,
     transform: calculatorTransform,
-    background: "url(https://ucarecdn.com/787c401e-f50d-4430-a089-57bffc136523/Calculator.svg)",
+    background: "url(/img/calculator.svg)",
     backgroundRepeat: "no-repeat",
     backgroundSize: "contain",
     animation: "$animateCalculator 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s forwards",
     animationDelay: "0.6s",
   }),
-  "toolbar": {
+  "toolbar": ({ isDarkMode }) => ({
     position: "absolute",
     height: "100%",
     width: 1011,
     zIndex: 0,
-    background: "url(https://ucarecdn.com/465e2f6d-10cb-4e23-bae6-5ce54a8620d6/Taskbar.svg)",
+    background: `url(${isDarkMode ? "/img/darkToolbar.svg" : "/img/lightToolbar.svg"})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "contain",
@@ -109,7 +110,7 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
     animation: "$animateToolbar 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s forwards",
     opacity: 0,
     animationDelay: "1.85s",
-  },
+  }),
 
   /* Animations */
   "@keyframes scaleHardware": {
@@ -164,12 +165,12 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
   },
   "@keyframes animateToolbar": {
     "0%": {
-      transform: "translateY(312px)",
-      opacity: 0,
+      transform: ({ isDarkMode }) => "translateY(312px)",
+      opacity: ({ isDarkMode }) => 0,
     },
     "100%": {
-      transform: "translateY(281px)",
-      opacity: 1,
+      transform: ({ isDarkMode }) => "translateY(281px)",
+      opacity: ({ isDarkMode }) => 1,
     },
   },
 }));
@@ -181,6 +182,7 @@ export const Intro = (): JSX.Element => {
     terminalTransform: "translate3d(-400px, -250vh, 0) scale(2.2)",
     calculatorTransform: "translate3d(-150vw, -178%, 0) scale(2.8)",
     notepadTransform: "translate3d(200vw, 22%, 0) scale(2.5)",
+    isDarkMode: !useMediaQuery("(prefers-color-scheme: dark)") || true,
   };
 
   if (useMediaQuery("(max-height:300px)")) props["terminalTransform"] = "translate3d(-400px, -400vh, 0) scale(2.2)";
