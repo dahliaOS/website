@@ -17,40 +17,47 @@ import {
 import React, { useState } from "react";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root: {
+  "root": {
+    position: "fixed",
+    zIndex: 2,
+    width: "100%",
+    top: 0,
     flexGrow: 1,
     background: theme.palette.secondary.main,
+    transform: "translateY(-66px)",
+    animation: "$animateRoot 1s cubic-bezier(0.66, 0, 0.2, 1) 0.183s forwards",
+    animationDelay: "2s",
   },
-  menuButton: {
+  "menuButton": {
     marginRight: theme.spacing(2),
   },
-  navLogo: {
+  "navLogo": {
     height: 28,
     filter: "brightness(0) invert(1)",
   },
-  appBar: {
+  "appBar": {
     boxShadow: "unset",
   },
-  appBarScrolled: {
+  "appBarScrolled": {
     boxShadow: "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)",
   },
-  paper: {
+  "paper": {
     background: theme.palette.secondary.main,
   },
-  drawerTitle: {
+  "drawerTitle": {
     position: "relative",
     paddingTop: 160,
     height: 160,
     width: 230,
     background: theme.palette.primary.main,
   },
-  drawerLogo: {
+  "drawerLogo": {
     position: "absolute",
     height: 28,
     bottom: 16,
     paddingLeft: 40,
   },
-  drawerLink: {
+  "drawerLink": {
     "display": "block",
     "fontSize": ".93rem",
     "padding": "16px 40px",
@@ -62,7 +69,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       background: theme.palette.secondary.light,
     },
   },
-  category: {
+  "category": {
     "color": theme.palette.primary.light,
     "&:hover": {
       textDecoration: "none",
@@ -71,7 +78,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       background: "unset",
     },
   },
-  desktopNav: {
+  "desktopNav": {
     display: "none",
     [theme.breakpoints.up("md")]: {
       display: "flex",
@@ -79,7 +86,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       flexGrow: 1,
     },
   },
-  navLink: {
+  "navLink": {
     "fontSize": ".9em",
     "fontWeight": theme.typography.fontWeightBold,
     "padding": "0 16px",
@@ -95,10 +102,20 @@ const useStyles = makeStyles((theme: Theme) => ({
       borderBottom: `4px solid ${theme.palette.primary.main}`,
     },
   },
-  removeLinkStyling: {
+  "removeLinkStyling": {
     "color": "unset",
     "&:hover": {
       textDecoration: "unset",
+    },
+  },
+  "@keyframes animateRoot": {
+    "0%": {
+      transform: "translateY(-66px)",
+      opacity: 0,
+    },
+    "100%": {
+      transform: "translateY(0px)",
+      opacity: 1,
     },
   },
 }));
