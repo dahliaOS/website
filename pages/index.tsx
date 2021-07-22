@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Navbar, Download, NewsPill, Footer } from "../components/index";
 import { Box, Button, Link, Typography } from "@material-ui/core";
 import { ArrowForwardIos } from "@material-ui/icons";
-import { indexPage } from "../styles/index";
+import { indexPage } from "../styles";
 
 export default function Home(): JSX.Element {
   const classes = indexPage();
