@@ -54,10 +54,10 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
     transform: `scale(${backgroundScale})`,
     height: "calc(100% + 1px)",
     bottom: -7,
+    backgroundImage: `url(${isDarkMode ? "/img/darkModeBackground.svg)!important" : "/img/lightModeBackground.svg)"}`,
     backgroundRepeat: "no-repeat",
     backgroundSize: 1314,
     backgroundPosition: "center",
-    background: `url(${isDarkMode ? "/img/darkModeBackground.svg" : "/img/lightModeBackground.svg"})`,
     animation: "$scaleBackground 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s forwards",
   }),
   "terminal": ({ terminalTransform }) => ({
@@ -101,7 +101,7 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
     height: "100%",
     width: 1011,
     zIndex: 0,
-    background: `url(${isDarkMode ? "/img/darkToolbar.svg" : "/img/lightToolbar.svg"})`,
+    backgroundImage: `url(${isDarkMode ? "/img/darkToolbar.svg) !important" : "/img/lightToolbar.svg)"}`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "contain",
@@ -175,13 +175,15 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
 }));
 
 export const Intro = (): JSX.Element => {
+  const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)", { noSsr: true });
+  console.log("BRUH", isDarkMode);
   const props: IntroProps = {
     backgroundScale: 2.4,
     hardwareScale: 3,
     terminalTransform: "translate3d(-400px, -250vh, 0) scale(2.2)",
     calculatorTransform: "translate3d(-150vw, -178%, 0) scale(2.8)",
     notepadTransform: "translate3d(200vw, 22%, 0) scale(2.5)",
-    isDarkMode: useMediaQuery("(prefers-color-scheme: dark)", { noSsr: true }) || false,
+    isDarkMode,
   };
 
   if (useMediaQuery("(max-height:300px)")) props["terminalTransform"] = "translate3d(-400px, -400vh, 0) scale(2.2)";
