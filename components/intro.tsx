@@ -176,7 +176,7 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
 
 export const Intro = (): JSX.Element => {
   const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)", { noSsr: true });
-  console.log("BRUH", isDarkMode);
+
   const props: IntroProps = {
     backgroundScale: 2.4,
     hardwareScale: 3,
