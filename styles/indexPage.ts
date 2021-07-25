@@ -55,10 +55,15 @@ export const indexPage = makeStyles((theme: Theme) => ({
     "borderRadius": 5,
     "&:first-child": {
       background: `linear-gradient(153deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.light} 100%)`,
+      backgroundSize: "400% 400%",
+      transition: `.2s ${theme.transitions.easing.easeInOut}`,
       marginRight: 15,
     },
     "&:nth-child(2)": {
       border: `${theme.palette.secondary.light} solid 2px`,
+    },
+    "&:hover": {
+      backgroundPosition: "100% 50%",
     },
   },
   sectionTitle: {
