@@ -7,7 +7,7 @@ interface IntroProps {
   terminalTransform: string;
   calculatorTransform: string;
   notepadTransform: string;
-  isDarkMode: boolean;
+  isLightMode: boolean;
 }
 
 export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
@@ -47,14 +47,14 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
     width: 1280,
     animation: "$scaleHardware 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s forwards",
   }),
-  "background": ({ backgroundScale, isDarkMode }) => ({
+  "background": ({ backgroundScale, isLightMode }) => ({
     position: "absolute",
     width: 1314,
     zIndex: 0,
     transform: `scale(${backgroundScale})`,
     height: "calc(100% + 1px)",
     bottom: -7,
-    backgroundImage: `url(${isDarkMode ? "/img/darkModeBackground.svg)!important" : "/img/lightModeBackground.svg)"}`,
+    backgroundImage: `url(${isLightMode ? "/img/lightModeBackground.svg)!important" : "/img/darkModeBackground.svg)"}`,
     backgroundRepeat: "no-repeat",
     backgroundSize: 1314,
     backgroundPosition: "center",
@@ -96,12 +96,12 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
     animation: "$animateCalculator 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s forwards",
     animationDelay: "0.6s",
   }),
-  "toolbar": ({ isDarkMode }) => ({
+  "toolbar": ({ isLightMode }) => ({
     position: "absolute",
     height: "100%",
     width: 1011,
     zIndex: 0,
-    backgroundImage: `url(${isDarkMode ? "/img/darkToolbar.svg) !important" : "/img/lightToolbar.svg)"}`,
+    backgroundImage: `url(${isLightMode ? "/img/lightToolbar.svg) !important" : "/img/darkToolbar.svg)"}`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "contain",
@@ -164,18 +164,18 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
   },
   "@keyframes animateToolbar": {
     "0%": {
-      transform: ({ isDarkMode }) => "translateY(312px)",
-      opacity: ({ isDarkMode }) => 0,
+      transform: ({ isLightMode }) => "translateY(312px)",
+      opacity: ({ isLightMode }) => 0,
     },
     "100%": {
-      transform: ({ isDarkMode }) => "translateY(281px)",
-      opacity: ({ isDarkMode }) => 1,
+      transform: ({ isLightMode }) => "translateY(281px)",
+      opacity: ({ isLightMode }) => 1,
     },
   },
 }));
 
 export const Intro = (): JSX.Element => {
-  const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)", { noSsr: true });
+  const isLightMode = useMediaQuery("(prefers-color-scheme: light)", { noSsr: true });
 
   const props: IntroProps = {
     backgroundScale: 2.4,
@@ -183,7 +183,7 @@ export const Intro = (): JSX.Element => {
     terminalTransform: "translate3d(-400px, -250vh, 0) scale(2.2)",
     calculatorTransform: "translate3d(-150vw, -178%, 0) scale(2.8)",
     notepadTransform: "translate3d(200vw, 22%, 0) scale(2.5)",
-    isDarkMode,
+    isLightMode: isLightMode,
   };
 
   if (useMediaQuery("(max-height:300px)")) props["terminalTransform"] = "translate3d(-400px, -400vh, 0) scale(2.2)";
