@@ -159,16 +159,14 @@ export const Download = ({ more }: DownloadProps): JSX.Element => {
                   <div className={classes.olderUpdateBtns}>
                     {releases[0].assets.map((asset: Assets) => {
                       return (
-                        <>
-                          <Button
-                            key={asset.name}
-                            href={asset.browser_download_url}
-                            className={classes.downloadBtns}
-                            onClick={openModal}
-                          >
-                            {asset.name.includes("efi") ? "EFI" : "Legacy"}
-                          </Button>
-                        </>
+                        <Button
+                          key={asset.name}
+                          href={asset.browser_download_url}
+                          className={classes.downloadBtns}
+                          onClick={openModal}
+                        >
+                          {asset.name.includes("efi") ? "EFI" : "Legacy"}
+                        </Button>
                       );
                     })}
                   </div>
