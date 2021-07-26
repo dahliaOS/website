@@ -89,7 +89,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 export const Download = ({ more }: DownloadProps): JSX.Element => {
   const classes = useStyles();
   const [modal, setModal] = useState(false);
-  const { release, isError, isLoading } = useDownloads();
+  const { release: releases, isError, isLoading } = useDownloads();
 
   const openModal = () => setModal(true);
   const closeModal = () => setModal(false);
@@ -98,21 +98,21 @@ export const Download = ({ more }: DownloadProps): JSX.Element => {
     <div>
       {isError && <Alert severity="error">An error occurred whilst fetching GitHub&apos;s API!</Alert>}
 
-      {release ? (
+      {releases ? (
         <div className={classes.card}>
           <div className={classes.latest}>
             <div className={classes.text}>
               <h1 className={classes.title}>Latest</h1>
-              <span className={classes.version}>{release[0].name}</span>
+              <span className={classes.version}>{releases[0].name}</span>
               <Typography className={classes.paragraph}>
-                {release[0].body.substring(release[0].body.indexOf("+ ")).replace(/(?:\r\n|\r|\n)/g, "\n")}
+                {releases[0].body.substring(releases[0].body.indexOf("+ ")).replace(/(?:\r\n|\r|\n)/g, "\n")}
               </Typography>
-              <Link href={release[0].html_url} target="_blank">
+              <Link href={releases[0].html_url} target="_blank">
                 <Button className={classes.readMore}>Read more</Button>
               </Link>
             </div>
             <div className={classes.btnContainer}>
-              {release[0].assets.map((asset: Assets) => {
+              {releases[0].assets.map((asset: Assets) => {
                 return (
                   <Button
                     key={asset.name}
