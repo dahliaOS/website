@@ -1,6 +1,6 @@
 import Document, { Head, Html, NextScript, Main } from "next/document";
 import { ServerStyleSheets } from "@material-ui/core";
-import { theme } from "../util/theme";
+import { theme } from "@/utils/theme";
 import React from "react";
 
 export default class Page extends Document {
