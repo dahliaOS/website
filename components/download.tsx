@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     flexDirection: "row",
     borderRadius: 13,
-    maxWidth: 1050,
+    maxWidth: 950,
     width: "90%",
     margin: "0 auto",
     background: theme.palette.secondary.light,
