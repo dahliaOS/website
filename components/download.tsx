@@ -80,6 +80,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   center: {
     textAlign: "center",
   },
+  space: {
+    display: "block",
+    paddingTop: 5,
+  },
 }));
 
 export const Download = ({ more }: DownloadProps): JSX.Element => {
@@ -129,7 +133,52 @@ export const Download = ({ more }: DownloadProps): JSX.Element => {
           </div>
         </div>
       ) : (
-        <div className={classes.card}></div>
+        <div className={classes.card}>
+          <div className={classes.latest}>
+            <div className={classes.text}>
+              <h1 className={classes.title}>
+                <Skeleton variant="rect" animation="wave" width={"23%"} height={25} />
+              </h1>
+              <div className={classes.space} />
+              <span className={classes.version}>
+                <Skeleton variant="rect" animation="wave" width={"35%"} height={15} />
+              </span>
+              <div className={classes.space} />
+              <Skeleton variant="rect" animation="wave" width={"100%"} height={15} />
+              <div className={classes.space} />
+              <Skeleton variant="rect" animation="wave" width={"98%"} height={15} />
+              <div className={classes.space} />
+              <Skeleton variant="rect" animation="wave" width={"95%"} height={15} />
+              <div className={classes.space} />
+              <Skeleton variant="rect" animation="wave" width={"93%"} height={15} />
+              <div className={classes.space} />
+              <Skeleton variant="rect" animation="wave" width={"87%"} height={15} />
+              <div className={classes.space} />
+              <Skeleton variant="rect" animation="wave" width={"85%"} height={15} />
+              <div className={classes.space} />
+              <Skeleton variant="rect" animation="wave" width={"20%"} height={15} />
+              <div className={classes.space} />
+              <Link href="" target="_blank">
+                <Button className={classes.readMore}>
+                  <Skeleton variant="rect" animation="wave" width={"80px"} height={"28px"} />
+                </Button>
+              </Link>
+            </div>
+            <div className={classes.btnContainer}>
+              <Button className={classes.downloadBtns}>
+                <Skeleton variant="rect" animation="wave" width={"80px"} height={"25px"} />
+              </Button>
+              <Button className={classes.downloadBtns}>
+                <Skeleton variant="rect" animation="wave" width={"90px"} height={"30px"} />
+              </Button>
+            </div>
+          </div>
+          <div className={classes.oldUpdates}>
+            <div className={classes.text}>
+              <h1 className={`${classes.title} ${classes.center}`}>Older updates</h1>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
