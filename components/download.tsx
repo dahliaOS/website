@@ -77,6 +77,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     flex: 1,
     boxShadow: theme.shadows[3],
   },
+  center: {
+    textAlign: "center",
+  },
 }));
 
 export const Download = ({ more }: DownloadProps): JSX.Element => {
@@ -105,17 +108,23 @@ export const Download = ({ more }: DownloadProps): JSX.Element => {
               </Link>
             </div>
             <div className={classes.btnContainer}>
-              <Button href="#download" className={classes.downloadBtns}>
-                Download EFI
-              </Button>
-              <Button href="#features" className={classes.downloadBtns}>
-                Download Legacy
-              </Button>
+              {release[0].assets.map((asset: Assets) => {
+                return (
+                  <Button
+                    key={asset.name}
+                    href={asset.browser_download_url}
+                    className={classes.downloadBtns}
+                    onClick={openModal}
+                  >
+                    {asset.name.includes("efi") ? "Download (EFI)" : "Download (Legacy)"}
+                  </Button>
+                );
+              })}
             </div>
           </div>
           <div className={classes.oldUpdates}>
             <div className={classes.text}>
-              <h1 className={classes.title}>Older updates</h1>
+              <h1 className={`${classes.title} ${classes.center}`}>Older updates</h1>
             </div>
           </div>
         </div>
