@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   card: {
     display: "flex",
     flexDirection: "row",
-    borderRadius: 8,
+    borderRadius: 13,
     maxWidth: 1050,
     width: "90%",
     margin: "0 auto",
@@ -17,14 +17,21 @@ const useStyles = makeStyles((theme: Theme) => ({
     boxShadow: theme.shadows[7],
   },
   latest: {
-    flex: 1,
+    flex: 1.2,
     padding: "0 28px",
   },
   text: {
     position: "relative",
     paddingBottom: 45,
   },
-  title: {},
+  title: {
+    margin: "17px 0 0",
+  },
+  version: {
+    display: "block",
+    margin: "0 0 20px",
+    color: theme.palette.text.secondary,
+  },
   cardLink: {},
   readMore: {
     "position": "absolute!important" as any,
@@ -65,9 +72,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   oldUpdates: {
     background: "#1f1f1f",
-    borderRadius: 8,
+    borderRadius: 13,
     padding: "0 16px",
     flex: 1,
+    boxShadow: theme.shadows[3],
   },
 }));
 
@@ -88,6 +96,7 @@ export const Download = ({ more }: DownloadProps): JSX.Element => {
           <div className={classes.latest}>
             <div className={classes.text}>
               <h1 className={classes.title}>Latest</h1>
+              <span className={classes.version}>{release[0].name}</span>
               <Typography className={classes.paragraph}>
                 {release[0].body.substring(release[0].body.indexOf("+ ")).replace(/(?:\r\n|\r|\n)/g, "\n")}
               </Typography>
