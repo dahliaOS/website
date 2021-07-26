@@ -84,6 +84,25 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "block",
     paddingTop: 5,
   },
+  olderUpdatesContainer: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  olderUpdate: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: 3,
+  },
+  olderText: {
+    flexGrow: 1,
+  },
+  olderUpdateTitle: {
+    margin: 0,
+  },
+  olderUpdateDate: {},
+  olderUpdateBtns: {
+    display: "inline-flex",
+  },
 }));
 
 export const Download = ({ more }: DownloadProps): JSX.Element => {
@@ -129,6 +148,52 @@ export const Download = ({ more }: DownloadProps): JSX.Element => {
           <div className={classes.oldUpdates}>
             <div className={classes.text}>
               <h1 className={`${classes.title} ${classes.center}`}>Older updates</h1>
+              <div className={classes.olderUpdatesContainer}>
+                <div className={classes.olderUpdate}>
+                  <div className={classes.olderText}>
+                    <h2 className={classes.olderUpdateTitle}>200830-x86_64</h2>
+                    <span className={classes.olderUpdateDate}>Aug 29, 2020</span>
+                  </div>
+                  <div className={classes.olderUpdateBtns}>
+                    {releases[0].assets.map((asset: Assets) => {
+                      return (
+                        <>
+                          <Button
+                            key={asset.name}
+                            href={asset.browser_download_url}
+                            className={classes.downloadBtns}
+                            onClick={openModal}
+                          >
+                            {asset.name.includes("efi") ? "EFI" : "Legacy"}
+                          </Button>
+                        </>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className={classes.olderUpdate}>
+                  <div className={classes.olderText}>
+                    <h2 className={classes.olderUpdateTitle}>200830-x86_64</h2>
+                    <span className={classes.olderUpdateDate}>Aug 29, 2020</span>
+                  </div>
+                  <div className={classes.olderUpdateBtns}>
+                    {releases[0].assets.map((asset: Assets) => {
+                      return (
+                        <>
+                          <Button
+                            key={asset.name}
+                            href={asset.browser_download_url}
+                            className={classes.downloadBtns}
+                            onClick={openModal}
+                          >
+                            {asset.name.includes("efi") ? "EFI" : "Legacy"}
+                          </Button>
+                        </>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
