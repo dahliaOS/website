@@ -91,7 +91,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   olderUpdate: {
     display: "flex",
     alignItems: "center",
-    marginBottom: 3,
+    paddingBottom: 6,
+    marginBottom: 6,
+    borderBottom: `1.5px solid ${theme.palette.grey[800]}`,
   },
   olderText: {
     flexGrow: 1,
