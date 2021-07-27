@@ -200,7 +200,7 @@ export const Intro = (): JSX.Element => {
         <img className={classes.logo} src="/img/logo-color.png" />
       </div>
       <div className={classes.hardwareContainer}>
-        <img className={classes.hardware} src="https://ucarecdn.com/076c51ad-faeb-4131-84fe-2a3d26ab4681/" />
+        <img className={classes.hardware} src="/img/mockups/hardware.png" draggable={false} />
         <div className={classes.background}></div>
         <div className={classes.terminal}></div>
         <div className={classes.notepad}></div>
