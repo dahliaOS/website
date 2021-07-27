@@ -9,7 +9,8 @@ export interface Release {
   assets: Assets[];
   assets_url: string;
   html_url: string;
-  created_at: string;
+  created_at: Date;
+  published_at: Date;
 }
 
 export interface Assets {
