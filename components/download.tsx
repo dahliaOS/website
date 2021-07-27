@@ -79,6 +79,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   center: {
     textAlign: "center",
+    marginBottom: 31,
   },
   space: {
     display: "block",
@@ -89,11 +90,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: "column",
   },
   olderUpdate: {
-    display: "flex",
-    alignItems: "center",
-    paddingBottom: 6,
-    marginBottom: 6,
-    borderBottom: `1.5px solid ${theme.palette.grey[800]}`,
+    "display": "flex",
+    "alignItems": "center",
+    "paddingBottom": 6,
+    "marginBottom": 6,
+    "borderBottom": `1.5px solid ${theme.palette.grey[800]}`,
+
+    "&:last-child": {
+      marginBottom: 0,
+      borderBottom: "unset",
+    },
   },
   olderText: {
     flexGrow: 1,
@@ -163,7 +169,7 @@ export const Download = ({ more }: DownloadProps): JSX.Element => {
               <div className={classes.olderUpdatesContainer}>
                 {/* @ts-expect-error thinks map doesn't exist on release */}
                 {releases.map((oldRelease: Release, i: number) => {
-                  if (i === 0 || i > 5) return;
+                  if (i === 0 || i > 4) return;
 
                   return (
                     <div key={i} className={classes.olderUpdate}>
@@ -177,7 +183,7 @@ export const Download = ({ more }: DownloadProps): JSX.Element => {
                             <Button
                               key={asset.name}
                               href={asset.browser_download_url}
-                              className={classes.downloadBtns}
+                              className={`${classes.downloadBtns}`}
                               onClick={openModal}
                             >
                               {asset.name.includes("efi") ? "EFI" : "Legacy"}
