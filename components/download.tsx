@@ -3,7 +3,7 @@ import { Theme, makeStyles, Button, Typography, Link } from "@material-ui/core";
 import { Info as InfoIcon, ExpandMore as ExpandMoreIcon } from "@material-ui/icons";
 import { Skeleton, Alert } from "@material-ui/lab";
 import { useDownloads } from "@/hooks/useDownloads";
-import { Assets, DownloadProps } from "../types";
+import { Assets, DownloadProps, Release } from "../types";
 
 const useStyles = makeStyles((theme: Theme) => ({
   card: {
@@ -115,6 +115,16 @@ export const Download = ({ more }: DownloadProps): JSX.Element => {
   const openModal = () => setModal(true);
   const closeModal = () => setModal(false);
 
+  const getDate = (date: Date) => {
+    date = new Date(date);
+
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate()).toLocaleString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  };
+
   return (
     <div>
       {isError && <Alert severity="error">An error occurred whilst fetching GitHub&apos;s API!</Alert>}
@@ -151,48 +161,33 @@ export const Download = ({ more }: DownloadProps): JSX.Element => {
             <div className={classes.text}>
               <h1 className={`${classes.title} ${classes.center}`}>Older updates</h1>
               <div className={classes.olderUpdatesContainer}>
-                <div className={classes.olderUpdate}>
-                  <div className={classes.olderText}>
-                    <h2 className={classes.olderUpdateTitle}>200830-x86_64</h2>
-                    <span className={classes.olderUpdateDate}>Aug 29, 2020</span>
-                  </div>
-                  <div className={classes.olderUpdateBtns}>
-                    {releases[0].assets.map((asset: Assets) => {
-                      return (
-                        <Button
-                          key={asset.name}
-                          href={asset.browser_download_url}
-                          className={classes.downloadBtns}
-                          onClick={openModal}
-                        >
-                          {asset.name.includes("efi") ? "EFI" : "Legacy"}
-                        </Button>
-                      );
-                    })}
-                  </div>
-                </div>
-                <div className={classes.olderUpdate}>
-                  <div className={classes.olderText}>
-                    <h2 className={classes.olderUpdateTitle}>200830-x86_64</h2>
-                    <span className={classes.olderUpdateDate}>Aug 29, 2020</span>
-                  </div>
-                  <div className={classes.olderUpdateBtns}>
-                    {releases[0].assets.map((asset: Assets) => {
-                      return (
-                        <>
-                          <Button
-                            key={asset.name}
-                            href={asset.browser_download_url}
-                            className={classes.downloadBtns}
-                            onClick={openModal}
-                          >
-                            {asset.name.includes("efi") ? "EFI" : "Legacy"}
-                          </Button>
-                        </>
-                      );
-                    })}
-                  </div>
-                </div>
+                {/* @ts-expect-error thinks map doesn't exist on release */}
+                {releases.map((oldRelease: Release, i: number) => {
+                  if (i === 0 || i > 5) return;
+
+                  return (
+                    <div key={i} className={classes.olderUpdate}>
+                      <div className={classes.olderText}>
+                        <h2 className={classes.olderUpdateTitle}>{oldRelease.tag_name}</h2>
+                        <span className={classes.olderUpdateDate}>{getDate(oldRelease.published_at)}</span>
+                      </div>
+                      <div className={classes.olderUpdateBtns}>
+                        {oldRelease.assets.map((asset: Assets) => {
+                          return (
+                            <Button
+                              key={asset.name}
+                              href={asset.browser_download_url}
+                              className={classes.downloadBtns}
+                              onClick={openModal}
+                            >
+                              {asset.name.includes("efi") ? "EFI" : "Legacy"}
+                            </Button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
