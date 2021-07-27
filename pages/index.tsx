@@ -112,7 +112,12 @@ export default function Home(): JSX.Element {
             </Button>
           </div>
         </div>
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="180" className={classes.right}>
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-delay="180"
+          className={classes.right}
+        >
           <Box className={classes.roundedBox}>
             <img src="/img/mockups/pangolin.png" />
           </Box>
@@ -128,8 +133,10 @@ export default function Home(): JSX.Element {
       <Box id="download">
         <h1 className={classes.sectionTitle}>Download</h1>
         <Download more={false} />
+        <br />
+        <br />
         <div className={classes.moreUpdates}>
-          <Link href="/download" className={classes.centerMore}>
+          <Link href="https://github.com/dahliaOS/releases/releases" className={classes.centerMore}>
             Looking for an older update?
             <ArrowForwardIos />
           </Link>
