@@ -107,7 +107,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   olderUpdateTitle: {
     margin: 0,
   },
-  olderUpdateDate: {},
+  olderUpdateDate: {
+    color: theme.palette.grey[400],
+  },
   olderUpdateBtns: {
     display: "inline-flex",
   },
