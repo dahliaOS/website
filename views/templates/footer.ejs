@@ -1,4 +1,4 @@
-<footer style="margin-top:0px;" class="mdl-mega-footer">
+<footer style="margin-top:-320px; background-color: transparent;" class="mdl-mega-footer">
     <div class="mdl-mega-footer__middle-section">
 
         <div class="mdl-mega-footer__drop-down-section">
@@ -50,13 +50,30 @@
             </ul>
         </div>
     </div>
+    <style>
+        .floatleft {
+    float:left;
+}
+.floatright {
+    float:right;
+}
+.floatcenter{
+    float: center;
+}
 
+    </style>
     <div class="mdl-mega-footer__bottom-section">
-        <div class="mdl-logo"><img src="/assets/img/logo-white.png" style="margin-top:-3px;" height="18.6666666667px">
+        <div class="floatcenter"></div>
+         <div class="mdl-logo"><img src="/assets/img/logo-white.png" style="position:absolute;" height="18.6666666667px">
         </div>
+    </div>
         <ul class="mdl-mega-footer__link-list">
-            <li><a href="/support">Support</a></li>
-            <li><a href="https://github.com/dahliaos/" target="_blank">Source Code</a></li>
+            <div class="floatleft">
+                <li><a href="/support" style=" position:absolute;" >Support</a></li>
+            </div>
+            <div class="floatright">
+                <li><a href="https://github.com/dahliaos/" style=" position:absolute; margin-left: -60px;"  target="_blank">Source Code</a></li>
+            </div>
         </ul>
     </div>
 

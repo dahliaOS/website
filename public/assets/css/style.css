@@ -289,3 +289,25 @@ body {
 .middlesect-heading {
   text-align: center;
 }
+/* chunks in index */
+#view-source {
+  position: fixed;
+  display: block;
+  right: 0;
+  bottom: 0;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  z-index: 900;
+}
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+  overflow: wrap;
+  white-space: normal;
+
+}
+
+.demo-card-square>.mdl-card__title {
+  color: #fff;
+
+}

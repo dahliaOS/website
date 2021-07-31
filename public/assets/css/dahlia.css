@@ -2405,7 +2405,7 @@ input.mdl-button[type="submit"] {
 }
 .mdl-button--icon .mdl-button__ripple-container {
   border-radius: 50%;
-  -webkit-mask-image: -webkit-radial-gradient(circle, #fff, #000);
+  -webkit-mask-image: -webkit-radial-gradient(circle, #000, #000);
 }
 .mdl-button__ripple-container {
   display: block;
@@ -3145,6 +3145,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 .mdl-logo {
   margin-bottom: 16px;
+  margin-left: -80  px;
   color: #fff;
 }
 .mdl-mega-footer--bottom-section .mdl-mega-footer--link-list li,
@@ -6689,4 +6690,37 @@ iframe.heightSet {
 }
 .demo-wrapper iframe {
   border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point&display=swap');
+
+	#app {
+	  font-size: 60px;
+	  line-height: 60px;
+	  font-family: 'Sulphur Point', sans-serif;
+	}
+	
+	strong {
+	  font-weight: 700;
+	}
+	
+
+.tech-slideshow {
+  
+  height: 20em;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes ani{
+	0%{background-position: 0 0;}
+	100%{background-position: 100vw 0;}
+}
+.tech-slideshow{
+	background: url(../img/Asset\ 31.png) repeat-x 0 / 100% auto;
+     background-size: cover;
+     height: 400px;
+	
+	animation: ani 30s linear infinite ;
 }
