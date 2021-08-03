@@ -268,14 +268,13 @@ body {
   }
 }
 .mdl-logo {
-  background-image: url("../img/logo-white.png");
+  background: url("../img/logo-white.png") 144px;
   height: 28px;
   width: 144px;
-  background-size: 144px;
   margin-top: -3em;
-  vertical-align: baseline;
-  display: inline-block;
-  float: unset;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 .middlesect-icon {
   display: inline-block;
