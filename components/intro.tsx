@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles, Theme, useMediaQuery } from "@material-ui/core";
 
 interface IntroProps {
@@ -15,6 +15,7 @@ export const styles = makeStyles<Theme, IntroProps>((theme: Theme) => ({
     zIndex: 1,
     position: "relative",
     maxWidth: "100vw",
+    height: "100vwh",
     overflowX: "hidden",
   },
   "logoContainer": {
@@ -193,6 +194,12 @@ export const Intro = (): JSX.Element => {
   }
 
   const classes = styles(props);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    window.scrollTo(0, 0);
+  });
 
   return (
     <div className={classes.hero}>
