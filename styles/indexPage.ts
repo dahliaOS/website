@@ -108,9 +108,16 @@ export const indexPage = makeStyles((theme: Theme) => ({
       textDecoration: "unset",
     },
   },
+  imgRight: {
+    marginLeft: 50,
+    borderRadius: "0px!important",
+    borderTopLeftRadius: "14px!important",
+    borderBottomLeftRadius: "14px!important",
+  },
   roundedBox: {
-    "borderRadius": 16,
-    "margin": "0 50px",
+    "borderRadius": 14,
+    "borderTopLeftRadius": 0,
+    "borderBottomLeftRadius": 0,
     "maxWidth": "100%",
     "background": theme.palette.secondary.light,
     "overflow": "hidden",

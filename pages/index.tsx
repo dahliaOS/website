@@ -18,6 +18,8 @@ export default function Home(): JSX.Element {
 
       {/* Hero */}
       <Intro />
+
+      {/* This is the old hero we had, its lowkey bad */}
       {/*       <Box className={`${classes.home} ${classes.half}`}>
         <div className={classes.typography}>
           <NewsPill />
@@ -66,7 +68,7 @@ export default function Home(): JSX.Element {
           data-aos-delay="180"
           className={classes.right}
         >
-          <Box className={classes.roundedBox}>
+          <Box className={`${classes.imgRight} ${classes.roundedBox}`}>
             <img src="/img/mockups/apps-4k.webp" />
           </Box>
         </div>
@@ -118,7 +120,7 @@ export default function Home(): JSX.Element {
           data-aos-delay="180"
           className={classes.right}
         >
-          <Box className={classes.roundedBox}>
+          <Box className={`${classes.imgRight} ${classes.roundedBox}`}>
             <img src="/img/mockups/pangolin.png" />
           </Box>
         </div>
