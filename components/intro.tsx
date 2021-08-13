@@ -195,11 +195,12 @@ export const Intro = (): JSX.Element => {
 
   const classes = styles(props);
 
+  /* This is very hacky, but basically yh */
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     window.scrollTo(0, 0);
-  });
+  }, []);
 
   return (
     <div className={classes.hero}>
