@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="100%" src="https://github.com/dahliaOS/wallpapers/blob/main/Official/Desktop/SVG/Mountains%20wallpaper.svg"
+  <img width="100%" src="https://github.com/dahliaOS/wallpapers/blob/main/Official/Desktop/SVG/mountains.svg">
 </p>
 
 <p align="center">
@@ -91,7 +91,7 @@ now be able to test the website.
 ## License
 
 <p align="left">
-  <img width="45%" src="https://github.com/dahliaos/brand/blob/master/Logo%20PNGs/dahliaOS%20logo%20with%20text%20(drop%20shadow).png"
+  <img width="45%" src="https://github.com/dahliaOS/brand/blob/master/dahliaOS/png/logotypeblacktext.png"
 </p>
 
 Copyright @ 2019-2021 The dahliaOS Authors contact@dahliaos.io
