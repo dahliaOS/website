@@ -1,12 +1,14 @@
 import React from "react";
 import Head from "next/head";
 import { Navbar, Download, NewsPill, Footer, Intro } from "../components/index";
-import { Box, Button, Link, Typography } from "@material-ui/core";
+import { Box, Button, Link, Typography, useMediaQuery } from "@material-ui/core";
 import { ArrowForwardIos } from "@material-ui/icons";
 import { indexPage } from "../styles";
 
 export default function Home(): JSX.Element {
-  const classes = indexPage();
+  const isLightMode = useMediaQuery("(prefers-color-scheme: light)", { noSsr: true });
+
+  const classes = indexPage({ isLightMode });
   return (
     <div>
       <Head>
@@ -69,7 +71,7 @@ export default function Home(): JSX.Element {
           className={classes.right}
         >
           <Box className={`${classes.imgRight} ${classes.roundedBox}`}>
-            <img src="/img/mockups/apps-4k.webp" />
+            <img src={isLightMode ? "/img/mockups/lightSettings.png" : "/img/mockups/darkSettings.png"} />
           </Box>
         </div>
       </Box>
@@ -78,7 +80,7 @@ export default function Home(): JSX.Element {
       <Box className={classes.half}>
         <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="180" className={classes.left}>
           <Box className={classes.roundedBox}>
-            <img src="/img/mockups/collageTransparent.webp" />
+            <img src={isLightMode ? "/img/mockups/lightFiles.png" : "/img/mockups/darkFiles.png"} />
           </Box>
         </div>
         <div data-aos="fade-up" data-aos-delay="100" className={classes.right}>

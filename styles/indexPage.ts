@@ -1,10 +1,14 @@
 import { makeStyles, Theme } from "@material-ui/core";
 
-export const indexPage = makeStyles((theme: Theme) => ({
+interface indexProps {
+  isLightMode: boolean;
+}
+
+export const indexPage = makeStyles<Theme, indexProps>((theme: Theme) => ({
   half: {
     position: "relative",
     display: "flex",
-    minHeight: "65vh",
+    minHeight: "80vh",
     maxWidth: "100vw",
     alignItems: "center",
   },
@@ -109,22 +113,40 @@ export const indexPage = makeStyles((theme: Theme) => ({
     },
   },
   imgRight: {
-    marginLeft: 50,
-    borderRadius: "0px!important",
-    borderTopLeftRadius: "14px!important",
-    borderBottomLeftRadius: "14px!important",
+    "marginLeft": "37px!important",
+    "borderRadius": "0px!important",
+    "borderTopLeftRadius": "14px!important",
+    "borderBottomLeftRadius": "14px!important",
+    "justifyContent": "flex-end",
+    "& img": {
+      marginRight: "44px!important",
+      right: "0!important",
+      left: 0,
+    },
   },
-  roundedBox: {
+  roundedBox: ({ isLightMode }) => ({
     "borderRadius": 14,
     "borderTopLeftRadius": 0,
     "borderBottomLeftRadius": 0,
+    "display": "flex",
+    "marginLeft": -60,
+    "alignItems": "center",
+    "justifyItems": "start",
     "maxWidth": "100%",
-    "background": theme.palette.secondary.light,
-    "overflow": "hidden",
+    "padding": "30px 0",
+    "backgroundImage": `url(${
+      isLightMode ? "/img/lightModeBackground.svg) !important" : "/img/darkModeBackground.svg)"
+    }`,
+    "backgroundRepeat": "no-repeat",
+    "backgroundPosition": "center",
     "boxShadow": theme.shadows[10],
     "& *": {
       maxWidth: "100%",
       marginBottom: "-6px",
     },
-  },
+    "& img": {
+      position: "relative",
+      width: "100%",
+    },
+  }),
 }));
