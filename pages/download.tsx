@@ -14,7 +14,7 @@ export default function download(): JSX.Element {
       <br />
       <Box minHeight={"100vh"}>
         <h1 className={classes.title}>Downloads</h1>
-        <Download more={true} />
+        <Download more />
       </Box>
       <br />
       <br />

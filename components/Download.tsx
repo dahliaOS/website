@@ -169,7 +169,6 @@ export const Download = ({ more }: DownloadProps): JSX.Element => {
             <div className={classes.text}>
               <h1 className={`${classes.title} ${classes.center}`}>Older updates</h1>
               <div className={classes.olderUpdatesContainer}>
-                {/* @ts-expect-error thinks map doesn't exist on release */}
                 {releases.map((oldRelease: Release, i: number) => {
                   if (i === 0 || i > 4) return;
 

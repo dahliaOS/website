@@ -1,6 +1,4 @@
-export interface Releases {
-  [index: number]: Release;
-}
+export type Releases = Array<Release>;
 
 export interface Release {
   name: string;
