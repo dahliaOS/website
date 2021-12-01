@@ -1,20 +1,10 @@
 import React from "react";
 import type { AppProps } from "next/app";
-import { CssBaseline, ThemeProvider } from "@material-ui/core";
+
 import { theme } from "@/utils/theme";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { CssBaseline, ThemeProvider } from "@material-ui/core";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  useEffect(() => {
-    AOS.init({
-      easing: "ease-in-out-cubic",
-      once: false,
-      offset: 50,
-    });
-  }, []);
-
   /* niceeeee */
   console.log(`
        __            __        __  __             ______    ______  
@@ -35,4 +25,5 @@ $$    $$ |$$    $$ |$$ |  $$ |$$ |$$ |$$    $$ |$$    $$/ $$    $$/
     </ThemeProvider>
   );
 }
+
 export default MyApp;

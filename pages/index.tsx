@@ -1,8 +1,8 @@
-import React from "react";
-import Head from "next/head";
-import { Navbar, Download, NewsPill, Footer, Intro } from "../components/index";
 import { Box, Button, Link, Typography, useMediaQuery } from "@material-ui/core";
 import { ArrowForwardIos } from "@material-ui/icons";
+import Head from "next/head";
+import React from "react";
+import { Download, Footer, Intro, Navbar } from "../components/index";
 import { indexPage } from "../styles";
 
 export default function Home(): JSX.Element {
@@ -47,7 +47,7 @@ export default function Home(): JSX.Element {
 
       {/* The basics */}
       <Box className={classes.half} id="features">
-        <div data-aos="fade-up" data-aos-delay="100" className={classes.left}>
+        <div className={classes.left}>
           <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>Just the basics</h1>
           <Typography className={classes.sectionParagraph}>
             dahliaOS keeps things light by only including apps you need, and you can add all of your favorites from
@@ -64,12 +64,7 @@ export default function Home(): JSX.Element {
             </Button>
           </div>
         </div>
-        <div
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-          data-aos-delay="180"
-          className={classes.right}
-        >
+        <div className={classes.right}>
           <Box className={`${classes.imgRight} ${classes.roundedBox}`}>
             <img src={isLightMode ? "/img/mockups/lightSettings.png" : "/img/mockups/darkSettings.png"} />
           </Box>
@@ -78,12 +73,12 @@ export default function Home(): JSX.Element {
 
       {/* Supported devices */}
       <Box className={classes.half}>
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="180" className={classes.left}>
+        <div className={classes.left}>
           <Box className={classes.roundedBox}>
             <img src={isLightMode ? "/img/mockups/lightFiles.png" : "/img/mockups/darkFiles.png"} />
           </Box>
         </div>
-        <div data-aos="fade-up" data-aos-delay="100" className={classes.right}>
+        <div className={classes.right}>
           <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>A wide range of supported devices</h1>
           <Typography className={classes.sectionParagraph}>
             dahliaOS provides a fast and stable experience on nearly every computer, from a 2004 desktop tower to the
@@ -104,7 +99,7 @@ export default function Home(): JSX.Element {
 
       {/* Still not convinced? */}
       <Box className={classes.half}>
-        <div data-aos="fade-up" data-aos-delay="100" className={classes.left}>
+        <div className={classes.left}>
           <h1 className={`${classes.sectionTitle} ${classes.alignLeft}`}>Still not convinced?</h1>
           <Typography className={classes.sectionParagraph}>
             We offer an online preview of dahliaOS right at your finger tips! Explore, create, and more with
@@ -116,12 +111,7 @@ export default function Home(): JSX.Element {
             </Button>
           </div>
         </div>
-        <div
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-          data-aos-delay="180"
-          className={classes.right}
-        >
+        <div className={classes.right}>
           <Box className={`${classes.imgRight} ${classes.roundedBox}`}>
             <img src="/img/mockups/pangolin.png" />
           </Box>
