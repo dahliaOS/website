@@ -33,7 +33,7 @@
     "method-override": "^3.0.0",
     "mongoose": "^5.11.7",
     "nedb": "^1.8.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.1.1",
     "nodemon": "^2.0.6",
     "webhook-discord": "^3.7.7"
   }
