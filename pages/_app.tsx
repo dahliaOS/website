@@ -5,7 +5,7 @@ import { Theme } from "./utils/Theme";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={Theme}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 }
