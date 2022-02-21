@@ -3,6 +3,7 @@ import Head from "next/head";
 import type { NextPage } from "next";
 import Intro from "./components/Intro";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar rootPageHasAnimation />
       <Intro />
+      <Footer />
     </React.Fragment>
   );
 };
