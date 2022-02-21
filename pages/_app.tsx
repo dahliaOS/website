@@ -1,10 +1,22 @@
 import type { AppProps } from "next/app";
-import { ThemeProvider } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Theme } from "./utils/Theme";
+
+const GlobalStyles = createGlobalStyle`
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  background: ${Theme.background}
+}
+`;
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={Theme}>
+      <GlobalStyles />
       <Component {...pageProps} />
     </ThemeProvider>
   );
