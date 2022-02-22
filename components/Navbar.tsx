@@ -213,7 +213,7 @@ const Navbar = ({
           >
             <MenuIcon />
           </IconButton>
-          <Link>
+          <Link href="/">
             <AppBarLogo src="/images/logos/logo-color.png" draggable={false} />
           </Link>
           <DesktopNav>
