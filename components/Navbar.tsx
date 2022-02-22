@@ -164,7 +164,6 @@ const Navbar = ({
         </DrawerLogoContainer>
         <Container>
           <Link href="/#features">Features</Link>
-          <Link href="#">News</Link>
           <Link href="/download">Download</Link>
           <Link href="mailto:contact@dahliaOS.io">Contact</Link>
           <Link href="https://github.com/orgs/dahliaos/people" target="_blank">
