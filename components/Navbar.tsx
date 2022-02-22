@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import {
   AppBar,
   Divider,
@@ -26,7 +26,7 @@ const WrapperKeyframes = keyframes`
   }
 `;
 
-const Wrapper = styled.div<{ rootPageHasAnimation?: boolean }>``;
+const Wrapper = styled.div``;
 
 const Container = styled.div`
   background: ${Theme.background.backgroundColorLight};
@@ -153,7 +153,7 @@ const Navbar = ({
   );
 
   return (
-    <Wrapper rootPageHasAnimation={rootPageHasAnimation}>
+    <Wrapper>
       <Drawer
         anchor="left"
         open={drawerState}
