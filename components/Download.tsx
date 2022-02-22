@@ -16,6 +16,8 @@ const Card = styled.div`
   width: 90%;
   margin: 0 auto;
   background: ${Theme.background.backgroundColorLight};
+  box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
+    0 1px 8px 0 rgb(0 0 0 / 12%);
 `;
 
 const Latest = styled.div`
@@ -29,6 +31,8 @@ const Older = styled.div`
   padding: 0 16px;
   flex: 1;
   overflow: auto;
+  box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
+    0 1px 8px 0 rgb(0 0 0 / 12%);
 `;
 
 const TextContainer = styled.div`

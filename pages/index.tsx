@@ -72,7 +72,7 @@ const SectionBtn = styled(Button)`
 const Header = styled.h1`
   color: ${Theme.text.textColor};
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   font-size: 2.2em;
   font-weight: 500;
 `;
