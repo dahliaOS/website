@@ -4,9 +4,10 @@ import styled from "styled-components";
 import { Theme } from "../utils/Theme";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
+  position: relative;
   height: auto;
   display: block;
-  padding: 16px 40px;
+  padding: 50px 40px;
   overflow: hidden;
   background: ${Theme.background.backgroundColorDark};
 `;
@@ -20,7 +21,7 @@ const FooterCategory = styled.div`
 `;
 
 const FooterHeader = styled.h1`
-  color: ${Theme.text.textColor};
+  color: ${Theme.text.textColorLight};
   fontsize: 1.5em;
   font-weight: medium;
   margin-bottom: 0.5em;
@@ -36,17 +37,26 @@ const FooterItem = styled(Link)`
   fontsize: 1.15em;
   color: ${Theme.text.textColor};
   display: block;
-  transition: color ease-in-out 0.2s;
-  &:hover: {
-    text-decoration: none;
-    color: ${Theme.text.textColor}9d;
+  transition: color ease-in-out 0.15s;
+  text-decoration: none;
+
+  &:hover {
+    color: ${Theme.text.textColorDark};
   }
 `;
 
 const FooterLogo = styled.img`
   display: block;
   margin: 0 auto;
+  margin-top: 50px;
   height: 30px;
+`;
+
+const VercelLogo = styled.img`
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  height: 40px;
 `;
 
 const Footer = () => {
@@ -108,8 +118,9 @@ const Footer = () => {
       </FooterContainer>
 
       <FooterLogo src="/images/logos/logo-white.png" />
+      <br />
       <a href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
-        <FooterLogo src="/images/logos/powered-by-vercel.svg" />
+        <VercelLogo src="/images/logos/powered-by-vercel.svg" />
       </a>
     </StyledBottomNavigation>
   );

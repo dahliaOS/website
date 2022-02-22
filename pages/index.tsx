@@ -31,12 +31,14 @@ const Sides = styled.div`
 const SectionTitle = styled.h1`
   font-size: 2.8em;
   font-weight: 600;
+  color: ${Theme.text.textColorLight};
 `;
 
 const Paragraph = styled.p`
   font-weight: light;
   font-size: 1.3em;
   max-width: 75ch;
+  color: ${Theme.text.textColor};
 `;
 
 const SectionBtn = styled(Button)`

@@ -13,7 +13,7 @@ export const Theme: ThemeType = {
   },
   text: {
     textColor: "#acacac",
-    textColorDark: "#acacac",
+    textColorDark: "#6b6b6b",
     textColorLight: "#fff",
   },
 };
