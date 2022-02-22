@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   AppBar,
   Divider,
@@ -13,6 +13,7 @@ import { Menu as MenuIcon, MoreVert } from "@mui/icons-material";
 import { useCallback, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import { Theme } from "../utils/Theme";
+import useScrollPosition from "@react-hook/window-scroll";
 
 const WrapperKeyframes = keyframes`
   0% {
@@ -89,8 +90,18 @@ const MenuLink = styled(Link)`
 
 const Logo = styled.img``;
 
-const StyledAppBar = styled(AppBar)<{ rootPageHasAnimation?: boolean }>`
-  background: ${Theme.background.backgroundColorLight};
+const StyledAppBar = styled(AppBar)<{
+  rootPageHasAnimation?: boolean;
+  scrollPos: number;
+}>`
+  background: ${({ scrollPos }) =>
+    scrollPos > 10 ? Theme.background.backgroundColorLight : "unset"};
+  box-shadow: ${({ scrollPos }) =>
+    scrollPos > 10
+      ? "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
+      : "unset"};
+
+  transition: background ease-in-out 0.15s;
 
   ${({ rootPageHasAnimation }) =>
     rootPageHasAnimation
@@ -103,6 +114,10 @@ const StyledAppBar = styled(AppBar)<{ rootPageHasAnimation?: boolean }>`
       : css`
           opacity: 1;
         `}
+`;
+
+const StyledToolbar = styled(Toolbar)<{ scrollPos: number }>`
+  box-shadow: ${({ scrollPos }) => (scrollPos > 10 ? "initial" : "unset")};
 `;
 
 const AppBarLogo = styled.img`
@@ -125,6 +140,13 @@ const Navbar = ({
   const [toggleMoreIcon, setToggleMoreIcon] = useState(false);
   const ref = useRef<HTMLButtonElement | null>(null);
 
+  /* In the future we should come up with a different solution that doesn't
+   rerender this component, its not much of a problem right now but later it
+   *may* become a problem 
+
+   - Cody
+   */
+  const scrollPos = useScrollPosition(15);
   const toggleDrawer = useCallback(
     (open: boolean = false) => setDrawerState(open ?? !drawerState),
     [drawerState],
@@ -181,8 +203,9 @@ const Navbar = ({
       <StyledAppBar
         rootPageHasAnimation={rootPageHasAnimation}
         position="fixed"
+        scrollPos={scrollPos}
       >
-        <Toolbar>
+        <StyledToolbar scrollPos={scrollPos}>
           <IconButton
             edge="start"
             color="inherit"
@@ -195,47 +218,45 @@ const Navbar = ({
             <AppBarLogo src="/images/logos/logo-color.png" draggable={false} />
           </Link>
           <DesktopNav>
-            <Container>
-              <AppBarLink href="/#features">Features</AppBarLink>
-              <AppBarLink href="#">News</AppBarLink>
-              <AppBarLink href="/download">Download</AppBarLink>
-              <AppBarLink href="https://web.dahliaOS.io" target="_blank">
-                Demo
-              </AppBarLink>
-              <AppBarLink
-                href="https://github.com/orgs/dahliaos/people"
-                target="_blank"
-              >
-                Developers
-              </AppBarLink>
-              <AppBarLink href="https://docs.dahliaOS.io">
-                Documentation
-              </AppBarLink>
-              <IconButton
-                ref={ref}
-                aria-label="nav-more"
-                aria-haspopup="true"
-                onClick={() => setToggleMoreIcon(true)}
-              >
-                <MoreVert style={{ color: Theme.text.textColorLight }} />
-              </IconButton>
-              <Menu
-                open={toggleMoreIcon}
-                onClose={() => setToggleMoreIcon(false)}
-                anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-                anchorEl={ref.current}
-                keepMounted
-              >
-                <MenuItem>
-                  <MenuLink href="/github" target="_blank">
-                    Source Code
-                  </MenuLink>
-                </MenuItem>
-                <MenuItem disabled>Screenshots</MenuItem>
-              </Menu>
-            </Container>
+            <AppBarLink href="/#features">Features</AppBarLink>
+            <AppBarLink href="#">News</AppBarLink>
+            <AppBarLink href="/download">Download</AppBarLink>
+            <AppBarLink href="https://web.dahliaOS.io" target="_blank">
+              Demo
+            </AppBarLink>
+            <AppBarLink
+              href="https://github.com/orgs/dahliaos/people"
+              target="_blank"
+            >
+              Developers
+            </AppBarLink>
+            <AppBarLink href="https://docs.dahliaOS.io">
+              Documentation
+            </AppBarLink>
+            <IconButton
+              ref={ref}
+              aria-label="nav-more"
+              aria-haspopup="true"
+              onClick={() => setToggleMoreIcon(true)}
+            >
+              <MoreVert style={{ color: Theme.text.textColorLight }} />
+            </IconButton>
+            <Menu
+              open={toggleMoreIcon}
+              onClose={() => setToggleMoreIcon(false)}
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+              anchorEl={ref.current}
+              keepMounted
+            >
+              <MenuItem>
+                <MenuLink href="/github" target="_blank">
+                  Source Code
+                </MenuLink>
+              </MenuItem>
+              <MenuItem disabled>Screenshots</MenuItem>
+            </Menu>
           </DesktopNav>
-        </Toolbar>
+        </StyledToolbar>
       </StyledAppBar>
     </Wrapper>
   );

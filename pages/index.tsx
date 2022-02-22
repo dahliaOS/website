@@ -2,11 +2,11 @@ import React from "react";
 import Head from "next/head";
 import styled from "styled-components";
 import type { NextPage } from "next";
-import Intro from "./components/Intro";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Intro from "../components/Intro";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { Button } from "@mui/material";
-import { Theme } from "./utils/Theme";
+import { Theme } from "../utils/Theme";
 
 const Wrapper = styled.div``;
 

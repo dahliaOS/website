@@ -6,7 +6,7 @@ import Document, {
   DocumentContext,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import { Theme } from "./utils/Theme";
+import { Theme } from "../utils/Theme";
 
 const Page = () => (
   <Html lang="en">
