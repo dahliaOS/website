@@ -70,6 +70,7 @@ const AppBarLink = styled(Link)`
   display: inline-block;
   font-size: 0.93em;
   padding: 16px 40px;
+  font-weight: 600;
   color: ${Theme.text.textColor};
   transition: color ease-in-out 0.2s;
   text-decoration: none;
@@ -216,7 +217,7 @@ const Navbar = ({
                 aria-haspopup="true"
                 onClick={() => setToggleMoreIcon(true)}
               >
-                <MoreVert />
+                <MoreVert style={{ color: Theme.text.textColorLight }} />
               </IconButton>
               <Menu
                 open={toggleMoreIcon}
