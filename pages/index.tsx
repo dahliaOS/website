@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Button } from "@mui/material";
 import { Theme } from "../utils/Theme";
+import Download from "../components/Download";
 
 const Wrapper = styled.div``;
 
@@ -155,8 +156,15 @@ const Home: NextPage = () => {
             <SectionBtn href="https://web.dahliaos.io/">Try it out!</SectionBtn>
           </Sides>
         </Container>
-        <Footer />
+        <br />
+        <br />
+        <br />
+        <Download />
+        <br />
+        <br />
+        <br />
       </Wrapper>
+      <Footer />
     </React.Fragment>
   );
 };
