@@ -218,7 +218,6 @@ const Navbar = ({
           </Link>
           <DesktopNav>
             <AppBarLink href="/#features">Features</AppBarLink>
-            <AppBarLink href="#">News</AppBarLink>
             <AppBarLink href="/download">Download</AppBarLink>
             <AppBarLink href="https://web.dahliaOS.io" target="_blank">
               Demo
