@@ -28,7 +28,6 @@ const WrapperKeyframes = keyframes`
 const Wrapper = styled.div<{ rootPageHasAnimation?: boolean }>``;
 
 const Container = styled.div`
-  height: 100%;
   background: ${Theme.background.backgroundColorLight};
 `;
 
@@ -58,6 +57,13 @@ const Link = styled(MUILink)`
   &:hover {
     color: ${Theme.text.textColorLight};
   }
+`;
+
+const Category = styled.span`
+  display: block;
+  font-size: 0.93em;
+  padding: 16px 20px;
+  color: ${Theme.text.textColorDark};
 `;
 
 const AppBarLink = styled(Link)`
@@ -143,6 +149,32 @@ const Navbar = ({
           </Link>
           <Link href="https://docs.dahliaOS.io">Documentation</Link>
           <Divider />
+          <Category>Find us on</Category>
+          <Link href="/discord" target="_blank">
+            Discord
+          </Link>
+          <Link href="/github" target="_blank">
+            GitHub
+          </Link>
+          <Link href="/reddit" target="_blank">
+            Reddit
+          </Link>
+          <Link href="/telegram" target="_blank">
+            Telegram
+          </Link>
+          <Link href="/facebook" target="_blank">
+            Facebook
+          </Link>
+          <Link href="/instagram" target="_blank">
+            Instagram
+          </Link>
+          <Link href="/twitter" target="_blank">
+            Twitter
+          </Link>
+          <Divider />
+          <Category>For developers</Category>
+          <Link href="/github">Source Code</Link>
+          <Link href="/discord">Join Our Team</Link>
         </Container>
       </Drawer>
       <StyledAppBar
