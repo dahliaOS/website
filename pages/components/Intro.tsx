@@ -71,7 +71,6 @@ const animateToolbar = () => keyframes`
 const Wrapper = styled.div`
   position: relative;
   max-width: 100vw;
-  height: 100vh;
   overflow-x: hidden;
   z-index: 1;
 `;

@@ -45,7 +45,7 @@ const SectionBtn = styled(Button)`
   padding: 5px 12px;
   border-radius: 5px;
   margin: 10px 0;
-  color: ${Theme.text.textColorDark};
+  color: ${Theme.text.textColorLight};
 
   &:first-of-type {
     background: linear-gradient(

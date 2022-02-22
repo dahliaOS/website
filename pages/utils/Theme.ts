@@ -7,9 +7,9 @@ export const Theme: ThemeType = {
     backgroundColorDark: "#0f0f0f",
   },
   accent: {
-    accentColor: "#ff5722",
-    accentColorLight: "#ff5722",
-    accentColorDark: "#ff5722",
+    accentColor: "#ff6331",
+    accentColorLight: "#ff3d00",
+    accentColorDark: "#d63400",
   },
   text: {
     textColor: "#acacac",
