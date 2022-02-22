@@ -27,33 +27,36 @@ const WrapperKeyframes = keyframes`
 
 const Wrapper = styled.div<{ rootPageHasAnimation?: boolean }>``;
 
-const Container = styled.div``;
+const Container = styled.div`
+  height: 100%;
+  background: ${Theme.background.backgroundColorLight};
+`;
 
 const DrawerLogoContainer = styled.div`
   position: relative;
   padding-top: 160px;
   height: 160px;
   width: 230px;
-  background: ${Theme.background};
+  background: ${Theme.background.backgroundColor};
 `;
 
 const DrawerLogo = styled.img`
   position: absolute;
   height: 28px;
   bottom: 16px;
-  padding-left: 40px;
+  padding-left: 20px;
 `;
 
 const Link = styled(MUILink)`
   display: block;
   font-size: 0.93em;
-  padding: 16px 40px;
-  color: ${Theme.background.backgroundColorLight};
+  padding: 16px 20px;
+  color: ${Theme.text.textColor};
   transition: color ease-in-out 0.2s;
+  text-decoration: none;
 
   &:hover {
-    text-decoration: none;
-    color: ${Theme.background.backgroundColorLight}9d;
+    color: ${Theme.text.textColorLight};
   }
 `;
 
