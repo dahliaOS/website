@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   font-family: 'Roboto', sans-serif;
 }
 html {
-  background: ${Theme.background}
+  background: ${Theme.background.backgroundColor}
 }
 `;
 

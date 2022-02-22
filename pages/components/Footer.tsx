@@ -1,15 +1,18 @@
 import { BottomNavigation, Link } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
+import { Theme } from "../utils/Theme";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
   height: auto;
-  display: flex;
+  display: block;
   padding: 16px 40px;
+  overflow: hidden;
+  background: ${Theme.background.backgroundColorDark};
 `;
 
 const FooterContainer = styled.div`
-  display: block;
+  display: flex;
 `;
 
 const FooterCategory = styled.div`
@@ -17,7 +20,7 @@ const FooterCategory = styled.div`
 `;
 
 const FooterHeader = styled.h1`
-  color: #acacac;
+  color: ${Theme.text.textColor};
   fontsize: 1.5em;
   font-weight: medium;
   margin-bottom: 0.5em;
@@ -31,12 +34,12 @@ const FooterList = styled.ul`
 
 const FooterItem = styled(Link)`
   fontsize: 1.15em;
-  color: #acacac;
+  color: ${Theme.text.textColor};
   display: block;
   transition: color ease-in-out 0.2s;
   &:hover: {
     text-decoration: none;
-    color: #acacac9d;
+    color: ${Theme.text.textColor}9d;
   }
 `;
 
@@ -48,8 +51,8 @@ const FooterLogo = styled.img`
 
 const Footer = () => {
   return (
-    <FooterContainer>
-      <StyledBottomNavigation>
+    <StyledBottomNavigation>
+      <FooterContainer>
         <FooterCategory>
           <FooterHeader>Find us on</FooterHeader>
           <FooterList>
@@ -102,12 +105,13 @@ const Footer = () => {
             <FooterItem href="#">Contact us</FooterItem>
           </FooterList>
         </FooterCategory>
-      </StyledBottomNavigation>
+      </FooterContainer>
+
       <FooterLogo src="/images/logos/logo-white.png" />
       <a href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
         <FooterLogo src="/images/logos/powered-by-vercel.svg" />
       </a>
-    </FooterContainer>
+    </StyledBottomNavigation>
   );
 };
 

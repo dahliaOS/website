@@ -26,7 +26,7 @@ limitations under the License.
       <meta charSet="UTF-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <link rel="canonical" href="https://dahliaos.io" />
-      <meta name="theme-color" content={Theme.accent} />
+      <meta name="theme-color" content={Theme.accent.accentColor} />
       <meta property="og:image" content="https://imgur.com/PNGGkDP.png" />
       <meta property="og:site_name" content="dahliaOS" />
       <meta name="apple-mobile-web-app-capable" content="yes" />

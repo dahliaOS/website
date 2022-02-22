@@ -48,12 +48,12 @@ const Link = styled(MUILink)`
   display: block;
   font-size: 0.93em;
   padding: 16px 40px;
-  color: ${Theme.secondaryBackground};
+  color: ${Theme.background.backgroundColorLight};
   transition: color ease-in-out 0.2s;
 
   &:hover {
     text-decoration: none;
-    color: ${Theme.secondaryBackground}9d;
+    color: ${Theme.background.backgroundColorLight}9d;
   }
 `;
 
@@ -61,12 +61,12 @@ const AppBarLink = styled(Link)`
   display: inline-block;
   font-size: 0.93em;
   padding: 16px 40px;
-  color: ${Theme.secondaryBackground};
+  color: ${Theme.text.textColor};
   transition: color ease-in-out 0.2s;
+  text-decoration: none;
 
   &:hover {
-    text-decoration: none;
-    color: ${Theme.secondaryBackground}9d;
+    color: ${Theme.text.textColorLight};
   }
 `;
 
@@ -80,6 +80,8 @@ const MenuLink = styled(Link)`
 const Logo = styled.img``;
 
 const StyledAppBar = styled(AppBar)<{ rootPageHasAnimation?: boolean }>`
+  background: ${Theme.background.backgroundColorLight};
+
   ${({ rootPageHasAnimation }) =>
     rootPageHasAnimation
       ? css`
