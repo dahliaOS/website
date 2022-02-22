@@ -69,6 +69,14 @@ const SectionBtn = styled(Button)`
   }
 `;
 
+const Header = styled.h1`
+  color: ${Theme.text.textColor};
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 2.2em;
+  font-weight: 500;
+`;
+
 const SectionImgContainer = styled.div<{ showOnRight?: boolean }>`
   position: relative;
   background: ${Theme.background.backgroundColorLight};
@@ -159,6 +167,7 @@ const Home: NextPage = () => {
         <br />
         <br />
         <br />
+        <Header>Download</Header>
         <Download />
         <br />
         <br />
