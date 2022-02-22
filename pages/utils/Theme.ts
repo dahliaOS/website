@@ -1,7 +1,19 @@
 import { ThemeType } from "styled-components";
 
 export const Theme: ThemeType = {
-  background: "#1a1a1a",
-  secondaryBackground: "#2c2c2c",
-  accent: "#ff5722",
+  background: {
+    backgroundColor: "#1a1a1a",
+    backgroundColorLight: "#252525",
+    backgroundColorDark: "#0f0f0f",
+  },
+  accent: {
+    accentColor: "#ff5722",
+    accentColorLight: "#ff5722",
+    accentColorDark: "#ff5722",
+  },
+  text: {
+    textColor: "#acacac",
+    textColorDark: "#acacac",
+    textColorLight: "#fff",
+  },
 };
