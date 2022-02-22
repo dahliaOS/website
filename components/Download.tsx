@@ -176,66 +176,68 @@ const Download = ({ showMore }: IDownloadProps) => {
       ) : null}
 
       {releases ? (
-        <Card>
-          <Latest>
-            <TextContainer>
-              <Header>Latest</Header>
-              <ReleaseName>{releases[0].name}</ReleaseName>
-              <Changelogs>
-                {releases[0].body
-                  .substring(releases[0].body.indexOf("+ "))
-                  .replace(/(?:\r\n|\r|\n)/g, "\n")}
-              </Changelogs>
-              <Link href={releases[0].html_url} target="_blank">
-                <ReadMoreButton>Read more</ReadMoreButton>
-              </Link>
-            </TextContainer>
-            <ButtonContainer>
-              {releases[0].assets.map(asset => (
-                <StyledButton
-                  key={asset.name}
-                  href={asset.browser_download_url}
-                >
-                  {asset.name.includes("efi")
-                    ? "Download (EFI)"
-                    : "Download (Legacy)"}
-                </StyledButton>
-              ))}
-            </ButtonContainer>
-          </Latest>
-          <Older>
-            <TextContainer>
-              <OlderHeader>Older updates</OlderHeader>
-              <UpdateContainer>
-                {releases.map((oldRelease, i) => {
-                  if (i === 0 || i > 4) return;
+        <>
+          <Card>
+            <Latest>
+              <TextContainer>
+                <Header>Latest</Header>
+                <ReleaseName>{releases[0].name}</ReleaseName>
+                <Changelogs>
+                  {releases[0].body
+                    .substring(releases[0].body.indexOf("+ "))
+                    .replace(/(?:\r\n|\r|\n)/g, "\n")}
+                </Changelogs>
+                <Link href={releases[0].html_url} target="_blank">
+                  <ReadMoreButton>Read more</ReadMoreButton>
+                </Link>
+              </TextContainer>
+              <ButtonContainer>
+                {releases[0].assets.map(asset => (
+                  <StyledButton
+                    key={asset.name}
+                    href={asset.browser_download_url}
+                  >
+                    {asset.name.includes("efi")
+                      ? "Download (EFI)"
+                      : "Download (Legacy)"}
+                  </StyledButton>
+                ))}
+              </ButtonContainer>
+            </Latest>
+            <Older>
+              <TextContainer>
+                <OlderHeader>Older updates</OlderHeader>
+                <UpdateContainer>
+                  {releases.map((oldRelease, i) => {
+                    if (i === 0 || i > 4) return;
 
-                  return (
-                    <OlderUpdate key={i}>
-                      <OlderUpdateTextWrapper>
-                        <OlderUpdateTitle>{oldRelease.name}</OlderUpdateTitle>
-                        <OlderUpdateDate>
-                          {getDate(oldRelease.published_at)}
-                        </OlderUpdateDate>
-                      </OlderUpdateTextWrapper>
-                      <OlderBtns>
-                        {oldRelease.assets.map(asset => (
-                          <StyledButton
-                            key={asset.name}
-                            href={asset.browser_download_url}
-                            disableGradient={!asset.name.includes("efi")}
-                          >
-                            {asset.name.includes("efi") ? "EFI" : "Legacy"}
-                          </StyledButton>
-                        ))}
-                      </OlderBtns>
-                    </OlderUpdate>
-                  );
-                })}
-              </UpdateContainer>
-            </TextContainer>
-          </Older>
-        </Card>
+                    return (
+                      <OlderUpdate key={i}>
+                        <OlderUpdateTextWrapper>
+                          <OlderUpdateTitle>{oldRelease.name}</OlderUpdateTitle>
+                          <OlderUpdateDate>
+                            {getDate(oldRelease.published_at)}
+                          </OlderUpdateDate>
+                        </OlderUpdateTextWrapper>
+                        <OlderBtns>
+                          {oldRelease.assets.map(asset => (
+                            <StyledButton
+                              key={asset.name}
+                              href={asset.browser_download_url}
+                              disableGradient={!asset.name.includes("efi")}
+                            >
+                              {asset.name.includes("efi") ? "EFI" : "Legacy"}
+                            </StyledButton>
+                          ))}
+                        </OlderBtns>
+                      </OlderUpdate>
+                    );
+                  })}
+                </UpdateContainer>
+              </TextContainer>
+            </Older>
+          </Card>
+        </>
       ) : isLoading ? (
         <>yo</>
       ) : null}

@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import DownloadComponent from "../components/Download";
 import { Theme } from "../utils/Theme";
+import { Link } from "@mui/material";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -17,6 +18,23 @@ const Header = styled.h1`
   color: ${Theme.text.textColor};
 `;
 
+const Span = styled.span`
+  font-size: 1.25em;
+  margin-top: 20px;
+  text-align: center;
+  display: block;
+`;
+
+const StyledLink = styled(Link)`
+  color: ${Theme.accent.accentColor};
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: ${Theme.accent.accentColor}9d;
+  }
+`;
+
 const Download = () => {
   return (
     <>
@@ -24,6 +42,9 @@ const Download = () => {
       <Wrapper>
         <Header>Download</Header>
         <DownloadComponent showMore />
+        <StyledLink href="https://github.com/dahliaOS/releases/releases">
+          <Span>Looking for an older update?</Span>
+        </StyledLink>
       </Wrapper>
       <Footer />
     </>
