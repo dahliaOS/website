@@ -1,6 +1,8 @@
 import type { AppProps } from "next/app";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Theme } from "../utils/Theme";
+import { StyledEngineProvider } from "@mui/material";
+import { StylesProvider } from "@mui/styles";
 
 const GlobalStyles = createGlobalStyle`
 *, *::before, *::after {
@@ -20,10 +22,12 @@ body {
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={Theme}>
-      <GlobalStyles />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={Theme}>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 
