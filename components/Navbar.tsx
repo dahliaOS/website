@@ -126,6 +126,13 @@ const StyledToolbar = styled(Toolbar)<{ scrollPos: number }>`
   box-shadow: ${({ scrollPos }) => (scrollPos > 10 ? "initial" : "unset")};
 `;
 
+const AppBarLogoLinkContainer = styled(Link)`
+  @media (max-width: 1025px) {
+    display: block;
+    margin: 0 auto;
+  }
+`;
+
 const AppBarLogo = styled.img`
   height: 28px;
   filter: brightness(0) invert(1);
@@ -135,6 +142,10 @@ const DesktopNav = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
+
+  @media (max-width: 1025px) {
+    display: none;
+  }
 `;
 
 const Navbar = ({
@@ -219,9 +230,9 @@ const Navbar = ({
           >
             <MenuIcon />
           </IconButton>
-          <Link href="/">
+          <AppBarLogoLinkContainer href="/">
             <AppBarLogo src="/images/logos/logo-color.png" draggable={false} />
-          </Link>
+          </AppBarLogoLinkContainer>
           <DesktopNav>
             <AppBarLink href="/#features">Features</AppBarLink>
             <AppBarLink href="/download">Download</AppBarLink>
