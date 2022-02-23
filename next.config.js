@@ -50,6 +50,16 @@ const nextConfig = {
         destination: "https://twitter.com/dahliaos_io",
         permanent: true,
       },
+      {
+        source: "/docs",
+        destination: "https://docs.dahliaos.io/",
+        permanent: true,
+      },
+      {
+        source: "/support",
+        destination: "https://discord.com/invite/7qVbJHR",
+        permanent: true,
+      },
     ];
   },
 };

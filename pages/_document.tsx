@@ -30,12 +30,43 @@ limitations under the License.
       <meta property="og:image" content="https://imgur.com/PNGGkDP.png" />
       <meta property="og:site_name" content="dahliaOS" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
-      <link rel="icon" type="image/png" href="/images/logos/favicon.png" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="#ff3d00" />
+      <link
+        rel="icon"
+        type="image/png"
+        href="/images/favicon/logos/favicon.png"
+      />
+      <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content={Theme.accent.accentColorLight}
+      />
       <meta name="apple-mobile-web-app-title" content="dahliaOS" />
-      <link rel="apple-touch-icon" href="/images/logos/favicon.png" />
-      <meta name="msapplication-TileImage" content="/images/favicon.png" />
-      <meta name="msapplication-TileColor" content="#ff3d00" />
+      <meta
+        name="msapplication-TileImage"
+        content="/images/favicon/favicon.png"
+      />
+      <meta
+        name="msapplication-TileColor"
+        content={Theme.accent.accentColorLight}
+      />
+
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/images/favicon//apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/images/favicon//favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/images/favicon/favicon-16x16.png"
+      />
+      <link rel="manifest" href="/site.webmanifest" />
       <meta
         name="keywords"
         content="dahlia, software, flutter, fuchsia, linux, dahliaOS, computer, operating system, os, system, kernel, dart, open source, material, design, zircon, go, rust"
