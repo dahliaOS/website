@@ -30,11 +30,11 @@ limitations under the License.
       <meta property="og:image" content="https://imgur.com/PNGGkDP.png" />
       <meta property="og:site_name" content="dahliaOS" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
-      <link rel="icon" type="image/png" href="/img/favicon.png" />
+      <link rel="icon" type="image/png" href="/images/logos/favicon.png" />
       <meta name="apple-mobile-web-app-status-bar-style" content="#ff3d00" />
       <meta name="apple-mobile-web-app-title" content="dahliaOS" />
-      <link rel="apple-touch-icon" href="assets/img/favicon.png" />
-      <meta name="msapplication-TileImage" content="assets/img/favicon.png" />
+      <link rel="apple-touch-icon" href="/images/logos/favicon.png" />
+      <meta name="msapplication-TileImage" content="/images/favicon.png" />
       <meta name="msapplication-TileColor" content="#ff3d00" />
       <meta
         name="keywords"
