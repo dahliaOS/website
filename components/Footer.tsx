@@ -14,10 +14,18 @@ const StyledBottomNavigation = styled(BottomNavigation)`
 
 const FooterContainer = styled.div`
   display: flex;
+
+  @media (max-width: 1025px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const FooterCategory = styled.div`
   flex-grow: 1;
+
+  @media (max-width: 1025px) {
+    padding: 10px;
+  }
 `;
 
 const FooterHeader = styled.h1`
