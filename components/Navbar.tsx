@@ -87,6 +87,11 @@ const MenuLink = styled(Link)`
   margin: 0;
   background: unset;
   text-decoration: none;
+  color: ${Theme.text.textColorDark};
+
+  &:hover {
+    color: initial;
+  }
 `;
 
 const Logo = styled.img``;
