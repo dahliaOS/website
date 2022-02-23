@@ -181,7 +181,9 @@ const Download = ({ showMore }: IDownloadProps) => {
             <Latest>
               <TextContainer>
                 <Header>Latest</Header>
-                <ReleaseName>{releases[0].name}</ReleaseName>
+                <ReleaseName>
+                  {releases[0].name} ({getDate(releases[0].published_at)})
+                </ReleaseName>
                 <Changelogs>
                   {releases[0].body
                     .substring(releases[0].body.indexOf("+ "))
