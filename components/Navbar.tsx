@@ -64,7 +64,8 @@ const Category = styled.span`
   display: block;
   font-size: 0.93em;
   padding: 16px 20px;
-  color: ${Theme.text.textColorDark};
+  font-weight: 500;
+  color: ${Theme.text.textColorLight};
 `;
 
 const AppBarLink = styled(Link)`

@@ -31,6 +31,8 @@ body {
 }
  
 ::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 8px;
   outline: 1px solid ${Theme.background.backgroundColorLight}9d;
 }
 `;
