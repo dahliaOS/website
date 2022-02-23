@@ -1,4 +1,3 @@
-/* eslint-disable indent */ // this is here because prettier is being annoyin g
 import { Alert, Button, Link } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
