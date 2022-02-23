@@ -19,6 +19,20 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
+::-webkit-scrollbar {
+  width: 0.25em;
+}
+ 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: ${Theme.background.backgroundColor};
+
+}
+ 
+::-webkit-scrollbar-thumb {
+  outline: 1px solid ${Theme.background.backgroundColorLight}9d;
+}
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {
