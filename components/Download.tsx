@@ -17,11 +17,20 @@ const Card = styled.div`
   background: ${Theme.background.backgroundColorLight};
   box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
     0 1px 8px 0 rgb(0 0 0 / 12%);
+
+  @media (max-width: 980px) {
+    flex-direction: column;
+    max-height: unset;
+  }
 `;
 
 const Latest = styled.div`
   flex: 1.2;
   padding: 0 28px;
+
+  @media (max-width: 980px) {
+    padding-bottom: 20px;
+  }
 `;
 
 const Older = styled.div`
