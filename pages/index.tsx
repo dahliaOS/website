@@ -59,9 +59,10 @@ const SectionBtn = styled(Button)`
     margin-right: 15;
   }
 
-  &:nth-child(2) {
-    margin-left: 0;
-    border: ${Theme.background.backgroundColorLight} solid 2px;
+  &:nth-child(even) {
+    margin-left: 10px;
+    border: ${Theme.background.backgroundColorLight} solid 1.5px;
+    border-radius: 5px;
   }
 
   &:hover {
