@@ -11,7 +11,7 @@ import Download from "../components/Download";
 
 const Wrapper = styled.div``;
 
-const Container = styled.div`
+const Container = styled.div<{ imageOnRight?: boolean }>`
   position: relative;
   display: flex;
   min-height: 90vh;
@@ -19,6 +19,13 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0 50px;
+
+  @media (max-width: 1025px) {
+    flex-direction: ${({ imageOnRight }) =>
+      imageOnRight ? "column-reverse" : "column"};
+
+    padding: 25px 50px;
+  }
 `;
 
 const Sides = styled.div`
@@ -26,6 +33,13 @@ const Sides = styled.div`
 
   &:first-child {
     margin-right: 120px;
+  }
+
+  @media (max-width: 1025px) {
+    flex: 45%;
+    &:first-child {
+      margin-right: 0;
+    }
   }
 `;
 
@@ -88,6 +102,11 @@ const SectionImgContainer = styled.div<{ showOnRight?: boolean }>`
 
   box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
     0 1px 8px 0 rgb(0 0 0 / 12%);
+
+  @media (max-width: 1025px) {
+    padding: 5px;
+    margin: 20px 0;
+  }
 `;
 
 const SectionImg = styled.img<{ showOnRight?: boolean }>`
@@ -96,6 +115,10 @@ const SectionImg = styled.img<{ showOnRight?: boolean }>`
 
   ${({ showOnRight }) =>
     showOnRight ? "margin: 10px -70px" : "margin: 10px 70px"};
+
+  @media (max-width: 1025px) {
+    margin: 0;
+  }
 `;
 
 const Home: NextPage = () => {
@@ -130,7 +153,7 @@ const Home: NextPage = () => {
           </Sides>
         </Container>
         {/* Wide range of supported devices */}
-        <Container>
+        <Container imageOnRight>
           <Sides>
             <SectionTitle>A wide range of supported devices</SectionTitle>
             <Paragraph>
