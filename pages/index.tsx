@@ -108,7 +108,7 @@ const Home: NextPage = () => {
         <Navbar rootPageHasAnimation />
         <Intro />
         {/* Just the Basics */}
-        <Container>
+        <Container id="features">
           <Sides>
             <SectionImgContainer>
               <SectionImg src="/images/mockups/darkSettings.png" />
