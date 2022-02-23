@@ -124,8 +124,9 @@ const Home: NextPage = () => {
               marketplace for third-party native Flutter applications, so you
               can use nearly every application within one system!
             </Paragraph>
-            <SectionBtn>yoo</SectionBtn>
-            <SectionBtn>yoo</SectionBtn>
+            <SectionBtn href="https://github.com/dahliaOS/pangolin_desktop/tree/master_archive/lib/applications">
+              BROWSE APPS
+            </SectionBtn>
           </Sides>
         </Container>
         {/* Wide range of supported devices */}
@@ -139,8 +140,9 @@ const Home: NextPage = () => {
               new(er) hardware to take advantage of the Zircon Kernel, while
               maintaining support for older devices using the Linux Kernel.
             </Paragraph>
-            <SectionBtn>yoo</SectionBtn>
-            <SectionBtn>yoo</SectionBtn>
+            <SectionBtn href="https://docs.dahliaos.io/hardware/support">
+              VIEW SUPPORTED DEVICES
+            </SectionBtn>
           </Sides>
           <Sides>
             <SectionImgContainer showOnRight>
