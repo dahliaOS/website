@@ -1,0 +1,23 @@
+{
+	"presets": ["next/babel"],
+	"plugins": [
+		[
+			"import",
+			{
+				"libraryName": "@material-ui/core",
+				"libraryDirectory": "",
+				"camel2DashComponentName": false
+			},
+			"mui"
+		],
+		[
+			"import",
+			{
+				"libraryName": "@material-ui/icons",
+				"libraryDirectory": "",
+				"camel2DashComponentName": false
+			},
+			"mui-icons"
+		]
+	]
+}
