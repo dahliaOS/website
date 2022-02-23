@@ -2,7 +2,6 @@ import type { AppProps } from "next/app";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Theme } from "../utils/Theme";
 import { StyledEngineProvider } from "@mui/material";
-import { StylesProvider } from "@mui/styles";
 
 const GlobalStyles = createGlobalStyle`
 *, *::before, *::after {
@@ -13,6 +12,8 @@ const GlobalStyles = createGlobalStyle`
 }
 html {
   background: ${Theme.background.backgroundColor};
+  scroll-behavior: smooth;
+
 }
 body {
   max-width: 100vw;
