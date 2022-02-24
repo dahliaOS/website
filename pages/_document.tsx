@@ -34,6 +34,10 @@ limitations under the License.  -->`,
       <meta property="og:image" content="https://imgur.com/pqgjEpd.png" />
       <meta property="og:site_name" content="dahliaOS" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+      />
       <link
         rel="icon"
         type="image/png"
