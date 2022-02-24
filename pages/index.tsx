@@ -203,7 +203,7 @@ const Home: NextPage = () => {
         <br />
         <br />
         <br />
-        <Header>Download</Header>
+        <Header id="download">Download</Header>
         <Download />
         <br />
         <br />
