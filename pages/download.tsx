@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import DownloadComponent from "../components/Download";
 import { Theme } from "../utils/Theme";
 import { Link } from "@mui/material";
+import Head from "next/head";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -38,6 +39,11 @@ const StyledLink = styled(Link)`
 const Download = () => {
   return (
     <>
+      <Head>
+        <title>dahliaOS – Download</title>
+        <meta property="og:title" content="dahliaOS – Download" key="title" />
+        <meta property="og:description" content="Download dahliaOS!"></meta>
+      </Head>
       <Navbar />
       <Wrapper>
         <Header>Download</Header>
