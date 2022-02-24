@@ -34,7 +34,11 @@ limitations under the License.  -->`,
       <meta property="og:image" content="https://imgur.com/pqgjEpd.png" />
       <meta property="og:site_name" content="dahliaOS" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
-      <link rel="icon" type="image/png" href="/images/favicon/favicon.png" />
+      <link
+        rel="icon"
+        type="image/png"
+        href="/images/favicon/favicon-32x32.png"
+      />
       <meta
         name="apple-mobile-web-app-status-bar-style"
         content={Theme.accent.accentColorLight}
