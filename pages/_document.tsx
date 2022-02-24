@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */ // eslint is being annoying :/, this is fine and works
 import Document, {
   Head,
   Html,

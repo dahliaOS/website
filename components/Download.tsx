@@ -4,8 +4,6 @@ import styled from "styled-components";
 import { useGithubReleases } from "../hooks/useGithubReleases";
 import { Theme } from "../utils/Theme";
 
-const Wrapper = styled.div``;
-
 const Card = styled.div`
   display: flex;
   flex-direction: row;
@@ -251,6 +249,8 @@ const Download = ({ showMore }: IDownloadProps) => {
       ) : isLoading ? (
         <>yo</>
       ) : null}
+      {/* Will implement soon */}
+      {showMore ? null : null}
     </>
   );
 };

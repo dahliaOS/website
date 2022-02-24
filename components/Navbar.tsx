@@ -94,8 +94,6 @@ const MenuLink = styled(Link)`
   }
 `;
 
-const Logo = styled.img``;
-
 const StyledAppBar = styled(AppBar)<{
   rootPageHasAnimation?: boolean;
   scrollPos: number;
