@@ -186,7 +186,7 @@ const Home: NextPage = () => {
             <SectionImgContainer>
               <SectionImg
                 alt="dark pangolin modal"
-                src="/images/mockups/pangolin.webp"
+                src="/images/mockups/pangolindark.webp"
               />
             </SectionImgContainer>
           </Sides>
