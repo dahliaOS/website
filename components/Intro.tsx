@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 
-import darkMockup from "../public/images/mockups/darkmockup.png";
+import darkMockup from "../public/images/mockups/darkmockup.webp";
 
 const MockupKeyframes = (mockupScale = 3) => keyframes`
   0% {
@@ -133,7 +133,7 @@ const Terminal = styled.div`
   position: absolute;
   height: 323px;
   width: 571px;
-  background: url("/images/terminal.png");
+  background: url("/images/terminal.webp");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -149,7 +149,7 @@ const Notepad = styled.div`
   position: absolute;
   height: 356px;
   width: 557px;
-  background: url("/images/textEditor.png");
+  background: url("/images/textEditor.webp");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -165,7 +165,7 @@ const Calculator = styled.div`
   position: absolute;
   height: 296px;
   width: 305px;
-  background: url("/images/calculator.png");
+  background: url("/images/calculator.webp");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -212,7 +212,7 @@ const Intro = () => {
             <Logo src="/images/logos/logo-color.png" draggable={false} />
           </LogoContainer>
           <MockupContainer>
-            <Mockup src="/images/mockups/macbook.png" draggable={false} />
+            <Mockup src="/images/mockups/macbook.webp" draggable={false} />
             <Background draggable={false} />
             <Calculator draggable={false} />
             <Terminal draggable={false} />

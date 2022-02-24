@@ -135,7 +135,7 @@ const Home: NextPage = () => {
         <Container id="features">
           <Sides>
             <SectionImgContainer>
-              <SectionImg src="/images/mockups/darkSettings.png" />
+              <SectionImg src="/images/mockups/darkSettings.webp" />
             </SectionImgContainer>
           </Sides>
           <Sides>
@@ -169,7 +169,7 @@ const Home: NextPage = () => {
           </Sides>
           <Sides>
             <SectionImgContainer showOnRight>
-              <SectionImg src="/images/mockups/darkFiles.png" showOnRight />
+              <SectionImg src="/images/mockups/darkFiles.webp" showOnRight />
             </SectionImgContainer>
           </Sides>
         </Container>
@@ -177,7 +177,7 @@ const Home: NextPage = () => {
         <Container>
           <Sides>
             <SectionImgContainer>
-              <SectionImg src="/images/mockups/pangolin.png" />
+              <SectionImg src="/images/mockups/pangolin.webp" />
             </SectionImgContainer>
           </Sides>
           <Sides>
