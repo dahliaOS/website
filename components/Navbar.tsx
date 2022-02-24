@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   AppBar,
   Divider,
@@ -153,6 +153,7 @@ const Navbar = ({
 }) => {
   const [drawerState, setDrawerState] = useState(false);
   const [toggleMoreIcon, setToggleMoreIcon] = useState(false);
+  const [initialPageWidth, setInitialPageWidth] = useState(0);
   const ref = useRef<HTMLButtonElement | null>(null);
 
   /* In the future we should come up with a different solution that doesn't
@@ -166,6 +167,11 @@ const Navbar = ({
     (open: boolean = false) => setDrawerState(open ?? !drawerState),
     [drawerState],
   );
+
+  useEffect(() => {
+    // This is used for checking if its mobile or not
+    setInitialPageWidth(window.innerWidth);
+  }, []);
 
   return (
     <Wrapper>
@@ -215,7 +221,9 @@ const Navbar = ({
         </Container>
       </Drawer>
       <StyledAppBar
-        rootPageHasAnimation={rootPageHasAnimation}
+        rootPageHasAnimation={
+          initialPageWidth < 1075 ? false : rootPageHasAnimation
+        }
         position="fixed"
         scrollPos={scrollPos}
       >

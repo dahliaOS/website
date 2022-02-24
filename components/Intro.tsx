@@ -1,5 +1,8 @@
-import React from "react";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
+
+import darkMockup from "../public/images/mockups/darkmockup.png";
 
 const MockupKeyframes = (mockupScale = 3) => keyframes`
   0% {
@@ -189,20 +192,44 @@ const Toolbar = styled.div`
   animation-delay: 1.85s;
 `;
 
+const MockupImageContainer = styled.div`
+  padding: 25px;
+  margin-top: 80px;
+`;
+
 const Intro = () => {
+  const [windowSize, setWindowSize] = useState<number>(0);
+
+  useEffect(() => {
+    setWindowSize(window.innerWidth);
+  }, []);
+
   return (
     <Wrapper>
-      <LogoContainer>
-        <Logo src="/images/logos/logo-color.png" draggable={false} />
-      </LogoContainer>
-      <MockupContainer>
-        <Mockup src="/images/mockups/macbook.png" draggable={false} />
-        <Background draggable={false} />
-        <Calculator draggable={false} />
-        <Terminal draggable={false} />
-        <Notepad draggable={false} />
-        <Toolbar draggable={false} />
-      </MockupContainer>
+      {windowSize >= 1075 ? (
+        <>
+          <LogoContainer>
+            <Logo src="/images/logos/logo-color.png" draggable={false} />
+          </LogoContainer>
+          <MockupContainer>
+            <Mockup src="/images/mockups/macbook.png" draggable={false} />
+            <Background draggable={false} />
+            <Calculator draggable={false} />
+            <Terminal draggable={false} />
+            <Notepad draggable={false} />
+            <Toolbar draggable={false} />
+          </MockupContainer>
+        </>
+      ) : (
+        <MockupImageContainer>
+          <Image
+            src={darkMockup}
+            width={1280}
+            height={720}
+            layout="responsive"
+          />
+        </MockupImageContainer>
+      )}
     </Wrapper>
   );
 };
