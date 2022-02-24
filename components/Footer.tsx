@@ -62,9 +62,16 @@ const FooterLogo = styled.img`
 
 const VercelLogo = styled.img`
   position: absolute;
-  right: 40px;
-  bottom: 40px;
+  right: 30px;
+  bottom: 30px;
   height: 40px;
+
+  @media (max-width: 670px) {
+    position: unset;
+    display: flex;
+    width: 100%;
+    align-self: center;
+  }
 `;
 
 const Footer = () => {
