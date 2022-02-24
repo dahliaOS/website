@@ -31,7 +31,7 @@ limitations under the License.  -->`,
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <link rel="canonical" href="https://dahliaos.io" />
       <meta name="theme-color" content={Theme.accent.accentColor} />
-      <meta property="og:image" content="https://imgur.com/pqgjEpd" />
+      <meta property="og:image" content="https://imgur.com/pqgjEpd.png" />
       <meta property="og:site_name" content="dahliaOS" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <link rel="icon" type="image/png" href="/images/favicon/favicon.png" />
