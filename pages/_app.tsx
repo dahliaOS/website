@@ -3,7 +3,9 @@
 import type { AppProps } from "next/app";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Theme } from "../utils/Theme";
+import { fetcher } from "../utils/Fetcher";
 import { StyledEngineProvider } from "@mui/material";
+import { SWRConfig } from "swr";
 
 const GlobalStyles = createGlobalStyle`
 *, *::before, *::after {
@@ -55,10 +57,18 @@ $$    $$ |$$    $$ |$$ |  $$ |$$ |$$ |$$    $$ |$$    $$/ $$    $$/
 
   return (
     <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={Theme}>
-        <GlobalStyles />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <SWRConfig
+        value={{
+          fetcher,
+          refreshInterval: 12000000,
+          revalidateOnFocus: false,
+        }}
+      >
+        <ThemeProvider theme={Theme}>
+          <GlobalStyles />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </SWRConfig>
     </StyledEngineProvider>
   );
 }
