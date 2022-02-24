@@ -188,7 +188,7 @@ const Navbar = ({
         </DrawerLogoContainer>
         <Container>
           <Link href="/#features">Features</Link>
-          <Link href="/download">Download</Link>
+          <Link href="/#download">Download</Link>
           <Link href="mailto:contact@dahliaOS.io">Contact</Link>
           <Link href="https://github.com/orgs/dahliaos/people" target="_blank">
             Developers
@@ -248,7 +248,7 @@ const Navbar = ({
           </AppBarLogoLinkContainer>
           <DesktopNav>
             <AppBarLink href="/#features">Features</AppBarLink>
-            <AppBarLink href="/download">Download</AppBarLink>
+            <AppBarLink href="/#download">Download</AppBarLink>
             <AppBarLink href="https://web.dahliaOS.io" target="_blank">
               Demo
             </AppBarLink>
