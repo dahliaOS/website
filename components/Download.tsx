@@ -3,7 +3,6 @@ import { Button, Link, Skeleton } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import { useGithubReleases } from "../hooks/useGithubReleases";
-import { Theme } from "../utils/Theme";
 
 const Card = styled.div<{ isError?: boolean }>`
   display: flex;
@@ -13,7 +12,7 @@ const Card = styled.div<{ isError?: boolean }>`
   max-height: 350px;
   width: 90%;
   margin: 0 auto;
-  background: ${Theme.background.backgroundColorLight};
+  background: ${({ theme }) => theme.background.backgroundColorLight};
   box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
     0 1px 8px 0 rgb(0 0 0 / 12%);
 
@@ -33,7 +32,7 @@ const Latest = styled.div`
 `;
 
 const Older = styled.div`
-  background: #1f1f1f;
+  background: ${({ theme }) => theme.background.backgroundColorContrast};
   border-radius: 13px;
   padding: 0 16px;
   flex: 1;
@@ -49,23 +48,23 @@ const TextContainer = styled.div`
 
 const Header = styled.h1`
   margin: 17px 0 0;
-  color: ${Theme.text.textColorLight};
+  color: ${({ theme }) => theme.text.textColorLight};
 `;
 
 const OlderHeader = styled.h1`
   margin: 17px 0 0;
   text-align: center;
-  color: ${Theme.text.textColorLight};
+  color: ${({ theme }) => theme.text.textColorLight};
 `;
 
 const ReleaseName = styled.span`
   display: block;
   margin: 0 0 20px;
-  color: ${Theme.text.textColor}9d;
+  color: ${({ theme }) => theme.text.textColor}9d;
 `;
 
 const Changelogs = styled.p`
-  color: ${Theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColor};
 
   white-space: pre-line;
   text-overflow: ellipsis;
@@ -83,7 +82,7 @@ const ReadMoreButton = styled(Button)`
   position: absolute;
   right: 0;
   bottom: 0;
-  color: ${Theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColor};
   padding: 5px 10px;
   border-radius: 3px;
 `;
@@ -91,19 +90,19 @@ const ReadMoreButton = styled(Button)`
 const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
   padding: 6px 12px;
   border-radius: 5px;
-  color: ${Theme.text.textColorLight};
+  color: ${({ theme }) => theme.text.textColorLight};
   text-decoration: none;
 
   &:first-child {
     margin-right: 15px;
 
-    ${({ disableGradient }) =>
+    ${({ disableGradient, theme }) =>
       !disableGradient
         ? `
         background: linear-gradient(
           153deg,
-          ${Theme.accent.accentColor} 0%,
-          ${Theme.accent.accentColorLight} 100%
+          ${theme.accent.accentColor} 0%,
+          ${theme.accent.accentColorLight} 100%
         );
 
         background-size: 400% 400;
@@ -122,7 +121,7 @@ const OlderUpdate = styled.div`
   align-items: center;
   padding-bottom: 6px;
   margin-bottom: 6px;
-  border-bottom: 1px solid ${Theme.text.textColorDark}9d;
+  border-bottom: 1px solid ${({ theme }) => theme.text.textColorDark}9d;
 
   &:last-child {
     margin-bottom: 0;
@@ -138,7 +137,7 @@ const OlderUpdateTitle = styled.h1`
   font-size: 1.25rem;
   margin: 0;
   font-weight: 400;
-  color: ${Theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColor};
 `;
 
 const ButtonContainer = styled.div`
@@ -146,7 +145,7 @@ const ButtonContainer = styled.div`
 `;
 
 const OlderUpdateDate = styled.span`
-  color: ${Theme.text.textColorDark};
+  color: ${({ theme }) => theme.text.textColorDark};
 `;
 
 const OlderBtns = styled.div`
@@ -163,14 +162,14 @@ const ErrorContainer = styled.div`
 `;
 
 const StyledErrorIcon = styled(ErrorIcon)`
-  color: ${Theme.error.light};
+  color: ${({ theme }) => theme.error.light};
   width: 50px;
   height: auto;
   margin-top: 25px;
 `;
 
 const ErrorMessage = styled.p`
-  color: ${Theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColor};
   max-width: ch(75);
   margin-bottom: 25px;
 `;

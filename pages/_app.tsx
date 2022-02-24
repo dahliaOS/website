@@ -2,10 +2,11 @@
 /* eslint-disable no-console */
 import type { AppProps } from "next/app";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import { Theme } from "../utils/Theme";
+import { LightTheme, Theme } from "../utils/Theme";
 import { fetcher } from "../utils/Fetcher";
 import { StyledEngineProvider } from "@mui/material";
 import { SWRConfig } from "swr";
+import { usePreferredTheme } from "../hooks/usePreferredTheme";
 
 const GlobalStyles = createGlobalStyle`
 *, *::before, *::after {
@@ -15,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
   font-family: 'Roboto', sans-serif;
 }
 html {
-  background: ${Theme.background.backgroundColor};
+  background: ${({ theme }) => theme.background.backgroundColor};
   scroll-behavior: smooth;
 
 }
@@ -30,14 +31,14 @@ body {
  
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: ${Theme.background.backgroundColor};
+  background-color: ${({ theme }) => theme.background.backgroundColor};
 
 }
  
 ::-webkit-scrollbar-thumb {
   background: gray;
   border-radius: 8px;
-  outline: 1px solid ${Theme.background.backgroundColorLight}9d;
+  outline: 1px solid ${({ theme }) => theme.background.backgroundColorLight}9d;
 }
 `;
 
@@ -55,6 +56,8 @@ $$    $$ |$$    $$ |$$ |  $$ |$$ |$$ |$$    $$ |$$    $$/ $$    $$/
  $$$$$$$/  $$$$$$$/ $$/   $$/ $$/ $$/  $$$$$$$/  $$$$$$/   $$$$$$/  
   `);
 
+  const preferredTheme = usePreferredTheme();
+
   return (
     <StyledEngineProvider injectFirst>
       <SWRConfig
@@ -64,7 +67,7 @@ $$    $$ |$$    $$ |$$ |  $$ |$$ |$$ |$$    $$ |$$    $$/ $$    $$/
           revalidateOnFocus: false,
         }}
       >
-        <ThemeProvider theme={Theme}>
+        <ThemeProvider theme={preferredTheme === "dark" ? Theme : LightTheme}>
           <GlobalStyles />
           <Component {...pageProps} />
         </ThemeProvider>

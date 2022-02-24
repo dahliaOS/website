@@ -11,8 +11,7 @@ import {
 } from "@mui/material";
 import { Menu as MenuIcon, MoreVert } from "@mui/icons-material";
 import { useCallback, useState } from "react";
-import styled, { css, keyframes } from "styled-components";
-import { Theme } from "../utils/Theme";
+import styled, { css, keyframes, useTheme } from "styled-components";
 import useScrollPosition from "@react-hook/window-scroll";
 
 const WrapperKeyframes = keyframes`
@@ -29,7 +28,7 @@ const WrapperKeyframes = keyframes`
 const Wrapper = styled.div``;
 
 const Container = styled.div`
-  background: ${Theme.background.backgroundColorLight};
+  background: ${({ theme }) => theme.background.backgroundColorLight};
 `;
 
 const DrawerLogoContainer = styled.div`
@@ -37,7 +36,7 @@ const DrawerLogoContainer = styled.div`
   padding-top: 160px;
   height: 160px;
   width: 230px;
-  background: ${Theme.background.backgroundColor};
+  background: ${({ theme }) => theme.background.backgroundColor};
 `;
 
 const DrawerLogo = styled.img`
@@ -51,12 +50,12 @@ const Link = styled(MUILink)`
   display: block;
   font-size: 0.93em;
   padding: 16px 20px;
-  color: ${Theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColor};
   transition: color ease-in-out 0.2s;
   text-decoration: none;
 
   &:hover {
-    color: ${Theme.text.textColorLight};
+    color: ${({ theme }) => theme.text.textColorLight};
   }
 `;
 
@@ -65,7 +64,7 @@ const Category = styled.span`
   font-size: 0.93em;
   padding: 16px 20px;
   font-weight: 500;
-  color: ${Theme.text.textColorLight};
+  color: ${({ theme }) => theme.text.textColorLight};
 `;
 
 const AppBarLink = styled(Link)`
@@ -73,12 +72,12 @@ const AppBarLink = styled(Link)`
   font-size: 0.93em;
   padding: 16px 40px;
   font-weight: 600;
-  color: ${Theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColor};
   transition: color ease-in-out 0.2s;
   text-decoration: none;
 
   &:hover {
-    color: ${Theme.text.textColorLight};
+    color: ${({ theme }) => theme.text.textColorLight};
   }
 `;
 
@@ -87,7 +86,7 @@ const MenuLink = styled(Link)`
   margin: 0;
   background: unset;
   text-decoration: none;
-  color: ${Theme.text.textColorDark};
+  color: ${({ theme }) => theme.text.textColorDark};
 
   &:hover {
     color: initial;
@@ -98,8 +97,8 @@ const StyledAppBar = styled(AppBar)<{
   rootPageHasAnimation?: boolean;
   scrollPos: number;
 }>`
-  background: ${({ scrollPos }) =>
-    scrollPos > 10 ? Theme.background.backgroundColorLight : "unset"};
+  background: ${({ scrollPos, theme }) =>
+    scrollPos > 10 ? theme.background.backgroundColorLight : "unset"};
   box-shadow: ${({ scrollPos }) =>
     scrollPos > 10
       ? "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
@@ -133,7 +132,6 @@ const AppBarLogoLinkContainer = styled(Link)`
 
 const AppBarLogo = styled.img`
   height: 28px;
-  filter: brightness(0) invert(1);
 `;
 
 const DesktopNav = styled.div`
@@ -154,6 +152,7 @@ const Navbar = ({
   const [drawerState, setDrawerState] = useState(false);
   const [toggleMoreIcon, setToggleMoreIcon] = useState(false);
   const [initialPageWidth, setInitialPageWidth] = useState(0);
+  const theme = useTheme();
   const ref = useRef<HTMLButtonElement | null>(null);
 
   /* In the future we should come up with a different solution that doesn't
@@ -183,7 +182,11 @@ const Navbar = ({
         <DrawerLogoContainer>
           <DrawerLogo
             alt="dahliaOS logo"
-            src={"/images/logos/logo-white.png"}
+            src={
+              theme.type === "dark"
+                ? "/images/logos/logo-white.png"
+                : "/images/logos/logo-color.png"
+            }
           />
         </DrawerLogoContainer>
         <Container>
@@ -237,12 +240,22 @@ const Navbar = ({
             aria-label="menu"
             onClick={() => toggleDrawer(true)}
           >
-            <MenuIcon />
+            <MenuIcon
+              style={
+                theme.type !== "dark"
+                  ? { color: theme.text.textColorDark }
+                  : undefined
+              }
+            />
           </IconButton>
           <AppBarLogoLinkContainer href="/">
             <AppBarLogo
               alt="dahliaOS logo"
-              src="/images/logos/logo-color.png"
+              src={
+                theme.type === "dark"
+                  ? "/images/logos/logo-white.png"
+                  : "/images/logos/logo-color.png"
+              }
               draggable={false}
             />
           </AppBarLogoLinkContainer>
@@ -267,7 +280,7 @@ const Navbar = ({
               aria-haspopup="true"
               onClick={() => setToggleMoreIcon(true)}
             >
-              <MoreVert style={{ color: Theme.text.textColorLight }} />
+              <MoreVert style={{ color: theme.text.textColorLight }} />
             </IconButton>
             <Menu
               open={toggleMoreIcon}

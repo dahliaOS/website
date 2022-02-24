@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import DownloadComponent from "../components/Download";
-import { Theme } from "../utils/Theme";
 import { Link } from "@mui/material";
 import Head from "next/head";
 
@@ -16,7 +15,7 @@ const Header = styled.h1`
   font-size: 2.2em;
   font-weight: 500;
   margin-bottom: 25px;
-  color: ${Theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColor};
 `;
 
 const Span = styled.span`
@@ -27,12 +26,12 @@ const Span = styled.span`
 `;
 
 const StyledLink = styled(Link)`
-  color: ${Theme.accent.accentColor};
+  color: ${({ theme }) => theme.accent.accentColor};
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 
   &:hover {
-    color: ${Theme.accent.accentColor}9d;
+    color: ${({ theme }) => theme.accent.accentColor}9d;
   }
 `;
 

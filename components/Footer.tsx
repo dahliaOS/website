@@ -1,7 +1,6 @@
 import { BottomNavigation, Link } from "@mui/material";
 import React from "react";
-import styled from "styled-components";
-import { Theme } from "../utils/Theme";
+import styled, { useTheme } from "styled-components";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
   position: relative;
@@ -9,7 +8,7 @@ const StyledBottomNavigation = styled(BottomNavigation)`
   display: block;
   padding: 50px 40px;
   overflow: hidden;
-  background: ${Theme.background.backgroundColorDark};
+  background: ${({ theme }) => theme.background.backgroundColorDark};
 `;
 
 const FooterContainer = styled.div`
@@ -29,7 +28,7 @@ const FooterCategory = styled.div`
 `;
 
 const FooterHeader = styled.h1`
-  color: ${Theme.text.textColorLight};
+  color: ${({ theme }) => theme.text.textColorLight};
   fontsize: 1.5em;
   font-weight: medium;
   margin-bottom: 0.5em;
@@ -43,13 +42,13 @@ const FooterList = styled.ul`
 
 const FooterItem = styled(Link)`
   fontsize: 1.15em;
-  color: ${Theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColor};
   display: block;
   transition: color ease-in-out 0.15s;
   text-decoration: none;
 
   &:hover {
-    color: ${Theme.text.textColorDark};
+    color: ${({ theme }) => theme.text.textColorDark};
   }
 `;
 
@@ -75,6 +74,8 @@ const VercelLogo = styled.img`
 `;
 
 const Footer = () => {
+  const theme = useTheme();
+
   return (
     <StyledBottomNavigation>
       <FooterContainer>
@@ -132,7 +133,14 @@ const Footer = () => {
         </FooterCategory>
       </FooterContainer>
 
-      <FooterLogo alt="dahliaOS logo" src="/images/logos/logo-white.png" />
+      <FooterLogo
+        alt="dahliaOS logo"
+        src={
+          theme.type === "dark"
+            ? "/images/logos/logo-white.png"
+            : "/images/logos/logo-color.png"
+        }
+      />
       <br />
       <a href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
         <VercelLogo

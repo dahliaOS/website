@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import coc from "../CONTRIBUTING.md";
-import { Theme } from "../utils/Theme";
 
 const Wrapper = styled.div`
   width: 90%;
@@ -13,14 +12,14 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.h1`
-  color: ${Theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColor};
   font-weight: 500;
   margin-bottom: 50px;
 `;
 
 const Pre = styled.pre`
   white-space: pre-wrap;
-  color: ${Theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColor};
 `;
 
 const Coc = () => {

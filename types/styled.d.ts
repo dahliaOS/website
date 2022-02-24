@@ -2,16 +2,19 @@ import "styled-components";
 
 type Hex = `#${string}`;
 declare module "styled-components" {
-  export interface ThemeType {
+  export interface DefaultTheme {
+    type: "light" | "dark";
     background: {
       backgroundColor: Hex;
       backgroundColorLight: Hex;
       backgroundColorDark: Hex;
+      backgroundColorContrast: Hex;
     };
     text: {
       textColor: Hex;
       textColorLight: Hex;
       textColorDark: Hex;
+      textColorExtremelyLight: Hex;
     };
     accent: {
       accentColor: Hex;

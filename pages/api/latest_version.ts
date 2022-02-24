@@ -48,7 +48,7 @@ interface Asset {
   id: number;
   node_id: string;
   name: string;
-  label?: any;
+  label?: unknown;
   uploader: Uploader;
   content_type: string;
   state: string;

@@ -2,12 +2,11 @@ import { Button } from "@mui/material";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { Theme } from "../utils/Theme";
 
 const Wrapper = styled.div`
   min-height: 100vh;
   margin-top: 120px;
-  color: ${Theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColor};
 `;
 
 const Header = styled.h1`
@@ -28,11 +27,11 @@ const Paragraph = styled.p``;
 
 const StyledButton = styled(Button)`
   margin-top: 15px;
-  color: ${Theme.text.textColorLight};
+  color: ${({ theme }) => theme.text.textColorLight};
   background: linear-gradient(
     153deg,
-    ${Theme.accent.accentColorLight} 0%,
-    ${Theme.accent.accentColorDark} 100%
+    ${({ theme }) => theme.accent.accentColorLight} 0%,
+    ${({ theme }) => theme.accent.accentColorDark} 100%
   );
 `;
 

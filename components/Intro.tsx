@@ -1,8 +1,9 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, useTheme } from "styled-components";
 
 import darkMockup from "../public/images/mockups/darkmockup.webp";
+import lightMockup from "../public/images/mockups/lightmockup.webp";
 
 const MockupKeyframes = (mockupScale = 3) => keyframes`
   0% {
@@ -199,6 +200,7 @@ const MockupImageContainer = styled.div`
 
 const Intro = () => {
   const [windowSize, setWindowSize] = useState<number>(0);
+  const theme = useTheme();
 
   useEffect(() => {
     setWindowSize(window.innerWidth);
@@ -211,14 +213,14 @@ const Intro = () => {
           <LogoContainer>
             <Logo
               alt="dahliaOS logo"
-              src="/images/logos/logo-color.png"
+              src={"/images/logos/logo-color.png"}
               draggable={false}
             />
           </LogoContainer>
           <MockupContainer>
             <Mockup
               alt="Macbook mockup"
-              src="/images/mockups/macbook.webp"
+              src={"/images/mockups/macbook.webp"}
               draggable={false}
             />
             <Background draggable={false} />
@@ -232,7 +234,7 @@ const Intro = () => {
         <MockupImageContainer>
           <Image
             alt="Dark mockup"
-            src={darkMockup}
+            src={theme.type === "dark" ? darkMockup : lightMockup}
             width={1280}
             height={720}
             layout="responsive"
