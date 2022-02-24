@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "private": true,
+  "private": false,
   "sideEffects": false,
   "scripts": {
     "dev": "next dev",
@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "license": "Apache-2.0",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
