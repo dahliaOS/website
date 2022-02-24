@@ -135,7 +135,10 @@ const Home: NextPage = () => {
         <Container id="features">
           <Sides>
             <SectionImgContainer>
-              <SectionImg src="/images/mockups/darkSettings.webp" />
+              <SectionImg
+                alt="dark settings modal"
+                src="/images/mockups/darkSettings.webp"
+              />
             </SectionImgContainer>
           </Sides>
           <Sides>
@@ -169,7 +172,11 @@ const Home: NextPage = () => {
           </Sides>
           <Sides>
             <SectionImgContainer showOnRight>
-              <SectionImg src="/images/mockups/darkFiles.webp" showOnRight />
+              <SectionImg
+                alt="dark files modal"
+                src="/images/mockups/darkFiles.webp"
+                showOnRight
+              />
             </SectionImgContainer>
           </Sides>
         </Container>
@@ -177,7 +184,10 @@ const Home: NextPage = () => {
         <Container>
           <Sides>
             <SectionImgContainer>
-              <SectionImg src="/images/mockups/pangolin.webp" />
+              <SectionImg
+                alt="dark pangolin modal"
+                src="/images/mockups/pangolin.webp"
+              />
             </SectionImgContainer>
           </Sides>
           <Sides>

@@ -209,10 +209,18 @@ const Intro = () => {
       {windowSize >= 1075 ? (
         <>
           <LogoContainer>
-            <Logo src="/images/logos/logo-color.png" draggable={false} />
+            <Logo
+              alt="dahliaOS logo"
+              src="/images/logos/logo-color.png"
+              draggable={false}
+            />
           </LogoContainer>
           <MockupContainer>
-            <Mockup src="/images/mockups/macbook.webp" draggable={false} />
+            <Mockup
+              alt="Macbook mockup"
+              src="/images/mockups/macbook.webp"
+              draggable={false}
+            />
             <Background draggable={false} />
             <Calculator draggable={false} />
             <Terminal draggable={false} />
@@ -223,6 +231,7 @@ const Intro = () => {
       ) : (
         <MockupImageContainer>
           <Image
+            alt="Dark mockup"
             src={darkMockup}
             width={1280}
             height={720}

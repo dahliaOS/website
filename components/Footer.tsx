@@ -132,10 +132,13 @@ const Footer = () => {
         </FooterCategory>
       </FooterContainer>
 
-      <FooterLogo src="/images/logos/logo-white.png" />
+      <FooterLogo alt="dahliaOS logo" src="/images/logos/logo-white.png" />
       <br />
       <a href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
-        <VercelLogo src="/images/logos/powered-by-vercel.svg" />
+        <VercelLogo
+          alt="Vercel Logo"
+          src="/images/logos/powered-by-vercel.svg"
+        />
       </a>
     </StyledBottomNavigation>
   );

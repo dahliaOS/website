@@ -181,7 +181,10 @@ const Navbar = ({
         onClose={() => toggleDrawer(false)}
       >
         <DrawerLogoContainer>
-          <DrawerLogo src={"/images/logos/logo-white.png"} />
+          <DrawerLogo
+            alt="dahliaOS logo"
+            src={"/images/logos/logo-white.png"}
+          />
         </DrawerLogoContainer>
         <Container>
           <Link href="/#features">Features</Link>
@@ -237,7 +240,11 @@ const Navbar = ({
             <MenuIcon />
           </IconButton>
           <AppBarLogoLinkContainer href="/">
-            <AppBarLogo src="/images/logos/logo-color.png" draggable={false} />
+            <AppBarLogo
+              alt="dahliaOS logo"
+              src="/images/logos/logo-color.png"
+              draggable={false}
+            />
           </AppBarLogoLinkContainer>
           <DesktopNav>
             <AppBarLink href="/#features">Features</AppBarLink>
