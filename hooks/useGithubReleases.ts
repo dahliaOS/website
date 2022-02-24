@@ -12,3 +12,5 @@ export const useGithubReleases = () => {
     isError: error,
   };
 };
+
+// vercel pls build
