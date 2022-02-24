@@ -1,14 +1,15 @@
-import { Alert, Button, Link } from "@mui/material";
+import ErrorIcon from "@mui/icons-material/Error";
+import { Button, Link } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import { useGithubReleases } from "../hooks/useGithubReleases";
 import { Theme } from "../utils/Theme";
 
-const Card = styled.div`
+const Card = styled.div<{ isError?: boolean }>`
   display: flex;
   flex-direction: row;
   border-radius: 13px;
-  max-width: 950px;
+  max-width: ${({ isError }) => (isError ? 450 : 950)}px;
   max-height: 350px;
   width: 90%;
   margin: 0 auto;
@@ -152,6 +153,28 @@ const OlderBtns = styled.div`
   display: inline-flex;
 `;
 
+const ErrorContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+`;
+
+const StyledErrorIcon = styled(ErrorIcon)`
+  color: ${Theme.error.light};
+  width: 50px;
+  height: auto;
+  margin-top: 25px;
+`;
+
+const ErrorMessage = styled.p`
+  color: ${Theme.text.textColor};
+  max-width: ch(75);
+  margin-bottom: 25px;
+`;
+
 interface IDownloadProps {
   showMore?: boolean;
 }
@@ -176,9 +199,15 @@ const Download = ({ showMore }: IDownloadProps) => {
   return (
     <>
       {isError ? (
-        <Alert severity="error">
-          An error occurred whilst fetching GitHub&apos;s API!
-        </Alert>
+        <Card isError>
+          <ErrorContainer>
+            <StyledErrorIcon />
+            <br />
+            <ErrorMessage>
+              An error occurred whilst fetching GitHub&apos;s API!
+            </ErrorMessage>
+          </ErrorContainer>
+        </Card>
       ) : null}
 
       {releases ? (

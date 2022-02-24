@@ -16,4 +16,9 @@ export const Theme: ThemeType = {
     textColorDark: "#6b6b6b",
     textColorLight: "#fff",
   },
+  error: {
+    light: "#e57373",
+    main: "#f44336",
+    dark: "#d32f2f",
+  },
 };

@@ -18,5 +18,10 @@ declare module "styled-components" {
       accentColorLight: Hex;
       accentColorDark: Hex;
     };
+    error: {
+      light: Hex;
+      main: Hex;
+      dark: Hex;
+    };
   }
 }
