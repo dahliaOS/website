@@ -1,5 +1,5 @@
 import ErrorIcon from "@mui/icons-material/Error";
-import { Button, Link } from "@mui/material";
+import { Button, Link, Skeleton } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import { useGithubReleases } from "../hooks/useGithubReleases";
@@ -275,8 +275,148 @@ const Download = ({ showMore }: IDownloadProps) => {
             </Older>
           </Card>
         </>
-      ) : isLoading ? (
-        <>yo</>
+      ) : !isError ? (
+        <Card>
+          <Latest>
+            <TextContainer>
+              <Header>
+                <Skeleton
+                  variant="text"
+                  animation="wave"
+                  width={"25%"}
+                  height={50}
+                />
+              </Header>
+              <ReleaseName>
+                <Skeleton
+                  variant="text"
+                  animation="wave"
+                  width={"48%"}
+                  height={25}
+                />
+              </ReleaseName>
+              <Changelogs>
+                <Skeleton
+                  variant="text"
+                  animation="wave"
+                  width={"100%"}
+                  height={20}
+                />
+                <Skeleton
+                  variant="text"
+                  animation="wave"
+                  width={"98%"}
+                  height={20}
+                />
+                <Skeleton
+                  variant="text"
+                  animation="wave"
+                  width={"95%"}
+                  height={20}
+                />
+                <Skeleton
+                  variant="text"
+                  animation="wave"
+                  width={"93%"}
+                  height={20}
+                />
+                <Skeleton
+                  variant="text"
+                  animation="wave"
+                  width={"87%"}
+                  height={20}
+                />
+                <Skeleton
+                  variant="text"
+                  animation="wave"
+                  width={"85%"}
+                  height={20}
+                />
+                <Skeleton
+                  variant="text"
+                  animation="wave"
+                  width={"20%"}
+                  height={20}
+                />
+              </Changelogs>
+              <Link target="_blank">
+                <ReadMoreButton>
+                  <Skeleton
+                    variant="text"
+                    animation="wave"
+                    width={100}
+                    height={55}
+                  />
+                </ReadMoreButton>
+              </Link>
+            </TextContainer>
+            <ButtonContainer>
+              <Skeleton
+                variant="rectangular"
+                animation="wave"
+                width={"20%"}
+                height={35}
+                style={{ display: "inline-block" }}
+              />
+              <Skeleton
+                variant="rectangular"
+                animation="wave"
+                width={"20%"}
+                height={35}
+                style={{ display: "inline-block", marginLeft: 15 }}
+              />
+            </ButtonContainer>
+          </Latest>
+          <Older>
+            <TextContainer>
+              <OlderHeader>Older updates</OlderHeader>
+              <UpdateContainer>
+                {[...Array(5)].map((oldRelease, i) => {
+                  if (i === 0 || i > 4) return;
+
+                  return (
+                    <OlderUpdate key={i}>
+                      <OlderUpdateTextWrapper>
+                        <OlderUpdateTitle>
+                          <Skeleton
+                            variant="text"
+                            animation="wave"
+                            width={"25%"}
+                            height={25}
+                          />
+                        </OlderUpdateTitle>
+                        <OlderUpdateDate>
+                          <Skeleton
+                            variant="text"
+                            animation="wave"
+                            width={"25%"}
+                            height={20}
+                          />
+                        </OlderUpdateDate>
+                      </OlderUpdateTextWrapper>
+                      <OlderBtns>
+                        <Skeleton
+                          variant="rectangular"
+                          animation="wave"
+                          width={"20%"}
+                          height={15}
+                          style={{ display: "inline-block" }}
+                        />
+                        <Skeleton
+                          variant="rectangular"
+                          animation="wave"
+                          width={"20%"}
+                          height={15}
+                          style={{ display: "inline-block", marginLeft: 15 }}
+                        />
+                      </OlderBtns>
+                    </OlderUpdate>
+                  );
+                })}
+              </UpdateContainer>
+            </TextContainer>
+          </Older>
+        </Card>
       ) : null}
       {/* Will implement soon */}
       {showMore ? null : null}
