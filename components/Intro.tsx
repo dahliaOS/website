@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import styled, { keyframes, useTheme } from "styled-components";
@@ -120,7 +121,10 @@ const Background = styled.div`
   width: 1314px;
   height: 100%;
   bottom: -6px;
-  background: url("/images/darkModeBackground.svg");
+  background: ${({ theme }) =>
+    theme.type === "dark"
+      ? 'url("/images/darkModeBackground.svg")'
+      : 'url("/images/lightModeBackground.svg")'};
   background-repeat: no-repeat;
   background-size: 1314px;
   background-position: center;
@@ -182,7 +186,10 @@ const Toolbar = styled.div`
   position: absolute;
   height: 100%;
   width: 1011px;
-  background: url("/images/darkToolbar.svg");
+  background: ${({ theme }) =>
+    theme.type === "dark"
+      ? 'url("/images/darkToolbar.svg")'
+      : 'url("/images/lightToolbar.svg")'};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
