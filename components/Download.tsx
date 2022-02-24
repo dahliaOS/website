@@ -210,7 +210,7 @@ const Download = ({ showMore }: IDownloadProps) => {
         </Card>
       ) : null}
 
-      {releases ? (
+      {releases?.length ? (
         <>
           <Card>
             <Latest>

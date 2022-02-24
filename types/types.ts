@@ -16,3 +16,16 @@ export interface Assets {
   name: string;
   browser_download_url: string;
 }
+
+export interface APIResponse<T = void> {
+  success: boolean;
+  data?: APIData<T>;
+  error?: APIError;
+}
+
+export type APIData<T = void> = T;
+
+export interface APIError {
+  code: number;
+  message: string;
+}
