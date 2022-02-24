@@ -275,7 +275,7 @@ const Download = ({ showMore }: IDownloadProps) => {
             </Older>
           </Card>
         </>
-      ) : !isError ? (
+      ) : isLoading ? (
         <Card>
           <Latest>
             <TextContainer>
