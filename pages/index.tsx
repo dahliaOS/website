@@ -36,7 +36,7 @@ const Sides = styled.div`
   }
 
   @media (max-width: 1025px) {
-    flex: 45%;
+    flex: unset;
     &:first-child {
       margin-right: 0;
     }
