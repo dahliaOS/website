@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-escape */
+/* eslint-disable no-console */
 import type { AppProps } from "next/app";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Theme } from "../utils/Theme";
@@ -38,6 +40,19 @@ body {
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {
+  /* niceeeee */
+  console.log(`
+       __            __        __  __             ______    ______  
+      /  |          /  |      /  |/  |           /      \  /      \ 
+  ____$$ |  ______  $$ |____  $$ |$$/   ______  /$$$$$$  |/$$$$$$  |
+ /    $$ | /      \ $$      \ $$ |/  | /      \ $$ |  $$ |$$ \__$$/ 
+/$$$$$$$ | $$$$$$  |$$$$$$$  |$$ |$$ | $$$$$$  |$$ |  $$ |$$      \ 
+$$ |  $$ | /    $$ |$$ |  $$ |$$ |$$ | /    $$ |$$ |  $$ | $$$$$$  |
+$$ \__$$ |/$$$$$$$ |$$ |  $$ |$$ |$$ |/$$$$$$$ |$$ \__$$ |/  \__$$ |
+$$    $$ |$$    $$ |$$ |  $$ |$$ |$$ |$$    $$ |$$    $$/ $$    $$/ 
+ $$$$$$$/  $$$$$$$/ $$/   $$/ $$/ $$/  $$$$$$$/  $$$$$$/   $$$$$$/  
+  `);
+
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={Theme}>
