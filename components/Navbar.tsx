@@ -225,16 +225,16 @@ const Navbar = ({
           initialPageWidth < 1075 ? false : rootPageHasAnimation
         }
         position="fixed"
-        color="transparent"
         scrollPos={scrollPos}
       >
         <StyledToolbar scrollPos={scrollPos}>
           <IconButton
             edge="start"
+            color="inherit"
             aria-label="menu"
             onClick={() => toggleDrawer(true)}
           >
-            <MenuIcon style={{ color: Theme.text.textColorLight }} />
+            <MenuIcon />
           </IconButton>
           <AppBarLogoLinkContainer href="/">
             <AppBarLogo src="/images/logos/logo-color.png" draggable={false} />
