@@ -11,9 +11,10 @@ import { Theme } from "../utils/Theme";
 
 const Page = () => (
   <Html lang="en">
-    <Head>
-      {/*
-      Copyright 2021 The dahliaOS Authors\n
+    <html
+      dangerouslySetInnerHTML={{
+        __html: `<!-- 
+    Copyright 2021 The dahliaOS Authors\n
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -22,20 +23,18 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License. 
-      */}
+limitations under the License.  -->`,
+      }}
+    ></html>
+    <Head>
       <meta charSet="UTF-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <link rel="canonical" href="https://dahliaos.io" />
       <meta name="theme-color" content={Theme.accent.accentColor} />
-      <meta property="og:image" content="https://imgur.com/PNGGkDP.png" />
+      <meta property="og:image" content="/images/favicon/logos/favicon.png" />
       <meta property="og:site_name" content="dahliaOS" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
-      <link
-        rel="icon"
-        type="image/png"
-        href="/images/favicon/logos/favicon.png"
-      />
+      <link rel="icon" type="image/png" href="/images/favicon/favicon.png" />
       <meta
         name="apple-mobile-web-app-status-bar-style"
         content={Theme.accent.accentColorLight}
@@ -53,13 +52,13 @@ limitations under the License.
       <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="/images/favicon//apple-touch-icon.png"
+        href="/images/favicon/apple-touch-icon.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="/images/favicon//favicon-32x32.png"
+        href="/images/favicon/favicon-32x32.png"
       />
       <link
         rel="icon"
