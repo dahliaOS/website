@@ -32,7 +32,7 @@ export const LightTheme: DefaultTheme = {
     backgroundColor: "#FFFDFA",
     backgroundColorLight: "#E6E4E2",
     backgroundColorDark: "#B3B2B1",
-    backgroundColorContrast: "#CCCAC8",
+    backgroundColorContrast: "#F9F9F9",
   },
   accent: {
     accentColor: "#ff6331",

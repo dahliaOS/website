@@ -8,7 +8,10 @@ const StyledBottomNavigation = styled(BottomNavigation)`
   display: block;
   padding: 50px 40px;
   overflow: hidden;
-  background: ${({ theme }) => theme.background.backgroundColorDark};
+  background: ${({ theme }) =>
+    theme.type === "dark"
+      ? theme.background.backgroundColorDark
+      : theme.background.backgroundColorLight};
 `;
 
 const FooterContainer = styled.div`
