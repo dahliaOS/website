@@ -95,10 +95,12 @@ const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
 
   &:first-child {
     margin-right: 15px;
+    color: ${({ theme }) => theme.text.textColorLight};
 
     ${({ disableGradient, theme }) =>
       !disableGradient
         ? `
+      color: ${theme.text.textColorExtremelyLight};
         background: linear-gradient(
           153deg,
           ${theme.accent.accentColor} 0%,
