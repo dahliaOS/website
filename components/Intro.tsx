@@ -214,7 +214,8 @@ const Intro = () => {
   }, []);
 
   return (
-    <Wrapper>
+    // without setting a tabindex here, this area isn't selectable.
+    <Wrapper tabIndex={0}>
       {windowSize >= 1075 ? (
         <>
           <LogoContainer>
