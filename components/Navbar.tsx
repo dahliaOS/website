@@ -242,9 +242,9 @@ const Navbar = ({
           >
             <MenuIcon
               style={
-                theme.type !== "dark"
-                  ? { color: theme.text.textColorDark }
-                  : undefined
+                theme.type === "dark"
+                  ? undefined
+                  : { color: theme.text.textColorDark }
               }
             />
           </IconButton>
