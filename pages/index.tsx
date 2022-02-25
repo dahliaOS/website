@@ -49,9 +49,10 @@ const SectionTitle = styled.h1`
 `;
 
 const Paragraph = styled.p`
+  margin: 4px 0;
   font-weight: light;
   font-size: 1.3em;
-  max-width: 75ch;
+  max-width: 65ch;
   color: ${({ theme }) => theme.text.textColor};
 `;
 
