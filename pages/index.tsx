@@ -56,7 +56,7 @@ const Paragraph = styled.p`
 `;
 
 const SectionBtn = styled(Button)`
-  padding: 5px 12px;
+  padding: 7px 20px;
   border-radius: 5px;
   margin: 10px 0;
   color: ${({ theme }) => theme.text.textColorExtremelyLight};

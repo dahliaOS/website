@@ -88,19 +88,20 @@ const ReadMoreButton = styled(Button)`
 `;
 
 const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
-  padding: 6px 12px;
+  padding: 7px 20px;
   border-radius: 5px;
   color: ${({ theme }) => theme.text.textColorLight};
   text-decoration: none;
 
   &:first-child {
-    margin-right: 15px;
     color: ${({ theme }) => theme.text.textColorLight};
+    margin-right: 0;
 
     ${({ disableGradient, theme }) =>
       !disableGradient
         ? `
-      color: ${theme.text.textColorExtremelyLight};
+      margin-right: 15px;
+        color: ${theme.text.textColorExtremelyLight};
         background: linear-gradient(
           153deg,
           ${theme.accent.accentColor} 0%,
