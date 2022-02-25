@@ -197,8 +197,8 @@ const Home: NextPage = () => {
                 alt="dark pangolin modal"
                 src={
                   theme.type === "dark"
-                    ? "/images/mockups/pangolinDark.webp"
-                    : "/images/mockups/pangolinLight.webp"
+                    ? "/images/mockups/pangolindark.webp"
+                    : "/images/mockups/pangolinlight.webp"
                 }
               />
             </SectionImgContainer>
