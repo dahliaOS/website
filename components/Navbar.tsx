@@ -13,6 +13,8 @@ import { Menu as MenuIcon, MoreVert } from "@mui/icons-material";
 import { useCallback, useState } from "react";
 import styled, { css, keyframes, useTheme } from "styled-components";
 import useScrollPosition from "@react-hook/window-scroll";
+import { SkipNavContent, SkipNavLink } from "@reach/skip-nav";
+import "@reach/skip-nav/styles.css";
 
 const WrapperKeyframes = keyframes`
   0% {
@@ -174,6 +176,17 @@ const Navbar = ({
 
   return (
     <Wrapper>
+      <SkipNavLink
+        contentId="skipNav"
+        style={{
+          background: theme.background.backgroundColor,
+          color:
+            theme.type === "dark"
+              ? theme.text.textColorExtremelyLight
+              : theme.text.textColorDark,
+          zIndex: 9999999,
+        }}
+      />
       <Drawer
         anchor="left"
         open={drawerState}
@@ -299,6 +312,7 @@ const Navbar = ({
           </DesktopNav>
         </StyledToolbar>
       </StyledAppBar>
+      <SkipNavContent id="skipNav" />
     </Wrapper>
   );
 };
