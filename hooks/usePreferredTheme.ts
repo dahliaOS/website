@@ -1,16 +1,32 @@
 import { useEffect, useState } from "react";
 
 type ThemeTypes = "dark" | "light";
+
 export const usePreferredTheme = (): ThemeTypes => {
   const [theme, setTheme] = useState<ThemeTypes>("dark");
 
-  // In the future lets put an event listener here.
   useEffect(() => {
-    setTheme(
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light",
-    );
+    const changeTheme = () => {
+      let savedTheme = localStorage.getItem("theme");
+
+      // If savedTheme doesn't exist
+      if (!savedTheme) {
+        localStorage.setItem("theme", "system");
+        savedTheme = "system";
+      }
+
+      setTheme(
+        savedTheme === "system"
+          ? window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light"
+          : (savedTheme as ThemeTypes),
+      );
+    };
+
+    window.addEventListener("storage", changeTheme);
+
+    return () => window.removeEventListener("storage", changeTheme);
   }, []);
 
   return theme;

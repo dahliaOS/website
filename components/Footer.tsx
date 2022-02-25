@@ -1,5 +1,6 @@
-import { BottomNavigation, Link } from "@mui/material";
-import React from "react";
+import { BottomNavigation, Link, MenuItem, Select } from "@mui/material";
+import { WbSunny, WbCloudy, Computer } from "@mui/icons-material";
+import React, { useEffect, useState } from "react";
 import styled, { useTheme } from "styled-components";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
@@ -64,7 +65,7 @@ const FooterLogo = styled.img`
 
 const VercelLogo = styled.img`
   position: absolute;
-  right: 30px;
+  right: 45px;
   bottom: 30px;
   height: 40px;
 
@@ -76,8 +77,63 @@ const VercelLogo = styled.img`
   }
 `;
 
+const StyledSelect = styled(Select)`
+  position: absolute;
+  left: 45px;
+  bottom: 30px;
+  height: 40px;
+
+  @media (max-width: 670px) {
+    position: unset;
+    display: flex;
+    width: 100%;
+    align-self: center;
+  }
+  background: ${({ theme }) => theme.background.backgroundColorLight};
+  color: ${({ theme }) => theme.text.textColor};
+`;
+
+const StyledMenuItem = styled(MenuItem)`
+  display: flex;
+  align-items: center;
+`;
+
+const SunnyIcon = styled(WbSunny)`
+  vertical-align: middle;
+  margin-right: 5px;
+`;
+
+const CloudyIcon = styled(WbCloudy)`
+  vertical-align: middle;
+  margin-right: 5px;
+`;
+
+const ComputerIcon = styled(Computer)`
+  vertical-align: middle;
+  margin-right: 8px;
+`;
+
+type ThemeTypes = "dark" | "light" | "system";
+
 const Footer = () => {
+  const [localStorageTheme, setLocalStorageTheme] = useState<ThemeTypes>();
   const theme = useTheme();
+
+  const onThemeChange = (theme: ThemeTypes) => {
+    setLocalStorageTheme(theme);
+    localStorage.setItem("theme", theme);
+
+    /* This dispatches a new storage event so we can update the theme, its a bit
+     over engineered, but it works (we need this because the storage event
+     only picks it up within the browser not in context) */
+    window.dispatchEvent(new Event("storage"));
+  };
+
+  useEffect(() => {
+    setLocalStorageTheme(
+      (localStorage.getItem("theme") as ThemeTypes) ?? "system",
+    );
+  }, []);
 
   return (
     <StyledBottomNavigation>
@@ -135,6 +191,21 @@ const Footer = () => {
           </FooterList>
         </FooterCategory>
       </FooterContainer>
+      <StyledSelect value={localStorageTheme} displayEmpty>
+        {/* We're setting onClicks here because onChange for the parent element didnt work for some reason */}
+        <StyledMenuItem onClick={() => onThemeChange("system")} value="system">
+          <ComputerIcon />
+          System
+        </StyledMenuItem>
+        <StyledMenuItem onClick={() => onThemeChange("dark")} value="dark">
+          <CloudyIcon />
+          Dark
+        </StyledMenuItem>
+        <StyledMenuItem onClick={() => onThemeChange("light")} value="light">
+          <SunnyIcon />
+          Light
+        </StyledMenuItem>
+      </StyledSelect>
 
       <FooterLogo
         alt="dahliaOS logo"
