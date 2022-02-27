@@ -33,7 +33,7 @@ const FooterCategory = styled.div`
 
 const FooterHeader = styled.h1`
   color: ${({ theme }) => theme.text.textColorLight};
-  fontsize: 1.5em;
+  font-size: 1.5em;
   font-weight: medium;
   margin-bottom: 0.5em;
 `;
@@ -45,7 +45,7 @@ const FooterList = styled.ul`
 `;
 
 const FooterItem = styled(Link)`
-  fontsize: 1.15em;
+  font-size: 1.15em;
   color: ${({ theme }) => theme.text.textColor};
   display: block;
   transition: color ease-in-out 0.15s;
