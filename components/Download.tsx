@@ -4,6 +4,8 @@ import React from "react";
 import styled from "styled-components";
 import { useGithubReleases } from "../hooks/useGithubReleases";
 
+import type { FC } from "react";
+
 const Card = styled.div<{ isError?: boolean }>`
   display: flex;
   flex-direction: row;
@@ -177,11 +179,11 @@ const ErrorMessage = styled.p`
   margin-bottom: 25px;
 `;
 
-interface IDownloadProps {
+type Props = {
   showMore?: boolean;
-}
+};
 
-const Download = ({ showMore }: IDownloadProps) => {
+const Download: FC<Props> = ({ showMore }) => {
   const { releases, isError, isLoading } = useGithubReleases();
 
   const getDate = (date: Date) => {

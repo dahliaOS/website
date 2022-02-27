@@ -6,6 +6,8 @@ import styled, { keyframes, useTheme } from "styled-components";
 import darkMockup from "../public/images/mockups/darkmockup.webp";
 import lightMockup from "../public/images/mockups/lightmockup.webp";
 
+import type { FC } from "react";
+
 const MockupKeyframes = (mockupScale = 3) => keyframes`
   0% {
     transform: scale(${mockupScale});
@@ -205,7 +207,7 @@ const MockupImageContainer = styled.div`
   margin-top: 80px;
 `;
 
-const Intro = () => {
+const Intro: FC = () => {
   const [windowSize, setWindowSize] = useState<number>(0);
   const theme = useTheme();
 

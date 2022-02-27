@@ -3,6 +3,8 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import coc from "../CONTRIBUTING.md";
 
+import type { FC } from "react";
+
 const Wrapper = styled.div`
   width: 90%;
   max-width: 700px;
@@ -22,17 +24,15 @@ const Pre = styled.pre`
   color: ${({ theme }) => theme.text.textColor};
 `;
 
-const Coc = () => {
-  return (
-    <>
-      <Navbar />
-      <Wrapper>
-        <Header>Code of Conduct</Header>
-        <Pre>{coc}</Pre>
-      </Wrapper>
-      <Footer />
-    </>
-  );
-};
+const Coc: FC = () => (
+  <>
+    <Navbar />
+    <Wrapper>
+      <Header>Code of Conduct</Header>
+      <Pre>{coc}</Pre>
+    </Wrapper>
+    <Footer />
+  </>
+);
 
 export default Coc;

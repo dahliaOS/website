@@ -5,6 +5,8 @@ import DownloadComponent from "../components/Download";
 import { Link } from "@mui/material";
 import Head from "next/head";
 
+import type { FC } from "react";
+
 const Wrapper = styled.div`
   min-height: 100vh;
   margin: 120px 0;
@@ -35,25 +37,23 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Download = () => {
-  return (
-    <>
-      <Head>
-        <title>dahliaOS – Download</title>
-        <meta property="og:title" content="dahliaOS – Download" key="title" />
-        <meta property="og:description" content="Download dahliaOS!"></meta>
-      </Head>
-      <Navbar />
-      <Wrapper>
-        <Header>Download</Header>
-        <DownloadComponent showMore />
-        <StyledLink href="https://github.com/dahliaOS/releases/releases">
-          <Span>Looking for an older update?</Span>
-        </StyledLink>
-      </Wrapper>
-      <Footer />
-    </>
-  );
-};
+const Download: FC = () => (
+  <>
+    <Head>
+      <title>dahliaOS – Download</title>
+      <meta property="og:title" content="dahliaOS – Download" key="title" />
+      <meta property="og:description" content="Download dahliaOS!"></meta>
+    </Head>
+    <Navbar />
+    <Wrapper>
+      <Header>Download</Header>
+      <DownloadComponent showMore />
+      <StyledLink href="https://github.com/dahliaOS/releases/releases">
+        <Span>Looking for an older update?</Span>
+      </StyledLink>
+    </Wrapper>
+    <Footer />
+  </>
+);
 
 export default Download;

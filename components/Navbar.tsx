@@ -16,6 +16,8 @@ import useScrollPosition from "@react-hook/window-scroll";
 import { SkipNavContent, SkipNavLink } from "@reach/skip-nav";
 import "@reach/skip-nav/styles.css";
 
+import type { FC } from "react";
+
 const WrapperKeyframes = keyframes`
   0% {
     opacity: 0;
@@ -146,11 +148,9 @@ const DesktopNav = styled.div`
   }
 `;
 
-const Navbar = ({
-  rootPageHasAnimation,
-}: {
-  rootPageHasAnimation?: boolean;
-}) => {
+type Props = { rootPageHasAnimation?: boolean };
+
+const Navbar: FC<Props> = ({ rootPageHasAnimation }) => {
   const [drawerState, setDrawerState] = useState(false);
   const [toggleMoreIcon, setToggleMoreIcon] = useState(false);
   const [initialPageWidth, setInitialPageWidth] = useState(0);

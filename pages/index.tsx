@@ -1,12 +1,13 @@
 import React from "react";
 import Head from "next/head";
 import styled, { useTheme } from "styled-components";
-import type { NextPage } from "next";
 import Intro from "../components/Intro";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Button } from "@mui/material";
 import Download from "../components/Download";
+
+import type { FC } from "react";
 
 const Wrapper = styled.div``;
 
@@ -121,11 +122,11 @@ const SectionImg = styled.img<{ showOnRight?: boolean }>`
   }
 `;
 
-const Home: NextPage = () => {
+const Home: FC = () => {
   const theme = useTheme();
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>dahliaOS – Home</title>
         <meta property="og:title" content="dahliaOS" key="title" />
@@ -224,7 +225,7 @@ const Home: NextPage = () => {
         <br />
       </Wrapper>
       <Footer />
-    </React.Fragment>
+    </>
   );
 };
 

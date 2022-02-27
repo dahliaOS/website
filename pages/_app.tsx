@@ -8,6 +8,8 @@ import { StyledEngineProvider } from "@mui/material";
 import { SWRConfig } from "swr";
 import { usePreferredTheme } from "../hooks/usePreferredTheme";
 
+import type { FC } from "react";
+
 const GlobalStyles = createGlobalStyle`
 *, *::before, *::after {
   margin: 0;
@@ -42,7 +44,7 @@ body {
 }
 `;
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   /* niceeeee */
   console.log(`
        __            __        __  __             ______    ______  
@@ -74,6 +76,6 @@ $$    $$ |$$    $$ |$$ |  $$ |$$ |$$ |$$    $$ |$$    $$/ $$    $$/
       </SWRConfig>
     </StyledEngineProvider>
   );
-}
+};
 
 export default MyApp;
