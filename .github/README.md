@@ -96,6 +96,6 @@ now be able to test the website.
   <img width="45%" src="https://github.com/dahliaOS/brand/blob/master/dahliaOS/png/logotypeblacktext.png" />
 </p>
 
-Copyright @ 2019-2021 The dahliaOS Authors contact@dahliaos.io
+Copyright @ 2019-2022 The dahliaOS Authors contact@dahliaos.io
 
 This project is licensed under the [Apache 2.0 license](/LICENSE)
