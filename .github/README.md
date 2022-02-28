@@ -93,9 +93,13 @@ now be able to test the website.
 ## License
 
 <p align="left">
-  <img width="45%" src="https://github.com/dahliaOS/brand/blob/master/dahliaOS/png/logotypeblacktext.png" />
-</p>
+  <img width="40%" src="https://raw.githubusercontent.com/dahliaOS/brand/master/dahliaOS/svg/logotypeblacktext.svg#gh-light-mode-only"
+<p>
+<p align="left">
+  <img width="40%" src="https://raw.githubusercontent.com/dahliaOS/brand/master/dahliaOS/svg/logotypewhitetext.svg#gh-dark-mode-only"
+<p>
 
-Copyright @ 2019-2022 The dahliaOS Authors contact@dahliaos.io
+Copyright @ 2019-2022 - The dahliaOS Authors - contact@dahliaos.io
 
 This project is licensed under the [Apache 2.0 license](/LICENSE)
+
