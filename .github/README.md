@@ -89,6 +89,11 @@ ready - started server on 0.0.0.0:3000, url: http://localhost:3000
 
 In a browser load page [localhost:3000](http://localhost:3000). You should
 now be able to test the website.
+  
+## Sponsored by
+<p align="left">
+  <img width="20%" src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"
+<p>
 
 ## License
 
