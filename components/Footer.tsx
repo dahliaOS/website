@@ -167,7 +167,9 @@ const Footer = () => {
         <FooterCategory>
           <FooterHeader>Technology</FooterHeader>
           <FooterList>
-            <FooterItem href="https://docs.dahliaos.io/os/linux">How it works</FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/os/linux">
+              How it works
+            </FooterItem>
             <FooterItem href="#">The goal</FooterItem>
             <FooterItem href="#">Design</FooterItem>
             <FooterItem href="#">UI Modularity</FooterItem>
@@ -176,10 +178,18 @@ const Footer = () => {
         <FooterCategory>
           <FooterHeader>Documentation</FooterHeader>
           <FooterList>
-            <FooterItem href="https://docs.dahliaos.io/os/linux">Compiling</FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/install/efi">Installing</FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/install/efi">Running</FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/hardware/support">Supported devices</FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/os/linux">
+              Compiling
+            </FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/install/efi">
+              Installing
+            </FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/install/efi">
+              Running
+            </FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/hardware/support">
+              Supported devices
+            </FooterItem>
             <FooterItem href="#">Linux vs. Zircon</FooterItem>
           </FooterList>
         </FooterCategory>
