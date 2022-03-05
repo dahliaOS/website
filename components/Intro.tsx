@@ -112,6 +112,7 @@ const Mockup = styled.img`
   height: auto;
   width: 1280px;
   will-change: transform;
+  z-index: 1;
   animation: ${MockupKeyframes()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
 `;
