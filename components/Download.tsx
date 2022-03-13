@@ -1,6 +1,11 @@
 import ErrorIcon from "@mui/icons-material/Error";
 import { Button, Link, Skeleton } from "@mui/material";
-import React from "react";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import Paper from "@mui/material/Paper";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/router";
+import React, { useCallback, useState } from "react";
 import styled from "styled-components";
 import { useGithubReleases } from "../hooks/useGithubReleases";
 
@@ -177,12 +182,85 @@ const ErrorMessage = styled.p`
   margin-bottom: 25px;
 `;
 
+const StyledModal = styled(motion(Dialog))``;
+
+const StyledPaper = styled(motion(Paper))`
+  border-radius: 8px;
+  background: ${({ theme }) => theme.background.backgroundColorContrast};
+  color: ${({ theme }) => theme.text.textColorLight};
+  padding: 20px;
+
+  p {
+    font-size: 1.05em;
+    max-width: 55ch;
+    color: ${({ theme }) => theme.text.textColor};
+  }
+`;
+
+const DialogButton = styled(Button)<{ disableGradient?: boolean }>`
+  padding: 7px 20px;
+  border-radius: 5px;
+  color: ${({ theme }) => theme.text.textColorLight};
+  text-decoration: none;
+
+  &:nth-child(2) {
+    color: ${({ theme }) => theme.text.textColorLight};
+    margin-right: 0;
+
+    ${({ disableGradient, theme }) =>
+      !disableGradient
+        ? `
+      margin-right: 15px;
+        color: ${theme.text.textColorExtremelyLight};
+        background: linear-gradient(
+          153deg,
+          ${theme.accent.accentColor} 0%,
+          ${theme.accent.accentColorLight} 100%
+        );
+
+        background-size: 400% 400;
+        transition: 0.2s ease-in-out;
+        `
+        : null}
+  }
+
+  &:hover {
+    background-position: 100% 50%;
+  }
+`;
+
+const modalContainerAnimation = {
+  initial: {
+    opacity: 0,
+  },
+  isOpen: {
+    opacity: 1,
+  },
+  exit: {
+    opacity: 0,
+  },
+};
+
+const modalAnimation = {
+  initial: {
+    transform: "scale(0.95)",
+  },
+  isOpen: {
+    transform: "scale(1)",
+  },
+  exit: {
+    transform: "scale(0.95)",
+  },
+};
+
 interface IDownloadProps {
   showMore?: boolean;
 }
 
 const Download = ({ showMore }: IDownloadProps) => {
   const { releases, isError, isLoading } = useGithubReleases();
+  const [modalActive, setModalActive] = useState(false);
+  const Router = useRouter();
 
   const getDate = (date: Date) => {
     date = new Date(date);
@@ -198,8 +276,54 @@ const Download = ({ showMore }: IDownloadProps) => {
     });
   };
 
+  const closeModal = useCallback(() => setModalActive(false), []);
+  const openModal = useCallback(() => setModalActive(true), []);
+
   return (
     <>
+      <AnimatePresence>
+        {modalActive ? (
+          <StyledModal
+            initial={modalContainerAnimation.initial}
+            animate={modalContainerAnimation.isOpen}
+            exit={modalContainerAnimation.exit}
+            transition={{ duration: 0.2 }}
+            open={modalActive}
+            onClose={closeModal}
+            PaperComponent={({ children }) => (
+              <StyledPaper
+                initial={modalAnimation.initial}
+                animate={modalAnimation.isOpen}
+                exit={modalAnimation.exit}
+                transition={{ duration: 0.2 }}
+              >
+                {children}
+              </StyledPaper>
+            )}
+          >
+            <h1>Support dahliaOS</h1>
+            <p>
+              Donating to dahliaOS will help us purchase devices for testing and
+              cover web hosting fees, so we can continue work on our amazing
+              software!
+            </p>
+
+            <DialogActions>
+              <DialogButton disableGradient onClick={closeModal}>
+                No thanks
+              </DialogButton>
+              <DialogButton
+                disableGradient={false}
+                onClick={() => Router.replace("/donate")}
+                autoFocus
+              >
+                Donate
+              </DialogButton>
+            </DialogActions>
+          </StyledModal>
+        ) : null}
+      </AnimatePresence>
+
       {isError ? (
         <Card isError>
           <ErrorContainer>
@@ -235,6 +359,7 @@ const Download = ({ showMore }: IDownloadProps) => {
                   <StyledButton
                     key={asset.name}
                     href={asset.browser_download_url}
+                    onClick={openModal}
                   >
                     {asset.name.includes("efi")
                       ? "Download (EFI)"
@@ -264,6 +389,7 @@ const Download = ({ showMore }: IDownloadProps) => {
                               key={asset.name}
                               href={asset.browser_download_url}
                               disableGradient={!asset.name.includes("efi")}
+                              onClick={openModal}
                             >
                               {asset.name.includes("efi") ? "EFI" : "Legacy"}
                             </StyledButton>
