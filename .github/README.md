@@ -92,7 +92,7 @@ now be able to test the website.
   
 ## Sponsored by
 <p align="left">
-  <img width="20%" src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"
+  <a href ="https://vercel.com/dahliaos?utm_source=dahliaOS&utm_campaign=oss"><img width="20%" src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"></a>
 <p>
 
 ## License
