@@ -351,9 +351,9 @@ const Download = ({ showMore }: IDownloadProps) => {
                     .substring(releases[0].body.indexOf("+ "))
                     .replace(/(?:\r\n|\r|\n)/g, "\n")}
                 </Changelogs>
-                <ReadMoreButton href={releases[0].html_url}>
-                  Read more
-                </ReadMoreButton>
+                <Link href={releases[0].html_url} target="_blank">
+                  <ReadMoreButton>Read more</ReadMoreButton>
+                </Link>
               </TextContainer>
               <ButtonContainer>
                 {releases[0].assets.map(asset => (
