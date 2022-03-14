@@ -84,12 +84,15 @@ const UpdateContainer = styled.div`
 `;
 
 const ReadMoreButton = styled(Button)`
-  position: absolute;
-  right: 0;
-  bottom: 0;
   color: ${({ theme }) => theme.text.textColor};
   padding: 5px 10px;
   border-radius: 3px;
+`;
+
+const ReadMoreContainer = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 0;
 `;
 
 const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
@@ -351,9 +354,11 @@ const Download = ({ showMore }: IDownloadProps) => {
                     .substring(releases[0].body.indexOf("+ "))
                     .replace(/(?:\r\n|\r|\n)/g, "\n")}
                 </Changelogs>
-                <ReadMoreButton href={releases[0].html_url}>
-                  Read more
-                </ReadMoreButton>
+                <ReadMoreContainer>
+                  <ReadMoreButton href={releases[0].html_url}>
+                    Read more
+                  </ReadMoreButton>
+                </ReadMoreContainer>
               </TextContainer>
               <ButtonContainer>
                 {releases[0].assets.map(asset => (
