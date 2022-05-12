@@ -196,6 +196,7 @@ const Footer = () => {
         <FooterCategory>
           <FooterHeader>FAQ</FooterHeader>
           <FooterList>
+            <FooterItem href="https://docs.dahliaos.io/os/faq">FAQ</FooterItem>
             <FooterItem href="#">Q&A</FooterItem>
             <FooterItem href="#">Contact us</FooterItem>
           </FooterList>
