@@ -57,7 +57,7 @@ const Donate = () => {
           <br />
           <h2>Where can I donate?</h2>
           <p>
-            Currently, donations can be sent through Paypal, other services will
+            Currently, donations can be sent through Open Collective, other services will
             be coming soon.
           </p>
           <StyledButton href="https://opencollective.com/dahliaos">
