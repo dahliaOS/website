@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import coc from "../CONTRIBUTING.md";
+import coc from "../CODE_OF_CONDUCT.md";
 
 const Wrapper = styled.div`
   width: 90%;
