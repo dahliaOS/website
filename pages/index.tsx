@@ -7,6 +7,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Button } from "@mui/material";
 import Download from "../components/Download";
+import "animate.css/animate.min.css";
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const Wrapper = styled.div``;
 
@@ -152,6 +154,7 @@ const Home: NextPage = () => {
         <Navbar rootpagehasanimation />
         <Intro />
         {/* Just the basics */}
+        <AnimationOnScroll animateIn="animate__fadeInLeftBig" animateOnce={true}>
         <Container id="start">
           <Sides>
             <SectionImgContainer>
@@ -181,7 +184,9 @@ const Home: NextPage = () => {
             <SectionBtn href="">BUTTON NAME</SectionBtn>
           </Sides>
         </Container>
+        </AnimationOnScroll>
         {/* Features */}
+        <AnimationOnScroll animateIn="animate__fadeInRightBig" animateOnce={true}>
         <Container imageOnRight id="features">
           <Sides>
             <SectionTitle>Features</SectionTitle>
@@ -210,7 +215,9 @@ const Home: NextPage = () => {
             </SectionImgContainer>
           </Sides>
         </Container>
+        </AnimationOnScroll>
         {/* Wide range of supported devices */}
+        <AnimationOnScroll animateIn="animate__fadeInLeftBig" animateOnce={true}>
         <Container>
           <Sides>
             <SectionImgContainer>
@@ -238,7 +245,9 @@ const Home: NextPage = () => {
             </SectionBtn>
           </Sides>
         </Container>
+        </AnimationOnScroll>
         {/* Free open source software */}
+        <AnimationOnScroll animateIn="animate__fadeInRightBig" animateOnce={true}>
         <Container imageOnRight>
           <Sides>
             <SectionTitle>Free open source software</SectionTitle>
@@ -279,7 +288,9 @@ const Home: NextPage = () => {
             </SectionImgContainer>
           </Sides>
         </Container>
+        </AnimationOnScroll>
         {/* Demo */}
+        <AnimationOnScroll animateIn="animate__fadeInLeftBig" animateOnce={true}>
         <Container>
           <Sides>
             <SectionImgContainer>
@@ -306,16 +317,19 @@ const Home: NextPage = () => {
             <SectionBtn href="https://web.dahliaos.io/">Try it out</SectionBtn>
           </Sides>
         </Container>
+        </AnimationOnScroll>
         <br />
         <br />
         <br />
-        <Header id="download">Download</Header>
-        <Download />
-        <ButtonContainer>
-          <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+        <AnimationOnScroll animateIn="animate__fadeInUpBig" animateOnce={true}>
+          <Header id="download">Download</Header>
+          <Download />
+          <ButtonContainer>
+            <SectionBtn href="https://github.com/dahliaOS/releases/releases">
             Looking for an older release?
-          </SectionBtn>
-        </ButtonContainer>
+            </SectionBtn>
+          </ButtonContainer>
+        </AnimationOnScroll>
         <br />
         <br />
         <br />
