@@ -76,7 +76,7 @@ const animateCalculator = (adjustTransform = "-178%") => keyframes`
 
 const animateToolbar = () => keyframes`
   0% {
-    transform: translateY(312px);
+    transform: translate3d(185px, 312px, 0);
     opacity:0;
   }
   100% {
