@@ -77,6 +77,7 @@ const Donate = () => {
             <li>Website hosting</li>
             <li>Web domains</li>
             <li>Development software licenses</li>
+            <li>General development of the operating system and tools</li>
             <li>Devices for testing and expanding hardware support</li>
           </List>
           <br />
