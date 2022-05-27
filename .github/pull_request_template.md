@@ -1,7 +1,7 @@
 # Pull request template
 
-* Please make sure you read and fill this template out entirely
-* PRs that don't have the template filled out will be ignored
+- Please make sure you read and fill this template out entirely
+- PRs that don't have the template filled out will be ignored
 
 ## Description
 

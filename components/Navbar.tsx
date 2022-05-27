@@ -147,9 +147,9 @@ const DesktopNav = styled.div`
 `;
 
 const Navbar = ({
-  rootPageHasAnimation,
+  rootpagehasanimation,
 }: {
-  rootPageHasAnimation?: boolean;
+  rootpagehasanimation?: boolean;
 }) => {
   const [drawerState, setDrawerState] = useState(false);
   const [toggleMoreIcon, setToggleMoreIcon] = useState(false);
@@ -205,10 +205,8 @@ const Navbar = ({
         <Container>
           <Link href="/#features">Features</Link>
           <Link href="/#download">Download</Link>
-          <Link href="mailto:contact@dahliaOS.io">Contact</Link>
-          <Link href="https://github.com/orgs/dahliaos/people" target="_blank">
-            Developers
-          </Link>
+          <Link href="/donate">Donate</Link>
+          <Link href="https://web.dahliaOS.io">Demo</Link>
           <Link href="https://docs.dahliaOS.io">Documentation</Link>
           <Divider />
           <Category>Find us on</Category>
@@ -235,13 +233,16 @@ const Navbar = ({
           </Link>
           <Divider />
           <Category>For developers</Category>
-          <Link href="/github">Source Code</Link>
-          <Link href="/discord">Join Our Team</Link>
+          <Link href="/github">Source code</Link>
+          <Link href="https://github.com/orgs/dahliaos/people" target="_blank">
+            Developers
+          </Link>
+          <Link href="/discord">Join our team</Link>
         </Container>
       </Drawer>
       <StyledAppBar
         rootPageHasAnimation={
-          initialPageWidth < 1075 ? false : rootPageHasAnimation
+          initialPageWidth < 1075 ? false : rootpagehasanimation
         }
         position="fixed"
         scrollPos={scrollPos}
@@ -275,14 +276,9 @@ const Navbar = ({
           <DesktopNav>
             <AppBarLink href="/#features">Features</AppBarLink>
             <AppBarLink href="/#download">Download</AppBarLink>
+            <AppBarLink href="/donate">Donate</AppBarLink>
             <AppBarLink href="https://web.dahliaOS.io" target="_blank">
               Demo
-            </AppBarLink>
-            <AppBarLink
-              href="https://github.com/orgs/dahliaos/people"
-              target="_blank"
-            >
-              Developers
             </AppBarLink>
             <AppBarLink href="https://docs.dahliaOS.io">
               Documentation
@@ -304,10 +300,22 @@ const Navbar = ({
             >
               <MenuItem>
                 <MenuLink href="/github" target="_blank">
-                  Source Code
+                  Source code
                 </MenuLink>
               </MenuItem>
-              <MenuItem disabled>Screenshots</MenuItem>
+              <MenuItem>
+                <MenuLink
+                  href="https://github.com/orgs/dahliaos/people"
+                  target="_blank"
+                >
+                  Developers
+                </MenuLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuLink href="/discord" target="_blank">
+                  Join our team
+                </MenuLink>
+              </MenuItem>
             </Menu>
           </DesktopNav>
         </StyledToolbar>

@@ -125,6 +125,46 @@ const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
   &:hover {
     background-position: 100% 50%;
   }
+
+  @media (max-width: 980px) {
+    &:last-child {
+      padding: 9px 0;
+      margin-top: 30px;
+      margin-bottom: 5px;
+    }
+  }
+`;
+
+const StyledSecondaryButton = styled(Button)<{ disableGradient?: boolean }>`
+  padding: 7px 20px;
+  border-radius: 5px;
+  color: ${({ theme }) => theme.text.textColorLight};
+  text-decoration: none;
+
+  &:first-child {
+    color: ${({ theme }) => theme.text.textColorLight};
+    margin-right: 0;
+
+    ${({ disableGradient, theme }) =>
+      !disableGradient
+        ? `
+      margin-right: 15px;
+        color: ${theme.text.textColorExtremelyLight};
+        background: linear-gradient(
+          153deg,
+          ${theme.accent.accentColor} 0%,
+          ${theme.accent.accentColorLight} 100%
+        );
+
+        background-size: 400% 400;
+        transition: 0.2s ease-in-out;
+        `
+        : null}
+  }
+
+  &:hover {
+    background-position: 100% 50%;
+  }
 `;
 
 const OlderUpdate = styled.div`
@@ -306,6 +346,7 @@ const Download = ({ showMore }: IDownloadProps) => {
             )}
           >
             <h1>Support dahliaOS</h1>
+            <br />
             <p>
               Donating to dahliaOS will help us purchase devices for testing and
               cover web hosting fees, so we can continue work on our amazing
@@ -376,7 +417,7 @@ const Download = ({ showMore }: IDownloadProps) => {
             </Latest>
             <Older>
               <TextContainer>
-                <OlderHeader>Older updates</OlderHeader>
+                <OlderHeader>Older releases</OlderHeader>
                 <UpdateContainer>
                   {releases.map((oldRelease, i) => {
                     if (i === 0 || i > 4) return;
@@ -391,14 +432,14 @@ const Download = ({ showMore }: IDownloadProps) => {
                         </OlderUpdateTextWrapper>
                         <OlderBtns>
                           {oldRelease.assets.map(asset => (
-                            <StyledButton
+                            <StyledSecondaryButton
                               key={asset.name}
                               href={asset.browser_download_url}
                               disableGradient={!asset.name.includes("efi")}
                               onClick={openModal}
                             >
                               {asset.name.includes("efi") ? "EFI" : "Legacy"}
-                            </StyledButton>
+                            </StyledSecondaryButton>
                           ))}
                         </OlderBtns>
                       </OlderUpdate>

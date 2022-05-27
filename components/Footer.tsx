@@ -5,9 +5,10 @@ import styled, { useTheme } from "styled-components";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
   position: relative;
+  text-align: center;
   height: auto;
   display: block;
-  padding: 50px 40px;
+  padding: 50px 50px;
   overflow: hidden;
   background: ${({ theme }) =>
     theme.type === "dark"
@@ -20,6 +21,7 @@ const FooterContainer = styled.div`
 
   @media (max-width: 1025px) {
     flex-wrap: wrap;
+    text-align: left;
   }
 `;
 
@@ -59,7 +61,7 @@ const FooterItem = styled(Link)`
 const FooterLogo = styled.img`
   display: block;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 30px;
   height: 30px;
 `;
 
@@ -74,6 +76,7 @@ const VercelLogo = styled.img`
     display: flex;
     width: 100%;
     align-self: center;
+    margin: 30px 0;
   }
 `;
 
@@ -88,6 +91,7 @@ const StyledSelect = styled(Select)`
     display: flex;
     width: 100%;
     align-self: center;
+    margin: 20px 0;
   }
   background: ${({ theme }) => theme.background.backgroundColorLight};
   color: ${({ theme }) => theme.text.textColor};
@@ -170,35 +174,55 @@ const Footer = () => {
             <FooterItem href="https://docs.dahliaos.io/os/linux">
               How it works
             </FooterItem>
-            <FooterItem href="#">The goal</FooterItem>
-            <FooterItem href="#">Design</FooterItem>
-            <FooterItem href="#">UI Modularity</FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/pangolin/pangolin">
+              Pangolin
+            </FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/os/fimage">
+              FImage
+            </FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/developer/packaging">
+              Packaging
+            </FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/developer/roadmap">
+              The goal
+            </FooterItem>
           </FooterList>
         </FooterCategory>
         <FooterCategory>
           <FooterHeader>Documentation</FooterHeader>
           <FooterList>
-            <FooterItem href="https://docs.dahliaos.io/os/linux">
+            <FooterItem href="https://docs.dahliaos.io/build/buildroot">
               Compiling
             </FooterItem>
             <FooterItem href="https://docs.dahliaos.io/install/efi">
               Installing
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/install/efi">
-              Running
-            </FooterItem>
             <FooterItem href="https://docs.dahliaos.io/hardware/support">
               Supported devices
             </FooterItem>
-            <FooterItem href="#">Linux vs. Zircon</FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/os/faq">FAQ</FooterItem>
           </FooterList>
         </FooterCategory>
         <FooterCategory>
-          <FooterHeader>FAQ</FooterHeader>
+          <FooterHeader>Contribute</FooterHeader>
           <FooterList>
-            <FooterItem href="https://docs.dahliaos.io/os/faq">FAQ</FooterItem>
-            <FooterItem href="#">Q&A</FooterItem>
-            <FooterItem href="#">Contact us</FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/contribute/roadmap">
+              Roadmap
+            </FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/contribute/contributing">
+              Contribute
+            </FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/contribute/conduct">
+              Code of Conduct
+            </FooterItem>
+          </FooterList>
+        </FooterCategory>
+        <FooterCategory>
+          <FooterHeader>Contact</FooterHeader>
+          <FooterList>
+            <FooterItem href="mailto:contact@dahliaos.io">
+              Contact us
+            </FooterItem>
           </FooterList>
         </FooterCategory>
       </FooterContainer>
@@ -217,7 +241,6 @@ const Footer = () => {
           Light
         </StyledMenuItem>
       </StyledSelect>
-
       <FooterLogo
         alt="dahliaOS logo"
         src={
@@ -226,7 +249,6 @@ const Footer = () => {
             : "/images/logos/logo-color.png"
         }
       />
-      <br />
       <a href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
         <VercelLogo
           alt="Vercel Logo"

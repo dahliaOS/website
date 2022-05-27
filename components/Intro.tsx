@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import styled, { keyframes, useTheme } from "styled-components";
+import { Button } from "@mui/material";
 
 import darkMockup from "../public/images/mockups/darkmockup.webp";
 import lightMockup from "../public/images/mockups/lightmockup.webp";
@@ -11,7 +12,7 @@ const MockupKeyframes = (mockupScale = 3) => keyframes`
     transform: scale(${mockupScale});
   }
   100% {
-    transform: scale(1);
+    transform: scale(0.77);
   }
 `;
 
@@ -26,12 +27,23 @@ const ScaleLogo = keyframes`
   }
 `;
 
+const animateContainer = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(312px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(12px);
+  }
+`;
+
 const ScaleBackground = (backgroundScale = 2.4) => keyframes`
   0% {
     transform: scale(${backgroundScale});
   }
   100% {
-    transform: scale(0.766);
+    transform: translate3d(33px, -8px, 0) scale(0.61);
   }
 `;
 
@@ -40,16 +52,16 @@ const animateTerminal = (adjustTransform = -250) => keyframes`
     transform: translate3d(-400px, ${adjustTransform}vh, 0) scale(2.2);
   }
   100% {
-    transform: translate3d(-143px, -81px, 0) scale(1);
+    transform: translate3d(293px, 220px, 0) scale(0.8);
   }
 `;
 
-const animateNotepad = (adjustTransform = "22%") => keyframes`
+const animateFiles = (adjustTransform = "22%") => keyframes`
   0% {
     transform: translate3d(-100vw, ${adjustTransform}, 0) scale(2.2);
   }
   100% {
-    transform: translate3d(190px, 20px, 0) scale(1);
+    transform: translate3d(560px, 260px, 0) scale(0.75);
   }
 `;
 
@@ -58,7 +70,7 @@ const animateCalculator = (adjustTransform = "-178%") => keyframes`
     transform: translate3d(-100vw, ${adjustTransform}, 0) scale(2.2);
   }
   100% {
-    transform: translate3d(-253px, 104px, 0) scale(1);
+    transform: translate3d(343px, 364px, 0) scale(0.8);
   }
 `;
 
@@ -68,8 +80,90 @@ const animateToolbar = () => keyframes`
     opacity:0;
   }
   100% {
-    transform: translateY(281px);
+    transform: translate3d(185px, 208px, 0) scale(0.77);
     opacity: 1;
+  }
+`;
+
+const Sides = styled.div`
+  flex: 45%;
+
+  &:first-child {
+    margin-right: 120px;
+  }
+
+  @media (max-width: 1025px) {
+    flex: unset;
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+`;
+
+const Container = styled.div`
+  position: relative;
+  display: flex;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  margin-left: -30px;
+
+  animation: ${animateContainer} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
+    forwards;
+  animation-delay: 2s;
+
+  @media (max-width: 1025px) {
+    animation: ${animateContainer} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
+      forwards;
+    animation-delay: 0;
+    margin-left: 0;
+  }
+`;
+
+const SectionTitle = styled.h1`
+  font-size: 2.8em;
+  font-weight: 600;
+  color: ${({ theme }) => theme.text.textColorLight};
+`;
+
+const Paragraph = styled.p`
+  margin: 4px 0;
+  font-weight: light;
+  font-size: 1.3em;
+  max-width: 65ch;
+  color: ${({ theme }) => theme.text.textColor};
+`;
+
+const SectionBtn = styled(Button)`
+  padding: 7px 20px;
+  border-radius: 5px;
+  margin: 10px 0;
+
+  &:first-of-type {
+    color: ${({ theme }) => theme.text.textColorExtremelyLight};
+    background: linear-gradient(
+      153deg,
+      ${({ theme }) => theme.accent.accentColorLight} 0%,
+      ${({ theme }) => theme.accent.accentColor} 100%
+    );
+    background-size: 400% 400%;
+    transition: 0.2s ease-in-out;
+    margin-right: 15;
+  }
+
+  &:nth-child(even) {
+    color: ${({ theme }) => theme.text.textColor};
+    border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
+    @media (max-width: 1025px) {
+      &:nth-child(even) {
+        margin: 10px -50px;
+      }
+    }
+  }
+
+  &:hover {
+    background-position: 100% 50%;
   }
 `;
 
@@ -101,10 +195,18 @@ const MockupContainer = styled.div`
   display: flex;
   min-height: 100vh;
   padding-top: 50px;
-  align-items: center;
+  margin-left: -110px;
+  align-items: left;
   will-change: transform;
-  justify-content: center;
+  justify-content: left;
   overflow: hidden;
+  background: ${({ theme }) =>
+    theme.type === "dark"
+      ? 'url("/images/bgDark.svg")'
+      : 'url("/images/bgLight.svg")'};
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `;
 
 const Mockup = styled.img`
@@ -127,7 +229,7 @@ const Background = styled.div`
       ? 'url("/images/darkModeBackground.svg")'
       : 'url("/images/lightModeBackground.svg")'};
   background-repeat: no-repeat;
-  background-size: 1314px;
+  background-size: 1414px;
   background-position: center;
   will-change: transform;
   z-index: 0;
@@ -135,6 +237,7 @@ const Background = styled.div`
   animation: ${ScaleBackground()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
 `;
+
 const Terminal = styled.div`
   position: absolute;
   height: 323px;
@@ -151,18 +254,21 @@ const Terminal = styled.div`
   animation-delay: 0.3s;
 `;
 
-const Notepad = styled.div`
+const Files = styled.div`
   position: absolute;
   height: 356px;
   width: 557px;
-  background: url("/images/textEditor.webp");
+  background: ${({ theme }) =>
+    theme.type === "dark"
+      ? 'url("/images/darkFiles.webp")'
+      : 'url("/images/lightFiles.webp")'};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   will-change: transform;
   z-index: 2;
   transform: translate3d(-100vw, 22%, 0) scale(2.2);
-  animation: ${animateNotepad()} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
+  animation: ${animateFiles()} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 0.5s;
 `;
@@ -171,7 +277,10 @@ const Calculator = styled.div`
   position: absolute;
   height: 296px;
   width: 305px;
-  background: url("/images/calculator.webp");
+  background: ${({ theme }) =>
+    theme.type === "dark"
+      ? 'url("/images/darkCalculator.webp")'
+      : 'url("/images/lightCalculator.webp")'};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -204,6 +313,21 @@ const Toolbar = styled.div`
 const MockupImageContainer = styled.div`
   padding: 25px;
   margin-top: 80px;
+  background: ${({ theme }) =>
+    theme.type === "dark"
+      ? 'url("/images/bgDark.svg")'
+      : 'url("/images/bgLight.svg")'};
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+`;
+
+const ButtonContainer = styled.div`
+  position: relative;
+  text-align: left;
+  display: flex;
+  align-items: left;
+  justify-content: left;
 `;
 
 const Intro = () => {
@@ -235,8 +359,35 @@ const Intro = () => {
             <Background draggable={false} />
             <Calculator draggable={false} />
             <Terminal draggable={false} />
-            <Notepad draggable={false} />
+            <Files draggable={false} />
             <Toolbar draggable={false} />
+            <Container>
+              <Sides>
+                <SectionTitle>dahliaOS</SectionTitle>
+                <br />
+                <Paragraph>
+                  dahliaOS is a modern, secure, lightweight and responsive
+                  operating system, combining the best of GNU/Linux and Fuchsia
+                  OS. We are developing a privacy-respecting, fast, secure and
+                  lightweight operating system, our goal is to establish a new
+                  standard for the desktop platform.
+                </Paragraph>
+                <br />
+                <ButtonContainer>
+                  <SectionBtn
+                    href="#download"
+                  >
+                    DOWNLOAD
+                  </SectionBtn>
+                  <SectionBtn
+                    href="#start"
+                    style={{ marginLeft: 30 }}
+                  >
+                    LEARN MORE
+                  </SectionBtn>
+                </ButtonContainer>
+              </Sides>
+            </Container>
           </MockupContainer>
         </>
       ) : (
@@ -248,6 +399,34 @@ const Intro = () => {
             height={720}
             layout="responsive"
           />
+          <br />
+          <Container>
+            <Sides>
+              <SectionTitle>dahliaOS</SectionTitle>
+              <br />
+              <Paragraph>
+                dahliaOS is a modern, secure, lightweight and responsive
+                operating system, combining the best of GNU/Linux and Fuchsia
+                OS. We are developing a privacy-respecting, fast, secure and
+                lightweight operating system, our goal is to establish a new
+                standard for the desktop platform.
+              </Paragraph>
+              <br />
+              <ButtonContainer>
+                <SectionBtn
+                  href="#download"
+                >
+                  DOWNLOAD
+                </SectionBtn>
+                <SectionBtn
+                  href="#start"
+                  style={{ marginLeft: 30 }}
+                >
+                  LEARN MORE
+                </SectionBtn>
+              </ButtonContainer>
+            </Sides>
+          </Container>
         </MockupImageContainer>
       )}
     </Wrapper>

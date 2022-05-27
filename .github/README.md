@@ -89,8 +89,9 @@ ready - started server on 0.0.0.0:3000, url: http://localhost:3000
 
 In a browser load page [localhost:3000](http://localhost:3000). You should
 now be able to test the website.
-  
+
 ## Sponsored by
+
 <p align="left">
   <a href ="https://vercel.com/dahliaos?utm_source=dahliaOS&utm_campaign=oss"><img width="20%" src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"></a>
 <p>
@@ -107,4 +108,3 @@ now be able to test the website.
 Copyright @ 2019-2022 - The dahliaOS Authors - contact@dahliaos.io
 
 This project is licensed under the [Apache 2.0 license](/LICENSE)
-

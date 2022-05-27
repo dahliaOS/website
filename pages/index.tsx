@@ -22,7 +22,21 @@ const Container = styled.div<{ imageOnRight?: boolean }>`
   @media (max-width: 1025px) {
     flex-direction: ${({ imageOnRight }) =>
       imageOnRight ? "column-reverse" : "column"};
+    padding: 25px 50px;
+    min-height: 60vh;
+  }
+`;
 
+const ButtonContainer = styled.div`
+  position: relative;
+  text-align: center;
+  display: flex;
+  min-height: 130px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+
+  @media (max-width: 1025px) {
     padding: 25px 50px;
   }
 `;
@@ -60,9 +74,9 @@ const SectionBtn = styled(Button)`
   padding: 7px 20px;
   border-radius: 5px;
   margin: 10px 0;
-  color: ${({ theme }) => theme.text.textColorExtremelyLight};
 
   &:first-of-type {
+    color: ${({ theme }) => theme.text.textColorExtremelyLight};
     background: linear-gradient(
       153deg,
       ${({ theme }) => theme.accent.accentColorLight} 0%,
@@ -74,9 +88,13 @@ const SectionBtn = styled(Button)`
   }
 
   &:nth-child(even) {
-    margin-left: 10px;
     border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
-    border-radius: 5px;
+    color: ${({ theme }) => theme.text.textColor};
+    @media (max-width: 1025px) {
+      &:nth-child(even) {
+        margin: 10px -50px;
+      }
+    }
   }
 
   &:hover {
@@ -131,10 +149,10 @@ const Home: NextPage = () => {
         <meta property="og:title" content="dahliaOS" key="title" />
       </Head>
       <Wrapper>
-        <Navbar rootPageHasAnimation />
+        <Navbar rootpagehasanimation />
         <Intro />
-        {/* Just the Basics */}
-        <Container id="features">
+        {/* Just the basics */}
+        <Container id="start">
           <Sides>
             <SectionImgContainer>
               <SectionImg
@@ -148,36 +166,54 @@ const Home: NextPage = () => {
             </SectionImgContainer>
           </Sides>
           <Sides>
-            <SectionTitle>Just The Basics</SectionTitle>
+            <SectionTitle>Just the basics</SectionTitle>
+            <br />
             <Paragraph>
-              dahliaOS keeps things light by only including apps you need, and
-              you can add all of your favorites from other operating systems
-              using the Containers app. dahliaOS also provides a curated
-              marketplace for third-party native Flutter applications, so you
-              can use nearly every application within one system!
+              dahliaOS keeps things light by only including apps you need
+              leaving the choice to the user on what other applications to
+              install. We provide a curated marketplace for third-party
+              applications so that the user can install any application they
+              wish within just one click! It&apos;s also possible to install all
+              of your favorite applications from other operating systems using
+              Graft, our virtual machine and containers management application.
             </Paragraph>
-            <SectionBtn href="https://github.com/dahliaOS/pangolin_desktop/tree/master_archive/lib/applications">
-              BROWSE APPS
-            </SectionBtn>
+            <br />
+            <SectionBtn href="">BUTTON NAME</SectionBtn>
           </Sides>
         </Container>
-        {/* Wide range of supported devices */}
-        <Container imageOnRight>
+        {/* Features */}
+        <Container imageOnRight id="features">
           <Sides>
-            <SectionTitle>A wide range of supported devices</SectionTitle>
+            <SectionTitle>Features</SectionTitle>
+            <br />
             <Paragraph>
-              dahliaOS provides a fast and stable experience on nearly every
-              computer, from a 2004 desktop tower to the latest generation of
-              mobile notebooks. Our dual kernel approach allows users with
-              new(er) hardware to take advantage of the Zircon Kernel, while
-              maintaining support for older devices using the Linux Kernel.
+              One of our primary goals is to provide as many useful features as
+              possible while maintaining great and painless experience to the
+              user. We&apos;ve dedicated a lot of time to customizability so
+              it&apos;s possible to change the look and feel of almost every
+              component of the shell.
             </Paragraph>
-            <SectionBtn href="https://docs.dahliaos.io/hardware/support">
-              VIEW SUPPORTED DEVICES
-            </SectionBtn>
+            <br />
+            <SectionBtn href="">BUTTON NAME</SectionBtn>
           </Sides>
           <Sides>
             <SectionImgContainer showOnRight>
+              <SectionImg
+                alt="dark features modal"
+                src={
+                  theme.type === "dark"
+                    ? "/images/darkFeatures.webp"
+                    : "/images/lightFeatures.webp"
+                }
+                showOnRight
+              />
+            </SectionImgContainer>
+          </Sides>
+        </Container>
+        {/* Wide range of supported devices */}
+        <Container>
+          <Sides>
+            <SectionImgContainer>
               <SectionImg
                 alt="dark files modal"
                 src={
@@ -185,12 +221,65 @@ const Home: NextPage = () => {
                     ? "/images/mockups/darkFiles.webp"
                     : "/images/mockups/lightFiles.webp"
                 }
+              />
+            </SectionImgContainer>
+          </Sides>
+          <Sides>
+            <SectionTitle>A wide range of supported devices</SectionTitle>
+            <br />
+            <Paragraph>
+              dahliaOS provides a fast and stable experience on nearly every
+              computer, from an old desktop tower to the latest generation of
+              mobile notebooks.
+            </Paragraph>
+            <br />
+            <SectionBtn href="https://docs.dahliaos.io/hardware/support">
+              SUPPORTED DEVICES
+            </SectionBtn>
+          </Sides>
+        </Container>
+        {/* Free open source software */}
+        <Container imageOnRight>
+          <Sides>
+            <SectionTitle>Free open source software</SectionTitle>
+            <br />
+            <Paragraph>
+              dahliaOS is and always will be open sourced and 100% free. All of
+              our code and even some design work is hosted on GitHub. We believe
+              transparency is important. We&apos;re also proud to say that since
+              August of 2020 we&apos;re members of the Open Invention Network,
+              the world’s largest patent non-aggression community and free
+              defensive patent pool.
+            </Paragraph>
+            <br />
+            <SectionBtn
+              href="https://github.com/dahliaOS"
+              style={{ display: "inline-block" }}
+            >
+              GITHUB
+            </SectionBtn>
+            <SectionBtn
+              href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
+              style={{ display: "inline-block", marginLeft: 30 }}
+            >
+              OPEN INVENTION NETWORK
+            </SectionBtn>
+          </Sides>
+          <Sides>
+            <SectionImgContainer showOnRight>
+              <SectionImg
+                alt="open source modal"
+                src={
+                  theme.type === "dark"
+                    ? "/images/darkOIN.webp"
+                    : "/images/lightOIN.webp"
+                }
                 showOnRight
               />
             </SectionImgContainer>
           </Sides>
         </Container>
-        {/* Still not convinced? */}
+        {/* Demo */}
         <Container>
           <Sides>
             <SectionImgContainer>
@@ -205,13 +294,16 @@ const Home: NextPage = () => {
             </SectionImgContainer>
           </Sides>
           <Sides>
-            <SectionTitle>Still not convinced?</SectionTitle>
+            <SectionTitle>Demo</SectionTitle>
+            <br />
             <Paragraph>
-              We offer an online preview of dahliaOS right at your finger tips!
-              Explore, create, and more with dahliaOS&apos; web preview to get a
-              taste of what it is like!
+              We offer a web preview of the Pangolin shell so you don&apos;t
+              have to install the system just to see if our shell is made for
+              you. Some features are disabled on the web preview but are
+              functional on the actual system itself.
             </Paragraph>
-            <SectionBtn href="https://web.dahliaos.io/">Try it out!</SectionBtn>
+            <br />
+            <SectionBtn href="https://web.dahliaos.io/">Try it out</SectionBtn>
           </Sides>
         </Container>
         <br />
@@ -219,6 +311,11 @@ const Home: NextPage = () => {
         <br />
         <Header id="download">Download</Header>
         <Download />
+        <ButtonContainer>
+          <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+            Looking for an older release?
+          </SectionBtn>
+        </ButtonContainer>
         <br />
         <br />
         <br />
