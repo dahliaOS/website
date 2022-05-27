@@ -248,7 +248,7 @@ const Home: NextPage = () => {
               our code and even some design work is hosted on GitHub. We believe
               transparency is important. We&apos;re also proud to say that since
               August of 2020 we&apos;re members of the Open Invention Network,
-              the world’s largest patent non-aggression community and free
+              the world&apos;s largest patent non-aggression community and free
               defensive patent pool.
             </Paragraph>
             <br />
