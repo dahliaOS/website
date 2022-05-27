@@ -6,14 +6,6 @@ import Navbar from "../components/Navbar";
 const Wrapper = styled.div`
   min-height: 100vh;
   margin-top: 150px;
-  color: ${({ theme }) => theme.text.textColor};
-
-  @media (max-width: 1025px) {
-    margin: 150px 0 20px 20px;
-  }
-`;
-
-const BackgroundWrapper = styled.div`
   background: ${({ theme }) =>
     theme.type === "dark"
       ? "url('/images/bgDark.svg')"
@@ -21,6 +13,9 @@ const BackgroundWrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  @media (max-width: 1025px) {
+    padding: 0 0 20px 20px;
+  }
 `;
 
 const Container = styled.div`
@@ -33,18 +28,26 @@ const Container = styled.div`
 `;
 
 const Header = styled.h1`
+  color: ${({ theme }) => theme.text.textColorLight};
   font-size: 2.2em;
   font-weight: 500;
   text-align: center;
 `;
 
 const SubHeader = styled.h2`
+  color: ${({ theme }) => theme.text.textColorLight};
   font-size: 1.4em;
   font-weight: 400;
   text-align: left;
 `;
 
-const Paragraph = styled.p``;
+const Paragraph = styled.p`
+  color: ${({ theme }) => theme.text.textColor};
+`;
+
+const List = styled.ul`
+  color: ${({ theme }) => theme.text.textColor};
+`;
 
 const StyledButton = styled(Button)`
   margin-top: 15px;
@@ -60,37 +63,35 @@ const Donate = () => {
   return (
     <>
       <Navbar />
-      <BackgroundWrapper>
-        <Wrapper>
-          <Container>
-            <Header>Donate to dahliaOS</Header>
-            <br />
-            <Paragraph>
-              Thank you for your support! We use donations to keep improving our
-              project and hardware support, and donations will go towards the
-              following:
-            </Paragraph>
-            <br />
-            <ul>
-              <li>Website hosting</li>
-              <li>Web domains</li>
-              <li>Development software licenses</li>
-              <li>Devices for testing and expanding hardware support</li>
-            </ul>
-            <br />
-            <SubHeader>Where can I donate?</SubHeader>
-            <br />
-            <Paragraph>
-              Currently, donations can be sent through Open Collective, other
-              services will be coming soon.
-            </Paragraph>
-            <br />
-            <StyledButton href="https://opencollective.com/dahliaos">
-              OPEN COLLECTIVE
-            </StyledButton>
-          </Container>
-        </Wrapper>
-      </BackgroundWrapper>
+      <Wrapper>
+        <Container>
+          <Header>Donate to dahliaOS</Header>
+          <br />
+          <Paragraph>
+            Thank you for your support! We use donations to keep improving our
+            project and hardware support, and donations will go towards the
+            following:
+          </Paragraph>
+          <br />
+          <List>
+            <li>Website hosting</li>
+            <li>Web domains</li>
+            <li>Development software licenses</li>
+            <li>Devices for testing and expanding hardware support</li>
+          </List>
+          <br />
+          <SubHeader>Where can I donate?</SubHeader>
+          <br />
+          <Paragraph>
+            Currently, donations can be sent through Open Collective, other
+            services will be coming soon.
+          </Paragraph>
+          <br />
+          <StyledButton href="https://opencollective.com/dahliaos">
+            OPEN COLLECTIVE
+          </StyledButton>
+        </Container>
+      </Wrapper>
       <Footer />
     </>
   );

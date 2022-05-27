@@ -374,15 +374,8 @@ const Intro = () => {
                 </Paragraph>
                 <br />
                 <ButtonContainer>
-                  <SectionBtn
-                    href="#download"
-                  >
-                    DOWNLOAD
-                  </SectionBtn>
-                  <SectionBtn
-                    href="#start"
-                    style={{ marginLeft: 30 }}
-                  >
+                  <SectionBtn href="#download">DOWNLOAD</SectionBtn>
+                  <SectionBtn href="#start" style={{ marginLeft: 30 }}>
                     LEARN MORE
                   </SectionBtn>
                 </ButtonContainer>
@@ -413,15 +406,8 @@ const Intro = () => {
               </Paragraph>
               <br />
               <ButtonContainer>
-                <SectionBtn
-                  href="#download"
-                >
-                  DOWNLOAD
-                </SectionBtn>
-                <SectionBtn
-                  href="#start"
-                  style={{ marginLeft: 30 }}
-                >
+                <SectionBtn href="#download">DOWNLOAD</SectionBtn>
+                <SectionBtn href="#start" style={{ marginLeft: 30 }}>
                   LEARN MORE
                 </SectionBtn>
               </ButtonContainer>
