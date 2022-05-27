@@ -43,7 +43,7 @@ const ScaleBackground = (backgroundScale = 2.4) => keyframes`
     transform: scale(${backgroundScale});
   }
   100% {
-    transform: translate3d(33px, -8px, 0) scale(0.61);
+    transform: translate3d(35px, 0, 0) scale(0.6);
   }
 `;
 
