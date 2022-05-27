@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 import { Button } from "@mui/material";
 import Download from "../components/Download";
 import "animate.css/animate.min.css";
-import { AnimationOnScroll } from 'react-animation-on-scroll';
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const Wrapper = styled.div``;
 
@@ -154,169 +154,187 @@ const Home: NextPage = () => {
         <Navbar rootpagehasanimation />
         <Intro />
         {/* Just the basics */}
-        <AnimationOnScroll animateIn="animate__fadeInLeftBig" animateOnce={true}>
-        <Container id="start">
-          <Sides>
-            <SectionImgContainer>
-              <SectionImg
-                alt="dark settings modal"
-                src={
-                  theme.type === "dark"
-                    ? "/images/mockups/darkSettings.webp"
-                    : "/images/mockups/lightSettings.webp"
-                }
-              />
-            </SectionImgContainer>
-          </Sides>
-          <Sides>
-            <SectionTitle>Just the basics</SectionTitle>
-            <br />
-            <Paragraph>
-              dahliaOS keeps things light by only including apps you need
-              leaving the choice to the user on what other applications to
-              install. We provide a curated marketplace for third-party
-              applications so that the user can install any application they
-              wish within just one click! It&apos;s also possible to install all
-              of your favorite applications from other operating systems using
-              Graft, our virtual machine and containers management application.
-            </Paragraph>
-            <br />
-            <SectionBtn href="">BUTTON NAME</SectionBtn>
-          </Sides>
-        </Container>
+        <AnimationOnScroll
+          animateIn="animate__fadeInLeftBig"
+          animateOnce={true}
+        >
+          <Container id="start">
+            <Sides>
+              <SectionImgContainer>
+                <SectionImg
+                  alt="dark settings modal"
+                  src={
+                    theme.type === "dark"
+                      ? "/images/mockups/darkSettings.webp"
+                      : "/images/mockups/lightSettings.webp"
+                  }
+                />
+              </SectionImgContainer>
+            </Sides>
+            <Sides>
+              <SectionTitle>Just the basics</SectionTitle>
+              <br />
+              <Paragraph>
+                dahliaOS keeps things light by only including apps you need
+                leaving the choice to the user on what other applications to
+                install. We provide a curated marketplace for third-party
+                applications so that the user can install any application they
+                wish within just one click! It&apos;s also possible to install
+                all of your favorite applications from other operating systems
+                using Graft, our virtual machine and containers management
+                application.
+              </Paragraph>
+              <br />
+              <SectionBtn href="">BUTTON NAME</SectionBtn>
+            </Sides>
+          </Container>
         </AnimationOnScroll>
         {/* Features */}
-        <AnimationOnScroll animateIn="animate__fadeInRightBig" animateOnce={true}>
-        <Container imageOnRight id="features">
-          <Sides>
-            <SectionTitle>Features</SectionTitle>
-            <br />
-            <Paragraph>
-              One of our primary goals is to provide as many useful features as
-              possible while maintaining great and painless experience to the
-              user. We&apos;ve dedicated a lot of time to customizability so
-              it&apos;s possible to change the look and feel of almost every
-              component of the shell.
-            </Paragraph>
-            <br />
-            <SectionBtn href="">BUTTON NAME</SectionBtn>
-          </Sides>
-          <Sides>
-            <SectionImgContainer showOnRight>
-              <SectionImg
-                alt="dark features modal"
-                src={
-                  theme.type === "dark"
-                    ? "/images/darkFeatures.webp"
-                    : "/images/lightFeatures.webp"
-                }
-                showOnRight
-              />
-            </SectionImgContainer>
-          </Sides>
-        </Container>
+        <AnimationOnScroll
+          animateIn="animate__fadeInRightBig"
+          animateOnce={true}
+        >
+          <Container imageOnRight id="features">
+            <Sides>
+              <SectionTitle>Features</SectionTitle>
+              <br />
+              <Paragraph>
+                One of our primary goals is to provide as many useful features
+                as possible while maintaining great and painless experience to
+                the user. We&apos;ve dedicated a lot of time to customizability
+                so it&apos;s possible to change the look and feel of almost
+                every component of the shell.
+              </Paragraph>
+              <br />
+              <SectionBtn href="">BUTTON NAME</SectionBtn>
+            </Sides>
+            <Sides>
+              <SectionImgContainer showOnRight>
+                <SectionImg
+                  alt="dark features modal"
+                  src={
+                    theme.type === "dark"
+                      ? "/images/darkFeatures.webp"
+                      : "/images/lightFeatures.webp"
+                  }
+                  showOnRight
+                />
+              </SectionImgContainer>
+            </Sides>
+          </Container>
         </AnimationOnScroll>
         {/* Wide range of supported devices */}
-        <AnimationOnScroll animateIn="animate__fadeInLeftBig" animateOnce={true}>
-        <Container>
-          <Sides>
-            <SectionImgContainer>
-              <SectionImg
-                alt="dark files modal"
-                src={
-                  theme.type === "dark"
-                    ? "/images/mockups/darkFiles.webp"
-                    : "/images/mockups/lightFiles.webp"
-                }
-              />
-            </SectionImgContainer>
-          </Sides>
-          <Sides>
-            <SectionTitle>A wide range of supported devices</SectionTitle>
-            <br />
-            <Paragraph>
-              dahliaOS provides a fast and stable experience on nearly every
-              computer, from an old desktop tower to the latest generation of
-              mobile notebooks.
-            </Paragraph>
-            <br />
-            <SectionBtn href="https://docs.dahliaos.io/hardware/support">
-              SUPPORTED DEVICES
-            </SectionBtn>
-          </Sides>
-        </Container>
+        <AnimationOnScroll
+          animateIn="animate__fadeInLeftBig"
+          animateOnce={true}
+        >
+          <Container>
+            <Sides>
+              <SectionImgContainer>
+                <SectionImg
+                  alt="dark files modal"
+                  src={
+                    theme.type === "dark"
+                      ? "/images/mockups/darkFiles.webp"
+                      : "/images/mockups/lightFiles.webp"
+                  }
+                />
+              </SectionImgContainer>
+            </Sides>
+            <Sides>
+              <SectionTitle>A wide range of supported devices</SectionTitle>
+              <br />
+              <Paragraph>
+                dahliaOS provides a fast and stable experience on nearly every
+                computer, from an old desktop tower to the latest generation of
+                mobile notebooks.
+              </Paragraph>
+              <br />
+              <SectionBtn href="https://docs.dahliaos.io/hardware/support">
+                SUPPORTED DEVICES
+              </SectionBtn>
+            </Sides>
+          </Container>
         </AnimationOnScroll>
         {/* Free open source software */}
-        <AnimationOnScroll animateIn="animate__fadeInRightBig" animateOnce={true}>
-        <Container imageOnRight>
-          <Sides>
-            <SectionTitle>Free open source software</SectionTitle>
-            <br />
-            <Paragraph>
-              dahliaOS is and always will be open sourced and 100% free. All of
-              our code and even some design work is hosted on GitHub. We believe
-              transparency is important. We&apos;re also proud to say that since
-              August of 2020 we&apos;re members of the Open Invention Network,
-              the world&apos;s largest patent non-aggression community and free
-              defensive patent pool.
-            </Paragraph>
-            <br />
-            <SectionBtn
-              href="https://github.com/dahliaOS"
-              style={{ display: "inline-block" }}
-            >
-              GITHUB
-            </SectionBtn>
-            <SectionBtn
-              href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
-              style={{ display: "inline-block", marginLeft: 30 }}
-            >
-              OPEN INVENTION NETWORK
-            </SectionBtn>
-          </Sides>
-          <Sides>
-            <SectionImgContainer showOnRight>
-              <SectionImg
-                alt="open source modal"
-                src={
-                  theme.type === "dark"
-                    ? "/images/darkOIN.webp"
-                    : "/images/lightOIN.webp"
-                }
-                showOnRight
-              />
-            </SectionImgContainer>
-          </Sides>
-        </Container>
+        <AnimationOnScroll
+          animateIn="animate__fadeInRightBig"
+          animateOnce={true}
+        >
+          <Container imageOnRight>
+            <Sides>
+              <SectionTitle>Free open source software</SectionTitle>
+              <br />
+              <Paragraph>
+                dahliaOS is and always will be open sourced and 100% free. All
+                of our code and even some design work is hosted on GitHub. We
+                believe transparency is important. We&apos;re also proud to say
+                that since August of 2020 we&apos;re members of the Open
+                Invention Network, the world&apos;s largest patent
+                non-aggression community and free defensive patent pool.
+              </Paragraph>
+              <br />
+              <SectionBtn
+                href="https://github.com/dahliaOS"
+                style={{ display: "inline-block" }}
+              >
+                GITHUB
+              </SectionBtn>
+              <SectionBtn
+                href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
+                style={{ display: "inline-block", marginLeft: 30 }}
+              >
+                OPEN INVENTION NETWORK
+              </SectionBtn>
+            </Sides>
+            <Sides>
+              <SectionImgContainer showOnRight>
+                <SectionImg
+                  alt="open source modal"
+                  src={
+                    theme.type === "dark"
+                      ? "/images/darkOIN.webp"
+                      : "/images/lightOIN.webp"
+                  }
+                  showOnRight
+                />
+              </SectionImgContainer>
+            </Sides>
+          </Container>
         </AnimationOnScroll>
         {/* Demo */}
-        <AnimationOnScroll animateIn="animate__fadeInLeftBig" animateOnce={true}>
-        <Container>
-          <Sides>
-            <SectionImgContainer>
-              <SectionImg
-                alt="dark pangolin modal"
-                src={
-                  theme.type === "dark"
-                    ? "/images/mockups/pangolindark.webp"
-                    : "/images/mockups/pangolinlight.webp"
-                }
-              />
-            </SectionImgContainer>
-          </Sides>
-          <Sides>
-            <SectionTitle>Demo</SectionTitle>
-            <br />
-            <Paragraph>
-              We offer a web preview of the Pangolin shell so you don&apos;t
-              have to install the system just to see if our shell is made for
-              you. Some features are disabled on the web preview but are
-              functional on the actual system itself.
-            </Paragraph>
-            <br />
-            <SectionBtn href="https://web.dahliaos.io/">Try it out</SectionBtn>
-          </Sides>
-        </Container>
+        <AnimationOnScroll
+          animateIn="animate__fadeInLeftBig"
+          animateOnce={true}
+        >
+          <Container>
+            <Sides>
+              <SectionImgContainer>
+                <SectionImg
+                  alt="dark pangolin modal"
+                  src={
+                    theme.type === "dark"
+                      ? "/images/mockups/pangolindark.webp"
+                      : "/images/mockups/pangolinlight.webp"
+                  }
+                />
+              </SectionImgContainer>
+            </Sides>
+            <Sides>
+              <SectionTitle>Demo</SectionTitle>
+              <br />
+              <Paragraph>
+                We offer a web preview of the Pangolin shell so you don&apos;t
+                have to install the system just to see if our shell is made for
+                you. Some features are disabled on the web preview but are
+                functional on the actual system itself.
+              </Paragraph>
+              <br />
+              <SectionBtn href="https://web.dahliaos.io/">
+                Try it out
+              </SectionBtn>
+            </Sides>
+          </Container>
         </AnimationOnScroll>
         <br />
         <br />
@@ -326,7 +344,7 @@ const Home: NextPage = () => {
           <Download />
           <ButtonContainer>
             <SectionBtn href="https://github.com/dahliaOS/releases/releases">
-            Looking for an older release?
+              Looking for an older release?
             </SectionBtn>
           </ButtonContainer>
         </AnimationOnScroll>
