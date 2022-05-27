@@ -15,6 +15,9 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  @media (max-width: 1025px) {
+    padding-bottom: 170px;
+  }
 `;
 
 const Header = styled.h1`
