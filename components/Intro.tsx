@@ -40,7 +40,7 @@ const animateContainer = keyframes`
 
 const ScaleBackground = (backgroundScale = 2.4) => keyframes`
   0% {
-    transform: scale(${backgroundScale});
+    transform: translate3d(0px, 0px, 0px) scale(${backgroundScale});
   }
   100% {
     transform: translate3d(35px, 20px, 0) scale(0.6);
@@ -126,7 +126,6 @@ const Container = styled.div`
   justify-content: center;
   min-height: 90vh;
   max-width: 100vw;
-  padding: 0 50px;
   background: ${({ theme }) =>
     theme.type === "dark"
       ? 'url("/images/bgDark.svg")'
@@ -134,11 +133,11 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  overflow: hidden;
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1025px) {
     flex: unset;
     flex-wrap: wrap;
-    padding: 25px 50px;
   }
 `;
 
@@ -152,7 +151,7 @@ const MockupContainer = styled.div`
   align-items: center;
   will-change: transform;
   justify-content: left;
-  overflow: hidden;
+  overflow: visible;
 `;
 
 const SectionTitle = styled.h1`
@@ -366,7 +365,6 @@ const Intro = () => {
             />
           </LogoContainer>
           <Container>
-            <Sides>
               <MockupContainer>
                 <Mockup
                   alt="Macbook mockup"
@@ -379,7 +377,6 @@ const Intro = () => {
                 <Files draggable={false} />
                 <Toolbar draggable={false} />
               </MockupContainer>
-            </Sides>
             <IntroContainer>
               <Sides>
                 <SectionTitle>dahliaOS</SectionTitle>
