@@ -117,6 +117,7 @@ const IntroContainer = styled.div`
       forwards;
     animation-delay: 0;
     margin-left: 0;
+    padding: 10px 50px 0;
   }
 `;
 
@@ -393,36 +394,38 @@ const Intro = () => {
           </Container>
         </>
       ) : (
-        <MockupImageContainer>
-          <Image
-            alt="Dark mockup"
-            src={theme.type === "dark" ? darkMockup : lightMockup}
-            width={1280}
-            height={720}
-            layout="responsive"
-          />
-          <br />
-          <Container>
-            <Sides>
-              <SectionTitle>dahliaOS</SectionTitle>
-              <br />
-              <Paragraph>
-                dahliaOS is a modern, secure, lightweight and responsive
-                operating system, combining the best of GNU/Linux and Fuchsia
-                OS. We are developing a privacy-respecting, fast, secure and
-                lightweight operating system, our goal is to establish a new
-                standard for the desktop platform.
-              </Paragraph>
-              <br />
-              <ButtonContainer>
-                <SectionBtn href="#download">DOWNLOAD</SectionBtn>
-                <SectionBtn href="#start" style={{ marginLeft: 30 }}>
-                  LEARN MORE
-                </SectionBtn>
-              </ButtonContainer>
-            </Sides>
-          </Container>
-        </MockupImageContainer>
+        <Container>
+          <MockupImageContainer>
+            <Image
+              alt="Dark mockup"
+              src={theme.type === "dark" ? darkMockup : lightMockup}
+              width={1280}
+              height={720}
+              layout="responsive"
+            />
+            <br />
+            <IntroContainer>
+              <Sides>
+                <SectionTitle>dahliaOS</SectionTitle>
+                <br />
+                <Paragraph>
+                  dahliaOS is a modern, secure, lightweight and responsive
+                  operating system, combining the best of GNU/Linux and Fuchsia
+                  OS. We are developing a privacy-respecting, fast, secure and
+                  lightweight operating system, our goal is to establish a new
+                  standard for the desktop platform.
+                </Paragraph>
+                <br />
+                <ButtonContainer>
+                  <SectionBtn href="#download">DOWNLOAD</SectionBtn>
+                  <SectionBtn href="#start" style={{ marginLeft: 30 }}>
+                    LEARN MORE
+                  </SectionBtn>
+                </ButtonContainer>
+              </Sides>
+            </IntroContainer>
+          </MockupImageContainer>
+        </Container>
       )}
     </Wrapper>
   );
