@@ -30,7 +30,7 @@ const ScaleLogo = keyframes`
 const animateContainer = keyframes`
   0% {
     opacity: 0;
-    transform: translateX(12px);
+    transform: translateX(200px);
   }
   100% {
     opacity: 1;
