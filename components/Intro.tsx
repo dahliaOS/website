@@ -136,7 +136,7 @@ const Container = styled.div`
   background-size: cover;
   overflow: hidden;
 
-  @media (max-width: 1025px) {
+  @media (max-width: 1400px) {
     flex: unset;
     flex-wrap: wrap;
   }
