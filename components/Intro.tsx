@@ -365,18 +365,18 @@ const Intro = () => {
             />
           </LogoContainer>
           <Container>
-              <MockupContainer>
-                <Mockup
-                  alt="Macbook mockup"
-                  src={"/images/mockups/macbook.webp"}
-                  draggable={false}
-                />
-                <Background draggable={false} />
-                <Calculator draggable={false} />
-                <Terminal draggable={false} />
-                <Files draggable={false} />
-                <Toolbar draggable={false} />
-              </MockupContainer>
+            <MockupContainer>
+              <Mockup
+                alt="Macbook mockup"
+                src={"/images/mockups/macbook.webp"}
+                draggable={false}
+              />
+              <Background draggable={false} />
+              <Calculator draggable={false} />
+              <Terminal draggable={false} />
+              <Files draggable={false} />
+              <Toolbar draggable={false} />
+            </MockupContainer>
             <IntroContainer>
               <Sides>
                 <SectionTitle>dahliaOS</SectionTitle>
