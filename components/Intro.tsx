@@ -30,11 +30,11 @@ const ScaleLogo = keyframes`
 const animateContainer = keyframes`
   0% {
     opacity: 0;
-    transform: translateX(312px);
+    transform: translateX(12px);
   }
   100% {
     opacity: 1;
-    transform: translateX(12px);
+    transform: translateX(-10px);
   }
 `;
 
@@ -43,7 +43,7 @@ const ScaleBackground = (backgroundScale = 2.4) => keyframes`
     transform: scale(${backgroundScale});
   }
   100% {
-    transform: translate3d(35px, 0, 0) scale(0.6);
+    transform: translate3d(35px, 20px, 0) scale(0.6);
   }
 `;
 
@@ -52,7 +52,7 @@ const animateTerminal = (adjustTransform = -250) => keyframes`
     transform: translate3d(-400px, ${adjustTransform}vh, 0) scale(2.2);
   }
   100% {
-    transform: translate3d(293px, 220px, 0) scale(0.8);
+    transform: translate3d(293px, -70px, 0) scale(0.8);
   }
 `;
 
@@ -61,7 +61,7 @@ const animateFiles = (adjustTransform = "22%") => keyframes`
     transform: translate3d(-100vw, ${adjustTransform}, 0) scale(2.2);
   }
   100% {
-    transform: translate3d(560px, 260px, 0) scale(0.75);
+    transform: translate3d(560px, 10px, 0) scale(0.75);
   }
 `;
 
@@ -70,7 +70,7 @@ const animateCalculator = (adjustTransform = "-178%") => keyframes`
     transform: translate3d(-100vw, ${adjustTransform}, 0) scale(2.2);
   }
   100% {
-    transform: translate3d(343px, 364px, 0) scale(0.8);
+    transform: translate3d(343px, 50px, 0) scale(0.8);
   }
 `;
 
@@ -80,7 +80,7 @@ const animateToolbar = () => keyframes`
     opacity:0;
   }
   100% {
-    transform: translate3d(185px, 208px, 0) scale(0.77);
+    transform: translate3d(185px, 216px, 0) scale(0.77);
     opacity: 1;
   }
 `;
@@ -149,7 +149,7 @@ const MockupContainer = styled.div`
   padding-top: 50px;
   margin-left: -110px;
   margin-right: -130px;
-  align-items: left;
+  align-items: center;
   will-change: transform;
   justify-content: left;
   overflow: hidden;
