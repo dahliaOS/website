@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import darkMockup from "../public/images/mockups/darkmockup.webp";
 import lightMockup from "../public/images/mockups/lightmockup.webp";
 
-const MockupKeyframes = (mockupScale = 3) => keyframes`
+const MockupKeyframes = (mockupScale = 3.5) => keyframes`
   0% {
     transform: scale(${mockupScale});
   }
@@ -38,7 +38,7 @@ const animateContainer = keyframes`
   }
 `;
 
-const ScaleBackground = (backgroundScale = 2.4) => keyframes`
+const ScaleBackground = (backgroundScale = 2.9) => keyframes`
   0% {
     transform: translate3d(0px, 0px, 0px) scale(${backgroundScale});
   }
