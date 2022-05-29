@@ -89,7 +89,7 @@ const Sides = styled.div`
   flex: 45%;
 
   &:first-child {
-    margin-right: 120px;
+    margin-right: 50px;
   }
 
   @media (max-width: 1025px) {
@@ -100,14 +100,13 @@ const Sides = styled.div`
   }
 `;
 
-const Container = styled.div`
+const IntroContainer = styled.div`
   position: relative;
   display: flex;
   opacity: 0;
   align-items: center;
   justify-content: center;
   text-align: left;
-  margin-left: -30px;
 
   animation: ${animateContainer} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
@@ -119,6 +118,41 @@ const Container = styled.div`
     animation-delay: 0;
     margin-left: 0;
   }
+`;
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  max-width: 100vw;
+  padding: 0 50px;
+  background: ${({ theme }) =>
+    theme.type === "dark"
+      ? 'url("/images/bgDark.svg")'
+      : 'url("/images/bgLight.svg")'};
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (max-width: 1400px) {
+    flex: unset;
+    flex-wrap: wrap;
+    padding: 25px 50px;
+  }
+`;
+
+const MockupContainer = styled.div`
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  padding-top: 50px;
+  margin-left: -110px;
+  margin-right: -130px;
+  align-items: left;
+  will-change: transform;
+  justify-content: left;
+  overflow: hidden;
 `;
 
 const SectionTitle = styled.h1`
@@ -188,25 +222,6 @@ const LogoContainer = styled.div`
 
 const Logo = styled.img`
   filter: brightness(0) invert(1);
-`;
-
-const MockupContainer = styled.div`
-  position: relative;
-  display: flex;
-  min-height: 100vh;
-  padding-top: 50px;
-  margin-left: -110px;
-  align-items: left;
-  will-change: transform;
-  justify-content: left;
-  overflow: hidden;
-  background: ${({ theme }) =>
-    theme.type === "dark"
-      ? 'url("/images/bgDark.svg")'
-      : 'url("/images/bgLight.svg")'};
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 `;
 
 const Mockup = styled.img`
@@ -324,7 +339,7 @@ const MockupImageContainer = styled.div`
 
 const ButtonContainer = styled.div`
   position: relative;
-  text-align: left;
+  text-align: center;
   display: flex;
   align-items: left;
   justify-content: left;
@@ -350,18 +365,22 @@ const Intro = () => {
               draggable={false}
             />
           </LogoContainer>
-          <MockupContainer>
-            <Mockup
-              alt="Macbook mockup"
-              src={"/images/mockups/macbook.webp"}
-              draggable={false}
-            />
-            <Background draggable={false} />
-            <Calculator draggable={false} />
-            <Terminal draggable={false} />
-            <Files draggable={false} />
-            <Toolbar draggable={false} />
-            <Container>
+          <Container>
+            <Sides>
+              <MockupContainer>
+                <Mockup
+                  alt="Macbook mockup"
+                  src={"/images/mockups/macbook.webp"}
+                  draggable={false}
+                />
+                <Background draggable={false} />
+                <Calculator draggable={false} />
+                <Terminal draggable={false} />
+                <Files draggable={false} />
+                <Toolbar draggable={false} />
+              </MockupContainer>
+            </Sides>
+            <IntroContainer>
               <Sides>
                 <SectionTitle>dahliaOS</SectionTitle>
                 <br />
@@ -380,8 +399,8 @@ const Intro = () => {
                   </SectionBtn>
                 </ButtonContainer>
               </Sides>
-            </Container>
-          </MockupContainer>
+            </IntroContainer>
+          </Container>
         </>
       ) : (
         <MockupImageContainer>
