@@ -139,6 +139,10 @@ const Container = styled.div`
   @media (max-width: 1400px) {
     flex: unset;
     flex-wrap: wrap;
+    &:nth-child(even) {
+      padding-top: -100px;
+      padding-bottom: 100px;
+    }
   }
 `;
 
