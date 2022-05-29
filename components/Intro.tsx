@@ -327,13 +327,6 @@ const Toolbar = styled.div`
 const MockupImageContainer = styled.div`
   padding: 25px;
   margin-top: 80px;
-  background: ${({ theme }) =>
-    theme.type === "dark"
-      ? 'url("/images/bgDark.svg")'
-      : 'url("/images/bgLight.svg")'};
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 `;
 
 const ButtonContainer = styled.div`
