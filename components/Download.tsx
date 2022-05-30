@@ -14,7 +14,7 @@ const Card = styled.div<{ isError?: boolean }>`
   flex-direction: row;
   border-radius: 13px;
   max-width: ${({ isError }) => (isError ? 450 : 950)}px;
-  max-height: 350px;
+  max-height: 360px;
   width: 90%;
   margin: 0 auto;
   background: ${({ theme }) => theme.background.backgroundColorLight};
@@ -62,9 +62,11 @@ const OlderHeader = styled.h1`
   color: ${({ theme }) => theme.text.textColorLight};
 `;
 
-const ReleaseName = styled.span`
-  display: block;
-  margin: 0 0 20px;
+const ReleaseName = styled.p`
+  color: ${({ theme }) => theme.text.textColor}9d;
+`;
+
+const DownloadCount = styled.p`
   color: ${({ theme }) => theme.text.textColor}9d;
 `;
 
@@ -355,7 +357,7 @@ const Download = ({ showMore }: IDownloadProps) => {
 
             <DialogActions>
               <DialogButton disableGradient onClick={closeModal}>
-                No thanks
+                No, thanks
               </DialogButton>
               <DialogButton
                 disableGradient={false}
@@ -390,6 +392,12 @@ const Download = ({ showMore }: IDownloadProps) => {
                 <ReleaseName>
                   {releases[0].name} ({getDate(releases[0].published_at)})
                 </ReleaseName>
+                <DownloadCount>
+                  Downloads:{" "}
+                  {releases[0].assets[0].download_count +
+                    releases[0].assets[1].download_count}
+                </DownloadCount>
+                <br />
                 <Changelogs>
                   {releases[0].body
                     .substring(releases[0].body.indexOf("+ "))
@@ -426,6 +434,13 @@ const Download = ({ showMore }: IDownloadProps) => {
                       <OlderUpdate key={i}>
                         <OlderUpdateTextWrapper>
                           <OlderUpdateTitle>{oldRelease.name}</OlderUpdateTitle>
+                          <DownloadCount>
+                            Downloads:{" "}
+                            {oldRelease.assets[0].name.includes("efi")
+                              ? oldRelease.assets[0].download_count +
+                                oldRelease.assets[1].download_count
+                              : oldRelease.assets[0].download_count}
+                          </DownloadCount>
                           <OlderUpdateDate>
                             {getDate(oldRelease.published_at)}
                           </OlderUpdateDate>
