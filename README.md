@@ -35,12 +35,6 @@ Install node modules required to run the website by running:
 yarn
 ```
 
-or
-
-```
-npm i
-```
-
 ### Step 2. Start the Next.js dev server:
 
 ```
