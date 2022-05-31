@@ -133,7 +133,7 @@ const Download = () => {
         </>
       ) : null}
 
-      {calculateDownloads.length ? (
+      {calculateDownloads()?.toString.length ? (
         <>
           <Head>
             <title>dahliaOS – Download</title>
