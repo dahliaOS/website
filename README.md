@@ -42,11 +42,12 @@ yarn
 yarn dev
 ```
 
+In a browser, load the page [localhost:3000](http://localhost:3000) and you should now be able to test the website.
 Next.js' dev server has hot reloading so no need to restart the instance when it's running!
 
 ### Step 3. Build:
 
-After doing your contributions, test your changes by building the website:
+After making your changes, test your changes by building the website:
 
 ```
 yarn build
@@ -58,7 +59,7 @@ yarn build
 yarn start
 ```
 
-In a browser, load the page [localhost:3000](http://localhost:3000). You should now be able to test the website.
+In a browser, load the page [localhost:3000](http://localhost:3000) and you should now be able to test the website.
 
 ## Sponsored by
 
