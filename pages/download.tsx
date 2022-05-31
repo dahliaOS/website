@@ -25,7 +25,7 @@ const Header = styled.h1`
   font-size: 2.2em;
   font-weight: 500;
   color: ${({ theme }) => theme.text.textColor};
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 `;
 
 const ButtonContainer = styled.div`
