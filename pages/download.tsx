@@ -118,7 +118,8 @@ const Download = () => {
             <Container>
               <Header>Download</Header>
               <SubHeader>
-                Total downloads: An error occurred whilst fetching GitHub's API!
+                Total downloads: An error occurred whilst fetching GitHub&apos;
+                API!
               </SubHeader>
             </Container>
             <DownloadComponent showMore />
