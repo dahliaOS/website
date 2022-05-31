@@ -204,7 +204,7 @@ const Navbar = ({
         </DrawerLogoContainer>
         <Container>
           <Link href="/#features">Features</Link>
-          <Link href="/#download">Download</Link>
+          <Link href="/download">Download</Link>
           <Link href="/donate">Donate</Link>
           <Link href="https://web.dahliaOS.io">Demo</Link>
           <Link href="https://docs.dahliaOS.io">Documentation</Link>
@@ -275,7 +275,7 @@ const Navbar = ({
           </AppBarLogoLinkContainer>
           <DesktopNav>
             <AppBarLink href="/#features">Features</AppBarLink>
-            <AppBarLink href="/#download">Download</AppBarLink>
+            <AppBarLink href="/download">Download</AppBarLink>
             <AppBarLink href="/donate">Donate</AppBarLink>
             <AppBarLink href="https://web.dahliaOS.io" target="_blank">
               Demo
