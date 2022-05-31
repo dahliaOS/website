@@ -8,7 +8,7 @@
 - Please include a summary of the change and which issue is fixed
 - Please also include relevant motivation and context (Why is this change required? What problem does it solve?)
 - List any dependencies that are required for this change
-- If it fixes an open issue, plase link to the issue here
+- If it fixes an open issue, please link to the issue here
 
 Fixes #(issue)
 
