@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import DownloadComponent from "../components/Download";
 import { Button } from "@mui/material";
 import Head from "next/head";
+import { useGithubReleases } from "../hooks/useGithubReleases";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -16,16 +17,15 @@ const Wrapper = styled.div`
   background-position: center;
   background-size: cover;
   @media (max-width: 1025px) {
-    padding-bottom: 170px;
+    padding: 0 0 20px 20px;
   }
 `;
 
 const Header = styled.h1`
-  text-align: center;
   font-size: 2.2em;
   font-weight: 500;
-  margin-bottom: 25px;
   color: ${({ theme }) => theme.text.textColor};
+  margin-bottom: 25px;
 `;
 
 const ButtonContainer = styled.div`
@@ -69,25 +69,122 @@ const SectionBtn = styled(Button)`
   }
 `;
 
+const SubHeader = styled.h2<{ isError?: boolean }>`
+  color: ${({ theme }) => theme.text.textColor};
+  font-size: 1.4em;
+  font-weight: 400;
+  margin-bottom: 25px;
+`;
+
+const Container = styled.div`
+  text-align: center;
+`;
+
 const Download = () => {
+  const { releases, isError, isLoading } = useGithubReleases();
+
+  function calculateDownloads(): number | undefined {
+    const totalDownloadNumber = releases?.map(allReleases => {
+      const totalDownloads: number[] = [
+        allReleases.assets[0].name.includes("efi")
+          ? allReleases.assets[0].download_count +
+            allReleases.assets[1].download_count
+          : allReleases.assets[0].download_count,
+      ];
+      return totalDownloads.reduce((accumulator, current) => {
+        return accumulator + current;
+      }, 0);
+    });
+    return totalDownloadNumber?.reduce<number>((accumulator, current) => {
+      return accumulator + current;
+    }, 0);
+  }
+
   return (
     <>
-      <Head>
-        <title>dahliaOS – Download</title>
-        <meta property="og:title" content="dahliaOS – Download" key="title" />
-        <meta property="og:description" content="Download dahliaOS!"></meta>
-      </Head>
-      <Navbar />
-      <Wrapper>
-        <Header>Download</Header>
-        <DownloadComponent showMore />
-        <ButtonContainer>
-          <SectionBtn href="https://github.com/dahliaOS/releases/releases">
-            Looking for an older release?
-          </SectionBtn>
-        </ButtonContainer>
-      </Wrapper>
-      <Footer />
+      {isError ? (
+        <>
+          <Head>
+            <title>dahliaOS – Download</title>
+            <meta
+              property="og:title"
+              content="dahliaOS – Download"
+              key="title"
+            />
+            <meta property="og:description" content="Download dahliaOS!"></meta>
+          </Head>
+          <Navbar />
+          <Wrapper>
+            <Container>
+              <Header>Download</Header>
+              <SubHeader>
+                Total downloads: An error occurred whilst fetching GitHub's API!
+              </SubHeader>
+            </Container>
+            <DownloadComponent showMore />
+            <ButtonContainer>
+              <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+                Looking for an older release?
+              </SectionBtn>
+            </ButtonContainer>
+          </Wrapper>
+          <Footer />
+        </>
+      ) : null}
+
+      {calculateDownloads.length ? (
+        <>
+          <Head>
+            <title>dahliaOS – Download</title>
+            <meta
+              property="og:title"
+              content="dahliaOS – Download"
+              key="title"
+            />
+            <meta property="og:description" content="Download dahliaOS!"></meta>
+          </Head>
+          <Navbar />
+          <Wrapper>
+            <Container>
+              <Header>Download</Header>
+              <SubHeader>Total downloads: {calculateDownloads()}</SubHeader>
+            </Container>
+            <DownloadComponent showMore />
+            <ButtonContainer>
+              <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+                Looking for an older release?
+              </SectionBtn>
+            </ButtonContainer>
+          </Wrapper>
+          <Footer />
+        </>
+      ) : isLoading ? (
+        <>
+          <Head>
+            <title>dahliaOS – Download</title>
+            <meta
+              property="og:title"
+              content="dahliaOS – Download"
+              key="title"
+            />
+            <meta property="og:description" content="Download dahliaOS!"></meta>
+          </Head>
+          <Navbar />
+          <Wrapper>
+            <Container>
+              <Header>Download</Header>
+              <SubHeader>Total downloads: Loading...</SubHeader>
+            </Container>
+            <DownloadComponent showMore />
+            <ButtonContainer>
+              <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+                Looking for an older release?
+              </SectionBtn>
+            </ButtonContainer>
+          </Wrapper>
+          <Footer />
+        </>
+      ) : null}
     </>
   );
 };
