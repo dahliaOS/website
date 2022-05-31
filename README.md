@@ -8,6 +8,7 @@
 # dahliaOS Website
 
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fdahliaos.io)
+[![CodeQL](https://github.com/dahliaOS/website/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/dahliaOS/website/actions/workflows/codeql-analysis.yml)
 ![GitHub](https://img.shields.io/github/license/dahliaos/website?color=brightgreen)
 
 - **Official**, one and only website for the dahliaOS project
