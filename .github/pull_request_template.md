@@ -8,7 +8,7 @@
 - Please include a summary of the change and which issue is fixed
 - Please also include relevant motivation and context (Why is this change required? What problem does it solve?)
 - List any dependencies that are required for this change
-- If it fixes an open issue, please link to the issue here
+- If it fixes an open issue, plase link to the issue here
 
 Fixes #(issue)
 
@@ -30,6 +30,7 @@ Please tick the relevant option by putting an X inside the bracket
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
+- [ ] Vercel Preview deployment has succeeded
 - [ ] Any dependent changes have been merged and published in downstream modules
 - [ ] I have checked my code and corrected any misspellings
 - [ ] I have read the [CONTRIBUTING](../CONTRIBUTING.md) document
