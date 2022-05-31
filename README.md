@@ -8,7 +8,7 @@
 # dahliaOS Website
 
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fdahliaos.io)
-![GitHub](https://img.shields.io/github/license/dahliaos/pangolin-desktop?color=brightgreen)
+![GitHub](https://img.shields.io/github/license/dahliaos/website?color=brightgreen)
 
 - **Official**, one and only website for the dahliaOS project
 - **Find** it by clicking [here!](https://dahliaos.io)
