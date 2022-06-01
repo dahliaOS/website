@@ -63,11 +63,11 @@ const OlderHeader = styled.h1`
 `;
 
 const ReleaseName = styled.p`
-  color: ${({ theme }) => theme.text.textColor}9d;
+  color: ${({ theme }) => theme.text.textColor};
 `;
 
 const DownloadCount = styled.p`
-  color: ${({ theme }) => theme.text.textColor}9d;
+  color: ${({ theme }) => theme.text.textColor};
 `;
 
 const Changelogs = styled.p`
@@ -174,7 +174,7 @@ const OlderUpdate = styled.div`
   align-items: center;
   padding-bottom: 6px;
   margin-bottom: 6px;
-  border-bottom: 1px solid ${({ theme }) => theme.text.textColorDark}9d;
+  border-bottom: 1px solid ${({ theme }) => theme.text.textColorDark};
 
   &:last-child {
     margin-bottom: 0;
