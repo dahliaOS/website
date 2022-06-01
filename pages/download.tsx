@@ -81,15 +81,16 @@ const Download = () => {
   const { releases, isError, isLoading } = useGithubReleases();
 
   function calculateDownloads(): number | undefined {
-    const totalDownloadNumber = releases?.map(allReleases => {
-      return allReleases.assets[0].name.includes("efi")
-        ? allReleases.assets[0].download_count +
-            allReleases.assets[1].download_count
-        : allReleases.assets[0].download_count;
-    });
-    return totalDownloadNumber?.reduce<number>((accumulator, current) => {
-      return accumulator + current;
-    }, 0);
+    return releases
+      ?.map(allReleases => {
+        return allReleases.assets[0].name.includes("efi")
+          ? allReleases.assets[0].download_count +
+              allReleases.assets[1].download_count
+          : allReleases.assets[0].download_count;
+      })
+      .reduce<number>((accumulator, current) => {
+        return accumulator + current;
+      }, 0);
   }
 
   return (
