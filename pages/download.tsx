@@ -80,19 +80,6 @@ const Container = styled.div`
 const Download = () => {
   const { releases, isError, isLoading } = useGithubReleases();
 
-  function calculateDownloads(): number | undefined {
-    return releases
-      ?.map(allReleases => {
-        return allReleases.assets[0].name.includes("efi")
-          ? allReleases.assets[0].download_count +
-              allReleases.assets[1].download_count
-          : allReleases.assets[0].download_count;
-      })
-      .reduce<number>((accumulator, current) => {
-        return accumulator + current;
-      }, 0);
-  }
-
   return (
     <>
       {isError ? (
@@ -126,7 +113,7 @@ const Download = () => {
         </>
       ) : null}
 
-      {calculateDownloads()?.toString.length ? (
+      {releases?.length ? (
         <>
           <Head>
             <title>dahliaOS – Download</title>
@@ -141,7 +128,19 @@ const Download = () => {
           <Wrapper>
             <Container>
               <Header>Download</Header>
-              <SubHeader>Total downloads: {calculateDownloads()}</SubHeader>
+              <SubHeader>
+                Total downloads:{" "}
+                {releases
+                  ?.map(allReleases => {
+                    return allReleases.assets[0].name.includes("efi")
+                      ? allReleases.assets[0].download_count +
+                          allReleases.assets[1].download_count
+                      : allReleases.assets[0].download_count;
+                  })
+                  .reduce<number>((accumulator, current) => {
+                    return accumulator + current;
+                  }, 0)}
+              </SubHeader>
             </Container>
             <DownloadComponent showMore />
             <ButtonContainer>
