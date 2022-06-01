@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://dahliaos.io">Website</a> ●
-<a href="https://dahliaos.io7discord">Discord</a> ●
+<a href="https://dahliaos.io/discord">Discord</a> ●
 <a href="https://dahliaos.io/download">Releases</a> ●
 <a href="https://dahliaos.io/donate">Donate</a> ●
 <a href="https://docs.dahliaos.io">Documentation</a>
