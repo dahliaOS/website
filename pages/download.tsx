@@ -85,11 +85,10 @@ const Download = () => {
 
   function calculateDownloads(): number | undefined {
     const totalDownloadNumber = releases?.map(allReleases => {
-      const totalDownloads = allReleases.assets[0].name.includes("efi")
+      return allReleases.assets[0].name.includes("efi")
         ? allReleases.assets[0].download_count +
-          allReleases.assets[1].download_count
+            allReleases.assets[1].download_count
         : allReleases.assets[0].download_count;
-      return totalDownloads;
     });
     return totalDownloadNumber?.reduce<number>((accumulator, current) => {
       return accumulator + current;
