@@ -3,7 +3,7 @@ import { WbSunny, WbCloudy, Computer } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
 import styled, { useTheme } from "styled-components";
 import {
-  Forum as ForumIcon,
+  PeopleAlt as PeopleAltIcon,
   DeveloperBoard as DeveloperBoardIcon,
   Article as ArticleIcon,
   Handshake as HandshakeIcon,
@@ -154,7 +154,7 @@ const Footer = () => {
       <FooterContainer>
         <FooterCategory>
           <FooterHeader>
-            <ForumIcon style={{ marginLeft: -5, marginRight: 10 }} />
+            <PeopleAltIcon style={{ marginLeft: -5, marginRight: 10 }} />
             Find us on
           </FooterHeader>
           <FooterList>
