@@ -16,6 +16,7 @@ import {
   GitHub as GitHubIcon,
   CorporateFare as CorporateFareIcon,
   Science as ScienceIcon,
+  AutoAwesome as AutoAwesomeIcon,
 } from "@mui/icons-material";
 
 const Wrapper = styled.div``;
@@ -217,7 +218,7 @@ const Home: NextPage = () => {
               </Paragraph>
               <br />
               <SectionBtn href="">
-                <GetApp style={{ marginLeft: -5, marginRight: 10 }} />
+                <AutoAwesomeIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 BUTTON NAME
               </SectionBtn>
             </Sides>

@@ -14,7 +14,7 @@ import {
   Menu as MenuIcon,
   MoreVert,
   GetApp,
-  WebAssetSharp,
+  AutoAwesome as AutoAwesomeIcon,
   VolunteerActivism as VolunteerActivismIcon,
   Science as ScienceIcon,
   Article as ArticleIcon,
@@ -233,7 +233,7 @@ const Navbar = ({
         </DrawerLogoContainer>
         <Container>
           <Link href="/#features">
-            <WebAssetSharp /> Features
+            <AutoAwesomeIcon /> Features
           </Link>
           <Link href="/download">
             <GetApp />
@@ -332,7 +332,7 @@ const Navbar = ({
           </AppBarLogoLinkContainer>
           <DesktopNav>
             <AppBarLink href="/#features">
-              <WebAssetSharp /> Features
+              <AutoAwesomeIcon /> Features
             </AppBarLink>
             <AppBarLink href="/download">
               <GetApp /> Download
