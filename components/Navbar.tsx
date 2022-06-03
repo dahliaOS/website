@@ -233,19 +233,23 @@ const Navbar = ({
         </DrawerLogoContainer>
         <Container>
           <Link href="/#features">
-            <WebAssetSharp></WebAssetSharp> Features
+            <WebAssetSharp /> Features
           </Link>
           <Link href="/download">
-            <GetApp></GetApp>Download
+            <GetApp />
+            Download
           </Link>
           <Link href="/donate">
-            <VolunteerActivismIcon></VolunteerActivismIcon>Donate
+            <VolunteerActivismIcon />
+            Donate
           </Link>
           <Link href="https://web.dahliaOS.io">
-            <ScienceIcon></ScienceIcon>Demo
+            <ScienceIcon />
+            Demo
           </Link>
           <Link href="https://docs.dahliaOS.io">
-            <ArticleIcon></ArticleIcon>Documentation
+            <ArticleIcon />
+            Documentation
           </Link>
           <Divider />
           <Category>Find us on</Category>
@@ -254,33 +258,42 @@ const Navbar = ({
             Discord
           </Link>
           <Link href="/github" target="_blank">
-            <GitHubIcon></GitHubIcon>GitHub
+            <GitHubIcon />
+            GitHub
           </Link>
           <Link href="/reddit" target="_blank">
-            <RedditIcon></RedditIcon>Reddit
+            <RedditIcon />
+            Reddit
           </Link>
           <Link href="/telegram" target="_blank">
-            <TelegramIcon></TelegramIcon>Telegram
+            <TelegramIcon />
+            Telegram
           </Link>
           <Link href="/facebook" target="_blank">
-            <FacebookIcon></FacebookIcon>Facebook
+            <FacebookIcon />
+            Facebook
           </Link>
           <Link href="/instagram" target="_blank">
-            <InstagramIcon></InstagramIcon>Instagram
+            <InstagramIcon />
+            Instagram
           </Link>
           <Link href="/twitter" target="_blank">
-            <TwitterIcon></TwitterIcon>Twitter
+            <TwitterIcon />
+            Twitter
           </Link>
           <Divider />
           <Category>For developers</Category>
           <Link href="/github">
-            <CodeIcon></CodeIcon>Source code
+            <CodeIcon />
+            Source code
           </Link>
           <Link href="https://github.com/orgs/dahliaos/people" target="_blank">
-            <GroupIcon></GroupIcon>Developers
+            <GroupIcon />
+            Developers
           </Link>
           <Link href="/discord">
-            <GroupAddIcon></GroupAddIcon>Join our team
+            <GroupAddIcon />
+            Join our team
           </Link>
         </Container>
       </Drawer>
@@ -319,19 +332,19 @@ const Navbar = ({
           </AppBarLogoLinkContainer>
           <DesktopNav>
             <AppBarLink href="/#features">
-              <WebAssetSharp></WebAssetSharp> Features
+              <WebAssetSharp /> Features
             </AppBarLink>
             <AppBarLink href="/download">
-              <GetApp></GetApp> Download
+              <GetApp /> Download
             </AppBarLink>
             <AppBarLink href="/donate">
-              <VolunteerActivismIcon></VolunteerActivismIcon> Donate
+              <VolunteerActivismIcon /> Donate
             </AppBarLink>
             <AppBarLink href="https://web.dahliaOS.io" target="_blank">
-              <ScienceIcon></ScienceIcon> Demo
+              <ScienceIcon /> Demo
             </AppBarLink>
             <AppBarLink href="https://docs.dahliaOS.io">
-              <ArticleIcon></ArticleIcon> Documentation
+              <ArticleIcon /> Documentation
             </AppBarLink>
             <IconButton
               ref={ref}
@@ -350,7 +363,8 @@ const Navbar = ({
             >
               <MenuItem>
                 <MenuLink href="/github" target="_blank">
-                  <CodeIcon></CodeIcon>Source code
+                  <CodeIcon />
+                  Source code
                 </MenuLink>
               </MenuItem>
               <MenuItem>
@@ -358,12 +372,13 @@ const Navbar = ({
                   href="https://github.com/orgs/dahliaos/people"
                   target="_blank"
                 >
-                  <GroupIcon></GroupIcon>Developers
+                  <GroupIcon />
+                  Developers
                 </MenuLink>
               </MenuItem>
               <MenuItem>
                 <MenuLink href="/discord" target="_blank">
-                  <GroupAddIcon></GroupAddIcon> Join our team
+                  <GroupAddIcon /> Join our team
                 </MenuLink>
               </MenuItem>
             </Menu>
