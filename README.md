@@ -16,7 +16,7 @@
 
 ## Contribute
 
-If you're wondering how to contribute to the project, please refer to [CONTRIBUTING.md](../CONTRIBUTING.md)
+If you're wondering how to contribute to the project, please refer to [CONTRIBUTING.md](/CONTRIBUTING.md)
 
 ## Install development tools
 
