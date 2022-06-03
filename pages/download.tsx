@@ -5,7 +5,7 @@ import DownloadComponent from "../components/Download";
 import { Button } from "@mui/material";
 import Head from "next/head";
 import { useGithubReleases } from "../hooks/useGithubReleases";
-import { GetApp, History as HistoryIcon } from "@mui/icons-material";
+import { History as HistoryIcon } from "@mui/icons-material";
 
 const Wrapper = styled.div`
   min-height: 100vh;
