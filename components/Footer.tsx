@@ -2,6 +2,13 @@ import { BottomNavigation, Link, MenuItem, Select } from "@mui/material";
 import { WbSunny, WbCloudy, Computer } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
 import styled, { useTheme } from "styled-components";
+import {
+  Forum as ForumIcon,
+  DeveloperBoard as DeveloperBoardIcon,
+  Article as ArticleIcon,
+  Handshake as HandshakeIcon,
+  QuestionAnswer as QuestionAnswerIcon,
+} from "@mui/icons-material";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
   position: relative;
@@ -38,6 +45,9 @@ const FooterHeader = styled.h1`
   font-size: 1.5em;
   font-weight: medium;
   margin-bottom: 0.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const FooterList = styled.ul`
@@ -143,7 +153,10 @@ const Footer = () => {
     <StyledBottomNavigation>
       <FooterContainer>
         <FooterCategory>
-          <FooterHeader>Find us on</FooterHeader>
+          <FooterHeader>
+            <ForumIcon style={{ marginLeft: -5, marginRight: 10 }} />
+            Find us on
+          </FooterHeader>
           <FooterList>
             <FooterItem href="/discord" target="_blank">
               Discord
@@ -169,7 +182,10 @@ const Footer = () => {
           </FooterList>
         </FooterCategory>
         <FooterCategory>
-          <FooterHeader>Technology</FooterHeader>
+          <FooterHeader>
+            <DeveloperBoardIcon style={{ marginLeft: -5, marginRight: 10 }} />
+            Technology
+          </FooterHeader>
           <FooterList>
             <FooterItem href="https://docs.dahliaos.io/os/linux">
               How it works
@@ -189,7 +205,10 @@ const Footer = () => {
           </FooterList>
         </FooterCategory>
         <FooterCategory>
-          <FooterHeader>Documentation</FooterHeader>
+          <FooterHeader>
+            <ArticleIcon style={{ marginLeft: -5, marginRight: 10 }} />
+            Documentation
+          </FooterHeader>
           <FooterList>
             <FooterItem href="https://docs.dahliaos.io/build/buildroot">
               Compiling
@@ -204,7 +223,10 @@ const Footer = () => {
           </FooterList>
         </FooterCategory>
         <FooterCategory>
-          <FooterHeader>Contribute</FooterHeader>
+          <FooterHeader>
+            <HandshakeIcon style={{ marginLeft: -5, marginRight: 10 }} />
+            Contribute
+          </FooterHeader>
           <FooterList>
             <FooterItem href="https://docs.dahliaos.io/contribute/roadmap">
               Roadmap
@@ -218,7 +240,10 @@ const Footer = () => {
           </FooterList>
         </FooterCategory>
         <FooterCategory>
-          <FooterHeader>Contact</FooterHeader>
+          <FooterHeader>
+            <QuestionAnswerIcon style={{ marginLeft: -5, marginRight: 10 }} />
+            Contact
+          </FooterHeader>
           <FooterList>
             <FooterItem href="mailto:contact@dahliaos.io">
               Contact us

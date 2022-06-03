@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { VolunteerActivism as VolunteerActivismIcon } from "@mui/icons-material";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -50,13 +51,34 @@ const List = styled.ul`
 `;
 
 const StyledButton = styled(Button)`
-  margin-top: 15px;
-  color: ${({ theme }) => theme.text.textColorLight};
-  background: linear-gradient(
-    153deg,
-    ${({ theme }) => theme.accent.accentColorLight} 0%,
-    ${({ theme }) => theme.accent.accentColorDark} 100%
-  );
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 0;
+
+  &:first-of-type {
+    color: ${({ theme }) => theme.text.textColorExtremelyLight};
+    background: linear-gradient(
+      153deg,
+      ${({ theme }) => theme.accent.accentColorLight} 0%,
+      ${({ theme }) => theme.accent.accentColor} 100%
+    );
+    background-size: 400% 400%;
+    transition: 0.2s ease-in-out;
+  }
+
+  &:nth-child(even) {
+    border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
+    color: ${({ theme }) => theme.text.textColor};
+    @media (max-width: 1025px) {
+      &:nth-child(even) {
+        margin: 10px -50px;
+      }
+    }
+  }
+
+  &:hover {
+    background-position: 100% 50%;
+  }
 `;
 
 const Donate = () => {
@@ -89,6 +111,9 @@ const Donate = () => {
           </Paragraph>
           <br />
           <StyledButton href="https://opencollective.com/dahliaos">
+            <VolunteerActivismIcon
+              style={{ marginLeft: -5, marginRight: 10 }}
+            />
             OPEN COLLECTIVE
           </StyledButton>
         </Container>

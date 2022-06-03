@@ -5,6 +5,7 @@ import DownloadComponent from "../components/Download";
 import { Button } from "@mui/material";
 import Head from "next/head";
 import { useGithubReleases } from "../hooks/useGithubReleases";
+import { GetApp, History as HistoryIcon } from "@mui/icons-material";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -105,6 +106,7 @@ const Download = () => {
             <DownloadComponent showMore />
             <ButtonContainer>
               <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+                <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 Looking for an older release?
               </SectionBtn>
             </ButtonContainer>
@@ -145,6 +147,7 @@ const Download = () => {
             <DownloadComponent showMore />
             <ButtonContainer>
               <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+                <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 Looking for an older release?
               </SectionBtn>
             </ButtonContainer>
@@ -171,6 +174,7 @@ const Download = () => {
             <DownloadComponent showMore />
             <ButtonContainer>
               <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+                <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 Looking for an older release?
               </SectionBtn>
             </ButtonContainer>

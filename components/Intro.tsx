@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import styled, { keyframes, useTheme } from "styled-components";
 import { Button } from "@mui/material";
+import { GetApp, LibraryBooks as LibraryBooksIcon } from "@mui/icons-material";
 
 import darkMockup from "../public/images/mockups/darkmockup.webp";
 import lightMockup from "../public/images/mockups/lightmockup.webp";
@@ -174,7 +175,7 @@ const Paragraph = styled.p`
 `;
 
 const SectionBtn = styled(Button)`
-  padding: 7px 20px;
+  padding: 10px 20px;
   border-radius: 5px;
   margin: 10px 0;
 
@@ -187,7 +188,6 @@ const SectionBtn = styled(Button)`
     );
     background-size: 400% 400%;
     transition: 0.2s ease-in-out;
-    margin-right: 15;
   }
 
   &:nth-child(even) {
@@ -198,6 +198,10 @@ const SectionBtn = styled(Button)`
         margin: 10px -50px;
       }
     }
+  }
+
+  @media (max-width: 1025px) {
+    padding: 5px 20px;
   }
 
   &:hover {
@@ -388,8 +392,14 @@ const Intro = () => {
                 </Paragraph>
                 <br />
                 <ButtonContainer>
-                  <SectionBtn href="#download">DOWNLOAD</SectionBtn>
+                  <SectionBtn href="#download">
+                    <GetApp style={{ marginLeft: -5, marginRight: 10 }} />
+                    DOWNLOAD
+                  </SectionBtn>
                   <SectionBtn href="#start" style={{ marginLeft: 30 }}>
+                    <LibraryBooksIcon
+                      style={{ marginLeft: -5, marginRight: 10 }}
+                    />
                     LEARN MORE
                   </SectionBtn>
                 </ButtonContainer>
@@ -421,8 +431,12 @@ const Intro = () => {
                 </Paragraph>
                 <br />
                 <ButtonContainer>
-                  <SectionBtn href="#download">DOWNLOAD</SectionBtn>
+                  <SectionBtn href="#download">
+                    <GetApp />
+                    DOWNLOAD
+                  </SectionBtn>
                   <SectionBtn href="#start" style={{ marginLeft: 30 }}>
+                    <LibraryBooksIcon />
                     LEARN MORE
                   </SectionBtn>
                 </ButtonContainer>

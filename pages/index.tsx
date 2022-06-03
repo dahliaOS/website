@@ -9,6 +9,14 @@ import { Button } from "@mui/material";
 import Download from "../components/Download";
 import "animate.css/animate.min.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import {
+  GetApp,
+  History as HistoryIcon,
+  Devices as DevicesIcon,
+  GitHub as GitHubIcon,
+  CorporateFare as CorporateFareIcon,
+  Science as ScienceIcon,
+} from "@mui/icons-material";
 
 const Wrapper = styled.div``;
 
@@ -73,7 +81,7 @@ const Paragraph = styled.p`
 `;
 
 const SectionBtn = styled(Button)`
-  padding: 7px 20px;
+  padding: 10px 20px;
   border-radius: 5px;
   margin: 10px 0;
 
@@ -86,7 +94,6 @@ const SectionBtn = styled(Button)`
     );
     background-size: 400% 400%;
     transition: 0.2s ease-in-out;
-    margin-right: 15;
   }
 
   &:nth-child(even) {
@@ -185,7 +192,10 @@ const Home: NextPage = () => {
                 application.
               </Paragraph>
               <br />
-              <SectionBtn href="">BUTTON NAME</SectionBtn>
+              <SectionBtn href="">
+                <GetApp style={{ marginLeft: -5, marginRight: 10 }} />
+                BUTTON NAME
+              </SectionBtn>
             </Sides>
           </Container>
         </AnimationOnScroll>
@@ -206,7 +216,10 @@ const Home: NextPage = () => {
                 every component of the shell.
               </Paragraph>
               <br />
-              <SectionBtn href="">BUTTON NAME</SectionBtn>
+              <SectionBtn href="">
+                <GetApp style={{ marginLeft: -5, marginRight: 10 }} />
+                BUTTON NAME
+              </SectionBtn>
             </Sides>
             <Sides>
               <SectionImgContainer showOnRight>
@@ -251,6 +264,7 @@ const Home: NextPage = () => {
               </Paragraph>
               <br />
               <SectionBtn href="https://docs.dahliaos.io/hardware/support">
+                <DevicesIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 SUPPORTED DEVICES
               </SectionBtn>
             </Sides>
@@ -274,16 +288,17 @@ const Home: NextPage = () => {
                 non-aggression community and free defensive patent pool.
               </Paragraph>
               <br />
-              <SectionBtn
-                href="https://github.com/dahliaOS"
-                style={{ display: "inline-block" }}
-              >
+              <SectionBtn href="https://github.com/dahliaOS">
+                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 GITHUB
               </SectionBtn>
               <SectionBtn
                 href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
-                style={{ display: "inline-block", marginLeft: 30 }}
+                style={{ marginLeft: 30 }}
               >
+                <CorporateFareIcon
+                  style={{ marginLeft: -5, marginRight: 10 }}
+                />
                 OPEN INVENTION NETWORK
               </SectionBtn>
             </Sides>
@@ -331,6 +346,7 @@ const Home: NextPage = () => {
               </Paragraph>
               <br />
               <SectionBtn href="https://web.dahliaos.io/">
+                <ScienceIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 Try it out
               </SectionBtn>
             </Sides>
@@ -344,6 +360,7 @@ const Home: NextPage = () => {
           <Download />
           <ButtonContainer>
             <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+              <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />{" "}
               Looking for an older release?
             </SectionBtn>
           </ButtonContainer>

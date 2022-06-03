@@ -8,12 +8,13 @@ import { useRouter } from "next/router";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
 import { useGithubReleases } from "../hooks/useGithubReleases";
+import { GetApp, TextSnippet as TextSnippetIcon } from "@mui/icons-material";
 
 const Card = styled.div<{ isError?: boolean }>`
   display: flex;
   flex-direction: row;
   border-radius: 13px;
-  max-width: ${({ isError }) => (isError ? 450 : 950)}px;
+  max-width: ${({ isError }) => (isError ? 450 : 1000)}px;
   max-height: 360px;
   width: 90%;
   margin: 0 auto;
@@ -405,6 +406,9 @@ const Download = ({ showMore }: IDownloadProps) => {
                 </Changelogs>
                 <ReadMoreContainer>
                   <ReadMoreButton href={releases[0].html_url}>
+                    <TextSnippetIcon
+                      style={{ marginLeft: -5, marginRight: 10 }}
+                    />{" "}
                     Read more
                   </ReadMoreButton>
                 </ReadMoreContainer>
@@ -416,6 +420,7 @@ const Download = ({ showMore }: IDownloadProps) => {
                     href={asset.browser_download_url}
                     onClick={openModal}
                   >
+                    <GetApp style={{ marginLeft: -5, marginRight: 10 }} />
                     {asset.name.includes("efi")
                       ? "Download (EFI)"
                       : "Download (Legacy)"}
@@ -453,6 +458,9 @@ const Download = ({ showMore }: IDownloadProps) => {
                               disableGradient={!asset.name.includes("efi")}
                               onClick={openModal}
                             >
+                              <GetApp
+                                style={{ marginLeft: -10, marginRight: 10 }}
+                              />
                               {asset.name.includes("efi") ? "EFI" : "Legacy"}
                             </StyledSecondaryButton>
                           ))}
