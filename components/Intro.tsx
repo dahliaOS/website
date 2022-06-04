@@ -254,6 +254,7 @@ const Background = styled.div`
   background-repeat: no-repeat;
   background-size: 1414px;
   background-position: center;
+  background-attachment: fixed;
   will-change: transform;
   z-index: 0;
   transform: scale(2.2);

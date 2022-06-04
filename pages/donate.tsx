@@ -15,8 +15,9 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
   @media (max-width: 1025px) {
-    padding: 0 0 20px 20px;
+    padding: 150px 20px;
   }
 `;
 

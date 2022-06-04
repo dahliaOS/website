@@ -16,6 +16,7 @@ const Wrapper = styled.div`
       : "url('/images/bgLight.svg')"};
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   background-size: cover;
 `;
 

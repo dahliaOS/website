@@ -8,7 +8,6 @@ import Head from "next/head";
 const Wrapper = styled.div`
   min-height: 100vh;
   padding-top: 150px;
-  padding-bottom: 150px;
   background: ${({ theme }) =>
     theme.type === "dark"
       ? "url('/images/bgDark.svg')"
@@ -16,9 +15,7 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  @media (max-width: 1025px) {
-    padding: 0 0 60px 0px;
-  }
+  background-attachment: fixed;
 `;
 
 const Card = styled.div`
@@ -48,10 +45,13 @@ const Card = styled.div`
 const Container = styled.div`
   width: 90%;
   display: block;
-  max-width: 1500px;
   margin: 0 auto;
   font-size: 1.2em;
+  padding-bottom: 150px;
   text-align: center;
+  @media (max-width: 1025px) {
+    padding-bottom: 60px;
+  }
 `;
 
 const AppsGrid = styled.div`
