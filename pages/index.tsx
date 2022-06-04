@@ -10,13 +10,13 @@ import Download from "../components/Download";
 import "animate.css/animate.min.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import {
-  GetApp,
   History as HistoryIcon,
   Devices as DevicesIcon,
   GitHub as GitHubIcon,
   CorporateFare as CorporateFareIcon,
   Science as ScienceIcon,
   AutoAwesome as AutoAwesomeIcon,
+  Apps as AppsIcon,
 } from "@mui/icons-material";
 
 const Wrapper = styled.div``;
@@ -193,14 +193,14 @@ const Home: NextPage = () => {
                 application.
               </Paragraph>
               <br />
-              <SectionBtn href="">
-                <GetApp style={{ marginLeft: -5, marginRight: 10 }} />
-                BUTTON NAME
+              <SectionBtn href="/applications">
+                <AppsIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                APPLICATIONS
               </SectionBtn>
             </Sides>
           </Container>
         </AnimationOnScroll>
-        {/* Features */}
+        s{/* Features */}
         <AnimationOnScroll
           animateIn="animate__fadeInRightBig"
           animateOnce={true}
