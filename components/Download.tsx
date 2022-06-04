@@ -8,7 +8,12 @@ import { useRouter } from "next/router";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
 import { useGithubReleases } from "../hooks/useGithubReleases";
-import { GetApp, TextSnippet as TextSnippetIcon } from "@mui/icons-material";
+import {
+  GetApp,
+  TextSnippet as TextSnippetIcon,
+  VolunteerActivism as VolunteerActivismIcon,
+  Close as CloseIcon,
+} from "@mui/icons-material";
 
 const Card = styled.div<{ isError?: boolean }>`
   display: flex;
@@ -358,13 +363,16 @@ const Download = ({ showMore }: IDownloadProps) => {
 
             <DialogActions>
               <DialogButton disableGradient onClick={closeModal}>
-                No, thanks
+                <CloseIcon style={{ marginLeft: -5, marginRight: 10 }} /> Close
               </DialogButton>
               <DialogButton
                 disableGradient={false}
                 onClick={() => Router.replace("/donate")}
                 autoFocus
               >
+                <VolunteerActivismIcon
+                  style={{ marginLeft: -5, marginRight: 10 }}
+                />
                 Donate
               </DialogButton>
             </DialogActions>
@@ -408,7 +416,7 @@ const Download = ({ showMore }: IDownloadProps) => {
                   <ReadMoreButton href={releases[0].html_url}>
                     <TextSnippetIcon
                       style={{ marginLeft: -5, marginRight: 10 }}
-                    />{" "}
+                    />
                     Read more
                   </ReadMoreButton>
                 </ReadMoreContainer>
