@@ -289,13 +289,16 @@ const Home: NextPage = () => {
                 non-aggression community and free defensive patent pool.
               </Paragraph>
               <br />
-              <SectionBtn href="https://github.com/dahliaOS">
+              <SectionBtn
+                href="https://github.com/dahliaOS"
+                style={{ marginRight: 30 }}
+              >
                 <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 GITHUB
               </SectionBtn>
               <SectionBtn
                 href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
-                style={{ marginLeft: 30 }}
+                style={{ marginLeft: 0 }}
               >
                 <CorporateFareIcon
                   style={{ marginLeft: -5, marginRight: 10 }}

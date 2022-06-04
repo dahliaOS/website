@@ -201,7 +201,7 @@ const SectionBtn = styled(Button)`
   }
 
   @media (max-width: 1025px) {
-    padding: 5px 20px;
+    padding: 10px 15px;
   }
 
   &:hover {
