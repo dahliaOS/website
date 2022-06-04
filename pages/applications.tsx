@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { GitHub as GitHubIcon } from "@mui/icons-material";
+import Head from "next/head";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -116,6 +117,18 @@ const AppIcon = styled.img`
 const Applications = () => {
   return (
     <>
+      <Head>
+        <title>dahliaOS – Applications</title>
+        <meta
+          property="og:title"
+          content="dahliaOS – Applications"
+          key="title"
+        />
+        <meta
+          property="og:description"
+          content="A list of dahliaOS applications."
+        ></meta>
+      </Head>
       <Navbar />
       <Wrapper>
         <Container>

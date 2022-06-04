@@ -92,7 +92,7 @@ const Download = () => {
               content="dahliaOS – Download"
               key="title"
             />
-            <meta property="og:description" content="Download dahliaOS!"></meta>
+            <meta property="og:description" content="Download dahliaOS."></meta>
           </Head>
           <Navbar />
           <Wrapper>

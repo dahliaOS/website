@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { VolunteerActivism as VolunteerActivismIcon } from "@mui/icons-material";
+import Head from "next/head";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -84,6 +85,11 @@ const StyledButton = styled(Button)`
 const Donate = () => {
   return (
     <>
+      <Head>
+        <title>dahliaOS – Donate</title>
+        <meta property="og:title" content="dahliaOS – Donate" key="title" />
+        <meta property="og:description" content="Donate to dahliaOS."></meta>
+      </Head>
       <Navbar />
       <Wrapper>
         <Container>
