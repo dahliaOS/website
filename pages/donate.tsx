@@ -7,7 +7,7 @@ import Head from "next/head";
 
 const Wrapper = styled.div`
   min-height: 100vh;
-  margin-top: 150px;
+  padding-top: 150px;
   background: ${({ theme }) =>
     theme.type === "dark"
       ? "url('/images/bgDark.svg')"
