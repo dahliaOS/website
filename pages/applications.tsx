@@ -194,7 +194,7 @@ const Applications = () => {
                 App store is an application that provides a curated marketplace
                 for third-party applications.
               </CardParagraph>
-              <StyledButton href="">
+              <StyledButton href="https://github.com/dahliaOS/app_store">
                 <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 Source
               </StyledButton>
@@ -259,7 +259,7 @@ const Applications = () => {
               <CardParagraph>
                 Calculator is an application for performing basic calculations.
               </CardParagraph>
-              <StyledButton href="https://github.com/dahliaOS/text_editor">
+              <StyledButton href="https://github.com/dahliaOS/calculator">
                 <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 Source
               </StyledButton>
