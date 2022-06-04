@@ -16,6 +16,9 @@ const Wrapper = styled.div`
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  @media (max-width: 1025px) {
+    padding: 150px 20px;
+  }
 `;
 
 const Card = styled.div`
