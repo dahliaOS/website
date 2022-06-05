@@ -148,7 +148,9 @@ const SectionImg = styled.img<{ showOnRight?: boolean }>`
   }
 `;
 
-const DownloadContainer = styled(motion.div)``;
+const DownloadContainer = styled(motion.div)`
+  overflow: hidden;
+`;
 
 const variantRight: Variants = {
   visible: {
