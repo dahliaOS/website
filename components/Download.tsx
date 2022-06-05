@@ -356,11 +356,12 @@ const Download = ({ showMore }: IDownloadProps) => {
             <h1>Support dahliaOS</h1>
             <br />
             <p>
-              Donating to dahliaOS will help us purchase devices for testing and
-              cover web hosting fees, so we can continue work on our amazing
-              software!
+              Donating to dahliaOS will help us cover the expenses and furtherly
+              motivate us to continue working on bringing you new releases and
+              updates. Click the Donate button below if you'd like to learn more
+              about donating to dahliaOS!
             </p>
-
+            <br />
             <DialogActions>
               <DialogButton disableGradient onClick={closeModal}>
                 <CloseIcon style={{ marginLeft: -5, marginRight: 10 }} /> Close
