@@ -358,8 +358,8 @@ const Download = ({ showMore }: IDownloadProps) => {
             <p>
               Donating to dahliaOS will help us cover the expenses and furtherly
               motivate us to continue working on bringing you new releases and
-              updates. Click the Donate button below if you'd like to learn more
-              about donating to dahliaOS!
+              updates. Click the Donate button below if you&apos;d like to learn
+              more about donating to dahliaOS!
             </p>
             <br />
             <DialogActions>
