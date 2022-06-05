@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Head from "next/head";
 import styled, { useTheme } from "styled-components";
 import type { NextPage } from "next";
@@ -16,15 +16,11 @@ import {
   AutoAwesome as AutoAwesomeIcon,
   Apps as AppsIcon,
 } from "@mui/icons-material";
-import { motion, useAnimation, Variants } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion, Variants } from "framer-motion";
 
 const Wrapper = styled.div``;
 
-const Container = styled(motion.div).attrs(() => ({
-  initial: "hidden",
-  variants,
-}))<{ imageOnRight?: boolean }>`
+const Container = styled(motion.div)<{ imageOnRight?: boolean }>`
   position: relative;
   display: flex;
   min-height: 90vh;
@@ -152,33 +148,37 @@ const SectionImg = styled.img<{ showOnRight?: boolean }>`
   }
 `;
 
-const DownloadContainer = styled(motion.div).attrs(() => ({
-  initial: "hidden",
-  downloadVariants,
-}))``;
+const DownloadContainer = styled(motion.div)``;
 
-const variants: Variants = {
-  visible: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 30 } },
-  hidden: { x: -3000, opacity: 0 },
+const variantRight: Variants = {
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 30, duration: 2 },
+  },
+  hidden: { x: -1000, opacity: 0 },
 };
 
-const downloadVariants: Variants = {
-  visible: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 30 } },
-  hidden: { y: -3000, opacity: 0 },
+const variantLeft: Variants = {
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 30, duration: 2 },
+  },
+  hidden: { x: 1000, opacity: 0 },
+};
+
+const downloadVariant: Variants = {
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 30, duration: 2 },
+  },
+  hidden: { y: 300, opacity: 0 },
 };
 
 const Home: NextPage = () => {
   const theme = useTheme();
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
 
   return (
     <React.Fragment>
@@ -190,7 +190,13 @@ const Home: NextPage = () => {
         <Navbar rootpagehasanimation />
         <Intro />
         {/* Just the basics */}
-        <Container id="start" animate={controls} ref={ref}>
+        <Container
+          id="start"
+          variants={variantRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <Sides>
             <SectionImgContainer>
               <SectionImg
@@ -223,7 +229,14 @@ const Home: NextPage = () => {
           </Sides>
         </Container>
         {/* Features */}
-        <Container imageOnRight id="features" animate={controls} ref={ref}>
+        <Container
+          imageOnRight
+          id="features"
+          variants={variantLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <Sides>
             <SectionTitle>Features</SectionTitle>
             <br />
@@ -255,7 +268,12 @@ const Home: NextPage = () => {
           </Sides>
         </Container>
         {/* Wide range of supported devices */}
-        <Container animate={controls} ref={ref}>
+        <Container
+          variants={variantRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <Sides>
             <SectionImgContainer>
               <SectionImg
@@ -284,7 +302,13 @@ const Home: NextPage = () => {
           </Sides>
         </Container>
         {/* Free open source software */}
-        <Container imageOnRight animate={controls} ref={ref}>
+        <Container
+          imageOnRight
+          variants={variantLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <Sides>
             <SectionTitle>Free open source software</SectionTitle>
             <br />
@@ -327,7 +351,12 @@ const Home: NextPage = () => {
           </Sides>
         </Container>
         {/* Demo */}
-        <Container animate={controls} ref={ref}>
+        <Container
+          variants={variantRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <Sides>
             <SectionImgContainer>
               <SectionImg
@@ -359,8 +388,14 @@ const Home: NextPage = () => {
         <br />
         <br />
         <br />
-        <DownloadContainer animate={controls} ref={ref}>
-          <Header id="download">Download</Header>
+        <DownloadContainer
+          id="download"
+          variants={downloadVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          <Header>Download</Header>
           <Download />
           <ButtonContainer>
             <SectionBtn href="https://github.com/dahliaOS/releases/releases">
