@@ -2,7 +2,14 @@ import { Button } from "@mui/material";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { VolunteerActivism as VolunteerActivismIcon } from "@mui/icons-material";
+import {
+  VolunteerActivism as VolunteerActivismIcon,
+  Language as LanguageIcon,
+  Dns as DnsIcon,
+  Terminal as TerminalIcon,
+  DeveloperMode as DeveloperModeIcon,
+  Devices as DevicesIcon,
+} from "@mui/icons-material";
 import Head from "next/head";
 
 const Wrapper = styled.div`
@@ -24,7 +31,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   width: 90%;
   display: block;
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
   text-align: left;
   font-size: 1.2em;
@@ -48,39 +55,95 @@ const Paragraph = styled.p`
   color: ${({ theme }) => theme.text.textColor};
 `;
 
-const List = styled.ul`
-  color: ${({ theme }) => theme.text.textColor};
-`;
-
 const StyledButton = styled(Button)`
   padding: 10px 20px;
   border-radius: 5px;
   margin: 10px 0;
-
-  &:first-of-type {
-    color: ${({ theme }) => theme.text.textColorExtremelyLight};
-    background: linear-gradient(
-      153deg,
-      ${({ theme }) => theme.accent.accentColorLight} 0%,
-      ${({ theme }) => theme.accent.accentColor} 100%
-    );
-    background-size: 400% 400%;
-    transition: 0.2s ease-in-out;
-  }
-
-  &:nth-child(even) {
-    border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
-    color: ${({ theme }) => theme.text.textColor};
-    @media (max-width: 1025px) {
-      &:nth-child(even) {
-        margin: 10px -50px;
-      }
-    }
-  }
+  color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  background: linear-gradient(
+    153deg,
+    ${({ theme }) => theme.accent.accentColorLight} 0%,
+    ${({ theme }) => theme.accent.accentColor} 100%
+  );
+  background-size: 400% 400%;
+  transition: 0.2s ease-in-out;
 
   &:hover {
     background-position: 100% 50%;
   }
+`;
+
+const SupportItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  padding: 20px 20px;
+  max-height: 60px;
+  overflow: hidden;
+  color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  background: linear-gradient(
+    153deg,
+    ${({ theme }) => theme.accent.accentColorLight} 0%,
+    ${({ theme }) => theme.accent.accentColor} 100%
+  );
+  background-size: 400% 400%;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
+    0 1px 8px 0 rgb(0 0 0 / 12%);
+
+  &:hover {
+    background-position: 100% 50%;
+  }
+
+  @media (max-width: 980px) {
+    max-height: unset;
+  }
+`;
+
+const SupportItemLarge = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  padding: 20px 20px;
+  max-height: 60px;
+  grid-column: auto / span 2;
+
+  overflow: hidden;
+  color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  background: linear-gradient(
+    153deg,
+    ${({ theme }) => theme.accent.accentColorLight} 0%,
+    ${({ theme }) => theme.accent.accentColor} 100%
+  );
+  background-size: 400% 400%;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
+    0 1px 8px 0 rgb(0 0 0 / 12%);
+
+  &:hover {
+    background-position: 100% 50%;
+  }
+
+  @media (max-width: 980px) {
+    max-height: unset;
+  }
+`;
+
+const ItemParagraph = styled.p`
+  color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  font-size: 0.8em;
+  font-weight: 400;
+  text-align: center;
+`;
+
+const SupportGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22.5%, 1fr));
+  grid-gap: 1em 1em;
+  grid-auto-flow: row dense;
+  justify-content: left;
 `;
 
 const Donate = () => {
@@ -96,19 +159,38 @@ const Donate = () => {
         <Container>
           <Header>Donate to dahliaOS</Header>
           <br />
-          <Paragraph>
+          <Paragraph style={{ textAlign: "center" }}>
             Thank you for your support! We use donations to keep improving our
             project and hardware support, and donations will go towards the
             following:
           </Paragraph>
           <br />
-          <List>
-            <li>Website hosting</li>
-            <li>Web domains</li>
-            <li>Development software licenses</li>
-            <li>General development of the operating system and tools</li>
-            <li>Devices for testing and expanding hardware support</li>
-          </List>
+          <SupportGrid>
+            <SupportItem>
+              <DnsIcon style={{ marginRight: 10 }} />
+              <ItemParagraph>Website hosting</ItemParagraph>
+            </SupportItem>
+            <SupportItemLarge>
+              <TerminalIcon style={{ marginRight: 10 }} />
+              <ItemParagraph>Development software licenses</ItemParagraph>
+            </SupportItemLarge>
+            <SupportItem>
+              <LanguageIcon style={{ marginRight: 10 }} />
+              <ItemParagraph>Website domains</ItemParagraph>
+            </SupportItem>
+            <SupportItemLarge>
+              <DeveloperModeIcon style={{ marginRight: 10 }} />
+              <ItemParagraph>
+                General development of the operating system and tools
+              </ItemParagraph>
+            </SupportItemLarge>
+            <SupportItemLarge>
+              <DevicesIcon style={{ marginRight: 10 }} />
+              <ItemParagraph>
+                Devices for testing and expanding hardware support
+              </ItemParagraph>
+            </SupportItemLarge>
+          </SupportGrid>
           <br />
           <SubHeader>Where can I donate?</SubHeader>
           <br />
