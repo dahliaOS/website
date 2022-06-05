@@ -14,21 +14,17 @@
 - **Official**, one and only website for the dahliaOS project
 - **Find** it by clicking [here!](https://dahliaos.io)
 
-## Contribute
-
-If you're wondering how to contribute to the project, please refer to [CONTRIBUTING.md](/CONTRIBUTING.md)
-
-## Install development tools
-
-- [Install Node.js and NPM](https://nodejs.org/en/download/package-manager/)
-- [Install Yarn (recommended opposed to NPM)](https://yarnpkg.com/getting-started/install)
-- Code editor of your choice (we recommend [VSCode](https://code.visualstudio.com/))
-
-## Local testing
+## Development
 
 To develop and locally test the website:
 
-### Step 1. Install dependencies:
+### Step 1. Install development tools:
+
+1. [Install Node.js and NPM](https://nodejs.org/en/download/package-manager/)
+1. [Install Yarn](https://yarnpkg.com/getting-started/install) (recommended opposed to NPM)
+1. Code editor of your choice (we recommend [VSCode](https://code.visualstudio.com/))
+
+### Step 2. Install dependencies:
 
 Install node modules required to run the website by running:
 
@@ -36,30 +32,34 @@ Install node modules required to run the website by running:
 yarn
 ```
 
-### Step 2. Start the Next.js dev server:
+### Step 3. Start the Next.js dev server:
 
 ```
 yarn dev
 ```
 
-In a browser, load the page [localhost:3000](http://localhost:3000) and you should now be able to test the website.
+In a browser, load the page [localhost:3000](http://localhost:3000) and you should now be able to test the website while making your changes.
 Next.js' dev server has hot reloading so no need to restart the instance when it's running!
 
-### Step 3. Build:
+### Step 4. Build:
 
-After making your changes, test your changes by building the website:
+After making your changes and verifying it all works in the dev server, furtherly test them out by building the website:
 
 ```
 yarn build
 ```
 
-### Step 4. Start:
+### Step 5. Start:
 
 ```
 yarn start
 ```
 
-In a browser, load the page [localhost:3000](http://localhost:3000) and you should now be able to test the website.
+In a browser, load the page [localhost:3000](http://localhost:3000) and you should now be able to view the built website.
+
+## Contribute
+
+If you're wondering how to contribute to the project, please refer to [CONTRIBUTING.md](/CONTRIBUTING.md)
 
 ## Sponsored by
 
