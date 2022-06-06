@@ -218,7 +218,7 @@ const Home: NextPage = () => {
         <title>dahliaOS – Home</title>
         <meta property="og:title" content="dahliaOS" key="title" />
       </Head>
-      <Wrapper>
+      <Wrapper tabIndex={0}>
         <Navbar rootpagehasanimation />
         <Intro />
         {windowSize >= 1075 ? (
