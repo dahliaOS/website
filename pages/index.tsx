@@ -154,7 +154,7 @@ const variantRight: Variants = {
   visible: {
     x: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 30, duration: 2 },
+    transition: { type: "spring", stiffness: 20, duration: 1 },
   },
   hidden: { x: -1000, opacity: 0 },
 };
@@ -163,7 +163,7 @@ const variantLeft: Variants = {
   visible: {
     x: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 30, duration: 2 },
+    transition: { type: "spring", stiffness: 20, duration: 1 },
   },
   hidden: { x: 1000, opacity: 0 },
 };
@@ -172,7 +172,7 @@ const downloadVariant: Variants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 30, duration: 2 },
+    transition: { type: "spring", stiffness: 20, duration: 1 },
   },
   hidden: { y: 300, opacity: 0 },
 };
@@ -229,7 +229,7 @@ const Home: NextPage = () => {
               variants={variantRight}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <Sides>
                 <SectionImgContainer>
@@ -270,7 +270,7 @@ const Home: NextPage = () => {
               variants={variantLeft}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <Sides>
                 <SectionTitle>Features</SectionTitle>
@@ -309,7 +309,7 @@ const Home: NextPage = () => {
               variants={variantRight}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <Sides>
                 <SectionImgContainer>
@@ -344,7 +344,7 @@ const Home: NextPage = () => {
               variants={variantLeft}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <Sides>
                 <SectionTitle>Free open source software</SectionTitle>
@@ -394,7 +394,7 @@ const Home: NextPage = () => {
               variants={variantRight}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <Sides>
                 <SectionImgContainer>
@@ -432,7 +432,7 @@ const Home: NextPage = () => {
               variants={downloadVariant}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <Header>Download</Header>
               <Download />
