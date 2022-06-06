@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
 html {
   background: ${({ theme }) => theme.background.backgroundColor};
   scroll-behavior: smooth;
+  overflow-x: hidden;
 
 }
 body {
