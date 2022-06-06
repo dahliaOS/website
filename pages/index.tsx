@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import styled, { useTheme } from "styled-components";
 import type { NextPage } from "next";
@@ -177,8 +177,40 @@ const downloadVariant: Variants = {
   hidden: { y: 300, opacity: 0 },
 };
 
+const variantRightMobile: Variants = {
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 30, duration: 2 },
+  },
+  hidden: { x: -300, opacity: 0 },
+};
+
+const variantLeftMobile: Variants = {
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 30, duration: 2 },
+  },
+  hidden: { x: 300, opacity: 0 },
+};
+
+const downloadVariantMobile: Variants = {
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 30, duration: 2 },
+  },
+  hidden: { y: 300, opacity: 0 },
+};
+
 const Home: NextPage = () => {
+  const [windowSize, setWindowSize] = useState<number>(0);
   const theme = useTheme();
+
+  useEffect(() => {
+    setWindowSize(window.innerWidth);
+  }, []);
 
   return (
     <React.Fragment>
@@ -189,221 +221,453 @@ const Home: NextPage = () => {
       <Wrapper>
         <Navbar rootpagehasanimation />
         <Intro />
-        {/* Just the basics */}
-        <Container
-          id="start"
-          variants={variantRight}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          <Sides>
-            <SectionImgContainer>
-              <SectionImg
-                alt="dark settings modal"
-                src={
-                  theme.type === "dark"
-                    ? "/images/mockups/darkSettings.webp"
-                    : "/images/mockups/lightSettings.webp"
-                }
-              />
-            </SectionImgContainer>
-          </Sides>
-          <Sides>
-            <SectionTitle>Just the basics</SectionTitle>
-            <br />
-            <Paragraph>
-              dahliaOS keeps things light by only including apps you need
-              leaving the choice to the user on what other applications to
-              install. We provide a curated marketplace for third-party
-              applications so that the user can install any application they
-              wish within just one click! It&apos;s also possible to install all
-              of your favorite applications from other operating systems using
-              Graft, our virtual machine and containers management application.
-            </Paragraph>
-            <br />
-            <SectionBtn href="/applications">
-              <AppsIcon style={{ marginLeft: -5, marginRight: 10 }} />
-              APPLICATIONS
-            </SectionBtn>
-          </Sides>
-        </Container>
-        {/* Features */}
-        <Container
-          imageOnRight
-          id="features"
-          variants={variantLeft}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          <Sides>
-            <SectionTitle>Features</SectionTitle>
-            <br />
-            <Paragraph>
-              One of our primary goals is to provide as many useful features as
-              possible while maintaining great and painless experience to the
-              user. We&apos;ve dedicated a lot of time to customizability so
-              it&apos;s possible to change the look and feel of almost every
-              component of the shell.
-            </Paragraph>
-            <br />
-            <SectionBtn href="">
-              <AutoAwesomeIcon style={{ marginLeft: -5, marginRight: 10 }} />
-              BUTTON NAME
-            </SectionBtn>
-          </Sides>
-          <Sides>
-            <SectionImgContainer showOnRight>
-              <SectionImg
-                alt="dark features modal"
-                src={
-                  theme.type === "dark"
-                    ? "/images/darkFeatures.webp"
-                    : "/images/lightFeatures.webp"
-                }
-                showOnRight
-              />
-            </SectionImgContainer>
-          </Sides>
-        </Container>
-        {/* Wide range of supported devices */}
-        <Container
-          variants={variantRight}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          <Sides>
-            <SectionImgContainer>
-              <SectionImg
-                alt="dark files modal"
-                src={
-                  theme.type === "dark"
-                    ? "/images/mockups/darkFiles.webp"
-                    : "/images/mockups/lightFiles.webp"
-                }
-              />
-            </SectionImgContainer>
-          </Sides>
-          <Sides>
-            <SectionTitle>A wide range of supported devices</SectionTitle>
-            <br />
-            <Paragraph>
-              dahliaOS provides a fast and stable experience on nearly every
-              computer, from an old desktop tower to the latest generation of
-              mobile notebooks.
-            </Paragraph>
-            <br />
-            <SectionBtn href="https://docs.dahliaos.io/hardware/support">
-              <DevicesIcon style={{ marginLeft: -5, marginRight: 10 }} />
-              SUPPORTED DEVICES
-            </SectionBtn>
-          </Sides>
-        </Container>
-        {/* Free open source software */}
-        <Container
-          imageOnRight
-          variants={variantLeft}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          <Sides>
-            <SectionTitle>Free open source software</SectionTitle>
-            <br />
-            <Paragraph>
-              dahliaOS is and always will be open sourced and 100% free. All of
-              our code and even some design work is hosted on GitHub. We believe
-              transparency is important. We&apos;re also proud to say that since
-              August of 2020 we&apos;re members of the Open Invention Network,
-              the world&apos;s largest patent non-aggression community and free
-              defensive patent pool.
-            </Paragraph>
-            <br />
-            <SectionBtn
-              href="https://github.com/dahliaOS"
-              style={{ marginRight: 30 }}
+        {windowSize >= 1075 ? (
+          <>
+            {/* Just the basics */}
+            <Container
+              id="start"
+              variants={variantRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
             >
-              <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-              GITHUB
-            </SectionBtn>
-            <SectionBtn
-              href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
-              style={{ marginLeft: 0 }}
+              <Sides>
+                <SectionImgContainer>
+                  <SectionImg
+                    alt="dark settings modal"
+                    src={
+                      theme.type === "dark"
+                        ? "/images/mockups/darkSettings.webp"
+                        : "/images/mockups/lightSettings.webp"
+                    }
+                  />
+                </SectionImgContainer>
+              </Sides>
+              <Sides>
+                <SectionTitle>Just the basics</SectionTitle>
+                <br />
+                <Paragraph>
+                  dahliaOS keeps things light by only including apps you need
+                  leaving the choice to the user on what other applications to
+                  install. We provide a curated marketplace for third-party
+                  applications so that the user can install any application they
+                  wish within just one click! It&apos;s also possible to install
+                  all of your favorite applications from other operating systems
+                  using Graft, our virtual machine and containers management
+                  application.
+                </Paragraph>
+                <br />
+                <SectionBtn href="/applications">
+                  <AppsIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  APPLICATIONS
+                </SectionBtn>
+              </Sides>
+            </Container>
+            {/* Features */}
+            <Container
+              imageOnRight
+              id="features"
+              variants={variantLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
             >
-              <CorporateFareIcon style={{ marginLeft: -5, marginRight: 10 }} />
-              OPEN INVENTION NETWORK
-            </SectionBtn>
-          </Sides>
-          <Sides>
-            <SectionImgContainer showOnRight>
-              <SectionImg
-                alt="open source modal"
-                src={
-                  theme.type === "dark"
-                    ? "/images/darkOIN.webp"
-                    : "/images/lightOIN.webp"
-                }
-                showOnRight
-              />
-            </SectionImgContainer>
-          </Sides>
-        </Container>
-        {/* Demo */}
-        <Container
-          variants={variantRight}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          <Sides>
-            <SectionImgContainer>
-              <SectionImg
-                alt="dark pangolin modal"
-                src={
-                  theme.type === "dark"
-                    ? "/images/mockups/pangolindark.webp"
-                    : "/images/mockups/pangolinlight.webp"
-                }
-              />
-            </SectionImgContainer>
-          </Sides>
-          <Sides>
-            <SectionTitle>Demo</SectionTitle>
+              <Sides>
+                <SectionTitle>Features</SectionTitle>
+                <br />
+                <Paragraph>
+                  One of our primary goals is to provide as many useful features
+                  as possible while maintaining great and painless experience to
+                  the user. We&apos;ve dedicated a lot of time to
+                  customizability so it&apos;s possible to change the look and
+                  feel of almost every component of the shell.
+                </Paragraph>
+                <br />
+                <SectionBtn href="">
+                  <AutoAwesomeIcon
+                    style={{ marginLeft: -5, marginRight: 10 }}
+                  />
+                  BUTTON NAME
+                </SectionBtn>
+              </Sides>
+              <Sides>
+                <SectionImgContainer showOnRight>
+                  <SectionImg
+                    alt="dark features modal"
+                    src={
+                      theme.type === "dark"
+                        ? "/images/darkFeatures.webp"
+                        : "/images/lightFeatures.webp"
+                    }
+                    showOnRight
+                  />
+                </SectionImgContainer>
+              </Sides>
+            </Container>
+            {/* Wide range of supported devices */}
+            <Container
+              variants={variantRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <Sides>
+                <SectionImgContainer>
+                  <SectionImg
+                    alt="dark files modal"
+                    src={
+                      theme.type === "dark"
+                        ? "/images/mockups/darkFiles.webp"
+                        : "/images/mockups/lightFiles.webp"
+                    }
+                  />
+                </SectionImgContainer>
+              </Sides>
+              <Sides>
+                <SectionTitle>A wide range of supported devices</SectionTitle>
+                <br />
+                <Paragraph>
+                  dahliaOS provides a fast and stable experience on nearly every
+                  computer, from an old desktop tower to the latest generation
+                  of mobile notebooks.
+                </Paragraph>
+                <br />
+                <SectionBtn href="https://docs.dahliaos.io/hardware/support">
+                  <DevicesIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  SUPPORTED DEVICES
+                </SectionBtn>
+              </Sides>
+            </Container>
+            {/* Free open source software */}
+            <Container
+              imageOnRight
+              variants={variantLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <Sides>
+                <SectionTitle>Free open source software</SectionTitle>
+                <br />
+                <Paragraph>
+                  dahliaOS is and always will be open sourced and 100% free. All
+                  of our code and even some design work is hosted on GitHub. We
+                  believe transparency is important. We&apos;re also proud to
+                  say that since August of 2020 we&apos;re members of the Open
+                  Invention Network, the world&apos;s largest patent
+                  non-aggression community and free defensive patent pool.
+                </Paragraph>
+                <br />
+                <SectionBtn
+                  href="https://github.com/dahliaOS"
+                  style={{ marginRight: 30 }}
+                >
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  GITHUB
+                </SectionBtn>
+                <SectionBtn
+                  href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
+                  style={{ marginLeft: 0 }}
+                >
+                  <CorporateFareIcon
+                    style={{ marginLeft: -5, marginRight: 10 }}
+                  />
+                  OPEN INVENTION NETWORK
+                </SectionBtn>
+              </Sides>
+              <Sides>
+                <SectionImgContainer showOnRight>
+                  <SectionImg
+                    alt="open source modal"
+                    src={
+                      theme.type === "dark"
+                        ? "/images/darkOIN.webp"
+                        : "/images/lightOIN.webp"
+                    }
+                    showOnRight
+                  />
+                </SectionImgContainer>
+              </Sides>
+            </Container>
+            {/* Demo */}
+            <Container
+              variants={variantRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <Sides>
+                <SectionImgContainer>
+                  <SectionImg
+                    alt="dark pangolin modal"
+                    src={
+                      theme.type === "dark"
+                        ? "/images/mockups/pangolindark.webp"
+                        : "/images/mockups/pangolinlight.webp"
+                    }
+                  />
+                </SectionImgContainer>
+              </Sides>
+              <Sides>
+                <SectionTitle>Demo</SectionTitle>
+                <br />
+                <Paragraph>
+                  We offer a web preview of the Pangolin shell so you don&apos;t
+                  have to install the system just to see if our shell is made
+                  for you. Some features are disabled on the web preview but are
+                  functional on the actual system itself.
+                </Paragraph>
+                <br />
+                <SectionBtn href="https://web.dahliaos.io/">
+                  <ScienceIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Try it out
+                </SectionBtn>
+              </Sides>
+            </Container>
             <br />
-            <Paragraph>
-              We offer a web preview of the Pangolin shell so you don&apos;t
-              have to install the system just to see if our shell is made for
-              you. Some features are disabled on the web preview but are
-              functional on the actual system itself.
-            </Paragraph>
             <br />
-            <SectionBtn href="https://web.dahliaos.io/">
-              <ScienceIcon style={{ marginLeft: -5, marginRight: 10 }} />
-              Try it out
-            </SectionBtn>
-          </Sides>
-        </Container>
-        <br />
-        <br />
-        <br />
-        <DownloadContainer
-          id="download"
-          variants={downloadVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          <Header>Download</Header>
-          <Download />
-          <ButtonContainer>
-            <SectionBtn href="https://github.com/dahliaOS/releases/releases">
-              <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />{" "}
-              Looking for an older release?
-            </SectionBtn>
-          </ButtonContainer>
-        </DownloadContainer>
+            <br />
+            <DownloadContainer
+              id="download"
+              variants={downloadVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <Header>Download</Header>
+              <Download />
+              <ButtonContainer>
+                <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+                  <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />{" "}
+                  Looking for an older release?
+                </SectionBtn>
+              </ButtonContainer>
+            </DownloadContainer>
+          </>
+        ) : (
+          <>
+            {/* Just the basics */}
+            <Container
+              id="start"
+              variants={variantRightMobile}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <Sides>
+                <SectionImgContainer>
+                  <SectionImg
+                    alt="dark settings modal"
+                    src={
+                      theme.type === "dark"
+                        ? "/images/mockups/darkSettings.webp"
+                        : "/images/mockups/lightSettings.webp"
+                    }
+                  />
+                </SectionImgContainer>
+              </Sides>
+              <Sides>
+                <SectionTitle>Just the basics</SectionTitle>
+                <br />
+                <Paragraph>
+                  dahliaOS keeps things light by only including apps you need
+                  leaving the choice to the user on what other applications to
+                  install. We provide a curated marketplace for third-party
+                  applications so that the user can install any application they
+                  wish within just one click! It&apos;s also possible to install
+                  all of your favorite applications from other operating systems
+                  using Graft, our virtual machine and containers management
+                  application.
+                </Paragraph>
+                <br />
+                <SectionBtn href="/applications">
+                  <AppsIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  APPLICATIONS
+                </SectionBtn>
+              </Sides>
+            </Container>
+            {/* Features */}
+            <Container
+              imageOnRight
+              id="features"
+              variants={variantLeftMobile}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <Sides>
+                <SectionTitle>Features</SectionTitle>
+                <br />
+                <Paragraph>
+                  One of our primary goals is to provide as many useful features
+                  as possible while maintaining great and painless experience to
+                  the user. We&apos;ve dedicated a lot of time to
+                  customizability so it&apos;s possible to change the look and
+                  feel of almost every component of the shell.
+                </Paragraph>
+                <br />
+                <SectionBtn href="">
+                  <AutoAwesomeIcon
+                    style={{ marginLeft: -5, marginRight: 10 }}
+                  />
+                  BUTTON NAME
+                </SectionBtn>
+              </Sides>
+              <Sides>
+                <SectionImgContainer showOnRight>
+                  <SectionImg
+                    alt="dark features modal"
+                    src={
+                      theme.type === "dark"
+                        ? "/images/darkFeatures.webp"
+                        : "/images/lightFeatures.webp"
+                    }
+                    showOnRight
+                  />
+                </SectionImgContainer>
+              </Sides>
+            </Container>
+            {/* Wide range of supported devices */}
+            <Container
+              variants={variantRightMobile}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <Sides>
+                <SectionImgContainer>
+                  <SectionImg
+                    alt="dark files modal"
+                    src={
+                      theme.type === "dark"
+                        ? "/images/mockups/darkFiles.webp"
+                        : "/images/mockups/lightFiles.webp"
+                    }
+                  />
+                </SectionImgContainer>
+              </Sides>
+              <Sides>
+                <SectionTitle>A wide range of supported devices</SectionTitle>
+                <br />
+                <Paragraph>
+                  dahliaOS provides a fast and stable experience on nearly every
+                  computer, from an old desktop tower to the latest generation
+                  of mobile notebooks.
+                </Paragraph>
+                <br />
+                <SectionBtn href="https://docs.dahliaos.io/hardware/support">
+                  <DevicesIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  SUPPORTED DEVICES
+                </SectionBtn>
+              </Sides>
+            </Container>
+            {/* Free open source software */}
+            <Container
+              imageOnRight
+              variants={variantLeftMobile}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <Sides>
+                <SectionTitle>Free open source software</SectionTitle>
+                <br />
+                <Paragraph>
+                  dahliaOS is and always will be open sourced and 100% free. All
+                  of our code and even some design work is hosted on GitHub. We
+                  believe transparency is important. We&apos;re also proud to
+                  say that since August of 2020 we&apos;re members of the Open
+                  Invention Network, the world&apos;s largest patent
+                  non-aggression community and free defensive patent pool.
+                </Paragraph>
+                <br />
+                <SectionBtn
+                  href="https://github.com/dahliaOS"
+                  style={{ marginRight: 30 }}
+                >
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  GITHUB
+                </SectionBtn>
+                <SectionBtn
+                  href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
+                  style={{ marginLeft: 0 }}
+                >
+                  <CorporateFareIcon
+                    style={{ marginLeft: -5, marginRight: 10 }}
+                  />
+                  OPEN INVENTION NETWORK
+                </SectionBtn>
+              </Sides>
+              <Sides>
+                <SectionImgContainer showOnRight>
+                  <SectionImg
+                    alt="open source modal"
+                    src={
+                      theme.type === "dark"
+                        ? "/images/darkOIN.webp"
+                        : "/images/lightOIN.webp"
+                    }
+                    showOnRight
+                  />
+                </SectionImgContainer>
+              </Sides>
+            </Container>
+            {/* Demo */}
+            <Container
+              variants={variantRightMobile}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <Sides>
+                <SectionImgContainer>
+                  <SectionImg
+                    alt="dark pangolin modal"
+                    src={
+                      theme.type === "dark"
+                        ? "/images/mockups/pangolindark.webp"
+                        : "/images/mockups/pangolinlight.webp"
+                    }
+                  />
+                </SectionImgContainer>
+              </Sides>
+              <Sides>
+                <SectionTitle>Demo</SectionTitle>
+                <br />
+                <Paragraph>
+                  We offer a web preview of the Pangolin shell so you don&apos;t
+                  have to install the system just to see if our shell is made
+                  for you. Some features are disabled on the web preview but are
+                  functional on the actual system itself.
+                </Paragraph>
+                <br />
+                <SectionBtn href="https://web.dahliaos.io/">
+                  <ScienceIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Try it out
+                </SectionBtn>
+              </Sides>
+            </Container>
+            <br />
+            <br />
+            <br />
+            <DownloadContainer
+              id="download"
+              variants={downloadVariantMobile}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <Header>Download</Header>
+              <Download />
+              <ButtonContainer>
+                <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+                  <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />{" "}
+                  Looking for an older release?
+                </SectionBtn>
+              </ButtonContainer>
+            </DownloadContainer>
+          </>
+        )}
         <br />
         <br />
         <br />
