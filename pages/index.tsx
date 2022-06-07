@@ -154,7 +154,7 @@ const variantRight: Variants = {
   visible: {
     x: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 20, duration: 1 },
+    transition: { type: "spring", stiffness: 30, duration: 1 },
   },
   hidden: { x: -1000, opacity: 0 },
 };
@@ -163,7 +163,7 @@ const variantLeft: Variants = {
   visible: {
     x: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 20, duration: 1 },
+    transition: { type: "spring", stiffness: 30, duration: 1 },
   },
   hidden: { x: 1000, opacity: 0 },
 };
@@ -172,7 +172,7 @@ const downloadVariant: Variants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 20, duration: 1 },
+    transition: { type: "spring", stiffness: 30, duration: 1 },
   },
   hidden: { y: 300, opacity: 0 },
 };
