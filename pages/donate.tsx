@@ -78,7 +78,7 @@ const SupportItem = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 13px;
-  padding: 20px 20px;
+  padding: 10px 15px;
   max-height: 60px;
   overflow: hidden;
   color: ${({ theme }) => theme.text.textColorExtremelyLight};
@@ -106,7 +106,7 @@ const SupportItemLarge = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 13px;
-  padding: 20px 20px;
+  padding: 10px 15px;
   max-height: 60px;
   grid-column: auto / span 2;
 
@@ -135,12 +135,11 @@ const ItemParagraph = styled.p`
   color: ${({ theme }) => theme.text.textColorExtremelyLight};
   font-size: 0.8em;
   font-weight: 400;
-  text-align: center;
 `;
 
 const SupportGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(22.5%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(23%, 1fr));
   grid-gap: 1em 1em;
   grid-auto-flow: row dense;
   justify-content: left;
