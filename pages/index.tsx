@@ -148,6 +148,8 @@ const SectionImg = styled.img<{ showOnRight?: boolean }>`
   }
 `;
 
+const IdDiv = styled.div``;
+
 const DownloadContainer = styled(motion.div)``;
 
 const variantRight: Variants = {
@@ -264,9 +266,9 @@ const Home: NextPage = () => {
               </Sides>
             </Container>
             {/* Features */}
+            <IdDiv id="features" />
             <Container
               imageOnRight
-              id="features"
               variants={variantLeft}
               initial="hidden"
               whileInView="visible"
@@ -487,9 +489,9 @@ const Home: NextPage = () => {
               </Sides>
             </Container>
             {/* Features */}
+            <IdDiv id="features" />
             <Container
               imageOnRight
-              id="features"
               variants={variantLeftMobile}
               initial="hidden"
               whileInView="visible"
