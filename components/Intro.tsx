@@ -191,17 +191,13 @@ const SectionBtn = styled(Button)`
   }
 
   &:nth-child(even) {
-    color: ${({ theme }) => theme.text.textColor};
     border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
+    color: ${({ theme }) => theme.text.textColor};
     @media (max-width: 1025px) {
       &:nth-child(even) {
         margin: 10px -50px;
       }
     }
-  }
-
-  @media (max-width: 1025px) {
-    padding: 10px 15px;
   }
 
   &:hover {
@@ -339,14 +335,6 @@ const MockupImageContainer = styled.div`
   margin-top: 80px;
 `;
 
-const ButtonContainer = styled.div`
-  position: relative;
-  text-align: center;
-  display: flex;
-  align-items: left;
-  justify-content: left;
-`;
-
 const Intro = () => {
   const [windowSize, setWindowSize] = useState<number>(0);
   const theme = useTheme();
@@ -392,18 +380,16 @@ const Intro = () => {
                   standard for the desktop platform.
                 </Paragraph>
                 <br />
-                <ButtonContainer>
-                  <SectionBtn href="#download">
-                    <GetApp style={{ marginLeft: -5, marginRight: 10 }} />
-                    DOWNLOAD
-                  </SectionBtn>
-                  <SectionBtn href="#start" style={{ marginLeft: 30 }}>
-                    <LibraryBooksIcon
-                      style={{ marginLeft: -5, marginRight: 10 }}
-                    />
-                    LEARN MORE
-                  </SectionBtn>
-                </ButtonContainer>
+                <SectionBtn href="#download" style={{ marginRight: 30 }}>
+                  <GetApp style={{ marginLeft: -5, marginRight: 10 }} />
+                  DOWNLOAD
+                </SectionBtn>
+                <SectionBtn href="#start" style={{ marginLeft: 0 }}>
+                  <LibraryBooksIcon
+                    style={{ marginLeft: -5, marginRight: 10 }}
+                  />
+                  LEARN MORE
+                </SectionBtn>
               </Sides>
             </IntroContainer>
           </Container>
@@ -431,16 +417,14 @@ const Intro = () => {
                   standard for the desktop platform.
                 </Paragraph>
                 <br />
-                <ButtonContainer>
-                  <SectionBtn href="#download">
-                    <GetApp />
-                    DOWNLOAD
-                  </SectionBtn>
-                  <SectionBtn href="#start" style={{ marginLeft: 30 }}>
-                    <LibraryBooksIcon />
-                    LEARN MORE
-                  </SectionBtn>
-                </ButtonContainer>
+                <SectionBtn href="#download" style={{ marginRight: 12 }}>
+                  <GetApp />
+                  DOWNLOAD
+                </SectionBtn>
+                <SectionBtn href="#start" style={{ marginLeft: 0 }}>
+                  <LibraryBooksIcon />
+                  LEARN MORE
+                </SectionBtn>
               </Sides>
             </IntroContainer>
           </MockupImageContainer>
