@@ -24,6 +24,10 @@ export const Theme: DefaultTheme = {
     main: "#f44336",
     dark: "#d32f2f",
   },
+  pallete: {
+    cardGrey: "#262626",
+    cardGreyAccent: "#535353",
+  },
 };
 
 export const LightTheme: DefaultTheme = {
@@ -49,5 +53,9 @@ export const LightTheme: DefaultTheme = {
     light: "#e57373",
     main: "#f44336",
     dark: "#d32f2f",
+  },
+  pallete: {
+    cardGrey: "#B2B2B2",
+    cardGreyAccent: "#C6C6C6",
   },
 };

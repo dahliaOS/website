@@ -70,8 +70,7 @@ const FooterItem = styled(Link)`
 
 const FooterLogo = styled.img`
   display: block;
-  margin: 0 auto;
-  margin-top: 30px;
+  margin: 30px auto 0 auto;
   height: 30px;
 `;
 

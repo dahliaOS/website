@@ -82,18 +82,12 @@ const SupportItem = styled.div`
   max-height: 60px;
   overflow: hidden;
   color: ${({ theme }) => theme.text.textColorExtremelyLight};
-  background: linear-gradient(
-    153deg,
-    ${({ theme }) => theme.accent.accentColorLight} 0%,
-    ${({ theme }) => theme.accent.accentColor} 100%
-  );
+  background: ${({ theme }) => theme.pallete.cardGrey};
   background-size: 400% 400%;
   transition: 0.2s ease-in-out;
-  box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
-    0 1px 8px 0 rgb(0 0 0 / 12%);
 
   &:hover {
-    background-position: 100% 50%;
+    background: ${({ theme }) => theme.pallete.cardGreyAccent};
   }
 
   @media (max-width: 980px) {
@@ -112,18 +106,12 @@ const SupportItemLarge = styled.div`
 
   overflow: hidden;
   color: ${({ theme }) => theme.text.textColorExtremelyLight};
-  background: linear-gradient(
-    153deg,
-    ${({ theme }) => theme.accent.accentColorLight} 0%,
-    ${({ theme }) => theme.accent.accentColor} 100%
-  );
+  background: ${({ theme }) => theme.pallete.cardGrey};
   background-size: 400% 400%;
   transition: 0.2s ease-in-out;
-  box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
-    0 1px 8px 0 rgb(0 0 0 / 12%);
 
   &:hover {
-    background-position: 100% 50%;
+    background: ${({ theme }) => theme.pallete.cardGreyAccent};
   }
 
   @media (max-width: 980px) {
