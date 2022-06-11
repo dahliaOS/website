@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, SvgIcon } from "@mui/material";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -11,6 +11,7 @@ import {
   Devices as DevicesIcon,
 } from "@mui/icons-material";
 import Head from "next/head";
+import OpenCollectivelogo from "/public/images/logos/opencollective-logomark.svg";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -161,16 +162,16 @@ const Donate = () => {
               <TerminalIcon style={{ marginRight: 10 }} />
               <ItemParagraph>Development software licenses</ItemParagraph>
             </SupportItemLarge>
-            <SupportItem>
-              <LanguageIcon style={{ marginRight: 10 }} />
-              <ItemParagraph>Website domains</ItemParagraph>
-            </SupportItem>
             <SupportItemLarge>
               <DeveloperModeIcon style={{ marginRight: 10 }} />
               <ItemParagraph>
                 General development of the operating system and tools
               </ItemParagraph>
             </SupportItemLarge>
+            <SupportItem>
+              <LanguageIcon style={{ marginRight: 10 }} />
+              <ItemParagraph>Website domains</ItemParagraph>
+            </SupportItem>
             <SupportItemLarge>
               <DevicesIcon style={{ marginRight: 10 }} />
               <ItemParagraph>
@@ -187,7 +188,8 @@ const Donate = () => {
           </Paragraph>
           <br />
           <StyledButton href="https://opencollective.com/dahliaos">
-            <VolunteerActivismIcon
+            <SvgIcon
+              component={OpenCollectivelogo}
               style={{ marginLeft: -5, marginRight: 10 }}
             />
             OPEN COLLECTIVE
