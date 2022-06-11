@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import {
-  VolunteerActivism as VolunteerActivismIcon,
   Language as LanguageIcon,
   Dns as DnsIcon,
   Terminal as TerminalIcon,
