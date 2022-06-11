@@ -108,6 +108,7 @@ const IntroContainer = styled.div`
   align-items: center;
   justify-content: center;
   text-align: left;
+  will-change: transform, opacity;
 
   animation: ${animateContainer} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
@@ -220,6 +221,7 @@ const LogoContainer = styled.div`
   width: 100vw;
   height: 100vh;
   animation: ${ScaleLogo} 1.9s cubic-bezier(0.66, 0, 0.2, 1) 0.433s forwards;
+  will-change: transform, opacity;
 `;
 
 const Logo = styled.img`
@@ -233,6 +235,7 @@ const Mockup = styled.img`
   z-index: 1;
   animation: ${MockupKeyframes()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
+  will-change: transform;
 `;
 
 const Background = styled.div`
@@ -247,7 +250,7 @@ const Background = styled.div`
   background-repeat: no-repeat;
   background-size: 1414px;
   background-position: center;
-  background-attachment: fixed;
+  will-change: transform;
   z-index: 0;
   transform: scale(2.2);
   animation: ${ScaleBackground()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
@@ -267,6 +270,7 @@ const Terminal = styled.div`
   animation: ${animateTerminal()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 0.3s;
+  will-change: transform;
 `;
 
 const Files = styled.div`
@@ -285,6 +289,7 @@ const Files = styled.div`
   animation: ${animateFiles()} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 0.5s;
+  will-change: transform;
 `;
 
 const Calculator = styled.div`
@@ -303,6 +308,7 @@ const Calculator = styled.div`
   animation: ${animateCalculator()} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 0.6s;
+  will-change: transform;
 `;
 
 const Toolbar = styled.div`
@@ -321,6 +327,7 @@ const Toolbar = styled.div`
   transform: translateY(312px);
   animation: ${animateToolbar} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s forwards;
   animation-delay: 1.85s;
+  will-change: transform, opacity;
 `;
 
 const MockupImageContainer = styled.div`
