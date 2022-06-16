@@ -127,7 +127,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
+  min-height: 100vh;
   max-width: 100vw;
   background: ${({ theme }) =>
     theme.type === "dark"
@@ -151,7 +151,6 @@ const Container = styled.div`
 const MockupContainer = styled.div`
   position: relative;
   display: flex;
-  min-height: 100vh;
   padding-top: 50px;
   margin-left: -110px;
   margin-right: -130px;
