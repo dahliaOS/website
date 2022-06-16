@@ -138,7 +138,7 @@ const Container = styled.div`
   background-size: cover;
   overflow: hidden;
 
-  @media (max-width: 1530px) {
+  @media (max-width: 1535px) {
     flex: unset;
     flex-wrap: wrap;
     &:nth-child(even) {
