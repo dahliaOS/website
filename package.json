@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "plsmakepretty": "prettier --write ."
+    "prettier": "prettier --write ."
   },
   "license": "Apache-2.0",
   "dependencies": {

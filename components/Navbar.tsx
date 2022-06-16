@@ -176,9 +176,9 @@ const DesktopNav = styled.div`
 `;
 
 const Navbar = ({
-  rootpagehasanimation,
+  rootPageHasAnimation,
 }: {
-  rootpagehasanimation?: boolean;
+  rootPageHasAnimation?: boolean;
 }) => {
   const [drawerState, setDrawerState] = useState(false);
   const [toggleMoreIcon, setToggleMoreIcon] = useState(false);
@@ -299,7 +299,7 @@ const Navbar = ({
       </Drawer>
       <StyledAppBar
         rootPageHasAnimation={
-          initialPageWidth < 1075 ? false : rootpagehasanimation
+          initialPageWidth < 1075 ? false : rootPageHasAnimation
         }
         position="fixed"
         scrollPos={scrollPos}
