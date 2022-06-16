@@ -279,17 +279,18 @@ const Home: NextPage = () => {
                 <br />
                 <Paragraph>
                   One of our primary goals is to provide as many useful features
-                  as possible while maintaining great and painless experience to
-                  the user. We&apos;ve dedicated a lot of time to
+                  as possible while maintaining a great and painless experience
+                  for the user. We&apos;ve dedicated a lot of time to
                   customizability so it&apos;s possible to change the look and
-                  feel of almost every component of the shell.
+                  feel of almost every component of the shell. Learn more about
+                  dahliaOS&apos; features by clicking the button below!
                 </Paragraph>
                 <br />
-                <SectionBtn href="">
+                <SectionBtn href="/features">
                   <AutoAwesomeIcon
                     style={{ marginLeft: -5, marginRight: 10 }}
                   />
-                  BUTTON NAME
+                  FEATURES
                 </SectionBtn>
               </Sides>
               <Sides>

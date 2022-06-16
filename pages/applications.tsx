@@ -43,6 +43,10 @@ const Card = styled.div`
     flex-direction: column;
     max-height: unset;
   }
+
+  &:hover {
+    background: ${({ theme }) => theme.background.backgroundColorContrast};
+  }
 `;
 
 const Container = styled.div`
