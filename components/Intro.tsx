@@ -93,7 +93,7 @@ const Sides = styled.div`
     margin-right: 50px;
   }
 
-  @media (max-width: 1025px) {
+  @media (max-width: 1535px) {
     flex: unset;
     &:first-child {
       margin-right: 0;
@@ -114,12 +114,13 @@ const IntroContainer = styled.div`
     forwards;
   animation-delay: 2s;
 
-  @media (max-width: 1025px) {
+  @media (max-width: 1535px) {
     animation: ${animateContainer} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
       forwards;
-    animation-delay: 0;
-    margin-left: 0;
+    animation-delay: 0s;
     padding: 10px 50px 0;
+    text-align: left;
+    margin-left: 20px;
   }
 `;
 
@@ -192,7 +193,7 @@ const SectionBtn = styled(Button)`
   &:nth-child(even) {
     border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
     color: ${({ theme }) => theme.text.textColor};
-    @media (max-width: 1025px) {
+    @media (max-width: 1535px) {
       &:nth-child(even) {
         margin: 10px -50px;
       }
