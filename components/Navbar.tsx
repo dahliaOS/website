@@ -232,7 +232,7 @@ const Navbar = ({
           />
         </DrawerLogoContainer>
         <Container>
-          <Link href="/#features">
+          <Link href="/features">
             <AutoAwesomeIcon /> Features
           </Link>
           <Link href="/download">
@@ -331,7 +331,7 @@ const Navbar = ({
             />
           </AppBarLogoLinkContainer>
           <DesktopNav>
-            <AppBarLink href="/#features">
+            <AppBarLink href="/features">
               <AutoAwesomeIcon /> Features
             </AppBarLink>
             <AppBarLink href="/download">

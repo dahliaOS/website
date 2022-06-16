@@ -7,6 +7,8 @@ import {
   Autorenew as AutorenewIcon,
   ViewInAr as ViewInArIcon,
   ViewCompact as ViewCompactIcon,
+  Apps as AppsIcon,
+  ScreenshotMonitor as ScreenshotMonitorIcon,
 } from "@mui/icons-material";
 import { SvgIcon } from "@mui/material";
 
@@ -141,7 +143,7 @@ const Features = () => {
                 <SubHeader>Modern desktop enviroment</SubHeader>
                 <CardParagraph>
                   Pangolin desktop enviroment written in Flutter focused on
-                  UI/UX
+                  UI/UX.
                 </CardParagraph>
               </Sides>
             </Card>
@@ -152,7 +154,7 @@ const Features = () => {
               <Sides>
                 <SubHeader>Rolling release</SubHeader>
                 <CardParagraph>
-                  Frequent minor updates and patches without interruptions
+                  Frequent minor updates and patches.
                 </CardParagraph>
               </Sides>
             </Card>
@@ -163,7 +165,7 @@ const Features = () => {
               <Sides>
                 <SubHeader>DAP Packages</SubHeader>
                 <CardParagraph>
-                  Simple packaging format based on the AppImage architecture
+                  Simple packaging format based on the AppImage architecture.
                 </CardParagraph>
               </Sides>
             </Card>
@@ -174,7 +176,32 @@ const Features = () => {
               <Sides>
                 <SubHeader>Built-in containers</SubHeader>
                 <CardParagraph>
-                  Use applications from other operating systems on dahliaOS
+                  Use applications from other operating systems on dahliaOS.
+                </CardParagraph>
+              </Sides>
+            </Card>
+            <Card>
+              <Icon>
+                <AppsIcon />
+              </Icon>
+              <Sides>
+                <SubHeader>Native applications</SubHeader>
+                <CardParagraph>
+                  dahliaOS comes bundled with a set of native applications
+                  written in Flutter.
+                </CardParagraph>
+              </Sides>
+            </Card>
+            <Card>
+              <Icon>
+                <ScreenshotMonitorIcon />
+              </Icon>
+              <Sides>
+                <SubHeader>Custom window manager</SubHeader>
+                <CardParagraph>
+                  Utopia, our own window management solution that enhances the
+                  experience and boosts productivity by helping you arrange your
+                  windows with ease.
                 </CardParagraph>
               </Sides>
             </Card>
