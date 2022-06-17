@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import DownloadComponent from "../components/Download";
-import { Button } from "@mui/material";
+import { Button, Link } from "@mui/material";
 import Head from "next/head";
 import { useGithubReleases } from "../hooks/useGithubReleases";
 import { History as HistoryIcon } from "@mui/icons-material";
@@ -79,6 +79,10 @@ const Container = styled.div`
   text-align: center;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
+
 const Download = () => {
   const { releases, isError, isLoading } = useGithubReleases();
 
@@ -106,13 +110,15 @@ const Download = () => {
             </Container>
             <DownloadComponent showMore />
             <ButtonContainer>
-              <SectionBtn
+              <StyledLink
                 href="https://github.com/dahliaOS/releases/releases"
                 target="_blank"
               >
-                <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Looking for an older release?
-              </SectionBtn>
+                <SectionBtn>
+                  <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Looking for an older release?
+                </SectionBtn>
+              </StyledLink>
             </ButtonContainer>
           </Wrapper>
           <Footer />
@@ -150,13 +156,15 @@ const Download = () => {
             </Container>
             <DownloadComponent showMore />
             <ButtonContainer>
-              <SectionBtn
+              <StyledLink
                 href="https://github.com/dahliaOS/releases/releases"
                 target="_blank"
               >
-                <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Looking for an older release?
-              </SectionBtn>
+                <SectionBtn>
+                  <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Looking for an older release?
+                </SectionBtn>
+              </StyledLink>
             </ButtonContainer>
           </Wrapper>
           <Footer />
@@ -180,13 +188,15 @@ const Download = () => {
             </Container>
             <DownloadComponent showMore />
             <ButtonContainer>
-              <SectionBtn
+              <StyledLink
                 href="https://github.com/dahliaOS/releases/releases"
                 target="_blank"
               >
-                <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Looking for an older release?
-              </SectionBtn>
+                <SectionBtn>
+                  <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Looking for an older release?
+                </SectionBtn>
+              </StyledLink>
             </ButtonContainer>
           </Wrapper>
           <Footer />

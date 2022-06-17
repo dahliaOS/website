@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Link } from "@mui/material";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -19,6 +19,11 @@ const Wrapper = styled.div`
   @media (max-width: 1025px) {
     padding: 150px 20px;
   }
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  margin-top: auto;
 `;
 
 const Card = styled.div`
@@ -91,6 +96,7 @@ const StyledButton = styled(Button)`
   padding: 10px 20px;
   border-radius: 5px;
   margin-top: auto;
+  min-width: 100%;
 
   color: ${({ theme }) => theme.text.textColorExtremelyLight};
   background: linear-gradient(
@@ -159,13 +165,15 @@ const Applications = () => {
                 Graft is an application for managing virtual machines and
                 containers on dahliaOS.
               </CardParagraph>
-              <StyledButton
+              <StyledLink
                 href="https://github.com/dahliaOS/graft"
                 target="_blank"
               >
-                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Source
-              </StyledButton>
+                <StyledButton>
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Source
+                </StyledButton>
+              </StyledLink>
             </Card>
             <Card>
               <Center>
@@ -179,13 +187,15 @@ const Applications = () => {
                 Settings is an application for setting up your enviroment in
                 dahliaOS and customization.
               </CardParagraph>
-              <StyledButton
+              <StyledLink
                 href="https://github.com/dahliaOS/pangolin_desktop/tree/main/lib/components/settings"
                 target="_blank"
               >
-                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Source
-              </StyledButton>
+                <StyledButton>
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Source
+                </StyledButton>
+              </StyledLink>
             </Card>
             <Card>
               <Center>
@@ -199,13 +209,15 @@ const Applications = () => {
                 Files is an application for viewing and managing your files and
                 folders.
               </CardParagraph>
-              <StyledButton
+              <StyledLink
                 href="https://github.com/dahliaOS/files"
                 target="_blank"
               >
-                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Source
-              </StyledButton>
+                <StyledButton>
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Source
+                </StyledButton>
+              </StyledLink>
             </Card>
             <Card>
               <Center>
@@ -219,13 +231,15 @@ const Applications = () => {
                 App store is an application that provides a curated marketplace
                 for third-party applications.
               </CardParagraph>
-              <StyledButton
+              <StyledLink
                 href="https://github.com/dahliaOS/app_store"
                 target="_blank"
               >
-                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Source
-              </StyledButton>
+                <StyledButton>
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Source
+                </StyledButton>
+              </StyledLink>
             </Card>
             <Card>
               <Center>
@@ -239,13 +253,15 @@ const Applications = () => {
                 Clock is an application for viewing the time, setting alarms and
                 timers.
               </CardParagraph>
-              <StyledButton
+              <StyledLink
                 href="https://github.com/dahliaOS/clock"
                 target="_blank"
               >
-                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Source
-              </StyledButton>
+                <StyledButton>
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Source
+                </StyledButton>
+              </StyledLink>
             </Card>
             <Card>
               <Center>
@@ -258,13 +274,15 @@ const Applications = () => {
               <CardParagraph>
                 Welcome is an application for getting started with dahliaOS.
               </CardParagraph>
-              <StyledButton
+              <StyledLink
                 href="https://github.com/dahliaOS/welcome"
                 target="_blank"
               >
-                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Source
-              </StyledButton>
+                <StyledButton>
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Source
+                </StyledButton>
+              </StyledLink>
             </Card>
             <Card>
               <Center>
@@ -277,13 +295,15 @@ const Applications = () => {
               <CardParagraph>
                 Terminal is an application for interacting with the shell.
               </CardParagraph>
-              <StyledButton
+              <StyledLink
                 href="https://github.com/dahliaOS/terminal"
                 target="_blank"
               >
-                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Source
-              </StyledButton>
+                <StyledButton>
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Source
+                </StyledButton>
+              </StyledLink>
             </Card>
             <Card>
               <Center>
@@ -296,13 +316,15 @@ const Applications = () => {
               <CardParagraph>
                 Calculator is an application for performing basic calculations.
               </CardParagraph>
-              <StyledButton
+              <StyledLink
                 href="https://github.com/dahliaOS/calculator"
                 target="_blank"
               >
-                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Source
-              </StyledButton>
+                <StyledButton>
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Source
+                </StyledButton>
+              </StyledLink>
             </Card>
             <Card>
               <Center>
@@ -316,13 +338,15 @@ const Applications = () => {
                 Task manager is an application for managing system processes and
                 resources.
               </CardParagraph>
-              <StyledButton
+              <StyledLink
                 href="https://github.com/dahliaOS/task_manager"
                 target="_blank"
               >
-                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Source
-              </StyledButton>
+                <StyledButton>
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Source
+                </StyledButton>
+              </StyledLink>
             </Card>
             <Card>
               <Center>
@@ -336,13 +360,15 @@ const Applications = () => {
                 Media is an application for managing albums, viewing photos and
                 videos.
               </CardParagraph>
-              <StyledButton
+              <StyledLink
                 href="https://github.com/dahliaOS/media"
                 target="_blank"
               >
-                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Source
-              </StyledButton>
+                <StyledButton>
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Source
+                </StyledButton>
+              </StyledLink>
             </Card>
             <Card>
               <Center>
@@ -356,13 +382,15 @@ const Applications = () => {
                 Text editor is an application for creating and editing text
                 documents.
               </CardParagraph>
-              <StyledButton
+              <StyledLink
                 href="https://github.com/dahliaOS/text_editor"
                 target="_blank"
               >
-                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Source
-              </StyledButton>
+                <StyledButton>
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Source
+                </StyledButton>
+              </StyledLink>
             </Card>
             <Card>
               <Center>
@@ -376,13 +404,15 @@ const Applications = () => {
                 System logs is an application for viewing system logs useful for
                 debugging and solving problems.
               </CardParagraph>
-              <StyledButton
+              <StyledLink
                 href="https://github.com/dahliaOS/system_logs"
                 target="_blank"
               >
-                <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                Source
-              </StyledButton>
+                <StyledButton>
+                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  Source
+                </StyledButton>
+              </StyledLink>
             </Card>
           </AppsGrid>
         </Container>

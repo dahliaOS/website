@@ -304,6 +304,10 @@ const modalAnimation = {
   },
 };
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
+
 interface IDownloadProps {
   showMore?: boolean;
 }
@@ -414,12 +418,14 @@ const Download = ({ showMore }: IDownloadProps) => {
                     .replace(/(?:\r\n|\r|\n)/g, "\n")}
                 </Changelogs>
                 <ReadMoreContainer>
-                  <ReadMoreButton href={releases[0].html_url} target="_blank">
-                    <TextSnippetIcon
-                      style={{ marginLeft: -5, marginRight: 10 }}
-                    />
-                    Read more
-                  </ReadMoreButton>
+                  <StyledLink href={releases[0].html_url} target="_blank">
+                    <ReadMoreButton>
+                      <TextSnippetIcon
+                        style={{ marginLeft: -5, marginRight: 10 }}
+                      />
+                      Read more
+                    </ReadMoreButton>
+                  </StyledLink>
                 </ReadMoreContainer>
               </TextContainer>
               <ButtonContainer>

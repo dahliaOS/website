@@ -5,7 +5,7 @@ import type { NextPage } from "next";
 import Intro from "../components/Intro";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Button } from "@mui/material";
+import { Button, Link } from "@mui/material";
 import Download from "../components/Download";
 import {
   History as HistoryIcon,
@@ -111,6 +111,23 @@ const SectionBtn = styled(Button)`
   }
 `;
 
+const SectionBtnSecondary = styled(Button)`
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 0;
+  border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
+  color: ${({ theme }) => theme.text.textColor};
+  @media (max-width: 1025px) {
+    &:nth-child(even) {
+      margin: 10px -50px;
+    }
+  }
+
+  &:hover {
+    background-position: 100% 50%;
+  }
+`;
+
 const Header = styled.h1`
   color: ${({ theme }) => theme.text.textColor};
   text-align: center;
@@ -151,6 +168,10 @@ const SectionImg = styled.img<{ showOnRight?: boolean }>`
 const IdDiv = styled.div``;
 
 const DownloadContainer = styled(motion.div)``;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
 
 const variantRight: Variants = {
   visible: {
@@ -335,13 +356,15 @@ const Home: NextPage = () => {
                   of mobile notebooks.
                 </Paragraph>
                 <br />
-                <SectionBtn
+                <StyledLink
                   href="https://docs.dahliaos.io/hardware/support"
                   target="_blank"
                 >
-                  <DevicesIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                  SUPPORTED DEVICES
-                </SectionBtn>
+                  <SectionBtn>
+                    <DevicesIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                    SUPPORTED DEVICES
+                  </SectionBtn>
+                </StyledLink>
               </Sides>
             </Container>
             {/* Free open source software */}
@@ -364,24 +387,23 @@ const Home: NextPage = () => {
                   non-aggression community and free defensive patent pool.
                 </Paragraph>
                 <br />
-                <SectionBtn
-                  href="https://github.com/dahliaOS"
-                  target="_blank"
-                  style={{ marginRight: 30 }}
-                >
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                  GITHUB
-                </SectionBtn>
-                <SectionBtn
+                <StyledLink href="https://github.com/dahliaOS" target="_blank">
+                  <SectionBtn style={{ marginRight: 30 }}>
+                    <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                    GITHUB
+                  </SectionBtn>
+                </StyledLink>
+                <StyledLink
                   href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
                   target="_blank"
-                  style={{ marginLeft: 0 }}
                 >
-                  <CorporateFareIcon
-                    style={{ marginLeft: -5, marginRight: 10 }}
-                  />
-                  OPEN INVENTION NETWORK
-                </SectionBtn>
+                  <SectionBtnSecondary style={{ marginLeft: 0 }}>
+                    <CorporateFareIcon
+                      style={{ marginLeft: -5, marginRight: 10 }}
+                    />
+                    OPEN INVENTION NETWORK
+                  </SectionBtnSecondary>
+                </StyledLink>
               </Sides>
               <Sides>
                 <SectionImgContainer showOnRight>
@@ -426,10 +448,12 @@ const Home: NextPage = () => {
                   functional on the actual system itself.
                 </Paragraph>
                 <br />
-                <SectionBtn href="https://web.dahliaos.io/" target="_blank">
-                  <ScienceIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                  Try it out
-                </SectionBtn>
+                <StyledLink href="https://web.dahliaos.io/" target="_blank">
+                  <SectionBtn>
+                    <ScienceIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                    Try it out
+                  </SectionBtn>
+                </StyledLink>
               </Sides>
             </Container>
             <br />
@@ -445,13 +469,15 @@ const Home: NextPage = () => {
               <Header>Download</Header>
               <Download />
               <ButtonContainer>
-                <SectionBtn
+                <StyledLink
                   href="https://github.com/dahliaOS/releases/releases"
                   target="_blank"
                 >
-                  <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />{" "}
-                  Looking for an older release?
-                </SectionBtn>
+                  <SectionBtn>
+                    <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />{" "}
+                    Looking for an older release?
+                  </SectionBtn>
+                </StyledLink>
               </ButtonContainer>
             </DownloadContainer>
           </>
@@ -566,13 +592,15 @@ const Home: NextPage = () => {
                   of mobile notebooks.
                 </Paragraph>
                 <br />
-                <SectionBtn
+                <StyledLink
                   href="https://docs.dahliaos.io/hardware/support"
                   target="_blank"
                 >
-                  <DevicesIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                  SUPPORTED DEVICES
-                </SectionBtn>
+                  <SectionBtn>
+                    <DevicesIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                    SUPPORTED DEVICES
+                  </SectionBtn>
+                </StyledLink>
               </Sides>
             </Container>
             {/* Free open source software */}
@@ -595,24 +623,23 @@ const Home: NextPage = () => {
                   non-aggression community and free defensive patent pool.
                 </Paragraph>
                 <br />
-                <SectionBtn
-                  href="https://github.com/dahliaOS"
-                  target="_blank"
-                  style={{ marginRight: 30 }}
-                >
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                  GITHUB
-                </SectionBtn>
-                <SectionBtn
+                <StyledLink href="https://github.com/dahliaOS" target="_blank">
+                  <SectionBtn style={{ marginRight: 30 }}>
+                    <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                    GITHUB
+                  </SectionBtn>
+                </StyledLink>
+                <StyledLink
                   href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
                   target="_blank"
-                  style={{ marginLeft: 0 }}
                 >
-                  <CorporateFareIcon
-                    style={{ marginLeft: -5, marginRight: 10 }}
-                  />
-                  OPEN INVENTION NETWORK
-                </SectionBtn>
+                  <SectionBtnSecondary style={{ marginLeft: 0 }}>
+                    <CorporateFareIcon
+                      style={{ marginLeft: -5, marginRight: 10 }}
+                    />
+                    OPEN INVENTION NETWORK
+                  </SectionBtnSecondary>
+                </StyledLink>
               </Sides>
               <Sides>
                 <SectionImgContainer showOnRight>
@@ -657,10 +684,12 @@ const Home: NextPage = () => {
                   functional on the actual system itself.
                 </Paragraph>
                 <br />
-                <SectionBtn href="https://web.dahliaos.io/" target="_blank">
-                  <ScienceIcon style={{ marginLeft: -5, marginRight: 10 }} />
-                  Try it out
-                </SectionBtn>
+                <StyledLink href="https://web.dahliaos.io/" target="_blank">
+                  <SectionBtn>
+                    <ScienceIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                    Try it out
+                  </SectionBtn>
+                </StyledLink>
               </Sides>
             </Container>
             <br />
@@ -676,13 +705,15 @@ const Home: NextPage = () => {
               <Header>Download</Header>
               <Download />
               <ButtonContainer>
-                <SectionBtn
+                <StyledLink
                   href="https://github.com/dahliaOS/releases/releases"
                   target="_blank"
                 >
-                  <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />{" "}
-                  Looking for an older release?
-                </SectionBtn>
+                  <SectionBtn>
+                    <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />{" "}
+                    Looking for an older release?
+                  </SectionBtn>
+                </StyledLink>
               </ButtonContainer>
             </DownloadContainer>
           </>

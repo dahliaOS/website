@@ -1,4 +1,4 @@
-import { Button, SvgIcon } from "@mui/material";
+import { Button, SvgIcon, Link } from "@mui/material";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -127,6 +127,10 @@ const SupportGrid = styled.div`
   justify-content: left;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
+
 const Donate = () => {
   return (
     <>
@@ -180,16 +184,18 @@ const Donate = () => {
             services will be coming soon.
           </Paragraph>
           <br />
-          <StyledButton
+          <StyledLink
             href="https://opencollective.com/dahliaos"
             target="_blank"
           >
-            <SvgIcon
-              component={OpenCollectiveLogo}
-              style={{ marginLeft: -5, marginRight: 10 }}
-            />
-            OPEN COLLECTIVE
-          </StyledButton>
+            <StyledButton>
+              <SvgIcon
+                component={OpenCollectiveLogo}
+                style={{ marginLeft: -5, marginRight: 10 }}
+              />
+              OPEN COLLECTIVE
+            </StyledButton>
+          </StyledLink>
         </Container>
       </Wrapper>
       <Footer />
