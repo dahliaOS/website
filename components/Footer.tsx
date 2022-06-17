@@ -58,13 +58,13 @@ const FooterList = styled.ul`
 
 const FooterItem = styled(Link)`
   font-size: 1.15em;
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColorDark};
   display: block;
   transition: color ease-in-out 0.15s;
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.text.textColorDark};
+    color: ${({ theme }) => theme.text.textColor};
   }
 `;
 
