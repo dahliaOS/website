@@ -207,7 +207,7 @@ const downloadVariantMobile: Variants = {
 };
 
 const Home: NextPage = () => {
-  const [windowSize, setWindowSize] = useState<number>(0);
+  const [windowSize, setWindowSize] = useState(0);
   const theme = useTheme();
 
   useEffect(() => {
