@@ -186,19 +186,34 @@ const Footer = () => {
             Technology
           </FooterHeader>
           <FooterList>
-            <FooterItem href="https://docs.dahliaos.io/os/linux">
+            <FooterItem
+              href="https://docs.dahliaos.io/os/linux"
+              target="_blank"
+            >
               How it works
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/pangolin/pangolin">
+            <FooterItem
+              href="https://docs.dahliaos.io/pangolin/pangolin"
+              target="_blank"
+            >
               Pangolin
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/os/fimage">
+            <FooterItem
+              href="https://docs.dahliaos.io/os/fimage"
+              target="_blank"
+            >
               FImage
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/developer/packaging">
+            <FooterItem
+              href="https://docs.dahliaos.io/developer/packaging"
+              target="_blank"
+            >
               Packaging
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/developer/roadmap">
+            <FooterItem
+              href="https://docs.dahliaos.io/developer/roadmap"
+              target="_blank"
+            >
               The goal
             </FooterItem>
           </FooterList>
@@ -209,16 +224,27 @@ const Footer = () => {
             Documentation
           </FooterHeader>
           <FooterList>
-            <FooterItem href="https://docs.dahliaos.io/build/buildroot">
+            <FooterItem
+              href="https://docs.dahliaos.io/build/buildroot"
+              target="_blank"
+            >
               Compiling
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/install/efi">
+            <FooterItem
+              href="https://docs.dahliaos.io/install/efi"
+              target="_blank"
+            >
               Installing
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/hardware/support">
+            <FooterItem
+              href="https://docs.dahliaos.io/hardware/support"
+              target="_blank"
+            >
               Supported devices
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/os/faq">FAQ</FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/os/faq" target="_blank">
+              FAQ
+            </FooterItem>
           </FooterList>
         </FooterCategory>
         <FooterCategory>
@@ -227,13 +253,22 @@ const Footer = () => {
             Contribute
           </FooterHeader>
           <FooterList>
-            <FooterItem href="https://docs.dahliaos.io/contribute/roadmap">
+            <FooterItem
+              href="https://docs.dahliaos.io/contribute/roadmap"
+              target="_blank"
+            >
               Roadmap
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/contribute/contributing">
+            <FooterItem
+              href="https://docs.dahliaos.io/contribute/contributing"
+              target="_blank"
+            >
               Contribute
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/contribute/conduct">
+            <FooterItem
+              href="https://docs.dahliaos.io/contribute/conduct"
+              target="_blank"
+            >
               Code of Conduct
             </FooterItem>
           </FooterList>

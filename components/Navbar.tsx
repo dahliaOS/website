@@ -243,11 +243,11 @@ const Navbar = ({
             <VolunteerActivismIcon />
             Donate
           </Link>
-          <Link href="https://web.dahliaOS.io">
+          <Link href="https://web.dahliaOS.io" target="_blank">
             <ScienceIcon />
             Demo
           </Link>
-          <Link href="https://docs.dahliaOS.io">
+          <Link href="https://docs.dahliaOS.io" target="_blank">
             <ArticleIcon />
             Documentation
           </Link>
@@ -283,7 +283,7 @@ const Navbar = ({
           </Link>
           <Divider />
           <Category>For developers</Category>
-          <Link href="/github">
+          <Link href="/github" target="_blank">
             <CodeIcon />
             Source code
           </Link>
@@ -291,7 +291,7 @@ const Navbar = ({
             <GroupIcon />
             Developers
           </Link>
-          <Link href="/discord">
+          <Link href="/discord" target="_blank">
             <GroupAddIcon />
             Join our team
           </Link>
@@ -343,7 +343,7 @@ const Navbar = ({
             <AppBarLink href="https://web.dahliaOS.io" target="_blank">
               <ScienceIcon /> Demo
             </AppBarLink>
-            <AppBarLink href="https://docs.dahliaOS.io">
+            <AppBarLink href="https://docs.dahliaOS.io" target="_blank">
               <ArticleIcon /> Documentation
             </AppBarLink>
             <IconButton

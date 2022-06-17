@@ -186,7 +186,10 @@ const Donate = () => {
             services will be coming soon.
           </Paragraph>
           <br />
-          <StyledButton href="https://opencollective.com/dahliaos">
+          <StyledButton
+            href="https://opencollective.com/dahliaos"
+            target="_blank"
+          >
             <SvgIcon
               component={OpenCollectiveLogo}
               style={{ marginLeft: -5, marginRight: 10 }}

@@ -414,7 +414,7 @@ const Download = ({ showMore }: IDownloadProps) => {
                     .replace(/(?:\r\n|\r|\n)/g, "\n")}
                 </Changelogs>
                 <ReadMoreContainer>
-                  <ReadMoreButton href={releases[0].html_url}>
+                  <ReadMoreButton href={releases[0].html_url} target="_blank">
                     <TextSnippetIcon
                       style={{ marginLeft: -5, marginRight: 10 }}
                     />

@@ -335,7 +335,10 @@ const Home: NextPage = () => {
                   of mobile notebooks.
                 </Paragraph>
                 <br />
-                <SectionBtn href="https://docs.dahliaos.io/hardware/support">
+                <SectionBtn
+                  href="https://docs.dahliaos.io/hardware/support"
+                  target="_blank"
+                >
                   <DevicesIcon style={{ marginLeft: -5, marginRight: 10 }} />
                   SUPPORTED DEVICES
                 </SectionBtn>
@@ -363,6 +366,7 @@ const Home: NextPage = () => {
                 <br />
                 <SectionBtn
                   href="https://github.com/dahliaOS"
+                  target="_blank"
                   style={{ marginRight: 30 }}
                 >
                   <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
@@ -370,6 +374,7 @@ const Home: NextPage = () => {
                 </SectionBtn>
                 <SectionBtn
                   href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
+                  target="_blank"
                   style={{ marginLeft: 0 }}
                 >
                   <CorporateFareIcon
@@ -421,7 +426,7 @@ const Home: NextPage = () => {
                   functional on the actual system itself.
                 </Paragraph>
                 <br />
-                <SectionBtn href="https://web.dahliaos.io/">
+                <SectionBtn href="https://web.dahliaos.io/" target="_blank">
                   <ScienceIcon style={{ marginLeft: -5, marginRight: 10 }} />
                   Try it out
                 </SectionBtn>
@@ -440,7 +445,10 @@ const Home: NextPage = () => {
               <Header>Download</Header>
               <Download />
               <ButtonContainer>
-                <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+                <SectionBtn
+                  href="https://github.com/dahliaOS/releases/releases"
+                  target="_blank"
+                >
                   <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />{" "}
                   Looking for an older release?
                 </SectionBtn>
@@ -509,11 +517,11 @@ const Home: NextPage = () => {
                   feel of almost every component of the shell.
                 </Paragraph>
                 <br />
-                <SectionBtn href="">
+                <SectionBtn href="/features">
                   <AutoAwesomeIcon
                     style={{ marginLeft: -5, marginRight: 10 }}
                   />
-                  BUTTON NAME
+                  FEATURES
                 </SectionBtn>
               </Sides>
               <Sides>
@@ -558,7 +566,10 @@ const Home: NextPage = () => {
                   of mobile notebooks.
                 </Paragraph>
                 <br />
-                <SectionBtn href="https://docs.dahliaos.io/hardware/support">
+                <SectionBtn
+                  href="https://docs.dahliaos.io/hardware/support"
+                  target="_blank"
+                >
                   <DevicesIcon style={{ marginLeft: -5, marginRight: 10 }} />
                   SUPPORTED DEVICES
                 </SectionBtn>
@@ -586,6 +597,7 @@ const Home: NextPage = () => {
                 <br />
                 <SectionBtn
                   href="https://github.com/dahliaOS"
+                  target="_blank"
                   style={{ marginRight: 30 }}
                 >
                   <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
@@ -593,6 +605,7 @@ const Home: NextPage = () => {
                 </SectionBtn>
                 <SectionBtn
                   href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
+                  target="_blank"
                   style={{ marginLeft: 0 }}
                 >
                   <CorporateFareIcon
@@ -644,7 +657,7 @@ const Home: NextPage = () => {
                   functional on the actual system itself.
                 </Paragraph>
                 <br />
-                <SectionBtn href="https://web.dahliaos.io/">
+                <SectionBtn href="https://web.dahliaos.io/" target="_blank">
                   <ScienceIcon style={{ marginLeft: -5, marginRight: 10 }} />
                   Try it out
                 </SectionBtn>
@@ -663,7 +676,10 @@ const Home: NextPage = () => {
               <Header>Download</Header>
               <Download />
               <ButtonContainer>
-                <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+                <SectionBtn
+                  href="https://github.com/dahliaOS/releases/releases"
+                  target="_blank"
+                >
                   <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />{" "}
                   Looking for an older release?
                 </SectionBtn>

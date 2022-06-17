@@ -106,7 +106,10 @@ const Download = () => {
             </Container>
             <DownloadComponent showMore />
             <ButtonContainer>
-              <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+              <SectionBtn
+                href="https://github.com/dahliaOS/releases/releases"
+                target="_blank"
+              >
                 <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 Looking for an older release?
               </SectionBtn>
@@ -147,7 +150,10 @@ const Download = () => {
             </Container>
             <DownloadComponent showMore />
             <ButtonContainer>
-              <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+              <SectionBtn
+                href="https://github.com/dahliaOS/releases/releases"
+                target="_blank"
+              >
                 <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 Looking for an older release?
               </SectionBtn>
@@ -174,7 +180,10 @@ const Download = () => {
             </Container>
             <DownloadComponent showMore />
             <ButtonContainer>
-              <SectionBtn href="https://github.com/dahliaOS/releases/releases">
+              <SectionBtn
+                href="https://github.com/dahliaOS/releases/releases"
+                target="_blank"
+              >
                 <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
                 Looking for an older release?
               </SectionBtn>
