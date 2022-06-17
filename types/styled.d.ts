@@ -26,9 +26,5 @@ declare module "styled-components" {
       main: Hex;
       dark: Hex;
     };
-    pallete: {
-      cardGrey: Hex;
-      cardGreyAccent: Hex;
-    };
   }
 }

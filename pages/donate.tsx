@@ -82,13 +82,10 @@ const SupportItem = styled.div`
   max-height: 60px;
   overflow: hidden;
   color: ${({ theme }) => theme.text.textColorExtremelyLight};
-  background: ${({ theme }) => theme.pallete.cardGrey};
+  background-color: ${({ theme }) =>
+    theme.type === "dark" ? "#262626" : "#B2B2B2"};
   background-size: 400% 400%;
   transition: 0.2s ease-in-out;
-
-  &:hover {
-    background: ${({ theme }) => theme.pallete.cardGreyAccent};
-  }
 
   @media (max-width: 980px) {
     max-height: unset;
@@ -106,13 +103,10 @@ const SupportItemLarge = styled.div`
 
   overflow: hidden;
   color: ${({ theme }) => theme.text.textColorExtremelyLight};
-  background: ${({ theme }) => theme.pallete.cardGrey};
+  background-color: ${({ theme }) =>
+    theme.type === "dark" ? "#262626" : "#B2B2B2"};
   background-size: 400% 400%;
   transition: 0.2s ease-in-out;
-
-  &:hover {
-    background: ${({ theme }) => theme.pallete.cardGreyAccent};
-  }
 
   @media (max-width: 980px) {
     max-height: unset;
