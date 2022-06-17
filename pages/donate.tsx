@@ -38,14 +38,14 @@ const Container = styled.div`
 `;
 
 const Header = styled.h1`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColorLight};
   font-size: 2.2em;
   font-weight: 500;
   text-align: center;
 `;
 
 const SubHeader = styled.h2`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColorLight};
   font-size: 1.4em;
   font-weight: 400;
   text-align: left;

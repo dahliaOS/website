@@ -33,7 +33,7 @@ const Container = styled.div`
 `;
 
 const Header = styled.h1`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColorLight};
   font-size: 2.2em;
   font-weight: 500;
   text-align: center;
@@ -42,7 +42,7 @@ const Header = styled.h1`
 const SubHeader = styled.h2`
   color: ${({ theme }) => theme.text.textColor};
   font-size: 1.5em;
-  font-weight: 400;
+  font-weight: 500;
 `;
 
 const Paragraph = styled.p`
@@ -79,6 +79,7 @@ const Error404 = () => {
       <Wrapper>
         <Container>
           <Header>Page not found</Header>
+          <br />
           <SubHeader>404 Error</SubHeader>
           <br />
           <Paragraph>

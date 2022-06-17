@@ -76,7 +76,7 @@ const AppsGrid = styled.div`
 `;
 
 const Header = styled.h1`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColorLight};
   font-size: 2.2em;
   font-weight: 500;
 `;
@@ -88,7 +88,7 @@ const Sides = styled.div`
 `;
 
 const SubHeader = styled.h2`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColorLight};
   font-size: 1.2em;
   font-weight: 400;
 `;
