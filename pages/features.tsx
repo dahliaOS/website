@@ -54,10 +54,6 @@ const Card = styled.div`
     max-height: unset;
     max-width: 310px;
   }
-
-  &:hover {
-    background: ${({ theme }) => theme.background.backgroundColorContrast};
-  }
 `;
 
 const Container = styled.div`
