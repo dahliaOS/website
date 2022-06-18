@@ -14,6 +14,8 @@
 - **Official**, one and only website for the dahliaOS project
 - **Find** it by clicking [here!](https://dahliaos.io)
 
+![Landing screenshot](/.github/images/landing_screenshot.png)
+
 ## Development
 
 To develop and locally test the website:
