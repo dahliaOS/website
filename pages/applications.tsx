@@ -90,6 +90,8 @@ const CardParagraph = styled.p`
 
 const Paragraph = styled.p`
   color: ${({ theme }) => theme.text.textColor};
+  max-width: 80ch;
+  margin: 0 auto;
 `;
 
 const StyledButton = styled(Button)`
@@ -145,11 +147,8 @@ const Applications = () => {
           <br />
           <Paragraph>
             Most dahliaOS applications are cross-platform but all of them are
-            written in Flutter.
-          </Paragraph>
-          <Paragraph>
-            dahliaOS comes in a minimal package with the following native
-            pre-installed applications:
+            written in Flutter. dahliaOS comes in a minimal package with the
+            following native pre-installed applications:
           </Paragraph>
           <br />
           <AppsGrid>

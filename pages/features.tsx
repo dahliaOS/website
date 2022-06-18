@@ -100,6 +100,8 @@ const CardParagraph = styled.p`
 
 const Paragraph = styled.p`
   color: ${({ theme }) => theme.text.textColor};
+  max-width: 80ch;
+  margin: 0 auto;
 `;
 
 const Icon = styled(SvgIcon)`
