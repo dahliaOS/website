@@ -1,3 +1,5 @@
+![Landing screenshot](/.github/images/landing_screenshot.png)
+
 <p align="center">
 <a href="https://dahliaos.io">Website</a> •
 <a href="https://dahliaos.io/discord">Discord</a> •
@@ -13,8 +15,6 @@
 
 - **Official**, one and only website for the dahliaOS project
 - **Find** it by clicking [here!](https://dahliaos.io)
-
-![Landing screenshot](/.github/images/landing_screenshot.png)
 
 ## Development
 
