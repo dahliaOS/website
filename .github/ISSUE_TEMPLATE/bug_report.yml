@@ -50,7 +50,7 @@ body:
         - Smartphone:
         - Node version:
         - Browser:
-        - pnpm version:
+        - Yarn version:
       render: markdown
     validations:
       required: false
