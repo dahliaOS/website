@@ -118,9 +118,13 @@ const IntroContainer = styled.div`
     animation: ${animateContainer} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
       forwards;
     animation-delay: 0s;
-    padding: 10px 50px 0;
+    padding: 0 50px 0;
     text-align: left;
     margin-left: 20px;
+  }
+
+  @media (max-width: 1025px) {
+    padding: 20px 20px 0;
   }
 `;
 
