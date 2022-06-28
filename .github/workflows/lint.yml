@@ -17,3 +17,5 @@ jobs:
         run: yarn install
       - name: Run Prettier
         run: yarn prettier
+      - name: Push the lint changes
+        run: git config user.name "dahliaOS-Bot" && git config user.email dahliaosofficial@gmail.com && git commit -am "Prettified code" && git push
