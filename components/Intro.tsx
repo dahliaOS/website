@@ -108,6 +108,7 @@ const IntroContainer = styled.div`
   position: relative;
   display: flex;
   opacity: 0;
+  z-index: 0;
   align-items: center;
   justify-content: center;
   text-align: left;
