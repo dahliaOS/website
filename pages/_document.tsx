@@ -5,7 +5,6 @@ import Document, {
   NextScript,
   Main,
   DocumentContext,
-  DocumentInitialProps,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 import { Theme } from "../utils/Theme";
@@ -103,10 +102,8 @@ limitations under the License.  -->`,
   </Html>
 );
 
-export default class DocumentClass extends Document {
-  static async getInitialProps(
-    ctx: DocumentContext,
-  ): Promise<DocumentInitialProps> {
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
@@ -119,12 +116,7 @@ export default class DocumentClass extends Document {
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
-        styles: [
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>,
-        ],
+        styles: [initialProps.styles, sheet.getStyleElement()],
       };
     } finally {
       sheet.seal();

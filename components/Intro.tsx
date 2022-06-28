@@ -14,6 +14,7 @@ const MockupKeyframes = (mockupScale = 3.5) => keyframes`
   }
   100% {
     transform: scale(0.77);
+    opacity: 1;
   }
 `;
 
@@ -28,9 +29,8 @@ const ScaleLogo = keyframes`
   }
 `;
 
-const animateContainer = keyframes`
+const animateIntroContainer = keyframes`
   0% {
-    opacity: 0;
     transform: translateX(200px);
   }
   100% {
@@ -54,6 +54,7 @@ const animateTerminal = (adjustTransform = -250) => keyframes`
   }
   100% {
     transform: translate3d(293px, -70px, 0) scale(0.8);
+    opacity: 1;
   }
 `;
 
@@ -63,6 +64,7 @@ const animateFiles = (adjustTransform = "22%") => keyframes`
   }
   100% {
     transform: translate3d(560px, 10px, 0) scale(0.75);
+    opacity: 1;
   }
 `;
 
@@ -72,6 +74,7 @@ const animateCalculator = (adjustTransform = "-178%") => keyframes`
   }
   100% {
     transform: translate3d(343px, 50px, 0) scale(0.8);
+    opacity: 1;
   }
 `;
 
@@ -110,12 +113,12 @@ const IntroContainer = styled.div`
   text-align: left;
   will-change: transform, opacity;
 
-  animation: ${animateContainer} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
+  animation: ${animateIntroContainer} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 2s;
 
   @media (max-width: 1535px) {
-    animation: ${animateContainer} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
+    animation: ${animateIntroContainer} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
       forwards;
     animation-delay: 0s;
     padding: 0 50px 0;
@@ -237,9 +240,10 @@ const Mockup = styled.img`
   height: auto;
   width: 1280px;
   z-index: 1;
+  opacity: 0;
   animation: ${MockupKeyframes()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
-  will-change: transform;
+  will-change: transform, opacity;
 `;
 
 const Background = styled.div`
@@ -270,11 +274,12 @@ const Terminal = styled.div`
   background-size: contain;
   background-position: center;
   z-index: 1;
+  opacity: 0;
   transform: translate3d(-400px, -250vh, 0) scale(2.2);
   animation: ${animateTerminal()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 0.3s;
-  will-change: transform;
+  will-change: transform, opacity;
 `;
 
 const Files = styled.div`
@@ -289,11 +294,12 @@ const Files = styled.div`
   background-size: contain;
   background-position: center;
   z-index: 2;
+  opacity: 0;
   transform: translate3d(-100vw, 22%, 0) scale(2.2);
   animation: ${animateFiles()} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 0.5s;
-  will-change: transform;
+  will-change: transform, opacity;
 `;
 
 const Calculator = styled.div`
@@ -308,11 +314,12 @@ const Calculator = styled.div`
   background-size: contain;
   background-position: center;
   z-index: 3;
+  opacity: 0;
   transform: translate3d(-100vw, 178%, 0) scale(2.2);
   animation: ${animateCalculator()} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 0.6s;
-  will-change: transform;
+  will-change: transform, opacity;
 `;
 
 const Toolbar = styled.div`
@@ -340,7 +347,7 @@ const MockupImageContainer = styled.div`
 `;
 
 const Intro = () => {
-  const [windowSize, setWindowSize] = useState<number>(0);
+  const [windowSize, setWindowSize] = useState(0);
   const theme = useTheme();
 
   useEffect(() => {
