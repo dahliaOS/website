@@ -247,7 +247,7 @@ const Mockup = styled.img`
   will-change: transform, opacity;
 `;
 
-const Background = styled(Image)`
+const Background = styled.div`
   bottom: -6px;
   will-change: transform;
   z-index: 0;
@@ -364,17 +364,19 @@ const Intro = () => {
                 src={"/images/mockups/macbook.webp"}
                 draggable={false}
               />
-              <Background
-                draggable={false}
-                width={1280}
-                height={720}
-                priority={true}
-                src={
-                  theme.type === "dark"
-                    ? "/images/darkModeBackground.svg"
-                    : "/images/lightModeBackground.svg"
-                }
-              />
+              <Background>
+                <Image
+                  draggable={false}
+                  width={1280}
+                  height={720}
+                  priority={true}
+                  src={
+                    theme.type === "dark"
+                      ? "/images/darkModeBackground.svg"
+                      : "/images/lightModeBackground.svg"
+                  }
+                />
+              </Background>
               <Calculator draggable={false} />
               <Terminal draggable={false} />
               <Files draggable={false} />
