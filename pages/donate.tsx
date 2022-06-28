@@ -166,7 +166,7 @@ const Donate = () => {
               <ItemParagraph>
                 General development of the operating system and tools
               </ItemParagraph>
-            </SupportItemLarge>  
+            </SupportItemLarge>
             <SupportItem>
               <LanguageIcon style={{ marginRight: 10 }} />
               <ItemParagraph>Website domains</ItemParagraph>
