@@ -248,7 +248,17 @@ const Mockup = styled.img`
 `;
 
 const Background = styled.div`
+  position: absolute;
+  width: 1314px;
+  height: 100%;
   bottom: -6px;
+  background: ${({ theme }) =>
+    theme.type === "dark"
+      ? 'url("/images/darkModeBackground.svg")'
+      : 'url("/images/lightModeBackground.svg")'};
+  background-repeat: no-repeat;
+  background-size: 1414px;
+  background-position: center;
   will-change: transform;
   z-index: 0;
   transform: scale(2.2);
@@ -364,19 +374,7 @@ const Intro = () => {
                 src={"/images/mockups/macbook.webp"}
                 draggable={false}
               />
-              <Background>
-                <Image
-                  draggable={false}
-                  width={1280}
-                  height={720}
-                  priority={true}
-                  src={
-                    theme.type === "dark"
-                      ? "/images/darkModeBackground.svg"
-                      : "/images/lightModeBackground.svg"
-                  }
-                />
-              </Background>
+              <Background draggable={false} />
               <Calculator draggable={false} />
               <Terminal draggable={false} />
               <Files draggable={false} />
