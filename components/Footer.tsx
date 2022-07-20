@@ -187,7 +187,7 @@ const Footer = () => {
           </FooterHeader>
           <FooterList>
             <FooterItem
-              href="https://docs.dahliaos.io/os/linux"
+              href="https://docs.dahliaos.io/os/linux-based"
               target="_blank"
             >
               How it works
@@ -205,16 +205,10 @@ const Footer = () => {
               FImage
             </FooterItem>
             <FooterItem
-              href="https://docs.dahliaos.io/developer/packaging"
+              href="https://docs.dahliaos.io/developers/packaging"
               target="_blank"
             >
               Packaging
-            </FooterItem>
-            <FooterItem
-              href="https://docs.dahliaos.io/developer/roadmap"
-              target="_blank"
-            >
-              The goal
             </FooterItem>
           </FooterList>
         </FooterCategory>
@@ -231,18 +225,18 @@ const Footer = () => {
               Compiling
             </FooterItem>
             <FooterItem
-              href="https://docs.dahliaos.io/install/efi"
+              href="https://docs.dahliaos.io/live-boot/x86_64"
               target="_blank"
             >
               Installing
             </FooterItem>
             <FooterItem
-              href="https://docs.dahliaos.io/hardware/support"
+              href="https://docs.dahliaos.io/hardware/supported-devices"
               target="_blank"
             >
               Supported devices
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/os/faq" target="_blank">
+            <FooterItem href="https://docs.dahliaos.io/faq/faq" target="_blank">
               FAQ
             </FooterItem>
           </FooterList>
@@ -260,13 +254,13 @@ const Footer = () => {
               Roadmap
             </FooterItem>
             <FooterItem
-              href="https://docs.dahliaos.io/contribute/contributing"
+              href="https://docs.dahliaos.io/contribute/contribute"
               target="_blank"
             >
               Contribute
             </FooterItem>
             <FooterItem
-              href="https://docs.dahliaos.io/contribute/conduct"
+              href="https://docs.dahliaos.io/contribute/code-of-conduct"
               target="_blank"
             >
               Code of Conduct

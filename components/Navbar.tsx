@@ -247,7 +247,7 @@ const Navbar = ({
             <ScienceIcon />
             Demo
           </Link>
-          <Link href="https://docs.dahliaOS.io" target="_blank">
+          <Link href="https://docs.dahliaos.io" target="_blank">
             <ArticleIcon />
             Documentation
           </Link>
@@ -343,7 +343,7 @@ const Navbar = ({
             <AppBarLink href="https://web.dahliaOS.io" target="_blank">
               <ScienceIcon /> Demo
             </AppBarLink>
-            <AppBarLink href="https://docs.dahliaOS.io" target="_blank">
+            <AppBarLink href="https://docs.dahliaos.io" target="_blank">
               <ArticleIcon /> Documentation
             </AppBarLink>
             <IconButton

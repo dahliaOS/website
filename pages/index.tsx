@@ -357,7 +357,7 @@ const Home: NextPage = () => {
                 </Paragraph>
                 <br />
                 <StyledLink
-                  href="https://docs.dahliaos.io/hardware/support"
+                  href="https://docs.dahliaos.io/hardware/supported-devices"
                   target="_blank"
                 >
                   <SectionBtn>
@@ -593,7 +593,7 @@ const Home: NextPage = () => {
                 </Paragraph>
                 <br />
                 <StyledLink
-                  href="https://docs.dahliaos.io/hardware/support"
+                  href="https://docs.dahliaos.io/hardware/supported-devices"
                   target="_blank"
                 >
                   <SectionBtn>
