@@ -5,6 +5,7 @@ import Document, {
   NextScript,
   Main,
   DocumentContext,
+  DocumentInitialProps,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 import { Theme } from "../utils/Theme";
@@ -103,7 +104,9 @@ limitations under the License.  -->`,
 );
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(
+    ctx: DocumentContext,
+  ): Promise<DocumentInitialProps> {
     const styledComponentsSheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
