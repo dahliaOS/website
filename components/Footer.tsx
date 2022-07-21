@@ -129,7 +129,7 @@ const ComputerIcon = styled(Computer)`
   margin-right: 8px;
 `;
 
-const VercelText = styled.a`
+const VercelText = styled.p`
   color: ${({ theme }) => theme.text.textColor};
   font-size: 1.1em;
   font-weight: 450;
