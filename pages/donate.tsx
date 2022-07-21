@@ -10,7 +10,7 @@ import {
   Devices as DevicesIcon,
 } from "@mui/icons-material";
 import Head from "next/head";
-import OpenCollectiveLogo from "/public/images/logos/opencollective-logomark.svg";
+import { OpenCollectiveLogo } from "../components/Icons";
 
 const Wrapper = styled.div`
   min-height: 100vh;

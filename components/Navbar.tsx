@@ -33,7 +33,7 @@ import styled, { css, keyframes, useTheme } from "styled-components";
 import useScrollPosition from "@react-hook/window-scroll";
 import { SkipNavContent, SkipNavLink } from "@reach/skip-nav";
 import "@reach/skip-nav/styles.css";
-import DiscordLogo from "/public/images/logos/discord-logo.svg";
+import { DiscordLogo } from "./Icons";
 
 const WrapperKeyframes = keyframes`
   0% {

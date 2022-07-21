@@ -9,6 +9,7 @@ import {
   Handshake as HandshakeIcon,
   QuestionAnswer as QuestionAnswerIcon,
 } from "@mui/icons-material";
+import { VercelLogo } from "./Icons";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
   position: relative;
@@ -74,7 +75,10 @@ const FooterLogo = styled.img`
   height: 30px;
 `;
 
-const VercelLogo = styled.img`
+const VercelDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   right: 45px;
   bottom: 30px;
@@ -82,7 +86,6 @@ const VercelLogo = styled.img`
 
   @media (max-width: 670px) {
     position: unset;
-    display: flex;
     width: 100%;
     align-self: center;
     margin: 30px 0;
@@ -124,6 +127,13 @@ const CloudyIcon = styled(WbCloudy)`
 const ComputerIcon = styled(Computer)`
   vertical-align: middle;
   margin-right: 8px;
+`;
+
+const VercelText = styled.a`
+  color: ${({ theme }) => theme.text.textColor};
+  font-size: 1.1em;
+  font-weight: 450;
+  margin-right: 10px;
 `;
 
 type ThemeTypes = "dark" | "light" | "system";
@@ -302,11 +312,14 @@ const Footer = () => {
             : "/images/logos/logo-color.png"
         }
       />
-      <a href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
-        <VercelLogo
-          alt="Vercel Logo"
-          src="/images/logos/powered-by-vercel.svg"
-        />
+      <a
+        href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss"
+        style={{ textDecoration: 0 }}
+      >
+        <VercelDiv>
+          <VercelText>Powered By</VercelText>
+          <VercelLogo fill={theme.text.textColor} />
+        </VercelDiv>
       </a>
     </StyledBottomNavigation>
   );
