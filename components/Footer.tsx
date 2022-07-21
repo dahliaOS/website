@@ -238,7 +238,7 @@ const Footer = () => {
               href="https://docs.dahliaos.io/live-boot/x86_64"
               target="_blank"
             >
-              Installing
+              Live booting
             </FooterItem>
             <FooterItem
               href="https://docs.dahliaos.io/hardware/supported-devices"
