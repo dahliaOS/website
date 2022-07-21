@@ -15,7 +15,7 @@ const StyledBottomNavigation = styled(BottomNavigation)`
   text-align: center;
   height: auto;
   display: block;
-  padding: 50px 50px;
+  padding: 50px;
   overflow: hidden;
   background: ${({ theme }) =>
     theme.type === "dark"
