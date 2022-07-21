@@ -18,16 +18,7 @@ const MockupKeyframes = (mockupScale = 3.5) => keyframes`
   }
 `;
 
-const ScaleLogo = keyframes`
-  0% {
-    transform: translateX(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-400px) scale(0);
-    opacity: 0;
-  }
-`;
+const animateLogo = keyframes``;
 
 const animateIntroContainer = keyframes`
   0% {
@@ -228,8 +219,32 @@ const LogoContainer = styled.div`
   z-index: 1;
   width: 100vw;
   height: 100vh;
-  animation: ${ScaleLogo} 1.9s cubic-bezier(0.66, 0, 0.2, 1) 0.433s forwards;
+  animation: animateLogo 1.9s cubic-bezier(0.66, 0, 0.2, 1) 0.433s forwards;
   will-change: transform, opacity;
+
+  @keyframes animateLogo {
+    0% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-400px) scale(0);
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 1535px) {
+    @keyframes animateLogo {
+      0% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0) scale(0);
+        opacity: 0;
+      }
+    }
+  }
 `;
 
 const Logo = styled.img`
