@@ -18,8 +18,6 @@ const MockupKeyframes = (mockupScale = 3.5) => keyframes`
   }
 `;
 
-const animateLogo = keyframes``;
-
 const animateIntroContainer = keyframes`
   0% {
     transform: translateX(200px);
