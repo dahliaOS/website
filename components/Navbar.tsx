@@ -128,8 +128,10 @@ const StyledAppBar = styled(AppBar)<{
   rootPageHasAnimation?: boolean;
   scrollPos: number;
 }>`
+  backdrop-filter: ${({ scrollPos }) =>
+    scrollPos > 10 ? "blur(20px)" : "unset"};
   background: ${({ scrollPos, theme }) =>
-    scrollPos > 10 ? theme.background.backgroundColorLight : "unset"};
+    scrollPos > 10 ? theme.background.backgroundColorLight + 90 : "unset"};
   box-shadow: ${({ scrollPos }) =>
     scrollPos > 10
       ? "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
@@ -175,6 +177,10 @@ const DesktopNav = styled.div`
   }
 `;
 
+const StyledDrawer = styled(Drawer)`
+  backdrop-filter: blur(10px);
+`;
+
 const Navbar = ({
   rootPageHasAnimation,
 }: {
@@ -216,7 +222,7 @@ const Navbar = ({
           zIndex: 9999999,
         }}
       />
-      <Drawer
+      <StyledDrawer
         anchor="left"
         open={drawerState}
         onClose={() => toggleDrawer(false)}
@@ -296,7 +302,7 @@ const Navbar = ({
             Join our team
           </Link>
         </Container>
-      </Drawer>
+      </StyledDrawer>
       <StyledAppBar
         rootPageHasAnimation={
           initialPageWidth < 1075 ? false : rootPageHasAnimation
