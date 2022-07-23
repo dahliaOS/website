@@ -13,7 +13,6 @@ import { VercelLogo } from "./Icons";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
   position: relative;
-  text-align: center;
   height: auto;
   display: block;
   padding: 50px;
@@ -26,6 +25,7 @@ const StyledBottomNavigation = styled(BottomNavigation)`
 
 const FooterContainer = styled.div`
   display: flex;
+  justify-content: space-between;
 
   @media (max-width: 1025px) {
     flex-wrap: wrap;
@@ -34,7 +34,7 @@ const FooterContainer = styled.div`
 `;
 
 const FooterCategory = styled.div`
-  flex-grow: 1;
+  width: max-content;
 
   @media (max-width: 1025px) {
     padding: 10px;
