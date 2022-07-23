@@ -49,6 +49,7 @@ const FooterHeader = styled.h1`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 `;
 
 const FooterList = styled.ul`
@@ -136,6 +137,10 @@ const VercelText = styled.p`
   margin-right: 10px;
 `;
 
+const VercelLink = styled(Link)`
+  text-decoration: none;
+`;
+
 type ThemeTypes = "dark" | "light" | "system";
 
 const Footer = () => {
@@ -163,7 +168,7 @@ const Footer = () => {
       <FooterContainer>
         <FooterCategory>
           <FooterHeader>
-            <PeopleAltIcon style={{ marginLeft: -5, marginRight: 10 }} />
+            <PeopleAltIcon />
             Find us on
           </FooterHeader>
           <FooterList>
@@ -192,7 +197,7 @@ const Footer = () => {
         </FooterCategory>
         <FooterCategory>
           <FooterHeader>
-            <DeveloperBoardIcon style={{ marginLeft: -5, marginRight: 10 }} />
+            <DeveloperBoardIcon />
             Technology
           </FooterHeader>
           <FooterList>
@@ -224,7 +229,7 @@ const Footer = () => {
         </FooterCategory>
         <FooterCategory>
           <FooterHeader>
-            <ArticleIcon style={{ marginLeft: -5, marginRight: 10 }} />
+            <ArticleIcon />
             Documentation
           </FooterHeader>
           <FooterList>
@@ -253,7 +258,7 @@ const Footer = () => {
         </FooterCategory>
         <FooterCategory>
           <FooterHeader>
-            <HandshakeIcon style={{ marginLeft: -5, marginRight: 10 }} />
+            <HandshakeIcon />
             Contribute
           </FooterHeader>
           <FooterList>
@@ -279,7 +284,7 @@ const Footer = () => {
         </FooterCategory>
         <FooterCategory>
           <FooterHeader>
-            <QuestionAnswerIcon style={{ marginLeft: -5, marginRight: 10 }} />
+            <QuestionAnswerIcon />
             Contact
           </FooterHeader>
           <FooterList>
@@ -312,15 +317,12 @@ const Footer = () => {
             : "/images/logos/logo-color.png"
         }
       />
-      <a
-        href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss"
-        style={{ textDecoration: 0 }}
-      >
+      <VercelLink href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
         <VercelDiv>
           <VercelText>Powered By</VercelText>
           <VercelLogo fill={theme.text.textColor} />
         </VercelDiv>
-      </a>
+      </VercelLink>
     </StyledBottomNavigation>
   );
 };

@@ -95,6 +95,7 @@ const ReadMoreButton = styled(Button)`
   color: ${({ theme }) => theme.text.textColor};
   padding: 5px 10px;
   border-radius: 3px;
+  gap: 10px;
 `;
 
 const ReadMoreContainer = styled.div`
@@ -108,6 +109,7 @@ const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
   border-radius: 5px;
   color: ${({ theme }) => theme.text.textColorLight};
   text-decoration: none;
+  gap: 10px;
 
   &:first-child {
     color: ${({ theme }) => theme.text.textColorLight};
@@ -144,10 +146,11 @@ const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
 `;
 
 const StyledSecondaryButton = styled(Button)<{ disableGradient?: boolean }>`
-  padding: 7px 20px;
+  padding: 7px 15px;
   border-radius: 5px;
   color: ${({ theme }) => theme.text.textColorLight};
   text-decoration: none;
+  gap: 10px;
 
   &:first-child {
     color: ${({ theme }) => theme.text.textColorLight};
@@ -253,6 +256,7 @@ const DialogButton = styled(Button)<{ disableGradient?: boolean }>`
   border-radius: 5px;
   color: ${({ theme }) => theme.text.textColorLight};
   text-decoration: none;
+  gap: 10px;
 
   &:nth-child(2) {
     color: ${({ theme }) => theme.text.textColorLight};
@@ -368,16 +372,14 @@ const Download = ({ showMore }: IDownloadProps) => {
             <br />
             <DialogActions>
               <DialogButton disableGradient onClick={closeModal}>
-                <CloseIcon style={{ marginLeft: -5, marginRight: 10 }} /> Close
+                <CloseIcon /> Close
               </DialogButton>
               <DialogButton
                 disableGradient={false}
                 onClick={() => Router.replace("/donate")}
                 autoFocus
               >
-                <VolunteerActivismIcon
-                  style={{ marginLeft: -5, marginRight: 10 }}
-                />
+                <VolunteerActivismIcon />
                 Donate
               </DialogButton>
             </DialogActions>
@@ -420,9 +422,7 @@ const Download = ({ showMore }: IDownloadProps) => {
                 <ReadMoreContainer>
                   <StyledLink href={releases[0].html_url} target="_blank">
                     <ReadMoreButton>
-                      <TextSnippetIcon
-                        style={{ marginLeft: -5, marginRight: 10 }}
-                      />
+                      <TextSnippetIcon />
                       Read more
                     </ReadMoreButton>
                   </StyledLink>
@@ -435,7 +435,7 @@ const Download = ({ showMore }: IDownloadProps) => {
                     href={asset.browser_download_url}
                     onClick={openModal}
                   >
-                    <GetApp style={{ marginLeft: -5, marginRight: 10 }} />
+                    <GetApp />
                     {asset.name.includes("efi")
                       ? "Download (EFI)"
                       : "Download (Legacy)"}
@@ -473,9 +473,7 @@ const Download = ({ showMore }: IDownloadProps) => {
                               disableGradient={!asset.name.includes("efi")}
                               onClick={openModal}
                             >
-                              <GetApp
-                                style={{ marginLeft: -10, marginRight: 10 }}
-                              />
+                              <GetApp />
                               {asset.name.includes("efi") ? "EFI" : "Legacy"}
                             </StyledSecondaryButton>
                           ))}

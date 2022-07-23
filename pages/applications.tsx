@@ -99,18 +99,19 @@ const StyledButton = styled(Button)`
   border-radius: 5px;
   margin-top: auto;
   min-width: 100%;
+  gap: 10px;
 
-  color: ${({ theme }) => theme.text.textColorExtremelyLight};
-  background: linear-gradient(
-    153deg,
-    ${({ theme }) => theme.accent.accentColorLight} 0%,
-    ${({ theme }) => theme.accent.accentColor} 100%
-  );
-  background-size: 400% 400%;
+  color: ${({ theme }) => theme.accent.accentColor};
+  border: ${({ theme }) => theme.accent.accentColorDark} solid 1.5px;
   transition: 0.2s ease-in-out;
 
   &:hover {
-    background-position: 100% 50%;
+    color: ${({ theme }) => theme.text.textColorExtremelyLight};
+    background: linear-gradient(
+      153deg,
+      ${({ theme }) => theme.accent.accentColorLight} 0%,
+      ${({ theme }) => theme.accent.accentColor} 100%
+    );
   }
 `;
 
@@ -169,7 +170,7 @@ const Applications = () => {
                 target="_blank"
               >
                 <StyledButton>
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <GitHubIcon />
                   Source
                 </StyledButton>
               </StyledLink>
@@ -191,7 +192,7 @@ const Applications = () => {
                 target="_blank"
               >
                 <StyledButton>
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <GitHubIcon />
                   Source
                 </StyledButton>
               </StyledLink>
@@ -213,7 +214,7 @@ const Applications = () => {
                 target="_blank"
               >
                 <StyledButton>
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <GitHubIcon />
                   Source
                 </StyledButton>
               </StyledLink>
@@ -235,7 +236,7 @@ const Applications = () => {
                 target="_blank"
               >
                 <StyledButton>
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <GitHubIcon />
                   Source
                 </StyledButton>
               </StyledLink>
@@ -257,7 +258,7 @@ const Applications = () => {
                 target="_blank"
               >
                 <StyledButton>
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <GitHubIcon />
                   Source
                 </StyledButton>
               </StyledLink>
@@ -278,7 +279,7 @@ const Applications = () => {
                 target="_blank"
               >
                 <StyledButton>
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <GitHubIcon />
                   Source
                 </StyledButton>
               </StyledLink>
@@ -299,7 +300,7 @@ const Applications = () => {
                 target="_blank"
               >
                 <StyledButton>
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <GitHubIcon />
                   Source
                 </StyledButton>
               </StyledLink>
@@ -320,7 +321,7 @@ const Applications = () => {
                 target="_blank"
               >
                 <StyledButton>
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <GitHubIcon />
                   Source
                 </StyledButton>
               </StyledLink>
@@ -342,7 +343,7 @@ const Applications = () => {
                 target="_blank"
               >
                 <StyledButton>
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <GitHubIcon />
                   Source
                 </StyledButton>
               </StyledLink>
@@ -364,7 +365,7 @@ const Applications = () => {
                 target="_blank"
               >
                 <StyledButton>
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <GitHubIcon />
                   Source
                 </StyledButton>
               </StyledLink>
@@ -386,7 +387,7 @@ const Applications = () => {
                 target="_blank"
               >
                 <StyledButton>
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <GitHubIcon />
                   Source
                 </StyledButton>
               </StyledLink>
@@ -408,7 +409,7 @@ const Applications = () => {
                 target="_blank"
               >
                 <StyledButton>
-                  <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <GitHubIcon />
                   Source
                 </StyledButton>
               </StyledLink>

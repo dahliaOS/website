@@ -54,6 +54,8 @@ const StyledButton = styled(Button)`
   border-radius: 5px;
   margin: 10px 0;
   color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  gap: 10px;
+
   background: linear-gradient(
     153deg,
     ${({ theme }) => theme.accent.accentColorLight} 0%,
@@ -89,7 +91,7 @@ const Error404 = () => {
           <Paragraph>Click the button below to go to the main page.</Paragraph>
           <br />
           <StyledButton href="/">
-            <HomeIcon style={{ marginLeft: -5, marginRight: 10 }} />
+            <HomeIcon />
             HOME
           </StyledButton>
         </Container>

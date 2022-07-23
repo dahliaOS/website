@@ -80,10 +80,11 @@ const Paragraph = styled.p`
   color: ${({ theme }) => theme.text.textColor};
 `;
 
-const SectionBtn = styled(Button)`
+const SectionBtn = styled(Button)<{ distanceButton?: boolean }>`
   padding: 10px 20px;
   border-radius: 5px;
   margin: 10px 0;
+  gap: 10px;
 
   &:first-of-type {
     color: ${({ theme }) => theme.text.textColorExtremelyLight};
@@ -94,6 +95,7 @@ const SectionBtn = styled(Button)`
     );
     background-size: 400% 400%;
     transition: 0.2s ease-in-out;
+    margin-right: ${({ distanceButton }) => (distanceButton ? "30px" : "0px")};
   }
 
   &:nth-child(even) {
@@ -115,6 +117,8 @@ const SectionBtnSecondary = styled(Button)`
   padding: 10px 20px;
   border-radius: 5px;
   margin: 10px 0;
+  gap: 10px;
+
   border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
   color: ${({ theme }) => theme.text.textColor};
   @media (max-width: 1025px) {
@@ -281,7 +285,7 @@ const Home: NextPage = () => {
                 </Paragraph>
                 <br />
                 <SectionBtn href="/applications">
-                  <AppsIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <AppsIcon />
                   APPLICATIONS
                 </SectionBtn>
               </Sides>
@@ -308,9 +312,7 @@ const Home: NextPage = () => {
                 </Paragraph>
                 <br />
                 <SectionBtn href="/features">
-                  <AutoAwesomeIcon
-                    style={{ marginLeft: -5, marginRight: 10 }}
-                  />
+                  <AutoAwesomeIcon />
                   FEATURES
                 </SectionBtn>
               </Sides>
@@ -361,7 +363,7 @@ const Home: NextPage = () => {
                   target="_blank"
                 >
                   <SectionBtn>
-                    <DevicesIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                    <DevicesIcon />
                     SUPPORTED DEVICES
                   </SectionBtn>
                 </StyledLink>
@@ -388,8 +390,8 @@ const Home: NextPage = () => {
                 </Paragraph>
                 <br />
                 <StyledLink href="https://github.com/dahliaOS" target="_blank">
-                  <SectionBtn style={{ marginRight: 30 }}>
-                    <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <SectionBtn distanceButton>
+                    <GitHubIcon />
                     GITHUB
                   </SectionBtn>
                 </StyledLink>
@@ -397,10 +399,8 @@ const Home: NextPage = () => {
                   href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
                   target="_blank"
                 >
-                  <SectionBtnSecondary style={{ marginLeft: 0 }}>
-                    <CorporateFareIcon
-                      style={{ marginLeft: -5, marginRight: 10 }}
-                    />
+                  <SectionBtnSecondary>
+                    <CorporateFareIcon />
                     OPEN INVENTION NETWORK
                   </SectionBtnSecondary>
                 </StyledLink>
@@ -450,7 +450,7 @@ const Home: NextPage = () => {
                 <br />
                 <StyledLink href="https://web.dahliaos.io/" target="_blank">
                   <SectionBtn>
-                    <ScienceIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                    <ScienceIcon />
                     Try it out
                   </SectionBtn>
                 </StyledLink>
@@ -474,8 +474,7 @@ const Home: NextPage = () => {
                   target="_blank"
                 >
                   <SectionBtn>
-                    <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />{" "}
-                    Looking for an older release?
+                    <HistoryIcon /> Looking for an older release?
                   </SectionBtn>
                 </StyledLink>
               </ButtonContainer>
@@ -518,7 +517,7 @@ const Home: NextPage = () => {
                 </Paragraph>
                 <br />
                 <SectionBtn href="/applications">
-                  <AppsIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <AppsIcon />
                   APPLICATIONS
                 </SectionBtn>
               </Sides>
@@ -544,9 +543,7 @@ const Home: NextPage = () => {
                 </Paragraph>
                 <br />
                 <SectionBtn href="/features">
-                  <AutoAwesomeIcon
-                    style={{ marginLeft: -5, marginRight: 10 }}
-                  />
+                  <AutoAwesomeIcon />
                   FEATURES
                 </SectionBtn>
               </Sides>
@@ -597,7 +594,7 @@ const Home: NextPage = () => {
                   target="_blank"
                 >
                   <SectionBtn>
-                    <DevicesIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                    <DevicesIcon />
                     SUPPORTED DEVICES
                   </SectionBtn>
                 </StyledLink>
@@ -624,8 +621,8 @@ const Home: NextPage = () => {
                 </Paragraph>
                 <br />
                 <StyledLink href="https://github.com/dahliaOS" target="_blank">
-                  <SectionBtn style={{ marginRight: 30 }}>
-                    <GitHubIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <SectionBtn>
+                    <GitHubIcon />
                     GITHUB
                   </SectionBtn>
                 </StyledLink>
@@ -633,10 +630,8 @@ const Home: NextPage = () => {
                   href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
                   target="_blank"
                 >
-                  <SectionBtnSecondary style={{ marginLeft: 0 }}>
-                    <CorporateFareIcon
-                      style={{ marginLeft: -5, marginRight: 10 }}
-                    />
+                  <SectionBtnSecondary>
+                    <CorporateFareIcon />
                     OPEN INVENTION NETWORK
                   </SectionBtnSecondary>
                 </StyledLink>
@@ -686,7 +681,7 @@ const Home: NextPage = () => {
                 <br />
                 <StyledLink href="https://web.dahliaos.io/" target="_blank">
                   <SectionBtn>
-                    <ScienceIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                    <ScienceIcon />
                     Try it out
                   </SectionBtn>
                 </StyledLink>
@@ -710,8 +705,7 @@ const Home: NextPage = () => {
                   target="_blank"
                 >
                   <SectionBtn>
-                    <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />{" "}
-                    Looking for an older release?
+                    <HistoryIcon /> Looking for an older release?
                   </SectionBtn>
                 </StyledLink>
               </ButtonContainer>

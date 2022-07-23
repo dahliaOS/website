@@ -45,6 +45,7 @@ const SectionBtn = styled(Button)`
   border-radius: 5px;
   margin: 10px 0;
   color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  gap: 10px;
 
   &:first-of-type {
     background: linear-gradient(
@@ -115,7 +116,7 @@ const Download = () => {
                 target="_blank"
               >
                 <SectionBtn>
-                  <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <HistoryIcon />
                   Looking for an older release?
                 </SectionBtn>
               </StyledLink>
@@ -161,7 +162,7 @@ const Download = () => {
                 target="_blank"
               >
                 <SectionBtn>
-                  <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <HistoryIcon />
                   Looking for an older release?
                 </SectionBtn>
               </StyledLink>
@@ -193,7 +194,7 @@ const Download = () => {
                 target="_blank"
               >
                 <SectionBtn>
-                  <HistoryIcon style={{ marginLeft: -5, marginRight: 10 }} />
+                  <HistoryIcon />
                   Looking for an older release?
                 </SectionBtn>
               </StyledLink>

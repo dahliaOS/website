@@ -175,6 +175,7 @@ const SectionBtn = styled(Button)`
   padding: 10px 20px;
   border-radius: 5px;
   margin: 10px 0;
+  gap: 10px;
 
   &:first-of-type {
     color: ${({ theme }) => theme.text.textColorExtremelyLight};
@@ -185,6 +186,7 @@ const SectionBtn = styled(Button)`
     );
     background-size: 400% 400%;
     transition: 0.2s ease-in-out;
+    margin-right: 30px;
   }
 
   &:nth-child(even) {
@@ -192,7 +194,7 @@ const SectionBtn = styled(Button)`
     color: ${({ theme }) => theme.text.textColor};
     @media (max-width: 1535px) {
       &:nth-child(even) {
-        margin: 10px -50px;
+        margin: 10px 0;
       }
     }
   }
@@ -405,14 +407,12 @@ const Intro = () => {
                   standard for the desktop platform.
                 </Paragraph>
                 <br />
-                <SectionBtn href="#download" style={{ marginRight: 30 }}>
-                  <GetApp style={{ marginLeft: -5, marginRight: 10 }} />
+                <SectionBtn href="#download">
+                  <GetApp />
                   DOWNLOAD
                 </SectionBtn>
-                <SectionBtn href="#start" style={{ marginLeft: 0 }}>
-                  <LibraryBooksIcon
-                    style={{ marginLeft: -5, marginRight: 10 }}
-                  />
+                <SectionBtn href="#start">
+                  <LibraryBooksIcon />
                   LEARN MORE
                 </SectionBtn>
               </Sides>
@@ -442,11 +442,11 @@ const Intro = () => {
                   standard for the desktop platform.
                 </Paragraph>
                 <br />
-                <SectionBtn href="#download" style={{ marginRight: 12 }}>
+                <SectionBtn href="#download">
                   <GetApp />
                   DOWNLOAD
                 </SectionBtn>
-                <SectionBtn href="#start" style={{ marginLeft: 0 }}>
+                <SectionBtn href="#start">
                   <LibraryBooksIcon />
                   LEARN MORE
                 </SectionBtn>

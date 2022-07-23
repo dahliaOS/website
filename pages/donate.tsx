@@ -51,10 +51,11 @@ const SubHeader = styled.h2`
   text-align: left;
 `;
 
-const Paragraph = styled.p`
+const Paragraph = styled.p<{ centerText?: boolean }>`
   color: ${({ theme }) => theme.text.textColor};
   max-width: 80ch;
   margin: 0 auto;
+  text-align: ${({ centerText }) => (centerText ? "center" : "left")};
 `;
 
 const StyledButton = styled(Button)`
@@ -62,6 +63,8 @@ const StyledButton = styled(Button)`
   border-radius: 5px;
   margin: 10px 0;
   color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  gap: 10px;
+
   background: linear-gradient(
     153deg,
     ${({ theme }) => theme.accent.accentColorLight} 0%,
@@ -83,6 +86,8 @@ const SupportItem = styled.div`
   padding: 10px 15px;
   max-height: 60px;
   overflow: hidden;
+  text-align: center;
+  gap: 10px;
   color: ${({ theme }) => theme.text.textColorExtremelyLight};
   background-color: ${({ theme }) =>
     theme.type === "dark" ? "#262626" : "#B2B2B2"};
@@ -102,7 +107,8 @@ const SupportItemLarge = styled.div`
   padding: 10px 15px;
   max-height: 60px;
   grid-column: auto / span 2;
-
+  gap: 10px;
+  text-align: center;
   overflow: hidden;
   color: ${({ theme }) => theme.text.textColorExtremelyLight};
   background-color: ${({ theme }) =>
@@ -146,7 +152,7 @@ const Donate = () => {
         <Container>
           <Header>Donate to dahliaOS</Header>
           <br />
-          <Paragraph style={{ textAlign: "center" }}>
+          <Paragraph centerText>
             Thank you for your support! We use donations to keep improving our
             project and hardware support, and donations will go towards the
             following:
@@ -154,25 +160,25 @@ const Donate = () => {
           <br />
           <SupportGrid>
             <SupportItem>
-              <DnsIcon style={{ marginRight: 10 }} />
+              <DnsIcon />
               <ItemParagraph>Website hosting</ItemParagraph>
             </SupportItem>
             <SupportItemLarge>
-              <TerminalIcon style={{ marginRight: 10 }} />
+              <TerminalIcon />
               <ItemParagraph>Development software licenses</ItemParagraph>
             </SupportItemLarge>
             <SupportItemLarge>
-              <DeveloperModeIcon style={{ marginRight: 10 }} />
+              <DeveloperModeIcon />
               <ItemParagraph>
                 General development of the operating system and tools
               </ItemParagraph>
             </SupportItemLarge>
             <SupportItem>
-              <LanguageIcon style={{ marginRight: 10 }} />
+              <LanguageIcon />
               <ItemParagraph>Website domains</ItemParagraph>
             </SupportItem>
             <SupportItemLarge>
-              <DevicesIcon style={{ marginRight: 10 }} />
+              <DevicesIcon />
               <ItemParagraph>
                 Devices for testing and expanding hardware support
               </ItemParagraph>
@@ -191,10 +197,7 @@ const Donate = () => {
             target="_blank"
           >
             <StyledButton>
-              <SvgIcon
-                component={OpenCollectiveLogo}
-                style={{ marginLeft: -5, marginRight: 10 }}
-              />
+              <SvgIcon component={OpenCollectiveLogo} />
               OPEN COLLECTIVE
             </StyledButton>
           </StyledLink>
