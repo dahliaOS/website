@@ -5,27 +5,13 @@ import Document, {
   NextScript,
   Main,
   DocumentContext,
+  DocumentInitialProps,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 import { Theme } from "../utils/Theme";
 
 const Page = () => (
   <Html lang="en">
-    <html
-      dangerouslySetInnerHTML={{
-        __html: `<!-- 
-    Copyright 2021 The dahliaOS Authors\n
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-    http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.  -->`,
-      }}
-    ></html>
     <Head>
       <meta charSet="UTF-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -102,33 +88,27 @@ limitations under the License.  -->`,
   </Html>
 );
 
-export default class DocumentClass extends Document {
-  static async getInitialProps(ctx: DocumentContext): Promise<{
-    styles: JSX.Element;
-    html: string;
-    head?: (JSX.Element | null)[] | undefined;
-  }> {
-    const sheet = new ServerStyleSheet();
+export default class MyDocument extends Document {
+  static async getInitialProps(
+    ctx: DocumentContext,
+  ): Promise<DocumentInitialProps> {
+    const styledComponentsSheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
+          enhanceApp: App => props =>
+            styledComponentsSheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
+        styles: [initialProps.styles, styledComponentsSheet.getStyleElement()],
       };
     } finally {
-      sheet.seal();
+      styledComponentsSheet.seal();
     }
   }
 

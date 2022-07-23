@@ -2,12 +2,20 @@ import { BottomNavigation, Link, MenuItem, Select } from "@mui/material";
 import { WbSunny, WbCloudy, Computer } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
 import styled, { useTheme } from "styled-components";
+import {
+  PeopleAlt as PeopleAltIcon,
+  DeveloperBoard as DeveloperBoardIcon,
+  Article as ArticleIcon,
+  Handshake as HandshakeIcon,
+  QuestionAnswer as QuestionAnswerIcon,
+} from "@mui/icons-material";
+import { VercelLogo } from "./Icons";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
   position: relative;
   height: auto;
   display: block;
-  padding: 50px 40px;
+  padding: 50px;
   overflow: hidden;
   background: ${({ theme }) =>
     theme.type === "dark"
@@ -17,14 +25,16 @@ const StyledBottomNavigation = styled(BottomNavigation)`
 
 const FooterContainer = styled.div`
   display: flex;
+  justify-content: space-between;
 
   @media (max-width: 1025px) {
     flex-wrap: wrap;
+    text-align: left;
   }
 `;
 
 const FooterCategory = styled.div`
-  flex-grow: 1;
+  width: max-content;
 
   @media (max-width: 1025px) {
     padding: 10px;
@@ -36,6 +46,10 @@ const FooterHeader = styled.h1`
   font-size: 1.5em;
   font-weight: medium;
   margin-bottom: 0.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 `;
 
 const FooterList = styled.ul`
@@ -46,24 +60,26 @@ const FooterList = styled.ul`
 
 const FooterItem = styled(Link)`
   font-size: 1.15em;
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.text.textColorDark};
   display: block;
   transition: color ease-in-out 0.15s;
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.text.textColorDark};
+    color: ${({ theme }) => theme.text.textColor};
   }
 `;
 
 const FooterLogo = styled.img`
   display: block;
-  margin: 0 auto;
-  margin-top: 50px;
+  margin: 30px auto 0 auto;
   height: 30px;
 `;
 
-const VercelLogo = styled.img`
+const VercelDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   right: 45px;
   bottom: 30px;
@@ -71,9 +87,9 @@ const VercelLogo = styled.img`
 
   @media (max-width: 670px) {
     position: unset;
-    display: flex;
     width: 100%;
     align-self: center;
+    margin: 30px 0;
   }
 `;
 
@@ -88,6 +104,7 @@ const StyledSelect = styled(Select)`
     display: flex;
     width: 100%;
     align-self: center;
+    margin: 20px 0;
   }
   background: ${({ theme }) => theme.background.backgroundColorLight};
   color: ${({ theme }) => theme.text.textColor};
@@ -111,6 +128,17 @@ const CloudyIcon = styled(WbCloudy)`
 const ComputerIcon = styled(Computer)`
   vertical-align: middle;
   margin-right: 8px;
+`;
+
+const VercelText = styled.p`
+  color: ${({ theme }) => theme.text.textColor};
+  font-size: 1.1em;
+  font-weight: 450;
+  margin-right: 10px;
+`;
+
+const VercelLink = styled(Link)`
+  text-decoration: none;
 `;
 
 type ThemeTypes = "dark" | "light" | "system";
@@ -139,7 +167,10 @@ const Footer = () => {
     <StyledBottomNavigation>
       <FooterContainer>
         <FooterCategory>
-          <FooterHeader>Find us on</FooterHeader>
+          <FooterHeader>
+            <PeopleAltIcon />
+            Find us on
+          </FooterHeader>
           <FooterList>
             <FooterItem href="/discord" target="_blank">
               Discord
@@ -165,40 +196,101 @@ const Footer = () => {
           </FooterList>
         </FooterCategory>
         <FooterCategory>
-          <FooterHeader>Technology</FooterHeader>
+          <FooterHeader>
+            <DeveloperBoardIcon />
+            Technology
+          </FooterHeader>
           <FooterList>
-            <FooterItem href="https://docs.dahliaos.io/os/linux">
+            <FooterItem
+              href="https://docs.dahliaos.io/os/linux-based"
+              target="_blank"
+            >
               How it works
             </FooterItem>
-            <FooterItem href="#">The goal</FooterItem>
-            <FooterItem href="#">Design</FooterItem>
-            <FooterItem href="#">UI Modularity</FooterItem>
+            <FooterItem
+              href="https://docs.dahliaos.io/pangolin/pangolin"
+              target="_blank"
+            >
+              Pangolin
+            </FooterItem>
+            <FooterItem
+              href="https://docs.dahliaos.io/os/fimage"
+              target="_blank"
+            >
+              FImage
+            </FooterItem>
+            <FooterItem
+              href="https://docs.dahliaos.io/developers/packaging"
+              target="_blank"
+            >
+              Packaging
+            </FooterItem>
           </FooterList>
         </FooterCategory>
         <FooterCategory>
-          <FooterHeader>Documentation</FooterHeader>
+          <FooterHeader>
+            <ArticleIcon />
+            Documentation
+          </FooterHeader>
           <FooterList>
-            <FooterItem href="https://docs.dahliaos.io/os/linux">
+            <FooterItem
+              href="https://docs.dahliaos.io/build/buildroot"
+              target="_blank"
+            >
               Compiling
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/install/efi">
-              Installing
+            <FooterItem
+              href="https://docs.dahliaos.io/live-boot/x86_64"
+              target="_blank"
+            >
+              Live booting
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/install/efi">
-              Running
-            </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/hardware/support">
+            <FooterItem
+              href="https://docs.dahliaos.io/hardware/supported-devices"
+              target="_blank"
+            >
               Supported devices
             </FooterItem>
-            <FooterItem href="#">Linux vs. Zircon</FooterItem>
+            <FooterItem href="https://docs.dahliaos.io/faq/faq" target="_blank">
+              FAQ
+            </FooterItem>
           </FooterList>
         </FooterCategory>
         <FooterCategory>
-          <FooterHeader>FAQ</FooterHeader>
+          <FooterHeader>
+            <HandshakeIcon />
+            Contribute
+          </FooterHeader>
           <FooterList>
-            <FooterItem href="https://docs.dahliaos.io/os/faq">FAQ</FooterItem>
-            <FooterItem href="#">Q&A</FooterItem>
-            <FooterItem href="#">Contact us</FooterItem>
+            <FooterItem
+              href="https://docs.dahliaos.io/contribute/roadmap"
+              target="_blank"
+            >
+              Roadmap
+            </FooterItem>
+            <FooterItem
+              href="https://docs.dahliaos.io/contribute/contribute"
+              target="_blank"
+            >
+              Contribute
+            </FooterItem>
+            <FooterItem
+              href="https://docs.dahliaos.io/contribute/code-of-conduct"
+              target="_blank"
+            >
+              Code of Conduct
+            </FooterItem>
+          </FooterList>
+        </FooterCategory>
+        <FooterCategory>
+          <FooterHeader>
+            <QuestionAnswerIcon />
+            Contact
+          </FooterHeader>
+          <FooterList>
+            <FooterItem href="mailto:contact@dahliaos.io">
+              Contact us
+            </FooterItem>
           </FooterList>
         </FooterCategory>
       </FooterContainer>
@@ -217,7 +309,6 @@ const Footer = () => {
           Light
         </StyledMenuItem>
       </StyledSelect>
-
       <FooterLogo
         alt="dahliaOS logo"
         src={
@@ -226,13 +317,12 @@ const Footer = () => {
             : "/images/logos/logo-color.png"
         }
       />
-      <br />
-      <a href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
-        <VercelLogo
-          alt="Vercel Logo"
-          src="/images/logos/powered-by-vercel.svg"
-        />
-      </a>
+      <VercelLink href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
+        <VercelDiv>
+          <VercelText>Powered By</VercelText>
+          <VercelLogo fill={theme.text.textColor} />
+        </VercelDiv>
+      </VercelLink>
     </StyledBottomNavigation>
   );
 };

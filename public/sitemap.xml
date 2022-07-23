@@ -1,18 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://dahliaos.io/</loc>
-  </url>
-  <url>
-    <loc>https://dahliaos.io/download/</loc>
-  </url>
-  <url>
-    <loc>https://dahliaos.io/donate/</loc>
-  </url>
-  <url>
-    <loc>https://dahliaos.io/support/</loc>
-  </url>
-  <url>
-    <loc>https://dahliaos.io/docs</loc>
-  </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://dahliaos.io/</loc>
+  <lastmod>2022-06-16T21:05:39+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://dahliaos.io/features</loc>
+  <lastmod>2022-06-16T21:05:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dahliaos.io/download</loc>
+  <lastmod>2022-06-16T21:05:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dahliaos.io/donate</loc>
+  <lastmod>2022-06-16T21:05:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dahliaos.io/applications</loc>
+  <lastmod>2022-06-16T21:05:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 </urlset>

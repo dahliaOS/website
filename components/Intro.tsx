@@ -2,36 +2,38 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import styled, { keyframes, useTheme } from "styled-components";
+import { Button } from "@mui/material";
+import { GetApp, LibraryBooks as LibraryBooksIcon } from "@mui/icons-material";
 
 import darkMockup from "../public/images/mockups/darkmockup.webp";
 import lightMockup from "../public/images/mockups/lightmockup.webp";
 
-const MockupKeyframes = (mockupScale = 3) => keyframes`
+const MockupKeyframes = (mockupScale = 3.5) => keyframes`
   0% {
     transform: scale(${mockupScale});
   }
   100% {
-    transform: scale(1);
-  }
-`;
-
-const ScaleLogo = keyframes`
-  0% {
-    transform: scale(1);
+    transform: scale(0.77);
     opacity: 1;
   }
+`;
+
+const animateIntroContainer = keyframes`
+  0% {
+    transform: translateX(200px);
+  }
   100% {
-    transform: scale(0);
-    opacity: 0;
+    opacity: 1;
+    transform: translateX(-10px);
   }
 `;
 
-const ScaleBackground = (backgroundScale = 2.4) => keyframes`
+const ScaleBackground = (backgroundScale = 2.9) => keyframes`
   0% {
-    transform: scale(${backgroundScale});
+    transform: translate3d(0px, 0px, 0px) scale(${backgroundScale});
   }
   100% {
-    transform: scale(0.766);
+    transform: translate3d(35px, 20px, 0) scale(0.6);
   }
 `;
 
@@ -40,16 +42,18 @@ const animateTerminal = (adjustTransform = -250) => keyframes`
     transform: translate3d(-400px, ${adjustTransform}vh, 0) scale(2.2);
   }
   100% {
-    transform: translate3d(-143px, -81px, 0) scale(1);
+    transform: translate3d(293px, -70px, 0) scale(0.8);
+    opacity: 1;
   }
 `;
 
-const animateNotepad = (adjustTransform = "22%") => keyframes`
+const animateFiles = (adjustTransform = "22%") => keyframes`
   0% {
     transform: translate3d(-100vw, ${adjustTransform}, 0) scale(2.2);
   }
   100% {
-    transform: translate3d(190px, 20px, 0) scale(1);
+    transform: translate3d(560px, 10px, 0) scale(0.75);
+    opacity: 1;
   }
 `;
 
@@ -58,18 +62,145 @@ const animateCalculator = (adjustTransform = "-178%") => keyframes`
     transform: translate3d(-100vw, ${adjustTransform}, 0) scale(2.2);
   }
   100% {
-    transform: translate3d(-253px, 104px, 0) scale(1);
+    transform: translate3d(343px, 50px, 0) scale(0.8);
+    opacity: 1;
   }
 `;
 
 const animateToolbar = () => keyframes`
   0% {
-    transform: translateY(312px);
+    transform: translate3d(185px, 312px, 0);
     opacity:0;
   }
   100% {
-    transform: translateY(281px);
+    transform: translate3d(185px, 216px, 0) scale(0.77);
     opacity: 1;
+  }
+`;
+
+const Sides = styled.div`
+  flex: 45%;
+
+  &:first-child {
+    margin-right: 50px;
+  }
+
+  @media (max-width: 1535px) {
+    flex: unset;
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+`;
+
+const IntroContainer = styled.div`
+  position: relative;
+  display: flex;
+  opacity: 0;
+  z-index: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  will-change: transform, opacity;
+
+  animation: ${animateIntroContainer} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
+    forwards;
+  animation-delay: 2s;
+
+  @media (max-width: 1535px) {
+    animation: ${animateIntroContainer} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
+      forwards;
+    animation-delay: 0s;
+    padding: 0 50px 0;
+    text-align: left;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 1025px) {
+    padding: 20px 20px 0;
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 100vw;
+  background: ${({ theme }) =>
+    theme.type === "dark"
+      ? 'url("/images/bgDark.svg")'
+      : 'url("/images/bgLight.svg")'};
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+
+  @media (max-width: 1535px) {
+    flex: unset;
+    flex-wrap: wrap;
+    &:nth-child(even) {
+      padding-top: -100px;
+      padding-bottom: 100px;
+    }
+  }
+`;
+
+const MockupContainer = styled.div`
+  position: relative;
+  display: flex;
+  padding-top: 50px;
+  margin-left: -110px;
+  margin-right: -130px;
+  align-items: center;
+  justify-content: left;
+  overflow: visible;
+`;
+
+const SectionTitle = styled.h1`
+  font-size: 2.8em;
+  font-weight: 600;
+  color: ${({ theme }) => theme.text.textColorLight};
+`;
+
+const Paragraph = styled.p`
+  margin: 4px 0;
+  font-weight: light;
+  font-size: 1.3em;
+  max-width: 65ch;
+  color: ${({ theme }) => theme.text.textColor};
+`;
+
+const SectionBtn = styled(Button)`
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 0;
+  gap: 10px;
+
+  &:first-of-type {
+    color: ${({ theme }) => theme.text.textColorExtremelyLight};
+    background: linear-gradient(
+      153deg,
+      ${({ theme }) => theme.accent.accentColorLight} 0%,
+      ${({ theme }) => theme.accent.accentColor} 100%
+    );
+    background-size: 400% 400%;
+    transition: 0.2s ease-in-out;
+    margin-right: 30px;
+  }
+
+  &:nth-child(even) {
+    border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
+    color: ${({ theme }) => theme.text.textColor};
+    @media (max-width: 1535px) {
+      &:nth-child(even) {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  &:hover {
+    background-position: 100% 50%;
   }
 `;
 
@@ -88,33 +219,47 @@ const LogoContainer = styled.div`
   z-index: 1;
   width: 100vw;
   height: 100vh;
-  will-change: transform;
-  animation: ${ScaleLogo} 1.9s cubic-bezier(0.66, 0, 0.2, 1) 0.433s forwards;
+  animation: animateLogo 1.9s cubic-bezier(0.66, 0, 0.2, 1) 0.433s forwards;
+  will-change: transform, opacity;
+
+  @keyframes animateLogo {
+    0% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-400px) scale(0);
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 1535px) {
+    @keyframes animateLogo {
+      0% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0) scale(0);
+        opacity: 0;
+      }
+    }
+  }
 `;
 
 const Logo = styled.img`
   filter: brightness(0) invert(1);
 `;
 
-const MockupContainer = styled.div`
-  position: relative;
-  display: flex;
-  min-height: 100vh;
-  padding-top: 50px;
-  align-items: center;
-  will-change: transform;
-  justify-content: center;
-  overflow: hidden;
-`;
-
 const Mockup = styled.img`
   margin: 50px;
   height: auto;
   width: 1280px;
-  will-change: transform;
   z-index: 1;
+  opacity: 0;
   animation: ${MockupKeyframes()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
+  will-change: transform, opacity;
 `;
 
 const Background = styled.div`
@@ -127,7 +272,7 @@ const Background = styled.div`
       ? 'url("/images/darkModeBackground.svg")'
       : 'url("/images/lightModeBackground.svg")'};
   background-repeat: no-repeat;
-  background-size: 1314px;
+  background-size: 1414px;
   background-position: center;
   will-change: transform;
   z-index: 0;
@@ -135,6 +280,7 @@ const Background = styled.div`
   animation: ${ScaleBackground()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
 `;
+
 const Terminal = styled.div`
   position: absolute;
   height: 323px;
@@ -143,44 +289,53 @@ const Terminal = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  will-change: transform;
   z-index: 1;
+  opacity: 0;
   transform: translate3d(-400px, -250vh, 0) scale(2.2);
   animation: ${animateTerminal()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 0.3s;
+  will-change: transform, opacity;
 `;
 
-const Notepad = styled.div`
+const Files = styled.div`
   position: absolute;
   height: 356px;
   width: 557px;
-  background: url("/images/textEditor.webp");
+  background: ${({ theme }) =>
+    theme.type === "dark"
+      ? 'url("/images/darkFiles.webp")'
+      : 'url("/images/lightFiles.webp")'};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  will-change: transform;
   z-index: 2;
+  opacity: 0;
   transform: translate3d(-100vw, 22%, 0) scale(2.2);
-  animation: ${animateNotepad()} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
+  animation: ${animateFiles()} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 0.5s;
+  will-change: transform, opacity;
 `;
 
 const Calculator = styled.div`
   position: absolute;
   height: 296px;
   width: 305px;
-  background: url("/images/calculator.webp");
+  background: ${({ theme }) =>
+    theme.type === "dark"
+      ? 'url("/images/darkCalculator.webp")'
+      : 'url("/images/lightCalculator.webp")'};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  will-change: transform;
   z-index: 3;
+  opacity: 0;
   transform: translate3d(-100vw, 178%, 0) scale(2.2);
   animation: ${animateCalculator()} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 0.6s;
+  will-change: transform, opacity;
 `;
 
 const Toolbar = styled.div`
@@ -199,6 +354,7 @@ const Toolbar = styled.div`
   transform: translateY(312px);
   animation: ${animateToolbar} 1s cubic-bezier(0.66, 0, 0.2, 1) 0.133s forwards;
   animation-delay: 1.85s;
+  will-change: transform, opacity;
 `;
 
 const MockupImageContainer = styled.div`
@@ -207,7 +363,7 @@ const MockupImageContainer = styled.div`
 `;
 
 const Intro = () => {
-  const [windowSize, setWindowSize] = useState<number>(0);
+  const [windowSize, setWindowSize] = useState(0);
   const theme = useTheme();
 
   useEffect(() => {
@@ -226,29 +382,78 @@ const Intro = () => {
               draggable={false}
             />
           </LogoContainer>
-          <MockupContainer>
-            <Mockup
-              alt="Macbook mockup"
-              src={"/images/mockups/macbook.webp"}
-              draggable={false}
-            />
-            <Background draggable={false} />
-            <Calculator draggable={false} />
-            <Terminal draggable={false} />
-            <Notepad draggable={false} />
-            <Toolbar draggable={false} />
-          </MockupContainer>
+          <Container>
+            <MockupContainer>
+              <Mockup
+                alt="Macbook mockup"
+                src={"/images/mockups/macbook.webp"}
+                draggable={false}
+              />
+              <Background draggable={false} />
+              <Calculator draggable={false} />
+              <Terminal draggable={false} />
+              <Files draggable={false} />
+              <Toolbar draggable={false} />
+            </MockupContainer>
+            <IntroContainer>
+              <Sides>
+                <SectionTitle>dahliaOS</SectionTitle>
+                <br />
+                <Paragraph>
+                  dahliaOS is a modern, secure, lightweight and responsive
+                  operating system, combining the best of GNU/Linux and Fuchsia
+                  OS. We are developing a privacy-respecting, fast, secure and
+                  lightweight operating system, our goal is to establish a new
+                  standard for the desktop platform.
+                </Paragraph>
+                <br />
+                <SectionBtn href="#download">
+                  <GetApp />
+                  DOWNLOAD
+                </SectionBtn>
+                <SectionBtn href="#start">
+                  <LibraryBooksIcon />
+                  LEARN MORE
+                </SectionBtn>
+              </Sides>
+            </IntroContainer>
+          </Container>
         </>
       ) : (
-        <MockupImageContainer>
-          <Image
-            alt="Dark mockup"
-            src={theme.type === "dark" ? darkMockup : lightMockup}
-            width={1280}
-            height={720}
-            layout="responsive"
-          />
-        </MockupImageContainer>
+        <Container>
+          <MockupImageContainer>
+            <Image
+              alt="Dark mockup"
+              src={theme.type === "dark" ? darkMockup : lightMockup}
+              width={1280}
+              height={720}
+              layout="responsive"
+            />
+            <br />
+            <IntroContainer>
+              <Sides>
+                <SectionTitle>dahliaOS</SectionTitle>
+                <br />
+                <Paragraph>
+                  dahliaOS is a modern, secure, lightweight and responsive
+                  operating system, combining the best of GNU/Linux and Fuchsia
+                  OS. We are developing a privacy-respecting, fast, secure and
+                  lightweight operating system, our goal is to establish a new
+                  standard for the desktop platform.
+                </Paragraph>
+                <br />
+                <SectionBtn href="#download">
+                  <GetApp />
+                  DOWNLOAD
+                </SectionBtn>
+                <SectionBtn href="#start">
+                  <LibraryBooksIcon />
+                  LEARN MORE
+                </SectionBtn>
+              </Sides>
+            </IntroContainer>
+          </MockupImageContainer>
+        </Container>
       )}
     </Wrapper>
   );

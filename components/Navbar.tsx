@@ -4,17 +4,36 @@ import {
   Divider,
   Drawer,
   IconButton,
+  SvgIcon,
   Link as MUILink,
   Menu,
   MenuItem,
   Toolbar,
 } from "@mui/material";
-import { Menu as MenuIcon, MoreVert } from "@mui/icons-material";
+import {
+  Menu as MenuIcon,
+  MoreVert,
+  GetApp,
+  AutoAwesome as AutoAwesomeIcon,
+  VolunteerActivism as VolunteerActivismIcon,
+  Science as ScienceIcon,
+  Article as ArticleIcon,
+  GitHub as GitHubIcon,
+  Groups as GroupIcon,
+  GroupAdd as GroupAddIcon,
+  Reddit as RedditIcon,
+  Facebook as FacebookIcon,
+  Telegram as TelegramIcon,
+  Twitter as TwitterIcon,
+  Instagram as InstagramIcon,
+  Code as CodeIcon,
+} from "@mui/icons-material";
 import { useCallback, useState } from "react";
 import styled, { css, keyframes, useTheme } from "styled-components";
 import useScrollPosition from "@react-hook/window-scroll";
 import { SkipNavContent, SkipNavLink } from "@reach/skip-nav";
 import "@reach/skip-nav/styles.css";
+import { DiscordLogo } from "./Icons";
 
 const WrapperKeyframes = keyframes`
   0% {
@@ -49,9 +68,12 @@ const DrawerLogo = styled.img`
 `;
 
 const Link = styled(MUILink)`
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
   font-size: 0.93em;
-  padding: 16px 20px;
+  padding: 18px 20px;
   color: ${({ theme }) => theme.text.textColor};
   transition: color ease-in-out 0.2s;
   text-decoration: none;
@@ -70,9 +92,12 @@ const Category = styled.span`
 `;
 
 const AppBarLink = styled(Link)`
-  display: inline-block;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   font-size: 0.93em;
-  padding: 16px 40px;
+  padding: 16px 35px;
+  gap: 10px;
   font-weight: 600;
   color: ${({ theme }) => theme.text.textColor};
   transition: color ease-in-out 0.2s;
@@ -84,6 +109,10 @@ const AppBarLink = styled(Link)`
 `;
 
 const MenuLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
   padding: 0;
   margin: 0;
   background: unset;
@@ -203,40 +232,69 @@ const Navbar = ({
           />
         </DrawerLogoContainer>
         <Container>
-          <Link href="/#features">Features</Link>
-          <Link href="/#download">Download</Link>
-          <Link href="mailto:contact@dahliaOS.io">Contact</Link>
-          <Link href="https://github.com/orgs/dahliaos/people" target="_blank">
-            Developers
+          <Link href="/features">
+            <AutoAwesomeIcon /> Features
           </Link>
-          <Link href="https://docs.dahliaOS.io">Documentation</Link>
+          <Link href="/download">
+            <GetApp />
+            Download
+          </Link>
+          <Link href="/donate">
+            <VolunteerActivismIcon />
+            Donate
+          </Link>
+          <Link href="https://web.dahliaOS.io" target="_blank">
+            <ScienceIcon />
+            Demo
+          </Link>
+          <Link href="https://docs.dahliaos.io" target="_blank">
+            <ArticleIcon />
+            Documentation
+          </Link>
           <Divider />
           <Category>Find us on</Category>
           <Link href="/discord" target="_blank">
+            <SvgIcon component={DiscordLogo} />
             Discord
           </Link>
           <Link href="/github" target="_blank">
+            <GitHubIcon />
             GitHub
           </Link>
           <Link href="/reddit" target="_blank">
+            <RedditIcon />
             Reddit
           </Link>
           <Link href="/telegram" target="_blank">
+            <TelegramIcon />
             Telegram
           </Link>
           <Link href="/facebook" target="_blank">
+            <FacebookIcon />
             Facebook
           </Link>
           <Link href="/instagram" target="_blank">
+            <InstagramIcon />
             Instagram
           </Link>
           <Link href="/twitter" target="_blank">
+            <TwitterIcon />
             Twitter
           </Link>
           <Divider />
           <Category>For developers</Category>
-          <Link href="/github">Source Code</Link>
-          <Link href="/discord">Join Our Team</Link>
+          <Link href="/github" target="_blank">
+            <CodeIcon />
+            Source code
+          </Link>
+          <Link href="https://github.com/orgs/dahliaos/people" target="_blank">
+            <GroupIcon />
+            Developers
+          </Link>
+          <Link href="/discord" target="_blank">
+            <GroupAddIcon />
+            Join our team
+          </Link>
         </Container>
       </Drawer>
       <StyledAppBar
@@ -273,19 +331,20 @@ const Navbar = ({
             />
           </AppBarLogoLinkContainer>
           <DesktopNav>
-            <AppBarLink href="/#features">Features</AppBarLink>
-            <AppBarLink href="/#download">Download</AppBarLink>
+            <AppBarLink href="/features">
+              <AutoAwesomeIcon /> Features
+            </AppBarLink>
+            <AppBarLink href="/download">
+              <GetApp /> Download
+            </AppBarLink>
+            <AppBarLink href="/donate">
+              <VolunteerActivismIcon /> Donate
+            </AppBarLink>
             <AppBarLink href="https://web.dahliaOS.io" target="_blank">
-              Demo
+              <ScienceIcon /> Demo
             </AppBarLink>
-            <AppBarLink
-              href="https://github.com/orgs/dahliaos/people"
-              target="_blank"
-            >
-              Developers
-            </AppBarLink>
-            <AppBarLink href="https://docs.dahliaOS.io">
-              Documentation
+            <AppBarLink href="https://docs.dahliaos.io" target="_blank">
+              <ArticleIcon /> Documentation
             </AppBarLink>
             <IconButton
               ref={ref}
@@ -304,10 +363,24 @@ const Navbar = ({
             >
               <MenuItem>
                 <MenuLink href="/github" target="_blank">
-                  Source Code
+                  <CodeIcon />
+                  Source code
                 </MenuLink>
               </MenuItem>
-              <MenuItem disabled>Screenshots</MenuItem>
+              <MenuItem>
+                <MenuLink
+                  href="https://github.com/orgs/dahliaos/people"
+                  target="_blank"
+                >
+                  <GroupIcon />
+                  Developers
+                </MenuLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuLink href="/discord" target="_blank">
+                  <GroupAddIcon /> Join our team
+                </MenuLink>
+              </MenuItem>
             </Menu>
           </DesktopNav>
         </StyledToolbar>

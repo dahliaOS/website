@@ -1,7 +1,7 @@
 # Pull request template
 
-* Please make sure you read and fill this template out entirely
-* PRs that don't have the template filled out will be ignored
+- Please make sure you read and fill this template out entirely
+- PRs that don't have the template filled out will be ignored
 
 ## Description
 
@@ -30,6 +30,7 @@ Please tick the relevant option by putting an X inside the bracket
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
+- [ ] Vercel Preview deployment has succeeded
 - [ ] Any dependent changes have been merged and published in downstream modules
 - [ ] I have checked my code and corrected any misspellings
 - [ ] I have read the [CONTRIBUTING](../CONTRIBUTING.md) document

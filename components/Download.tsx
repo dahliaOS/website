@@ -8,13 +8,19 @@ import { useRouter } from "next/router";
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
 import { useGithubReleases } from "../hooks/useGithubReleases";
+import {
+  GetApp,
+  TextSnippet as TextSnippetIcon,
+  VolunteerActivism as VolunteerActivismIcon,
+  Close as CloseIcon,
+} from "@mui/icons-material";
 
 const Card = styled.div<{ isError?: boolean }>`
   display: flex;
   flex-direction: row;
   border-radius: 13px;
-  max-width: ${({ isError }) => (isError ? 450 : 950)}px;
-  max-height: 350px;
+  max-width: ${({ isError }) => (isError ? 450 : 1000)}px;
+  max-height: 360px;
   width: 90%;
   margin: 0 auto;
   background: ${({ theme }) => theme.background.backgroundColorLight};
@@ -62,10 +68,12 @@ const OlderHeader = styled.h1`
   color: ${({ theme }) => theme.text.textColorLight};
 `;
 
-const ReleaseName = styled.span`
-  display: block;
-  margin: 0 0 20px;
-  color: ${({ theme }) => theme.text.textColor}9d;
+const ReleaseName = styled.p`
+  color: ${({ theme }) => theme.text.textColor};
+`;
+
+const DownloadCount = styled.p`
+  color: ${({ theme }) => theme.text.textColor};
 `;
 
 const Changelogs = styled.p`
@@ -87,6 +95,7 @@ const ReadMoreButton = styled(Button)`
   color: ${({ theme }) => theme.text.textColor};
   padding: 5px 10px;
   border-radius: 3px;
+  gap: 10px;
 `;
 
 const ReadMoreContainer = styled.div`
@@ -100,6 +109,48 @@ const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
   border-radius: 5px;
   color: ${({ theme }) => theme.text.textColorLight};
   text-decoration: none;
+  gap: 10px;
+
+  &:first-child {
+    color: ${({ theme }) => theme.text.textColorLight};
+    margin-right: 0;
+
+    ${({ disableGradient, theme }) =>
+      !disableGradient
+        ? `
+      margin-right: 15px;
+        color: ${theme.text.textColorExtremelyLight};
+        background: linear-gradient(
+          153deg,
+          ${theme.accent.accentColor} 0%,
+          ${theme.accent.accentColorLight} 100%
+        );
+
+        background-size: 400% 400;
+        transition: 0.2s ease-in-out;
+        `
+        : null}
+  }
+
+  &:hover {
+    background-position: 100% 50%;
+  }
+
+  @media (max-width: 980px) {
+    &:last-child {
+      padding: 9px 0;
+      margin-top: 30px;
+      margin-bottom: 5px;
+    }
+  }
+`;
+
+const StyledSecondaryButton = styled(Button)<{ disableGradient?: boolean }>`
+  padding: 7px 15px;
+  border-radius: 5px;
+  color: ${({ theme }) => theme.text.textColorLight};
+  text-decoration: none;
+  gap: 10px;
 
   &:first-child {
     color: ${({ theme }) => theme.text.textColorLight};
@@ -132,7 +183,7 @@ const OlderUpdate = styled.div`
   align-items: center;
   padding-bottom: 6px;
   margin-bottom: 6px;
-  border-bottom: 1px solid ${({ theme }) => theme.text.textColorDark}9d;
+  border-bottom: 1px solid ${({ theme }) => theme.text.textColorDark};
 
   &:last-child {
     margin-bottom: 0;
@@ -205,6 +256,7 @@ const DialogButton = styled(Button)<{ disableGradient?: boolean }>`
   border-radius: 5px;
   color: ${({ theme }) => theme.text.textColorLight};
   text-decoration: none;
+  gap: 10px;
 
   &:nth-child(2) {
     color: ${({ theme }) => theme.text.textColorLight};
@@ -256,6 +308,10 @@ const modalAnimation = {
   },
 };
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
+
 interface IDownloadProps {
   showMore?: boolean;
 }
@@ -306,21 +362,24 @@ const Download = ({ showMore }: IDownloadProps) => {
             )}
           >
             <h1>Support dahliaOS</h1>
+            <br />
             <p>
-              Donating to dahliaOS will help us purchase devices for testing and
-              cover web hosting fees, so we can continue work on our amazing
-              software!
+              Donating to dahliaOS will help us cover the expenses and furtherly
+              motivate us to continue working on bringing you new releases and
+              updates. Click the Donate button below if you would like to learn
+              more about donating to dahliaOS!
             </p>
-
+            <br />
             <DialogActions>
               <DialogButton disableGradient onClick={closeModal}>
-                No thanks
+                <CloseIcon /> Close
               </DialogButton>
               <DialogButton
                 disableGradient={false}
                 onClick={() => Router.replace("/donate")}
                 autoFocus
               >
+                <VolunteerActivismIcon />
                 Donate
               </DialogButton>
             </DialogActions>
@@ -349,15 +408,24 @@ const Download = ({ showMore }: IDownloadProps) => {
                 <ReleaseName>
                   {releases[0].name} ({getDate(releases[0].published_at)})
                 </ReleaseName>
+                <DownloadCount>
+                  Downloads:{" "}
+                  {releases[0].assets[0].download_count +
+                    releases[0].assets[1].download_count}
+                </DownloadCount>
+                <br />
                 <Changelogs>
                   {releases[0].body
                     .substring(releases[0].body.indexOf("+ "))
                     .replace(/(?:\r\n|\r|\n)/g, "\n")}
                 </Changelogs>
                 <ReadMoreContainer>
-                  <ReadMoreButton href={releases[0].html_url}>
-                    Read more
-                  </ReadMoreButton>
+                  <StyledLink href={releases[0].html_url} target="_blank">
+                    <ReadMoreButton>
+                      <TextSnippetIcon />
+                      Read more
+                    </ReadMoreButton>
+                  </StyledLink>
                 </ReadMoreContainer>
               </TextContainer>
               <ButtonContainer>
@@ -367,6 +435,7 @@ const Download = ({ showMore }: IDownloadProps) => {
                     href={asset.browser_download_url}
                     onClick={openModal}
                   >
+                    <GetApp />
                     {asset.name.includes("efi")
                       ? "Download (EFI)"
                       : "Download (Legacy)"}
@@ -376,7 +445,7 @@ const Download = ({ showMore }: IDownloadProps) => {
             </Latest>
             <Older>
               <TextContainer>
-                <OlderHeader>Older updates</OlderHeader>
+                <OlderHeader>Older releases</OlderHeader>
                 <UpdateContainer>
                   {releases.map((oldRelease, i) => {
                     if (i === 0 || i > 4) return;
@@ -385,20 +454,28 @@ const Download = ({ showMore }: IDownloadProps) => {
                       <OlderUpdate key={i}>
                         <OlderUpdateTextWrapper>
                           <OlderUpdateTitle>{oldRelease.name}</OlderUpdateTitle>
+                          <DownloadCount>
+                            Downloads:{" "}
+                            {oldRelease.assets[0].name.includes("efi")
+                              ? oldRelease.assets[0].download_count +
+                                oldRelease.assets[1].download_count
+                              : oldRelease.assets[0].download_count}
+                          </DownloadCount>
                           <OlderUpdateDate>
                             {getDate(oldRelease.published_at)}
                           </OlderUpdateDate>
                         </OlderUpdateTextWrapper>
                         <OlderBtns>
                           {oldRelease.assets.map(asset => (
-                            <StyledButton
+                            <StyledSecondaryButton
                               key={asset.name}
                               href={asset.browser_download_url}
                               disableGradient={!asset.name.includes("efi")}
                               onClick={openModal}
                             >
+                              <GetApp />
                               {asset.name.includes("efi") ? "EFI" : "Legacy"}
-                            </StyledButton>
+                            </StyledSecondaryButton>
                           ))}
                         </OlderBtns>
                       </OlderUpdate>
