@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import {
   AppBar,
   Divider,
@@ -29,7 +29,9 @@ import {
   Code as CodeIcon,
 } from "@mui/icons-material";
 import { useCallback, useState } from "react";
-import styled, { css, keyframes, useTheme } from "styled-components";
+import styled from "@emotion/styled";
+import { keyframes, css } from "@emotion/react";
+import { useTheme } from "@emotion/react";
 import useScrollPosition from "@react-hook/window-scroll";
 import { SkipNavContent, SkipNavLink } from "@reach/skip-nav";
 import "@reach/skip-nav/styles.css";
@@ -49,7 +51,7 @@ const WrapperKeyframes = keyframes`
 const Wrapper = styled.div``;
 
 const Container = styled.div`
-  background: ${({ theme }) => theme.background.backgroundColorLight};
+  background: ${({ theme }) => theme.palette.primary.light};
 `;
 
 const DrawerLogoContainer = styled.div`
@@ -57,7 +59,7 @@ const DrawerLogoContainer = styled.div`
   padding-top: 160px;
   height: 160px;
   width: 230px;
-  background: ${({ theme }) => theme.background.backgroundColor};
+  background: ${({ theme }) => theme.palette.primary.main};
 `;
 
 const DrawerLogo = styled.img`
@@ -74,12 +76,12 @@ const Link = styled(MUILink)`
   gap: 10px;
   font-size: 0.93em;
   padding: 18px 20px;
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   transition: color ease-in-out 0.2s;
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.text.textColorLight};
+    color: ${({ theme }) => theme.palette.text.light};
   }
 `;
 
@@ -88,7 +90,7 @@ const Category = styled.span`
   font-size: 0.93em;
   padding: 16px 20px;
   font-weight: 500;
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
 `;
 
 const AppBarLink = styled(Link)`
@@ -99,12 +101,12 @@ const AppBarLink = styled(Link)`
   padding: 16px 35px;
   gap: 10px;
   font-weight: 600;
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   transition: color ease-in-out 0.2s;
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.text.textColorLight};
+    color: ${({ theme }) => theme.palette.text.light};
   }
 `;
 
@@ -117,7 +119,7 @@ const MenuLink = styled(Link)`
   margin: 0;
   background: unset;
   text-decoration: none;
-  color: ${({ theme }) => theme.text.textColorDark};
+  color: ${({ theme }) => theme.palette.text.secondary};
 
   &:hover {
     color: initial;
@@ -131,7 +133,7 @@ const StyledAppBar = styled(AppBar)<{
   backdrop-filter: ${({ scrollPos }) =>
     scrollPos > 10 ? "blur(20px)" : "unset"};
   background: ${({ scrollPos, theme }) =>
-    scrollPos > 10 ? theme.background.backgroundColorLight + 90 : "unset"};
+    scrollPos > 10 ? theme.palette.primary.light + 90 : "unset"};
   box-shadow: ${({ scrollPos }) =>
     scrollPos > 10
       ? "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
@@ -214,11 +216,11 @@ const Navbar = ({
       <SkipNavLink
         contentId="skipNav"
         style={{
-          background: theme.background.backgroundColor,
+          background: theme.palette.primary.main,
           color:
-            theme.type === "dark"
-              ? theme.text.textColorExtremelyLight
-              : theme.text.textColorDark,
+            theme.palette.mode === "dark"
+              ? theme.palette.text.extremelyLight
+              : theme.palette.text.secondary,
           zIndex: 9999999,
         }}
       />
@@ -231,7 +233,7 @@ const Navbar = ({
           <DrawerLogo
             alt="dahliaOS logo"
             src={
-              theme.type === "dark"
+              theme.palette.mode === "dark"
                 ? "/images/logos/logo-white.png"
                 : "/images/logos/logo-color.png"
             }
@@ -319,9 +321,9 @@ const Navbar = ({
           >
             <MenuIcon
               style={
-                theme.type === "dark"
+                theme.palette.mode === "dark"
                   ? undefined
-                  : { color: theme.text.textColorDark }
+                  : { color: theme.palette.text.secondary }
               }
             />
           </IconButton>
@@ -329,7 +331,7 @@ const Navbar = ({
             <AppBarLogo
               alt="dahliaOS logo"
               src={
-                theme.type === "dark"
+                theme.palette.mode === "dark"
                   ? "/images/logos/logo-white.png"
                   : "/images/logos/logo-color.png"
               }
@@ -358,7 +360,7 @@ const Navbar = ({
               aria-haspopup="true"
               onClick={() => setToggleMoreIcon(true)}
             >
-              <MoreVert style={{ color: theme.text.textColorLight }} />
+              <MoreVert style={{ color: theme.palette.text.light }} />
             </IconButton>
             <Menu
               open={toggleMoreIcon}

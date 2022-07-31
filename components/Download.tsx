@@ -5,8 +5,8 @@ import DialogActions from "@mui/material/DialogActions";
 import Paper from "@mui/material/Paper";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
-import React, { useCallback, useState } from "react";
-import styled from "styled-components";
+import { useCallback, useState } from "react";
+import styled from "@emotion/styled";
 import { useGithubReleases } from "../hooks/useGithubReleases";
 import {
   GetApp,
@@ -23,7 +23,7 @@ const Card = styled.div<{ isError?: boolean }>`
   max-height: 360px;
   width: 90%;
   margin: 0 auto;
-  background: ${({ theme }) => theme.background.backgroundColorLight};
+  background: ${({ theme }) => theme.palette.primary.light};
   box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
     0 1px 8px 0 rgb(0 0 0 / 12%);
 
@@ -43,7 +43,7 @@ const Latest = styled.div`
 `;
 
 const Older = styled.div`
-  background: ${({ theme }) => theme.background.backgroundColorContrast};
+  background: ${({ theme }) => theme.palette.primary.contrastText};
   border-radius: 13px;
   padding: 0 16px;
   flex: 1;
@@ -59,25 +59,25 @@ const TextContainer = styled.div`
 
 const Header = styled.h1`
   margin: 17px 0 0;
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
 `;
 
 const OlderHeader = styled.h1`
   margin: 17px 0 0;
   text-align: center;
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
 `;
 
 const ReleaseName = styled.p`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 const DownloadCount = styled.p`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 const Changelogs = styled.p`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
 
   white-space: pre-line;
   text-overflow: ellipsis;
@@ -92,7 +92,7 @@ const UpdateContainer = styled.div`
 `;
 
 const ReadMoreButton = styled(Button)`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   padding: 5px 10px;
   border-radius: 3px;
   gap: 10px;
@@ -107,23 +107,23 @@ const ReadMoreContainer = styled.div`
 const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
   padding: 7px 20px;
   border-radius: 5px;
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
   text-decoration: none;
   gap: 10px;
 
   &:first-child {
-    color: ${({ theme }) => theme.text.textColorLight};
+    color: ${({ theme }) => theme.palette.text.light};
     margin-right: 0;
 
     ${({ disableGradient, theme }) =>
       !disableGradient
         ? `
       margin-right: 15px;
-        color: ${theme.text.textColorExtremelyLight};
+        color: ${theme.palette.text.extremelyLight};
         background: linear-gradient(
           153deg,
-          ${theme.accent.accentColor} 0%,
-          ${theme.accent.accentColorLight} 100%
+          ${theme.palette.secondary.main} 0%,
+          ${theme.palette.secondary.light} 100%
         );
 
         background-size: 400% 400;
@@ -148,23 +148,23 @@ const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
 const StyledSecondaryButton = styled(Button)<{ disableGradient?: boolean }>`
   padding: 7px 15px;
   border-radius: 5px;
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
   text-decoration: none;
   gap: 10px;
 
   &:first-child {
-    color: ${({ theme }) => theme.text.textColorLight};
+    color: ${({ theme }) => theme.palette.text.light};
     margin-right: 0;
 
     ${({ disableGradient, theme }) =>
       !disableGradient
         ? `
       margin-right: 15px;
-        color: ${theme.text.textColorExtremelyLight};
+        color: ${theme.palette.text.extremelyLight};
         background: linear-gradient(
           153deg,
-          ${theme.accent.accentColor} 0%,
-          ${theme.accent.accentColorLight} 100%
+          ${theme.palette.secondary.main} 0%,
+          ${theme.palette.secondary.light} 100%
         );
 
         background-size: 400% 400;
@@ -183,7 +183,7 @@ const OlderUpdate = styled.div`
   align-items: center;
   padding-bottom: 6px;
   margin-bottom: 6px;
-  border-bottom: 1px solid ${({ theme }) => theme.text.textColorDark};
+  border-bottom: 1px solid ${({ theme }) => theme.palette.text.secondary};
 
   &:last-child {
     margin-bottom: 0;
@@ -199,7 +199,7 @@ const OlderUpdateTitle = styled.h1`
   font-size: 1.25rem;
   margin: 0;
   font-weight: 400;
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 const ButtonContainer = styled.div`
@@ -207,7 +207,7 @@ const ButtonContainer = styled.div`
 `;
 
 const OlderUpdateDate = styled.span`
-  color: ${({ theme }) => theme.text.textColorDark};
+  color: ${({ theme }) => theme.palette.text.secondary};
 `;
 
 const OlderBtns = styled.div`
@@ -224,14 +224,14 @@ const ErrorContainer = styled.div`
 `;
 
 const StyledErrorIcon = styled(ErrorIcon)`
-  color: ${({ theme }) => theme.error.light};
+  color: ${({ theme }) => theme.palette.error.light};
   width: 50px;
   height: auto;
   margin-top: 25px;
 `;
 
 const ErrorMessage = styled.p`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   max-width: ch(75);
   margin-bottom: 25px;
 `;
@@ -240,37 +240,37 @@ const StyledModal = styled(motion(Dialog))``;
 
 const StyledPaper = styled(motion(Paper))`
   border-radius: 8px;
-  background: ${({ theme }) => theme.background.backgroundColorContrast};
-  color: ${({ theme }) => theme.text.textColorLight};
+  background: ${({ theme }) => theme.palette.primary.contrastText};
+  color: ${({ theme }) => theme.palette.text.light};
   padding: 20px;
 
   p {
     font-size: 1.05em;
     max-width: 55ch;
-    color: ${({ theme }) => theme.text.textColor};
+    color: ${({ theme }) => theme.palette.text.primary};
   }
 `;
 
 const DialogButton = styled(Button)<{ disableGradient?: boolean }>`
   padding: 7px 20px;
   border-radius: 5px;
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
   text-decoration: none;
   gap: 10px;
 
   &:nth-child(2) {
-    color: ${({ theme }) => theme.text.textColorLight};
+    color: ${({ theme }) => theme.palette.text.light};
     margin-right: 0;
 
     ${({ disableGradient, theme }) =>
       !disableGradient
         ? `
       margin-right: 15px;
-        color: ${theme.text.textColorExtremelyLight};
+        color: ${theme.palette.text.extremelyLight};
         background: linear-gradient(
           153deg,
-          ${theme.accent.accentColor} 0%,
-          ${theme.accent.accentColorLight} 100%
+          ${theme.palette.secondary.main} 0%,
+          ${theme.palette.secondary.light} 100%
         );
 
         background-size: 400% 400;

@@ -1,14 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */ // eslint is being annoying :/, this is fine and works
-import Document, {
-  Head,
-  Html,
-  NextScript,
-  Main,
-  DocumentContext,
-  DocumentInitialProps,
-} from "next/document";
-import { ServerStyleSheet } from "styled-components";
-import { Theme } from "../utils/Theme";
+import Document, { Head, Html, NextScript, Main } from "next/document";
+import { DarkTheme } from "../utils/Theme";
 
 const Page = () => (
   <Html lang="en">
@@ -18,7 +10,7 @@ const Page = () => (
       <link rel="canonical" href="https://dahliaos.io" />
       <title>dahliaOS</title>
       <meta property="og:title" content="dahliaOS" key="title" />
-      <meta name="theme-color" content={Theme.accent.accentColor} />
+      <meta name="theme-color" content={DarkTheme.palette.secondary.main} />
       <meta property="og:image" content="https://imgur.com/pqgjEpd.png" />
       <meta property="og:site_name" content="dahliaOS" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -30,7 +22,7 @@ const Page = () => (
       />
       <meta
         name="apple-mobile-web-app-status-bar-style"
-        content={Theme.accent.accentColorLight}
+        content={DarkTheme.palette.secondary.light}
       />
       <meta name="apple-mobile-web-app-title" content="dahliaOS" />
       <meta
@@ -39,7 +31,7 @@ const Page = () => (
       />
       <meta
         name="msapplication-TileColor"
-        content={Theme.accent.accentColorLight}
+        content={DarkTheme.palette.secondary.light}
       />
 
       <link
@@ -89,30 +81,7 @@ const Page = () => (
 );
 
 export default class MyDocument extends Document {
-  static async getInitialProps(
-    ctx: DocumentContext,
-  ): Promise<DocumentInitialProps> {
-    const styledComponentsSheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
-
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: App => props =>
-            styledComponentsSheet.collectStyles(<App {...props} />),
-        });
-
-      const initialProps = await Document.getInitialProps(ctx);
-      return {
-        ...initialProps,
-        styles: [initialProps.styles, styledComponentsSheet.getStyleElement()],
-      };
-    } finally {
-      styledComponentsSheet.seal();
-    }
-  }
-
-  render(): JSX.Element {
+  render() {
     return <Page />;
   }
 }

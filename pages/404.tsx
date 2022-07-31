@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Home as HomeIcon } from "@mui/icons-material";
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   background: ${({ theme }) =>
-    theme.type === "dark"
+    theme.palette.mode === "dark"
       ? "url('/images/bgDark.svg')"
       : "url('/images/bgLight.svg')"};
   background-repeat: no-repeat;
@@ -33,33 +33,33 @@ const Container = styled.div`
 `;
 
 const Header = styled.h1`
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
   font-size: 2.2em;
   font-weight: 500;
   text-align: center;
 `;
 
 const SubHeader = styled.h2`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   font-size: 1.5em;
   font-weight: 500;
 `;
 
 const Paragraph = styled.p`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 const StyledButton = styled(Button)`
   padding: 10px 20px;
   border-radius: 5px;
   margin: 10px 0;
-  color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  color: ${({ theme }) => theme.palette.text.extremelyLight};
   gap: 10px;
 
   background: linear-gradient(
     153deg,
-    ${({ theme }) => theme.accent.accentColorLight} 0%,
-    ${({ theme }) => theme.accent.accentColor} 100%
+    ${({ theme }) => theme.palette.secondary.light} 0%,
+    ${({ theme }) => theme.palette.secondary.main} 100%
   );
   background-size: 400% 400%;
   transition: 0.2s ease-in-out;
