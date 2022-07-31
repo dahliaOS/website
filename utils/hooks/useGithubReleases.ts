@@ -1,5 +1,5 @@
 import useSWR, { SWRResponse } from "swr";
-import { Releases } from "../types/types";
+import { Releases } from "../../types/types";
 
 export const useGithubReleases = () => {
   const { data, error }: SWRResponse<Releases, Error> = useSWR(

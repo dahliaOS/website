@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
 import styled from "@emotion/styled";
-import { useGithubReleases } from "../hooks/useGithubReleases";
+import { useGithubReleases } from "../utils/hooks/useGithubReleases";
 import {
   GetApp,
   TextSnippet as TextSnippetIcon,

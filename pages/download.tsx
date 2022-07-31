@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import DownloadComponent from "../components/Download";
 import { Button, Link } from "@mui/material";
 import Head from "next/head";
-import { useGithubReleases } from "../hooks/useGithubReleases";
+import { useGithubReleases } from "../utils/hooks/useGithubReleases";
 import { History as HistoryIcon } from "@mui/icons-material";
 
 const Wrapper = styled.div`

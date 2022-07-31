@@ -6,7 +6,7 @@ import { LightTheme, DarkTheme } from "../utils/Theme";
 import { fetcher } from "../utils/Fetcher";
 import { ThemeProvider as MUIThemeProvider } from "@mui/material";
 import { SWRConfig } from "swr";
-import { usePreferredTheme } from "../hooks/usePreferredTheme";
+import { usePreferredTheme } from "../utils/hooks/usePreferredTheme";
 
 const GlobalStyles = (theme: Theme) => css`
   *,
