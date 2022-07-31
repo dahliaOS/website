@@ -1,7 +1,9 @@
 /* eslint-disable quotes */
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import styled, { keyframes, useTheme } from "styled-components";
+import { useEffect, useState } from "react";
+import styled from "@emotion/styled";
+import { keyframes } from "@emotion/react";
+import { useTheme } from "@emotion/react";
 import { Button } from "@mui/material";
 import { GetApp, LibraryBooks as LibraryBooksIcon } from "@mui/icons-material";
 
@@ -128,7 +130,7 @@ const Container = styled.div`
   min-height: 100vh;
   max-width: 100vw;
   background: ${({ theme }) =>
-    theme.type === "dark"
+    theme.palette.mode === "dark"
       ? 'url("/images/bgDark.svg")'
       : 'url("/images/bgLight.svg")'};
   background-repeat: no-repeat;
@@ -160,7 +162,7 @@ const MockupContainer = styled.div`
 const SectionTitle = styled.h1`
   font-size: 2.8em;
   font-weight: 600;
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
 `;
 
 const Paragraph = styled.p`
@@ -168,7 +170,7 @@ const Paragraph = styled.p`
   font-weight: light;
   font-size: 1.3em;
   max-width: 65ch;
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 const SectionBtn = styled(Button)`
@@ -178,11 +180,11 @@ const SectionBtn = styled(Button)`
   gap: 10px;
 
   &:first-of-type {
-    color: ${({ theme }) => theme.text.textColorExtremelyLight};
+    color: ${({ theme }) => theme.palette.text.extremelyLight};
     background: linear-gradient(
       153deg,
-      ${({ theme }) => theme.accent.accentColorLight} 0%,
-      ${({ theme }) => theme.accent.accentColor} 100%
+      ${({ theme }) => theme.palette.secondary.light} 0%,
+      ${({ theme }) => theme.palette.secondary.main} 100%
     );
     background-size: 400% 400%;
     transition: 0.2s ease-in-out;
@@ -190,8 +192,8 @@ const SectionBtn = styled(Button)`
   }
 
   &:nth-child(even) {
-    border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
-    color: ${({ theme }) => theme.text.textColor};
+    border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
+    color: ${({ theme }) => theme.palette.text.primary};
     @media (max-width: 1535px) {
       &:nth-child(even) {
         margin: 10px 0;
@@ -268,7 +270,7 @@ const Background = styled.div`
   height: 100%;
   bottom: -6px;
   background: ${({ theme }) =>
-    theme.type === "dark"
+    theme.palette.mode === "dark"
       ? 'url("/images/darkModeBackground.svg")'
       : 'url("/images/lightModeBackground.svg")'};
   background-repeat: no-repeat;
@@ -303,7 +305,7 @@ const Files = styled.div`
   height: 356px;
   width: 557px;
   background: ${({ theme }) =>
-    theme.type === "dark"
+    theme.palette.mode === "dark"
       ? 'url("/images/darkFiles.webp")'
       : 'url("/images/lightFiles.webp")'};
   background-repeat: no-repeat;
@@ -323,7 +325,7 @@ const Calculator = styled.div`
   height: 296px;
   width: 305px;
   background: ${({ theme }) =>
-    theme.type === "dark"
+    theme.palette.mode === "dark"
       ? 'url("/images/darkCalculator.webp")'
       : 'url("/images/lightCalculator.webp")'};
   background-repeat: no-repeat;
@@ -343,7 +345,7 @@ const Toolbar = styled.div`
   height: 100%;
   width: 1011px;
   background: ${({ theme }) =>
-    theme.type === "dark"
+    theme.palette.mode === "dark"
       ? 'url("/images/darkToolbar.svg")'
       : 'url("/images/lightToolbar.svg")'};
   background-repeat: no-repeat;
@@ -424,7 +426,7 @@ const Intro = () => {
           <MockupImageContainer>
             <Image
               alt="Dark mockup"
-              src={theme.type === "dark" ? darkMockup : lightMockup}
+              src={theme.palette.mode === "dark" ? darkMockup : lightMockup}
               width={1280}
               height={720}
               layout="responsive"

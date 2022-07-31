@@ -19,12 +19,6 @@
       },
       "mui-icons"
     ],
-    [
-      "babel-plugin-styled-components",
-      {
-        "ssr": true,
-        "displayName": true
-      }
-    ]
+      "@emotion/babel-plugin"
   ]
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import styled, { useTheme } from "styled-components";
+import styled from "@emotion/styled";
+import { useTheme } from "@emotion/react";
 import type { NextPage } from "next";
 import Intro from "../components/Intro";
 import Navbar from "../components/Navbar";
@@ -69,7 +70,7 @@ const Sides = styled.div`
 const SectionTitle = styled.h1`
   font-size: 2.8em;
   font-weight: 600;
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
 `;
 
 const Paragraph = styled.p`
@@ -77,7 +78,7 @@ const Paragraph = styled.p`
   font-weight: light;
   font-size: 1.3em;
   max-width: 65ch;
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 const SectionBtn = styled(Button)<{ distanceButton?: boolean }>`
@@ -87,11 +88,11 @@ const SectionBtn = styled(Button)<{ distanceButton?: boolean }>`
   gap: 10px;
 
   &:first-of-type {
-    color: ${({ theme }) => theme.text.textColorExtremelyLight};
+    color: ${({ theme }) => theme.palette.text.extremelyLight};
     background: linear-gradient(
       153deg,
-      ${({ theme }) => theme.accent.accentColorLight} 0%,
-      ${({ theme }) => theme.accent.accentColor} 100%
+      ${({ theme }) => theme.palette.secondary.light} 0%,
+      ${({ theme }) => theme.palette.secondary.main} 100%
     );
     background-size: 400% 400%;
     transition: 0.2s ease-in-out;
@@ -99,8 +100,8 @@ const SectionBtn = styled(Button)<{ distanceButton?: boolean }>`
   }
 
   &:nth-child(even) {
-    border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
-    color: ${({ theme }) => theme.text.textColor};
+    border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
+    color: ${({ theme }) => theme.palette.text.primary};
     @media (max-width: 1025px) {
       &:nth-child(even) {
         margin: 10px -50px;
@@ -119,8 +120,8 @@ const SectionBtnSecondary = styled(Button)`
   margin: 10px 0;
   gap: 10px;
 
-  border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
-  color: ${({ theme }) => theme.text.textColor};
+  border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
+  color: ${({ theme }) => theme.palette.text.primary};
   @media (max-width: 1025px) {
     &:nth-child(even) {
       margin: 10px -50px;
@@ -133,7 +134,7 @@ const SectionBtnSecondary = styled(Button)`
 `;
 
 const Header = styled.h1`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   text-align: center;
   margin-bottom: 25px;
   font-size: 2.2em;
@@ -142,7 +143,7 @@ const Header = styled.h1`
 
 const SectionImgContainer = styled.div<{ showOnRight?: boolean }>`
   position: relative;
-  background: ${({ theme }) => theme.background.backgroundColorLight};
+  background: ${({ theme }) => theme.palette.primary.light};
   border-radius: 14px;
 
   ${({ showOnRight }) =>
@@ -263,7 +264,7 @@ const Home: NextPage = () => {
                   <SectionImg
                     alt="dark settings modal"
                     src={
-                      theme.type === "dark"
+                      theme.palette.mode === "dark"
                         ? "/images/mockups/darkSettings.webp"
                         : "/images/mockups/lightSettings.webp"
                     }
@@ -321,7 +322,7 @@ const Home: NextPage = () => {
                   <SectionImg
                     alt="dark features modal"
                     src={
-                      theme.type === "dark"
+                      theme.palette.mode === "dark"
                         ? "/images/darkFeatures.webp"
                         : "/images/lightFeatures.webp"
                     }
@@ -342,7 +343,7 @@ const Home: NextPage = () => {
                   <SectionImg
                     alt="dark files modal"
                     src={
-                      theme.type === "dark"
+                      theme.palette.mode === "dark"
                         ? "/images/mockups/darkFiles.webp"
                         : "/images/mockups/lightFiles.webp"
                     }
@@ -410,7 +411,7 @@ const Home: NextPage = () => {
                   <SectionImg
                     alt="open source modal"
                     src={
-                      theme.type === "dark"
+                      theme.palette.mode === "dark"
                         ? "/images/darkOIN.webp"
                         : "/images/lightOIN.webp"
                     }
@@ -431,7 +432,7 @@ const Home: NextPage = () => {
                   <SectionImg
                     alt="dark pangolin modal"
                     src={
-                      theme.type === "dark"
+                      theme.palette.mode === "dark"
                         ? "/images/mockups/pangolindark.webp"
                         : "/images/mockups/pangolinlight.webp"
                     }
@@ -495,7 +496,7 @@ const Home: NextPage = () => {
                   <SectionImg
                     alt="dark settings modal"
                     src={
-                      theme.type === "dark"
+                      theme.palette.mode === "dark"
                         ? "/images/mockups/darkSettings.webp"
                         : "/images/mockups/lightSettings.webp"
                     }
@@ -552,7 +553,7 @@ const Home: NextPage = () => {
                   <SectionImg
                     alt="dark features modal"
                     src={
-                      theme.type === "dark"
+                      theme.palette.mode === "dark"
                         ? "/images/darkFeatures.webp"
                         : "/images/lightFeatures.webp"
                     }
@@ -573,7 +574,7 @@ const Home: NextPage = () => {
                   <SectionImg
                     alt="dark files modal"
                     src={
-                      theme.type === "dark"
+                      theme.palette.mode === "dark"
                         ? "/images/mockups/darkFiles.webp"
                         : "/images/mockups/lightFiles.webp"
                     }
@@ -641,7 +642,7 @@ const Home: NextPage = () => {
                   <SectionImg
                     alt="open source modal"
                     src={
-                      theme.type === "dark"
+                      theme.palette.mode === "dark"
                         ? "/images/darkOIN.webp"
                         : "/images/lightOIN.webp"
                     }
@@ -662,7 +663,7 @@ const Home: NextPage = () => {
                   <SectionImg
                     alt="dark pangolin modal"
                     src={
-                      theme.type === "dark"
+                      theme.palette.mode === "dark"
                         ? "/images/mockups/pangolindark.webp"
                         : "/images/mockups/pangolinlight.webp"
                     }

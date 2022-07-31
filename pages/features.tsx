@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Head from "next/head";
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
   padding-top: 150px;
   background: ${({ theme }) =>
-    theme.type === "dark"
+    theme.palette.mode === "dark"
       ? "url('/images/bgDark.svg')"
       : "url('/images/bgLight.svg')"};
   background-repeat: no-repeat;
@@ -44,7 +44,7 @@ const Card = styled.div`
   padding: 20px 20px;
   text-align: left;
   overflow: hidden;
-  background: ${({ theme }) => theme.background.backgroundColorLight};
+  background: ${({ theme }) => theme.palette.primary.light};
   box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
     0 1px 8px 0 rgb(0 0 0 / 12%);
 
@@ -76,7 +76,7 @@ const AppsGrid = styled.div`
 `;
 
 const Header = styled.h1`
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
   font-size: 2.2em;
   font-weight: 500;
 `;
@@ -88,24 +88,24 @@ const Sides = styled.div`
 `;
 
 const SubHeader = styled.h2`
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
   font-size: 1.2em;
   font-weight: 400;
 `;
 
 const CardParagraph = styled.p`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   font-size: 0.9em;
 `;
 
 const Paragraph = styled.p`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   max-width: 80ch;
   margin: 0 auto;
 `;
 
 const Icon = styled(SvgIcon)`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   font-size: 45px;
   margin: 0 15px;
 `;

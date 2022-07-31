@@ -1,5 +1,5 @@
 import { Button, Link } from "@mui/material";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { GitHub as GitHubIcon } from "@mui/icons-material";
@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
   padding-top: 150px;
   background: ${({ theme }) =>
-    theme.type === "dark"
+    theme.palette.mode === "dark"
       ? "url('/images/bgDark.svg')"
       : "url('/images/bgLight.svg')"};
   background-repeat: no-repeat;
@@ -40,7 +40,7 @@ const Card = styled.div`
   padding: 20px 20px;
   text-align: left;
   overflow: hidden;
-  background: ${({ theme }) => theme.background.backgroundColorLight};
+  background: ${({ theme }) => theme.palette.primary.light};
   box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
     0 1px 8px 0 rgb(0 0 0 / 12%);
 
@@ -71,25 +71,25 @@ const AppsGrid = styled.div`
 `;
 
 const Header = styled.h1`
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
   font-size: 2.2em;
   font-weight: 500;
 `;
 
 const SubHeader = styled.h2`
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
   font-size: 1.2em;
   font-weight: 400;
 `;
 
 const CardParagraph = styled.p`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   font-size: 0.9em;
   margin-bottom: 10px;
 `;
 
 const Paragraph = styled.p`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   max-width: 80ch;
   margin: 0 auto;
 `;
@@ -101,16 +101,16 @@ const StyledButton = styled(Button)`
   min-width: 100%;
   gap: 10px;
 
-  color: ${({ theme }) => theme.accent.accentColor};
-  border: ${({ theme }) => theme.accent.accentColorDark} solid 1.5px;
+  color: ${({ theme }) => theme.palette.secondary.main};
+  border: ${({ theme }) => theme.palette.secondary.dark} solid 1.5px;
   transition: 0.2s ease-in-out;
 
   &:hover {
-    color: ${({ theme }) => theme.text.textColorExtremelyLight};
+    color: ${({ theme }) => theme.palette.text.extremelyLight};
     background: linear-gradient(
       153deg,
-      ${({ theme }) => theme.accent.accentColorLight} 0%,
-      ${({ theme }) => theme.accent.accentColor} 100%
+      ${({ theme }) => theme.palette.secondary.light} 0%,
+      ${({ theme }) => theme.palette.secondary.main} 100%
     );
   }
 `;

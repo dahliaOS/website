@@ -1,7 +1,8 @@
 import { BottomNavigation, Link, MenuItem, Select } from "@mui/material";
 import { WbSunny, WbCloudy, Computer } from "@mui/icons-material";
-import React, { useEffect, useState } from "react";
-import styled, { useTheme } from "styled-components";
+import { useEffect, useState } from "react";
+import styled from "@emotion/styled";
+import { useTheme } from "@emotion/react";
 import {
   PeopleAlt as PeopleAltIcon,
   DeveloperBoard as DeveloperBoardIcon,
@@ -18,9 +19,9 @@ const StyledBottomNavigation = styled(BottomNavigation)`
   padding: 50px;
   overflow: hidden;
   background: ${({ theme }) =>
-    theme.type === "dark"
-      ? theme.background.backgroundColorDark
-      : theme.background.backgroundColorLight};
+    theme.palette.mode === "dark"
+      ? theme.palette.primary.dark
+      : theme.palette.primary.light};
 `;
 
 const FooterContainer = styled.div`
@@ -42,7 +43,7 @@ const FooterCategory = styled.div`
 `;
 
 const FooterHeader = styled.h1`
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
   font-size: 1.5em;
   font-weight: medium;
   margin-bottom: 0.5em;
@@ -60,13 +61,13 @@ const FooterList = styled.ul`
 
 const FooterItem = styled(Link)`
   font-size: 1.15em;
-  color: ${({ theme }) => theme.text.textColorDark};
+  color: ${({ theme }) => theme.palette.text.secondary};
   display: block;
   transition: color ease-in-out 0.15s;
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.text.textColor};
+    color: ${({ theme }) => theme.palette.text.primary};
   }
 `;
 
@@ -106,13 +107,14 @@ const StyledSelect = styled(Select)`
     align-self: center;
     margin: 20px 0;
   }
-  background: ${({ theme }) => theme.background.backgroundColorLight};
-  color: ${({ theme }) => theme.text.textColor};
+  background: ${({ theme }) => theme.palette.primary.light};
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 const StyledMenuItem = styled(MenuItem)`
   display: flex;
   align-items: center;
+  color: ${({ theme }) => theme.palette.background.default};
 `;
 
 const SunnyIcon = styled(WbSunny)`
@@ -131,7 +133,7 @@ const ComputerIcon = styled(Computer)`
 `;
 
 const VercelText = styled.p`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   font-size: 1.1em;
   font-weight: 450;
   margin-right: 10px;
@@ -312,7 +314,7 @@ const Footer = () => {
       <FooterLogo
         alt="dahliaOS logo"
         src={
-          theme.type === "dark"
+          theme.palette.mode === "dark"
             ? "/images/logos/logo-white.png"
             : "/images/logos/logo-color.png"
         }
@@ -320,7 +322,7 @@ const Footer = () => {
       <VercelLink href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
         <VercelDiv>
           <VercelText>Powered By</VercelText>
-          <VercelLogo fill={theme.text.textColor} />
+          <VercelLogo fill={theme.palette.text.primary} />
         </VercelDiv>
       </VercelLink>
     </StyledBottomNavigation>

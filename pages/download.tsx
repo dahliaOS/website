@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import DownloadComponent from "../components/Download";
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
   padding-top: 150px;
   background: ${({ theme }) =>
-    theme.type === "dark"
+    theme.palette.mode === "dark"
       ? "url('/images/bgDark.svg')"
       : "url('/images/bgLight.svg')"};
   background-repeat: no-repeat;
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 const Header = styled.h1`
   font-size: 2.2em;
   font-weight: 500;
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   margin-bottom: 15px;
 `;
 
@@ -44,14 +44,14 @@ const SectionBtn = styled(Button)`
   padding: 7px 20px;
   border-radius: 5px;
   margin: 10px 0;
-  color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  color: ${({ theme }) => theme.palette.text.extremelyLight};
   gap: 10px;
 
   &:first-of-type {
     background: linear-gradient(
       153deg,
-      ${({ theme }) => theme.accent.accentColorLight} 0%,
-      ${({ theme }) => theme.accent.accentColor} 100%
+      ${({ theme }) => theme.palette.secondary.light} 0%,
+      ${({ theme }) => theme.palette.secondary.main} 100%
     );
     background-size: 400% 400%;
     transition: 0.2s ease-in-out;
@@ -60,7 +60,7 @@ const SectionBtn = styled(Button)`
 
   &:nth-child(even) {
     margin-left: 10px;
-    border: ${({ theme }) => theme.background.backgroundColorLight} solid 1.5px;
+    border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
     border-radius: 5px;
   }
 
@@ -70,7 +70,7 @@ const SectionBtn = styled(Button)`
 `;
 
 const SubHeader = styled.h2<{ isError?: boolean }>`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   font-size: 1.4em;
   font-weight: 400;
   margin-bottom: 25px;

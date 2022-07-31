@@ -1,5 +1,5 @@
 import { Button, SvgIcon, Link } from "@mui/material";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import {
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
   padding-top: 150px;
   background: ${({ theme }) =>
-    theme.type === "dark"
+    theme.palette.mode === "dark"
       ? "url('/images/bgDark.svg')"
       : "url('/images/bgLight.svg')"};
   background-repeat: no-repeat;
@@ -38,21 +38,21 @@ const Container = styled.div`
 `;
 
 const Header = styled.h1`
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
   font-size: 2.2em;
   font-weight: 500;
   text-align: center;
 `;
 
 const SubHeader = styled.h2`
-  color: ${({ theme }) => theme.text.textColorLight};
+  color: ${({ theme }) => theme.palette.text.light};
   font-size: 1.4em;
   font-weight: 400;
   text-align: left;
 `;
 
 const Paragraph = styled.p<{ centerText?: boolean }>`
-  color: ${({ theme }) => theme.text.textColor};
+  color: ${({ theme }) => theme.palette.text.primary};
   max-width: 80ch;
   margin: 0 auto;
   text-align: ${({ centerText }) => (centerText ? "center" : "left")};
@@ -62,13 +62,13 @@ const StyledButton = styled(Button)`
   padding: 10px 20px;
   border-radius: 5px;
   margin: 10px 0;
-  color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  color: ${({ theme }) => theme.palette.text.extremelyLight};
   gap: 10px;
 
   background: linear-gradient(
     153deg,
-    ${({ theme }) => theme.accent.accentColorLight} 0%,
-    ${({ theme }) => theme.accent.accentColor} 100%
+    ${({ theme }) => theme.palette.secondary.light} 0%,
+    ${({ theme }) => theme.palette.secondary.main} 100%
   );
   background-size: 400% 400%;
   transition: 0.2s ease-in-out;
@@ -88,9 +88,9 @@ const SupportItem = styled.div`
   overflow: hidden;
   text-align: center;
   gap: 10px;
-  color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  color: ${({ theme }) => theme.palette.text.extremelyLight};
   background-color: ${({ theme }) =>
-    theme.type === "dark" ? "#262626" : "#B2B2B2"};
+    theme.palette.mode === "dark" ? "#262626" : "#B2B2B2"};
   background-size: 400% 400%;
   transition: 0.2s ease-in-out;
 
@@ -110,9 +110,9 @@ const SupportItemLarge = styled.div`
   gap: 10px;
   text-align: center;
   overflow: hidden;
-  color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  color: ${({ theme }) => theme.palette.text.extremelyLight};
   background-color: ${({ theme }) =>
-    theme.type === "dark" ? "#262626" : "#B2B2B2"};
+    theme.palette.mode === "dark" ? "#262626" : "#B2B2B2"};
   background-size: 400% 400%;
   transition: 0.2s ease-in-out;
 
@@ -122,7 +122,7 @@ const SupportItemLarge = styled.div`
 `;
 
 const ItemParagraph = styled.p`
-  color: ${({ theme }) => theme.text.textColorExtremelyLight};
+  color: ${({ theme }) => theme.palette.text.extremelyLight};
   font-size: 0.8em;
   font-weight: 400;
 `;
