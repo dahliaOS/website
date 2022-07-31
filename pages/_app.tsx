@@ -17,15 +17,15 @@ const GlobalStyles = (theme: Theme) => css`
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
   }
+
   html {
     background: ${theme.palette.primary.main};
     scroll-behavior: smooth;
-    @media (max-width: 1025px) {
-      overflow-x: hidden;
-    }
+    overflow-x: hidden;
   }
+
   body {
-    max-width: 100vw;
+    width: 100vw;
     overflow-x: hidden;
   }
 

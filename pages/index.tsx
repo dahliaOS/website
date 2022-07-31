@@ -245,6 +245,7 @@ const Home: NextPage = () => {
       <Head>
         <title>dahliaOS – Home</title>
         <meta property="og:title" content="dahliaOS" key="title" />
+        <link rel="preload" as="image" href="/images/mockups/darkmockup.webp" />
       </Head>
       <Wrapper tabIndex={0}>
         <Navbar rootPageHasAnimation />

@@ -1,18 +1,15 @@
 /* eslint-disable quotes */
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import { useTheme } from "@emotion/react";
 import { Button } from "@mui/material";
 import { GetApp, LibraryBooks as LibraryBooksIcon } from "@mui/icons-material";
+import { useMeetsBreakpoint } from "../utils/hooks/useMeetsBreakpoint";
 
-import darkMockup from "../public/images/mockups/darkmockup.webp";
-import lightMockup from "../public/images/mockups/lightmockup.webp";
-
-const MockupKeyframes = (mockupScale = 3.5) => keyframes`
+const mockupKeyframes = keyframes`
   0% {
-    transform: scale(${mockupScale});
+    transform: scale(3.5);
   }
   100% {
     transform: scale(0.77);
@@ -30,28 +27,29 @@ const animateIntroContainer = keyframes`
   }
 `;
 
-const ScaleBackground = (backgroundScale = 2.9) => keyframes`
+const scaleBackground = keyframes`
   0% {
-    transform: translate3d(0px, 0px, 0px) scale(${backgroundScale});
+    transform: translate3d(0px, 0px, 0px) scale(2.9);
   }
   100% {
     transform: translate3d(35px, 20px, 0) scale(0.6);
   }
 `;
 
-const animateTerminal = (adjustTransform = -250) => keyframes`
+const animateTerminal = keyframes`
   0% {
-    transform: translate3d(-400px, ${adjustTransform}vh, 0) scale(2.2);
+    transform: translate3d(-400px, -250vh, 0) scale(2.2);
   }
+
   100% {
     transform: translate3d(293px, -70px, 0) scale(0.8);
     opacity: 1;
   }
 `;
 
-const animateFiles = (adjustTransform = "22%") => keyframes`
+const animateFiles = keyframes`
   0% {
-    transform: translate3d(-100vw, ${adjustTransform}, 0) scale(2.2);
+    transform: translate3d(-100vw, 22%, 0) scale(2.2);
   }
   100% {
     transform: translate3d(560px, 10px, 0) scale(0.75);
@@ -59,9 +57,9 @@ const animateFiles = (adjustTransform = "22%") => keyframes`
   }
 `;
 
-const animateCalculator = (adjustTransform = "-178%") => keyframes`
+const animateCalculator = keyframes`
   0% {
-    transform: translate3d(-100vw, ${adjustTransform}, 0) scale(2.2);
+    transform: translate3d(-100vw, -178%, 0) scale(2.2);
   }
   100% {
     transform: translate3d(343px, 50px, 0) scale(0.8);
@@ -259,7 +257,7 @@ const Mockup = styled.img`
   width: 1280px;
   z-index: 1;
   opacity: 0;
-  animation: ${MockupKeyframes()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
+  animation: ${mockupKeyframes} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   will-change: transform, opacity;
 `;
@@ -278,8 +276,8 @@ const Background = styled.div`
   background-position: center;
   will-change: transform;
   z-index: 0;
-  transform: scale(2.2);
-  animation: ${ScaleBackground()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
+  transform: scale(2.9);
+  animation: ${scaleBackground} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
 `;
 
@@ -294,10 +292,10 @@ const Terminal = styled.div`
   z-index: 1;
   opacity: 0;
   transform: translate3d(-400px, -250vh, 0) scale(2.2);
-  animation: ${animateTerminal()} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
+  animation: ${animateTerminal} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 0.3s;
-  will-change: transform, opacity;
+  will-change: transform;
 `;
 
 const Files = styled.div`
@@ -314,8 +312,7 @@ const Files = styled.div`
   z-index: 2;
   opacity: 0;
   transform: translate3d(-100vw, 22%, 0) scale(2.2);
-  animation: ${animateFiles()} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
-    forwards;
+  animation: ${animateFiles} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s forwards;
   animation-delay: 0.5s;
   will-change: transform, opacity;
 `;
@@ -334,7 +331,7 @@ const Calculator = styled.div`
   z-index: 3;
   opacity: 0;
   transform: translate3d(-100vw, 178%, 0) scale(2.2);
-  animation: ${animateCalculator()} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
+  animation: ${animateCalculator} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   animation-delay: 0.6s;
   will-change: transform, opacity;
@@ -365,17 +362,13 @@ const MockupImageContainer = styled.div`
 `;
 
 const Intro = () => {
-  const [windowSize, setWindowSize] = useState(0);
   const theme = useTheme();
-
-  useEffect(() => {
-    setWindowSize(window.innerWidth);
-  }, []);
+  const meetsBreakpoint = useMeetsBreakpoint(1075);
 
   return (
     // without setting a tabindex here, this area isn't selectable.
     <Wrapper tabIndex={0}>
-      {windowSize >= 1075 ? (
+      {!meetsBreakpoint ? (
         <>
           <LogoContainer>
             <Logo
@@ -426,10 +419,15 @@ const Intro = () => {
           <MockupImageContainer>
             <Image
               alt="Dark mockup"
-              src={theme.palette.mode === "dark" ? darkMockup : lightMockup}
+              src={
+                theme.palette.mode === "dark"
+                  ? "/images/mockups/darkmockup.webp"
+                  : "/images/mockups/lightmockup.webp"
+              }
               width={1280}
               height={720}
               layout="responsive"
+              priority
             />
             <br />
             <IntroContainer>
