@@ -32,10 +32,10 @@ import { useCallback, useState } from "react";
 import styled from "@emotion/styled";
 import { keyframes, css } from "@emotion/react";
 import { useTheme } from "@emotion/react";
-import useScrollPosition from "@react-hook/window-scroll";
 import { SkipNavContent, SkipNavLink } from "@reach/skip-nav";
 import "@reach/skip-nav/styles.css";
 import { DiscordLogo } from "./Icons";
+import { useMeetsScrollPos } from "../utils/hooks/useMeetsScrollPos";
 
 const WrapperKeyframes = keyframes`
   0% {
@@ -128,16 +128,17 @@ const MenuLink = styled(Link)`
 
 const StyledAppBar = styled(AppBar)<{
   rootPageHasAnimation?: boolean;
-  scrollPos: number;
+  meetsScrollPos: boolean;
 }>`
-  backdrop-filter: ${({ scrollPos }) =>
-    scrollPos > 10 ? "blur(20px)" : "unset"};
-  background: ${({ scrollPos, theme }) =>
-    scrollPos > 10 ? theme.palette.primary.light + 90 : "unset"};
-  box-shadow: ${({ scrollPos }) =>
-    scrollPos > 10
-      ? "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
-      : "unset"};
+  ${({ meetsScrollPos, theme }) => `
+    backdrop-filter: ${meetsScrollPos ? "blur(20px)" : "unset"};
+    background: ${meetsScrollPos ? theme.palette.primary.light + 90 : "unset"};
+    box-shadow: ${
+      meetsScrollPos
+        ? "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
+        : "unset"
+    };
+  `}
 
   transition: background ease-in-out 0.15s;
 
@@ -154,8 +155,8 @@ const StyledAppBar = styled(AppBar)<{
         `}
 `;
 
-const StyledToolbar = styled(Toolbar)<{ scrollPos: number }>`
-  box-shadow: ${({ scrollPos }) => (scrollPos > 10 ? "initial" : "unset")};
+const StyledToolbar = styled(Toolbar)<{ meetsScrollPos: boolean }>`
+  box-shadow: ${({ meetsScrollPos }) => (meetsScrollPos ? "initial" : "unset")};
 `;
 
 const AppBarLogoLinkContainer = styled(Link)`
@@ -194,13 +195,8 @@ const Navbar = ({
   const theme = useTheme();
   const ref = useRef<HTMLButtonElement | null>(null);
 
-  /* In the future we should come up with a different solution that doesn't
-   rerender this component, its not much of a problem right now but later it
-   *may* become a problem 
+  const meetsScrollPos = useMeetsScrollPos(10);
 
-   - Cody
-   */
-  const scrollPos = useScrollPosition(15);
   const toggleDrawer = useCallback(
     (open: boolean = false) => setDrawerState(open ?? !drawerState),
     [drawerState],
@@ -310,9 +306,9 @@ const Navbar = ({
           initialPageWidth < 1075 ? false : rootPageHasAnimation
         }
         position="fixed"
-        scrollPos={scrollPos}
+        meetsScrollPos={meetsScrollPos}
       >
-        <StyledToolbar scrollPos={scrollPos}>
+        <StyledToolbar meetsScrollPos={meetsScrollPos}>
           <IconButton
             edge="start"
             color="inherit"

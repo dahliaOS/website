@@ -18,7 +18,6 @@
     "@mui/material": "^5.9.1",
     "@mui/styles": "^5.9.1",
     "@reach/skip-nav": "^0.17.0",
-    "@react-hook/window-scroll": "^1.3.0",
     "framer-motion": "^6.5.1",
     "next": "12.2.3",
     "react": "18.2.0",
