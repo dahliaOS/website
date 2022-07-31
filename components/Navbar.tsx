@@ -180,9 +180,7 @@ const DesktopNav = styled.div`
   }
 `;
 
-const StyledDrawer = styled(Drawer)`
-  backdrop-filter: blur(10px);
-`;
+const StyledDrawer = styled(Drawer)``;
 
 const Navbar = ({
   rootPageHasAnimation,
