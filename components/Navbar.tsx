@@ -183,10 +183,6 @@ const StyledDrawer = styled(Drawer)`
   backdrop-filter: blur(10px);
 `;
 
-const StyledMenu = styled(Menu)`
-  color: ${({ theme }) => theme.palette.text.light};
-`;
-
 const Navbar = ({
   rootPageHasAnimation,
 }: {
@@ -366,7 +362,7 @@ const Navbar = ({
             >
               <MoreVert style={{ color: theme.palette.text.light }} />
             </IconButton>
-            <StyledMenu
+            <Menu
               open={toggleMoreIcon}
               onClose={() => setToggleMoreIcon(false)}
               anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
@@ -393,7 +389,7 @@ const Navbar = ({
                   <GroupAddIcon /> Join our team
                 </MenuLink>
               </MenuItem>
-            </StyledMenu>
+            </Menu>
           </DesktopNav>
         </StyledToolbar>
       </StyledAppBar>
