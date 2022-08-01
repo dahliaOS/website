@@ -63,6 +63,11 @@ const nextConfig = {
         destination: "https://discord.com/invite/7qVbJHR",
         permanent: true,
       },
+      {
+        source: "/blog",
+        destination: "https://blog.dahliaos.io",
+        permanent: true,
+      },
     ];
   },
 };

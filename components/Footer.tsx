@@ -253,7 +253,7 @@ const Footer = () => {
             >
               Supported devices
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/faq/faq" target="_blank">
+            <FooterItem href="https://docs.dahliaos.io/faq" target="_blank">
               FAQ
             </FooterItem>
           </FooterList>

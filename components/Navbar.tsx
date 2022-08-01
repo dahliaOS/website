@@ -20,7 +20,6 @@ import {
   Article as ArticleIcon,
   GitHub as GitHubIcon,
   Groups as GroupIcon,
-  GroupAdd as GroupAddIcon,
   Reddit as RedditIcon,
   Facebook as FacebookIcon,
   Telegram as TelegramIcon,
@@ -293,10 +292,6 @@ const Navbar = ({
             <GroupIcon />
             Developers
           </Link>
-          <Link href="/discord" target="_blank">
-            <GroupAddIcon />
-            Join our team
-          </Link>
         </Container>
       </StyledDrawer>
       <StyledAppBar
@@ -376,11 +371,6 @@ const Navbar = ({
                 >
                   <GroupIcon />
                   Developers
-                </MenuLink>
-              </MenuItem>
-              <MenuItem>
-                <MenuLink href="/discord" target="_blank">
-                  <GroupAddIcon /> Join our team
                 </MenuLink>
               </MenuItem>
             </Menu>
