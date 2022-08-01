@@ -58,7 +58,7 @@ const SectionBtn = styled(Button)`
     margin-right: 15;
   }
 
-  &:nth-child(even) {
+  &:nth-of-type(even) {
     margin-left: 10px;
     border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
     border-radius: 5px;

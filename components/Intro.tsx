@@ -81,13 +81,13 @@ const animateToolbar = () => keyframes`
 const Sides = styled.div`
   flex: 45%;
 
-  &:first-child {
+  &:first-of-type {
     margin-right: 50px;
   }
 
   @media (max-width: 1535px) {
     flex: unset;
-    &:first-child {
+    &:first-of-type {
       margin-right: 0;
     }
   }
@@ -139,7 +139,7 @@ const Container = styled.div`
   @media (max-width: 1535px) {
     flex: unset;
     flex-wrap: wrap;
-    &:nth-child(even) {
+    &:nth-of-type(even) {
       padding-top: -100px;
       padding-bottom: 100px;
     }
@@ -189,11 +189,11 @@ const SectionBtn = styled(Button)`
     margin-right: 30px;
   }
 
-  &:nth-child(even) {
+  &:nth-of-type(even) {
     border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
     color: ${({ theme }) => theme.palette.text.primary};
     @media (max-width: 1535px) {
-      &:nth-child(even) {
+      &:nth-of-type(even) {
         margin: 10px 0;
       }
     }

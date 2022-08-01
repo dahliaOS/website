@@ -55,13 +55,13 @@ const ButtonContainer = styled.div`
 const Sides = styled.div`
   flex: 45%;
 
-  &:first-child {
+  &:first-of-type {
     margin-right: 120px;
   }
 
   @media (max-width: 1025px) {
     flex: unset;
-    &:first-child {
+    &:first-of-type {
       margin-right: 0;
     }
   }
@@ -99,11 +99,11 @@ const SectionBtn = styled(Button)<{ distanceButton?: boolean }>`
     margin-right: ${({ distanceButton }) => (distanceButton ? "30px" : "0px")};
   }
 
-  &:nth-child(even) {
+  &:nth-of-type(even) {
     border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
     color: ${({ theme }) => theme.palette.text.primary};
     @media (max-width: 1025px) {
-      &:nth-child(even) {
+      &:nth-of-type(even) {
         margin: 10px -50px;
       }
     }
@@ -123,7 +123,7 @@ const SectionBtnSecondary = styled(Button)`
   border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
   color: ${({ theme }) => theme.palette.text.primary};
   @media (max-width: 1025px) {
-    &:nth-child(even) {
+    &:nth-of-type(even) {
       margin: 10px -50px;
     }
   }
