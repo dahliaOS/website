@@ -111,7 +111,7 @@ const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
   text-decoration: none;
   gap: 10px;
 
-  &:first-child {
+  &:first-of-type {
     color: ${({ theme }) => theme.palette.text.light};
     margin-right: 0;
 
@@ -152,7 +152,7 @@ const StyledSecondaryButton = styled(Button)<{ disableGradient?: boolean }>`
   text-decoration: none;
   gap: 10px;
 
-  &:first-child {
+  &:first-of-type {
     color: ${({ theme }) => theme.palette.text.light};
     margin-right: 0;
 
@@ -258,7 +258,7 @@ const DialogButton = styled(Button)<{ disableGradient?: boolean }>`
   text-decoration: none;
   gap: 10px;
 
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     color: ${({ theme }) => theme.palette.text.light};
     margin-right: 0;
 

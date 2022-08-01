@@ -7,6 +7,10 @@ import { fetcher } from "../utils/Fetcher";
 import { ThemeProvider as MUIThemeProvider } from "@mui/material";
 import { SWRConfig } from "swr";
 import { usePreferredTheme } from "../utils/hooks/usePreferredTheme";
+import createCache from "@emotion/cache";
+import { CacheProvider } from "@emotion/react";
+
+const cache = createCache({ key: "next" });
 
 const GlobalStyles = (theme: Theme) => css`
   *,
@@ -72,8 +76,10 @@ $$    $$ |$$    $$ |$$ |  $$ |$$ |$$ |$$    $$ |$$    $$/ $$    $$/
         <MUIThemeProvider
           theme={preferredTheme === "dark" ? DarkTheme : LightTheme}
         >
-          <Global styles={GlobalStyles} />
-          <Component {...pageProps} />
+          <CacheProvider value={cache}>
+            <Global styles={GlobalStyles} />
+            <Component {...pageProps} />
+          </CacheProvider>
         </MUIThemeProvider>
       </ThemeProvider>
     </SWRConfig>
