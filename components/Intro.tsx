@@ -49,7 +49,7 @@ const animateTerminal = keyframes`
 
 const animateFiles = keyframes`
   0% {
-    transform: translate3d(-100vw, 22%, 0) scale(2.2);
+    transform: translate3d(200vw, 22%, 0) scale(2.2);
   }
   100% {
     transform: translate3d(560px, 10px, 0) scale(0.75);
@@ -311,7 +311,7 @@ const Files = styled.div`
   background-position: center;
   z-index: 2;
   opacity: 0;
-  transform: translate3d(-100vw, 22%, 0) scale(2.2);
+  transform: translate3d(200vw, 22%, 0) scale(2.2);
   animation: ${animateFiles} 1.8s cubic-bezier(0.66, 0, 0.2, 1) 0.133s forwards;
   animation-delay: 0.5s;
   will-change: transform, opacity;
