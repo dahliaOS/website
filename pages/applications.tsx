@@ -96,18 +96,14 @@ const Paragraph = styled.p`
 
 const StyledButton = styled(Button)`
   padding: 10px 20px;
-  border-radius: 5px;
   margin-top: auto;
-  min-width: 100%;
+  width: 100%;
   gap: 10px;
-
   color: ${({ theme }) => theme.palette.text.secondary};
-  border: ${({ theme }) => theme.palette.text.secondary} solid 1.5px;
   transition: 0.2s ease-in-out;
 
   &:hover {
     color: ${({ theme }) => theme.palette.text.extremelyLight};
-    border: ${({ theme }) => theme.palette.secondary.main} solid 1.5px;
     background: linear-gradient(
       153deg,
       ${({ theme }) => theme.palette.secondary.light} 0%,
