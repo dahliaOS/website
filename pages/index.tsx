@@ -398,7 +398,7 @@ const Home: NextPage = () => {
                   </SectionBtn>
                 </StyledLink>
                 <StyledLink
-                  href="https://openinventionnetwork.com/community-alphabetical/#search:~:text=dahliaOS"
+                  href="https://openinventionnetwork.com/community-alphabetical/#:~:text=d42%20Secure%20Systems-,dahliaOS,-Daimler"
                   target="_blank"
                 >
                   <SectionBtnSecondary>
