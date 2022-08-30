@@ -101,7 +101,9 @@ const StyledSelect = styled(Select)`
   height: 40px;
 
   @media (max-width: 670px) {
-    position: unset;
+    position: relative;
+    left: 0;
+    bottom: 0;
     display: flex;
     width: 100%;
     align-self: center;
