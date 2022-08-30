@@ -84,41 +84,13 @@ const SupportItem = styled.div`
   justify-content: center;
   border-radius: 13px;
   padding: 10px 15px;
-  max-height: 60px;
-  overflow: hidden;
+  height: 60px;
+  min-width: 120px;
   text-align: center;
   gap: 10px;
   color: ${({ theme }) => theme.palette.text.extremelyLight};
   background-color: ${({ theme }) =>
     theme.palette.mode === "dark" ? "#262626" : "#B2B2B2"};
-  background-size: 400% 400%;
-  transition: 0.2s ease-in-out;
-
-  @media (max-width: 980px) {
-    max-height: unset;
-  }
-`;
-
-const SupportItemLarge = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 13px;
-  padding: 10px 15px;
-  max-height: 60px;
-  grid-column: auto / span 2;
-  gap: 10px;
-  text-align: center;
-  overflow: hidden;
-  color: ${({ theme }) => theme.palette.text.extremelyLight};
-  background-color: ${({ theme }) =>
-    theme.palette.mode === "dark" ? "#262626" : "#B2B2B2"};
-  background-size: 400% 400%;
-  transition: 0.2s ease-in-out;
-
-  @media (max-width: 980px) {
-    max-height: unset;
-  }
 `;
 
 const ItemParagraph = styled.p`
@@ -127,12 +99,12 @@ const ItemParagraph = styled.p`
   font-weight: 400;
 `;
 
-const SupportGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(23%, 1fr));
-  grid-gap: 1em 1em;
-  grid-auto-flow: row dense;
+const ItemsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: left;
+  gap: 20px;
 `;
 
 const StyledLink = styled(Link)`
@@ -158,32 +130,32 @@ const Donate = () => {
             following:
           </Paragraph>
           <br />
-          <SupportGrid>
+          <ItemsContainer>
             <SupportItem>
               <DnsIcon />
               <ItemParagraph>Website hosting</ItemParagraph>
             </SupportItem>
-            <SupportItemLarge>
+            <SupportItem>
               <TerminalIcon />
               <ItemParagraph>Development software licenses</ItemParagraph>
-            </SupportItemLarge>
-            <SupportItemLarge>
+            </SupportItem>
+            <SupportItem>
               <DeveloperModeIcon />
               <ItemParagraph>
                 General development of the operating system and tools
               </ItemParagraph>
-            </SupportItemLarge>
+            </SupportItem>
             <SupportItem>
               <LanguageIcon />
               <ItemParagraph>Website domains</ItemParagraph>
             </SupportItem>
-            <SupportItemLarge>
+            <SupportItem>
               <DevicesIcon />
               <ItemParagraph>
                 Devices for testing and expanding hardware support
               </ItemParagraph>
-            </SupportItemLarge>
-          </SupportGrid>
+            </SupportItem>
+          </ItemsContainer>
           <br />
           <SubHeader>Where can I donate?</SubHeader>
           <br />
