@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useMeetsBreakpoint = (breakpoint: number) => {
-  const [meetsBreakpoint, setMeetsBreakpoint] = useState(false);
+  const [meetsBreakpoint, setMeetsBreakpoint] = useState(true);
 
   useEffect(() => {
     if (!window) return;
