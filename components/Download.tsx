@@ -96,6 +96,10 @@ const ReadMoreButton = styled(Button)`
   padding: 5px 10px;
   border-radius: 3px;
   gap: 10px;
+
+  &:hover {
+    background: ${({ theme }) => theme.palette.primary.contrastText};
+  }
 `;
 
 const ReadMoreContainer = styled.div`
@@ -114,6 +118,9 @@ const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
   &:first-of-type {
     color: ${({ theme }) => theme.palette.text.light};
     margin-right: 0;
+    &:hover {
+      background-position: 100% 50%;
+    }
 
     ${({ disableGradient, theme }) =>
       !disableGradient
@@ -132,8 +139,10 @@ const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
         : null}
   }
 
-  &:hover {
-    background-position: 100% 50%;
+  &:last-of-type {
+    &:hover {
+      background: ${({ theme }) => theme.palette.primary.contrastText};
+    }
   }
 
   @media (max-width: 980px) {
@@ -156,6 +165,10 @@ const StyledSecondaryButton = styled(Button)<{ disableGradient?: boolean }>`
     color: ${({ theme }) => theme.palette.text.light};
     margin-right: 0;
 
+    &:hover {
+      background-position: 100% 50%;
+    }
+
     ${({ disableGradient, theme }) =>
       !disableGradient
         ? `
@@ -173,8 +186,10 @@ const StyledSecondaryButton = styled(Button)<{ disableGradient?: boolean }>`
         : null}
   }
 
-  &:hover {
-    background-position: 100% 50%;
+  &:last-of-type {
+    &:hover {
+      background: ${({ theme }) => theme.palette.primary.light};
+    }
   }
 `;
 

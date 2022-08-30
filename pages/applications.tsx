@@ -100,16 +100,13 @@ const StyledButton = styled(Button)`
   width: 100%;
   gap: 10px;
   color: ${({ theme }) => theme.palette.text.secondary};
-  transition: 0.2s ease-in-out;
+  border: ${({ theme }) => theme.palette.text.secondary} solid 1.5px;
+  border-radius: 5px;
 
   &:hover {
     color: ${({ theme }) => theme.palette.text.extremelyLight};
-    background: linear-gradient(
-      153deg,
-      ${({ theme }) => theme.palette.secondary.light} 0%,
-      ${({ theme }) => theme.palette.secondary.main} 100%
-    );
-  }
+    border: ${({ theme }) => theme.palette.primary.contrastText} solid 1.5px;
+    background: ${({ theme }) => theme.palette.primary.contrastText};
 `;
 
 const Center = styled.div`

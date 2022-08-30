@@ -129,7 +129,7 @@ const SectionBtnSecondary = styled(Button)`
   }
 
   &:hover {
-    background-position: 100% 50%;
+    background: ${({ theme }) => theme.palette.primary.light};
   }
 `;
 
