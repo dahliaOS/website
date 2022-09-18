@@ -317,8 +317,8 @@ const Footer = () => {
         alt="dahliaOS logo"
         src={
           theme.palette.mode === "dark"
-            ? "/images/logos/logo-white.png"
-            : "/images/logos/logo-color.png"
+            ? "/images/logos/logotype-dark.png"
+            : "/images/logos/logotype-light.png"
         }
       />
       <VercelLink href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">

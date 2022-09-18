@@ -194,7 +194,7 @@ const SectionBtn = styled(Button)`
     color: ${({ theme }) => theme.palette.text.primary};
     @media (max-width: 1535px) {
       &:nth-of-type(even) {
-        margin: 10px 0;s
+        margin: 10px 0;
       }
     }
     &:hover {
@@ -376,7 +376,7 @@ const Intro = () => {
           <LogoContainer>
             <Logo
               alt="dahliaOS logo"
-              src={"/images/logos/logo-color.png"}
+              src={"/images/logos/logotype-dark.png"}
               draggable={false}
             />
           </LogoContainer>

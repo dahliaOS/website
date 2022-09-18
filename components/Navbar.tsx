@@ -227,8 +227,8 @@ const Navbar = ({
             alt="dahliaOS logo"
             src={
               theme.palette.mode === "dark"
-                ? "/images/logos/logo-white.png"
-                : "/images/logos/logo-color.png"
+                ? "/images/logos/logotype-dark.png"
+                : "/images/logos/logotype-light.png"
             }
           />
         </DrawerLogoContainer>
@@ -284,7 +284,7 @@ const Navbar = ({
           </Link>
           <Divider />
           <Category>For developers</Category>
-          <Link href="/github" target="_blank">
+          <Link href="https://github.com/dahliaOS/website" target="_blank">
             <CodeIcon />
             Source code
           </Link>
@@ -321,8 +321,8 @@ const Navbar = ({
               alt="dahliaOS logo"
               src={
                 theme.palette.mode === "dark"
-                  ? "/images/logos/logo-white.png"
-                  : "/images/logos/logo-color.png"
+                  ? "/images/logos/logotype-dark.png"
+                  : "/images/logos/logotype-light.png"
               }
               draggable={false}
             />
@@ -359,7 +359,10 @@ const Navbar = ({
               keepMounted
             >
               <MenuItem>
-                <MenuLink href="/github" target="_blank">
+                <MenuLink
+                  href="https://github.com/dahliaOS/website"
+                  target="_blank"
+                >
                   <CodeIcon />
                   Source code
                 </MenuLink>

@@ -84,7 +84,7 @@ const SupportItem = styled.div`
   justify-content: center;
   border-radius: 13px;
   padding: 10px 15px;
-  height: 60px;
+  height: 50px;
   min-width: 120px;
   text-align: center;
   gap: 10px;
