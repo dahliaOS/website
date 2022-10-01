@@ -29,7 +29,7 @@
     "@types/node": "18.7.18",
     "@types/react": "18.0.20",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
-    "@typescript-eslint/parser": "^5.37.0",
+    "@typescript-eslint/parser": "^5.38.1",
     "eslint": "^8.23.1",
     "eslint-config-next": "12.3.0",
     "eslint-config-prettier": "^8.5.0",
