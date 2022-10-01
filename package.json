@@ -15,7 +15,7 @@
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.3",
-    "@mui/material": "^5.10.5",
+    "@mui/material": "^5.10.7",
     "@mui/styles": "^5.10.3",
     "@reach/skip-nav": "^0.17.0",
     "framer-motion": "^7.3.5",
