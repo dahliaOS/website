@@ -331,7 +331,6 @@ interface IDownloadProps {
   showMore?: boolean;
 }
 
-// why is this borken
 const Download = ({ showMore }: IDownloadProps) => {
   const { releases, isError, isLoading } = useGithubReleases();
   const [modalActive, setModalActive] = useState(false);
