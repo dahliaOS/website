@@ -3,9 +3,8 @@ import Image from "next/image";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import { useTheme } from "@emotion/react";
-import { Button } from "@mui/material";
+import { Button, useMediaQuery } from "@mui/material";
 import { GetApp, LibraryBooks as LibraryBooksIcon } from "@mui/icons-material";
-import { useMeetsBreakpoint } from "../utils/hooks/useMeetsBreakpoint";
 
 const mockupKeyframes = keyframes`
   0% {
@@ -366,12 +365,12 @@ const MockupImageContainer = styled.div`
 
 const Intro = () => {
   const theme = useTheme();
-  const meetsBreakpoint = useMeetsBreakpoint(1075);
+  const windowIsSmall = useMediaQuery("(max-width: 1075px)");
 
   return (
     // without setting a tabindex here, this area isn't selectable.
     <Wrapper tabIndex={0}>
-      {!meetsBreakpoint ? (
+      {!windowIsSmall ? (
         <>
           <LogoContainer>
             <Logo
