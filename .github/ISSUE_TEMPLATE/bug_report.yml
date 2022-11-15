@@ -42,13 +42,13 @@ body:
           - **Smartphone**: iPhone 13 Pro
           - **Node version**: 15.0.0
           - **Browser**: Google Chrome
-          - **Yarn version**: 1.22.18
+          - **PNPM version**: 7.16.0
       value: |
         - OS:
         - Smartphone:
         - Node version:
         - Browser:
-        - Yarn version:
+        - PNPM version:
       render: markdown
     validations:
       required: false

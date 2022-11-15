@@ -10,8 +10,6 @@
 # dahliaOS Website
 
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fdahliaos.io)
-[![CodeQL](https://github.com/dahliaOS/website/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/dahliaOS/website/actions/workflows/codeql-analysis.yml)
-![GitHub](https://img.shields.io/github/license/dahliaos/website?color=brightgreen)
 
 - **Official**, one and only website for the dahliaOS project
 - **Find** it by clicking [here!](https://dahliaos.io)
@@ -23,7 +21,7 @@ To develop and locally test the website:
 ### Step 1. Install development tools:
 
 1. [Install Node.js and NPM](https://nodejs.org/en/download/package-manager/)
-1. [Install Yarn](https://yarnpkg.com/getting-started/install) (recommended opposed to NPM)
+1. [Install PNPM](https://pnpm.io/installation) (recommended opposed to NPM/Yarn)
 1. Code editor of your choice (we recommend [VSCode](https://code.visualstudio.com/))
 
 ### Step 2. Install dependencies:
@@ -31,13 +29,13 @@ To develop and locally test the website:
 Install node modules required to run the website by running:
 
 ```
-yarn
+pnpm i
 ```
 
 ### Step 3. Start the Next.js dev server:
 
 ```
-yarn dev
+pnpm dev
 ```
 
 In a browser, load the page [localhost:3000](http://localhost:3000) and you should now be able to test the website while making your changes.
@@ -48,13 +46,13 @@ Next.js' dev server has hot reloading so no need to restart the instance when it
 After making your changes and verifying it all works in the dev server, furtherly test them out by building the website:
 
 ```
-yarn build
+pnpm build
 ```
 
 ### Step 5. Start:
 
 ```
-yarn start
+pnpm start
 ```
 
 In a browser, load the page [localhost:3000](http://localhost:3000) and you should now be able to view the built website.
