@@ -54,6 +54,9 @@ const ButtonContainer = styled.div`
 
 const Sides = styled.div`
   flex: 45%;
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
 
   &:first-of-type {
     margin-right: 120px;
@@ -86,6 +89,7 @@ const SectionBtn = styled(Button)<{ distanceButton?: boolean }>`
   border-radius: 5px;
   margin: 10px 0;
   gap: 10px;
+  width: fit-content;
 
   &:first-of-type {
     color: ${({ theme }) => theme.palette.text.extremelyLight};
@@ -180,6 +184,12 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
+const SectionButtonContainer = styled.div`
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+`;
+
 const variantRight: Variants = {
   visible: {
     x: 0,
@@ -242,7 +252,6 @@ const Home: NextPage = () => {
           </Sides>
           <Sides>
             <SectionTitle>Just the basics</SectionTitle>
-            <br />
             <Paragraph>
               dahliaOS keeps things light by only including apps you need
               leaving the choice to the user on what other applications to
@@ -252,7 +261,6 @@ const Home: NextPage = () => {
               of your favorite applications from other operating systems using
               Graft, our virtual machine and containers management application.
             </Paragraph>
-            <br />
             <SectionBtn href="/applications">
               <AppsIcon />
               APPLICATIONS
@@ -270,7 +278,6 @@ const Home: NextPage = () => {
         >
           <Sides>
             <SectionTitle>Features</SectionTitle>
-            <br />
             <Paragraph>
               One of our primary goals is to provide as many useful features as
               possible while maintaining a great and painless experience for the
@@ -279,7 +286,6 @@ const Home: NextPage = () => {
               component of the shell. Learn more about dahliaOS&apos; features
               by clicking the button below!
             </Paragraph>
-            <br />
             <SectionBtn href="/features">
               <AutoAwesomeIcon />
               FEATURES
@@ -320,13 +326,11 @@ const Home: NextPage = () => {
           </Sides>
           <Sides>
             <SectionTitle>A wide range of supported devices</SectionTitle>
-            <br />
             <Paragraph>
               dahliaOS provides a fast and stable experience on nearly every
               computer, from an old desktop tower to the latest generation of
               mobile notebooks.
             </Paragraph>
-            <br />
             <StyledLink
               href="https://docs.dahliaos.io/hardware/supported-devices"
               target="_blank"
@@ -348,7 +352,6 @@ const Home: NextPage = () => {
         >
           <Sides>
             <SectionTitle>Free open source software</SectionTitle>
-            <br />
             <Paragraph>
               dahliaOS is and always will be open sourced and 100% free. All of
               our code and even some design work is hosted on GitHub. We believe
@@ -357,22 +360,23 @@ const Home: NextPage = () => {
               the world&apos;s largest patent non-aggression community and free
               defensive patent pool.
             </Paragraph>
-            <br />
-            <StyledLink href="https://github.com/dahliaOS" target="_blank">
-              <SectionBtn distanceButton>
-                <GitHubIcon />
-                GITHUB
-              </SectionBtn>
-            </StyledLink>
-            <StyledLink
-              href="https://openinventionnetwork.com/community-alphabetical/#:~:text=d42%20Secure%20Systems-,dahliaOS,-Daimler"
-              target="_blank"
-            >
-              <SectionBtnSecondary>
-                <CorporateFareIcon />
-                OPEN INVENTION NETWORK
-              </SectionBtnSecondary>
-            </StyledLink>
+            <SectionButtonContainer>
+              <StyledLink href="https://github.com/dahliaOS" target="_blank">
+                <SectionBtn distanceButton>
+                  <GitHubIcon />
+                  GITHUB
+                </SectionBtn>
+              </StyledLink>
+              <StyledLink
+                href="https://openinventionnetwork.com/community-alphabetical/#:~:text=d42%20Secure%20Systems-,dahliaOS,-Daimler"
+                target="_blank"
+              >
+                <SectionBtnSecondary>
+                  <CorporateFareIcon />
+                  OPEN INVENTION NETWORK
+                </SectionBtnSecondary>
+              </StyledLink>
+            </SectionButtonContainer>
           </Sides>
           <Sides>
             <SectionImgContainer showOnRight>
@@ -409,14 +413,12 @@ const Home: NextPage = () => {
           </Sides>
           <Sides>
             <SectionTitle>Demo</SectionTitle>
-            <br />
             <Paragraph>
               We offer a web preview of the Pangolin shell so you don&apos;t
               have to install the system just to see if our shell is made for
               you. Some features are disabled on the web preview but are
               functional on the actual system itself.
             </Paragraph>
-            <br />
             <StyledLink href="https://web.dahliaos.io/" target="_blank">
               <SectionBtn>
                 <ScienceIcon />
