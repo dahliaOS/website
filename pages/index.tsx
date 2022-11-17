@@ -376,7 +376,7 @@ const Home: NextPage = () => {
               defensive patent pool.
             </Paragraph>
             <SectionButtonContainer>
-              <StyledLink href="https://github.com/dahliaOS" target="_blank">
+              <StyledLink href="/github" target="_blank">
                 <SectionBtn distanceButton>
                   <GitHubIcon />
                   GITHUB
