@@ -1,5 +1,5 @@
 /* eslint-disable quotes */
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import { useTheme } from "@emotion/react";
@@ -79,6 +79,9 @@ const animateToolbar = () => keyframes`
 
 const Sides = styled.div`
   flex: 45%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 
   &:first-of-type {
     margin-right: 50px;
@@ -175,6 +178,8 @@ const SectionBtn = styled(Button)`
   border-radius: 5px;
   margin: 10px 0;
   gap: 10px;
+  width: fit-content;
+  height: fit-content;
 
   &:first-of-type {
     color: ${({ theme }) => theme.palette.text.extremelyLight};
@@ -363,6 +368,11 @@ const MockupImageContainer = styled.div`
   margin-top: 80px;
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 const Intro = () => {
   const theme = useTheme();
   const windowIsSmall = useMediaQuery("(max-width: 1075px)");
@@ -395,7 +405,6 @@ const Intro = () => {
             <IntroContainer>
               <Sides>
                 <SectionTitle>dahliaOS</SectionTitle>
-                <br />
                 <Paragraph>
                   dahliaOS is a modern, secure, lightweight and responsive
                   operating system, combining the best of GNU/Linux and Fuchsia
@@ -403,15 +412,16 @@ const Intro = () => {
                   lightweight operating system, our goal is to establish a new
                   standard for the desktop platform.
                 </Paragraph>
-                <br />
-                <SectionBtn href="#download">
-                  <GetApp />
-                  DOWNLOAD
-                </SectionBtn>
-                <SectionBtn href="#start">
-                  <LibraryBooksIcon />
-                  LEARN MORE
-                </SectionBtn>
+                <ButtonContainer>
+                  <SectionBtn href="#download">
+                    <GetApp />
+                    DOWNLOAD
+                  </SectionBtn>
+                  <SectionBtn href="#start">
+                    <LibraryBooksIcon />
+                    LEARN MORE
+                  </SectionBtn>
+                </ButtonContainer>
               </Sides>
             </IntroContainer>
           </Container>
@@ -431,11 +441,11 @@ const Intro = () => {
               layout="responsive"
               priority
             />
-            <br />
+
             <IntroContainer>
               <Sides>
                 <SectionTitle>dahliaOS</SectionTitle>
-                <br />
+
                 <Paragraph>
                   dahliaOS is a modern, secure, lightweight and responsive
                   operating system, combining the best of GNU/Linux and Fuchsia
@@ -443,7 +453,7 @@ const Intro = () => {
                   lightweight operating system, our goal is to establish a new
                   standard for the desktop platform.
                 </Paragraph>
-                <br />
+
                 <SectionBtn href="#download">
                   <GetApp />
                   DOWNLOAD
