@@ -1,8 +1,9 @@
 {
   "name": "website",
-  "private": true,
-  "sideEffects": false,
+  "author": "The dahliaOS Authors",
+  "description": "dahliaOS Website",
   "license": "Apache-2.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
