@@ -70,7 +70,7 @@ const Sides = styled.div`
   }
 `;
 
-const SectionTitle = styled.h1`
+const SectionTitle = styled.p`
   font-size: 2.8em;
   font-weight: 600;
   color: ${({ theme }) => theme.palette.text.light};
@@ -137,7 +137,7 @@ const SectionBtnSecondary = styled(Button)`
   }
 `;
 
-const Header = styled.h1`
+const Header = styled.p`
   color: ${({ theme }) => theme.palette.text.primary};
   text-align: center;
   margin-bottom: 25px;
