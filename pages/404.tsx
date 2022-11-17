@@ -25,11 +25,14 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   width: 90%;
-  display: block;
+  display: flex;
+  flex-direction: column;
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
   font-size: 1.2em;
+  gap: 1rem;
+  align-items: center;
 `;
 
 const Header = styled.h1`
@@ -55,6 +58,7 @@ const StyledButton = styled(Button)`
   margin: 10px 0;
   color: ${({ theme }) => theme.palette.text.extremelyLight};
   gap: 10px;
+  width: fit-content;
 
   background: linear-gradient(
     153deg,
@@ -81,15 +85,11 @@ const Error404 = () => {
       <Wrapper>
         <Container>
           <Header>Page not found</Header>
-          <br />
           <SubHeader>404 Error</SubHeader>
-          <br />
           <Paragraph>
             This page could not be found, it probably has not been coded yet or
             you have the wrong URL.
           </Paragraph>
-          <Paragraph>Click the button below to go to the main page.</Paragraph>
-          <br />
           <StyledButton href="/">
             <HomeIcon />
             HOME
