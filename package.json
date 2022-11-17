@@ -17,6 +17,7 @@
     "@mui/icons-material": "^5.10.14",
     "@mui/material": "^5.10.14",
     "@mui/styles": "^5.10.14",
+    "@next/font": "^13.0.3",
     "@reach/skip-nav": "^0.18.0",
     "framer-motion": "^7.6.7",
     "next": "13.0.3",

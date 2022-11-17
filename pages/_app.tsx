@@ -7,6 +7,9 @@ import { fetcher } from "../utils/Fetcher";
 import { ThemeProvider as MUIThemeProvider } from "@mui/material";
 import { SWRConfig } from "swr";
 import { usePreferredTheme } from "../utils/hooks/usePreferredTheme";
+import { Inter } from "@next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const GlobalStyles = (theme: Theme) => css`
   *,
@@ -15,7 +18,7 @@ const GlobalStyles = (theme: Theme) => css`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--inter-font);
   }
 
   html {
@@ -72,8 +75,10 @@ $$    $$ |$$    $$ |$$ |  $$ |$$ |$$ |$$    $$ |$$    $$/ $$    $$/
         <MUIThemeProvider
           theme={preferredTheme === "dark" ? DarkTheme : LightTheme}
         >
-          <Global styles={GlobalStyles} />
-          <Component {...pageProps} />
+          <main className={inter.className}>
+            <Global styles={GlobalStyles} />
+            <Component {...pageProps} />
+          </main>
         </MUIThemeProvider>
       </ThemeProvider>
     </SWRConfig>
