@@ -35,6 +35,7 @@ import { SkipNavContent, SkipNavLink } from "@reach/skip-nav";
 import "@reach/skip-nav/styles.css";
 import { DiscordLogo } from "./Icons";
 import { useMeetsScrollPos } from "../utils/hooks/useMeetsScrollPos";
+import Image from "next/image";
 
 const WrapperKeyframes = keyframes`
   0% {
@@ -61,9 +62,8 @@ const DrawerLogoContainer = styled.div`
   background: ${({ theme }) => theme.palette.primary.main};
 `;
 
-const DrawerLogo = styled.img`
+const DrawerLogo = styled(Image)`
   position: absolute;
-  height: 28px;
   bottom: 16px;
   padding-left: 20px;
 `;
@@ -165,9 +165,7 @@ const AppBarLogoLinkContainer = styled(Link)`
   }
 `;
 
-const AppBarLogo = styled.img`
-  height: 28px;
-`;
+const AppBarLogo = styled(Image)``;
 
 const DesktopNav = styled.div`
   display: flex;
@@ -225,6 +223,8 @@ const Navbar = ({
         <DrawerLogoContainer>
           <DrawerLogo
             alt="dahliaOS logo"
+            width={170}
+            height={28}
             src={
               theme.palette.mode === "dark"
                 ? "/images/logos/logotype-dark.png"
@@ -319,6 +319,8 @@ const Navbar = ({
           <AppBarLogoLinkContainer href="/">
             <AppBarLogo
               alt="dahliaOS logo"
+              width={140}
+              height={28}
               src={
                 theme.palette.mode === "dark"
                   ? "/images/logos/logotype-dark.png"

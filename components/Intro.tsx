@@ -1,5 +1,5 @@
 /* eslint-disable quotes */
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import { useTheme } from "@emotion/react";
@@ -254,14 +254,12 @@ const LogoContainer = styled.div`
   }
 `;
 
-const Logo = styled.img`
+const Logo = styled(Image)`
   filter: brightness(0) invert(1);
 `;
 
-const Mockup = styled.img`
+const Mockup = styled(Image)`
   margin: 50px;
-  height: auto;
-  width: 1280px;
   z-index: 1;
   opacity: 0;
   animation: ${mockupKeyframes} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
@@ -385,6 +383,8 @@ const Intro = () => {
           <LogoContainer>
             <Logo
               alt="dahliaOS logo"
+              width={700}
+              height={200}
               src={"/images/logos/logotype-dark.png"}
               draggable={false}
             />
@@ -393,6 +393,8 @@ const Intro = () => {
             <MockupContainer>
               <Mockup
                 alt="Macbook mockup"
+                width={1280}
+                height={730}
                 src={"/images/mockups/macbook.webp"}
                 draggable={false}
               />

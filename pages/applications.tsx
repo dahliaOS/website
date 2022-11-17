@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { GitHub as GitHubIcon } from "@mui/icons-material";
 import Head from "next/head";
+import Image from "next/image";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -115,10 +116,7 @@ const Center = styled.div`
   align-items: center;
 `;
 
-const AppIcon = styled.img`
-  width: auto;
-  height: 100%;
-`;
+const AppIcon = styled(Image)``;
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -157,6 +155,8 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
+                  width={70}
+                  height={65}
                   alt="graft application icon"
                   src={"/images/app-icons/graft.webp"}
                 />
@@ -179,6 +179,8 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
+                  width={70}
+                  height={65}
                   alt="settings application icon"
                   src={"/images/app-icons/settings.webp"}
                 />
@@ -201,6 +203,8 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
+                  width={70}
+                  height={65}
                   alt="files application icon"
                   src={"/images/app-icons/files.webp"}
                 />
@@ -223,6 +227,8 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
+                  width={70}
+                  height={65}
                   alt="app store application icon"
                   src={"/images/app-icons/store.webp"}
                 />
@@ -245,6 +251,8 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
+                  width={70}
+                  height={65}
                   alt="clock application icon"
                   src={"/images/app-icons/clock.webp"}
                 />
@@ -267,6 +275,8 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
+                  width={70}
+                  height={65}
                   alt="welcome application icon"
                   src={"/images/app-icons/welcome.webp"}
                 />
@@ -288,6 +298,8 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
+                  width={70}
+                  height={65}
                   alt="terminal application icon"
                   src={"/images/app-icons/terminal.webp"}
                 />
@@ -309,6 +321,8 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
+                  width={70}
+                  height={65}
                   alt="calculator application icon"
                   src={"/images/app-icons/calculator.webp"}
                 />
@@ -330,6 +344,8 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
+                  width={70}
+                  height={65}
                   alt="task manager application icon"
                   src={"/images/app-icons/task.webp"}
                 />
@@ -352,6 +368,8 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
+                  width={70}
+                  height={65}
                   alt="media application icon"
                   src={"/images/app-icons/photos.webp"}
                 />
@@ -374,6 +392,8 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
+                  width={70}
+                  height={65}
                   alt="text editor application icon"
                   src={"/images/app-icons/notes.webp"}
                 />
@@ -396,6 +416,8 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
+                  width={70}
+                  height={65}
                   alt="logs application icon"
                   src={"/images/app-icons/logs.webp"}
                 />

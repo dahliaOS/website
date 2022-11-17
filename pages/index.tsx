@@ -18,6 +18,7 @@ import {
   Apps as AppsIcon,
 } from "@mui/icons-material";
 import { motion, Variants } from "framer-motion";
+import Image from "next/image";
 
 const Wrapper = styled.div``;
 
@@ -162,9 +163,8 @@ const SectionImgContainer = styled.div<{ showOnRight?: boolean }>`
   }
 `;
 
-const SectionImg = styled.img<{ showOnRight?: boolean }>`
+const SectionImg = styled(Image)<{ showOnRight?: boolean }>`
   border-radius: 14px;
-  width: 100%;
 
   ${({ showOnRight }) =>
     showOnRight ? "margin: 10px -70px" : "margin: 10px 70px"};
@@ -241,6 +241,9 @@ const Home: NextPage = () => {
           <Sides>
             <SectionImgContainer>
               <SectionImg
+                width={1200}
+                height={600}
+                layout="responsive"
                 alt="dark settings modal"
                 src={
                   theme.palette.mode === "dark"
@@ -294,6 +297,9 @@ const Home: NextPage = () => {
           <Sides>
             <SectionImgContainer showOnRight>
               <SectionImg
+                width={1200}
+                height={600}
+                layout="responsive"
                 alt="dark features modal"
                 src={
                   theme.palette.mode === "dark"
@@ -315,6 +321,9 @@ const Home: NextPage = () => {
           <Sides>
             <SectionImgContainer>
               <SectionImg
+                width={1200}
+                height={600}
+                layout="responsive"
                 alt="dark files modal"
                 src={
                   theme.palette.mode === "dark"
@@ -381,6 +390,9 @@ const Home: NextPage = () => {
           <Sides>
             <SectionImgContainer showOnRight>
               <SectionImg
+                width={1200}
+                height={600}
+                layout="responsive"
                 alt="open source modal"
                 src={
                   theme.palette.mode === "dark"
@@ -402,6 +414,9 @@ const Home: NextPage = () => {
           <Sides>
             <SectionImgContainer>
               <SectionImg
+                width={1200}
+                height={600}
+                layout="responsive"
                 alt="dark pangolin modal"
                 src={
                   theme.palette.mode === "dark"

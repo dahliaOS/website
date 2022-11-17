@@ -11,6 +11,7 @@ import {
   QuestionAnswer as QuestionAnswerIcon,
 } from "@mui/icons-material";
 import { VercelLogo } from "./Icons";
+import Image from "next/image";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
   position: relative;
@@ -71,10 +72,9 @@ const FooterItem = styled(Link)`
   }
 `;
 
-const FooterLogo = styled.img`
+const FooterLogo = styled(Image)`
   display: block;
   margin: 30px auto 0 auto;
-  height: 30px;
 `;
 
 const VercelDiv = styled.div`
@@ -315,6 +315,8 @@ const Footer = () => {
       </StyledSelect>
       <FooterLogo
         alt="dahliaOS logo"
+        width={150}
+        height={30}
         src={
           theme.palette.mode === "dark"
             ? "/images/logos/logotype-dark.png"
