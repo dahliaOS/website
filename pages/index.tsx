@@ -223,7 +223,7 @@ const Home: NextPage = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>dahliaOS – Home</title>
+        <title>dahliaOS</title>
         <meta property="og:title" content="dahliaOS" key="title" />
       </Head>
       <Wrapper tabIndex={0}>

@@ -8,7 +8,6 @@ const Page = () => (
       <meta charSet="UTF-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <link rel="canonical" href="https://dahliaos.io" />
-      <title>dahliaOS</title>
       <meta property="og:title" content="dahliaOS" key="title" />
       <meta name="theme-color" content={DarkTheme.palette.secondary.main} />
       <meta property="og:image" content="https://imgur.com/pqgjEpd.png" />
