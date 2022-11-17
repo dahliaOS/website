@@ -388,7 +388,7 @@ const Intro = () => {
               width={700}
               height={200}
               layout="intrinsic"
-              src={"/images/logos/logotype-dark.png"}
+              src={"/images/logos/logotype-dark.webp"}
               draggable={false}
             />
           </LogoContainer>

@@ -230,8 +230,8 @@ const Navbar = ({
             height={28}
             src={
               theme.palette.mode === "dark"
-                ? "/images/logos/logotype-dark.png"
-                : "/images/logos/logotype-light.png"
+                ? "/images/logos/logotype-dark.webp"
+                : "/images/logos/logotype-light.webp"
             }
           />
         </DrawerLogoContainer>
@@ -329,8 +329,8 @@ const Navbar = ({
               height={28}
               src={
                 theme.palette.mode === "dark"
-                  ? "/images/logos/logotype-dark.png"
-                  : "/images/logos/logotype-light.png"
+                  ? "/images/logos/logotype-dark.webp"
+                  : "/images/logos/logotype-light.webp"
               }
               draggable={false}
             />

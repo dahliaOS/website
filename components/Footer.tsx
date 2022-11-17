@@ -321,8 +321,8 @@ const Footer = () => {
         height={30}
         src={
           theme.palette.mode === "dark"
-            ? "/images/logos/logotype-dark.png"
-            : "/images/logos/logotype-light.png"
+            ? "/images/logos/logotype-dark.webp"
+            : "/images/logos/logotype-light.webp"
         }
       />
       <VercelLink href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
