@@ -80,7 +80,7 @@ const VersionInfo = styled.p`
   color: ${({ theme }) => theme.palette.text.primary};
 `;
 
-const DownloadCount = styled.p`
+const DownloadCountOlder = styled.p`
   color: ${({ theme }) => theme.palette.text.primary};
 `;
 
@@ -355,6 +355,10 @@ const ModalContainer = styled.div`
   gap: 1.2rem;
 `;
 
+const DownloadCount = styled.pre`
+  color: ${({ theme }) => theme.palette.text.primary};
+`;
+
 const Download = ({ showMore }: IDownloadProps) => {
   const { releases, isError, isLoading } = useGithubReleases();
   const [modalActive, setModalActive] = useState(false);
@@ -444,10 +448,11 @@ const Download = ({ showMore }: IDownloadProps) => {
                 <Header>Latest</Header>
                 <VersionInfo>
                   {releases[0].name} ({getDate(releases[0].published_at)})
-                  <br />
-                  Downloads:{" "}
-                  {releases[0].assets[0].download_count +
-                    releases[0].assets[1].download_count}
+                  <DownloadCount>
+                    Downloads:{" "}
+                    {releases[0].assets[0].download_count +
+                      releases[0].assets[1].download_count}
+                  </DownloadCount>
                 </VersionInfo>
                 <Changelogs>
                   {releases[0].body
@@ -489,13 +494,13 @@ const Download = ({ showMore }: IDownloadProps) => {
                       <OlderUpdate key={i}>
                         <OlderUpdateTextWrapper>
                           <OlderUpdateTitle>{oldRelease.name}</OlderUpdateTitle>
-                          <DownloadCount>
+                          <DownloadCountOlder>
                             Downloads:{" "}
                             {oldRelease.assets[0].name.includes("efi")
                               ? oldRelease.assets[0].download_count +
                                 oldRelease.assets[1].download_count
                               : oldRelease.assets[0].download_count}
-                          </DownloadCount>
+                          </DownloadCountOlder>
                           <OlderUpdateDate>
                             {getDate(oldRelease.published_at)}
                           </OlderUpdateDate>
