@@ -314,6 +314,7 @@ const Footer = () => {
         </StyledMenuItem>
       </StyledSelect>
       <FooterLogo
+        quality={100}
         alt="dahliaOS logo"
         width={150}
         height={30}

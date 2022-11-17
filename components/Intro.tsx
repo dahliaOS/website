@@ -382,6 +382,8 @@ const Intro = () => {
         <>
           <LogoContainer>
             <Logo
+              priority
+              quality={100}
               alt="dahliaOS logo"
               width={700}
               height={200}
@@ -392,6 +394,8 @@ const Intro = () => {
           <Container>
             <MockupContainer>
               <Mockup
+                priority
+                quality={100}
                 alt="Macbook mockup"
                 width={1280}
                 height={730}

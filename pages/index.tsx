@@ -243,6 +243,8 @@ const Home: NextPage = () => {
               <SectionImg
                 width={1200}
                 height={600}
+                priority
+                quality={100}
                 layout="responsive"
                 alt="dark settings modal"
                 src={
@@ -299,6 +301,8 @@ const Home: NextPage = () => {
               <SectionImg
                 width={1200}
                 height={600}
+                priority
+                quality={100}
                 layout="responsive"
                 alt="dark features modal"
                 src={
@@ -323,6 +327,8 @@ const Home: NextPage = () => {
               <SectionImg
                 width={1200}
                 height={600}
+                priority
+                quality={100}
                 layout="responsive"
                 alt="dark files modal"
                 src={
@@ -392,6 +398,8 @@ const Home: NextPage = () => {
               <SectionImg
                 width={1200}
                 height={600}
+                priority
+                quality={100}
                 layout="responsive"
                 alt="open source modal"
                 src={
@@ -416,6 +424,8 @@ const Home: NextPage = () => {
               <SectionImg
                 width={1200}
                 height={600}
+                priority
+                quality={100}
                 layout="responsive"
                 alt="dark pangolin modal"
                 src={

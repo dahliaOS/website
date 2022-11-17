@@ -157,6 +157,8 @@ const Applications = () => {
                 <AppIcon
                   width={70}
                   height={65}
+                  priority
+                  quality={100}
                   alt="graft application icon"
                   src={"/images/app-icons/graft.webp"}
                 />
@@ -181,6 +183,8 @@ const Applications = () => {
                 <AppIcon
                   width={70}
                   height={65}
+                  priority
+                  quality={100}
                   alt="settings application icon"
                   src={"/images/app-icons/settings.webp"}
                 />
@@ -205,6 +209,8 @@ const Applications = () => {
                 <AppIcon
                   width={70}
                   height={65}
+                  priority
+                  quality={100}
                   alt="files application icon"
                   src={"/images/app-icons/files.webp"}
                 />
@@ -229,6 +235,8 @@ const Applications = () => {
                 <AppIcon
                   width={70}
                   height={65}
+                  priority
+                  quality={100}
                   alt="app store application icon"
                   src={"/images/app-icons/store.webp"}
                 />
@@ -253,6 +261,8 @@ const Applications = () => {
                 <AppIcon
                   width={70}
                   height={65}
+                  priority
+                  quality={100}
                   alt="clock application icon"
                   src={"/images/app-icons/clock.webp"}
                 />
@@ -277,6 +287,8 @@ const Applications = () => {
                 <AppIcon
                   width={70}
                   height={65}
+                  priority
+                  quality={100}
                   alt="welcome application icon"
                   src={"/images/app-icons/welcome.webp"}
                 />
@@ -300,6 +312,8 @@ const Applications = () => {
                 <AppIcon
                   width={70}
                   height={65}
+                  priority
+                  quality={100}
                   alt="terminal application icon"
                   src={"/images/app-icons/terminal.webp"}
                 />
@@ -323,6 +337,8 @@ const Applications = () => {
                 <AppIcon
                   width={70}
                   height={65}
+                  priority
+                  quality={100}
                   alt="calculator application icon"
                   src={"/images/app-icons/calculator.webp"}
                 />
@@ -346,6 +362,8 @@ const Applications = () => {
                 <AppIcon
                   width={70}
                   height={65}
+                  priority
+                  quality={100}
                   alt="task manager application icon"
                   src={"/images/app-icons/task.webp"}
                 />
@@ -370,6 +388,8 @@ const Applications = () => {
                 <AppIcon
                   width={70}
                   height={65}
+                  priority
+                  quality={100}
                   alt="media application icon"
                   src={"/images/app-icons/photos.webp"}
                 />
@@ -394,6 +414,8 @@ const Applications = () => {
                 <AppIcon
                   width={70}
                   height={65}
+                  priority
+                  quality={100}
                   alt="text editor application icon"
                   src={"/images/app-icons/notes.webp"}
                 />
@@ -418,6 +440,8 @@ const Applications = () => {
                 <AppIcon
                   width={70}
                   height={65}
+                  priority
+                  quality={100}
                   alt="logs application icon"
                   src={"/images/app-icons/logs.webp"}
                 />
