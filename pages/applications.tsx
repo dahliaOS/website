@@ -85,7 +85,7 @@ const SubHeader = styled.h2`
 
 const CardParagraph = styled.p`
   color: ${({ theme }) => theme.palette.text.primary};
-  font-size: 0.9em;
+  font-size: 0.8em;
   margin-bottom: 10px;
 `;
 
