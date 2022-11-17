@@ -19,22 +19,26 @@ const Card = styled.div<{ isError?: boolean }>`
   display: flex;
   flex-direction: row;
   border-radius: 13px;
-  max-width: ${({ isError }) => (isError ? 450 : 1000)}px;
-  max-height: 360px;
+  max-width: ${({ isError }) => (isError ? 450 : 1100)}px;
+  max-height: 400px;
   width: 90%;
   margin: 0 auto;
   background: ${({ theme }) => theme.palette.primary.light};
   box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
     0 1px 8px 0 rgb(0 0 0 / 12%);
 
-  @media (max-width: 980px) {
+  @media (max-width: 1043px) {
     flex-direction: column;
     max-height: unset;
   }
 `;
 
 const Latest = styled.div`
-  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  gap: 2rem;
   padding: 0 28px;
 
   @media (max-width: 980px) {
@@ -55,6 +59,9 @@ const Older = styled.div`
 const TextContainer = styled.div`
   position: relative;
   padding-bottom: 35px;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Header = styled.h1`
@@ -62,13 +69,14 @@ const Header = styled.h1`
   color: ${({ theme }) => theme.palette.text.light};
 `;
 
-const OlderHeader = styled.h1`
+const OlderHeader = styled.p`
   margin: 17px 0 0;
   text-align: center;
   color: ${({ theme }) => theme.palette.text.light};
+  font-size: 1.2rem;
 `;
 
-const ReleaseName = styled.p`
+const VersionInfo = styled.p`
   color: ${({ theme }) => theme.palette.text.primary};
 `;
 
@@ -105,7 +113,7 @@ const ReadMoreButton = styled(Button)`
 const ReadMoreContainer = styled.div`
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -15px;
 `;
 
 const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
@@ -118,6 +126,7 @@ const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
   &:first-of-type {
     color: ${({ theme }) => theme.palette.text.light};
     margin-right: 0;
+
     &:hover {
       background-position: 100% 50%;
     }
@@ -145,11 +154,9 @@ const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
     }
   }
 
-  @media (max-width: 980px) {
+  @media (max-width: 535px) {
     &:last-child {
-      padding: 9px 0;
-      margin-top: 30px;
-      margin-bottom: 5px;
+      margin-top: 20px;
     }
   }
 `;
@@ -210,15 +217,16 @@ const OlderUpdateTextWrapper = styled.div`
   flex-grow: 1;
 `;
 
-const OlderUpdateTitle = styled.h1`
-  font-size: 1.25rem;
+const OlderUpdateTitle = styled.p`
+  font-size: 1.15rem;
   margin: 0;
+  padding: 0 2rem 0 0;
   font-weight: 400;
   color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 const ButtonContainer = styled.div`
-  margin: 0;
+  margin-bottom: 1.5rem;
 `;
 
 const OlderUpdateDate = styled.span`
@@ -227,6 +235,12 @@ const OlderUpdateDate = styled.span`
 
 const OlderBtns = styled.div`
   display: inline-flex;
+
+  @media (max-width: 1100px) {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    justify-content: end;
+  }
 `;
 
 const ErrorContainer = styled.div`
@@ -273,6 +287,10 @@ const DialogButton = styled(Button)<{ disableGradient?: boolean }>`
   text-decoration: none;
   gap: 10px;
 
+  &:hover {
+    background: ${({ theme }) => theme.palette.primary.main};
+  }
+
   &:nth-of-type(2) {
     color: ${({ theme }) => theme.palette.text.light};
     margin-right: 0;
@@ -292,10 +310,6 @@ const DialogButton = styled(Button)<{ disableGradient?: boolean }>`
         transition: 0.2s ease-in-out;
         `
         : null}
-  }
-
-  &:hover {
-    background-position: 100% 50%;
   }
 `;
 
@@ -330,6 +344,16 @@ const StyledLink = styled(Link)`
 interface IDownloadProps {
   showMore?: boolean;
 }
+
+const ModalTitle = styled.p``;
+
+const ModalParagraph = styled.p``;
+
+const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+`;
 
 const Download = ({ showMore }: IDownloadProps) => {
   const { releases, isError, isLoading } = useGithubReleases();
@@ -375,28 +399,28 @@ const Download = ({ showMore }: IDownloadProps) => {
               </StyledPaper>
             )}
           >
-            <h1>Support dahliaOS</h1>
-            <br />
-            <p>
-              Donating to dahliaOS will help us cover the expenses and furtherly
-              motivate us to continue working on bringing you new releases and
-              updates. Click the Donate button below if you would like to learn
-              more about donating to dahliaOS!
-            </p>
-            <br />
-            <DialogActions>
-              <DialogButton disableGradient onClick={closeModal}>
-                <CloseIcon /> Close
-              </DialogButton>
-              <DialogButton
-                disableGradient={false}
-                onClick={() => Router.replace("/donate")}
-                autoFocus
-              >
-                <VolunteerActivismIcon />
-                Donate
-              </DialogButton>
-            </DialogActions>
+            <ModalContainer>
+              <ModalTitle>Support dahliaOS</ModalTitle>
+              <ModalParagraph>
+                Donating to dahliaOS will help us cover the expenses and
+                furtherly motivate us to continue working on bringing you new
+                releases and updates. Click the Donate button below if you would
+                like to learn more about donating to dahliaOS!
+              </ModalParagraph>
+              <DialogActions>
+                <DialogButton disableGradient onClick={closeModal}>
+                  <CloseIcon /> Close
+                </DialogButton>
+                <DialogButton
+                  disableGradient={false}
+                  onClick={() => Router.replace("/donate")}
+                  autoFocus
+                >
+                  <VolunteerActivismIcon />
+                  Donate
+                </DialogButton>
+              </DialogActions>
+            </ModalContainer>
           </StyledModal>
         ) : null}
       </AnimatePresence>
@@ -405,7 +429,6 @@ const Download = ({ showMore }: IDownloadProps) => {
         <Card isError>
           <ErrorContainer>
             <StyledErrorIcon />
-            <br />
             <ErrorMessage>
               An error occurred whilst fetching GitHub&apos;s API!
             </ErrorMessage>
@@ -419,15 +442,13 @@ const Download = ({ showMore }: IDownloadProps) => {
             <Latest>
               <TextContainer>
                 <Header>Latest</Header>
-                <ReleaseName>
+                <VersionInfo>
                   {releases[0].name} ({getDate(releases[0].published_at)})
-                </ReleaseName>
-                <DownloadCount>
+                  <br />
                   Downloads:{" "}
                   {releases[0].assets[0].download_count +
                     releases[0].assets[1].download_count}
-                </DownloadCount>
-                <br />
+                </VersionInfo>
                 <Changelogs>
                   {releases[0].body
                     .substring(releases[0].body.indexOf("+ "))
@@ -462,7 +483,7 @@ const Download = ({ showMore }: IDownloadProps) => {
                 <OlderHeader>Older releases</OlderHeader>
                 <UpdateContainer>
                   {releases.map((oldRelease, i) => {
-                    if (i === 0 || i > 4) return;
+                    if (i === 0 || i > 6) return;
 
                     return (
                       <OlderUpdate key={i}>
@@ -512,14 +533,14 @@ const Download = ({ showMore }: IDownloadProps) => {
                   height={50}
                 />
               </Header>
-              <ReleaseName>
+              <VersionInfo>
                 <Skeleton
                   variant="text"
                   animation="wave"
                   width={"48%"}
                   height={25}
                 />
-              </ReleaseName>
+              </VersionInfo>
               <Changelogs>
                 <Skeleton
                   variant="text"
