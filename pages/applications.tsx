@@ -120,6 +120,13 @@ const AppIcon = styled.img`
   height: 100%;
 `;
 
+const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+`;
+
 const Applications = () => {
   return (
     <>
@@ -138,14 +145,14 @@ const Applications = () => {
       <Navbar />
       <Wrapper>
         <Container>
-          <Header>Applications</Header>
-          <br />
-          <Paragraph>
-            Most dahliaOS applications are cross-platform but all of them are
-            written in Flutter. dahliaOS comes in a minimal package with the
-            following native pre-installed applications:
-          </Paragraph>
-          <br />
+          <HeaderContainer>
+            <Header>Applications</Header>
+            <Paragraph>
+              Most dahliaOS applications are cross-platform but all of them are
+              written in Flutter. dahliaOS comes in a minimal package with the
+              following native pre-installed applications:
+            </Paragraph>
+          </HeaderContainer>
           <AppsGrid>
             <Card>
               <Center>
