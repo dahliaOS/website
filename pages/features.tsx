@@ -58,11 +58,13 @@ const Card = styled.div`
 
 const Container = styled.div`
   width: 90%;
-  display: block;
+  display: flex;
   margin: 0 auto;
   font-size: 1.2em;
   padding-bottom: 150px;
   text-align: center;
+  flex-direction: column;
+  gap: 1.5rem;
   @media (max-width: 1025px) {
     padding-bottom: 60px;
   }
@@ -125,13 +127,11 @@ const Features = () => {
       <Wrapper>
         <Container>
           <Header>Features</Header>
-          <br />
           <Paragraph>
             dahliaOS packs many punches, we pay close attention to the quality
             of our software and we&apos;re proud to list some of the important
             features of our project below:
           </Paragraph>
-          <br />
           <AppsGrid>
             <Card>
               <Icon>
