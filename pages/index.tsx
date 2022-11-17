@@ -245,7 +245,7 @@ const Home: NextPage = () => {
                 height={600}
                 priority
                 quality={100}
-                layout="responsive"
+                layout="intrinsic"
                 alt="dark settings modal"
                 src={
                   theme.palette.mode === "dark"
@@ -303,7 +303,7 @@ const Home: NextPage = () => {
                 height={600}
                 priority
                 quality={100}
-                layout="responsive"
+                layout="intrinsic"
                 alt="dark features modal"
                 src={
                   theme.palette.mode === "dark"
@@ -329,7 +329,7 @@ const Home: NextPage = () => {
                 height={600}
                 priority
                 quality={100}
-                layout="responsive"
+                layout="intrinsic"
                 alt="dark files modal"
                 src={
                   theme.palette.mode === "dark"
@@ -400,7 +400,7 @@ const Home: NextPage = () => {
                 height={600}
                 priority
                 quality={100}
-                layout="responsive"
+                layout="intrinsic"
                 alt="open source modal"
                 src={
                   theme.palette.mode === "dark"
@@ -426,7 +426,7 @@ const Home: NextPage = () => {
                 height={600}
                 priority
                 quality={100}
-                layout="responsive"
+                layout="intrinsic"
                 alt="dark pangolin modal"
                 src={
                   theme.palette.mode === "dark"

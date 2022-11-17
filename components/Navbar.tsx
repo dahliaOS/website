@@ -224,6 +224,7 @@ const Navbar = ({
           <DrawerLogo
             priority
             quality={100}
+            layout="intrinsic"
             alt="dahliaOS logo"
             width={170}
             height={28}
@@ -322,6 +323,7 @@ const Navbar = ({
             <AppBarLogo
               priority
               quality={100}
+              layout="intrinsic"
               alt="dahliaOS logo"
               width={140}
               height={28}

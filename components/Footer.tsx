@@ -315,8 +315,9 @@ const Footer = () => {
       </StyledSelect>
       <FooterLogo
         quality={100}
+        layout="intrinsic"
         alt="dahliaOS logo"
-        width={150}
+        width={170}
         height={30}
         src={
           theme.palette.mode === "dark"

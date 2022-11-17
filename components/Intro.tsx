@@ -387,6 +387,7 @@ const Intro = () => {
               alt="dahliaOS logo"
               width={700}
               height={200}
+              layout="intrinsic"
               src={"/images/logos/logotype-dark.png"}
               draggable={false}
             />
@@ -444,7 +445,7 @@ const Intro = () => {
               }
               width={1280}
               height={720}
-              layout="responsive"
+              layout="intrinsic"
               priority
             />
 

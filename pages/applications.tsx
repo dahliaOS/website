@@ -155,8 +155,9 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  width={70}
-                  height={65}
+                  layout="intrinsic"
+                  width={64}
+                  height={64}
                   priority
                   quality={100}
                   alt="graft application icon"
@@ -181,8 +182,9 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  width={70}
-                  height={65}
+                  layout="intrinsic"
+                  width={64}
+                  height={64}
                   priority
                   quality={100}
                   alt="settings application icon"
@@ -207,8 +209,9 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  width={70}
-                  height={65}
+                  layout="intrinsic"
+                  width={64}
+                  height={64}
                   priority
                   quality={100}
                   alt="files application icon"
@@ -233,8 +236,9 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  width={70}
-                  height={65}
+                  layout="intrinsic"
+                  width={64}
+                  height={64}
                   priority
                   quality={100}
                   alt="app store application icon"
@@ -259,8 +263,9 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  width={70}
-                  height={65}
+                  layout="intrinsic"
+                  width={64}
+                  height={64}
                   priority
                   quality={100}
                   alt="clock application icon"
@@ -285,8 +290,9 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  width={70}
-                  height={65}
+                  layout="intrinsic"
+                  width={64}
+                  height={64}
                   priority
                   quality={100}
                   alt="welcome application icon"
@@ -310,8 +316,9 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  width={70}
-                  height={65}
+                  layout="intrinsic"
+                  width={64}
+                  height={64}
                   priority
                   quality={100}
                   alt="terminal application icon"
@@ -335,8 +342,9 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  width={70}
-                  height={65}
+                  layout="intrinsic"
+                  width={64}
+                  height={64}
                   priority
                   quality={100}
                   alt="calculator application icon"
@@ -360,8 +368,9 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  width={70}
-                  height={65}
+                  layout="intrinsic"
+                  width={64}
+                  height={64}
                   priority
                   quality={100}
                   alt="task manager application icon"
@@ -386,8 +395,9 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  width={70}
-                  height={65}
+                  layout="intrinsic"
+                  width={64}
+                  height={64}
                   priority
                   quality={100}
                   alt="media application icon"
@@ -412,8 +422,9 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  width={70}
-                  height={65}
+                  layout="intrinsic"
+                  width={64}
+                  height={64}
                   priority
                   quality={100}
                   alt="text editor application icon"
@@ -438,8 +449,9 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  width={70}
-                  height={65}
+                  layout="intrinsic"
+                  width={64}
+                  height={64}
                   priority
                   quality={100}
                   alt="logs application icon"
