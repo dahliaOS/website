@@ -131,8 +131,8 @@ const Container = styled.div`
   max-width: 100vw;
   background: ${({ theme }) =>
     theme.palette.mode === "dark"
-      ? 'url("/images/bgDark.svg")'
-      : 'url("/images/bgLight.svg")'};
+      ? 'url("/images/background/darkBackground.svg")'
+      : 'url("/images/background/lightBackground.svg")'};
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -274,8 +274,8 @@ const Background = styled.div`
   bottom: -6px;
   background: ${({ theme }) =>
     theme.palette.mode === "dark"
-      ? 'url("/images/darkModeBackground.svg")'
-      : 'url("/images/lightModeBackground.svg")'};
+      ? 'url("/images/animation/darkModeBackground.svg")'
+      : 'url("/images/animation/lightModeBackground.svg")'};
   background-repeat: no-repeat;
   background-size: 1414px;
   background-position: center;
@@ -290,7 +290,7 @@ const Terminal = styled.div`
   position: absolute;
   height: 323px;
   width: 571px;
-  background: url("/images/terminal.webp");
+  background: url("/images/animation/terminal.webp");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -309,8 +309,8 @@ const Files = styled.div`
   width: 557px;
   background: ${({ theme }) =>
     theme.palette.mode === "dark"
-      ? 'url("/images/darkFiles.webp")'
-      : 'url("/images/lightFiles.webp")'};
+      ? 'url("/images/animation/darkFiles.webp")'
+      : 'url("/images/animation/lightFiles.webp")'};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -328,8 +328,8 @@ const Calculator = styled.div`
   width: 305px;
   background: ${({ theme }) =>
     theme.palette.mode === "dark"
-      ? 'url("/images/darkCalculator.webp")'
-      : 'url("/images/lightCalculator.webp")'};
+      ? 'url("/images/animation/darkCalculator.webp")'
+      : 'url("/images/animation/lightCalculator.webp")'};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -348,8 +348,8 @@ const Toolbar = styled.div`
   width: 1011px;
   background: ${({ theme }) =>
     theme.palette.mode === "dark"
-      ? 'url("/images/darkToolbar.svg")'
-      : 'url("/images/lightToolbar.svg")'};
+      ? 'url("/images/animation/darkToolbar.svg")'
+      : 'url("/images/animation/lightToolbar.svg")'};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -388,7 +388,7 @@ const Intro = () => {
               width={700}
               height={200}
               layout="intrinsic"
-              src={"/images/logos/logotype-dark.webp"}
+              src={"/images/logos/darkLogotype.webp"}
               draggable={false}
             />
           </LogoContainer>
@@ -400,7 +400,7 @@ const Intro = () => {
                 alt="Macbook mockup"
                 width={1280}
                 height={730}
-                src={"/images/mockups/macbook.webp"}
+                src={"/images/animation/macbook.webp"}
                 draggable={false}
               />
               <Background draggable={false} />
@@ -440,8 +440,8 @@ const Intro = () => {
               alt="Dark mockup"
               src={
                 theme.palette.mode === "dark"
-                  ? "/images/mockups/darkmockup.webp"
-                  : "/images/mockups/lightmockup.webp"
+                  ? "/images/mockups/darkMockup.webp"
+                  : "/images/mockups/lightMockup.webp"
               }
               width={1280}
               height={720}

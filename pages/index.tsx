@@ -249,8 +249,8 @@ const Home: NextPage = () => {
                 alt="dark settings modal"
                 src={
                   theme.palette.mode === "dark"
-                    ? "/images/mockups/darkSettings.webp"
-                    : "/images/mockups/lightSettings.webp"
+                    ? "/images/landing/darkSettings.webp"
+                    : "/images/landing/lightSettings.webp"
                 }
               />
             </SectionImgContainer>
@@ -307,8 +307,8 @@ const Home: NextPage = () => {
                 alt="dark features modal"
                 src={
                   theme.palette.mode === "dark"
-                    ? "/images/darkFeatures.webp"
-                    : "/images/lightFeatures.webp"
+                    ? "/images/landing/darkFeatures.webp"
+                    : "/images/landing/lightFeatures.webp"
                 }
                 showOnRight
               />
@@ -333,8 +333,8 @@ const Home: NextPage = () => {
                 alt="dark files modal"
                 src={
                   theme.palette.mode === "dark"
-                    ? "/images/mockups/darkFiles.webp"
-                    : "/images/mockups/lightFiles.webp"
+                    ? "/images/landing/darkFiles.webp"
+                    : "/images/landing/lightFiles.webp"
                 }
               />
             </SectionImgContainer>
@@ -404,8 +404,8 @@ const Home: NextPage = () => {
                 alt="open source modal"
                 src={
                   theme.palette.mode === "dark"
-                    ? "/images/darkOIN.webp"
-                    : "/images/lightOIN.webp"
+                    ? "/images/landing/darkOIN.webp"
+                    : "/images/landing/lightOIN.webp"
                 }
                 showOnRight
               />
@@ -430,8 +430,8 @@ const Home: NextPage = () => {
                 alt="dark pangolin modal"
                 src={
                   theme.palette.mode === "dark"
-                    ? "/images/mockups/pangolindark.webp"
-                    : "/images/mockups/pangolinlight.webp"
+                    ? "/images/landing/darkPangolin.webp"
+                    : "/images/landing/lightPangolin.webp"
                 }
               />
             </SectionImgContainer>

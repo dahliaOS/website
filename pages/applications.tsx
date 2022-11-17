@@ -11,8 +11,8 @@ const Wrapper = styled.div`
   padding-top: 150px;
   background: ${({ theme }) =>
     theme.palette.mode === "dark"
-      ? "url('/images/bgDark.svg')"
-      : "url('/images/bgLight.svg')"};
+      ? "url('/images/background/darkBackground.svg')"
+      : "url('/images/background/lightBackground.svg')"};
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
