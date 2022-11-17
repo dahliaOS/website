@@ -30,11 +30,13 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   width: 90%;
-  display: block;
+  display: flex;
   max-width: 700px;
   margin: 0 auto;
   text-align: left;
   font-size: 1.2em;
+  flex-direction: column;
+  gap: 2rem;
 `;
 
 const Header = styled.h1`
@@ -111,6 +113,12 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
+const DownloadLink = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
 const Donate = () => {
   return (
     <>
@@ -123,13 +131,11 @@ const Donate = () => {
       <Wrapper>
         <Container>
           <Header>Donate to dahliaOS</Header>
-          <br />
           <Paragraph centerText>
             Thank you for your support! We use donations to keep improving our
             project and hardware support, and donations will go towards the
             following:
           </Paragraph>
-          <br />
           <ItemsContainer>
             <SupportItem>
               <DnsIcon />
@@ -156,23 +162,22 @@ const Donate = () => {
               </ItemParagraph>
             </SupportItem>
           </ItemsContainer>
-          <br />
-          <SubHeader>Where can I donate?</SubHeader>
-          <br />
-          <Paragraph>
-            Currently, donations can be sent through Open Collective, other
-            services will be coming soon.
-          </Paragraph>
-          <br />
-          <StyledLink
-            href="https://opencollective.com/dahliaos"
-            target="_blank"
-          >
-            <StyledButton>
-              <SvgIcon component={OpenCollectiveLogo} />
-              OPEN COLLECTIVE
-            </StyledButton>
-          </StyledLink>
+          <DownloadLink>
+            <SubHeader>Where can I donate?</SubHeader>
+            <Paragraph>
+              Currently, donations can be sent through Open Collective, other
+              services will be coming soon.
+            </Paragraph>
+            <StyledLink
+              href="https://opencollective.com/dahliaos"
+              target="_blank"
+            >
+              <StyledButton>
+                <SvgIcon component={OpenCollectiveLogo} />
+                OPEN COLLECTIVE
+              </StyledButton>
+            </StyledLink>
+          </DownloadLink>
         </Container>
       </Wrapper>
       <Footer />
