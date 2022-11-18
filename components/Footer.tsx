@@ -62,16 +62,20 @@ const FooterList = styled.ul`
   padding: 0;
 `;
 
-const FooterItem = styled(Link)`
+const FooterItemLink = styled(Link)`
   font-size: 1.15em;
-  color: ${({ theme }) => theme.palette.text.secondary};
+  color: ${({ theme }) => theme.palette.text.primary};
   display: block;
   transition: color ease-in-out 0.15s;
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.palette.text.primary};
+    color: ${({ theme }) => theme.palette.text.secondary};
   }
+`;
+
+const FooterItem = styled.li`
+  list-style-type: none;
 `;
 
 const FooterLogo = styled(Image)`
@@ -174,26 +178,40 @@ const Footer = () => {
             Find us on
           </FooterHeader>
           <FooterList>
-            <FooterItem href="/discord" target="_blank">
-              Discord
+            <FooterItem>
+              <FooterItemLink href="/discord" target="_blank">
+                Discord
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem href="/github" target="_blank">
-              GitHub
+            <FooterItem>
+              <FooterItemLink href="/github" target="_blank">
+                GitHub
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem href="/reddit" target="_blank">
-              Reddit
+            <FooterItem>
+              <FooterItemLink href="/reddit" target="_blank">
+                Reddit
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem href="/telegram" target="_blank">
-              Telegram
+            <FooterItem>
+              <FooterItemLink href="/telegram" target="_blank">
+                Telegram
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem href="/facebook" target="_blank">
-              Facebook
+            <FooterItem>
+              <FooterItemLink href="/facebook" target="_blank">
+                Facebook
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem href="/instagram" target="_blank">
-              Instagram
+            <FooterItem>
+              <FooterItemLink href="/instagram" target="_blank">
+                Instagram
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem href="/twitter" target="_blank">
-              Twitter
+            <FooterItem>
+              <FooterItemLink href="/twitter" target="_blank">
+                Twitter
+              </FooterItemLink>
             </FooterItem>
           </FooterList>
         </FooterCategory>
@@ -203,29 +221,37 @@ const Footer = () => {
             Technology
           </FooterHeader>
           <FooterList>
-            <FooterItem
-              href="https://docs.dahliaos.io/os/linux-based"
-              target="_blank"
-            >
-              How it works
+            <FooterItem>
+              <FooterItemLink
+                href="https://docs.dahliaos.io/os/linux-based"
+                target="_blank"
+              >
+                How it works
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem
-              href="https://docs.dahliaos.io/pangolin/pangolin"
-              target="_blank"
-            >
-              Pangolin
+            <FooterItem>
+              <FooterItemLink
+                href="https://docs.dahliaos.io/pangolin/pangolin"
+                target="_blank"
+              >
+                Pangolin
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem
-              href="https://docs.dahliaos.io/os/fimage"
-              target="_blank"
-            >
-              FImage
+            <FooterItem>
+              <FooterItemLink
+                href="https://docs.dahliaos.io/os/fimage"
+                target="_blank"
+              >
+                FImage
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem
-              href="https://docs.dahliaos.io/developers/packaging"
-              target="_blank"
-            >
-              Packaging
+            <FooterItem>
+              <FooterItemLink
+                href="https://docs.dahliaos.io/developers/packaging"
+                target="_blank"
+              >
+                Packaging
+              </FooterItemLink>
             </FooterItem>
           </FooterList>
         </FooterCategory>
@@ -235,26 +261,37 @@ const Footer = () => {
             Documentation
           </FooterHeader>
           <FooterList>
-            <FooterItem
-              href="https://docs.dahliaos.io/build/buildroot"
-              target="_blank"
-            >
-              Compiling
+            <FooterItem>
+              <FooterItemLink
+                href="https://docs.dahliaos.io/build/buildroot"
+                target="_blank"
+              >
+                Compiling
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem
-              href="https://docs.dahliaos.io/live-boot/x86_64"
-              target="_blank"
-            >
-              Live booting
+            <FooterItem>
+              <FooterItemLink
+                href="https://docs.dahliaos.io/live-boot/x86_64"
+                target="_blank"
+              >
+                Live booting
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem
-              href="https://docs.dahliaos.io/hardware/supported-devices"
-              target="_blank"
-            >
-              Supported devices
+            <FooterItem>
+              <FooterItemLink
+                href="https://docs.dahliaos.io/hardware/supported-devices"
+                target="_blank"
+              >
+                Supported devices
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem href="https://docs.dahliaos.io/faq" target="_blank">
-              FAQ
+            <FooterItem>
+              <FooterItemLink
+                href="https://docs.dahliaos.io/faq"
+                target="_blank"
+              >
+                FAQ
+              </FooterItemLink>
             </FooterItem>
           </FooterList>
         </FooterCategory>
@@ -264,23 +301,29 @@ const Footer = () => {
             Contribute
           </FooterHeader>
           <FooterList>
-            <FooterItem
-              href="https://docs.dahliaos.io/contribute/roadmap"
-              target="_blank"
-            >
-              Roadmap
+            <FooterItem>
+              <FooterItemLink
+                href="https://docs.dahliaos.io/contribute/roadmap"
+                target="_blank"
+              >
+                Roadmap
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem
-              href="https://docs.dahliaos.io/contribute/contribute"
-              target="_blank"
-            >
-              Contribute
+            <FooterItem>
+              <FooterItemLink
+                href="https://docs.dahliaos.io/contribute/contribute"
+                target="_blank"
+              >
+                Contribute
+              </FooterItemLink>
             </FooterItem>
-            <FooterItem
-              href="https://docs.dahliaos.io/contribute/code-of-conduct"
-              target="_blank"
-            >
-              Code of Conduct
+            <FooterItem>
+              <FooterItemLink
+                href="https://docs.dahliaos.io/contribute/code-of-conduct"
+                target="_blank"
+              >
+                Code of Conduct
+              </FooterItemLink>
             </FooterItem>
           </FooterList>
         </FooterCategory>
@@ -290,8 +333,10 @@ const Footer = () => {
             Contact
           </FooterHeader>
           <FooterList>
-            <FooterItem href="mailto:contact@dahliaos.io">
-              Contact us
+            <FooterItem>
+              <FooterItemLink href="mailto:contact@dahliaos.io">
+                Contact us
+              </FooterItemLink>
             </FooterItem>
           </FooterList>
         </FooterCategory>
