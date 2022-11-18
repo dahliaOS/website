@@ -427,7 +427,7 @@ const Intro = () => {
                   </SectionBtn>
                   <SectionBtn href="#start">
                     <LibraryBooksIcon />
-                    LEARN MORE
+                    ABOUT DAHLIAOS
                   </SectionBtn>
                 </ButtonContainer>
               </Sides>
