@@ -12,6 +12,8 @@ import {
 } from "@mui/icons-material";
 import { VercelLogo } from "./Icons";
 import Image from "next/image";
+import darkLogotype from "../public/images/logos/darkLogotype.webp";
+import lightLogotype from "../public/images/logos/lightLogotype.webp";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
   position: relative;
@@ -73,44 +75,23 @@ const FooterItem = styled(Link)`
 `;
 
 const FooterLogo = styled(Image)`
-  display: block;
-  margin: 30px auto 0 auto;
+  object-fit: contain;
+  width: 200px;
+  height: auto;
 `;
 
 const VercelDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  right: 45px;
-  bottom: 30px;
-  height: 40px;
-
-  @media (max-width: 670px) {
-    position: unset;
-    width: 100%;
-    align-self: center;
-    margin: 30px 0;
-  }
+  flex-wrap: nowrap;
 `;
 
 const StyledSelect = styled(Select)`
-  position: absolute;
-  left: 45px;
-  bottom: 30px;
-  height: 40px;
-
-  @media (max-width: 670px) {
-    position: relative;
-    left: unset;
-    bottom: unset;
-    display: flex;
-    width: 100%;
-    align-self: center;
-    margin: 20px 0;
-  }
   background: ${({ theme }) => theme.palette.primary.light};
   color: ${({ theme }) => theme.palette.text.primary};
+  height: 2.5rem;
+  width: 9rem;
 `;
 
 const StyledMenuItem = styled(MenuItem)`
@@ -143,6 +124,23 @@ const VercelText = styled.p`
 
 const VercelLink = styled(Link)`
   text-decoration: none;
+`;
+
+const BottomContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  margin-top: 4rem;
+  flex-wrap: nowrap;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
 `;
 
 type ThemeTypes = "dark" | "light" | "system";
@@ -298,39 +296,37 @@ const Footer = () => {
           </FooterList>
         </FooterCategory>
       </FooterContainer>
-      <StyledSelect value={localStorageTheme} displayEmpty>
-        {/* We're setting onClicks here because onChange for the parent element didnt work for some reason */}
-        <StyledMenuItem onClick={() => onThemeChange("system")} value="system">
-          <ComputerIcon />
-          System
-        </StyledMenuItem>
-        <StyledMenuItem onClick={() => onThemeChange("dark")} value="dark">
-          <CloudyIcon />
-          Dark
-        </StyledMenuItem>
-        <StyledMenuItem onClick={() => onThemeChange("light")} value="light">
-          <SunnyIcon />
-          Light
-        </StyledMenuItem>
-      </StyledSelect>
-      <FooterLogo
-        quality={100}
-        layout="intrinsic"
-        alt="dahliaOS logo"
-        width={170}
-        height={30}
-        src={
-          theme.palette.mode === "dark"
-            ? "/images/logos/darkLogotype.webp"
-            : "/images/logos/lightLogotype.webp"
-        }
-      />
-      <VercelLink href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
-        <VercelDiv>
-          <VercelText>Powered By</VercelText>
-          <VercelLogo fill={theme.palette.text.primary} />
-        </VercelDiv>
-      </VercelLink>
+      <BottomContainer>
+        <StyledSelect value={localStorageTheme} displayEmpty>
+          {/* We're setting onClicks here because onChange for the parent element didnt work for some reason */}
+          <StyledMenuItem
+            onClick={() => onThemeChange("system")}
+            value="system"
+          >
+            <ComputerIcon />
+            System
+          </StyledMenuItem>
+          <StyledMenuItem onClick={() => onThemeChange("dark")} value="dark">
+            <CloudyIcon />
+            Dark
+          </StyledMenuItem>
+          <StyledMenuItem onClick={() => onThemeChange("light")} value="light">
+            <SunnyIcon />
+            Light
+          </StyledMenuItem>
+        </StyledSelect>
+        <FooterLogo
+          quality={100}
+          alt="dahliaOS logo"
+          src={theme.palette.mode === "dark" ? darkLogotype : lightLogotype}
+        />
+        <VercelLink href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
+          <VercelDiv>
+            <VercelText>Powered By</VercelText>
+            <VercelLogo fill={theme.palette.text.primary} />
+          </VercelDiv>
+        </VercelLink>
+      </BottomContainer>
     </StyledBottomNavigation>
   );
 };

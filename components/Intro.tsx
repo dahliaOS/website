@@ -5,6 +5,8 @@ import { keyframes } from "@emotion/react";
 import { useTheme } from "@emotion/react";
 import { Button, useMediaQuery } from "@mui/material";
 import { GetApp, LibraryBooks as LibraryBooksIcon } from "@mui/icons-material";
+import darkLogotype from "../public/images/logos/darkLogotype.webp";
+import LaptopMockup from "../public/images/animation/macbook.webp";
 
 const mockupKeyframes = keyframes`
   0% {
@@ -256,6 +258,8 @@ const LogoContainer = styled.div`
 
 const Logo = styled(Image)`
   filter: brightness(0) invert(1);
+  object-fit: contain;
+  width: 700px;
 `;
 
 const Mockup = styled(Image)`
@@ -265,6 +269,8 @@ const Mockup = styled(Image)`
   animation: ${mockupKeyframes} 2.2s cubic-bezier(0.66, 0, 0.2, 1) 0.133s
     forwards;
   will-change: transform, opacity;
+  height: auto;
+  width: 1280px;
 `;
 
 const Background = styled.div`
@@ -385,22 +391,17 @@ const Intro = () => {
               priority
               quality={100}
               alt="dahliaOS logo"
-              width={700}
-              height={200}
-              layout="intrinsic"
-              src={"/images/logos/darkLogotype.webp"}
+              src={darkLogotype}
               draggable={false}
             />
           </LogoContainer>
           <Container>
             <MockupContainer>
               <Mockup
+                src={LaptopMockup}
                 priority
                 quality={100}
                 alt="Macbook mockup"
-                width={1280}
-                height={730}
-                src={"/images/animation/macbook.webp"}
                 draggable={false}
               />
               <Background draggable={false} />

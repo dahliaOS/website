@@ -19,6 +19,16 @@ import {
 } from "@mui/icons-material";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import darkSettings from "../public/images/landing/darkSettings.webp";
+import lightSettings from "../public/images/landing/lightSettings.webp";
+import darkFeatures from "../public/images/landing/darkFeatures.webp";
+import lightFeatures from "../public/images/landing/lightFeatures.webp";
+import darkFiles from "../public/images/landing/darkFiles.webp";
+import lightFiles from "../public/images/landing/lightFiles.webp";
+import darkOIN from "../public/images/landing/darkOIN.webp";
+import lightOIN from "../public/images/landing/lightOIN.webp";
+import darkPangolin from "../public/images/landing/darkPangolin.webp";
+import lightPangolin from "../public/images/landing/lightPangolin.webp";
 
 const Wrapper = styled.div``;
 
@@ -165,6 +175,9 @@ const SectionImgContainer = styled.div<{ showOnRight?: boolean }>`
 
 const SectionImg = styled(Image)<{ showOnRight?: boolean }>`
   border-radius: 14px;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
 
   ${({ showOnRight }) =>
     showOnRight ? "margin: 10px -70px" : "margin: 10px 70px"};
@@ -241,16 +254,11 @@ const Home: NextPage = () => {
           <Sides>
             <SectionImgContainer>
               <SectionImg
-                width={1200}
-                height={600}
                 priority
                 quality={100}
-                layout="intrinsic"
                 alt="dark settings modal"
                 src={
-                  theme.palette.mode === "dark"
-                    ? "/images/landing/darkSettings.webp"
-                    : "/images/landing/lightSettings.webp"
+                  theme.palette.mode === "dark" ? darkSettings : lightSettings
                 }
               />
             </SectionImgContainer>
@@ -299,16 +307,11 @@ const Home: NextPage = () => {
           <Sides>
             <SectionImgContainer showOnRight>
               <SectionImg
-                width={1200}
-                height={600}
                 priority
                 quality={100}
-                layout="intrinsic"
                 alt="dark features modal"
                 src={
-                  theme.palette.mode === "dark"
-                    ? "/images/landing/darkFeatures.webp"
-                    : "/images/landing/lightFeatures.webp"
+                  theme.palette.mode === "dark" ? darkFeatures : lightFeatures
                 }
                 showOnRight
               />
@@ -325,17 +328,10 @@ const Home: NextPage = () => {
           <Sides>
             <SectionImgContainer>
               <SectionImg
-                width={1200}
-                height={600}
                 priority
                 quality={100}
-                layout="intrinsic"
                 alt="dark files modal"
-                src={
-                  theme.palette.mode === "dark"
-                    ? "/images/landing/darkFiles.webp"
-                    : "/images/landing/lightFiles.webp"
-                }
+                src={theme.palette.mode === "dark" ? darkFiles : lightFiles}
               />
             </SectionImgContainer>
           </Sides>
@@ -396,17 +392,10 @@ const Home: NextPage = () => {
           <Sides>
             <SectionImgContainer showOnRight>
               <SectionImg
-                width={1200}
-                height={600}
                 priority
                 quality={100}
-                layout="intrinsic"
                 alt="open source modal"
-                src={
-                  theme.palette.mode === "dark"
-                    ? "/images/landing/darkOIN.webp"
-                    : "/images/landing/lightOIN.webp"
-                }
+                src={theme.palette.mode === "dark" ? darkOIN : lightOIN}
                 showOnRight
               />
             </SectionImgContainer>
@@ -422,16 +411,11 @@ const Home: NextPage = () => {
           <Sides>
             <SectionImgContainer>
               <SectionImg
-                width={1200}
-                height={600}
                 priority
                 quality={100}
-                layout="intrinsic"
                 alt="dark pangolin modal"
                 src={
-                  theme.palette.mode === "dark"
-                    ? "/images/landing/darkPangolin.webp"
-                    : "/images/landing/lightPangolin.webp"
+                  theme.palette.mode === "dark" ? darkPangolin : lightPangolin
                 }
               />
             </SectionImgContainer>

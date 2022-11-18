@@ -5,6 +5,18 @@ import Navbar from "../components/Navbar";
 import { GitHub as GitHubIcon } from "@mui/icons-material";
 import Head from "next/head";
 import Image from "next/image";
+import graft from "../public/images/app-icons/graft.webp";
+import settings from "../public/images/app-icons/settings.webp";
+import files from "../public/images/app-icons/files.webp";
+import store from "../public/images/app-icons/store.webp";
+import clock from "../public/images/app-icons/clock.webp";
+import welcome from "../public/images/app-icons/welcome.webp";
+import terminal from "../public/images/app-icons/terminal.webp";
+import calculator from "../public/images/app-icons/calculator.webp";
+import task from "../public/images/app-icons/task.webp";
+import photos from "../public/images/app-icons/photos.webp";
+import notes from "../public/images/app-icons/notes.webp";
+import logs from "../public/images/app-icons/logs.webp";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -116,7 +128,11 @@ const Center = styled.div`
   align-items: center;
 `;
 
-const AppIcon = styled(Image)``;
+const AppIcon = styled(Image)`
+  height: auto;
+  width: 60px;
+  object-fit: contain;
+`;
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -155,13 +171,10 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  layout="intrinsic"
-                  width={64}
-                  height={64}
                   priority
                   quality={100}
                   alt="graft application icon"
-                  src={"/images/app-icons/graft.webp"}
+                  src={graft}
                 />
               </Center>
               <SubHeader>Graft</SubHeader>
@@ -182,13 +195,10 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  layout="intrinsic"
-                  width={64}
-                  height={64}
                   priority
                   quality={100}
                   alt="settings application icon"
-                  src={"/images/app-icons/settings.webp"}
+                  src={settings}
                 />
               </Center>
               <SubHeader>Settings</SubHeader>
@@ -209,13 +219,10 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  layout="intrinsic"
-                  width={64}
-                  height={64}
                   priority
                   quality={100}
                   alt="files application icon"
-                  src={"/images/app-icons/files.webp"}
+                  src={files}
                 />
               </Center>
               <SubHeader>Files</SubHeader>
@@ -236,13 +243,10 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  layout="intrinsic"
-                  width={64}
-                  height={64}
                   priority
                   quality={100}
                   alt="app store application icon"
-                  src={"/images/app-icons/store.webp"}
+                  src={store}
                 />
               </Center>
               <SubHeader>App store</SubHeader>
@@ -263,13 +267,10 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  layout="intrinsic"
-                  width={64}
-                  height={64}
                   priority
                   quality={100}
                   alt="clock application icon"
-                  src={"/images/app-icons/clock.webp"}
+                  src={clock}
                 />
               </Center>
               <SubHeader>Clock</SubHeader>
@@ -290,13 +291,10 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  layout="intrinsic"
-                  width={64}
-                  height={64}
                   priority
                   quality={100}
                   alt="welcome application icon"
-                  src={"/images/app-icons/welcome.webp"}
+                  src={welcome}
                 />
               </Center>
               <SubHeader>Welcome</SubHeader>
@@ -316,13 +314,10 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  layout="intrinsic"
-                  width={64}
-                  height={64}
                   priority
                   quality={100}
                   alt="terminal application icon"
-                  src={"/images/app-icons/terminal.webp"}
+                  src={terminal}
                 />
               </Center>
               <SubHeader>Terminal</SubHeader>
@@ -342,13 +337,10 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  layout="intrinsic"
-                  width={64}
-                  height={64}
                   priority
                   quality={100}
                   alt="calculator application icon"
-                  src={"/images/app-icons/calculator.webp"}
+                  src={calculator}
                 />
               </Center>
               <SubHeader>Calculator</SubHeader>
@@ -368,13 +360,10 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  layout="intrinsic"
-                  width={64}
-                  height={64}
                   priority
                   quality={100}
                   alt="task manager application icon"
-                  src={"/images/app-icons/task.webp"}
+                  src={task}
                 />
               </Center>
               <SubHeader>Task manager</SubHeader>
@@ -395,13 +384,10 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  layout="intrinsic"
-                  width={64}
-                  height={64}
                   priority
                   quality={100}
                   alt="media application icon"
-                  src={"/images/app-icons/photos.webp"}
+                  src={photos}
                 />
               </Center>
               <SubHeader>Media</SubHeader>
@@ -422,13 +408,10 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  layout="intrinsic"
-                  width={64}
-                  height={64}
                   priority
                   quality={100}
                   alt="text editor application icon"
-                  src={"/images/app-icons/notes.webp"}
+                  src={notes}
                 />
               </Center>
               <SubHeader>Text editor</SubHeader>
@@ -449,13 +432,10 @@ const Applications = () => {
             <Card>
               <Center>
                 <AppIcon
-                  layout="intrinsic"
-                  width={64}
-                  height={64}
                   priority
                   quality={100}
                   alt="logs application icon"
-                  src={"/images/app-icons/logs.webp"}
+                  src={logs}
                 />
               </Center>
               <SubHeader>System logs</SubHeader>

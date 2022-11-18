@@ -36,6 +36,8 @@ import "@reach/skip-nav/styles.css";
 import { DiscordLogo } from "./Icons";
 import { useMeetsScrollPos } from "../utils/hooks/useMeetsScrollPos";
 import Image from "next/image";
+import darkLogotype from "../public/images/logos/darkLogotype.webp";
+import lightLogotype from "../public/images/logos/lightLogotype.webp";
 
 const WrapperKeyframes = keyframes`
   0% {
@@ -57,8 +59,6 @@ const Container = styled.div`
 const DrawerLogoContainer = styled.div`
   position: relative;
   padding-top: 160px;
-  height: 160px;
-  width: 230px;
   background: ${({ theme }) => theme.palette.primary.main};
 `;
 
@@ -66,6 +66,9 @@ const DrawerLogo = styled(Image)`
   position: absolute;
   bottom: 16px;
   padding-left: 20px;
+  height: auto;
+  width: 150px;
+  object-fit: contain;
 `;
 
 const Link = styled(MUILink)`
@@ -165,7 +168,11 @@ const AppBarLogoLinkContainer = styled(Link)`
   }
 `;
 
-const AppBarLogo = styled(Image)``;
+const AppBarLogo = styled(Image)`
+  height: auto;
+  width: 150px;
+  object-fit: contain;
+`;
 
 const DesktopNav = styled.div`
   display: flex;
@@ -224,15 +231,8 @@ const Navbar = ({
           <DrawerLogo
             priority
             quality={100}
-            layout="intrinsic"
             alt="dahliaOS logo"
-            width={170}
-            height={28}
-            src={
-              theme.palette.mode === "dark"
-                ? "/images/logos/darkLogotype.webp"
-                : "/images/logos/lightLogotype.webp"
-            }
+            src={theme.palette.mode === "dark" ? darkLogotype : lightLogotype}
           />
         </DrawerLogoContainer>
         <Container>
@@ -323,15 +323,8 @@ const Navbar = ({
             <AppBarLogo
               priority
               quality={100}
-              layout="intrinsic"
               alt="dahliaOS logo"
-              width={140}
-              height={28}
-              src={
-                theme.palette.mode === "dark"
-                  ? "/images/logos/darkLogotype.webp"
-                  : "/images/logos/lightLogotype.webp"
-              }
+              src={theme.palette.mode === "dark" ? darkLogotype : lightLogotype}
               draggable={false}
             />
           </AppBarLogoLinkContainer>
