@@ -463,7 +463,7 @@ const Download = ({ showMore }: IDownloadProps) => {
                   <StyledLink href={releases[0].html_url} target="_blank">
                     <ReadMoreButton>
                       <TextSnippetIcon />
-                      Read more
+                      Changelog
                     </ReadMoreButton>
                   </StyledLink>
                 </ReadMoreContainer>
