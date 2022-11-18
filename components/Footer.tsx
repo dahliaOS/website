@@ -342,20 +342,20 @@ const Footer = () => {
         </FooterCategory>
       </FooterContainer>
       <BottomContainer>
-        <StyledSelect value={localStorageTheme} displayEmpty>
-          {/* We're setting onClicks here because onChange for the parent element didnt work for some reason */}
-          <StyledMenuItem
-            onClick={() => onThemeChange("system")}
-            value="system"
-          >
+        <StyledSelect
+          onChange={e => onThemeChange(e.target.value as ThemeTypes)}
+          value={localStorageTheme}
+          displayEmpty
+        >
+          <StyledMenuItem value="system">
             <ComputerIcon />
             System
           </StyledMenuItem>
-          <StyledMenuItem onClick={() => onThemeChange("dark")} value="dark">
+          <StyledMenuItem value="dark">
             <CloudyIcon />
             Dark
           </StyledMenuItem>
-          <StyledMenuItem onClick={() => onThemeChange("light")} value="light">
+          <StyledMenuItem value="light">
             <SunnyIcon />
             Light
           </StyledMenuItem>
