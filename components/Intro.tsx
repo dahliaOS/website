@@ -441,19 +441,17 @@ const Intro = () => {
               alt="Dark mockup"
               src={
                 theme.palette.mode === "dark"
-                  ? "/images/mockups/darkMockup.webp"
-                  : "/images/mockups/lightMockup.webp"
+                  ? "/images/mockups/darkmockup.webp"
+                  : "/images/mockups/lightmockup.webp"
               }
               width={1280}
               height={720}
               layout="intrinsic"
               priority
             />
-
             <IntroContainer>
               <Sides>
                 <SectionTitle>dahliaOS</SectionTitle>
-
                 <Paragraph>
                   dahliaOS is a modern, secure, lightweight and responsive
                   operating system, combining the best of GNU/Linux and Fuchsia
@@ -461,7 +459,6 @@ const Intro = () => {
                   lightweight operating system, our goal is to establish a new
                   standard for the desktop platform.
                 </Paragraph>
-
                 <SectionBtn href="#download">
                   <GetApp />
                   DOWNLOAD
