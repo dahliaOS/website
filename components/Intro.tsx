@@ -7,6 +7,8 @@ import { Button, useMediaQuery } from "@mui/material";
 import { GetApp, LibraryBooks as LibraryBooksIcon } from "@mui/icons-material";
 import darkLogotype from "../public/images/logos/darkLogotype.webp";
 import LaptopMockup from "../public/images/animation/macbook.webp";
+import darkMockup from "../public/images/mockups/darkmockup.webp";
+import lightMockup from "../public/images/mockups/lightmockup.webp";
 
 const mockupKeyframes = keyframes`
   0% {
@@ -95,6 +97,10 @@ const Sides = styled.div`
       margin-right: 0;
     }
   }
+
+  @media (max-width: 1025px) {
+    row-gap: 0.5rem;
+  }
 `;
 
 const IntroContainer = styled.div`
@@ -165,6 +171,10 @@ const SectionTitle = styled.h1`
   font-size: 2.8em;
   font-weight: 600;
   color: ${({ theme }) => theme.palette.text.light};
+
+  @media (max-width: 1025px) {
+    font-size: 2rem;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -173,6 +183,10 @@ const Paragraph = styled.p`
   font-size: 1.3em;
   max-width: 65ch;
   color: ${({ theme }) => theme.palette.text.primary};
+
+  @media (max-width: 1025px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const SectionBtn = styled(Button)`
@@ -368,13 +382,30 @@ const Toolbar = styled.div`
 `;
 
 const MockupImageContainer = styled.div`
-  padding: 25px;
-  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  margin-top: 4rem;
+
+  @media (max-width: 1025px) {
+    padding: 25px 50px;
+    row-gap: 0.8rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+`;
+
+const MockupImage = styled(Image)`
+  height: auto;
+  width: 100%;
+  object-fit: contain;
 `;
 
 const Intro = () => {
@@ -437,16 +468,9 @@ const Intro = () => {
       ) : (
         <Container>
           <MockupImageContainer>
-            <Image
-              alt="Dark mockup"
-              src={
-                theme.palette.mode === "dark"
-                  ? "/images/mockups/darkmockup.webp"
-                  : "/images/mockups/lightmockup.webp"
-              }
-              width={1280}
-              height={720}
-              layout="intrinsic"
+            <MockupImage
+              alt="Laptop mockup showing Pangolin running"
+              src={theme.palette.mode === "dark" ? darkMockup : lightMockup}
               priority
             />
             <IntroContainer>
@@ -459,14 +483,16 @@ const Intro = () => {
                   lightweight operating system, our goal is to establish a new
                   standard for the desktop platform.
                 </Paragraph>
-                <SectionBtn href="#download">
-                  <GetApp />
-                  DOWNLOAD
-                </SectionBtn>
-                <SectionBtn href="#start">
-                  <LibraryBooksIcon />
-                  LEARN MORE
-                </SectionBtn>
+                <ButtonContainer>
+                  <SectionBtn href="#download">
+                    <GetApp />
+                    DOWNLOAD
+                  </SectionBtn>
+                  <SectionBtn href="#start">
+                    <LibraryBooksIcon />
+                    ABOUT DAHLIAOS
+                  </SectionBtn>
+                </ButtonContainer>
               </Sides>
             </IntroContainer>
           </MockupImageContainer>
