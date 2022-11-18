@@ -472,6 +472,7 @@ const Intro = () => {
               alt="Laptop mockup showing Pangolin running"
               src={theme.palette.mode === "dark" ? darkMockup : lightMockup}
               priority
+              quality={100}
             />
             <IntroContainer>
               <Sides>
