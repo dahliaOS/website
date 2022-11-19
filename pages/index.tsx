@@ -309,21 +309,21 @@ const FeaturesDiv = styled.div`
 
 const FeaturesTitle = styled.p`
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: ${({ theme }) => theme.palette.text.primary};
 
   @media (max-width: 1100px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 `;
 
 const FeaturesParagraph = styled.p`
   font-weight: light;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: ${({ theme }) => theme.palette.text.primary};
 
   @media (max-width: 1100px) {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 `;
 
