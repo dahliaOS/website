@@ -207,23 +207,23 @@ const SectionBtn = styled(Button)`
     background-size: 400% 400%;
     transition: 0.2s ease-in-out;
     margin-right: 30px;
+
+    &:hover {
+      background-position: 100% 50%;
+    }
   }
 
   &:nth-of-type(even) {
     border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
     color: ${({ theme }) => theme.palette.text.primary};
-    @media (max-width: 1535px) {
-      &:nth-of-type(even) {
-        margin: 10px 0;
-      }
-    }
+
     &:hover {
       background: ${({ theme }) => theme.palette.primary.light};
     }
-  }
 
-  &:hover {
-    background-position: 100% 50%;
+    @media (max-width: 1535px) {
+      margin: 10px 0;
+    }
   }
 `;
 
@@ -413,7 +413,7 @@ const Intro = () => {
   const windowIsSmall = useMediaQuery("(max-width: 1075px)");
 
   return (
-    // without setting a tabindex here, this area isn't selectable.
+    // Without setting a tabIndex here, this area isn't selectable.
     <Wrapper tabIndex={0}>
       {!windowIsSmall ? (
         <>

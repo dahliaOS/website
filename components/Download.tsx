@@ -27,7 +27,7 @@ const Card = styled.div<{ isError?: boolean }>`
   box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
     0 1px 8px 0 rgb(0 0 0 / 12%);
 
-  @media (max-width: 1043px) {
+  @media (max-width: 1100px) {
     flex-direction: column;
     max-height: unset;
   }
@@ -341,10 +341,6 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-interface IDownloadProps {
-  showMore?: boolean;
-}
-
 const ModalTitle = styled.p``;
 
 const ModalParagraph = styled.p``;
@@ -359,7 +355,7 @@ const DownloadCount = styled.pre`
   color: ${({ theme }) => theme.palette.text.primary};
 `;
 
-const Download = ({ showMore }: IDownloadProps) => {
+const Download = () => {
   const { releases, isError, isLoading } = useGithubReleases();
   const [modalActive, setModalActive] = useState(false);
   const Router = useRouter();
@@ -669,8 +665,6 @@ const Download = ({ showMore }: IDownloadProps) => {
           </Older>
         </Card>
       ) : null}
-      {/* Will implement soon */}
-      {showMore ? null : null}
     </>
   );
 };

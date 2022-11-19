@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-page-custom-font */ // eslint is being annoying :/, this is fine and works
+/* eslint-disable @next/next/no-page-custom-font */
 import Document, { Head, Html, NextScript, Main } from "next/document";
 import { DarkTheme } from "../utils/Theme";
 

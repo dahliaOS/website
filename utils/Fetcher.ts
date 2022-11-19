@@ -1,7 +1,3 @@
-/**
- * A super dumb fetcher
- * pretty much only used in swr stuff
- * */
 export const fetcher = async (url: string) => {
   const res = await fetch(url);
 

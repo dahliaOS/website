@@ -6,6 +6,11 @@ const nextConfig = {
   compiler: {
     emotion: true,
   },
+  experimental: {
+    fontLoaders: [
+      { loader: "@next/font/google", options: { subsets: ["latin"] } },
+    ],
+  },
   async redirects() {
     return [
       {
@@ -51,11 +56,6 @@ const nextConfig = {
       {
         source: "/docs",
         destination: "https://docs.dahliaos.io/",
-        permanent: true,
-      },
-      {
-        source: "/support",
-        destination: "https://discord.com/invite/7qVbJHR",
         permanent: true,
       },
       {

@@ -9,7 +9,7 @@ import { SWRConfig } from "swr";
 import { usePreferredTheme } from "../utils/hooks/usePreferredTheme";
 import { Inter } from "@next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter();
 
 const GlobalStyles = (theme: Theme) => css`
   *,

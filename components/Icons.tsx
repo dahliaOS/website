@@ -48,7 +48,7 @@ export const VercelLogo = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       {...props}
-      height="25"
+      height="23"
       viewBox="0 0 4438 1000"
       xmlns="http://www.w3.org/2000/svg"
     >

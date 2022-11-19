@@ -24,7 +24,7 @@ export const usePreferredTheme = (): ThemeTypes => {
       );
     };
 
-    // run on init
+    // Run on init
     changeTheme();
 
     window.addEventListener("storage", changeTheme);

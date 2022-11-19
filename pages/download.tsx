@@ -109,7 +109,7 @@ const Download = () => {
                 API!
               </SubHeader>
             </Container>
-            <DownloadComponent showMore />
+            <DownloadComponent />
             <ButtonContainer>
               <StyledLink
                 href="https://github.com/dahliaOS/releases/releases"
@@ -155,7 +155,7 @@ const Download = () => {
                   }, 0)}
               </SubHeader>
             </Container>
-            <DownloadComponent showMore />
+            <DownloadComponent />
             <ButtonContainer>
               <StyledLink
                 href="https://github.com/dahliaOS/releases/releases"
@@ -187,7 +187,7 @@ const Download = () => {
               <Header>Download</Header>
               <SubHeader>Total downloads: Loading...</SubHeader>
             </Container>
-            <DownloadComponent showMore />
+            <DownloadComponent />
             <ButtonContainer>
               <StyledLink
                 href="https://github.com/dahliaOS/releases/releases"

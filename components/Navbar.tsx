@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import {
   AppBar,
   Divider,
@@ -9,12 +9,12 @@ import {
   Menu,
   MenuItem,
   Toolbar,
+  useMediaQuery,
 } from "@mui/material";
 import {
   Menu as MenuIcon,
   MoreVert,
   GetApp,
-  AutoAwesome as AutoAwesomeIcon,
   VolunteerActivism as VolunteerActivismIcon,
   Science as ScienceIcon,
   Article as ArticleIcon,
@@ -25,7 +25,6 @@ import {
   Telegram as TelegramIcon,
   Twitter as TwitterIcon,
   Instagram as InstagramIcon,
-  Code as CodeIcon,
 } from "@mui/icons-material";
 import { useCallback, useState } from "react";
 import styled from "@emotion/styled";
@@ -54,6 +53,8 @@ const Wrapper = styled.div``;
 
 const Container = styled.div`
   background: ${({ theme }) => theme.palette.primary.light};
+  width: 15rem;
+  height: 100%;
 `;
 
 const DrawerLogoContainer = styled.div`
@@ -67,7 +68,7 @@ const DrawerLogo = styled(Image)`
   bottom: 16px;
   padding-left: 20px;
   height: auto;
-  width: 150px;
+  width: 200px;
   object-fit: contain;
 `;
 
@@ -193,21 +194,14 @@ const Navbar = ({
 }) => {
   const [drawerState, setDrawerState] = useState(false);
   const [toggleMoreIcon, setToggleMoreIcon] = useState(false);
-  const [initialPageWidth, setInitialPageWidth] = useState(0);
+  const windowIsSmall = useMediaQuery("(max-width: 1075px)");
   const theme = useTheme();
   const ref = useRef<HTMLButtonElement | null>(null);
-
   const meetsScrollPos = useMeetsScrollPos(10);
-
   const toggleDrawer = useCallback(
     (open: boolean = false) => setDrawerState(open ?? !drawerState),
     [drawerState],
   );
-
-  useEffect(() => {
-    // This is used for checking if its mobile or not
-    setInitialPageWidth(window.innerWidth);
-  }, []);
 
   return (
     <Wrapper>
@@ -236,9 +230,6 @@ const Navbar = ({
           />
         </DrawerLogoContainer>
         <Container>
-          <Link href="/features">
-            <AutoAwesomeIcon /> Features
-          </Link>
           <Link href="/download">
             <GetApp />
             Download
@@ -286,11 +277,7 @@ const Navbar = ({
             Twitter
           </Link>
           <Divider />
-          <Category>For developers</Category>
-          <Link href="https://github.com/dahliaOS/website" target="_blank">
-            <CodeIcon />
-            Source code
-          </Link>
+          <Category>Team</Category>
           <Link href="https://github.com/orgs/dahliaos/people" target="_blank">
             <GroupIcon />
             Developers
@@ -298,9 +285,7 @@ const Navbar = ({
         </Container>
       </StyledDrawer>
       <StyledAppBar
-        rootPageHasAnimation={
-          initialPageWidth < 1075 ? false : rootPageHasAnimation
-        }
+        rootPageHasAnimation={windowIsSmall ? false : rootPageHasAnimation}
         position="fixed"
         meetsScrollPos={meetsScrollPos}
       >
@@ -329,9 +314,6 @@ const Navbar = ({
             />
           </AppBarLogoLinkContainer>
           <DesktopNav>
-            <AppBarLink href="/features">
-              <AutoAwesomeIcon /> Features
-            </AppBarLink>
             <AppBarLink href="/download">
               <GetApp /> Download
             </AppBarLink>
@@ -359,15 +341,6 @@ const Navbar = ({
               anchorEl={ref.current}
               keepMounted
             >
-              <MenuItem>
-                <MenuLink
-                  href="https://github.com/dahliaOS/website"
-                  target="_blank"
-                >
-                  <CodeIcon />
-                  Source code
-                </MenuLink>
-              </MenuItem>
               <MenuItem>
                 <MenuLink
                   href="https://github.com/orgs/dahliaos/people"

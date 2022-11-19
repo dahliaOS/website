@@ -1,12 +1,11 @@
 import React from "react";
 import Head from "next/head";
 import styled from "@emotion/styled";
-import { useTheme } from "@emotion/react";
 import type { NextPage } from "next";
 import Intro from "../components/Intro";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Button, Link } from "@mui/material";
+import { Button, Link, SvgIcon, useTheme } from "@mui/material";
 import Download from "../components/Download";
 import {
   History as HistoryIcon,
@@ -14,17 +13,29 @@ import {
   GitHub as GitHubIcon,
   CorporateFare as CorporateFareIcon,
   Science as ScienceIcon,
-  AutoAwesome as AutoAwesomeIcon,
-  Apps as AppsIcon,
 } from "@mui/icons-material";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-import darkSettings from "../public/images/landing/darkSettings.webp";
-import lightSettings from "../public/images/landing/lightSettings.webp";
-import darkFeatures from "../public/images/landing/darkFeatures.webp";
-import lightFeatures from "../public/images/landing/lightFeatures.webp";
-import darkFiles from "../public/images/landing/darkFiles.webp";
-import lightFiles from "../public/images/landing/lightFiles.webp";
+import graft from "../public/images/app-icons/graft.webp";
+import settings from "../public/images/app-icons/settings.webp";
+import fileManager from "../public/images/app-icons/fileManager.webp";
+import appStore from "../public/images/app-icons/appStore.webp";
+import clock from "../public/images/app-icons/clock.webp";
+import welcome from "../public/images/app-icons/welcome.webp";
+import terminal from "../public/images/app-icons/terminal.webp";
+import calculator from "../public/images/app-icons/calculator.webp";
+import activityMonitor from "../public/images/app-icons/activityMonitor.webp";
+import gallery from "../public/images/app-icons/gallery.webp";
+import textEditor from "../public/images/app-icons/textEditor.webp";
+import logs from "../public/images/app-icons/logs.webp";
+import {
+  DesktopMac as DesktopMacIcon,
+  Autorenew as AutorenewIcon,
+  ViewInAr as ViewInArIcon,
+  ViewCompact as ViewCompactIcon,
+  Apps as AppsIcon,
+  ScreenshotMonitor as ScreenshotMonitorIcon,
+} from "@mui/icons-material";
 import darkOIN from "../public/images/landing/darkOIN.webp";
 import lightOIN from "../public/images/landing/lightOIN.webp";
 import darkPangolin from "../public/images/landing/darkPangolin.webp";
@@ -32,20 +43,33 @@ import lightPangolin from "../public/images/landing/lightPangolin.webp";
 
 const Wrapper = styled.div``;
 
-const Container = styled(motion.div)<{ imageOnRight?: boolean }>`
+const Container = styled(motion.div)<{
+  showOnRight?: boolean;
+  distanceFirst?: boolean;
+}>`
   position: relative;
   display: flex;
-  min-height: 90vh;
-  max-width: 100vw;
+  min-height: 50rem;
+  width: 100vw;
   align-items: center;
   justify-content: center;
   padding: 0 50px;
 
-  @media (max-width: 1025px) {
-    flex-direction: ${({ imageOnRight }) =>
-      imageOnRight ? "column-reverse" : "column"};
+  ${({ distanceFirst }) =>
+    distanceFirst
+      ? `margin-top: 6rem;
+      @media (max-width: 1100px) {
+        margin-top: 3rem;
+  }`
+      : null};
+
+  @media (max-width: 1100px) {
+    flex-direction: ${({ showOnRight }) =>
+      showOnRight ? "column-reverse" : "column"};
     padding: 25px 50px;
-    min-height: 60vh;
+    min-height: 40rem;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -58,7 +82,7 @@ const ButtonContainer = styled.div`
   justify-content: center;
   padding: 0 50px;
 
-  @media (max-width: 1025px) {
+  @media (max-width: 1100px) {
     padding: 25px 50px;
   }
 `;
@@ -73,7 +97,7 @@ const Sides = styled.div`
     margin-right: 120px;
   }
 
-  @media (max-width: 1025px) {
+  @media (max-width: 1100px) {
     flex: unset;
     &:first-of-type {
       margin-right: 0;
@@ -101,28 +125,16 @@ const SectionBtn = styled(Button)<{ distanceButton?: boolean }>`
   margin: 10px 0;
   gap: 10px;
   width: fit-content;
-
-  &:first-of-type {
-    color: ${({ theme }) => theme.palette.text.extremelyLight};
-    background: linear-gradient(
-      153deg,
-      ${({ theme }) => theme.palette.secondary.light} 0%,
-      ${({ theme }) => theme.palette.secondary.main} 100%
-    );
-    background-size: 400% 400%;
-    transition: 0.2s ease-in-out;
-    margin-right: ${({ distanceButton }) => (distanceButton ? "30px" : "0px")};
-  }
-
-  &:nth-of-type(even) {
-    border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
-    color: ${({ theme }) => theme.palette.text.primary};
-    @media (max-width: 1025px) {
-      &:nth-of-type(even) {
-        margin: 10px -50px;
-      }
-    }
-  }
+  height: fit-content;
+  color: ${({ theme }) => theme.palette.text.extremelyLight};
+  background: linear-gradient(
+    153deg,
+    ${({ theme }) => theme.palette.secondary.light} 0%,
+    ${({ theme }) => theme.palette.secondary.main} 100%
+  );
+  background-size: 400% 400%;
+  transition: 0.2s ease-in-out;
+  margin-right: ${({ distanceButton }) => (distanceButton ? "30px" : "0px")};
 
   &:hover {
     background-position: 100% 50%;
@@ -134,17 +146,19 @@ const SectionBtnSecondary = styled(Button)`
   border-radius: 5px;
   margin: 10px 0;
   gap: 10px;
-
+  width: fit-content;
+  height: fit-content;
   border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
   color: ${({ theme }) => theme.palette.text.primary};
-  @media (max-width: 1025px) {
-    &:nth-of-type(even) {
-      margin: 10px -50px;
-    }
-  }
 
   &:hover {
     background: ${({ theme }) => theme.palette.primary.light};
+  }
+
+  @media (max-width: 1100px) {
+    &:nth-of-type(even) {
+      margin: 10px -50px;
+    }
   }
 `;
 
@@ -156,10 +170,11 @@ const Header = styled.p`
   font-weight: 500;
 `;
 
-const SectionImgContainer = styled.div<{ showOnRight?: boolean }>`
+const SectionDivContainer = styled.div<{ showOnRight?: boolean }>`
   position: relative;
   background: ${({ theme }) => theme.palette.primary.light};
   border-radius: 14px;
+  padding: 13px;
 
   ${({ showOnRight }) =>
     showOnRight ? "margin-right: -209px;" : "margin-left: -159px;"}
@@ -167,27 +182,11 @@ const SectionImgContainer = styled.div<{ showOnRight?: boolean }>`
   box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
     0 1px 8px 0 rgb(0 0 0 / 12%);
 
-  @media (max-width: 1025px) {
-    padding: 5px;
+  @media (max-width: 1100px) {
+    padding: 8px;
     margin: 20px 0;
   }
 `;
-
-const SectionImg = styled(Image)<{ showOnRight?: boolean }>`
-  border-radius: 14px;
-  object-fit: contain;
-  width: 100%;
-  height: auto;
-
-  ${({ showOnRight }) =>
-    showOnRight ? "margin: 10px -70px" : "margin: 10px 70px"};
-
-  @media (max-width: 1025px) {
-    margin: 0;
-  }
-`;
-
-const IdDiv = styled.div``;
 
 const DownloadContainer = styled(motion.div)`
   margin: 3rem 0;
@@ -203,13 +202,154 @@ const SectionButtonContainer = styled.div`
   flex-wrap: wrap;
 `;
 
+const SectionDiv = styled.div<{
+  showOnRight?: boolean;
+  onlyImage?: boolean;
+}>`
+  border-radius: 14px;
+  max-width: 51rem;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+
+  box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
+    0 1px 8px 0 rgb(0 0 0 / 12%);
+
+  ${({ showOnRight }) =>
+    showOnRight ? "margin: 10px -70px" : "margin: 10px 70px"};
+
+  ${({ onlyImage, theme }) =>
+    onlyImage
+      ? null
+      : `padding: 10%;
+      background: ${theme.palette.primary.contrastText};`}
+
+  @media (max-width: 1100px) {
+    margin: 0;
+  }
+`;
+
+const SectionImg = styled(Image)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+`;
+
+const AppDivContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 1100px) {
+    gap: 2rem;
+  }
+`;
+
+const AppDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  row-gap: 0.5rem;
+`;
+
+const AppIcon = styled(Image)`
+  height: auto;
+  width: 60px;
+  object-fit: contain;
+
+  @media (max-width: 1100px) {
+    width: 40px;
+  }
+`;
+
+const AppParagraph = styled.p`
+  font-weight: light;
+  font-size: 1rem;
+  color: ${({ theme }) => theme.palette.text.primary};
+
+  @media (max-width: 1100px) {
+    font-size: 0.9rem;
+  }
+`;
+
+const FeaturesDivContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 1568px) {
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+`;
+
+const FeaturesDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  column-gap: 2rem;
+  width: 45%;
+
+  @media (max-width: 1568px) {
+    gap: 1.5rem;
+    width: 100%;
+  }
+`;
+
+const FeaturesTitle = styled.p`
+  font-weight: 500;
+  font-size: 1rem;
+  color: ${({ theme }) => theme.palette.text.primary};
+
+  @media (max-width: 1100px) {
+    font-size: 0.8rem;
+  }
+`;
+
+const FeaturesParagraph = styled.p`
+  font-weight: light;
+  font-size: 0.9rem;
+  color: ${({ theme }) => theme.palette.text.primary};
+
+  @media (max-width: 1100px) {
+    font-size: 0.7rem;
+  }
+`;
+
+const Icon = styled(SvgIcon)`
+  color: ${({ theme }) => theme.palette.text.primary};
+  font-size: 3rem;
+
+  @media (max-width: 1100px) {
+    font-size: 2rem;
+  }
+`;
+
+const FeaturesTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 0.4rem;
+`;
+
 const variantRight: Variants = {
   visible: {
     x: 0,
     opacity: 1,
     transition: { type: "spring", stiffness: 30, duration: 1 },
   },
-  hidden: { x: -300, opacity: 0 },
+  hidden: { x: -200, opacity: 0 },
 };
 
 const variantLeft: Variants = {
@@ -218,7 +358,7 @@ const variantLeft: Variants = {
     opacity: 1,
     transition: { type: "spring", stiffness: 30, duration: 1 },
   },
-  hidden: { x: 300, opacity: 0 },
+  hidden: { x: 200, opacity: 0 },
 };
 
 const downloadVariant: Variants = {
@@ -227,7 +367,7 @@ const downloadVariant: Variants = {
     opacity: 1,
     transition: { type: "spring", stiffness: 30, duration: 1 },
   },
-  hidden: { y: 300, opacity: 0 },
+  hidden: { y: 200, opacity: 0 },
 };
 
 const Home: NextPage = () => {
@@ -242,7 +382,6 @@ const Home: NextPage = () => {
       <Wrapper tabIndex={0}>
         <Navbar rootPageHasAnimation />
         <Intro />
-
         {/* Just the basics */}
         <Container
           id="start"
@@ -250,18 +389,183 @@ const Home: NextPage = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
+          distanceFirst
         >
           <Sides>
-            <SectionImgContainer>
-              <SectionImg
-                priority
-                quality={100}
-                alt="dark settings modal"
-                src={
-                  theme.palette.mode === "dark" ? darkSettings : lightSettings
-                }
-              />
-            </SectionImgContainer>
+            <SectionDivContainer>
+              <SectionDiv>
+                <AppDivContainer>
+                  <AppDiv>
+                    <Link
+                      href="https://github.com/dahliaOS/graft"
+                      target="_blank"
+                    >
+                      <AppIcon
+                        priority
+                        quality={100}
+                        alt="graft application icon"
+                        src={graft}
+                      />
+                    </Link>
+                    <AppParagraph>Graft</AppParagraph>
+                  </AppDiv>
+                  <AppDiv>
+                    <Link
+                      href="https://github.com/dahliaOS/pangolin_desktop/tree/main/lib/components/settings"
+                      target="_blank"
+                    >
+                      <AppIcon
+                        priority
+                        quality={100}
+                        alt="settings application icon"
+                        src={settings}
+                      />
+                    </Link>
+                    <AppParagraph>Settings</AppParagraph>
+                  </AppDiv>
+                  <AppDiv>
+                    <Link
+                      href="https://github.com/dahliaOS/files"
+                      target="_blank"
+                    >
+                      <AppIcon
+                        priority
+                        quality={100}
+                        alt="file manager application icon"
+                        src={fileManager}
+                      />
+                    </Link>
+                    <AppParagraph>File Manager</AppParagraph>
+                  </AppDiv>
+                  <AppDiv>
+                    <Link
+                      href="https://github.com/dahliaOS/app_store"
+                      target="_blank"
+                    >
+                      <AppIcon
+                        priority
+                        quality={100}
+                        alt="app store application icon"
+                        src={appStore}
+                      />
+                    </Link>
+                    <AppParagraph>App Store</AppParagraph>
+                  </AppDiv>
+                  <AppDiv>
+                    <Link
+                      href="https://github.com/dahliaOS/clock"
+                      target="_blank"
+                    >
+                      <AppIcon
+                        priority
+                        quality={100}
+                        alt="clock application icon"
+                        src={clock}
+                      />
+                    </Link>
+                    <AppParagraph>Clock</AppParagraph>
+                  </AppDiv>
+                  <AppDiv>
+                    <Link
+                      href="https://github.com/dahliaOS/welcome"
+                      target="_blank"
+                    >
+                      <AppIcon
+                        priority
+                        quality={100}
+                        alt="welcome application icon"
+                        src={welcome}
+                      />
+                    </Link>
+                    <AppParagraph>Welcome</AppParagraph>
+                  </AppDiv>
+                  <AppDiv>
+                    <Link
+                      href="https://github.com/dahliaOS/terminal"
+                      target="_blank"
+                    >
+                      <AppIcon
+                        priority
+                        quality={100}
+                        alt="terminal application icon"
+                        src={terminal}
+                      />
+                    </Link>
+                    <AppParagraph>Terminal</AppParagraph>
+                  </AppDiv>
+                  <AppDiv>
+                    <Link
+                      href="https://github.com/dahliaOS/calculator"
+                      target="_blank"
+                    >
+                      <AppIcon
+                        priority
+                        quality={100}
+                        alt="calculator application icon"
+                        src={calculator}
+                      />
+                    </Link>
+                    <AppParagraph>Calculator</AppParagraph>
+                  </AppDiv>
+                  <AppDiv>
+                    <Link
+                      href="https://github.com/dahliaOS/task_manager"
+                      target="_blank"
+                    >
+                      <AppIcon
+                        priority
+                        quality={100}
+                        alt="activity monitor application icon"
+                        src={activityMonitor}
+                      />
+                    </Link>
+                    <AppParagraph>Activity Monitor</AppParagraph>
+                  </AppDiv>
+                  <AppDiv>
+                    <Link
+                      href="https://github.com/dahliaOS/media"
+                      target="_blank"
+                    >
+                      <AppIcon
+                        priority
+                        quality={100}
+                        alt="gallery application icon"
+                        src={gallery}
+                      />
+                    </Link>
+                    <AppParagraph>Gallery</AppParagraph>
+                  </AppDiv>
+                  <AppDiv>
+                    <Link
+                      href="https://github.com/dahliaOS/text_editor"
+                      target="_blank"
+                    >
+                      <AppIcon
+                        priority
+                        quality={100}
+                        alt="text editor application icon"
+                        src={textEditor}
+                      />
+                    </Link>
+                    <AppParagraph>Text Editor</AppParagraph>
+                  </AppDiv>
+                  <AppDiv>
+                    <Link
+                      href="https://github.com/dahliaOS/system_logs"
+                      target="_blank"
+                    >
+                      <AppIcon
+                        priority
+                        quality={100}
+                        alt="logs application icon"
+                        src={logs}
+                      />
+                    </Link>
+                    <AppParagraph>Logs</AppParagraph>
+                  </AppDiv>
+                </AppDivContainer>
+              </SectionDiv>
+            </SectionDivContainer>
           </Sides>
           <Sides>
             <SectionTitle>Just the basics</SectionTitle>
@@ -274,16 +578,11 @@ const Home: NextPage = () => {
               of your favorite applications from other operating systems using
               Graft, our virtual machine and containers management application.
             </Paragraph>
-            <SectionBtn href="/applications">
-              <AppsIcon />
-              APPLICATIONS
-            </SectionBtn>
           </Sides>
         </Container>
         {/* Features */}
-        <IdDiv id="features" />
         <Container
-          imageOnRight
+          showOnRight
           variants={variantLeft}
           initial="hidden"
           whileInView="visible"
@@ -299,23 +598,86 @@ const Home: NextPage = () => {
               component of the shell. Learn more about dahliaOS&apos; features
               by clicking the button below!
             </Paragraph>
-            <SectionBtn href="/features">
-              <AutoAwesomeIcon />
-              FEATURES
-            </SectionBtn>
           </Sides>
           <Sides>
-            <SectionImgContainer showOnRight>
-              <SectionImg
-                priority
-                quality={100}
-                alt="dark features modal"
-                src={
-                  theme.palette.mode === "dark" ? darkFeatures : lightFeatures
-                }
-                showOnRight
-              />
-            </SectionImgContainer>
+            <SectionDivContainer showOnRight>
+              <SectionDiv showOnRight>
+                <FeaturesDivContainer>
+                  <FeaturesDiv>
+                    <Icon>
+                      <DesktopMacIcon />
+                    </Icon>
+                    <FeaturesTextContainer>
+                      <FeaturesTitle>Modern desktop enviroment</FeaturesTitle>
+                      <FeaturesParagraph>
+                        Pangolin desktop enviroment written in Flutter focused
+                        on UI/UX.
+                      </FeaturesParagraph>
+                    </FeaturesTextContainer>
+                  </FeaturesDiv>
+                  <FeaturesDiv>
+                    <Icon>
+                      <AutorenewIcon />
+                    </Icon>
+                    <FeaturesTextContainer>
+                      <FeaturesTitle>Rolling release</FeaturesTitle>
+                      <FeaturesParagraph>
+                        Frequent minor updates and patches.
+                      </FeaturesParagraph>
+                    </FeaturesTextContainer>
+                  </FeaturesDiv>
+                  <FeaturesDiv>
+                    <Icon>
+                      <ViewInArIcon />
+                    </Icon>
+                    <FeaturesTextContainer>
+                      <FeaturesTitle>DAP Packages</FeaturesTitle>
+                      <FeaturesParagraph>
+                        Simple packaging format based on the AppImage
+                        architecture.
+                      </FeaturesParagraph>
+                    </FeaturesTextContainer>
+                  </FeaturesDiv>
+                  <FeaturesDiv>
+                    <Icon>
+                      <ViewCompactIcon />
+                    </Icon>
+                    <FeaturesTextContainer>
+                      <FeaturesTitle>Built-in containers</FeaturesTitle>
+                      <FeaturesParagraph>
+                        Use applications from other operating systems on
+                        dahliaOS.
+                      </FeaturesParagraph>
+                    </FeaturesTextContainer>
+                  </FeaturesDiv>
+                  <FeaturesDiv>
+                    <Icon>
+                      <AppsIcon />
+                    </Icon>
+                    <FeaturesTextContainer>
+                      <FeaturesTitle>Native applications</FeaturesTitle>
+                      <FeaturesParagraph>
+                        dahliaOS comes bundled with a set of native applications
+                        written in Flutter.
+                      </FeaturesParagraph>
+                    </FeaturesTextContainer>
+                  </FeaturesDiv>
+                  <FeaturesDiv>
+                    <Icon>
+                      <ScreenshotMonitorIcon />
+                    </Icon>
+                    <FeaturesTextContainer>
+                      <FeaturesTitle>Custom window manager</FeaturesTitle>
+                      <FeaturesParagraph>
+                        Utopia, our WM solution that enhances the experience and
+                        boosts productivity by helping you arrange your windows
+                        with ease.
+                      </FeaturesParagraph>
+                    </FeaturesTextContainer>
+                  </FeaturesDiv>
+                </FeaturesDivContainer>
+              </SectionDiv>
+            </SectionDivContainer>
           </Sides>
         </Container>
         {/* Wide range of supported devices */}
@@ -326,14 +688,16 @@ const Home: NextPage = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <Sides>
-            <SectionImgContainer>
-              <SectionImg
-                priority
-                quality={100}
-                alt="dark files modal"
-                src={theme.palette.mode === "dark" ? darkFiles : lightFiles}
-              />
-            </SectionImgContainer>
+            <SectionDivContainer>
+              <SectionDiv onlyImage>
+                <SectionImg
+                  priority
+                  quality={100}
+                  src={theme.palette.mode === "dark" ? darkOIN : lightOIN}
+                  alt={"wide range of support dahliaos devices"}
+                />
+              </SectionDiv>
+            </SectionDivContainer>
           </Sides>
           <Sides>
             <SectionTitle>A wide range of supported devices</SectionTitle>
@@ -355,7 +719,7 @@ const Home: NextPage = () => {
         </Container>
         {/* Free open source software */}
         <Container
-          imageOnRight
+          showOnRight
           variants={variantLeft}
           initial="hidden"
           whileInView="visible"
@@ -390,15 +754,16 @@ const Home: NextPage = () => {
             </SectionButtonContainer>
           </Sides>
           <Sides>
-            <SectionImgContainer showOnRight>
-              <SectionImg
-                priority
-                quality={100}
-                alt="open source modal"
-                src={theme.palette.mode === "dark" ? darkOIN : lightOIN}
-                showOnRight
-              />
-            </SectionImgContainer>
+            <SectionDivContainer showOnRight>
+              <SectionDiv showOnRight onlyImage>
+                <SectionImg
+                  priority
+                  quality={100}
+                  src={theme.palette.mode === "dark" ? darkOIN : lightOIN}
+                  alt={"wide range of support dahliaos devices"}
+                />
+              </SectionDiv>
+            </SectionDivContainer>
           </Sides>
         </Container>
         {/* Demo */}
@@ -409,16 +774,18 @@ const Home: NextPage = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <Sides>
-            <SectionImgContainer>
-              <SectionImg
-                priority
-                quality={100}
-                alt="dark pangolin modal"
-                src={
-                  theme.palette.mode === "dark" ? darkPangolin : lightPangolin
-                }
-              />
-            </SectionImgContainer>
+            <SectionDivContainer>
+              <SectionDiv onlyImage>
+                <SectionImg
+                  priority
+                  quality={100}
+                  src={
+                    theme.palette.mode === "dark" ? darkPangolin : lightPangolin
+                  }
+                  alt={"pangolin desktop enviroment"}
+                />
+              </SectionDiv>
+            </SectionDivContainer>
           </Sides>
           <Sides>
             <SectionTitle>Demo</SectionTitle>

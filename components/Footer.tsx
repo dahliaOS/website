@@ -18,31 +18,31 @@ import lightLogotype from "../public/images/logos/lightLogotype.webp";
 const StyledBottomNavigation = styled(BottomNavigation)`
   position: relative;
   height: auto;
-  display: block;
-  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 12rem;
   overflow: hidden;
-  background: ${({ theme }) =>
-    theme.palette.mode === "dark"
-      ? theme.palette.primary.dark
-      : theme.palette.primary.light};
+  background: ${({ theme }) => theme.palette.primary.main};
+
+  @media (max-width: 1200px) {
+    padding: 5rem 5rem;
+  }
 `;
 
 const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4rem;
 
-  @media (max-width: 1025px) {
-    flex-wrap: wrap;
-    text-align: left;
+  @media (max-width: 800px) {
+    gap: 3rem;
   }
 `;
 
 const FooterCategory = styled.div`
   width: max-content;
-
-  @media (max-width: 1025px) {
-    padding: 10px;
-  }
 `;
 
 const FooterHeader = styled.h1`
@@ -54,6 +54,10 @@ const FooterHeader = styled.h1`
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  @media (max-width: 800px) {
+    font-size: 1.2em;
+  }
 `;
 
 const FooterList = styled.ul`
@@ -71,6 +75,10 @@ const FooterItemLink = styled(Link)`
 
   &:hover {
     color: ${({ theme }) => theme.palette.text.secondary};
+  }
+
+  @media (max-width: 800px) {
+    font-size: 1rem;
   }
 `;
 
@@ -121,9 +129,13 @@ const ComputerIcon = styled(Computer)`
 
 const VercelText = styled.p`
   color: ${({ theme }) => theme.palette.text.primary};
-  font-size: 1.1em;
+  font-size: 1rem;
   font-weight: 450;
   margin-right: 10px;
+
+  @media (max-width: 800px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const VercelLink = styled(Link)`
@@ -137,13 +149,14 @@ const BottomContainer = styled.div`
   align-items: center;
   width: 100%;
   height: fit-content;
-  margin-top: 4rem;
+  margin-top: 8rem;
   flex-wrap: nowrap;
 
-  @media (max-width: 800px) {
+  @media (max-width: 850px) {
     justify-content: center;
     flex-direction: column;
-    row-gap: 2rem;
+    row-gap: 2.5rem;
+    margin-top: 4rem;
   }
 `;
 
