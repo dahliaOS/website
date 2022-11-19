@@ -40,6 +40,8 @@ import darkOIN from "../public/images/landing/darkOIN.webp";
 import lightOIN from "../public/images/landing/lightOIN.webp";
 import darkPangolin from "../public/images/landing/darkPangolin.webp";
 import lightPangolin from "../public/images/landing/lightPangolin.webp";
+import darkSupportedDevices from "../public/images/landing/darkSupportedDevices.webp";
+import lightSupportedDevices from "../public/images/landing/lightSupportedDevices.webp";
 
 const Wrapper = styled.div``;
 
@@ -49,7 +51,7 @@ const Container = styled(motion.div)<{
 }>`
   position: relative;
   display: flex;
-  min-height: 50rem;
+  min-height: 47rem;
   width: 100vw;
   align-items: center;
   justify-content: center;
@@ -57,7 +59,7 @@ const Container = styled(motion.div)<{
 
   ${({ distanceFirst }) =>
     distanceFirst
-      ? `margin-top: 6rem;
+      ? `margin-top: 4rem;
       @media (max-width: 1100px) {
         margin-top: 3rem;
   }`
@@ -693,7 +695,11 @@ const Home: NextPage = () => {
                 <SectionImg
                   priority
                   quality={100}
-                  src={theme.palette.mode === "dark" ? darkOIN : lightOIN}
+                  src={
+                    theme.palette.mode === "dark"
+                      ? darkSupportedDevices
+                      : lightSupportedDevices
+                  }
                   alt={"wide range of support dahliaos devices"}
                 />
               </SectionDiv>

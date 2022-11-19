@@ -8,6 +8,7 @@ import { ThemeProvider as MUIThemeProvider } from "@mui/material";
 import { SWRConfig } from "swr";
 import { usePreferredTheme } from "../utils/hooks/usePreferredTheme";
 import { Inter } from "@next/font/google";
+import Head from "next/head";
 
 const inter = Inter();
 
@@ -64,24 +65,31 @@ $$    $$ |$$    $$ |$$ |  $$ |$$ |$$ |$$    $$ |$$    $$/ $$    $$/
   const preferredTheme = usePreferredTheme();
 
   return (
-    <SWRConfig
-      value={{
-        fetcher,
-        refreshInterval: 12000000,
-        revalidateOnFocus: false,
-      }}
-    >
-      <ThemeProvider theme={preferredTheme === "dark" ? DarkTheme : LightTheme}>
-        <MUIThemeProvider
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width" />
+      </Head>
+      <SWRConfig
+        value={{
+          fetcher,
+          refreshInterval: 12000000,
+          revalidateOnFocus: false,
+        }}
+      >
+        <ThemeProvider
           theme={preferredTheme === "dark" ? DarkTheme : LightTheme}
         >
-          <main className={inter.className}>
-            <Global styles={GlobalStyles} />
-            <Component {...pageProps} />
-          </main>
-        </MUIThemeProvider>
-      </ThemeProvider>
-    </SWRConfig>
+          <MUIThemeProvider
+            theme={preferredTheme === "dark" ? DarkTheme : LightTheme}
+          >
+            <main className={inter.className}>
+              <Global styles={GlobalStyles} />
+              <Component {...pageProps} />
+            </main>
+          </MUIThemeProvider>
+        </ThemeProvider>
+      </SWRConfig>
+    </>
   );
 }
 
