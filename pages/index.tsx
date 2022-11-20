@@ -265,6 +265,12 @@ const AppIcon = styled(Image)`
   width: 60px;
   object-fit: contain;
 
+  &:hover {
+    filter: drop-shadow(
+      0 0 1rem ${({ theme }) => theme.palette.secondary.main}
+    );
+  }
+
   @media (max-width: 1100px) {
     width: 40px;
   }
