@@ -1,15 +1,17 @@
 import { BottomNavigation, Link, MenuItem, Select } from "@mui/material";
-import { WbSunny, WbCloudy, Computer } from "@mui/icons-material";
+import {
+  WbSunny,
+  WbCloudy,
+  Computer,
+  Article,
+  DeveloperBoard,
+  Handshake,
+  PeopleAlt,
+  QuestionAnswer,
+} from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { useTheme } from "@emotion/react";
-import {
-  PeopleAlt as PeopleAltIcon,
-  DeveloperBoard as DeveloperBoardIcon,
-  Article as ArticleIcon,
-  Handshake as HandshakeIcon,
-  QuestionAnswer as QuestionAnswerIcon,
-} from "@mui/icons-material";
 import { VercelLogo } from "./Icons";
 import Image from "next/image";
 import darkLogotype from "../public/images/logos/darkLogotype.webp";
@@ -43,17 +45,15 @@ const FooterContainer = styled.div`
 
 const FooterCategory = styled.div`
   width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 `;
 
-const FooterHeader = styled.h1`
+const FooterHeader = styled.p`
   color: ${({ theme }) => theme.palette.text.light};
   font-size: 1.5em;
-  font-weight: medium;
-  margin-bottom: 0.5em;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  font-weight: 500;
 
   @media (max-width: 800px) {
     font-size: 1.2em;
@@ -64,6 +64,9 @@ const FooterList = styled.ul`
   list-style: unset;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 `;
 
 const FooterItemLink = styled(Link)`
@@ -158,6 +161,26 @@ const BottomContainer = styled.div`
     row-gap: 2.5rem;
     margin-top: 4rem;
   }
+`;
+const PeopleAltIcon = styled(PeopleAlt)`
+  vertical-align: middle;
+  margin-right: 8px;
+`;
+const DeveloperBoardIcon = styled(DeveloperBoard)`
+  vertical-align: middle;
+  margin-right: 8px;
+`;
+const ArticleIcon = styled(Article)`
+  vertical-align: middle;
+  margin-right: 8px;
+`;
+const HandshakeIcon = styled(Handshake)`
+  vertical-align: middle;
+  margin-right: 8px;
+`;
+const QuestionAnswerIcon = styled(QuestionAnswer)`
+  vertical-align: middle;
+  margin-right: 8px;
 `;
 
 type ThemeTypes = "dark" | "light" | "system";
