@@ -214,11 +214,12 @@ const SectionBtn = styled(Button)`
   }
 
   &:nth-of-type(even) {
-    border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
+    border: ${({ theme }) => theme.palette.text.primary} solid 1.5px;
     color: ${({ theme }) => theme.palette.text.primary};
 
     &:hover {
       background: ${({ theme }) => theme.palette.primary.light};
+      border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
     }
 
     @media (max-width: 1535px) {
