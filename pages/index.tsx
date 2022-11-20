@@ -603,8 +603,7 @@ const Home: NextPage = () => {
               possible while maintaining a great and painless experience for the
               user. We&apos;ve dedicated a lot of time to customizability so
               it&apos;s possible to change the look and feel of almost every
-              component of the shell. Learn more about dahliaOS&apos; features
-              by clicking the button below!
+              component of the shell.
             </Paragraph>
           </Sides>
           <Sides>
