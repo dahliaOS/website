@@ -264,6 +264,12 @@ const AppIcon = styled(Image)`
   height: auto;
   width: 60px;
   object-fit: contain;
+  filter: drop-shadow(
+    ${({ theme }) =>
+      theme.palette.mode === "dark"
+        ? null
+        : `0 0 0.2rem ${theme.palette.text.disabled}`}
+  );
 
   &:hover {
     filter: drop-shadow(
