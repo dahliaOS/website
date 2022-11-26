@@ -60,7 +60,7 @@ const Container = styled.div`
 
 const StyledDownloadIcon = styled(DownloadIcon)`
   vertical-align: middle;
-  margin-right: 8px;
+  margin-right: 10px;
 `;
 
 const Download = () => {

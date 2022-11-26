@@ -112,17 +112,17 @@ const StyledMenuItem = styled(MenuItem)`
 
 const SunnyIcon = styled(WbSunny)`
   vertical-align: middle;
-  margin-right: 5px;
+  margin-right: 10px;
 `;
 
 const CloudyIcon = styled(WbCloudy)`
   vertical-align: middle;
-  margin-right: 5px;
+  margin-right: 10px;
 `;
 
 const ComputerIcon = styled(Computer)`
   vertical-align: middle;
-  margin-right: 8px;
+  margin-right: 10px;
 `;
 
 const IconSpan = styled.span`
@@ -165,32 +165,32 @@ const BottomContainer = styled.div`
 
 const PeopleAltIcon = styled(PeopleAlt)`
   vertical-align: middle;
-  margin-right: 8px;
+  margin-right: 10px;
 `;
 
 const DeveloperBoardIcon = styled(DeveloperBoard)`
   vertical-align: middle;
-  margin-right: 8px;
+  margin-right: 10px;
 `;
 
 const ArticleIcon = styled(Article)`
   vertical-align: middle;
-  margin-right: 8px;
+  margin-right: 10px;
 `;
 
 const HandshakeIcon = styled(Handshake)`
   vertical-align: middle;
-  margin-right: 8px;
+  margin-right: 10px;
 `;
 
 const QuestionAnswerIcon = styled(QuestionAnswer)`
   vertical-align: middle;
-  margin-right: 8px;
+  margin-right: 10px;
 `;
 
 const PermMediaIcon = styled(PermMedia)`
   vertical-align: middle;
-  margin-right: 8px;
+  margin-right: 10px;
 `;
 
 type ThemeTypes = "dark" | "light" | "system";
