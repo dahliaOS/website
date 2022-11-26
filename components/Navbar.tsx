@@ -163,6 +163,7 @@ const StyledToolbar = styled(Toolbar)<{ meetsScrollPos: boolean }>`
 `;
 
 const AppBarLogoLinkContainer = styled(Link)`
+  margin-left: 1rem;
   @media (max-width: 1025px) {
     display: block;
     margin: 0 auto;
