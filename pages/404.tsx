@@ -91,6 +91,7 @@ const Error404 = () => {
         <title>dahliaOS – 404</title>
         <meta property="og:title" content="dahliaOS – 404" key="title" />
         <meta property="og:description" content="404 Error."></meta>
+        <meta property="description" content="404 Error." />
       </Head>
       <Navbar />
       <Wrapper>

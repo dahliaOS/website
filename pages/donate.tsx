@@ -139,6 +139,7 @@ const Donate = () => {
         <title>dahliaOS – Donate</title>
         <meta property="og:title" content="dahliaOS – Donate" key="title" />
         <meta property="og:description" content="Donate to dahliaOS."></meta>
+        <meta property="description" content="Donate to dahliaOS."></meta>
       </Head>
       <Navbar />
       <Wrapper>

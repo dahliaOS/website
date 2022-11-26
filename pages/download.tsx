@@ -68,48 +68,29 @@ const Download = () => {
 
   return (
     <>
-      {isError ? (
-        <>
-          <Head>
-            <title>dahliaOS – Download</title>
-            <meta
-              property="og:title"
-              content="dahliaOS – Download"
-              key="title"
-            />
-            <meta property="og:description" content="Download dahliaOS."></meta>
-          </Head>
-          <Navbar />
-          <Wrapper>
-            <Container>
-              <Header>Download</Header>
+      <Head>
+        <title>dahliaOS – Download</title>
+        <meta property="og:title" content="dahliaOS – Download" key="title" />
+        <meta property="og:description" content="Download dahliaOS!"></meta>
+        <meta property="description" content="Download dahliaOS!"></meta>
+      </Head>
+      <Navbar />
+      <Wrapper>
+        <Container>
+          <Header>Download</Header>
+          {isError ? (
+            <>
               <Paragraph>
                 <StyledDownloadIcon />
                 Total downloads: An error occurred whilst fetching GitHub&apos;s
                 API!
               </Paragraph>
               <DownloadComponent />
-            </Container>
-          </Wrapper>
-          <Footer />
-        </>
-      ) : null}
+            </>
+          ) : null}
 
-      {releases?.length ? (
-        <>
-          <Head>
-            <title>dahliaOS – Download</title>
-            <meta
-              property="og:title"
-              content="dahliaOS – Download"
-              key="title"
-            />
-            <meta property="og:description" content="Download dahliaOS!"></meta>
-          </Head>
-          <Navbar />
-          <Wrapper>
-            <Container>
-              <Header>Download</Header>
+          {releases?.length ? (
+            <>
               <Paragraph>
                 <StyledDownloadIcon />
                 Total downloads:{" "}
@@ -125,35 +106,19 @@ const Download = () => {
                   }, 0)}
               </Paragraph>
               <DownloadComponent />
-            </Container>
-          </Wrapper>
-          <Footer />
-        </>
-      ) : isLoading ? (
-        <>
-          <Head>
-            <title>dahliaOS – Download</title>
-            <meta
-              property="og:title"
-              content="dahliaOS – Download"
-              key="title"
-            />
-            <meta property="og:description" content="Download dahliaOS!"></meta>
-          </Head>
-          <Navbar />
-          <Wrapper>
-            <Container>
-              <Header>Download</Header>
+            </>
+          ) : isLoading ? (
+            <>
               <Paragraph>
                 <StyledDownloadIcon />
                 Total downloads: Loading...
               </Paragraph>
               <DownloadComponent />
-            </Container>
-          </Wrapper>
-          <Footer />
-        </>
-      ) : null}
+            </>
+          ) : null}
+        </Container>
+      </Wrapper>
+      <Footer />
     </>
   );
 };
