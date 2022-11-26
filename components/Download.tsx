@@ -1,5 +1,5 @@
 import ErrorIcon from "@mui/icons-material/Error";
-import { Button, Link, Skeleton } from "@mui/material";
+import { Button, DialogTitle, Skeleton, DialogContent } from "@mui/material";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import Paper from "@mui/material/Paper";
@@ -14,22 +14,23 @@ import {
   VolunteerActivism as VolunteerActivismIcon,
   Close as CloseIcon,
 } from "@mui/icons-material";
+import Link from "next/link";
 
-const Card = styled.div<{ isError?: boolean }>`
+const Card = styled.div`
   display: flex;
   flex-direction: row;
-  border-radius: 13px;
-  max-width: ${({ isError }) => (isError ? 450 : 1100)}px;
-  max-height: 400px;
-  width: 90%;
+  border-radius: 14px;
+  max-width: 1250px;
+  max-height: 420px;
+  width: 100%;
   margin: 0 auto;
   background: ${({ theme }) => theme.palette.primary.light};
   box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
     0 1px 8px 0 rgb(0 0 0 / 12%);
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1250px) {
     flex-direction: column;
-    max-height: unset;
+    max-height: 60rem;
   }
 `;
 
@@ -73,7 +74,7 @@ const OlderHeader = styled.p`
   margin: 17px 0 0;
   text-align: center;
   color: ${({ theme }) => theme.palette.text.light};
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 `;
 
 const VersionInfo = styled.p`
@@ -81,7 +82,11 @@ const VersionInfo = styled.p`
 `;
 
 const DownloadCountOlder = styled.p`
-  color: ${({ theme }) => theme.palette.text.primary};
+  color: ${({ theme }) => theme.palette.text.secondary};
+
+  @media (max-width: 1250px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const Changelogs = styled.p`
@@ -99,111 +104,60 @@ const UpdateContainer = styled.div`
   padding: 20px 0 0;
 `;
 
-const ReadMoreButton = styled(Button)`
-  color: ${({ theme }) => theme.palette.text.primary};
-  padding: 5px 10px;
-  border-radius: 3px;
-  gap: 10px;
-
-  &:hover {
-    background: ${({ theme }) => theme.palette.primary.contrastText};
-  }
-`;
-
-const ReadMoreContainer = styled.div`
+const ChangelogContainer = styled.div`
   position: absolute;
   right: 0;
   bottom: -15px;
 `;
 
-const StyledButton = styled(Button)<{ disableGradient?: boolean }>`
-  padding: 7px 20px;
+const StyledButton = styled(Button)<{
+  isSecondary?: boolean;
+  isOlderRelease?: boolean;
+  isDialogAction?: boolean;
+}>`
+  padding: 8px 15px;
   border-radius: 5px;
-  color: ${({ theme }) => theme.palette.text.light};
-  text-decoration: none;
   gap: 10px;
+  width: fit-content;
+  height: fit-content;
+  transition: 0.2s ease-in-out;
 
-  &:first-of-type {
-    color: ${({ theme }) => theme.palette.text.light};
-    margin-right: 0;
-
-    &:hover {
-      background-position: 100% 50%;
-    }
-
-    ${({ disableGradient, theme }) =>
-      !disableGradient
-        ? `
-      margin-right: 15px;
-        color: ${theme.palette.text.extremelyLight};
-        background: linear-gradient(
-          153deg,
-          ${theme.palette.secondary.main} 0%,
-          ${theme.palette.secondary.light} 100%
-        );
-
-        background-size: 400% 400;
-        transition: 0.2s ease-in-out;
-        `
-        : null}
-  }
-
-  &:last-of-type {
-    &:hover {
-      background: ${({ theme }) => theme.palette.primary.contrastText};
-    }
-  }
-
-  @media (max-width: 535px) {
-    &:last-child {
-      margin-top: 20px;
-    }
-  }
-`;
-
-const StyledSecondaryButton = styled(Button)<{ disableGradient?: boolean }>`
-  padding: 7px 15px;
-  border-radius: 5px;
-  color: ${({ theme }) => theme.palette.text.light};
-  text-decoration: none;
-  gap: 10px;
-
-  &:first-of-type {
-    color: ${({ theme }) => theme.palette.text.light};
-    margin-right: 0;
+  ${({ isSecondary, theme }) =>
+    isSecondary
+      ? `
+    color: ${theme.palette.text.primary};
 
     &:hover {
-      background-position: 100% 50%;
-    }
+      background: ${theme.palette.primary.contrastText};
+    }`
+      : `color: ${theme.palette.text.extremelyLight};
+    background: ${theme.palette.secondary.light};
 
-    ${({ disableGradient, theme }) =>
-      !disableGradient
-        ? `
-      margin-right: 15px;
-        color: ${theme.palette.text.extremelyLight};
-        background: linear-gradient(
-          153deg,
-          ${theme.palette.secondary.main} 0%,
-          ${theme.palette.secondary.light} 100%
-        );
-
-        background-size: 400% 400;
-        transition: 0.2s ease-in-out;
-        `
-        : null}
-  }
-
-  &:last-of-type {
     &:hover {
-      background: ${({ theme }) => theme.palette.primary.light};
-    }
-  }
+      background: ${theme.palette.secondary.main};
+    }`};
+
+  ${({ isOlderRelease, theme }) =>
+    isOlderRelease
+      ? `
+    &:hover {
+      background: ${theme.palette.primary.light};
+    }`
+      : null};
+
+  ${({ isDialogAction, theme }) =>
+    isDialogAction
+      ? `margin-right: 1rem;
+    &:hover {
+      background: ${theme.palette.primary.light};
+    }`
+      : null};
 `;
 
 const OlderUpdate = styled.div`
   display: flex;
   align-items: center;
-  padding-bottom: 6px;
+  padding: 10px 0;
   margin-bottom: 6px;
   border-bottom: 1px solid ${({ theme }) => theme.palette.text.secondary};
 
@@ -215,6 +169,9 @@ const OlderUpdate = styled.div`
 
 const OlderUpdateTextWrapper = styled.div`
   flex-grow: 1;
+  gap: 0.15rem;
+  display: flex;
+  flex-direction: column;
 `;
 
 const OlderUpdateTitle = styled.p`
@@ -223,23 +180,43 @@ const OlderUpdateTitle = styled.p`
   padding: 0 2rem 0 0;
   font-weight: 400;
   color: ${({ theme }) => theme.palette.text.primary};
+
+  &:hover {
+    color: ${({ theme }) => theme.palette.text.light};
+  }
+
+  @media (max-width: 1250px) {
+    font-size: 1rem;
+  }
 `;
 
-const ButtonContainer = styled.div`
-  margin-bottom: 1.5rem;
+const ButtonContainer = styled.div<{ isOlderRelease?: boolean }>`
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.2rem;
+  row-gap: 0.8rem;
+
+  ${({ isOlderRelease }) =>
+    isOlderRelease
+      ? `justify-content: end;
+  align-items: center;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }`
+      : `margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      @media (max-width: 1100px) {
+    align-items: unset;
+    justify-content: unset;
+  }`};
 `;
 
-const OlderUpdateDate = styled.span`
+const OlderUpdateDate = styled.p`
   color: ${({ theme }) => theme.palette.text.secondary};
-`;
+  font-size: 1rem;
 
-const OlderBtns = styled.div`
-  display: inline-flex;
-
-  @media (max-width: 1100px) {
-    flex-wrap: wrap;
-    row-gap: 1rem;
-    justify-content: end;
+  @media (max-width: 1250px) {
+    font-size: 0.9rem;
   }
 `;
 
@@ -248,8 +225,10 @@ const ErrorContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
   width: 100%;
   height: 100%;
+  gap: 1rem;
 `;
 
 const StyledErrorIcon = styled(ErrorIcon)`
@@ -270,47 +249,8 @@ const StyledModal = styled(motion(Dialog))``;
 const StyledPaper = styled(motion(Paper))`
   border-radius: 8px;
   background: ${({ theme }) => theme.palette.primary.contrastText};
-  color: ${({ theme }) => theme.palette.text.light};
-  padding: 20px;
-
-  p {
-    font-size: 1.05em;
-    max-width: 55ch;
-    color: ${({ theme }) => theme.palette.text.primary};
-  }
-`;
-
-const DialogButton = styled(Button)<{ disableGradient?: boolean }>`
-  padding: 7px 20px;
-  border-radius: 5px;
-  color: ${({ theme }) => theme.palette.text.light};
-  text-decoration: none;
-  gap: 10px;
-
-  &:hover {
-    background: ${({ theme }) => theme.palette.primary.main};
-  }
-
-  &:nth-of-type(2) {
-    color: ${({ theme }) => theme.palette.text.light};
-    margin-right: 0;
-
-    ${({ disableGradient, theme }) =>
-      !disableGradient
-        ? `
-      margin-right: 15px;
-        color: ${theme.palette.text.extremelyLight};
-        background: linear-gradient(
-          153deg,
-          ${theme.palette.secondary.main} 0%,
-          ${theme.palette.secondary.light} 100%
-        );
-
-        background-size: 400% 400;
-        transition: 0.2s ease-in-out;
-        `
-        : null}
-  }
+  padding: 10px 20px 20px 10px;
+  max-width: 85%;
 `;
 
 const modalContainerAnimation = {
@@ -341,18 +281,19 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-const ModalTitle = styled.p``;
-
-const ModalParagraph = styled.p``;
-
-const ModalContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+const ModalTitle = styled(DialogTitle)`
+  font-size: 1.4rem;
+  color: ${({ theme }) => theme.palette.text.light};
 `;
 
-const DownloadCount = styled.pre`
+const ModalParagraph = styled(DialogContent)`
+  font-size: 1.1rem;
+  max-width: 55ch;
   color: ${({ theme }) => theme.palette.text.primary};
+`;
+
+const DownloadCount = styled.p`
+  color: ${({ theme }) => theme.palette.text.secondary};
 `;
 
 const Download = () => {
@@ -399,34 +340,28 @@ const Download = () => {
               </StyledPaper>
             )}
           >
-            <ModalContainer>
-              <ModalTitle>Support dahliaOS</ModalTitle>
-              <ModalParagraph>
-                Donating to dahliaOS will help us cover the expenses and
-                furtherly motivate us to continue working on bringing you new
-                releases and updates. Click the Donate button below if you would
-                like to learn more about donating to dahliaOS!
-              </ModalParagraph>
-              <DialogActions>
-                <DialogButton disableGradient onClick={closeModal}>
-                  <CloseIcon /> Close
-                </DialogButton>
-                <DialogButton
-                  disableGradient={false}
-                  onClick={() => Router.replace("/donate")}
-                  autoFocus
-                >
-                  <VolunteerActivismIcon />
-                  Donate
-                </DialogButton>
-              </DialogActions>
-            </ModalContainer>
+            <ModalTitle>Support dahliaOS</ModalTitle>
+            <ModalParagraph>
+              Donating to dahliaOS will help us cover the expenses and furtherly
+              motivate us to continue working on bringing you new releases and
+              updates. Click the Donate button below if you would like to learn
+              more about donating to dahliaOS!
+            </ModalParagraph>
+            <DialogActions>
+              <StyledButton isSecondary isDialogAction onClick={closeModal}>
+                <CloseIcon /> Close
+              </StyledButton>
+              <StyledButton onClick={() => Router.replace("/donate")} autoFocus>
+                <VolunteerActivismIcon />
+                Donate
+              </StyledButton>
+            </DialogActions>
           </StyledModal>
         ) : null}
       </AnimatePresence>
 
       {isError ? (
-        <Card isError>
+        <Card>
           <ErrorContainer>
             <StyledErrorIcon />
             <ErrorMessage>
@@ -455,14 +390,14 @@ const Download = () => {
                     .substring(releases[0].body.indexOf("+ "))
                     .replace(/(?:\r\n|\r|\n)/g, "\n")}
                 </Changelogs>
-                <ReadMoreContainer>
+                <ChangelogContainer>
                   <StyledLink href={releases[0].html_url} target="_blank">
-                    <ReadMoreButton>
+                    <StyledButton isSecondary>
                       <TextSnippetIcon />
-                      Changelog
-                    </ReadMoreButton>
+                      Full changelog
+                    </StyledButton>
                   </StyledLink>
-                </ReadMoreContainer>
+                </ChangelogContainer>
               </TextContainer>
               <ButtonContainer>
                 {releases[0].assets.map(asset => (
@@ -470,6 +405,7 @@ const Download = () => {
                     key={asset.name}
                     href={asset.browser_download_url}
                     onClick={openModal}
+                    isSecondary={!asset.name.includes("efi")}
                   >
                     <GetApp />
                     {asset.name.includes("efi")
@@ -484,12 +420,18 @@ const Download = () => {
                 <OlderHeader>Older releases</OlderHeader>
                 <UpdateContainer>
                   {releases.map((oldRelease, i) => {
-                    if (i === 0 || i > 6) return;
-
+                    if (i === 0) return;
                     return (
                       <OlderUpdate key={i}>
                         <OlderUpdateTextWrapper>
-                          <OlderUpdateTitle>{oldRelease.name}</OlderUpdateTitle>
+                          <StyledLink
+                            href={oldRelease.html_url}
+                            target="_blank"
+                          >
+                            <OlderUpdateTitle>
+                              {oldRelease.name}
+                            </OlderUpdateTitle>
+                          </StyledLink>
                           <DownloadCountOlder>
                             Downloads:{" "}
                             {oldRelease.assets[0].name.includes("efi")
@@ -501,19 +443,20 @@ const Download = () => {
                             {getDate(oldRelease.published_at)}
                           </OlderUpdateDate>
                         </OlderUpdateTextWrapper>
-                        <OlderBtns>
+                        <ButtonContainer isOlderRelease>
                           {oldRelease.assets.map(asset => (
-                            <StyledSecondaryButton
+                            <StyledButton
                               key={asset.name}
                               href={asset.browser_download_url}
-                              disableGradient={!asset.name.includes("efi")}
+                              isSecondary={!asset.name.includes("efi")}
+                              isOlderRelease={!asset.name.includes("efi")}
                               onClick={openModal}
                             >
                               <GetApp />
                               {asset.name.includes("efi") ? "EFI" : "Legacy"}
-                            </StyledSecondaryButton>
+                            </StyledButton>
                           ))}
-                        </OlderBtns>
+                        </ButtonContainer>
                       </OlderUpdate>
                     );
                   })}
@@ -586,15 +529,15 @@ const Download = () => {
                   height={20}
                 />
               </Changelogs>
-              <Link target="_blank">
-                <ReadMoreButton>
+              <Link href="" target="_blank">
+                <StyledButton isSecondary>
                   <Skeleton
                     variant="text"
                     animation="wave"
                     width={100}
                     height={55}
                   />
-                </ReadMoreButton>
+                </StyledButton>
               </Link>
             </TextContainer>
             <ButtonContainer>
@@ -616,11 +559,10 @@ const Download = () => {
           </Latest>
           <Older>
             <TextContainer>
-              <OlderHeader>Older updates</OlderHeader>
+              <OlderHeader>Older releases</OlderHeader>
               <UpdateContainer>
                 {[...Array(5)].map((oldRelease, i) => {
-                  if (i === 0 || i > 4) return;
-
+                  if (i === 0) return;
                   return (
                     <OlderUpdate key={i}>
                       <OlderUpdateTextWrapper>
@@ -641,7 +583,7 @@ const Download = () => {
                           />
                         </OlderUpdateDate>
                       </OlderUpdateTextWrapper>
-                      <OlderBtns>
+                      <ButtonContainer>
                         <Skeleton
                           variant="rectangular"
                           animation="wave"
@@ -656,7 +598,7 @@ const Download = () => {
                           height={15}
                           style={{ display: "inline-block", marginLeft: 15 }}
                         />
-                      </OlderBtns>
+                      </ButtonContainer>
                     </OlderUpdate>
                   );
                 })}

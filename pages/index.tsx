@@ -5,14 +5,19 @@ import type { NextPage } from "next";
 import Intro from "../components/Intro";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Button, Link, SvgIcon, useTheme } from "@mui/material";
-import Download from "../components/Download";
+import { Button, useTheme } from "@mui/material";
+import DownloadComponent from "../components/Download";
 import {
-  History as HistoryIcon,
   Devices as DevicesIcon,
   GitHub as GitHubIcon,
   CorporateFare as CorporateFareIcon,
   Science as ScienceIcon,
+  DesktopMac,
+  Autorenew,
+  ViewInAr,
+  ViewCompact,
+  Apps,
+  ScreenshotMonitor,
 } from "@mui/icons-material";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
@@ -28,34 +33,27 @@ import activityMonitor from "../public/images/app-icons/activityMonitor.webp";
 import gallery from "../public/images/app-icons/gallery.webp";
 import textEditor from "../public/images/app-icons/textEditor.webp";
 import logs from "../public/images/app-icons/logs.webp";
-import {
-  DesktopMac as DesktopMacIcon,
-  Autorenew as AutorenewIcon,
-  ViewInAr as ViewInArIcon,
-  ViewCompact as ViewCompactIcon,
-  Apps as AppsIcon,
-  ScreenshotMonitor as ScreenshotMonitorIcon,
-} from "@mui/icons-material";
 import darkOIN from "../public/images/landing/darkOIN.webp";
 import lightOIN from "../public/images/landing/lightOIN.webp";
 import darkPangolin from "../public/images/landing/darkPangolin.webp";
 import lightPangolin from "../public/images/landing/lightPangolin.webp";
 import darkSupportedDevices from "../public/images/landing/darkSupportedDevices.webp";
 import lightSupportedDevices from "../public/images/landing/lightSupportedDevices.webp";
+import Link from "next/link";
 
 const Wrapper = styled.div``;
 
 const Container = styled(motion.div)<{
   showOnRight?: boolean;
   distanceFirst?: boolean;
+  isCentered?: boolean;
 }>`
   position: relative;
   display: flex;
-  min-height: 47rem;
   width: 100vw;
   align-items: center;
   justify-content: center;
-  padding: 0 50px;
+  padding: 0 3rem;
 
   ${({ distanceFirst }) =>
     distanceFirst
@@ -65,39 +63,45 @@ const Container = styled(motion.div)<{
   }`
       : null};
 
+  ${({ isCentered }) =>
+    isCentered
+      ? `flex-direction: column;
+      min-height: unset;
+      gap: 2rem;
+      margin: 5rem 0;`
+      : `flex-direction: row;
+      min-height: 50rem;`};
+
   @media (max-width: 1100px) {
     flex-direction: ${({ showOnRight }) =>
       showOnRight ? "column-reverse" : "column"};
-    padding: 25px 50px;
-    min-height: 40rem;
-    align-items: center;
-    justify-content: center;
+    padding: 25px 8rem;
+    ${({ isCentered }) =>
+      isCentered
+        ? `margin: 1rem 0;
+       `
+        : "min-height: 40rem;"};
+  }
+
+  @media (max-width: 950px) {
+    padding: 25px 3rem;
   }
 `;
 
-const ButtonContainer = styled.div`
-  position: relative;
-  text-align: center;
-  display: flex;
-  min-height: 130px;
-  align-items: center;
-  justify-content: center;
-  padding: 0 50px;
-
-  @media (max-width: 1100px) {
-    padding: 25px 50px;
-  }
-`;
-
-const Sides = styled.div`
+const Sides = styled.div<{
+  isCentered?: boolean;
+}>`
   flex: 45%;
   display: flex;
   flex-flow: column;
-  gap: 1rem;
+  gap: 1.3rem;
 
-  &:first-of-type {
+  ${({ isCentered }) =>
+    isCentered
+      ? null
+      : `&:first-of-type {
     margin-right: 120px;
-  }
+  }`};
 
   @media (max-width: 1100px) {
     flex: unset;
@@ -107,69 +111,51 @@ const Sides = styled.div`
   }
 `;
 
-const SectionTitle = styled.p`
+const SectionTitle = styled.p<{ isCentered?: boolean }>`
   font-size: 2.8em;
   font-weight: 600;
   color: ${({ theme }) => theme.palette.text.light};
+  text-align: ${({ isCentered }) => (isCentered ? "center" : null)};
+
+  @media (max-width: 1100px) {
+    text-align: ${({ isCentered }) => (isCentered ? "left" : null)};
+  }
 `;
 
-const Paragraph = styled.p`
-  margin: 4px 0;
+const Paragraph = styled.p<{ isCentered?: boolean }>`
   font-weight: light;
   font-size: 1.3em;
   max-width: 65ch;
   color: ${({ theme }) => theme.palette.text.primary};
-`;
-
-const SectionBtn = styled(Button)<{ distanceButton?: boolean }>`
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin: 10px 0;
-  gap: 10px;
-  width: fit-content;
-  height: fit-content;
-  color: ${({ theme }) => theme.palette.text.extremelyLight};
-  background: linear-gradient(
-    153deg,
-    ${({ theme }) => theme.palette.secondary.light} 0%,
-    ${({ theme }) => theme.palette.secondary.main} 100%
-  );
-  background-size: 400% 400%;
-  transition: 0.2s ease-in-out;
-  margin-right: ${({ distanceButton }) => (distanceButton ? "30px" : "0px")};
-
-  &:hover {
-    background-position: 100% 50%;
-  }
-`;
-
-const SectionBtnSecondary = styled(Button)`
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin: 10px 0;
-  gap: 10px;
-  width: fit-content;
-  height: fit-content;
-  border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
-  color: ${({ theme }) => theme.palette.text.primary};
-
-  &:hover {
-    background: ${({ theme }) => theme.palette.primary.light};
-  }
+  text-align: ${({ isCentered }) => (isCentered ? "center" : null)};
 
   @media (max-width: 1100px) {
-    &:nth-of-type(even) {
-      margin: 10px -50px;
-    }
+    text-align: ${({ isCentered }) => (isCentered ? "left" : null)};
   }
 `;
 
-const Header = styled.p`
-  color: ${({ theme }) => theme.palette.text.primary};
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 2.2em;
-  font-weight: 500;
+const SectionBtn = styled(Button)<{ isSecondary?: boolean }>`
+  padding: 10px 20px;
+  border-radius: 5px;
+  gap: 10px;
+  width: fit-content;
+  height: fit-content;
+  transition: 0.2s ease-in-out;
+
+  ${({ isSecondary, theme }) =>
+    isSecondary
+      ? `
+    color: ${theme.palette.text.primary};
+
+    &:hover {
+      background: ${theme.palette.primary.light};
+    }`
+      : `color: ${theme.palette.text.extremelyLight};
+    background: ${theme.palette.secondary.light};
+
+    &:hover {
+      background: ${theme.palette.secondary.main};
+    }`};
 `;
 
 const SectionDivContainer = styled.div<{ showOnRight?: boolean }>`
@@ -190,18 +176,30 @@ const SectionDivContainer = styled.div<{ showOnRight?: boolean }>`
   }
 `;
 
-const DownloadContainer = styled(motion.div)`
-  margin: 3rem 0;
-`;
-
 const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-const SectionButtonContainer = styled.div`
+const SectionButtonContainer = styled.div<{ isCentered?: boolean }>`
   display: flex;
-  flex-flow: row;
+  flex-direction: row;
   flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 0.8rem;
+
+  ${({ isCentered }) =>
+    isCentered
+      ? `
+  align-items: center;
+  justify-content: center;`
+      : `
+  align-items: start;
+  justify-content: start;`}
+
+  @media (max-width: 1100px) {
+    align-items: unset;
+    justify-content: unset;
+  }
 `;
 
 const SectionDiv = styled.div<{
@@ -312,11 +310,10 @@ const FeaturesDiv = styled.div`
   justify-content: start;
   align-items: center;
   text-align: center;
-  column-gap: 2rem;
+  column-gap: 1.8rem;
   width: 45%;
 
   @media (max-width: 1568px) {
-    gap: 1.5rem;
     width: 100%;
   }
 `;
@@ -335,13 +332,60 @@ const FeaturesParagraph = styled.p`
   font-weight: light;
   font-size: 1.1rem;
   color: ${({ theme }) => theme.palette.text.primary};
+  max-width: 35ch;
 
   @media (max-width: 1100px) {
     font-size: 0.9rem;
+    max-width: unset;
   }
 `;
 
-const Icon = styled(SvgIcon)`
+const DesktopMacIcon = styled(DesktopMac)`
+  color: ${({ theme }) => theme.palette.text.primary};
+  font-size: 3rem;
+
+  @media (max-width: 1100px) {
+    font-size: 2rem;
+  }
+`;
+
+const AutorenewIcon = styled(Autorenew)`
+  color: ${({ theme }) => theme.palette.text.primary};
+  font-size: 3rem;
+
+  @media (max-width: 1100px) {
+    font-size: 2rem;
+  }
+`;
+
+const ViewInArIcon = styled(ViewInAr)`
+  color: ${({ theme }) => theme.palette.text.primary};
+  font-size: 3rem;
+
+  @media (max-width: 1100px) {
+    font-size: 2rem;
+  }
+`;
+
+const ViewCompactIcon = styled(ViewCompact)`
+  color: ${({ theme }) => theme.palette.text.primary};
+  font-size: 3rem;
+
+  @media (max-width: 1100px) {
+    font-size: 2rem;
+  }
+`;
+
+const AppsIcon = styled(Apps)`
+  color: ${({ theme }) => theme.palette.text.primary};
+  font-size: 3rem;
+
+  @media (max-width: 1100px) {
+    font-size: 2rem;
+  }
+`;
+
+const ScreenshotMonitorIcon = styled(ScreenshotMonitor)`
   color: ${({ theme }) => theme.palette.text.primary};
   font-size: 3rem;
 
@@ -617,9 +661,7 @@ const Home: NextPage = () => {
               <SectionDiv showOnRight>
                 <FeaturesDivContainer>
                   <FeaturesDiv>
-                    <Icon>
-                      <DesktopMacIcon />
-                    </Icon>
+                    <DesktopMacIcon />
                     <FeaturesTextContainer>
                       <FeaturesTitle>Modern desktop enviroment</FeaturesTitle>
                       <FeaturesParagraph>
@@ -629,9 +671,7 @@ const Home: NextPage = () => {
                     </FeaturesTextContainer>
                   </FeaturesDiv>
                   <FeaturesDiv>
-                    <Icon>
-                      <AutorenewIcon />
-                    </Icon>
+                    <AutorenewIcon />
                     <FeaturesTextContainer>
                       <FeaturesTitle>Rolling release</FeaturesTitle>
                       <FeaturesParagraph>
@@ -640,9 +680,7 @@ const Home: NextPage = () => {
                     </FeaturesTextContainer>
                   </FeaturesDiv>
                   <FeaturesDiv>
-                    <Icon>
-                      <ViewInArIcon />
-                    </Icon>
+                    <ViewInArIcon />
                     <FeaturesTextContainer>
                       <FeaturesTitle>DAP Packages</FeaturesTitle>
                       <FeaturesParagraph>
@@ -652,9 +690,7 @@ const Home: NextPage = () => {
                     </FeaturesTextContainer>
                   </FeaturesDiv>
                   <FeaturesDiv>
-                    <Icon>
-                      <ViewCompactIcon />
-                    </Icon>
+                    <ViewCompactIcon />
                     <FeaturesTextContainer>
                       <FeaturesTitle>Built-in containers</FeaturesTitle>
                       <FeaturesParagraph>
@@ -664,9 +700,7 @@ const Home: NextPage = () => {
                     </FeaturesTextContainer>
                   </FeaturesDiv>
                   <FeaturesDiv>
-                    <Icon>
-                      <AppsIcon />
-                    </Icon>
+                    <AppsIcon />
                     <FeaturesTextContainer>
                       <FeaturesTitle>Native applications</FeaturesTitle>
                       <FeaturesParagraph>
@@ -676,9 +710,7 @@ const Home: NextPage = () => {
                     </FeaturesTextContainer>
                   </FeaturesDiv>
                   <FeaturesDiv>
-                    <Icon>
-                      <ScreenshotMonitorIcon />
-                    </Icon>
+                    <ScreenshotMonitorIcon />
                     <FeaturesTextContainer>
                       <FeaturesTitle>Custom window manager</FeaturesTitle>
                       <FeaturesParagraph>
@@ -754,7 +786,7 @@ const Home: NextPage = () => {
             </Paragraph>
             <SectionButtonContainer>
               <StyledLink href="/github" target="_blank">
-                <SectionBtn distanceButton>
+                <SectionBtn>
                   <GitHubIcon />
                   GITHUB
                 </SectionBtn>
@@ -763,10 +795,10 @@ const Home: NextPage = () => {
                 href="https://openinventionnetwork.com/community-alphabetical/#:~:text=d42%20Secure%20Systems-,dahliaOS,-Daimler"
                 target="_blank"
               >
-                <SectionBtnSecondary>
+                <SectionBtn isSecondary>
                   <CorporateFareIcon />
                   OPEN INVENTION NETWORK
-                </SectionBtnSecondary>
+                </SectionBtn>
               </StyledLink>
             </SectionButtonContainer>
           </Sides>
@@ -820,26 +852,24 @@ const Home: NextPage = () => {
             </StyledLink>
           </Sides>
         </Container>
-        <DownloadContainer
+        {/* Download */}
+        <Container
           id="download"
           variants={downloadVariant}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
+          isCentered
         >
-          <Header>Download</Header>
-          <Download />
-          <ButtonContainer>
-            <StyledLink
-              href="https://github.com/dahliaOS/releases/releases"
-              target="_blank"
-            >
-              <SectionBtn>
-                <HistoryIcon /> Looking for an older release?
-              </SectionBtn>
-            </StyledLink>
-          </ButtonContainer>
-        </DownloadContainer>
+          <Sides isCentered>
+            <SectionTitle isCentered>Download</SectionTitle>
+            <Paragraph isCentered>
+              Below in the download component are all dahliaOS downloads, we
+              offer both Legacy and EFI images.
+            </Paragraph>
+          </Sides>
+          <DownloadComponent />
+        </Container>
       </Wrapper>
       <Footer />
     </React.Fragment>

@@ -1,4 +1,4 @@
-import { BottomNavigation, Link, MenuItem, Select } from "@mui/material";
+import { BottomNavigation, MenuItem, Select } from "@mui/material";
 import {
   WbSunny,
   WbCloudy,
@@ -8,6 +8,7 @@ import {
   Handshake,
   PeopleAlt,
   QuestionAnswer,
+  PermMedia,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
@@ -16,6 +17,7 @@ import { VercelLogo } from "./Icons";
 import Image from "next/image";
 import darkLogotype from "../public/images/logos/darkLogotype.webp";
 import lightLogotype from "../public/images/logos/lightLogotype.webp";
+import Link from "next/link";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
   position: relative;
@@ -77,7 +79,7 @@ const FooterItemLink = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.palette.text.secondary};
+    color: ${({ theme }) => theme.palette.text.light};
   }
 
   @media (max-width: 800px) {
@@ -93,13 +95,6 @@ const FooterLogo = styled(Image)`
   object-fit: contain;
   width: 200px;
   height: auto;
-`;
-
-const VercelDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
 `;
 
 const StyledSelect = styled(Select)`
@@ -130,19 +125,24 @@ const ComputerIcon = styled(Computer)`
   margin-right: 8px;
 `;
 
-const VercelText = styled.p`
-  color: ${({ theme }) => theme.palette.text.primary};
-  font-size: 1rem;
-  font-weight: 450;
-  margin-right: 10px;
-
-  @media (max-width: 800px) {
-    font-size: 0.8rem;
-  }
+const IconSpan = styled.span`
+  margin-left: 0.5rem;
+  vertical-align: middle;
 `;
 
 const VercelLink = styled(Link)`
   text-decoration: none;
+  color: ${({ theme }) => theme.palette.text.primary};
+  font-size: 1rem;
+  font-weight: 450;
+
+  &:hover {
+    color: ${({ theme }) => theme.palette.text.light};
+  }
+
+  @media (max-width: 800px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const BottomContainer = styled.div`
@@ -162,23 +162,33 @@ const BottomContainer = styled.div`
     margin-top: 4rem;
   }
 `;
+
 const PeopleAltIcon = styled(PeopleAlt)`
   vertical-align: middle;
   margin-right: 8px;
 `;
+
 const DeveloperBoardIcon = styled(DeveloperBoard)`
   vertical-align: middle;
   margin-right: 8px;
 `;
+
 const ArticleIcon = styled(Article)`
   vertical-align: middle;
   margin-right: 8px;
 `;
+
 const HandshakeIcon = styled(Handshake)`
   vertical-align: middle;
   margin-right: 8px;
 `;
+
 const QuestionAnswerIcon = styled(QuestionAnswer)`
+  vertical-align: middle;
+  margin-right: 8px;
+`;
+
+const PermMediaIcon = styled(PermMedia)`
   vertical-align: middle;
   margin-right: 8px;
 `;
@@ -193,9 +203,9 @@ const Footer = () => {
     setLocalStorageTheme(theme);
     localStorage.setItem("theme", theme);
 
-    /* This dispatches a new storage event so we can update the theme, its a bit
-     over engineered, but it works (we need this because the storage event
-     only picks it up within the browser not in context) */
+    /* This dispatches a new storage event so we can update the theme, it's a bit
+     over engineered but it works. (We need this because the storage event
+     only picks it up within the browser and not in context) */
     window.dispatchEvent(new Event("storage"));
   };
 
@@ -365,6 +375,38 @@ const Footer = () => {
         </FooterCategory>
         <FooterCategory>
           <FooterHeader>
+            <PermMediaIcon />
+            Resources
+          </FooterHeader>
+          <FooterList>
+            <FooterItem>
+              <FooterItemLink
+                href="https://github.com/dahliaos/brand"
+                target="_blank"
+              >
+                Brand
+              </FooterItemLink>
+            </FooterItem>
+            <FooterItem>
+              <FooterItemLink
+                href="https://github.com/dahliaos/icons"
+                target="_blank"
+              >
+                Icons
+              </FooterItemLink>
+            </FooterItem>
+            <FooterItem>
+              <FooterItemLink
+                href="https://github.com/dahliaos/press-kit"
+                target="_blank"
+              >
+                Press kit
+              </FooterItemLink>
+            </FooterItem>
+          </FooterList>
+        </FooterCategory>
+        <FooterCategory>
+          <FooterHeader>
             <QuestionAnswerIcon />
             Contact
           </FooterHeader>
@@ -397,15 +439,19 @@ const Footer = () => {
           </StyledMenuItem>
         </StyledSelect>
         <FooterLogo
+          priority
           quality={100}
           alt="dahliaOS logo"
           src={theme.palette.mode === "dark" ? darkLogotype : lightLogotype}
         />
-        <VercelLink href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss">
-          <VercelDiv>
-            <VercelText>Powered By</VercelText>
-            <VercelLogo fill={theme.palette.text.primary} />
-          </VercelDiv>
+        <VercelLink
+          href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss"
+          target="_blank"
+        >
+          Powered By
+          <IconSpan>
+            <VercelLogo />
+          </IconSpan>
         </VercelLink>
       </BottomContainer>
     </StyledBottomNavigation>

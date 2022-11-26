@@ -28,6 +28,19 @@ const GlobalStyles = (theme: Theme) => css`
     overflow-x: hidden;
   }
 
+  @supports (scrollbar-gutter: stable) {
+    html {
+      overflow-y: auto;
+      scrollbar-gutter: stable;
+    }
+  }
+
+  @supports (overflow-y: overlay) {
+    html {
+      overflow-y: overlay;
+    }
+  }
+
   body {
     width: 100vw;
     overflow-x: hidden;

@@ -2,86 +2,65 @@ import styled from "@emotion/styled";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import DownloadComponent from "../components/Download";
-import { Button, Link } from "@mui/material";
 import Head from "next/head";
 import { useGithubReleases } from "../utils/hooks/useGithubReleases";
-import { History as HistoryIcon } from "@mui/icons-material";
+import { Download as DownloadIcon } from "@mui/icons-material";
 
 const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   min-height: 100vh;
-  padding-top: 150px;
+  padding: 5rem;
   background: ${({ theme }) =>
     theme.palette.mode === "dark"
       ? "url('/images/background/darkBackground.svg')"
       : "url('/images/background/lightBackground.svg')"};
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
   background-size: cover;
+  background-attachment: fixed;
+
+  @media (max-width: 1250px) {
+    padding: 8rem 3rem;
+  }
 `;
 
 const Header = styled.h1`
-  font-size: 2.2em;
+  color: ${({ theme }) => theme.palette.text.light};
+  font-size: 2.5em;
   font-weight: 500;
+  text-align: center;
+
+  @media (max-width: 1250px) {
+    font-size: 2rem;
+  }
+`;
+
+const Paragraph = styled.p`
   color: ${({ theme }) => theme.palette.text.primary};
-  margin-bottom: 15px;
-`;
+  max-width: 80ch;
+  font-size: 1.4rem;
+  text-align: center;
 
-const ButtonContainer = styled.div`
-  position: relative;
-  display: flex;
-  min-height: 130px;
-  align-items: center;
-  justify-content: center;
-  padding: 0 50px;
-
-  @media (max-width: 1025px) {
-    padding: 25px 50px;
+  @media (max-width: 1250px) {
+    font-size: 1.2rem;
   }
-`;
-
-const SectionBtn = styled(Button)`
-  padding: 7px 20px;
-  border-radius: 5px;
-  margin: 10px 0;
-  color: ${({ theme }) => theme.palette.text.extremelyLight};
-  gap: 10px;
-
-  &:first-of-type {
-    background: linear-gradient(
-      153deg,
-      ${({ theme }) => theme.palette.secondary.light} 0%,
-      ${({ theme }) => theme.palette.secondary.main} 100%
-    );
-    background-size: 400% 400%;
-    transition: 0.2s ease-in-out;
-    margin-right: 15;
-  }
-
-  &:nth-of-type(even) {
-    margin-left: 10px;
-    border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
-    border-radius: 5px;
-  }
-
-  &:hover {
-    background-position: 100% 50%;
-  }
-`;
-
-const SubHeader = styled.h2<{ isError?: boolean }>`
-  color: ${({ theme }) => theme.palette.text.primary};
-  font-size: 1.4em;
-  font-weight: 400;
-  margin-bottom: 25px;
 `;
 
 const Container = styled.div`
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
+const StyledDownloadIcon = styled(DownloadIcon)`
+  vertical-align: middle;
+  margin-right: 8px;
 `;
 
 const Download = () => {
@@ -104,23 +83,13 @@ const Download = () => {
           <Wrapper>
             <Container>
               <Header>Download</Header>
-              <SubHeader>
-                Total downloads: An error occurred whilst fetching GitHub&apos;
+              <Paragraph>
+                <StyledDownloadIcon />
+                Total downloads: An error occurred whilst fetching GitHub&apos;s
                 API!
-              </SubHeader>
+              </Paragraph>
+              <DownloadComponent />
             </Container>
-            <DownloadComponent />
-            <ButtonContainer>
-              <StyledLink
-                href="https://github.com/dahliaOS/releases/releases"
-                target="_blank"
-              >
-                <SectionBtn>
-                  <HistoryIcon />
-                  Looking for an older release?
-                </SectionBtn>
-              </StyledLink>
-            </ButtonContainer>
           </Wrapper>
           <Footer />
         </>
@@ -141,7 +110,8 @@ const Download = () => {
           <Wrapper>
             <Container>
               <Header>Download</Header>
-              <SubHeader>
+              <Paragraph>
+                <StyledDownloadIcon />
                 Total downloads:{" "}
                 {releases
                   ?.map(allReleases => {
@@ -153,20 +123,9 @@ const Download = () => {
                   .reduce<number>((accumulator, current) => {
                     return accumulator + current;
                   }, 0)}
-              </SubHeader>
+              </Paragraph>
+              <DownloadComponent />
             </Container>
-            <DownloadComponent />
-            <ButtonContainer>
-              <StyledLink
-                href="https://github.com/dahliaOS/releases/releases"
-                target="_blank"
-              >
-                <SectionBtn>
-                  <HistoryIcon />
-                  Looking for an older release?
-                </SectionBtn>
-              </StyledLink>
-            </ButtonContainer>
           </Wrapper>
           <Footer />
         </>
@@ -185,20 +144,12 @@ const Download = () => {
           <Wrapper>
             <Container>
               <Header>Download</Header>
-              <SubHeader>Total downloads: Loading...</SubHeader>
+              <Paragraph>
+                <StyledDownloadIcon />
+                Total downloads: Loading...
+              </Paragraph>
+              <DownloadComponent />
             </Container>
-            <DownloadComponent />
-            <ButtonContainer>
-              <StyledLink
-                href="https://github.com/dahliaOS/releases/releases"
-                target="_blank"
-              >
-                <SectionBtn>
-                  <HistoryIcon />
-                  Looking for an older release?
-                </SectionBtn>
-              </StyledLink>
-            </ButtonContainer>
           </Wrapper>
           <Footer />
         </>

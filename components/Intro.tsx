@@ -85,7 +85,7 @@ const Sides = styled.div`
   flex: 45%;
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  row-gap: 1.3rem;
 
   &:first-of-type {
     margin-right: 50px;
@@ -189,43 +189,28 @@ const Paragraph = styled.p`
   }
 `;
 
-const SectionBtn = styled(Button)`
+const StyledButton = styled(Button)<{ isSecondary?: boolean }>`
   padding: 10px 20px;
   border-radius: 5px;
-  margin: 10px 0;
   gap: 10px;
   width: fit-content;
   height: fit-content;
+  transition: 0.2s ease-in-out;
 
-  &:first-of-type {
-    color: ${({ theme }) => theme.palette.text.extremelyLight};
-    background: linear-gradient(
-      153deg,
-      ${({ theme }) => theme.palette.secondary.light} 0%,
-      ${({ theme }) => theme.palette.secondary.main} 100%
-    );
-    background-size: 400% 400%;
-    transition: 0.2s ease-in-out;
-    margin-right: 30px;
+  ${({ isSecondary, theme }) =>
+    isSecondary
+      ? `
+    color: ${theme.palette.text.primary};
 
     &:hover {
-      background-position: 100% 50%;
-    }
-  }
-
-  &:nth-of-type(even) {
-    border: ${({ theme }) => theme.palette.text.primary} solid 1.5px;
-    color: ${({ theme }) => theme.palette.text.primary};
+      background: ${theme.palette.primary.light};
+    }`
+      : `color: ${theme.palette.text.extremelyLight};
+    background: ${theme.palette.secondary.light};
 
     &:hover {
-      background: ${({ theme }) => theme.palette.primary.light};
-      border: ${({ theme }) => theme.palette.primary.light} solid 1.5px;
-    }
-
-    @media (max-width: 1535px) {
-      margin: 10px 0;
-    }
-  }
+      background: ${theme.palette.secondary.main};
+    }`};
 `;
 
 const Wrapper = styled.div`
@@ -401,6 +386,15 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 0.8rem;
+  align-items: start;
+  justify-content: start;
+
+  @media (max-width: 1100px) {
+    align-items: unset;
+    justify-content: unset;
+  }
 `;
 
 const MockupImage = styled(Image)`
@@ -453,14 +447,14 @@ const Intro = () => {
                   standard for the desktop platform.
                 </Paragraph>
                 <ButtonContainer>
-                  <SectionBtn href="#download">
+                  <StyledButton href="#download">
                     <GetApp />
                     DOWNLOAD
-                  </SectionBtn>
-                  <SectionBtn href="#start">
+                  </StyledButton>
+                  <StyledButton href="#start" isSecondary>
                     <LibraryBooksIcon />
                     ABOUT DAHLIAOS
-                  </SectionBtn>
+                  </StyledButton>
                 </ButtonContainer>
               </Sides>
             </IntroContainer>
@@ -486,14 +480,14 @@ const Intro = () => {
                   standard for the desktop platform.
                 </Paragraph>
                 <ButtonContainer>
-                  <SectionBtn href="#download">
+                  <StyledButton href="#download">
                     <GetApp />
                     DOWNLOAD
-                  </SectionBtn>
-                  <SectionBtn href="#start">
+                  </StyledButton>
+                  <StyledButton href="#start" isSecondary>
                     <LibraryBooksIcon />
                     ABOUT DAHLIAOS
-                  </SectionBtn>
+                  </StyledButton>
                 </ButtonContainer>
               </Sides>
             </IntroContainer>

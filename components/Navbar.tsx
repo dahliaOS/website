@@ -5,7 +5,6 @@ import {
   Drawer,
   IconButton,
   SvgIcon,
-  Link as MUILink,
   Menu,
   MenuItem,
   Toolbar,
@@ -37,6 +36,7 @@ import { useMeetsScrollPos } from "../utils/hooks/useMeetsScrollPos";
 import Image from "next/image";
 import darkLogotype from "../public/images/logos/darkLogotype.webp";
 import lightLogotype from "../public/images/logos/lightLogotype.webp";
+import Link from "next/link";
 
 const WrapperKeyframes = keyframes`
   0% {
@@ -54,7 +54,7 @@ const Wrapper = styled.div``;
 const Container = styled.div`
   background: ${({ theme }) => theme.palette.primary.light};
   width: 15rem;
-  height: 100%;
+  height: 999%;
 `;
 
 const DrawerLogoContainer = styled.div`
@@ -72,7 +72,7 @@ const DrawerLogo = styled(Image)`
   object-fit: contain;
 `;
 
-const Link = styled(MUILink)`
+const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -230,58 +230,61 @@ const Navbar = ({
           />
         </DrawerLogoContainer>
         <Container>
-          <Link href="/download">
+          <StyledLink href="/download">
             <GetApp />
             Download
-          </Link>
-          <Link href="/donate">
+          </StyledLink>
+          <StyledLink href="/donate">
             <VolunteerActivismIcon />
             Donate
-          </Link>
-          <Link href="https://web.dahliaOS.io" target="_blank">
+          </StyledLink>
+          <StyledLink href="https://web.dahliaOS.io" target="_blank">
             <ScienceIcon />
             Demo
-          </Link>
-          <Link href="https://docs.dahliaos.io" target="_blank">
+          </StyledLink>
+          <StyledLink href="https://docs.dahliaos.io" target="_blank">
             <ArticleIcon />
             Documentation
-          </Link>
+          </StyledLink>
           <Divider />
           <Category>Find us on</Category>
-          <Link href="/discord" target="_blank">
+          <StyledLink href="/discord" target="_blank">
             <SvgIcon component={DiscordLogo} />
             Discord
-          </Link>
-          <Link href="/github" target="_blank">
+          </StyledLink>
+          <StyledLink href="/github" target="_blank">
             <GitHubIcon />
             GitHub
-          </Link>
-          <Link href="/reddit" target="_blank">
+          </StyledLink>
+          <StyledLink href="/reddit" target="_blank">
             <RedditIcon />
             Reddit
-          </Link>
-          <Link href="/telegram" target="_blank">
+          </StyledLink>
+          <StyledLink href="/telegram" target="_blank">
             <TelegramIcon />
             Telegram
-          </Link>
-          <Link href="/facebook" target="_blank">
+          </StyledLink>
+          <StyledLink href="/facebook" target="_blank">
             <FacebookIcon />
             Facebook
-          </Link>
-          <Link href="/instagram" target="_blank">
+          </StyledLink>
+          <StyledLink href="/instagram" target="_blank">
             <InstagramIcon />
             Instagram
-          </Link>
-          <Link href="/twitter" target="_blank">
+          </StyledLink>
+          <StyledLink href="/twitter" target="_blank">
             <TwitterIcon />
             Twitter
-          </Link>
+          </StyledLink>
           <Divider />
           <Category>Team</Category>
-          <Link href="https://github.com/orgs/dahliaos/people" target="_blank">
+          <StyledLink
+            href="https://github.com/orgs/dahliaos/people"
+            target="_blank"
+          >
             <GroupIcon />
             Developers
-          </Link>
+          </StyledLink>
         </Container>
       </StyledDrawer>
       <StyledAppBar

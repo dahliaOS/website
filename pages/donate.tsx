@@ -1,4 +1,4 @@
-import { Button, SvgIcon, Link } from "@mui/material";
+import { Button, SvgIcon } from "@mui/material";
 import styled from "@emotion/styled";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -11,10 +11,15 @@ import {
 } from "@mui/icons-material";
 import Head from "next/head";
 import { OpenCollectiveLogo } from "../components/Icons";
+import Link from "next/link";
 
 const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   min-height: 100vh;
-  padding-top: 150px;
+  padding: 5rem;
   background: ${({ theme }) =>
     theme.palette.mode === "dark"
       ? "url('/images/background/darkBackground.svg')"
@@ -23,60 +28,67 @@ const Wrapper = styled.div`
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  @media (max-width: 1025px) {
-    padding: 150px 20px;
+
+  @media (max-width: 1250px) {
+    padding: 8rem 3rem;
   }
 `;
 
 const Container = styled.div`
-  width: 90%;
   display: flex;
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: left;
-  font-size: 1.2em;
+  max-width: 800px;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
+  width: 100%;
 `;
 
 const Header = styled.h1`
   color: ${({ theme }) => theme.palette.text.light};
-  font-size: 2.2em;
+  font-size: 2.5em;
   font-weight: 500;
   text-align: center;
+
+  @media (max-width: 1250px) {
+    font-size: 2rem;
+  }
 `;
 
 const SubHeader = styled.h2`
   color: ${({ theme }) => theme.palette.text.light};
-  font-size: 1.4em;
+  font-size: 1.9em;
   font-weight: 400;
   text-align: left;
+
+  @media (max-width: 1250px) {
+    font-size: 1.4em;
+  }
 `;
 
 const Paragraph = styled.p<{ centerText?: boolean }>`
   color: ${({ theme }) => theme.palette.text.primary};
   max-width: 80ch;
-  margin: 0 auto;
+  font-size: ${({ centerText }) => (centerText ? "1.4rem" : "1.2rem")};
   text-align: ${({ centerText }) => (centerText ? "center" : "left")};
+
+  @media (max-width: 1250px) {
+    font-size: ${({ centerText }) => (centerText ? "1.2rem" : "1.1rem")};
+  }
 `;
 
 const StyledButton = styled(Button)`
   padding: 10px 20px;
   border-radius: 5px;
-  margin: 10px 0;
-  color: ${({ theme }) => theme.palette.text.extremelyLight};
   gap: 10px;
-
-  background: linear-gradient(
-    153deg,
-    ${({ theme }) => theme.palette.secondary.light} 0%,
-    ${({ theme }) => theme.palette.secondary.main} 100%
-  );
-  background-size: 400% 400%;
+  width: fit-content;
+  height: fit-content;
   transition: 0.2s ease-in-out;
+  color: ${({ theme }) => theme.palette.text.extremelyLight};
+  background: ${({ theme }) => theme.palette.secondary.light};
 
   &:hover {
-    background-position: 100% 50%;
+    background: ${({ theme }) => theme.palette.secondary.main};
   }
 `;
 
@@ -86,18 +98,17 @@ const SupportItem = styled.div`
   justify-content: center;
   border-radius: 13px;
   padding: 10px 15px;
-  height: 50px;
+  height: 45px;
   min-width: 120px;
   text-align: center;
   gap: 10px;
-  color: ${({ theme }) => theme.palette.text.extremelyLight};
-  background-color: ${({ theme }) =>
-    theme.palette.mode === "dark" ? "#262626" : "#B2B2B2"};
+  color: ${({ theme }) => theme.palette.text.light};
+  background-color: ${({ theme }) => theme.palette.primary.light};
 `;
 
 const ItemParagraph = styled.p`
-  color: ${({ theme }) => theme.palette.text.extremelyLight};
-  font-size: 0.8em;
+  color: ${({ theme }) => theme.palette.text.light};
+  font-size: 0.9rem;
   font-weight: 400;
 `;
 
@@ -113,10 +124,12 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-const DownloadLink = styled.div`
+const DonateLink = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
+  justify-content: start;
+  align-items: start;
 `;
 
 const Donate = () => {
@@ -162,7 +175,7 @@ const Donate = () => {
               </ItemParagraph>
             </SupportItem>
           </ItemsContainer>
-          <DownloadLink>
+          <DonateLink>
             <SubHeader>Where can I donate?</SubHeader>
             <Paragraph>
               Currently, donations can be sent through Open Collective, other
@@ -177,7 +190,7 @@ const Donate = () => {
                 OPEN COLLECTIVE
               </StyledButton>
             </StyledLink>
-          </DownloadLink>
+          </DonateLink>
         </Container>
       </Wrapper>
       <Footer />
