@@ -20,7 +20,6 @@
     "@mui/styles": "^5.10.15",
     "@next/font": "^13.0.5",
     "@reach/skip-nav": "^0.18.0",
-    "@vercel/og": "^0.0.21",
     "framer-motion": "^7.6.12",
     "next": "13.0.5",
     "react": "18.2.0",

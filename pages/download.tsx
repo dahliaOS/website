@@ -73,19 +73,6 @@ const Download = () => {
         <meta property="og:title" content="dahliaOS – Download" key="title" />
         <meta property="og:description" content="Download dahliaOS!"></meta>
         <meta property="description" content="Download dahliaOS!"></meta>
-        <meta
-          property="og:image"
-          content={`https://dahliaos.io/api/og?count=${releases
-            ?.map(allReleases => {
-              return allReleases.assets[0].name.includes("efi")
-                ? allReleases.assets[0].download_count +
-                    allReleases.assets[1].download_count
-                : allReleases.assets[0].download_count;
-            })
-            .reduce<number>((accumulator, current) => {
-              return accumulator + current;
-            }, 0)}`}
-        />
       </Head>
       <Navbar />
       <Wrapper>
