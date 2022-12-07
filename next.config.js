@@ -63,6 +63,11 @@ const nextConfig = {
         destination: "https://blog.dahliaos.io",
         permanent: true,
       },
+      {
+        source: "/download-count",
+        destination: "https://dahliaos.io/api/og_download_count",
+        permanent: true,
+      },
     ];
   },
 };
