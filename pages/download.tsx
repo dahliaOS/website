@@ -71,8 +71,9 @@ const Download = () => {
       <Head>
         <title>dahliaOS – Download</title>
         <meta property="og:title" content="dahliaOS – Download" key="title" />
-        <meta property="og:description" content="Download dahliaOS!"></meta>
-        <meta property="description" content="Download dahliaOS!"></meta>
+        <meta property="og:description" content="Download dahliaOS!" />
+        <meta property="description" content="Download dahliaOS!" />
+        <link rel="canonical" href="https://dahliaos.io/download" />
       </Head>
       <Navbar />
       <Wrapper>

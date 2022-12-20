@@ -138,8 +138,9 @@ const Donate = () => {
       <Head>
         <title>dahliaOS – Donate</title>
         <meta property="og:title" content="dahliaOS – Donate" key="title" />
-        <meta property="og:description" content="Donate to dahliaOS."></meta>
-        <meta property="description" content="Donate to dahliaOS."></meta>
+        <meta property="og:description" content="Donate to dahliaOS." />
+        <meta property="description" content="Donate to dahliaOS." />
+        <link rel="canonical" href="https://dahliaos.io/donate" />
       </Head>
       <Navbar />
       <Wrapper>
