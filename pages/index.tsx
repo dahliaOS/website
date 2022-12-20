@@ -436,6 +436,7 @@ const Home: NextPage = () => {
       <Head>
         <title>dahliaOS</title>
         <meta property="og:title" content="dahliaOS" key="title" />
+        <link rel="canonical" href="https://dahliaos.io" />
       </Head>
       <Wrapper tabIndex={0}>
         <Navbar rootPageHasAnimation />
