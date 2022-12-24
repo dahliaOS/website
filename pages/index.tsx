@@ -750,19 +750,19 @@ const Home: NextPage = () => {
             </SectionDivContainer>
           </Sides>
           <Sides>
-            <SectionTitle>A wide range of supported devices</SectionTitle>
+            <SectionTitle>A wide range of supported hardware</SectionTitle>
             <Paragraph>
               dahliaOS provides a fast and stable experience on nearly every
               computer, from an old desktop tower to the latest generation of
               mobile notebooks.
             </Paragraph>
             <StyledLink
-              href="https://docs.dahliaos.io/hardware/supported-devices"
+              href="https://docs.dahliaos.io/hardware/supported-hardware"
               target="_blank"
             >
               <SectionBtn>
                 <DevicesIcon />
-                SUPPORTED DEVICES
+                SUPPORTED HARDWARE
               </SectionBtn>
             </StyledLink>
           </Sides>
