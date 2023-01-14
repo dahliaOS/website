@@ -178,6 +178,7 @@ const SectionDivContainer = styled.div<{ showOnRight?: boolean }>`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 const SectionButtonContainer = styled.div<{ isCentered?: boolean }>`
@@ -399,6 +400,10 @@ const FeaturesTextContainer = styled.div`
   flex-direction: column;
   text-align: start;
   gap: 0.4rem;
+`;
+
+const LinkSpan = styled.span`
+  text-decoration: underline;
 `;
 
 const variantRight: Variants = {
@@ -779,11 +784,20 @@ const Home: NextPage = () => {
             <SectionTitle>Free open source software</SectionTitle>
             <Paragraph>
               dahliaOS is and always will be open sourced and 100% free. All of
-              our code and even some design work is hosted on GitHub. We believe
-              transparency is important. We&apos;re also proud to say that since
-              August of 2020 we&apos;re members of the Open Invention Network,
-              the world&apos;s largest patent non-aggression community and free
-              defensive patent pool.
+              our code and even some design work is hosted on GitHub licensed
+              under the{" "}
+              <LinkSpan>
+                <StyledLink
+                  href={"https://www.apache.org/licenses/LICENSE-2.0"}
+                  target="_blank"
+                >
+                  Apache 2.0 license
+                </StyledLink>
+              </LinkSpan>
+              . We believe transparency is important. We&apos;re also proud to
+              say that since August of 2020 we&apos;re members of the Open
+              Invention Network, the world&apos;s largest patent non-aggression
+              community and free defensive patent pool.
             </Paragraph>
             <SectionButtonContainer>
               <StyledLink href="/github" target="_blank">
