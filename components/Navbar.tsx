@@ -1,42 +1,44 @@
-import { useRef } from "react";
+import "@reach/skip-nav/styles.css";
+
 import {
   AppBar,
   Divider,
   Drawer,
   IconButton,
-  SvgIcon,
   Menu,
   MenuItem,
+  SvgIcon,
   Toolbar,
   useMediaQuery,
 } from "@mui/material";
 import {
-  Menu as MenuIcon,
-  MoreVert,
-  GetApp,
-  VolunteerActivism as VolunteerActivismIcon,
-  Science as ScienceIcon,
   Article as ArticleIcon,
+  Facebook as FacebookIcon,
+  GetApp,
   GitHub as GitHubIcon,
   Groups as GroupIcon,
+  Instagram as InstagramIcon,
+  Menu as MenuIcon,
+  MoreVert,
   Reddit as RedditIcon,
-  Facebook as FacebookIcon,
+  Science as ScienceIcon,
   Telegram as TelegramIcon,
   Twitter as TwitterIcon,
-  Instagram as InstagramIcon,
+  VolunteerActivism as VolunteerActivismIcon,
 } from "@mui/icons-material";
-import { useCallback, useState } from "react";
-import styled from "@emotion/styled";
-import { keyframes, css } from "@emotion/react";
-import { useTheme } from "@emotion/react";
 import { SkipNavContent, SkipNavLink } from "@reach/skip-nav";
-import "@reach/skip-nav/styles.css";
+import { css, keyframes } from "@emotion/react";
+import { useCallback, useState } from "react";
+
 import { DiscordLogo } from "./Icons";
-import { useMeetsScrollPos } from "../utils/hooks/useMeetsScrollPos";
 import Image from "next/image";
+import Link from "next/link";
 import darkLogotype from "../public/images/logos/darkLogotype.webp";
 import lightLogotype from "../public/images/logos/lightLogotype.webp";
-import Link from "next/link";
+import styled from "@emotion/styled";
+import { useMeetsScrollPos } from "../utils/hooks/useMeetsScrollPos";
+import { useRef } from "react";
+import { useTheme } from "@emotion/react";
 
 const WrapperKeyframes = keyframes`
   0% {
@@ -55,6 +57,7 @@ const Container = styled.div`
   background: ${({ theme }) => theme.palette.primary.light};
   width: 15rem;
   height: 999%;
+  font-family: "Inter", sans-serif;
 `;
 
 const DrawerLogoContainer = styled.div`
@@ -71,7 +74,10 @@ const DrawerLogo = styled(Image)`
   width: 200px;
   object-fit: contain;
 `;
-
+const ButtonDropDownMenu = styled(IconButton)`
+  width: 2.4981rem;
+  height: 2.4981rem;
+`;
 const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
@@ -178,6 +184,7 @@ const AppBarLogo = styled(Image)`
 
 const DesktopNav = styled.div`
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   flex-grow: 1;
 
@@ -330,14 +337,14 @@ const Navbar = ({
             <AppBarLink href="https://docs.dahliaos.io" target="_blank">
               <ArticleIcon /> Documentation
             </AppBarLink>
-            <IconButton
+            <ButtonDropDownMenu
               ref={ref}
               aria-label="nav-more"
               aria-haspopup="true"
               onClick={() => setToggleMoreIcon(true)}
             >
               <MoreVert style={{ color: theme.palette.text.light }} />
-            </IconButton>
+            </ButtonDropDownMenu>
             <Menu
               open={toggleMoreIcon}
               onClose={() => setToggleMoreIcon(false)}
