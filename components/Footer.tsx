@@ -198,12 +198,10 @@ const PermMediaIcon = styled(PermMedia)`
 type ThemeTypes = "dark" | "light" | "system";
 
 const Footer = () => {
-  const [localStorageTheme, setLocalStorageTheme] = useState<ThemeTypes>();
   const theme = useTheme();
-  const preferredTheme = usePreferredTheme() || localStorageTheme;
+  const preferredTheme = usePreferredTheme();
 
   const onThemeChange = (theme: ThemeTypes) => {
-    setLocalStorageTheme(theme);
     localStorage.setItem("theme", theme);
 
     /* This dispatches a new storage event so we can update the theme, it's a bit
@@ -211,12 +209,6 @@ const Footer = () => {
      only picks it up within the browser and not in context) */
     window.dispatchEvent(new Event("storage"));
   };
-
-  useEffect(() => {
-    setLocalStorageTheme(
-      (localStorage.getItem("theme") as ThemeTypes) ?? "system",
-    );
-  }, []);
 
   return (
     <StyledBottomNavigation>
