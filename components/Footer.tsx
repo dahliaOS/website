@@ -200,7 +200,7 @@ type ThemeTypes = "dark" | "light" | "system";
 const Footer = () => {
   const [localStorageTheme, setLocalStorageTheme] = useState<ThemeTypes>();
   const theme = useTheme();
-  const preferredTheme = usePreferredTheme();
+  const preferredTheme = usePreferredTheme() || localStorageTheme;
 
   const onThemeChange = (theme: ThemeTypes) => {
     setLocalStorageTheme(theme);

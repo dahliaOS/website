@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { ImageResponse } from "@vercel/og";
-
 export const config = {
   runtime: "experimental-edge",
 };
@@ -33,7 +33,7 @@ export default async function handler() {
             paddingLeft: "200px",
           }}
         >
-          <img
+          <Image
             alt="dahliaOS Logotype"
             width={400}
             src="https://raw.githubusercontent.com/dahliaOS/brand/62d9cf35262982255fd85545e0185b9e39642fb1/dahliaOS/logotype/svg/logotype-light.svg"
@@ -57,7 +57,7 @@ export default async function handler() {
         height: 630,
       },
     );
-  } catch (e: any) {
+  } catch (e: unknown) {
     return new Response("Failed to generate the image", {
       status: 500,
     });
