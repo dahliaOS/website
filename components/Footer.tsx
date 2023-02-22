@@ -1,23 +1,25 @@
-import { BottomNavigation, MenuItem, Select } from "@mui/material";
 import {
-  WbSunny,
-  WbCloudy,
-  Computer,
   Article,
+  Computer,
   DeveloperBoard,
   Handshake,
   PeopleAlt,
-  QuestionAnswer,
   PermMedia,
+  QuestionAnswer,
+  WbCloudy,
+  WbSunny,
 } from "@mui/icons-material";
+import { BottomNavigation, MenuItem, Select } from "@mui/material";
 import { useEffect, useState } from "react";
-import styled from "@emotion/styled";
-import { useTheme } from "@emotion/react";
-import { VercelLogo } from "./Icons";
+
 import Image from "next/image";
+import Link from "next/link";
+import { VercelLogo } from "./Icons";
 import darkLogotype from "../public/images/logos/darkLogotype.webp";
 import lightLogotype from "../public/images/logos/lightLogotype.webp";
-import Link from "next/link";
+import styled from "@emotion/styled";
+import { usePreferredTheme } from "../utils/hooks/usePreferredTheme";
+import { useTheme } from "@emotion/react";
 
 const StyledBottomNavigation = styled(BottomNavigation)`
   position: relative;
@@ -198,6 +200,7 @@ type ThemeTypes = "dark" | "light" | "system";
 const Footer = () => {
   const [localStorageTheme, setLocalStorageTheme] = useState<ThemeTypes>();
   const theme = useTheme();
+  const preferredTheme = usePreferredTheme();
 
   const onThemeChange = (theme: ThemeTypes) => {
     setLocalStorageTheme(theme);
@@ -422,8 +425,7 @@ const Footer = () => {
       <BottomContainer>
         <StyledSelect
           onChange={e => onThemeChange(e.target.value as ThemeTypes)}
-          value={localStorageTheme}
-          displayEmpty
+          value={preferredTheme}
         >
           <StyledMenuItem value="system">
             <ComputerIcon />
