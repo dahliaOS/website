@@ -440,9 +440,9 @@ const Intro = () => {
               <Sides>
                 <SectionTitle>dahliaOS</SectionTitle>
                 <Paragraph>
-                  dahliaOS is a modern, secure, lightweight and responsive
-                  operating system, combining the best of GNU/Linux and Fuchsia
-                  OS. We are developing a privacy-respecting, fast, secure and
+                  dahliaOS is a modern and intuitive operating system
+                  Powered by Linux for a fast and versitile experience. 
+                  We are developing a privacy-respecting, fast, secure and
                   lightweight operating system, our goal is to establish a new
                   standard for the desktop platform.
                 </Paragraph>
@@ -473,9 +473,9 @@ const Intro = () => {
               <Sides>
                 <SectionTitle>dahliaOS</SectionTitle>
                 <Paragraph>
-                  dahliaOS is a modern, secure, lightweight and responsive
-                  operating system, combining the best of GNU/Linux and Fuchsia
-                  OS. We are developing a privacy-respecting, fast, secure and
+                  dahliaOS is a modern and intuitive operating system
+                  Powered by Linux for a fast and versitile experience. 
+                  We are developing a privacy-respecting, fast, secure and
                   lightweight operating system, our goal is to establish a new
                   standard for the desktop platform.
                 </Paragraph>

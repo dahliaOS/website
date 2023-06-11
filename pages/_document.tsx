@@ -54,11 +54,11 @@ const Page = () => (
       />
       <meta
         name="description"
-        content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS. We are developing a privacy-respecting, fast, secure and lightweight operating system, our goal is to establish a new standard for the desktop platform."
+        content="Discover an intuitive operating system with a modern user interface, efficient multitasking, advanced networking, security features and respectful privacy. Powered by Linux - designed to be lightweight for a fast and versatile computing experience."
       />
       <meta
         name="og:description"
-        content="dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS. We are developing a privacy-respecting, fast, secure and lightweight operating system, our goal is to establish a new standard for the desktop platform."
+        content="Discover an intuitive operating system with a modern user interface, efficient multitasking, advanced networking, security features and respectful privacy. Powered by Linux - designed to be lightweight for a fast and versatile computing experience."
       />
       <link
         rel="stylesheet"
