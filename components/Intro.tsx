@@ -440,11 +440,11 @@ const Intro = () => {
               <Sides>
                 <SectionTitle>dahliaOS</SectionTitle>
                 <Paragraph>
-                  dahliaOS is a modern and intuitive operating system
-                  Powered by Linux for a fast and versitile experience. 
-                  We are developing a privacy-respecting, fast, secure and
-                  lightweight operating system, our goal is to establish a new
-                  standard for the desktop platform.
+                  dahliaOS is a modern and intuitive operating system Powered by
+                  Linux for a fast and versitile experience. We are developing a
+                  privacy-respecting, fast, secure and lightweight operating
+                  system, our goal is to establish a new standard for the
+                  desktop platform.
                 </Paragraph>
                 <ButtonContainer>
                   <StyledButton href="#download">
@@ -473,11 +473,11 @@ const Intro = () => {
               <Sides>
                 <SectionTitle>dahliaOS</SectionTitle>
                 <Paragraph>
-                  dahliaOS is a modern and intuitive operating system
-                  Powered by Linux for a fast and versitile experience. 
-                  We are developing a privacy-respecting, fast, secure and
-                  lightweight operating system, our goal is to establish a new
-                  standard for the desktop platform.
+                  dahliaOS is a modern and intuitive operating system Powered by
+                  Linux for a fast and versitile experience. We are developing a
+                  privacy-respecting, fast, secure and lightweight operating
+                  system, our goal is to establish a new standard for the
+                  desktop platform.
                 </Paragraph>
                 <ButtonContainer>
                   <StyledButton href="#download">
