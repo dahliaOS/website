@@ -189,7 +189,7 @@ const Paragraph = styled.p`
   }
 `;
 
-const StyledButton = styled(Button)<{ isSecondary?: boolean }>`
+const StyledButton = styled(Button) <{ isSecondary?: boolean }>`
   padding: 10px 20px;
   border-radius: 5px;
   gap: 10px;
@@ -440,11 +440,11 @@ const Intro = () => {
               <Sides>
                 <SectionTitle>dahliaOS</SectionTitle>
                 <Paragraph>
-                  dahliaOS is a modern and intuitive operating system Powered by
-                  Linux for a fast and versitile experience. We are developing a
-                  privacy-respecting, fast, secure and lightweight operating
-                  system, our goal is to establish a new standard for the
-                  desktop platform.
+                  Discover an intuitive operating system with a modern user
+                  interface, efficient multitasking, advanced networking,
+                  security features and respectful privacy. Powered by Linux -
+                  designed to be lightweight for a fast and versatile computing
+                  experience.
                 </Paragraph>
                 <ButtonContainer>
                   <StyledButton href="#download">
@@ -473,11 +473,11 @@ const Intro = () => {
               <Sides>
                 <SectionTitle>dahliaOS</SectionTitle>
                 <Paragraph>
-                  dahliaOS is a modern and intuitive operating system Powered by
-                  Linux for a fast and versitile experience. We are developing a
-                  privacy-respecting, fast, secure and lightweight operating
-                  system, our goal is to establish a new standard for the
-                  desktop platform.
+                  Discover an intuitive operating system with a modern user
+                  interface, efficient multitasking, advanced networking,
+                  security features and respectful privacy. Powered by Linux -
+                  designed to be lightweight for a fast and versatile computing
+                  experience.
                 </Paragraph>
                 <ButtonContainer>
                   <StyledButton href="#download">
