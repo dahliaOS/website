@@ -189,7 +189,7 @@ const Paragraph = styled.p`
   }
 `;
 
-const StyledButton = styled(Button) <{ isSecondary?: boolean }>`
+const StyledButton = styled(Button)<{ isSecondary?: boolean }>`
   padding: 10px 20px;
   border-radius: 5px;
   gap: 10px;
