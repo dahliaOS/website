@@ -112,7 +112,7 @@ const AppBarLink = styled(Link)`
   }
 `;
 
-const StyledAppBar = styled(AppBar) <{
+const StyledAppBar = styled(AppBar)<{
   rootPageHasAnimation?: boolean;
   meetsScrollPos: boolean;
 }>`
@@ -136,7 +136,7 @@ const StyledAppBar = styled(AppBar) <{
         `}
 `;
 
-const StyledToolbar = styled(Toolbar) <{ meetsScrollPos: boolean }>`
+const StyledToolbar = styled(Toolbar)<{ meetsScrollPos: boolean }>`
   box-shadow: ${({ meetsScrollPos }) => (meetsScrollPos ? "initial" : "unset")};
 `;
 
