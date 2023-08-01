@@ -5,8 +5,6 @@ import {
   Divider,
   Drawer,
   IconButton,
-  Menu,
-  MenuItem,
   SvgIcon,
   Toolbar,
   useMediaQuery,
@@ -19,7 +17,6 @@ import {
   Groups as GroupIcon,
   Instagram as InstagramIcon,
   Menu as MenuIcon,
-  MoreVert,
   Reddit as RedditIcon,
   Science as ScienceIcon,
   Telegram as TelegramIcon,
@@ -37,8 +34,8 @@ import darkLogotype from "../public/images/logos/darkLogotype.webp";
 import lightLogotype from "../public/images/logos/lightLogotype.webp";
 import styled from "@emotion/styled";
 import { useMeetsScrollPos } from "../utils/hooks/useMeetsScrollPos";
-import { useRef } from "react";
 import { useTheme } from "@emotion/react";
+import { alpha } from "@mui/material";
 
 const WrapperKeyframes = keyframes`
   0% {
@@ -73,10 +70,6 @@ const DrawerLogo = styled(Image)`
   height: auto;
   width: 200px;
   object-fit: contain;
-`;
-const ButtonDropDownMenu = styled(IconButton)`
-  width: 2.4981rem;
-  height: 2.4981rem;
 `;
 const StyledLink = styled(Link)`
   display: flex;
@@ -119,22 +112,6 @@ const AppBarLink = styled(Link)`
   }
 `;
 
-const MenuLink = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  gap: 10px;
-  padding: 0;
-  margin: 0;
-  background: unset;
-  text-decoration: none;
-  color: ${({ theme }) => theme.palette.text.secondary};
-
-  &:hover {
-    color: initial;
-  }
-`;
-
 const StyledAppBar = styled(AppBar)<{
   rootPageHasAnimation?: boolean;
   meetsScrollPos: boolean;
@@ -142,11 +119,6 @@ const StyledAppBar = styled(AppBar)<{
   ${({ meetsScrollPos, theme }) => `
     backdrop-filter: ${meetsScrollPos ? "blur(20px)" : "unset"};
     background: ${meetsScrollPos ? theme.palette.primary.light + 90 : "unset"};
-    box-shadow: ${
-      meetsScrollPos
-        ? "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
-        : "unset"
-    };
   `}
 
   transition: background ease-in-out 0.15s;
@@ -201,10 +173,8 @@ const Navbar = ({
   rootPageHasAnimation?: boolean;
 }) => {
   const [drawerState, setDrawerState] = useState(false);
-  const [toggleMoreIcon, setToggleMoreIcon] = useState(false);
   const windowIsSmall = useMediaQuery("(max-width: 1075px)");
   const theme = useTheme();
-  const ref = useRef<HTMLButtonElement | null>(null);
   const meetsScrollPos = useMeetsScrollPos(10);
   const toggleDrawer = useCallback(
     (open: boolean = false) => setDrawerState(open ?? !drawerState),
@@ -299,6 +269,13 @@ const Navbar = ({
         rootPageHasAnimation={windowIsSmall ? false : rootPageHasAnimation}
         position="fixed"
         meetsScrollPos={meetsScrollPos}
+        elevation={0}
+        sx={{
+          borderBottom: meetsScrollPos
+            ? `1.5px solid  ${alpha(theme.palette.text.primary, 0.2)}`
+            : "unset",
+          padding: "8px 12px",
+        }}
       >
         <StyledToolbar meetsScrollPos={meetsScrollPos}>
           <IconButton
@@ -337,31 +314,6 @@ const Navbar = ({
             <AppBarLink href="https://docs.dahliaos.io" target="_blank">
               <ArticleIcon /> Documentation
             </AppBarLink>
-            <ButtonDropDownMenu
-              ref={ref}
-              aria-label="nav-more"
-              aria-haspopup="true"
-              onClick={() => setToggleMoreIcon(true)}
-            >
-              <MoreVert style={{ color: theme.palette.text.light }} />
-            </ButtonDropDownMenu>
-            <Menu
-              open={toggleMoreIcon}
-              onClose={() => setToggleMoreIcon(false)}
-              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-              anchorEl={ref.current}
-              keepMounted
-            >
-              <MenuItem>
-                <MenuLink
-                  href="https://github.com/orgs/dahliaos/people"
-                  target="_blank"
-                >
-                  <GroupIcon />
-                  Developers
-                </MenuLink>
-              </MenuItem>
-            </Menu>
           </DesktopNav>
         </StyledToolbar>
       </StyledAppBar>
