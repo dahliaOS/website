@@ -5,8 +5,6 @@ import {
   Divider,
   Drawer,
   IconButton,
-  Menu,
-  MenuItem,
   SvgIcon,
   Toolbar,
   useMediaQuery,
@@ -19,7 +17,6 @@ import {
   Groups as GroupIcon,
   Instagram as InstagramIcon,
   Menu as MenuIcon,
-  MoreVert,
   Reddit as RedditIcon,
   Science as ScienceIcon,
   Telegram as TelegramIcon,
@@ -37,7 +34,6 @@ import darkLogotype from "../public/images/logos/darkLogotype.webp";
 import lightLogotype from "../public/images/logos/lightLogotype.webp";
 import styled from "@emotion/styled";
 import { useMeetsScrollPos } from "../utils/hooks/useMeetsScrollPos";
-import { useRef } from "react";
 import { useTheme } from "@emotion/react";
 import { alpha } from "@mui/material";
 
@@ -74,10 +70,6 @@ const DrawerLogo = styled(Image)`
   height: auto;
   width: 200px;
   object-fit: contain;
-`;
-const ButtonDropDownMenu = styled(IconButton)`
-  width: 2.4981rem;
-  height: 2.4981rem;
 `;
 const StyledLink = styled(Link)`
   display: flex;
@@ -120,23 +112,7 @@ const AppBarLink = styled(Link)`
   }
 `;
 
-const MenuLink = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  gap: 10px;
-  padding: 0;
-  margin: 0;
-  background: unset;
-  text-decoration: none;
-  color: ${({ theme }) => theme.palette.text.secondary};
-
-  &:hover {
-    color: initial;
-  }
-`;
-
-const StyledAppBar = styled(AppBar)<{
+const StyledAppBar = styled(AppBar) <{
   rootPageHasAnimation?: boolean;
   meetsScrollPos: boolean;
 }>`
@@ -160,7 +136,7 @@ const StyledAppBar = styled(AppBar)<{
         `}
 `;
 
-const StyledToolbar = styled(Toolbar)<{ meetsScrollPos: boolean }>`
+const StyledToolbar = styled(Toolbar) <{ meetsScrollPos: boolean }>`
   box-shadow: ${({ meetsScrollPos }) => (meetsScrollPos ? "initial" : "unset")};
 `;
 
@@ -197,10 +173,8 @@ const Navbar = ({
   rootPageHasAnimation?: boolean;
 }) => {
   const [drawerState, setDrawerState] = useState(false);
-  const [toggleMoreIcon, setToggleMoreIcon] = useState(false);
   const windowIsSmall = useMediaQuery("(max-width: 1075px)");
   const theme = useTheme();
-  const ref = useRef<HTMLButtonElement | null>(null);
   const meetsScrollPos = useMeetsScrollPos(10);
   const toggleDrawer = useCallback(
     (open: boolean = false) => setDrawerState(open ?? !drawerState),
