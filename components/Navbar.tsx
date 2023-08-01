@@ -136,7 +136,7 @@ const MenuLink = styled(Link)`
   }
 `;
 
-const StyledAppBar = styled(AppBar) <{
+const StyledAppBar = styled(AppBar)<{
   rootPageHasAnimation?: boolean;
   meetsScrollPos: boolean;
 }>`
@@ -160,7 +160,7 @@ const StyledAppBar = styled(AppBar) <{
         `}
 `;
 
-const StyledToolbar = styled(Toolbar) <{ meetsScrollPos: boolean }>`
+const StyledToolbar = styled(Toolbar)<{ meetsScrollPos: boolean }>`
   box-shadow: ${({ meetsScrollPos }) => (meetsScrollPos ? "initial" : "unset")};
 `;
 
@@ -297,7 +297,10 @@ const Navbar = ({
         meetsScrollPos={meetsScrollPos}
         elevation={0}
         sx={{
-          borderBottom: meetsScrollPos ? `1.5px solid  ${alpha(theme.palette.text.primary, 0.2)}` : "unset", padding: '8px 12px'
+          borderBottom: meetsScrollPos
+            ? `1.5px solid  ${alpha(theme.palette.text.primary, 0.2)}`
+            : "unset",
+          padding: "8px 12px",
         }}
       >
         <StyledToolbar meetsScrollPos={meetsScrollPos}>
