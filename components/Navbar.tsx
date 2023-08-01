@@ -39,6 +39,7 @@ import styled from "@emotion/styled";
 import { useMeetsScrollPos } from "../utils/hooks/useMeetsScrollPos";
 import { useRef } from "react";
 import { useTheme } from "@emotion/react";
+import { alpha } from "@mui/material";
 
 const WrapperKeyframes = keyframes`
   0% {
@@ -135,18 +136,13 @@ const MenuLink = styled(Link)`
   }
 `;
 
-const StyledAppBar = styled(AppBar)<{
+const StyledAppBar = styled(AppBar) <{
   rootPageHasAnimation?: boolean;
   meetsScrollPos: boolean;
 }>`
   ${({ meetsScrollPos, theme }) => `
     backdrop-filter: ${meetsScrollPos ? "blur(20px)" : "unset"};
     background: ${meetsScrollPos ? theme.palette.primary.light + 90 : "unset"};
-    box-shadow: ${
-      meetsScrollPos
-        ? "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
-        : "unset"
-    };
   `}
 
   transition: background ease-in-out 0.15s;
@@ -164,7 +160,7 @@ const StyledAppBar = styled(AppBar)<{
         `}
 `;
 
-const StyledToolbar = styled(Toolbar)<{ meetsScrollPos: boolean }>`
+const StyledToolbar = styled(Toolbar) <{ meetsScrollPos: boolean }>`
   box-shadow: ${({ meetsScrollPos }) => (meetsScrollPos ? "initial" : "unset")};
 `;
 
@@ -299,6 +295,10 @@ const Navbar = ({
         rootPageHasAnimation={windowIsSmall ? false : rootPageHasAnimation}
         position="fixed"
         meetsScrollPos={meetsScrollPos}
+        elevation={0}
+        sx={{
+          borderBottom: meetsScrollPos ? `1.5px solid  ${alpha(theme.palette.text.primary, 0.2)}` : "unset", padding: '8px 12px'
+        }}
       >
         <StyledToolbar meetsScrollPos={meetsScrollPos}>
           <IconButton
@@ -337,31 +337,6 @@ const Navbar = ({
             <AppBarLink href="https://docs.dahliaos.io" target="_blank">
               <ArticleIcon /> Documentation
             </AppBarLink>
-            <ButtonDropDownMenu
-              ref={ref}
-              aria-label="nav-more"
-              aria-haspopup="true"
-              onClick={() => setToggleMoreIcon(true)}
-            >
-              <MoreVert style={{ color: theme.palette.text.light }} />
-            </ButtonDropDownMenu>
-            <Menu
-              open={toggleMoreIcon}
-              onClose={() => setToggleMoreIcon(false)}
-              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-              anchorEl={ref.current}
-              keepMounted
-            >
-              <MenuItem>
-                <MenuLink
-                  href="https://github.com/orgs/dahliaos/people"
-                  target="_blank"
-                >
-                  <GroupIcon />
-                  Developers
-                </MenuLink>
-              </MenuItem>
-            </Menu>
           </DesktopNav>
         </StyledToolbar>
       </StyledAppBar>
