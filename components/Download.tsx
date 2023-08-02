@@ -109,7 +109,7 @@ const ChangelogContainer = styled.div`
   bottom: -15px;
 `;
 
-const StyledButton = styled(Button) <{
+const StyledButton = styled(Button)<{
   isSecondary?: boolean;
   isOlderRelease?: boolean;
   isDialogAction?: boolean;
@@ -432,7 +432,7 @@ const Download = () => {
                             {getDate(oldRelease.published_at)} ꞏ{" "}
                             {oldRelease.assets[0].name.includes("efi")
                               ? oldRelease.assets[0].download_count +
-                              oldRelease.assets[1].download_count
+                                oldRelease.assets[1].download_count
                               : oldRelease.assets[0].download_count}{" "}
                             Downloads
                           </DownloadSubtitle>
