@@ -15,6 +15,7 @@ import {
   Close as CloseIcon,
 } from "@mui/icons-material";
 import Link from "next/link";
+import { alpha } from "@mui/material";
 
 const Card = styled.div`
   display: flex;
@@ -25,8 +26,7 @@ const Card = styled.div`
   width: 100%;
   margin: 0 auto;
   background: ${({ theme }) => theme.palette.primary.light};
-  box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
-    0 1px 8px 0 rgb(0 0 0 / 12%);
+  border: 1.5px solid ${({ theme }) => alpha(theme.palette.text.primary, 0.2)};
 
   @media (max-width: 1250px) {
     flex-direction: column;
@@ -48,13 +48,18 @@ const Latest = styled.div`
 `;
 
 const Older = styled.div`
-  background: ${({ theme }) => theme.palette.primary.contrastText};
+  background: ${({ theme }) => theme.palette.primary.light};
   border-radius: 13px;
   padding: 0 16px;
+  margin: 8px;
   flex: 1;
   overflow: auto;
-  box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
-    0 1px 8px 0 rgb(0 0 0 / 12%);
+  border: 1.5px solid ${({ theme }) => alpha(theme.palette.text.primary, 0.2)};
+
+  ::-webkit-scrollbar-track {
+    margin: 10px 0;
+    border-radius: 8px;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -67,18 +72,20 @@ const TextContainer = styled.div`
 
 const Header = styled.h1`
   margin: 17px 0 0;
-  color: ${({ theme }) => theme.palette.text.light};
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 const OlderHeader = styled.p`
   margin: 17px 0 0;
-  text-align: center;
-  color: ${({ theme }) => theme.palette.text.light};
+  text-align: left;
+  color: ${({ theme }) => theme.palette.text.primary};
   font-size: 1.3rem;
+  font-weight: 500;
 `;
 
 const VersionInfo = styled.p`
   color: ${({ theme }) => theme.palette.text.primary};
+  font-size: 1.1rem;
 `;
 
 const DownloadCountOlder = styled.p`
@@ -158,8 +165,7 @@ const OlderUpdate = styled.div`
   display: flex;
   align-items: center;
   padding: 10px 0;
-  margin-bottom: 6px;
-  border-bottom: 1px solid ${({ theme }) => theme.palette.text.secondary};
+  margin-bottom: 8px;
 
   &:last-child {
     margin-bottom: 0;
@@ -174,11 +180,11 @@ const OlderUpdateTextWrapper = styled.div`
   flex-direction: column;
 `;
 
-const OlderUpdateTitle = styled.p`
-  font-size: 1.15rem;
+const DownloadTitle = styled.p`
+  font-size: 1.1rem;
   margin: 0;
   padding: 0 2rem 0 0;
-  font-weight: 400;
+  font-weight: 500;
   color: ${({ theme }) => theme.palette.text.primary};
 
   &:hover {
@@ -187,6 +193,15 @@ const OlderUpdateTitle = styled.p`
 
   @media (max-width: 1250px) {
     font-size: 1rem;
+  }
+`;
+
+const DownloadSubtitle = styled.p`
+  color: ${({ theme }) => theme.palette.text.light};
+  font-size: 1rem;
+
+  @media (max-width: 1250px) {
+    font-size: 0.9rem;
   }
 `;
 
@@ -209,15 +224,6 @@ const ButtonContainer = styled.div<{ isOlderRelease?: boolean }>`
     align-items: unset;
     justify-content: unset;
   }`};
-`;
-
-const OlderUpdateDate = styled.p`
-  color: ${({ theme }) => theme.palette.text.secondary};
-  font-size: 1rem;
-
-  @media (max-width: 1250px) {
-    font-size: 0.9rem;
-  }
 `;
 
 const ErrorContainer = styled.div`
@@ -417,7 +423,7 @@ const Download = () => {
             </Latest>
             <Older>
               <TextContainer>
-                <OlderHeader>Older releases</OlderHeader>
+                <OlderHeader>Previous releases</OlderHeader>
                 <UpdateContainer>
                   {releases.map((oldRelease, i) => {
                     if (i === 0) return;
@@ -428,20 +434,16 @@ const Download = () => {
                             href={oldRelease.html_url}
                             target="_blank"
                           >
-                            <OlderUpdateTitle>
-                              {oldRelease.name}
-                            </OlderUpdateTitle>
+                            <DownloadTitle>{oldRelease.name}</DownloadTitle>
                           </StyledLink>
-                          <DownloadCountOlder>
-                            Downloads:{" "}
+                          <DownloadSubtitle>
+                            {getDate(oldRelease.published_at)} ꞏ{" "}
                             {oldRelease.assets[0].name.includes("efi")
                               ? oldRelease.assets[0].download_count +
                                 oldRelease.assets[1].download_count
-                              : oldRelease.assets[0].download_count}
-                          </DownloadCountOlder>
-                          <OlderUpdateDate>
-                            {getDate(oldRelease.published_at)}
-                          </OlderUpdateDate>
+                              : oldRelease.assets[0].download_count}{" "}
+                            Downloads
+                          </DownloadSubtitle>
                         </OlderUpdateTextWrapper>
                         <ButtonContainer isOlderRelease>
                           {oldRelease.assets.map(asset => (
@@ -559,29 +561,29 @@ const Download = () => {
           </Latest>
           <Older>
             <TextContainer>
-              <OlderHeader>Older releases</OlderHeader>
+              <OlderHeader>Previous releases</OlderHeader>
               <UpdateContainer>
                 {[...Array(5)].map((oldRelease, i) => {
                   if (i === 0) return;
                   return (
                     <OlderUpdate key={i}>
                       <OlderUpdateTextWrapper>
-                        <OlderUpdateTitle>
+                        <DownloadTitle>
                           <Skeleton
                             variant="text"
                             animation="wave"
                             width={"25%"}
                             height={25}
                           />
-                        </OlderUpdateTitle>
-                        <OlderUpdateDate>
+                        </DownloadTitle>
+                        <DownloadSubtitle>
                           <Skeleton
                             variant="text"
                             animation="wave"
                             width={"25%"}
                             height={20}
                           />
-                        </OlderUpdateDate>
+                        </DownloadSubtitle>
                       </OlderUpdateTextWrapper>
                       <ButtonContainer>
                         <Skeleton

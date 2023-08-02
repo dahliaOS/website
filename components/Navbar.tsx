@@ -64,8 +64,6 @@ const DrawerLogoContainer = styled.div`
 `;
 
 const DrawerLogo = styled(Image)`
-  position: absolute;
-  bottom: 16px;
   padding-left: 20px;
   height: auto;
   width: 200px;
@@ -149,8 +147,9 @@ const AppBarLogoLinkContainer = styled(Link)`
 `;
 
 const AppBarLogo = styled(Image)`
+  display: block;
   height: auto;
-  width: 150px;
+  width: 160px;
   object-fit: contain;
 `;
 

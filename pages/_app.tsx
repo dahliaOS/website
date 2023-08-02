@@ -47,12 +47,12 @@ const GlobalStyles = (theme: Theme) => css`
   }
 
   ::-webkit-scrollbar {
-    width: 0.25em;
+    width: 0.3em;
   }
 
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: ${theme.palette.primary.dark};
+    border-radius: 8px;
   }
 
   ::-webkit-scrollbar-thumb {
