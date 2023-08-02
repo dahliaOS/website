@@ -88,14 +88,6 @@ const VersionInfo = styled.p`
   font-size: 1.1rem;
 `;
 
-const DownloadCountOlder = styled.p`
-  color: ${({ theme }) => theme.palette.text.secondary};
-
-  @media (max-width: 1250px) {
-    font-size: 0.9rem;
-  }
-`;
-
 const Changelogs = styled.p`
   color: ${({ theme }) => theme.palette.text.primary};
 
@@ -117,7 +109,7 @@ const ChangelogContainer = styled.div`
   bottom: -15px;
 `;
 
-const StyledButton = styled(Button)<{
+const StyledButton = styled(Button) <{
   isSecondary?: boolean;
   isOlderRelease?: boolean;
   isDialogAction?: boolean;
@@ -440,7 +432,7 @@ const Download = () => {
                             {getDate(oldRelease.published_at)} ꞏ{" "}
                             {oldRelease.assets[0].name.includes("efi")
                               ? oldRelease.assets[0].download_count +
-                                oldRelease.assets[1].download_count
+                              oldRelease.assets[1].download_count
                               : oldRelease.assets[0].download_count}{" "}
                             Downloads
                           </DownloadSubtitle>
