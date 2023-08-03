@@ -28,7 +28,7 @@ const Card = styled.div`
   }
 `;
 
-const CommunityButton = styled(StyledButton)<{}>`
+const CommunityButton = styled(StyledButton)`
   border-radius: 8px;
   background-color: transparent;
   color: ${({ theme }) => theme.palette.text.primary};
@@ -42,7 +42,7 @@ const CommunityButton = styled(StyledButton)<{}>`
   }
 `;
 
-const List = styled.div<{}>`
+const List = styled.div`
   text-align: center;
 `;
 
