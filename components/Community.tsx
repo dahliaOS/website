@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 import { SvgIcon, alpha } from "@mui/material";
 import { StyledButton } from "../global/button";
 import {
-    GitHub,
-    Reddit,
-    Telegram,
-    Instagram,
-    Twitter,
+  GitHub,
+  Reddit,
+  Telegram,
+  Instagram,
+  Twitter,
 } from "@mui/icons-material";
 import { DiscordLogo } from "./Icons";
 
@@ -28,7 +28,7 @@ const Card = styled.div`
   }
 `;
 
-const CommunityButton = styled(StyledButton) <{}>`
+const CommunityButton = styled(StyledButton)<{}>`
   border-radius: 8px;
   background-color: transparent;
   color: ${({ theme }) => theme.palette.text.primary};
@@ -47,40 +47,40 @@ const List = styled.div<{}>`
 `;
 
 const Download = () => {
-    return (
-        <>
-            <Card>
-                <h1>Join the Community!</h1>
-                <div style={{ height: "3rem" }} />
-                <List>
-                    <CommunityButton>
-                        <GitHub />
-                        Github
-                    </CommunityButton>
-                    <CommunityButton>
-                        <SvgIcon component={DiscordLogo} />
-                        Discord
-                    </CommunityButton>
-                    <CommunityButton>
-                        <Reddit />
-                        Reddit
-                    </CommunityButton>
-                    <CommunityButton>
-                        <Telegram />
-                        Telegram
-                    </CommunityButton>
-                    <CommunityButton>
-                        <Instagram />
-                        Instagram
-                    </CommunityButton>
-                    <CommunityButton>
-                        <Twitter />
-                        Twitter
-                    </CommunityButton>
-                </List>
-            </Card>
-        </>
-    );
+  return (
+    <>
+      <Card>
+        <h1>Join the Community!</h1>
+        <div style={{ height: "3rem" }} />
+        <List>
+          <CommunityButton>
+            <GitHub />
+            Github
+          </CommunityButton>
+          <CommunityButton>
+            <SvgIcon component={DiscordLogo} />
+            Discord
+          </CommunityButton>
+          <CommunityButton>
+            <Reddit />
+            Reddit
+          </CommunityButton>
+          <CommunityButton>
+            <Telegram />
+            Telegram
+          </CommunityButton>
+          <CommunityButton>
+            <Instagram />
+            Instagram
+          </CommunityButton>
+          <CommunityButton>
+            <Twitter />
+            Twitter
+          </CommunityButton>
+        </List>
+      </Card>
+    </>
+  );
 };
 
 export default Download;

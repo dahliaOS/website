@@ -45,7 +45,7 @@ import { StyledButton } from "../global/button";
 
 const Wrapper = styled.div``;
 
-const Container = styled(motion.div) <{
+const Container = styled(motion.div)<{
   showOnRight?: boolean;
   distanceFirst?: boolean;
   isCentered?: boolean;
@@ -76,13 +76,13 @@ const Container = styled(motion.div) <{
 
   @media (max-width: 1100px) {
     flex-direction: ${({ showOnRight }) =>
-    showOnRight ? "column-reverse" : "column"};
+      showOnRight ? "column-reverse" : "column"};
     padding: 25px 8rem;
     ${({ isCentered }) =>
-    isCentered
-      ? `margin: 1rem 0;
+      isCentered
+        ? `margin: 1rem 0;
        `
-      : "min-height: 40rem;"};
+        : "min-height: 40rem;"};
   }
 
   @media (max-width: 950px) {
@@ -243,9 +243,9 @@ const AppIcon = styled(Image)`
   object-fit: contain;
   filter: drop-shadow(
     ${({ theme }) =>
-    theme.palette.mode === "dark"
-      ? null
-      : `0 0 0.2rem ${theme.palette.text.disabled}`}
+      theme.palette.mode === "dark"
+        ? null
+        : `0 0 0.2rem ${theme.palette.text.disabled}`}
   );
 
   &:hover {

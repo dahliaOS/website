@@ -95,7 +95,7 @@ const Download = () => {
                   ?.map(allReleases => {
                     return allReleases.assets[0].name.includes("efi")
                       ? allReleases.assets[0].download_count +
-                      allReleases.assets[1].download_count
+                          allReleases.assets[1].download_count
                       : allReleases.assets[0].download_count;
                   })
                   .reduce<number>((accumulator, current) => {

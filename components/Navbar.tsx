@@ -1,10 +1,6 @@
 import "@reach/skip-nav/styles.css";
 
-import {
-  AppBar,
-  Toolbar,
-  useMediaQuery,
-} from "@mui/material";
+import { AppBar, Toolbar, useMediaQuery } from "@mui/material";
 import {
   ArticleRounded as ArticleIcon,
   GetAppRounded as GetApp,
@@ -52,7 +48,7 @@ const AppBarLink = styled(Link)`
   }
 `;
 
-const StyledAppBar = styled(AppBar) <{
+const StyledAppBar = styled(AppBar)<{
   rootPageHasAnimation?: boolean;
   meetsScrollPos: boolean;
 }>`

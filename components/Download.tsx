@@ -405,7 +405,7 @@ const Download = () => {
                               {getDate(oldRelease.published_at)} ꞏ{" "}
                               {oldRelease.assets[0].name.includes("efi")
                                 ? oldRelease.assets[0].download_count +
-                                oldRelease.assets[1].download_count
+                                  oldRelease.assets[1].download_count
                                 : oldRelease.assets[0].download_count}{" "}
                               Downloads
                             </DownloadSubtitle>
@@ -528,7 +528,7 @@ const Download = () => {
             <TextContainer>
               <OlderHeader>Previous releases</OlderHeader>
               <UpdateContainer>
-                {[...Array(5)].map((i) => {
+                {[...Array(5)].map(i => {
                   if (i === 0) return;
                   return (
                     <OlderUpdate key={i}>
