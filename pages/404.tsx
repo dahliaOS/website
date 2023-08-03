@@ -1,9 +1,9 @@
-import { Button } from "@mui/material";
 import styled from "@emotion/styled";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { Home as HomeIcon } from "@mui/icons-material";
+import { HomeRounded as HomeIcon } from "@mui/icons-material";
 import Head from "next/head";
+import { StyledButton } from "../global/button";
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,14 +12,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   min-height: 100vh;
   padding: 5rem;
-  background: ${({ theme }) =>
-    theme.palette.mode === "dark"
-      ? "url('/images/background/darkBackground.svg')"
-      : "url('/images/background/lightBackground.svg')"};
+  background: url("/images/background/background.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
 
   @media (max-width: 1250px) {
     padding: 8rem 3rem;
@@ -66,21 +62,6 @@ const Paragraph = styled.p`
 
   @media (max-width: 1250px) {
     font-size: 1.2rem;
-  }
-`;
-
-const StyledButton = styled(Button)`
-  padding: 10px 20px;
-  border-radius: 5px;
-  gap: 10px;
-  width: fit-content;
-  height: fit-content;
-  transition: 0.2s ease-in-out;
-  color: ${({ theme }) => theme.palette.text.extremelyLight};
-  background: ${({ theme }) => theme.palette.secondary.light};
-
-  &:hover {
-    background: ${({ theme }) => theme.palette.secondary.main};
   }
 `;
 

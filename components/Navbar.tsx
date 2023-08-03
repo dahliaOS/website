@@ -2,32 +2,17 @@ import "@reach/skip-nav/styles.css";
 
 import {
   AppBar,
-  Divider,
-  Drawer,
-  IconButton,
-  SvgIcon,
   Toolbar,
   useMediaQuery,
 } from "@mui/material";
 import {
-  Article as ArticleIcon,
-  Facebook as FacebookIcon,
-  GetApp,
-  GitHub as GitHubIcon,
-  Groups as GroupIcon,
-  Instagram as InstagramIcon,
-  Menu as MenuIcon,
-  Reddit as RedditIcon,
+  ArticleRounded as ArticleIcon,
+  GetAppRounded as GetApp,
   Science as ScienceIcon,
-  Telegram as TelegramIcon,
-  Twitter as TwitterIcon,
-  VolunteerActivism as VolunteerActivismIcon,
+  VolunteerActivismRounded as VolunteerActivismIcon,
 } from "@mui/icons-material";
 import { SkipNavContent, SkipNavLink } from "@reach/skip-nav";
 import { css, keyframes } from "@emotion/react";
-import { useCallback, useState } from "react";
-
-import { DiscordLogo } from "./Icons";
 import Image from "next/image";
 import Link from "next/link";
 import darkLogotype from "../public/images/logos/darkLogotype.webp";
@@ -50,49 +35,6 @@ const WrapperKeyframes = keyframes`
 
 const Wrapper = styled.div``;
 
-const Container = styled.div`
-  background: ${({ theme }) => theme.palette.primary.light};
-  width: 15rem;
-  height: 999%;
-  font-family: "Inter", sans-serif;
-`;
-
-const DrawerLogoContainer = styled.div`
-  position: relative;
-  padding-top: 160px;
-  background: ${({ theme }) => theme.palette.primary.main};
-`;
-
-const DrawerLogo = styled(Image)`
-  padding-left: 20px;
-  height: auto;
-  width: 200px;
-  object-fit: contain;
-`;
-const StyledLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  font-size: 0.93em;
-  padding: 18px 20px;
-  color: ${({ theme }) => theme.palette.text.primary};
-  transition: color ease-in-out 0.2s;
-  text-decoration: none;
-
-  &:hover {
-    color: ${({ theme }) => theme.palette.text.light};
-  }
-`;
-
-const Category = styled.span`
-  display: block;
-  font-size: 0.93em;
-  padding: 16px 20px;
-  font-weight: 500;
-  color: ${({ theme }) => theme.palette.text.light};
-`;
-
 const AppBarLink = styled(Link)`
   display: flex;
   justify-content: flex-end;
@@ -110,13 +52,13 @@ const AppBarLink = styled(Link)`
   }
 `;
 
-const StyledAppBar = styled(AppBar)<{
+const StyledAppBar = styled(AppBar) <{
   rootPageHasAnimation?: boolean;
   meetsScrollPos: boolean;
 }>`
   ${({ meetsScrollPos, theme }) => `
     backdrop-filter: ${meetsScrollPos ? "blur(20px)" : "unset"};
-    background: ${meetsScrollPos ? theme.palette.primary.light + 90 : "unset"};
+    background: ${meetsScrollPos ? theme.palette.primary.light + 99 : "unset"};
   `}
 
   transition: background ease-in-out 0.15s;
@@ -132,10 +74,6 @@ const StyledAppBar = styled(AppBar)<{
       : css`
           opacity: 1;
         `}
-`;
-
-const StyledToolbar = styled(Toolbar)<{ meetsScrollPos: boolean }>`
-  box-shadow: ${({ meetsScrollPos }) => (meetsScrollPos ? "initial" : "unset")};
 `;
 
 const AppBarLogoLinkContainer = styled(Link)`
@@ -164,21 +102,14 @@ const DesktopNav = styled.div`
   }
 `;
 
-const StyledDrawer = styled(Drawer)``;
-
 const Navbar = ({
   rootPageHasAnimation,
 }: {
   rootPageHasAnimation?: boolean;
 }) => {
-  const [drawerState, setDrawerState] = useState(false);
   const windowIsSmall = useMediaQuery("(max-width: 1075px)");
   const theme = useTheme();
   const meetsScrollPos = useMeetsScrollPos(10);
-  const toggleDrawer = useCallback(
-    (open: boolean = false) => setDrawerState(open ?? !drawerState),
-    [drawerState],
-  );
 
   return (
     <Wrapper>
@@ -193,77 +124,6 @@ const Navbar = ({
           zIndex: 9999999,
         }}
       />
-      <StyledDrawer
-        anchor="left"
-        open={drawerState}
-        onClose={() => toggleDrawer(false)}
-      >
-        <DrawerLogoContainer>
-          <DrawerLogo
-            priority
-            quality={100}
-            alt="dahliaOS logo"
-            src={theme.palette.mode === "dark" ? darkLogotype : lightLogotype}
-          />
-        </DrawerLogoContainer>
-        <Container>
-          <StyledLink href="/download">
-            <GetApp />
-            Download
-          </StyledLink>
-          <StyledLink href="/donate">
-            <VolunteerActivismIcon />
-            Donate
-          </StyledLink>
-          <StyledLink href="https://web.dahliaOS.io" target="_blank">
-            <ScienceIcon />
-            Demo
-          </StyledLink>
-          <StyledLink href="https://docs.dahliaos.io" target="_blank">
-            <ArticleIcon />
-            Documentation
-          </StyledLink>
-          <Divider />
-          <Category>Find us on</Category>
-          <StyledLink href="/discord" target="_blank">
-            <SvgIcon component={DiscordLogo} />
-            Discord
-          </StyledLink>
-          <StyledLink href="/github" target="_blank">
-            <GitHubIcon />
-            GitHub
-          </StyledLink>
-          <StyledLink href="/reddit" target="_blank">
-            <RedditIcon />
-            Reddit
-          </StyledLink>
-          <StyledLink href="/telegram" target="_blank">
-            <TelegramIcon />
-            Telegram
-          </StyledLink>
-          <StyledLink href="/facebook" target="_blank">
-            <FacebookIcon />
-            Facebook
-          </StyledLink>
-          <StyledLink href="/instagram" target="_blank">
-            <InstagramIcon />
-            Instagram
-          </StyledLink>
-          <StyledLink href="/twitter" target="_blank">
-            <TwitterIcon />
-            Twitter
-          </StyledLink>
-          <Divider />
-          <Category>Team</Category>
-          <StyledLink
-            href="https://github.com/orgs/dahliaos/people"
-            target="_blank"
-          >
-            <GroupIcon />
-            Developers
-          </StyledLink>
-        </Container>
-      </StyledDrawer>
       <StyledAppBar
         rootPageHasAnimation={windowIsSmall ? false : rootPageHasAnimation}
         position="fixed"
@@ -273,24 +133,10 @@ const Navbar = ({
           borderBottom: meetsScrollPos
             ? `1.5px solid  ${alpha(theme.palette.text.primary, 0.2)}`
             : "unset",
-          padding: "8px 12px",
+          padding: "8px 128px",
         }}
       >
-        <StyledToolbar meetsScrollPos={meetsScrollPos}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={() => toggleDrawer(true)}
-          >
-            <MenuIcon
-              style={
-                theme.palette.mode === "dark"
-                  ? undefined
-                  : { color: theme.palette.text.secondary }
-              }
-            />
-          </IconButton>
+        <Toolbar>
           <AppBarLogoLinkContainer href="/">
             <AppBarLogo
               priority
@@ -314,7 +160,7 @@ const Navbar = ({
               <ArticleIcon /> Documentation
             </AppBarLink>
           </DesktopNav>
-        </StyledToolbar>
+        </Toolbar>
       </StyledAppBar>
       <SkipNavContent id="skipNav" />
     </Wrapper>

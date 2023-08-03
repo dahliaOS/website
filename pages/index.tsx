@@ -5,19 +5,20 @@ import type { NextPage } from "next";
 import Intro from "../components/Intro";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Button, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material";
 import DownloadComponent from "../components/Download";
+import CommunityComponent from "../components/Community";
 import {
-  Devices as DevicesIcon,
+  DevicesRounded as DevicesIcon,
   GitHub as GitHubIcon,
-  CorporateFare as CorporateFareIcon,
-  Science as ScienceIcon,
-  DesktopMac,
-  Autorenew,
-  ViewInAr,
-  ViewCompact,
-  Apps,
-  ScreenshotMonitor,
+  CorporateFareRounded as CorporateFareIcon,
+  ScienceRounded as ScienceIcon,
+  DesktopMacRounded as DesktopMac,
+  AutorenewRounded as Autorenew,
+  ViewInArRounded as ViewInAr,
+  ViewCompactRounded as ViewCompact,
+  AppsRounded as Apps,
+  ScreenshotMonitorRounded as ScreenshotMonitor,
 } from "@mui/icons-material";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
@@ -40,10 +41,11 @@ import lightPangolin from "../public/images/landing/lightPangolin.webp";
 import darkSupportedDevices from "../public/images/landing/darkSupportedDevices.webp";
 import lightSupportedDevices from "../public/images/landing/lightSupportedDevices.webp";
 import Link from "next/link";
+import { StyledButton } from "../global/button";
 
 const Wrapper = styled.div``;
 
-const Container = styled(motion.div)<{
+const Container = styled(motion.div) <{
   showOnRight?: boolean;
   distanceFirst?: boolean;
   isCentered?: boolean;
@@ -74,13 +76,13 @@ const Container = styled(motion.div)<{
 
   @media (max-width: 1100px) {
     flex-direction: ${({ showOnRight }) =>
-      showOnRight ? "column-reverse" : "column"};
+    showOnRight ? "column-reverse" : "column"};
     padding: 25px 8rem;
     ${({ isCentered }) =>
-      isCentered
-        ? `margin: 1rem 0;
+    isCentered
+      ? `margin: 1rem 0;
        `
-        : "min-height: 40rem;"};
+      : "min-height: 40rem;"};
   }
 
   @media (max-width: 950px) {
@@ -132,30 +134,6 @@ const Paragraph = styled.p<{ isCentered?: boolean }>`
   @media (max-width: 1100px) {
     text-align: ${({ isCentered }) => (isCentered ? "left" : null)};
   }
-`;
-
-const SectionBtn = styled(Button)<{ isSecondary?: boolean }>`
-  padding: 10px 20px;
-  border-radius: 5px;
-  gap: 10px;
-  width: fit-content;
-  height: fit-content;
-  transition: 0.2s ease-in-out;
-
-  ${({ isSecondary, theme }) =>
-    isSecondary
-      ? `
-    color: ${theme.palette.text.primary};
-
-    &:hover {
-      background: ${theme.palette.primary.light};
-    }`
-      : `color: ${theme.palette.text.extremelyLight};
-    background: ${theme.palette.secondary.light};
-
-    &:hover {
-      background: ${theme.palette.secondary.main};
-    }`};
 `;
 
 const SectionDivContainer = styled.div<{ showOnRight?: boolean }>`
@@ -265,9 +243,9 @@ const AppIcon = styled(Image)`
   object-fit: contain;
   filter: drop-shadow(
     ${({ theme }) =>
-      theme.palette.mode === "dark"
-        ? null
-        : `0 0 0.2rem ${theme.palette.text.disabled}`}
+    theme.palette.mode === "dark"
+      ? null
+      : `0 0 0.2rem ${theme.palette.text.disabled}`}
   );
 
   &:hover {
@@ -765,10 +743,10 @@ const Home: NextPage = () => {
               href="https://docs.dahliaos.io/hardware/supported-hardware"
               target="_blank"
             >
-              <SectionBtn>
+              <StyledButton>
                 <DevicesIcon />
                 SUPPORTED HARDWARE
-              </SectionBtn>
+              </StyledButton>
             </StyledLink>
           </Sides>
         </Container>
@@ -801,19 +779,19 @@ const Home: NextPage = () => {
             </Paragraph>
             <SectionButtonContainer>
               <StyledLink href="/github" target="_blank">
-                <SectionBtn>
+                <StyledButton>
                   <GitHubIcon />
                   GITHUB
-                </SectionBtn>
+                </StyledButton>
               </StyledLink>
               <StyledLink
                 href="https://openinventionnetwork.com/community-alphabetical/#:~:text=d42%20Secure%20Systems-,dahliaOS,-Daimler"
                 target="_blank"
               >
-                <SectionBtn isSecondary>
+                <StyledButton isSecondary>
                   <CorporateFareIcon />
                   OPEN INVENTION NETWORK
-                </SectionBtn>
+                </StyledButton>
               </StyledLink>
             </SectionButtonContainer>
           </Sides>
@@ -860,10 +838,10 @@ const Home: NextPage = () => {
               functional on the actual system itself.
             </Paragraph>
             <StyledLink href="https://web.dahliaos.io/" target="_blank">
-              <SectionBtn>
+              <StyledButton>
                 <ScienceIcon />
                 Try it out
-              </SectionBtn>
+              </StyledButton>
             </StyledLink>
           </Sides>
         </Container>
@@ -885,6 +863,8 @@ const Home: NextPage = () => {
           </Sides>
           <DownloadComponent />
         </Container>
+        {/* Community */}
+        <CommunityComponent />
       </Wrapper>
       <Footer />
     </React.Fragment>

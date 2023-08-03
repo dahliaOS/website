@@ -48,7 +48,7 @@ const GlobalStyles = (theme: Theme) => css`
   }
 
   ::-webkit-scrollbar {
-    width: 0.3em;
+    width: 0.25em;
   }
 
   ::-webkit-scrollbar-track {
@@ -57,9 +57,9 @@ const GlobalStyles = (theme: Theme) => css`
   }
 
   ::-webkit-scrollbar-thumb {
-    background: gray;
+    background: ${theme.palette.text.light};
     border-radius: 8px;
-    outline: 1px solid ${theme.palette.primary.dark};
+    outline: 2px solid ${theme.palette.text.light};
   }
 `;
 

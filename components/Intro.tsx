@@ -3,12 +3,16 @@ import Image from "next/image";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import { useTheme } from "@emotion/react";
-import { Button, useMediaQuery } from "@mui/material";
-import { GetApp, LibraryBooks as LibraryBooksIcon } from "@mui/icons-material";
+import { useMediaQuery } from "@mui/material";
+import {
+  GetAppRounded as GetApp,
+  LibraryBooksRounded as LibraryBooksIcon,
+} from "@mui/icons-material";
 import darkLogotype from "../public/images/logos/darkLogotype.webp";
 import LaptopMockup from "../public/images/animation/macbook.webp";
 import darkMockup from "../public/images/mockups/darkmockup.webp";
 import lightMockup from "../public/images/mockups/lightmockup.webp";
+import { StyledButton } from "../global/button";
 
 const mockupKeyframes = keyframes`
   0% {
@@ -137,10 +141,7 @@ const Container = styled.div`
   justify-content: center;
   min-height: 100vh;
   max-width: 100vw;
-  background: ${({ theme }) =>
-    theme.palette.mode === "dark"
-      ? 'url("/images/background/darkBackground.svg")'
-      : 'url("/images/background/lightBackground.svg")'};
+  background: url("/images/background/background.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -187,30 +188,6 @@ const Paragraph = styled.p`
   @media (max-width: 1025px) {
     font-size: 1.2rem;
   }
-`;
-
-const StyledButton = styled(Button)<{ isSecondary?: boolean }>`
-  padding: 10px 20px;
-  border-radius: 5px;
-  gap: 10px;
-  width: fit-content;
-  height: fit-content;
-  transition: 0.2s ease-in-out;
-
-  ${({ isSecondary, theme }) =>
-    isSecondary
-      ? `
-    color: ${theme.palette.text.primary};
-
-    &:hover {
-      background: ${theme.palette.primary.light};
-    }`
-      : `color: ${theme.palette.text.extremelyLight};
-    background: ${theme.palette.secondary.light};
-
-    &:hover {
-      background: ${theme.palette.secondary.main};
-    }`};
 `;
 
 const Wrapper = styled.div`

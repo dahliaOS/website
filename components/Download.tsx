@@ -1,5 +1,5 @@
-import ErrorIcon from "@mui/icons-material/Error";
-import { Button, DialogTitle, Skeleton, DialogContent } from "@mui/material";
+import { ErrorRounded as ErrorIcon } from "@mui/icons-material";
+import { DialogTitle, Skeleton, DialogContent } from "@mui/material";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import Paper from "@mui/material/Paper";
@@ -8,11 +8,12 @@ import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
 import styled from "@emotion/styled";
 import { useGithubReleases } from "../utils/hooks/useGithubReleases";
+import { StyledButton } from "../global/button";
 import {
-  GetApp,
-  TextSnippet as TextSnippetIcon,
-  VolunteerActivism as VolunteerActivismIcon,
-  Close as CloseIcon,
+  GetAppRounded as GetApp,
+  TextSnippetRounded as TextSnippetIcon,
+  VolunteerActivismRounded as VolunteerActivismIcon,
+  CloseRounded as CloseIcon,
 } from "@mui/icons-material";
 import Link from "next/link";
 import { alpha } from "@mui/material";
@@ -39,7 +40,7 @@ const Latest = styled.div`
   flex-direction: column;
   flex: 1;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1.2rem;
   padding: 0 28px;
 
   @media (max-width: 980px) {
@@ -47,14 +48,18 @@ const Latest = styled.div`
   }
 `;
 
-const Older = styled.div`
-  background: ${({ theme }) => theme.palette.primary.light};
-  border-radius: 13px;
-  padding: 0 16px;
-  margin: 8px;
+const OlderList = styled.div`
   flex: 1;
   overflow: auto;
-  border: 1.5px solid ${({ theme }) => alpha(theme.palette.text.primary, 0.2)};
+
+  @media (max-width: 1250px) {
+    flex-direction: column;
+    max-height: 60rem;
+  }
+
+  max-height: 320px;
+  margin: 12px 0;
+  padding-right: 8px;
 
   ::-webkit-scrollbar-track {
     margin: 10px 0;
@@ -62,9 +67,16 @@ const Older = styled.div`
   }
 `;
 
+const Older = styled.div`
+  background: ${({ theme }) => theme.palette.primary.light};
+  border: 1.5px solid ${({ theme }) => alpha(theme.palette.text.primary, 0.2)};
+  border-radius: 12px;
+  padding: 0 16px;
+  margin: 8px;
+`;
+
 const TextContainer = styled.div`
   position: relative;
-  padding-bottom: 35px;
   gap: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -76,7 +88,7 @@ const Header = styled.h1`
 `;
 
 const OlderHeader = styled.p`
-  margin: 17px 0 0;
+  margin: 16px 0 0;
   text-align: left;
   color: ${({ theme }) => theme.palette.text.primary};
   font-size: 1.3rem;
@@ -85,10 +97,11 @@ const OlderHeader = styled.p`
 
 const VersionInfo = styled.p`
   color: ${({ theme }) => theme.palette.text.primary};
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
 `;
 
-const Changelogs = styled.p`
+const Changelogs = styled.text`
   color: ${({ theme }) => theme.palette.text.primary};
 
   white-space: pre-line;
@@ -100,63 +113,22 @@ const Changelogs = styled.p`
 `;
 
 const UpdateContainer = styled.div`
-  padding: 20px 0 0;
+  padding: 8px 0 0;
 `;
 
 const ChangelogContainer = styled.div`
-  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   right: 0;
-  bottom: -15px;
-`;
-
-const StyledButton = styled(Button)<{
-  isSecondary?: boolean;
-  isOlderRelease?: boolean;
-  isDialogAction?: boolean;
-}>`
-  padding: 8px 15px;
-  border-radius: 5px;
-  gap: 10px;
-  width: fit-content;
-  height: fit-content;
-  transition: 0.2s ease-in-out;
-
-  ${({ isSecondary, theme }) =>
-    isSecondary
-      ? `
-    color: ${theme.palette.text.primary};
-
-    &:hover {
-      background: ${theme.palette.primary.contrastText};
-    }`
-      : `color: ${theme.palette.text.extremelyLight};
-    background: ${theme.palette.secondary.light};
-
-    &:hover {
-      background: ${theme.palette.secondary.main};
-    }`};
-
-  ${({ isOlderRelease, theme }) =>
-    isOlderRelease
-      ? `
-    &:hover {
-      background: ${theme.palette.primary.light};
-    }`
-      : null};
-
-  ${({ isDialogAction, theme }) =>
-    isDialogAction
-      ? `margin-right: 1rem;
-    &:hover {
-      background: ${theme.palette.primary.light};
-    }`
-      : null};
+  bottom: 0;
+  padding-top: 16px;
 `;
 
 const OlderUpdate = styled.div`
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  padding: 8px 0;
   margin-bottom: 8px;
 
   &:last-child {
@@ -173,7 +145,7 @@ const OlderUpdateTextWrapper = styled.div`
 `;
 
 const DownloadTitle = styled.p`
-  font-size: 1.1rem;
+  font-size: 16px;
   margin: 0;
   padding: 0 2rem 0 0;
   font-weight: 500;
@@ -190,7 +162,7 @@ const DownloadTitle = styled.p`
 
 const DownloadSubtitle = styled.p`
   color: ${({ theme }) => theme.palette.text.light};
-  font-size: 1rem;
+  font-size: 15px;
 
   @media (max-width: 1250px) {
     font-size: 0.9rem;
@@ -246,7 +218,7 @@ const StyledModal = styled(motion(Dialog))``;
 
 const StyledPaper = styled(motion(Paper))`
   border-radius: 8px;
-  background: ${({ theme }) => theme.palette.primary.contrastText};
+  background: ${({ theme }) => theme.palette.primary.light};
   padding: 10px 20px 20px 10px;
   max-width: 85%;
 `;
@@ -288,10 +260,6 @@ const ModalParagraph = styled(DialogContent)`
   font-size: 1.1rem;
   max-width: 55ch;
   color: ${({ theme }) => theme.palette.text.primary};
-`;
-
-const DownloadCount = styled.p`
-  color: ${({ theme }) => theme.palette.text.secondary};
 `;
 
 const Download = () => {
@@ -346,7 +314,7 @@ const Download = () => {
               more about donating to dahliaOS!
             </ModalParagraph>
             <DialogActions>
-              <StyledButton isSecondary isDialogAction onClick={closeModal}>
+              <StyledButton isSecondary onClick={closeModal}>
                 <CloseIcon /> Close
               </StyledButton>
               <StyledButton onClick={() => Router.replace("/donate")} autoFocus>
@@ -375,24 +343,28 @@ const Download = () => {
             <Latest>
               <TextContainer>
                 <Header>Latest</Header>
-                <VersionInfo>
-                  {releases[0].name} ({getDate(releases[0].published_at)})
-                  <DownloadCount>
-                    Downloads:{" "}
-                    {releases[0].assets[0].download_count +
-                      releases[0].assets[1].download_count}
-                  </DownloadCount>
-                </VersionInfo>
+                <VersionInfo>{releases[0].name}</VersionInfo>
                 <Changelogs>
                   {releases[0].body
                     .substring(releases[0].body.indexOf("+ "))
-                    .replace(/(?:\r\n|\r|\n)/g, "\n")}
+                    .replace(/(?:\r\n|\r|\n)/g, "\n")
+                    .replace(/.*/, "")
+                    .substring(1)}
                 </Changelogs>
                 <ChangelogContainer>
+                  <StyledButton disabled isDownloadTag>
+                    Version {releases[0].tag_name.split("-")[0]} •{" "}
+                    {getDate(releases[0].published_at)}
+                  </StyledButton>
+                  <StyledButton disabled isDownloadTag>
+                    {releases[0].assets[0].download_count +
+                      releases[0].assets[1].download_count}{" "}
+                    Downloads
+                  </StyledButton>
                   <StyledLink href={releases[0].html_url} target="_blank">
                     <StyledButton isSecondary>
                       <TextSnippetIcon />
-                      Full changelog
+                      Changelog
                     </StyledButton>
                   </StyledLink>
                 </ChangelogContainer>
@@ -414,48 +386,49 @@ const Download = () => {
               </ButtonContainer>
             </Latest>
             <Older>
-              <TextContainer>
-                <OlderHeader>Previous releases</OlderHeader>
-                <UpdateContainer>
-                  {releases.map((oldRelease, i) => {
-                    if (i === 0) return;
-                    return (
-                      <OlderUpdate key={i}>
-                        <OlderUpdateTextWrapper>
-                          <StyledLink
-                            href={oldRelease.html_url}
-                            target="_blank"
-                          >
-                            <DownloadTitle>{oldRelease.name}</DownloadTitle>
-                          </StyledLink>
-                          <DownloadSubtitle>
-                            {getDate(oldRelease.published_at)} ꞏ{" "}
-                            {oldRelease.assets[0].name.includes("efi")
-                              ? oldRelease.assets[0].download_count +
-                                oldRelease.assets[1].download_count
-                              : oldRelease.assets[0].download_count}{" "}
-                            Downloads
-                          </DownloadSubtitle>
-                        </OlderUpdateTextWrapper>
-                        <ButtonContainer isOlderRelease>
-                          {oldRelease.assets.map(asset => (
-                            <StyledButton
-                              key={asset.name}
-                              href={asset.browser_download_url}
-                              isSecondary={!asset.name.includes("efi")}
-                              isOlderRelease={!asset.name.includes("efi")}
-                              onClick={openModal}
+              <OlderHeader>Previous releases</OlderHeader>
+              <OlderList>
+                <TextContainer>
+                  <UpdateContainer>
+                    {releases.map((oldRelease, i) => {
+                      if (i === 0) return;
+                      return (
+                        <OlderUpdate key={i}>
+                          <OlderUpdateTextWrapper>
+                            <StyledLink
+                              href={oldRelease.html_url}
+                              target="_blank"
                             >
-                              <GetApp />
-                              {asset.name.includes("efi") ? "EFI" : "Legacy"}
-                            </StyledButton>
-                          ))}
-                        </ButtonContainer>
-                      </OlderUpdate>
-                    );
-                  })}
-                </UpdateContainer>
-              </TextContainer>
+                              <DownloadTitle>{oldRelease.name}</DownloadTitle>
+                            </StyledLink>
+                            <DownloadSubtitle>
+                              {getDate(oldRelease.published_at)} ꞏ{" "}
+                              {oldRelease.assets[0].name.includes("efi")
+                                ? oldRelease.assets[0].download_count +
+                                oldRelease.assets[1].download_count
+                                : oldRelease.assets[0].download_count}{" "}
+                              Downloads
+                            </DownloadSubtitle>
+                          </OlderUpdateTextWrapper>
+                          <ButtonContainer isOlderRelease>
+                            {oldRelease.assets.map(asset => (
+                              <StyledButton
+                                key={asset.name}
+                                href={asset.browser_download_url}
+                                isSecondary={!asset.name.includes("efi")}
+                                onClick={openModal}
+                              >
+                                <GetApp />
+                                {asset.name.includes("efi") ? "EFI" : "Legacy"}
+                              </StyledButton>
+                            ))}
+                          </ButtonContainer>
+                        </OlderUpdate>
+                      );
+                    })}
+                  </UpdateContainer>
+                </TextContainer>
+              </OlderList>
             </Older>
           </Card>
         </>
@@ -555,7 +528,7 @@ const Download = () => {
             <TextContainer>
               <OlderHeader>Previous releases</OlderHeader>
               <UpdateContainer>
-                {[...Array(5)].map((oldRelease, i) => {
+                {[...Array(5)].map((i) => {
                   if (i === 0) return;
                   return (
                     <OlderUpdate key={i}>

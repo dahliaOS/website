@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import DownloadComponent from "../components/Download";
 import Head from "next/head";
 import { useGithubReleases } from "../utils/hooks/useGithubReleases";
-import { Download as DownloadIcon } from "@mui/icons-material";
+import { DownloadRounded as DownloadIcon } from "@mui/icons-material";
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,14 +13,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   min-height: 100vh;
   padding: 5rem;
-  background: ${({ theme }) =>
-    theme.palette.mode === "dark"
-      ? "url('/images/background/darkBackground.svg')"
-      : "url('/images/background/lightBackground.svg')"};
+  background: url("/images/background/background.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
 
   @media (max-width: 1250px) {
     padding: 8rem 3rem;
@@ -99,7 +95,7 @@ const Download = () => {
                   ?.map(allReleases => {
                     return allReleases.assets[0].name.includes("efi")
                       ? allReleases.assets[0].download_count +
-                          allReleases.assets[1].download_count
+                      allReleases.assets[1].download_count
                       : allReleases.assets[0].download_count;
                   })
                   .reduce<number>((accumulator, current) => {
