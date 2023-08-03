@@ -8,9 +8,10 @@ import { ThemeProvider as MUIThemeProvider } from "@mui/material";
 import { SWRConfig } from "swr";
 import { usePreferredTheme } from "../utils/hooks/usePreferredTheme";
 import { Inter } from "@next/font/google";
-import Head from "next/head";
 
-const inter = Inter();
+const inter = Inter({
+  subsets: ["latin"],
+});
 
 const GlobalStyles = (theme: Theme) => css`
   *,
@@ -79,9 +80,7 @@ $$    $$ |$$    $$ |$$ |  $$ |$$ |$$ |$$    $$ |$$    $$/ $$    $$/
 
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width" />
-      </Head>
+      <meta name="viewport" content="width=device-width" />
       <SWRConfig
         value={{
           fetcher,
