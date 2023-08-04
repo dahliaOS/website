@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ImageResponse } from "@vercel/og";
 export const config = {
   runtime: "experimental-edge",
