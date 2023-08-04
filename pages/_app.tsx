@@ -8,9 +8,10 @@ import { ThemeProvider as MUIThemeProvider } from "@mui/material";
 import { SWRConfig } from "swr";
 import { usePreferredTheme } from "../utils/hooks/usePreferredTheme";
 import { Inter } from "@next/font/google";
-import Head from "next/head";
 
-const inter = Inter();
+const inter = Inter({
+  subsets: ["latin"],
+});
 
 const GlobalStyles = (theme: Theme) => css`
   *,
@@ -51,14 +52,14 @@ const GlobalStyles = (theme: Theme) => css`
   }
 
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: ${theme.palette.primary.dark};
+    border-radius: 8px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: gray;
+    background: ${theme.palette.text.light};
     border-radius: 8px;
-    outline: 1px solid ${theme.palette.primary.dark};
+    outline: 2px solid ${theme.palette.text.light};
   }
 `;
 
@@ -79,9 +80,7 @@ $$    $$ |$$    $$ |$$ |  $$ |$$ |$$ |$$    $$ |$$    $$/ $$    $$/
 
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width" />
-      </Head>
+      <meta name="viewport" content="width=device-width" />
       <SWRConfig
         value={{
           fetcher,

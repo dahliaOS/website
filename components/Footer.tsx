@@ -1,13 +1,13 @@
 import {
-  Article,
-  Computer,
-  DeveloperBoard,
-  Handshake,
-  PeopleAlt,
-  PermMedia,
-  QuestionAnswer,
-  WbCloudy,
-  WbSunny,
+  ArticleRounded as Article,
+  ComputerRounded as Computer,
+  DeveloperBoardRounded as DeveloperBoard,
+  HandshakeRounded as Handshake,
+  PeopleAltRounded as PeopleAlt,
+  PermMediaRounded as PermMedia,
+  QuestionAnswerRounded as QuestionAnswer,
+  WbCloudyRounded as WbCloudy,
+  WbSunnyRounded as WbSunny,
 } from "@mui/icons-material";
 import { BottomNavigation, MenuItem, Select } from "@mui/material";
 
@@ -103,6 +103,7 @@ const StyledSelect = styled(Select)`
   color: ${({ theme }) => theme.palette.text.primary};
   height: 2.5rem;
   width: 9rem;
+  border-radius: 8px;
 `;
 
 const StyledMenuItem = styled(MenuItem)`
