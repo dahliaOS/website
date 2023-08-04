@@ -33,7 +33,7 @@ export default async function handler() {
             paddingLeft: "200px",
           }}
         >
-          <Image
+          <img
             alt="dahliaOS Logotype"
             width={400}
             src="https://raw.githubusercontent.com/dahliaOS/brand/62d9cf35262982255fd85545e0185b9e39642fb1/dahliaOS/logotype/svg/logotype-light.svg"
