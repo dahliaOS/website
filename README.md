@@ -51,7 +51,7 @@ bun run build
 ### 5. Start:
 
 ```
-pnpm start
+bun start
 ```
 
 In a browser, load the page [localhost:3000](http://localhost:3000) and you should now be able to view the built website.
