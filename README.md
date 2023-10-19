@@ -20,8 +20,7 @@ To develop and locally test the website:
 
 ### 1. Install development tools:
 
-1. [Install Node.js and NPM](https://nodejs.org/en/download/package-manager/)
-1. [Install PNPM](https://pnpm.io/installation) (recommended opposed to NPM/Yarn)
+1. [Install bun](https://bun.sh/)
 1. Code editor of your choice (we recommend [VSCode](https://code.visualstudio.com/))
 
 ### 2. Install dependencies:
@@ -29,13 +28,13 @@ To develop and locally test the website:
 Install node modules required to run the website by running:
 
 ```
-pnpm i
+bun install
 ```
 
 ### 3. Start the Next.js dev server:
 
 ```
-pnpm dev
+bun dev
 ```
 
 In a browser, load the page [localhost:3000](http://localhost:3000) and you should now be able to test the website while making your changes.
@@ -46,7 +45,7 @@ Next.js' dev server has hot reloading so no need to restart the instance when it
 After making your changes and verifying it all works in the dev server, furtherly test them out by building the website:
 
 ```
-pnpm build
+bun run build
 ```
 
 ### 5. Start:

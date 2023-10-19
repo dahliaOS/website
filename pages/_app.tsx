@@ -10,8 +10,7 @@ import { usePreferredTheme } from "../utils/hooks/usePreferredTheme";
 import { Inter } from "@next/font/google";
 import Head from "next/head";
 
-const inter = Inter();
-
+const inter = Inter({ subsets: ["latin"] });
 const GlobalStyles = (theme: Theme) => css`
   *,
   *::before,
