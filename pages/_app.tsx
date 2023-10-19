@@ -7,7 +7,7 @@ import { fetcher } from "../utils/Fetcher";
 import { ThemeProvider as MUIThemeProvider } from "@mui/material";
 import { SWRConfig } from "swr";
 import { usePreferredTheme } from "../utils/hooks/usePreferredTheme";
-import { Inter } from "@next/font/google";
+import { Inter } from 'next/font/google'
 import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
