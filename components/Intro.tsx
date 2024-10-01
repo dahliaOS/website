@@ -72,7 +72,7 @@ const animateCalculator = keyframes`
 
 const animateToolbar = () => keyframes`
   0% {
-    transform: translate3d(185px, 312px, 0);
+    transform: translate3d(185px, 250px, 0) scale(0.80);
     opacity:0;
   }
   100% {
@@ -237,7 +237,7 @@ const LogoContainer = styled.div`
       opacity: 1;
     }
     100% {
-      transform: translateX(-400px) scale(0);
+      transform: translateX(-300px) scale(0);
       opacity: 0;
     }
   }
