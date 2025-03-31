@@ -25,7 +25,9 @@ const Card = styled.div`
   width: 100%;
   margin: 0 auto;
   background: ${({ theme }) => theme.palette.primary.light};
-  box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
+  box-shadow:
+    0px 1px 7px 1px rgb(0 0 0 / 14%),
+    0 3px 3px -2px rgb(0 0 0 / 20%),
     0 1px 8px 0 rgb(0 0 0 / 12%);
 
   @media (max-width: 1250px) {
@@ -53,7 +55,9 @@ const Older = styled.div`
   padding: 0 16px;
   flex: 1;
   overflow: auto;
-  box-shadow: 0px 1px 7px 1px rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 20%),
+  box-shadow:
+    0px 1px 7px 1px rgb(0 0 0 / 14%),
+    0 3px 3px -2px rgb(0 0 0 / 20%),
     0 1px 8px 0 rgb(0 0 0 / 12%);
 `;
 
@@ -244,9 +248,9 @@ const ErrorMessage = styled.p`
   margin-bottom: 25px;
 `;
 
-const StyledModal = styled(motion(Dialog))``;
+const StyledModal = styled(motion.create(Dialog))``;
 
-const StyledPaper = styled(motion(Paper))`
+const StyledPaper = styled(motion.create(Paper))`
   border-radius: 8px;
   background: ${({ theme }) => theme.palette.primary.contrastText};
   padding: 10px 20px 20px 10px;

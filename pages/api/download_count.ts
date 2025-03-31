@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { APIResponse } from "../../types/types";
 
+export const runtime = "edge";
+
 interface Author {
   login: string;
   id: number;

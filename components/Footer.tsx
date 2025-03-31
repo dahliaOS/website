@@ -13,7 +13,6 @@ import { BottomNavigation, MenuItem, Select } from "@mui/material";
 
 import Image from "next/image";
 import Link from "next/link";
-import { VercelLogo } from "./Icons";
 import darkLogotype from "../public/images/logos/darkLogotype.webp";
 import lightLogotype from "../public/images/logos/lightLogotype.webp";
 import styled from "@emotion/styled";
@@ -124,26 +123,6 @@ const CloudyIcon = styled(WbCloudy)`
 const ComputerIcon = styled(Computer)`
   vertical-align: middle;
   margin-right: 10px;
-`;
-
-const IconSpan = styled.span`
-  margin-left: 0.5rem;
-  vertical-align: middle;
-`;
-
-const VercelLink = styled(Link)`
-  text-decoration: none;
-  color: ${({ theme }) => theme.palette.text.primary};
-  font-size: 1rem;
-  font-weight: 450;
-
-  &:hover {
-    color: ${({ theme }) => theme.palette.text.light};
-  }
-
-  @media (max-width: 800px) {
-    font-size: 0.9rem;
-  }
 `;
 
 const BottomContainer = styled.div`
@@ -437,15 +416,6 @@ const Footer = () => {
           alt="dahliaOS logo"
           src={theme.palette.mode === "dark" ? darkLogotype : lightLogotype}
         />
-        <VercelLink
-          href="https://vercel.com?utm_source=dahliaOS&amp;utm_campaign=oss"
-          target="_blank"
-        >
-          Powered By
-          <IconSpan>
-            <VercelLogo />
-          </IconSpan>
-        </VercelLink>
       </BottomContainer>
     </StyledBottomNavigation>
   );
